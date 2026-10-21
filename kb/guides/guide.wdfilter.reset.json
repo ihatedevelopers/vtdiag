@@ -1,0 +1,87 @@
+{
+  "id": "guide.wdfilter.reset",
+  "titleKey": "guide.wdfilter.reset.title",
+  "summaryKey": "guide.wdfilter.reset.summary",
+  "bucket": "guidedManual",
+  "risk": "high",
+  "reboot": "required",
+  "appliesTo": [
+    "wdfilter-bsod"
+  ],
+  "preflight": [
+    {
+      "probe": "sec.bitlocker_on",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.wdfilter.reset.pre.0"
+    },
+    {
+      "probe": "riot.game_running",
+      "must": "false",
+      "severity": "block",
+      "failKey": "guide.wdfilter.reset.pre.1"
+    }
+  ],
+  "branches": [
+    {
+      "id": "updates_first",
+      "when": [],
+      "textKey": "guide.wdfilter.reset.updates_first.text",
+      "steps": [
+        {
+          "textKey": "guide.wdfilter.reset.updates_first.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsupdate"
+        },
+        {
+          "textKey": "guide.wdfilter.reset.updates_first.s2",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "reset_reinstall",
+      "when": [],
+      "textKey": "guide.wdfilter.reset.reset_reinstall.text",
+      "steps": [
+        {
+          "textKey": "guide.wdfilter.reset.reset_reinstall.s1",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.wdfilter.reset.reset_reinstall.s2",
+          "action": "openSettings",
+          "target": "ms-settings:recovery"
+        },
+        {
+          "textKey": "guide.wdfilter.reset.reset_reinstall.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.wdfilter.reset.reset_reinstall.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.wdfilter.reset.reset_reinstall.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.wdfilter.reset.reset_reinstall.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.wdfilter.reset.reset_reinstall.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.wdfilter.reset.reset_reinstall.s8",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.wdfilter.reset.outcome"
+}

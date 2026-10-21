@@ -1,0 +1,160 @@
+[
+  {
+    "id": "msi_afterburner",
+    "name": "MSI Afterburner (RTCore64.sys)",
+    "kind": "monitoring",
+    "detect": {
+      "processNames": [
+        "MSIAfterburner.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [
+        "RTCore64.sys"
+      ],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^MSI Afterburner",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.msi_afterburner.effect.0",
+      "conflict.msi_afterburner.effect.1",
+      "conflict.msi_afterburner.effect.2"
+    ],
+    "fix": {
+      "actionKey": "conflict.msi_afterburner.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "high",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "evidence": {
+      "redditMentions": 81,
+      "solvedMentions": 19,
+      "exampleThreadIds": [
+        "1p8gqu9",
+        "1t2ra9l",
+        "1tn9u9x",
+        "1uv4ppg",
+        "1w1f9m2"
+      ],
+      "webSources": [
+        "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error",
+        "https://www.thegamer.com/vanguard-anti-cheat-pc-problems-for-valorant-players/"
+      ]
+    }
+  },
+  {
+    "id": "asus_gpu_tweak",
+    "name": "ASUS GPU Tweak III OSD",
+    "kind": "monitoring",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [
+        "GTIII-OSD64-VK.dll"
+      ],
+      "uninstallDisplayNameRegex": "GPU Tweak",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.asus_gpu_tweak.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.asus_gpu_tweak.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "medium",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "crash_desktop"
+    ],
+    "evidence": {
+      "redditMentions": 1,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1x44sj3"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "winring0_tools",
+    "name": "WinRing0-based tools (Fan Control, LibreHardwareMonitor, OpenRGB, SignalRGB, old SteelSeries Engine/EVGA)",
+    "kind": "monitoring",
+    "detect": {
+      "processNames": [
+        "FanControl.exe",
+        "LibreHardwareMonitor.exe",
+        "OpenRGB.exe",
+        "SignalRgb.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [
+        "WinRing0x64.sys",
+        "WinRing0.sys"
+      ],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.winring0_tools.effect.0",
+      "conflict.winring0_tools.effect.1",
+      "conflict.winring0_tools.effect.2"
+    ],
+    "fix": {
+      "actionKey": "conflict.winring0_tools.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "error_code",
+      "bios_requirement"
+    ],
+    "evidence": {
+      "redditMentions": 5,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1w52oy9",
+        "1qlt0a5",
+        "1qt3igk",
+        "1sm9hpm",
+        "1u4z3n0"
+      ],
+      "webSources": [
+        "https://www.neowin.net/news/windows-1110-is-flagging-winring0-on-your-pc-monitoring-fan-control-apps-heres-why/",
+        "https://forums.evga.com/EVGA-Update-all-of-your-programs-because-they-have-vulnerability-FIXED-with-PX1-v-107-m3050791.aspx"
+      ]
+    }
+  }
+]

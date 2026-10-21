@@ -1,0 +1,70 @@
+{
+  "id": "launch-fails-something-unusual",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.launch-fails-something-unusual.title",
+  "summaryKey": "rule.launch-fails-something-unusual.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "wont_launch",
+    "error_code"
+  ],
+  "prior": {
+    "threads": 4
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "debugger",
+      "signal": "sec.ifeo_riot_debugger",
+      "true": 2.5,
+      "textKey": "rule.launch-fails-something-unusual.ev.debugger"
+    },
+    {
+      "id": "exploit",
+      "signal": "sec.exploit_override_riot",
+      "true": 2.0,
+      "textKey": "rule.launch-fails-something-unusual.ev.exploit"
+    },
+    {
+      "id": "testsign",
+      "signal": "sec.bcd.testsigning",
+      "true": 2.0,
+      "textKey": "rule.launch-fails-something-unusual.ev.testsign"
+    },
+    {
+      "id": "modified",
+      "signal": "os.modified_windows",
+      "true": 0.8
+    },
+    {
+      "id": "hvci_off",
+      "signal": "sec.hvci.running",
+      "false": 0.3
+    }
+  ],
+  "fixes": [
+    "fix.sec.reset_exploit_overrides"
+  ],
+  "guides": [
+    "guide.bcd.restore_security",
+    "guide.vanguard.reinstall"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "launch-fails-something-unusual",
+    "threadCount": 4,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1qczf1k",
+      "1qv3lbw",
+      "1reb1ma",
+      "1rg8857"
+    ],
+    "urls": []
+  }
+}

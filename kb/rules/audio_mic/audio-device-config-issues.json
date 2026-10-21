@@ -1,0 +1,66 @@
+{
+  "id": "audio-device-config-issues",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "audio_mic",
+  "titleKey": "rule.audio-device-config-issues.title",
+  "summaryKey": "rule.audio-device-config-issues.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "no_audio",
+    "voice_chat"
+  ],
+  "prior": {
+    "threads": 10
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "no_default",
+      "signal": "audio.no_default_output",
+      "true": 2.0,
+      "textKey": "rule.audio-device-config-issues.ev.no_default"
+    },
+    {
+      "id": "many",
+      "signal": "audio.many_outputs",
+      "true": 0.6
+    },
+    {
+      "id": "virtual",
+      "signal": "conflict.virtual_audio_mics.installed",
+      "true": 0.6
+    },
+    {
+      "id": "exitlag",
+      "signal": "conflict.exitlag.running",
+      "true": 0.4
+    },
+    {
+      "id": "enhancers",
+      "signal": "conflict.audio_enhancers.installed",
+      "true": 0.3
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.audio.output_device"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "audio-device-config-issues",
+    "threadCount": 10,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1pcu6yq",
+      "1qwcf4k",
+      "1r3hz0h",
+      "1r5yq75",
+      "1rgowb5"
+    ],
+    "urls": []
+  }
+}

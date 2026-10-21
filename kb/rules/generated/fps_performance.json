@@ -1,0 +1,934 @@
+[
+  {
+    "id": "conflict-rtss",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-rtss.title",
+    "summaryKey": "rule.conflict-rtss.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.rtss.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.rtss.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.rtss.running",
+        "true": 0.7
+      },
+      {
+        "id": "crash_module",
+        "signal": "conflict.rtss.crash_module",
+        "true": 3.5
+      }
+    ],
+    "fixes": [
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 18,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1p8gqu9",
+        "1v2umet",
+        "1vf5i9t",
+        "1wcgit9",
+        "1x1ct30"
+      ],
+      "urls": [
+        "https://www.thegamer.com/vanguard-anti-cheat-pc-problems-for-valorant-players/"
+      ]
+    }
+  },
+  {
+    "id": "conflict-msi_afterburner",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-msi_afterburner.title",
+    "summaryKey": "rule.conflict-msi_afterburner.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.msi_afterburner.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.msi_afterburner.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.msi_afterburner.running",
+        "true": 0.7
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.msi_afterburner.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 19,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1p8gqu9",
+        "1t2ra9l",
+        "1tn9u9x",
+        "1uv4ppg",
+        "1w1f9m2"
+      ],
+      "urls": [
+        "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error",
+        "https://www.thegamer.com/vanguard-anti-cheat-pc-problems-for-valorant-players/"
+      ]
+    }
+  },
+  {
+    "id": "conflict-stardock",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-stardock.title",
+    "summaryKey": "rule.conflict-stardock.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.stardock.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.stardock.installed",
+        "true": 0.8,
+        "group": "presence"
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1x1h2qy",
+        "1x1mpcs",
+        "1x1zi9x",
+        "1x1fa1n",
+        "1x29zzv"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-premier_opinion",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-premier_opinion.title",
+    "summaryKey": "rule.conflict-premier_opinion.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "launch_black_screen",
+      "crash_desktop"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.premier_opinion.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.premier_opinion.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "crash_module",
+        "signal": "conflict.premier_opinion.crash_module",
+        "true": 3.5
+      }
+    ],
+    "wave": {
+      "from": "2026-10-05",
+      "to": "2026-12-31",
+      "boost": 0.6
+    },
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 5,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1x0ajiw",
+        "1x1ct30",
+        "1x1fk3e",
+        "1x1h2qy",
+        "1wub2t7"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-nielsen_meter",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-nielsen_meter.title",
+    "summaryKey": "rule.conflict-nielsen_meter.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "launch_black_screen",
+      "crash_desktop"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.nielsen_meter.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.nielsen_meter.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "crash_module",
+        "signal": "conflict.nielsen_meter.crash_module",
+        "true": 3.5
+      }
+    ],
+    "wave": {
+      "from": "2026-10-05",
+      "to": "2026-12-31",
+      "boost": 0.6
+    },
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1x0tj63"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-asus_screenxpert",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-asus_screenxpert.title",
+    "summaryKey": "rule.conflict-asus_screenxpert.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "launch_black_screen",
+      "crash_desktop"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.asus_screenxpert.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.asus_screenxpert.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "crash_module",
+        "signal": "conflict.asus_screenxpert.crash_module",
+        "true": 3.5
+      }
+    ],
+    "wave": {
+      "from": "2026-10-05",
+      "to": "2026-12-31",
+      "boost": 0.6
+    },
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 3,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1x1f6jt",
+        "1x1h2qy",
+        "1x7p5s5",
+        "1x1mpcs",
+        "1x29zzv"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-asus_gpu_tweak",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-asus_gpu_tweak.title",
+    "summaryKey": "rule.conflict-asus_gpu_tweak.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "crash_desktop"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.asus_gpu_tweak.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.asus_gpu_tweak.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "crash_module",
+        "signal": "conflict.asus_gpu_tweak.crash_module",
+        "true": 3.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1x44sj3"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-overwolf_trackers",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-overwolf_trackers.title",
+    "summaryKey": "rule.conflict-overwolf_trackers.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.overwolf_trackers.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.overwolf_trackers.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.overwolf_trackers.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 20,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1pjp2s6",
+        "1pw8ioc",
+        "1q5mj5i",
+        "1q5wflv",
+        "1q5wodp"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-discord_overlay",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-discord_overlay.title",
+    "summaryKey": "rule.conflict-discord_overlay.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.discord_overlay.any"
+    ],
+    "evidence": [
+      {
+        "id": "running",
+        "signal": "conflict.discord_overlay.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 6,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1ock4o9",
+        "1p3fe4u",
+        "1ughj5n",
+        "1vgsf59",
+        "1w52oy9"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-nvidia_overlay",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-nvidia_overlay.title",
+    "summaryKey": "rule.conflict-nvidia_overlay.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.nvidia_overlay.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.nvidia_overlay.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.nvidia_overlay.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.nvidia_overlay.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.nvidia_overlay.service_running",
+        "true": 0.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 22,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oqcuks",
+        "1p13w2d",
+        "1p3trkn",
+        "1st6f1o",
+        "1t8qfuh"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-xbox_game_bar_dvr",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-xbox_game_bar_dvr.title",
+    "summaryKey": "rule.conflict-xbox_game_bar_dvr.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "display.game_dvr_on",
+        "true": 0.8
+      },
+      {
+        "id": "e1",
+        "signal": "conflict.xbox_game_bar_dvr.running",
+        "true": 0.3
+      }
+    ],
+    "fixes": [
+      "fix.display.game_dvr_off"
+    ],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 8,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1p3trkn",
+        "1pkhb9y",
+        "1v571bz",
+        "1vf5i9t",
+        "1w52oy9"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-medal_clipping",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-medal_clipping.title",
+    "summaryKey": "rule.conflict-medal_clipping.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.medal_clipping.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.medal_clipping.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.medal_clipping.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 8,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1pkhb9y",
+        "1sk57b3",
+        "1w11dt9",
+        "1x2bvn7",
+        "1oeh12j"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-obs_streamlabs",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-obs_streamlabs.title",
+    "summaryKey": "rule.conflict-obs_streamlabs.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.obs_streamlabs.any"
+    ],
+    "evidence": [
+      {
+        "id": "running",
+        "signal": "conflict.obs_streamlabs.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 6,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1ooy0y1",
+        "1pdkrjh",
+        "1vp6t5o",
+        "1pnf9q1",
+        "1prjou0"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-steam_overlay",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-steam_overlay.title",
+    "summaryKey": "rule.conflict-steam_overlay.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.steam_overlay.any"
+    ],
+    "evidence": [
+      {
+        "id": "running",
+        "signal": "conflict.steam_overlay.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1p4b8hj"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-wallpaper_engine",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-wallpaper_engine.title",
+    "summaryKey": "rule.conflict-wallpaper_engine.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.wallpaper_engine.any"
+    ],
+    "evidence": [
+      {
+        "id": "running",
+        "signal": "conflict.wallpaper_engine.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 3,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1q5mj5i",
+        "1q8fp3n",
+        "1w1f9m2",
+        "1reshrp",
+        "1rpiajt"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-huawei_pc_manager",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-huawei_pc_manager.title",
+    "summaryKey": "rule.conflict-huawei_pc_manager.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "crash_desktop"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.huawei_pc_manager.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.huawei_pc_manager.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "crash_module",
+        "signal": "conflict.huawei_pc_manager.crash_module",
+        "true": 3.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1x1ct30"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-realtek_2_5gbe",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-realtek_2_5gbe.title",
+    "summaryKey": "rule.conflict-realtek_2_5gbe.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "stutter"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.realtek_2_5gbe.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.realtek_2_5gbe.driver_loaded",
+        "true": 0.9
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.realtek_2_5gbe.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.realtek_2_5gbe.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [
+      "fix.net.disable_unused_adapter",
+      "fix.net.realtek_power_saving_off"
+    ],
+    "guides": [
+      "guide.net.local_connection"
+    ],
+    "sources": {
+      "threadCount": 46,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1orgew9",
+        "1osbhay",
+        "1ox2x2m",
+        "1pb93al",
+        "1pbqpqu"
+      ],
+      "urls": []
+    },
+    "related": [
+      "realtek-2-5gbe-nic-stutter"
+    ]
+  },
+  {
+    "id": "conflict-realtek_gbe_family",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-realtek_gbe_family.title",
+    "summaryKey": "rule.conflict-realtek_gbe_family.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "stutter"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.realtek_gbe_family.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.realtek_gbe_family.driver_loaded",
+        "true": 0.9
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.realtek_gbe_family.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.realtek_gbe_family.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [
+      "fix.net.disable_unused_adapter",
+      "fix.net.realtek_power_saving_off"
+    ],
+    "guides": [
+      "guide.net.local_connection"
+    ],
+    "sources": {
+      "threadCount": 39,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oe4bzl",
+        "1p2y9mb",
+        "1pbqpqu",
+        "1ph4fsn",
+        "1poah2f"
+      ],
+      "urls": []
+    },
+    "related": [
+      "realtek-2-5gbe-nic-stutter"
+    ]
+  },
+  {
+    "id": "conflict-hags",
+    "rev": 1,
+    "kind": "generated",
+    "category": "fps_performance",
+    "titleKey": "rule.conflict-hags.title",
+    "summaryKey": "rule.conflict-hags.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "stutter",
+      "mouse_input"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "display.hags_on",
+        "true": 0.5
+      }
+    ],
+    "fixes": [
+      "fix.display.hags_off"
+    ],
+    "guides": [],
+    "sources": {
+      "threadCount": 21,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oq9zuf",
+        "1pnf9q1",
+        "1pzp13r",
+        "1pzsqpm",
+        "1qjlrc8"
+      ],
+      "urls": []
+    }
+  }
+]

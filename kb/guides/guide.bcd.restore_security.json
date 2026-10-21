@@ -1,0 +1,187 @@
+{
+  "id": "guide.bcd.restore_security",
+  "titleKey": "guide.bcd.restore_security.title",
+  "summaryKey": "guide.bcd.restore_security.summary",
+  "bucket": "guidedManual",
+  "risk": "medium",
+  "reboot": "required",
+  "appliesTo": [
+    "launch-fails-something-unusual"
+  ],
+  "preflight": [
+    {
+      "probe": "sec.bitlocker_on",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.bcd.restore_security.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "testsigning_on",
+      "when": [
+        {
+          "signal": "sec.bcd.testsigning",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.bcd.restore_security.testsigning_on.text",
+      "steps": [
+        {
+          "textKey": "guide.bcd.restore_security.testsigning_on.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.testsigning_on.s2",
+          "action": "copyText",
+          "target": "bcdedit /set testsigning off"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.testsigning_on.s3",
+          "action": "copyText",
+          "target": "bcdedit /set nointegritychecks off"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.testsigning_on.s4",
+          "action": "copyText",
+          "target": "bcdedit /debug off"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.testsigning_on.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.testsigning_on.s6",
+          "action": "runCheck",
+          "target": "sec.bcd.testsigning"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.testsigning_on.s7",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.bcd.testsigning",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "hypervisor_off",
+      "when": [
+        {
+          "signal": "sec.bcd.hypervisor_off",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.bcd.restore_security.hypervisor_off.text",
+      "steps": [
+        {
+          "textKey": "guide.bcd.restore_security.hypervisor_off.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.hypervisor_off.s2",
+          "action": "copyText",
+          "target": "bcdedit /set hypervisorlaunchtype auto"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.hypervisor_off.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.hypervisor_off.s4",
+          "action": "runCheck",
+          "target": "sec.bcd.hypervisor_off"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.hypervisor_off.s5",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.bcd.hypervisor_off",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "nx_off",
+      "when": [
+        {
+          "signal": "sec.bcd.nx_off",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.bcd.restore_security.nx_off.text",
+      "steps": [
+        {
+          "textKey": "guide.bcd.restore_security.nx_off.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.nx_off.s2",
+          "action": "copyText",
+          "target": "bcdedit /set {current} nx OptIn"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.nx_off.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.nx_off.s4",
+          "action": "runCheck",
+          "target": "sec.bcd.nx_off"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.nx_off.s5",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.bcd.nx_off",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "when": [],
+      "textKey": "guide.bcd.restore_security.general.text",
+      "steps": [
+        {
+          "textKey": "guide.bcd.restore_security.general.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.general.s2",
+          "action": "copyText",
+          "target": "bcdedit /set testsigning off"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.general.s3",
+          "action": "copyText",
+          "target": "bcdedit /set nointegritychecks off"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.general.s4",
+          "action": "copyText",
+          "target": "bcdedit /debug off"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.general.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bcd.restore_security.general.s6",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.bcd.restore_security.outcome"
+}

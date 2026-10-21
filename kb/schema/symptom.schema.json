@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:symptom:1",
+  "title": "VTDiag KB symptom chip",
+  "description": "kb/symptoms.json: the What's wrong? chips; they set priors and never veto.",
+  "$defs": {
+    "item": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id, for example stutter, launch_black_screen, error_code."
+        },
+        "titleKey": {
+          "type": "string",
+          "description": "Chip text key."
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "fps_performance",
+              "vanguard",
+              "crash_freeze_bsod",
+              "tpm_secureboot_bios",
+              "install_update_corrupt",
+              "login_account_client",
+              "network_ping",
+              "gpu_driver",
+              "audio_mic",
+              "display_resolution",
+              "input_mouse",
+              "hardware_other",
+              "other"
+            ],
+            "description": "Problem category from data/catalog.json. JSON values are the catalog's snake_case names."
+          },
+          "description": "Categories whose priors this symptom selects."
+        },
+        "order": {
+          "type": "integer",
+          "description": "Display order."
+        }
+      },
+      "required": [
+        "id",
+        "titleKey"
+      ],
+      "additionalProperties": false,
+      "description": "A symptom chip on the \"What's wrong?\" screen. Chips set priors; they never veto a hypothesis."
+    }
+  },
+  "anyOf": [
+    {
+      "$ref": "#/$defs/item"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  ]
+}

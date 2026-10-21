@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: A3 Fixes & Journal. Layer and analyzers come from Directory.Build.targets. -->
+  <PropertyGroup>
+    <RootNamespace>VTD.Fixes</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VTD.Contracts\VTD.Contracts.csproj" />
+    <ProjectReference Include="..\VTD.Journal\VTD.Journal.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Already in Directory.Packages.props (A1 uses it). Write side: MSFT_NetAdapterBindingSettingData (IPv6 binding),
+         MSFT_MpPreference (Defender exclusion), BcdStore (BCD), SystemRestore (System Protection). -->
+    <PackageReference Include="System.Management" />
+  </ItemGroup>
+</Project>

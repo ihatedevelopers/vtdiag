@@ -1,0 +1,64 @@
+{
+  "id": "intel-hybrid-cpu-ecore-stutter",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.intel-hybrid-cpu-ecore-stutter.title",
+  "summaryKey": "rule.intel-hybrid-cpu-ecore-stutter.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "stutter",
+    "fps_low"
+  ],
+  "prior": {
+    "threads": 3
+  },
+  "requires": [
+    "hw.cpu_hybrid"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "hybrid",
+      "signal": "hw.cpu_hybrid",
+      "true": 0.8,
+      "veto": "false"
+    },
+    {
+      "id": "perf",
+      "signal": "sec.ifeo_perfoptions_riot",
+      "true": 0.6
+    },
+    {
+      "id": "saver",
+      "signal": "power.saver_plan",
+      "true": 0.6
+    },
+    {
+      "id": "lasso",
+      "signal": "conflict.process_lasso.running",
+      "true": 0.5
+    }
+  ],
+  "fixes": [
+    "fix.power.high_performance",
+    "fix.sec.remove_riot_perfoptions"
+  ],
+  "guides": [
+    "guide.hybrid_cpu.priority"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "intel-hybrid-cpu-ecore-stutter",
+    "threadCount": 3,
+    "evidence": "guide",
+    "threadIds": [
+      "1v84gjf",
+      "1v86lu3",
+      "1vgsf59"
+    ],
+    "urls": []
+  }
+}

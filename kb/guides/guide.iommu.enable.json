@@ -1,0 +1,177 @@
+{
+  "id": "guide.iommu.enable",
+  "titleKey": "guide.iommu.enable.title",
+  "summaryKey": "guide.iommu.enable.summary",
+  "bucket": "guidedManual",
+  "risk": "high",
+  "reboot": "required",
+  "appliesTo": [
+    "iommu-restriction"
+  ],
+  "preflight": [
+    {
+      "probe": "sec.bitlocker_on",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.iommu.enable.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "enable_in_bios",
+      "when": [
+        {
+          "signal": "sec.iommu_available",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.iommu.enable.enable_in_bios.text",
+      "steps": [
+        {
+          "textKey": "guide.iommu.enable.enable_in_bios.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.iommu.enable.enable_in_bios.s2",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.iommu.enable.enable_in_bios.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.iommu.enable.enable_in_bios.s4",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.iommu.enable.enable_in_bios.s5",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.iommu.enable.enable_in_bios.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.iommu.enable.enable_in_bios.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.iommu.enable.enable_in_bios.s8",
+          "action": "runCheck",
+          "target": "sec.iommu_available"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.iommu_available",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "option_missing"
+    },
+    {
+      "id": "on_but_still_error",
+      "when": [
+        {
+          "signal": "sec.iommu_available",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.iommu.enable.on_but_still_error.text",
+      "steps": [
+        {
+          "textKey": "guide.iommu.enable.on_but_still_error.s1",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.iommu.enable.on_but_still_error.s2",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.iommu.enable.on_but_still_error.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.iommu.enable.on_but_still_error.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.iommu.enable.on_but_still_error.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "option_missing",
+      "when": [],
+      "textKey": "guide.iommu.enable.option_missing.text",
+      "steps": [
+        {
+          "textKey": "guide.iommu.enable.option_missing.s1",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.iommu.enable.option_missing.s2",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.iommu.enable.option_missing.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.iommu.enable.option_missing.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.iommu.enable.option_missing.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "drivers_after",
+      "when": [],
+      "textKey": "guide.iommu.enable.drivers_after.text",
+      "steps": [
+        {
+          "textKey": "guide.iommu.enable.drivers_after.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.iommu.enable.drivers_after.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.iommu.enable.drivers_after.s3",
+          "action": "openSettings",
+          "target": "ms-settings:sound"
+        },
+        {
+          "textKey": "guide.iommu.enable.drivers_after.s4",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.iommu.enable.drivers_after.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.iommu.enable.drivers_after.s6",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "docsPath": "docs/guides/iommu.md",
+  "outcomeAskKey": "guide.iommu.enable.outcome"
+}

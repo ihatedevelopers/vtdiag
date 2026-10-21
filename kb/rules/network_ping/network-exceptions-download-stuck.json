@@ -1,0 +1,67 @@
+{
+  "id": "network-exceptions-download-stuck",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "network_ping",
+  "titleKey": "rule.network-exceptions-download-stuck.title",
+  "summaryKey": "rule.network-exceptions-download-stuck.summary",
+  "bucket": "externalNetwork",
+  "symptoms": [
+    "install_update",
+    "login_issue",
+    "error_code"
+  ],
+  "prior": {
+    "threads": 5
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "fw",
+      "signal": "net.firewall_blocks_riot",
+      "true": 1.5
+    },
+    {
+      "id": "proxy",
+      "signal": "net.proxy_on",
+      "true": 0.8
+    },
+    {
+      "id": "lsp",
+      "signal": "net.lsp_third_party",
+      "true": 0.6
+    },
+    {
+      "id": "no_inet",
+      "signal": "net.no_internet",
+      "true": 1.0
+    }
+  ],
+  "fixes": [
+    "fix.net.dns_flush",
+    "fix.net.winsock_reset"
+  ],
+  "guides": [
+    "guide.network.firewall",
+    "guide.net.cloudflare_warp"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "network-exceptions-download-stuck",
+    "threadCount": 5,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1tfiaxp",
+      "1tofbyy",
+      "1tolnhq",
+      "1uay2jb",
+      "1ub3gty"
+    ],
+    "urls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ]
+  }
+}

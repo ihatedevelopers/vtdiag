@@ -1,0 +1,37 @@
+[
+  {
+    "id": "mon.cpu.throttling",
+    "source": "monitor",
+    "titleKey": "signal.mon.cpu.throttling.title"
+  },
+  {
+    "id": "mon.frametime.periodic_spikes",
+    "source": "monitor",
+    "titleKey": "signal.mon.frametime.periodic_spikes.title"
+  },
+  {
+    "id": "mon.gpu.low_usage",
+    "source": "monitor",
+    "titleKey": "signal.mon.gpu.low_usage.title"
+  },
+  {
+    "id": "mon.network.packet_loss",
+    "source": "monitor",
+    "titleKey": "signal.mon.network.packet_loss.title"
+  },
+  {
+    "id": "mon.network.ping_spikes",
+    "source": "monitor",
+    "titleKey": "signal.mon.network.ping_spikes.title"
+  },
+  {
+    "id": "mon.spikes_correlate.nic_event",
+    "source": "monitor",
+    "titleKey": "signal.mon.spikes_correlate.nic_event.title"
+  },
+  {
+    "id": "mon.vgc.cpu_high",
+    "source": "monitor",
+    "titleKey": "signal.mon.vgc.cpu_high.title"
+  }
+]

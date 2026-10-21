@@ -1,0 +1,91 @@
+{
+  "id": "local-network-packet-loss-jitter",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "network_ping",
+  "titleKey": "rule.local-network-packet-loss-jitter.title",
+  "summaryKey": "rule.local-network-packet-loss-jitter.summary",
+  "bucket": "externalNetwork",
+  "symptoms": [
+    "high_ping",
+    "disconnect",
+    "stutter",
+    "voice_chat"
+  ],
+  "prior": {
+    "threads": 30
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "gw_loss",
+      "signal": "net.gateway_loss",
+      "true": 2.0,
+      "textKey": "rule.local-network-packet-loss-jitter.ev.gw_loss"
+    },
+    {
+      "id": "wifi",
+      "signal": "net.on_wifi",
+      "true": 0.4,
+      "false": -0.4
+    },
+    {
+      "id": "weak",
+      "signal": "net.wifi_weak",
+      "true": 1.2,
+      "textKey": "rule.local-network-packet-loss-jitter.ev.weak"
+    },
+    {
+      "id": "band",
+      "signal": "net.wifi_2_4ghz",
+      "true": 0.6
+    },
+    {
+      "id": "multi",
+      "signal": "net.multi_nic_up",
+      "true": 0.4
+    },
+    {
+      "id": "nic_ps",
+      "signal": "net.nic_power_saving_on",
+      "true": 0.3
+    },
+    {
+      "id": "mon_loss",
+      "signal": "mon.network.packet_loss",
+      "true": 1.2
+    },
+    {
+      "id": "ask_wifi",
+      "signal": "ask.on_wifi_or_cable",
+      "true": 0.5,
+      "ask": "ask.on_wifi_or_cable"
+    }
+  ],
+  "fixes": [
+    "fix.net.disable_second_adapter",
+    "fix.net.realtek_power_saving_off",
+    "fix.net.dns_flush",
+    "fix.net.winsock_reset"
+  ],
+  "guides": [
+    "guide.net.local_connection"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "local-network-packet-loss-jitter",
+    "threadCount": 30,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1p2mu8m",
+      "1p30ckd",
+      "1p41lnt",
+      "1p4wet0",
+      "1p5fa0e"
+    ],
+    "urls": []
+  }
+}

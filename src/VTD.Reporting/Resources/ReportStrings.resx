@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from one table so en and tr keys stay in sync. Owner: A6. Risk wording must not soften in translation. -->
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="actions.none" xml:space="preserve"><value>Nothing was changed on this PC.</value></data>
+  <data name="attempt.oneway" xml:space="preserve"><value>can't be undone with a click</value></data>
+  <data name="attempt.outcome.fixed" xml:space="preserve"><value>it fixed the problem</value></data>
+  <data name="attempt.outcome.notFixed" xml:space="preserve"><value>it did not fix the problem</value></data>
+  <data name="attempt.outcome.pending" xml:space="preserve"><value>result not reported yet</value></data>
+  <data name="attempt.outcome.unsure" xml:space="preserve"><value>not sure if it helped</value></data>
+  <data name="attempt.reboot" xml:space="preserve"><value>takes effect after a restart</value></data>
+  <data name="attempt.restore_point" xml:space="preserve"><value>restore point from {date}</value></data>
+  <data name="attempt.status.applied" xml:space="preserve"><value>Applied, being checked</value></data>
+  <data name="attempt.status.applying" xml:space="preserve"><value>Being applied</value></data>
+  <data name="attempt.status.awaitingReboot" xml:space="preserve"><value>Waiting for a restart</value></data>
+  <data name="attempt.status.awaitingSecondConsent" xml:space="preserve"><value>Waiting for your second OK</value></data>
+  <data name="attempt.status.failed" xml:space="preserve"><value>Not applied</value></data>
+  <data name="attempt.status.inDoubt" xml:space="preserve"><value>Unclear, needs your decision</value></data>
+  <data name="attempt.status.rolledBack" xml:space="preserve"><value>Rolled back</value></data>
+  <data name="attempt.status.undoConflict" xml:space="preserve"><value>Undo needs your decision</value></data>
+  <data name="attempt.status.undone" xml:space="preserve"><value>Undone</value></data>
+  <data name="attempt.status.verified" xml:space="preserve"><value>Applied and verified</value></data>
+  <data name="attempt.status.verifyFailed" xml:space="preserve"><value>Didn't take effect (undone automatically)</value></data>
+  <data name="attempt.undo.available" xml:space="preserve"><value>can be undone</value></data>
+  <data name="attempt.undo.unavailable" xml:space="preserve"><value>undo not available</value></data>
+  <data name="band.likely" xml:space="preserve"><value>Likely</value></data>
+  <data name="band.longShot" xml:space="preserve"><value>Long shot</value></data>
+  <data name="band.possible" xml:space="preserve"><value>Possible</value></data>
+  <data name="band.veryLikely" xml:space="preserve"><value>Very likely</value></data>
+  <data name="bucket.externalNetwork.name" xml:space="preserve"><value>ISP or network outside this PC</value></data>
+  <data name="bucket.externalNetwork.sentence" xml:space="preserve"><value>The problem looks like it is outside this computer (your router, your internet provider or the route to the game server). A PC tool can't fix that; this report helps when you contact your ISP.</value></data>
+  <data name="bucket.fixableHere.name" xml:space="preserve"><value>Fixable here</value></data>
+  <data name="bucket.fixableHere.sentence" xml:space="preserve"><value>VTDiag found a likely cause it can fix on this PC. Every change is explained first, needs your OK, and can be undone.</value></data>
+  <data name="bucket.guidedManual.name" xml:space="preserve"><value>Guided manual step</value></data>
+  <data name="bucket.guidedManual.sentence" xml:space="preserve"><value>The fix is a setting you change yourself (for example in the BIOS or for Secure Boot). VTDiag can't change it for you; it guides you step by step and checks the result.</value></data>
+  <data name="bucket.likelyHardware.name" xml:space="preserve"><value>Likely hardware</value></data>
+  <data name="bucket.likelyHardware.sentence" xml:space="preserve"><value>A part of this PC may be failing or can't meet a requirement. Software can't fix that; the report shows what points to it.</value></data>
+  <data name="bucket.riotOrAccount.name" xml:space="preserve"><value>Riot or account side</value></data>
+  <data name="bucket.riotOrAccount.sentence" xml:space="preserve"><value>This needs Riot Support or your account, not a change on this PC. VTDiag can't fix it, and nothing on this PC should be changed for it.</value></data>
+  <data name="bucket.unknown.name" xml:space="preserve"><value>Unknown</value></data>
+  <data name="bucket.unknown.sentence" xml:space="preserve"><value>We couldn't pin this down. That's not a dead end: share this report with a helper, who can see exactly what was checked.</value></data>
+  <data name="couldnotcheck.affects" xml:space="preserve"><value>This leaves open: {list}</value></data>
+  <data name="couldnotcheck.failed" xml:space="preserve"><value>the check failed</value></data>
+  <data name="couldnotcheck.item" xml:space="preserve"><value>{what}: {reason}</value></data>
+  <data name="couldnotcheck.needs_admin" xml:space="preserve"><value>needs admin permission</value></data>
+  <data name="couldnotcheck.none" xml:space="preserve"><value>Everything that mattered was checked.</value></data>
+  <data name="couldnotcheck.not_collected" xml:space="preserve"><value>not part of this scan</value></data>
+  <data name="couldnotcheck.timed_out" xml:space="preserve"><value>it didn't answer in time</value></data>
+  <data name="coverage.all_ok" xml:space="preserve"><value>Every collector ran fully.</value></data>
+  <data name="coverage.status.failed" xml:space="preserve"><value>failed</value></data>
+  <data name="coverage.status.notApplicable" xml:space="preserve"><value>not applicable to this PC</value></data>
+  <data name="coverage.status.notRequested" xml:space="preserve"><value>not part of this scan</value></data>
+  <data name="coverage.status.ok" xml:space="preserve"><value>ran fully</value></data>
+  <data name="coverage.status.partial" xml:space="preserve"><value>partly read</value></data>
+  <data name="coverage.status.skippedNoAdmin" xml:space="preserve"><value>skipped (needs admin permission)</value></data>
+  <data name="coverage.status.timedOut" xml:space="preserve"><value>stopped at the time limit</value></data>
+  <data name="footer.hash" xml:space="preserve"><value>SHA-256 of the JSON report: {hash}</value></data>
+  <data name="footer.machine" xml:space="preserve"><value>Machine key: {key}</value></data>
+  <data name="footer.versions" xml:space="preserve"><value>VTDiag {app} · knowledge base {kb}</value></data>
+  <data name="health.clock" xml:space="preserve"><value>PC clock</value></data>
+  <data name="health.connectivity" xml:space="preserve"><value>Internet connection</value></data>
+  <data name="health.device_errors" xml:space="preserve"><value>Devices without errors</value></data>
+  <data name="health.free_space" xml:space="preserve"><value>Free disk space</value></data>
+  <data name="health.good_news" xml:space="preserve"><value>Good news: {count} things look healthy.</value></data>
+  <data name="health.gpu_driver" xml:space="preserve"><value>Graphics driver</value></data>
+  <data name="health.hvci" xml:space="preserve"><value>Memory Integrity (HVCI)</value></data>
+  <data name="health.iommu" xml:space="preserve"><value>Kernel DMA protection</value></data>
+  <data name="health.modified_windows" xml:space="preserve"><value>Unmodified Windows</value></data>
+  <data name="health.none" xml:space="preserve"><value>No health checks in this report.</value></data>
+  <data name="health.pending_reboot" xml:space="preserve"><value>No restart pending</value></data>
+  <data name="health.secure_boot" xml:space="preserve"><value>Secure Boot</value></data>
+  <data name="health.secure_boot_keys" xml:space="preserve"><value>Secure Boot keys</value></data>
+  <data name="health.status.fail" xml:space="preserve"><value>Problem</value></data>
+  <data name="health.status.notApplicable" xml:space="preserve"><value>Not applicable</value></data>
+  <data name="health.status.ok" xml:space="preserve"><value>OK</value></data>
+  <data name="health.status.unknown" xml:space="preserve"><value>Couldn't check: {reason}</value></data>
+  <data name="health.status.warn" xml:space="preserve"><value>Worth a look</value></data>
+  <data name="health.test_signing_off" xml:space="preserve"><value>Test signing is off</value></data>
+  <data name="health.tpm2" xml:space="preserve"><value>TPM 2.0</value></data>
+  <data name="health.uefi_gpt" xml:space="preserve"><value>UEFI boot and GPT disk</value></data>
+  <data name="health.vanguard_service" xml:space="preserve"><value>Vanguard service</value></data>
+  <data name="health.virtualization" xml:space="preserve"><value>Virtualization</value></data>
+  <data name="health.windows_build" xml:space="preserve"><value>Windows version</value></data>
+  <data name="helper.anomalies" xml:space="preserve"><value>Unexplained findings</value></data>
+  <data name="helper.codes" xml:space="preserve"><value>Codes</value></data>
+  <data name="helper.contribution" xml:space="preserve"><value>{signal} → {state}, Δ {delta}{extra}</value></data>
+  <data name="helper.extra" xml:space="preserve"><value>Extra log-odds: code {code}, wave {wave}, failed fixes {failed}</value></data>
+  <data name="helper.hypothesis" xml:space="preserve"><value>{id} · posterior {posterior}, log-odds {logodds} (prior {prior})</value></data>
+  <data name="helper.intro" xml:space="preserve"><value>Numbers for helpers. Posteriors are independent (they do not add up to 100%) and include a fixed unknown-cause floor.</value></data>
+  <data name="helper.leading" xml:space="preserve"><value>, leading</value></data>
+  <data name="helper.not_counted" xml:space="preserve"><value> (not counted: same group)</value></data>
+  <data name="helper.proposal" xml:space="preserve"><value>Proposal {fix}: utility {utility}, risk {risk}, {reversibility}, bind {bind}</value></data>
+  <data name="helper.ruled_out" xml:space="preserve"><value>Ruled out</value></data>
+  <data name="helper.unknown_cause" xml:space="preserve"><value>Unknown cause: {p} (floor {floor}){leading}</value></data>
+  <data name="md.full_report" xml:space="preserve"><value>Full report: attach the .html file ({file}).</value></data>
+  <data name="md.more" xml:space="preserve"><value>…and {count} more</value></data>
+  <data name="md.pc" xml:space="preserve"><value>PC</value></data>
+  <data name="md.tried" xml:space="preserve"><value>Tried so far</value></data>
+  <data name="monitor.after" xml:space="preserve"><value>After</value></data>
+  <data name="monitor.approximate" xml:space="preserve"><value>network numbers are approximate</value></data>
+  <data name="monitor.before" xml:space="preserve"><value>Before</value></data>
+  <data name="monitor.chart_fps" xml:space="preserve"><value>average FPS</value></data>
+  <data name="monitor.chart_low" xml:space="preserve"><value>1% low</value></data>
+  <data name="monitor.chart_title" xml:space="preserve"><value>FPS per minute</value></data>
+  <data name="monitor.correlation" xml:space="preserve"><value>{ratio}% of stutters lined up with {source}</value></data>
+  <data name="monitor.duration" xml:space="preserve"><value>{minutes} min watched</value></data>
+  <data name="monitor.fps" xml:space="preserve"><value>average {fps} FPS</value></data>
+  <data name="monitor.insufficient" xml:space="preserve"><value>Too little data for a verdict (short match).</value></data>
+  <data name="monitor.jitter" xml:space="preserve"><value>jitter {jitter} ms</value></data>
+  <data name="monitor.loss" xml:space="preserve"><value>packet loss {loss}%</value></data>
+  <data name="monitor.loss_first_hop" xml:space="preserve"><value>loss starts at your router</value></data>
+  <data name="monitor.low" xml:space="preserve"><value>1% low {low} FPS</value></data>
+  <data name="monitor.none" xml:space="preserve"><value>No match was monitored.</value></data>
+  <data name="monitor.periodic" xml:space="preserve"><value>repeating about every {period} s</value></data>
+  <data name="monitor.ping" xml:space="preserve"><value>ping {p50} ms (95%: {p95} ms)</value></data>
+  <data name="monitor.region" xml:space="preserve"><value>server region {region}</value></data>
+  <data name="monitor.self" xml:space="preserve"><value>Monitor's own CPU use: {cpu}% on average</value></data>
+  <data name="monitor.spikes" xml:space="preserve"><value>{spikes} stutters per minute</value></data>
+  <data name="privacy.count" xml:space="preserve"><value>{count} values were redacted ({rules}).</value></data>
+  <data name="privacy.excluded" xml:space="preserve"><value>Left out at your request: {sections}</value></data>
+  <data name="privacy.level" xml:space="preserve"><value>Share level: identifying details (computer and user names, serials, profile paths, MAC and IP addresses, tokens) were removed or replaced before this report was made.</value></data>
+  <data name="privacy.never" xml:space="preserve"><value>Never collected: passwords, Riot tokens, command lines, Vanguard log contents, browser data, documents.</value></data>
+  <data name="readiness.gpt" xml:space="preserve"><value>GPT disk</value></data>
+  <data name="readiness.hvci" xml:space="preserve"><value>Memory Integrity</value></data>
+  <data name="readiness.secureboot" xml:space="preserve"><value>Secure Boot</value></data>
+  <data name="readiness.testsigning" xml:space="preserve"><value>Test signing</value></data>
+  <data name="readiness.tpm" xml:space="preserve"><value>TPM 2.0</value></data>
+  <data name="readiness.uefi" xml:space="preserve"><value>UEFI</value></data>
+  <data name="readiness.virtualization" xml:space="preserve"><value>Virtualization</value></data>
+  <data name="reason.accessDenied" xml:space="preserve"><value>Windows denied access</value></data>
+  <data name="reason.failed" xml:space="preserve"><value>the check failed</value></data>
+  <data name="reason.insufficientData" xml:space="preserve"><value>not enough data yet</value></data>
+  <data name="reason.needsAdmin" xml:space="preserve"><value>needs admin permission (the scan ran without it)</value></data>
+  <data name="reason.notCollected" xml:space="preserve"><value>not part of this scan</value></data>
+  <data name="reason.redacted" xml:space="preserve"><value>left out for privacy</value></data>
+  <data name="reason.incomplete" xml:space="preserve"><value>only part of the list could be read</value></data>
+  <data name="reason.timedOut" xml:space="preserve"><value>it didn't answer in time</value></data>
+  <data name="reason.unparseable" xml:space="preserve"><value>the data couldn't be read</value></data>
+  <data name="reason.unsupported" xml:space="preserve"><value>this PC or Windows version doesn't expose it</value></data>
+  <data name="report.created" xml:space="preserve"><value>Created {date}</value></data>
+  <data name="report.disclaimer" xml:space="preserve"><value>VTDiag is a free community tool and is not affiliated with Riot Games.</value></data>
+  <data name="report.id" xml:space="preserve"><value>Report ID</value></data>
+  <data name="report.title" xml:space="preserve"><value>VTDiag report</value></data>
+  <data name="section.about" xml:space="preserve"><value>About this report</value></data>
+  <data name="section.actions" xml:space="preserve"><value>What was tried</value></data>
+  <data name="section.couldnotcheck" xml:space="preserve"><value>What we couldn't check</value></data>
+  <data name="section.coverage" xml:space="preserve"><value>Scan coverage</value></data>
+  <data name="section.health" xml:space="preserve"><value>Health checklist</value></data>
+  <data name="section.helper" xml:space="preserve"><value>For helpers (technical details)</value></data>
+  <data name="section.monitor" xml:space="preserve"><value>Match monitor</value></data>
+  <data name="section.privacy" xml:space="preserve"><value>Privacy</value></data>
+  <data name="section.summary" xml:space="preserve"><value>Summary</value></data>
+  <data name="section.suspects" xml:space="preserve"><value>Likely causes</value></data>
+  <data name="section.system" xml:space="preserve"><value>This PC</value></data>
+  <data name="state.false" xml:space="preserve"><value>no</value></data>
+  <data name="state.notApplicable" xml:space="preserve"><value>not applicable</value></data>
+  <data name="state.true" xml:space="preserve"><value>yes</value></data>
+  <data name="state.unknown" xml:space="preserve"><value>unknown</value></data>
+  <data name="suspects.evidence_state" xml:space="preserve"><value>{signal}: {state}</value></data>
+  <data name="suspects.fix_available" xml:space="preserve"><value>A fix is available in VTDiag.</value></data>
+  <data name="suspects.guide_available" xml:space="preserve"><value>A step-by-step guide is available.</value></data>
+  <data name="suspects.none" xml:space="preserve"><value>No specific cause stood out.</value></data>
+  <data name="suspects.unknown_cause" xml:space="preserve"><value>Something we don't know yet ({band})</value></data>
+  <data name="suspects.why" xml:space="preserve"><value>Why we think so</value></data>
+  <data name="system.bios" xml:space="preserve"><value>BIOS {version}</value></data>
+  <data name="system.driver" xml:space="preserve"><value>driver {version}</value></data>
+  <data name="system.limited" xml:space="preserve"><value>Scanned without admin permission, so some checks were skipped.</value></data>
+  <data name="system.ram" xml:space="preserve"><value>{gb} GB RAM</value></data>
+  <data name="system.readiness" xml:space="preserve"><value>Vanguard readiness</value></data>
+  <data name="system.specs" xml:space="preserve"><value>Specs</value></data>
+  <data name="system.vm" xml:space="preserve"><value>Running in a virtual machine (VALORANT does not support VMs).</value></data>
+  <data name="value.legacy" xml:space="preserve"><value>legacy BIOS</value></data>
+  <data name="value.mbr" xml:space="preserve"><value>MBR</value></data>
+  <data name="value.no" xml:space="preserve"><value>no</value></data>
+  <data name="value.notApplicable" xml:space="preserve"><value>n/a</value></data>
+  <data name="value.off" xml:space="preserve"><value>off</value></data>
+  <data name="value.on" xml:space="preserve"><value>on</value></data>
+  <data name="value.unknown" xml:space="preserve"><value>couldn't check</value></data>
+  <data name="value.yes" xml:space="preserve"><value>yes</value></data>
+  <data name="verdict.label" xml:space="preserve"><value>Verdict</value></data>
+  <data name="verdict.route" xml:space="preserve"><value>Route: {text}</value></data>
+  <data name="verdict.top" xml:space="preserve"><value>Most likely: {title} ({band}).</value></data>
+  <data name="verdict.unknown_leading" xml:space="preserve"><value>No single cause stands out yet, so treat the list below as leads, not answers.</value></data>
+</root>

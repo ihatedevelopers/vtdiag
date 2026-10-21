@@ -1,0 +1,56 @@
+{
+  "id": "high-process-priority-van136-185",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.high-process-priority-van136-185.title",
+  "summaryKey": "rule.high-process-priority-van136-185.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "disconnect",
+    "error_code"
+  ],
+  "prior": {
+    "threads": 2
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "perf",
+      "signal": "sec.ifeo_perfoptions_riot",
+      "true": 2.5,
+      "textKey": "rule.high-process-priority-van136-185.ev.perf"
+    },
+    {
+      "id": "lasso",
+      "signal": "conflict.process_lasso.installed",
+      "true": 1.0
+    }
+  ],
+  "fixes": [
+    "fix.sec.remove_riot_perfoptions"
+  ],
+  "guides": [
+    "guide.hybrid_cpu.priority"
+  ],
+  "questions": [],
+  "supersedes": [
+    "conflict-process_lasso"
+  ],
+  "related": [],
+  "sources": {
+    "catalog": "high-process-priority-van136-185",
+    "threadCount": 2,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1wlqajy",
+      "1ws3ch8"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/performance/error-van--81",
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant",
+      "https://support.riotgames.com/riot/performance/error-van-185"
+    ]
+  }
+}

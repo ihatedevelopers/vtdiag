@@ -1,0 +1,22 @@
+# Files allowed to contain `#pragma warning disable RS0030` (an audited exception to a banned API).
+# Owner: Lead. One repo-relative path per line, forward slashes. Each entry needs a reason and an owner.
+# tests/VTD.Policy.Tests fails if any other file suppresses RS0030 (pragma, SuppressMessage or NoWarn).
+#
+# Pre-approved slots (the files do not exist yet; the owner creates them with exactly this path):
+#
+# A1: the only process start in the read side: fixed System32 exe + fixed argument template, no shell.
+src/VTD.Platform/Processes/ProcessRunner.cs
+# A1: shared-read open (FileShare.ReadWrite | Delete) for logs the game keeps open; FileAccess.Read only.
+src/VTD.Platform/IO/SharedReadFile.cs
+# A1: WMI read-only METHOD calls with a fixed allowlist of method names (BcdStore.OpenStore, BcdObject.GetElement,
+# Win32_Tpm.IsReady...). ManagementObject.InvokeMethod is banned elsewhere in the read side.
+src/VTD.Platform/Wmi/ReadOnlyWmiMethods.cs
+# A5 (M3): starts the bundled PresentMon child with a fixed argument template.
+src/VTD.Monitor.Core/Frames/PresentMonProcess.cs
+# A6: ShellExecute "runas" of %ProgramFiles%\VTDiag\VTDiag.Engine.exe (or unelevated --limited).
+src/VTD.App/Services/EngineLauncher.cs
+# A6: opens an https URL from the KB allowlist in the default browser (never a helper-supplied link).
+src/VTD.App/Services/LinkOpener.cs
+# A6: the UI's only P/Invoke: GetNamedPipeServerProcessId + NtQuerySystemInformation(SystemProcessIdInformation) +
+# QueryDosDevice + WinVerifyTrust, to verify the engine it connects to (see banned/import-allowlist.txt).
+src/VTD.App/Services/PipeServerVerifier.cs

@@ -1,0 +1,183 @@
+[
+  {
+    "id": "conflict-bluetooth_handsfree",
+    "rev": 1,
+    "kind": "generated",
+    "category": "audio_mic",
+    "titleKey": "rule.conflict-bluetooth_handsfree.title",
+    "summaryKey": "rule.conflict-bluetooth_handsfree.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "voice_chat",
+      "no_audio"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "audio.bt_handsfree_present",
+        "true": 0.8
+      }
+    ],
+    "fixes": [
+      "fix.audio.bt_handsfree_off"
+    ],
+    "guides": [
+      "guide.audio.bt_handsfree"
+    ],
+    "sources": {
+      "threadCount": 17,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1pd19hv",
+        "1pdtdth",
+        "1pet24v",
+        "1pfhgs0",
+        "1pfp3ex"
+      ],
+      "urls": []
+    },
+    "related": [
+      "bluetooth-headset-hfp-voice-chat"
+    ]
+  },
+  {
+    "id": "conflict-sound_blaster_iommu",
+    "rev": 1,
+    "kind": "generated",
+    "category": "audio_mic",
+    "titleKey": "rule.conflict-sound_blaster_iommu.title",
+    "summaryKey": "rule.conflict-sound_blaster_iommu.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "no_audio",
+      "bios_requirement"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.sound_blaster_iommu.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.sound_blaster_iommu.installed",
+        "true": 0.8,
+        "group": "presence"
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.audio.output_device"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1vic3se",
+        "1pnk0hw",
+        "1ppkswh",
+        "1sqrj2p",
+        "1u1iz9p"
+      ],
+      "urls": [
+        "https://www.thespike.gg/valorant/error-codes/fixing-the-iommu-valorant-error-how-it-impacts-security-and-performance"
+      ]
+    }
+  },
+  {
+    "id": "conflict-audio_enhancers",
+    "rev": 1,
+    "kind": "generated",
+    "category": "audio_mic",
+    "titleKey": "rule.conflict-audio_enhancers.title",
+    "summaryKey": "rule.conflict-audio_enhancers.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "no_audio",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.audio_enhancers.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.audio_enhancers.installed",
+        "true": 0.8,
+        "group": "presence"
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.audio.output_device"
+    ],
+    "sources": {
+      "threadCount": 6,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1wir0rj",
+        "1wj4l9m",
+        "1wjwzd4",
+        "1wk6lyt",
+        "1wpmsy6"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-virtual_audio_mics",
+    "rev": 1,
+    "kind": "generated",
+    "category": "audio_mic",
+    "titleKey": "rule.conflict-virtual_audio_mics.title",
+    "summaryKey": "rule.conflict-virtual_audio_mics.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "no_audio",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.virtual_audio_mics.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.virtual_audio_mics.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.virtual_audio_mics.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.audio.output_device"
+    ],
+    "sources": {
+      "threadCount": 4,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1pd19hv",
+        "1vgsf59",
+        "1prjou0",
+        "1pzi2o6",
+        "1pcvndl"
+      ],
+      "urls": []
+    }
+  }
+]

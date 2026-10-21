@@ -1,0 +1,88 @@
+{
+  "id": "hvci-memory-integrity-required",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "tpm_secureboot_bios",
+  "titleKey": "rule.hvci-memory-integrity-required.title",
+  "summaryKey": "rule.hvci-memory-integrity-required.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "bios_requirement",
+    "error_code",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 27
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "off",
+      "signal": "sec.hvci.running",
+      "false": 1.5,
+      "veto": "true",
+      "textKey": "rule.hvci-memory-integrity-required.ev.off"
+    },
+    {
+      "id": "pending",
+      "signal": "sec.hvci.configured_not_running",
+      "true": 0.8
+    },
+    {
+      "id": "virt_off",
+      "signal": "sec.virtualization.enabled",
+      "false": 1.2,
+      "textKey": "rule.hvci-memory-integrity-required.ev.virt_off"
+    },
+    {
+      "id": "drivers",
+      "signal": "sec.hvci.incompatible_drivers",
+      "true": 1.0,
+      "textKey": "rule.hvci-memory-integrity-required.ev.drivers"
+    },
+    {
+      "id": "hyp_off",
+      "signal": "sec.bcd.hypervisor_off",
+      "true": 0.8
+    },
+    {
+      "id": "old_build",
+      "signal": "os.build_below_19045",
+      "true": 0.6
+    },
+    {
+      "id": "exploit",
+      "signal": "sec.exploit_override_riot",
+      "true": 0.4
+    }
+  ],
+  "fixes": [
+    "fix.sec.reset_exploit_overrides"
+  ],
+  "guides": [
+    "guide.hvci.enable",
+    "guide.virtualization.enable"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "hvci-memory-integrity-required",
+    "threadCount": 27,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1obdlx4",
+      "1ol3w7a",
+      "1omfcsy",
+      "1pjb8c7",
+      "1pmgrvv"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/penalties/error-van-restriction",
+      "https://riotgames.com/en/news/vanguard-security-update-motherboard",
+      "https://support.riotgames.com/riot/support-tools/enabling-iommu",
+      "https://support.riotgames.com/riot/performance/error-van-57"
+    ]
+  }
+}

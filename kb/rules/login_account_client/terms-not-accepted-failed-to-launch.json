@@ -1,0 +1,35 @@
+{
+  "id": "terms-not-accepted-failed-to-launch",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "login_account_client",
+  "titleKey": "rule.terms-not-accepted-failed-to-launch.title",
+  "summaryKey": "rule.terms-not-accepted-failed-to-launch.summary",
+  "bucket": "riotOrAccount",
+  "symptoms": [
+    "wont_launch",
+    "login_issue"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [],
+  "fixes": [],
+  "guides": [
+    "guide.riot.client_settings"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "terms-not-accepted-failed-to-launch",
+    "threadCount": 1,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1wtdbne"
+    ],
+    "urls": []
+  }
+}

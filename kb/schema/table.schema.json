@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:table:1",
+  "title": "VTDiag KB lookup table",
+  "description": "kb/tables/*.json: data tables such as BIOS key/menu paths per vendor.",
+  "$defs": {
+    "item": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Table id, for example bios_secureboot_paths."
+        },
+        "keyColumn": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Column used to select a row (for example vendor), matched ordinal case-insensitive."
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "description": "Rows."
+        },
+        "validUntil": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "description": "Last date the table is valid."
+        }
+      },
+      "required": [
+        "id",
+        "rows"
+      ],
+      "additionalProperties": false,
+      "description": "A lookup table (BIOS vendor key/menu paths, known-bad driver versions). Version-specific facts live in data."
+    }
+  },
+  "anyOf": [
+    {
+      "$ref": "#/$defs/item"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  ]
+}

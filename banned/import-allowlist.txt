@@ -1,0 +1,10 @@
+# Native imports that are otherwise forbidden (tests/VTD.Policy.Tests ForbiddenImports), allowed ONLY in one audited
+# file each. Owner: Lead. Format: <repo-relative file>|<function>|<reason>
+#
+# The pipe peers verify each other's image path and signer from the pipe (DESIGN.md section 2) WITHOUT OpenProcess:
+# GetNamedPipeClientProcessId / GetNamedPipeServerProcessId -> PID, then NtQuerySystemInformation with
+# SystemProcessIdInformation (class 0x58, returns the image name for a PID, opens no handle) -> QueryDosDevice ->
+# WinVerifyTrust on the file. Any other information class (in particular the handle classes) stays forbidden, and the
+# PID must not belong to a RiotProcessNames process.
+src/VTD.Engine/Ipc/PipeClientVerifier.cs|NtQuerySystemInformation|engine verifies the pipe client (SystemProcessIdInformation only)
+src/VTD.App/Services/PipeServerVerifier.cs|NtQuerySystemInformation|UI verifies the engine it connects to (SystemProcessIdInformation only)

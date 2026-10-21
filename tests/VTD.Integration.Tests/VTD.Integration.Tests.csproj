@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: lead. End-to-end: snapshot -> bundled KB -> analyzer -> report builder -> redaction sweep. xUnit v3 and
+       analyzers come from Directory.Build.targets (Test layer). -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VTD.Integration.Tests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VTD.Analysis\VTD.Analysis.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Knowledge\VTD.Knowledge.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Reporting\VTD.Reporting.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Testing.Fakes\VTD.Testing.Fakes.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Contracts\VTD.Contracts.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,50 @@
+{
+  "id": "windows-version-too-old",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "install_update_corrupt",
+  "titleKey": "rule.windows-version-too-old.title",
+  "summaryKey": "rule.windows-version-too-old.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "error_code",
+    "install_update",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "unsupported",
+      "signal": "os.build_supported",
+      "false": 3.5,
+      "textKey": "rule.windows-version-too-old.ev.unsupported"
+    },
+    {
+      "id": "old",
+      "signal": "os.build_below_19045",
+      "true": 2.0,
+      "veto": "false",
+      "textKey": "rule.windows-version-too-old.ev.old"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.windows.update"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "windows-version-too-old",
+    "threadCount": 1,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1wvbufh"
+    ],
+    "urls": []
+  }
+}

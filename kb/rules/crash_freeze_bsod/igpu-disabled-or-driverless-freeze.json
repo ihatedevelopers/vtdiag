@@ -1,0 +1,67 @@
+{
+  "id": "igpu-disabled-or-driverless-freeze",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "crash_freeze_bsod",
+  "titleKey": "rule.igpu-disabled-or-driverless-freeze.title",
+  "summaryKey": "rule.igpu-disabled-or-driverless-freeze.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "freeze_hard",
+    "crash_desktop",
+    "stutter"
+  ],
+  "prior": {
+    "threads": 6
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "basic",
+      "signal": "gpu.basic_display",
+      "true": 2.0,
+      "group": "igpu",
+      "textKey": "rule.igpu-disabled-or-driverless-freeze.ev.basic"
+    },
+    {
+      "id": "disabled",
+      "signal": "gpu.igpu_disabled",
+      "true": 1.2,
+      "group": "igpu",
+      "textKey": "rule.igpu-disabled-or-driverless-freeze.ev.disabled"
+    },
+    {
+      "id": "problem",
+      "signal": "dev.problem_devices",
+      "true": 0.5
+    },
+    {
+      "id": "overlay",
+      "signal": "proc.overlay_running",
+      "true": 0.2
+    }
+  ],
+  "fixes": [
+    "fix.power.usb_selective_suspend_off"
+  ],
+  "guides": [
+    "guide.gpu.igpu"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "igpu-disabled-or-driverless-freeze",
+    "threadCount": 6,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1oobhie",
+      "1or3q42",
+      "1p8gqu9",
+      "1swminm",
+      "1ufht0t"
+    ],
+    "urls": []
+  }
+}

@@ -1,0 +1,727 @@
+[
+  {
+    "name": "realtek-unused-on-wifi",
+    "expectedTop": "realtek-2-5gbe-nic-stutter",
+    "accept": [],
+    "symptoms": [
+      "stutter"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "realtek-active-power-saving",
+    "expectedTop": "realtek-2-5gbe-nic-stutter",
+    "accept": [],
+    "symptoms": [
+      "stutter"
+    ],
+    "typedCodes": [],
+    "answers": {
+      "ask.stutter_periodic": "yes"
+    },
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "overlay-rtss-overwolf",
+    "expectedTop": "third-party-hook-overlay-conflict",
+    "accept": [
+      "conflict-rtss",
+      "conflict-overwolf_trackers"
+    ],
+    "symptoms": [
+      "stutter"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "premier-opinion-hook",
+    "expectedTop": "third-party-hook-overlay-conflict",
+    "accept": [
+      "conflict-premier_opinion"
+    ],
+    "symptoms": [
+      "launch_black_screen"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "power-saver-laptop",
+    "expectedTop": "power-plan-throttling-low-fps",
+    "accept": [],
+    "symptoms": [
+      "fps_low"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "kb5101650-microstutter",
+    "expectedTop": "windows-update-kb5101650-microstutter",
+    "accept": [],
+    "symptoms": [
+      "stutter"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "hybrid-cpu-high-priority",
+    "expectedTop": "high-process-priority-van136-185",
+    "accept": [
+      "intel-hybrid-cpu-ecore-stutter"
+    ],
+    "symptoms": [
+      "disconnect"
+    ],
+    "typedCodes": [
+      "VAN 136"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "nahimic-running",
+    "expectedTop": "nahimic-audio-service-launch-hang",
+    "accept": [],
+    "symptoms": [
+      "launch_black_screen"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "bonjour-val43",
+    "expectedTop": "mdns-bonjour-ni-val43-loading",
+    "accept": [],
+    "symptoms": [
+      "launch_black_screen"
+    ],
+    "typedCodes": [
+      "VAL 43"
+    ],
+    "answers": {
+      "ask.other_account_works": "no"
+    },
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "stale-dat-fast-startup",
+    "expectedTop": "fast-startup-stale-dat-bsod",
+    "accept": [
+      "vanguard-corrupt-install"
+    ],
+    "symptoms": [
+      "freeze_hard"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "vanguard-corrupt",
+    "expectedTop": "vanguard-corrupt-install",
+    "accept": [],
+    "symptoms": [
+      "wont_launch"
+    ],
+    "typedCodes": [
+      "VAN -1"
+    ],
+    "answers": {
+      "ask.league_also_broken": "yes"
+    },
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "vgc-disabled",
+    "expectedTop": "vgc-service-not-running",
+    "accept": [],
+    "symptoms": [
+      "error_code"
+    ],
+    "typedCodes": [
+      "VAN -79"
+    ],
+    "answers": {
+      "ask.vanguard_precheck_on": "no"
+    },
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "vgk-not-loaded",
+    "expectedTop": "vgk-not-loaded-needs-reboot",
+    "accept": [],
+    "symptoms": [
+      "error_code"
+    ],
+    "typedCodes": [
+      "VAN 57"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "exploit-protection-van9002",
+    "expectedTop": "conflict-exploit_protection_override",
+    "accept": [
+      "launch-fails-something-unusual"
+    ],
+    "symptoms": [
+      "wont_launch"
+    ],
+    "typedCodes": [
+      "VAN 9002"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "env-vars-missing",
+    "expectedTop": "missing-environment-variables",
+    "accept": [],
+    "symptoms": [
+      "wont_launch"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "vcredist-missing",
+    "expectedTop": "side-by-side-config-error",
+    "accept": [],
+    "symptoms": [
+      "wont_launch"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "kernel-power-whea",
+    "expectedTop": "whole-pc-freeze-kernel-power-41",
+    "accept": [
+      "usb-selective-suspend-freeze",
+      "outdated-bios-reboot-vgk-bsod"
+    ],
+    "symptoms": [
+      "freeze_hard"
+    ],
+    "typedCodes": [],
+    "answers": {
+      "ask.whole_pc_freezes": "yes"
+    },
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "old-bios-vgk-bsod",
+    "expectedTop": "outdated-bios-reboot-vgk-bsod",
+    "accept": [
+      "whole-pc-freeze-kernel-power-41"
+    ],
+    "symptoms": [
+      "freeze_hard"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "igpu-driverless",
+    "expectedTop": "igpu-disabled-or-driverless-freeze",
+    "accept": [],
+    "symptoms": [
+      "freeze_hard"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "usb-optical-drive",
+    "expectedTop": "usb-optical-drive-restart",
+    "accept": [
+      "whole-pc-freeze-kernel-power-41"
+    ],
+    "symptoms": [
+      "freeze_hard"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "amd-driver-tdr",
+    "expectedTop": "amd-adrenalin-driver-regression",
+    "accept": [
+      "gpu-driver-corrupt-needs-clean-install"
+    ],
+    "symptoms": [
+      "crash_desktop"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "secureboot-off-mbr",
+    "expectedTop": "secure-boot-not-detected-van9003",
+    "accept": [
+      "secure-boot-enable-boot-failure"
+    ],
+    "symptoms": [
+      "error_code"
+    ],
+    "typedCodes": [
+      "VAN 9003"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "secureboot-setup-mode",
+    "expectedTop": "secure-boot-not-detected-van9003",
+    "accept": [
+      "secure-boot-enable-boot-failure"
+    ],
+    "symptoms": [
+      "bios_requirement"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "tpm-off",
+    "expectedTop": "tpm2-missing-or-unmet",
+    "accept": [],
+    "symptoms": [
+      "error_code"
+    ],
+    "typedCodes": [
+      "VAN 9001"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "hvci-off-virt-off",
+    "expectedTop": "hvci-memory-integrity-required",
+    "accept": [],
+    "symptoms": [
+      "bios_requirement"
+    ],
+    "typedCodes": [
+      "VAN: RESTRICTION: 5"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "iommu-off",
+    "expectedTop": "iommu-restriction",
+    "accept": [],
+    "symptoms": [
+      "bios_requirement"
+    ],
+    "typedCodes": [
+      "VAN RESTRICTION"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "windows-too-old",
+    "expectedTop": "windows-version-too-old",
+    "accept": [],
+    "symptoms": [
+      "error_code"
+    ],
+    "typedCodes": [
+      "VAN 9004"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "insider-vgk-bsod",
+    "expectedTop": "insider-build-vgk-bsod",
+    "accept": [
+      "outdated-bios-reboot-vgk-bsod"
+    ],
+    "symptoms": [
+      "freeze_hard"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "intel-vmd",
+    "expectedTop": "intel-vmd-status-vmd-9001",
+    "accept": [],
+    "symptoms": [
+      "error_code"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "dual-boot-van1",
+    "expectedTop": "dual-boot-secure-boot-van1",
+    "accept": [],
+    "symptoms": [
+      "error_code"
+    ],
+    "typedCodes": [
+      "VAN 1"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "isp-routing",
+    "expectedTop": "isp-routing-high-ping",
+    "accept": [],
+    "symptoms": [
+      "high_ping"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "weak-wifi-loss",
+    "expectedTop": "local-network-packet-loss-jitter",
+    "accept": [],
+    "symptoms": [
+      "high_ping"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "dual-nic-desync",
+    "expectedTop": "dual-network-adapter-desync",
+    "accept": [],
+    "symptoms": [
+      "disconnect"
+    ],
+    "typedCodes": [
+      "VAN -72"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "vpn-wireguard",
+    "expectedTop": "vpn-anticheat-network-filter-conflict",
+    "accept": [
+      "conflict-vpn_wireguard",
+      "conflict-vpn_generic"
+    ],
+    "symptoms": [
+      "disconnect"
+    ],
+    "typedCodes": [
+      "VAN 289"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "firewall-blocks-riot",
+    "expectedTop": "van185-vanguard-disconnects",
+    "accept": [
+      "conflict-defender_firewall_block",
+      "network-exceptions-download-stuck"
+    ],
+    "symptoms": [
+      "disconnect"
+    ],
+    "typedCodes": [
+      "VAN 185"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "clock-wrong",
+    "expectedTop": "wrong-system-clock-offline",
+    "accept": [],
+    "symptoms": [
+      "login_issue"
+    ],
+    "typedCodes": [
+      "VAN -104"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "bt-handsfree",
+    "expectedTop": "bluetooth-headset-hfp-voice-chat",
+    "accept": [],
+    "symptoms": [
+      "voice_chat"
+    ],
+    "typedCodes": [],
+    "answers": {
+      "ask.uses_bluetooth_headset": "yes"
+    },
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "mouse-acceleration",
+    "expectedTop": "mouse-acceleration-floaty-aim",
+    "accept": [],
+    "symptoms": [
+      "mouse_input"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "third-party-av",
+    "expectedTop": "third-party-antivirus-conflict",
+    "accept": [
+      "conflict-av_norton",
+      "vanguard-install-loop"
+    ],
+    "symptoms": [
+      "install_update"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "hyperv-van138",
+    "expectedTop": "conflict-hyperv_hypervisor",
+    "accept": [],
+    "symptoms": [
+      "error_code"
+    ],
+    "typedCodes": [
+      "VAN 138"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "monitor-on-igpu",
+    "expectedTop": "wrong-gpu-or-display-output",
+    "accept": [
+      "low-gpu-usage-after-ue5-patch"
+    ],
+    "symptoms": [
+      "fps_low"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "stale-van152-secureboot-off",
+    "expectedTop": "secure-boot-not-detected-van9003",
+    "accept": [
+      "secure-boot-enable-boot-failure"
+    ],
+    "symptoms": [
+      "error_code"
+    ],
+    "typedCodes": [
+      "VAN 9003"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "precheck-normal-state",
+    "expectedTop": null,
+    "accept": [],
+    "symptoms": [
+      "wont_launch"
+    ],
+    "typedCodes": [],
+    "answers": {
+      "ask.vanguard_precheck_on": "no"
+    },
+    "expectedRoute": null,
+    "expectUnknownLeading": true
+  },
+  {
+    "name": "mixed-nahimic-rtss-vpn-faceit",
+    "expectedTop": "nahimic-audio-service-launch-hang",
+    "accept": [
+      "third-party-hook-overlay-conflict",
+      "conflict-rtss",
+      "conflict-ac_faceit",
+      "conflict-vpn_nordvpn",
+      "vpn-anticheat-network-filter-conflict"
+    ],
+    "symptoms": [
+      "launch_black_screen"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "limited-admin-unknowns",
+    "expectedTop": null,
+    "accept": [],
+    "symptoms": [
+      "error_code"
+    ],
+    "typedCodes": [
+      "VAN 57"
+    ],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": true
+  },
+  {
+    "name": "idle-realtek-no-errors-fps",
+    "expectedTop": "realtek-2-5gbe-nic-stutter",
+    "accept": [],
+    "symptoms": [
+      "fps_low"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "vm-route",
+    "expectedTop": null,
+    "accept": [],
+    "symptoms": [
+      "wont_launch"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": "unsupportedPlatform",
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "hwid-ban",
+    "expectedTop": null,
+    "accept": [],
+    "symptoms": [
+      "error_code"
+    ],
+    "typedCodes": [
+      "VAN 152"
+    ],
+    "answers": {},
+    "expectedRoute": "hwidBanAppeal",
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "account-side-val57",
+    "expectedTop": null,
+    "accept": [],
+    "symptoms": [
+      "login_issue"
+    ],
+    "typedCodes": [
+      "VAL 57"
+    ],
+    "answers": {
+      "ask.other_account_works": "yes"
+    },
+    "expectedRoute": "tryAnotherAccount",
+    "expectUnknownLeading": false
+  },
+  {
+    "name": "healthy-no-symptoms",
+    "expectedTop": null,
+    "accept": [],
+    "symptoms": [],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": true
+  },
+  {
+    "name": "healthy-but-stutters",
+    "expectedTop": null,
+    "accept": [],
+    "symptoms": [
+      "stutter"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": true
+  },
+  {
+    "name": "healthy-crash-unknown-module",
+    "expectedTop": null,
+    "accept": [],
+    "symptoms": [
+      "crash_desktop"
+    ],
+    "typedCodes": [],
+    "answers": {},
+    "expectedRoute": null,
+    "expectUnknownLeading": true
+  }
+]

@@ -1,0 +1,2207 @@
+[
+  {
+    "id": "conflict.ac_battleye.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_battleye.any.title"
+  },
+  {
+    "id": "conflict.ac_battleye.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_battleye.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.ac_battleye.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_battleye.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.ac_battleye.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_battleye.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.ac_easyanticheat.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_easyanticheat.any.title"
+  },
+  {
+    "id": "conflict.ac_easyanticheat.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_easyanticheat.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.ac_easyanticheat.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_easyanticheat.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.ac_easyanticheat.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_easyanticheat.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.ac_esea.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_esea.any.title"
+  },
+  {
+    "id": "conflict.ac_esea.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_esea.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.ac_esea.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_esea.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.ac_esea.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_esea.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.ac_esea.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_esea.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.ac_faceit.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_faceit.any.title"
+  },
+  {
+    "id": "conflict.ac_faceit.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_faceit.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.ac_faceit.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_faceit.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.ac_faceit.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_faceit.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.ac_faceit.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_faceit.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.ac_mhyprot.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_mhyprot.any.title"
+  },
+  {
+    "id": "conflict.ac_mhyprot.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_mhyprot.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.ac_xigncode.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_xigncode.any.title"
+  },
+  {
+    "id": "conflict.ac_xigncode.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ac_xigncode.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.amd_adrenalin_features.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.amd_adrenalin_features.any.title"
+  },
+  {
+    "id": "conflict.amd_adrenalin_features.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.amd_adrenalin_features.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.amd_adrenalin_features.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.amd_adrenalin_features.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.android_emulators.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.android_emulators.any.title"
+  },
+  {
+    "id": "conflict.android_emulators.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.android_emulators.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.android_emulators.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.android_emulators.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.asus_armoury_crate.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.asus_armoury_crate.any.title"
+  },
+  {
+    "id": "conflict.asus_armoury_crate.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.asus_armoury_crate.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.asus_armoury_crate.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.asus_armoury_crate.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.asus_armoury_crate.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.asus_armoury_crate.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.asus_armoury_crate.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.asus_armoury_crate.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.asus_gpu_tweak.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.asus_gpu_tweak.any.title"
+  },
+  {
+    "id": "conflict.asus_gpu_tweak.crash_module",
+    "source": "conflict",
+    "titleKey": "signal.conflict.asus_gpu_tweak.crash_module.title"
+  },
+  {
+    "id": "conflict.asus_gpu_tweak.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.asus_gpu_tweak.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.asus_screenxpert.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.asus_screenxpert.any.title"
+  },
+  {
+    "id": "conflict.asus_screenxpert.crash_module",
+    "source": "conflict",
+    "titleKey": "signal.conflict.asus_screenxpert.crash_module.title"
+  },
+  {
+    "id": "conflict.asus_screenxpert.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.asus_screenxpert.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.audio_enhancers.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.audio_enhancers.any.title"
+  },
+  {
+    "id": "conflict.audio_enhancers.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.audio_enhancers.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.av_360.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_360.any.title"
+  },
+  {
+    "id": "conflict.av_360.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_360.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.av_360.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_360.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.av_avast.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_avast.any.title"
+  },
+  {
+    "id": "conflict.av_avast.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_avast.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.av_avast.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_avast.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.av_bitdefender.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_bitdefender.any.title"
+  },
+  {
+    "id": "conflict.av_bitdefender.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_bitdefender.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.av_bitdefender.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_bitdefender.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.av_kaspersky.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_kaspersky.any.title"
+  },
+  {
+    "id": "conflict.av_kaspersky.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_kaspersky.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.av_kaspersky.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_kaspersky.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.av_malwarebytes.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_malwarebytes.any.title"
+  },
+  {
+    "id": "conflict.av_malwarebytes.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_malwarebytes.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.av_malwarebytes.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_malwarebytes.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.av_malwarebytes.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_malwarebytes.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.av_malwarebytes.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_malwarebytes.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.av_mcafee.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_mcafee.any.title"
+  },
+  {
+    "id": "conflict.av_mcafee.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_mcafee.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.av_mcafee.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_mcafee.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.av_norton.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_norton.any.title"
+  },
+  {
+    "id": "conflict.av_norton.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_norton.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.av_norton.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_norton.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.av_other_suites.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_other_suites.any.title"
+  },
+  {
+    "id": "conflict.av_other_suites.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_other_suites.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.av_other_suites.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_other_suites.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.av_other_suites.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_other_suites.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.av_other_suites.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_other_suites.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.av_trend_micro.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_trend_micro.any.title"
+  },
+  {
+    "id": "conflict.av_trend_micro.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_trend_micro.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.av_trend_micro.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.av_trend_micro.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.bcd_tweaks.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.bcd_tweaks.any.title"
+  },
+  {
+    "id": "conflict.bluetooth_handsfree.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.bluetooth_handsfree.any.title"
+  },
+  {
+    "id": "conflict.bluetooth_handsfree.audio_endpoint",
+    "source": "conflict",
+    "titleKey": "signal.conflict.bluetooth_handsfree.audio_endpoint.title",
+    "entity": "audioEndpoint"
+  },
+  {
+    "id": "conflict.bonjour_mdns.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.bonjour_mdns.any.title"
+  },
+  {
+    "id": "conflict.bonjour_mdns.crash_module",
+    "source": "conflict",
+    "titleKey": "signal.conflict.bonjour_mdns.crash_module.title"
+  },
+  {
+    "id": "conflict.bonjour_mdns.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.bonjour_mdns.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.bonjour_mdns.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.bonjour_mdns.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.bonjour_mdns.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.bonjour_mdns.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.bonjour_mdns.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.bonjour_mdns.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.cheat_engine.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.cheat_engine.any.title"
+  },
+  {
+    "id": "conflict.cheat_engine.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.cheat_engine.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.cheat_engine.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.cheat_engine.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.cheat_engine.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.cheat_engine.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.cleaners_boosters.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.cleaners_boosters.any.title"
+  },
+  {
+    "id": "conflict.cleaners_boosters.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.cleaners_boosters.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.corsair_icue.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.corsair_icue.any.title"
+  },
+  {
+    "id": "conflict.corsair_icue.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.corsair_icue.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.corsair_icue.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.corsair_icue.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.corsair_icue.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.corsair_icue.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.dcontrol_defender_disabled.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.dcontrol_defender_disabled.any.title"
+  },
+  {
+    "id": "conflict.dcontrol_defender_disabled.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.dcontrol_defender_disabled.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.defender_cfa.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.defender_cfa.any.title"
+  },
+  {
+    "id": "conflict.defender_firewall_block.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.defender_firewall_block.any.title"
+  },
+  {
+    "id": "conflict.defender_firewall_block.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.defender_firewall_block.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.defender_firewall_block.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.defender_firewall_block.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.defender_smart_app_control.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.defender_smart_app_control.any.title"
+  },
+  {
+    "id": "conflict.discord_overlay.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.discord_overlay.any.title"
+  },
+  {
+    "id": "conflict.discord_overlay.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.discord_overlay.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.docker_desktop.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.docker_desktop.any.title"
+  },
+  {
+    "id": "conflict.docker_desktop.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.docker_desktop.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.docker_desktop.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.docker_desktop.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.docker_desktop.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.docker_desktop.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.docker_desktop.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.docker_desktop.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.dpi_bypass_windivert.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.dpi_bypass_windivert.any.title"
+  },
+  {
+    "id": "conflict.dpi_bypass_windivert.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.dpi_bypass_windivert.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.dpi_bypass_windivert.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.dpi_bypass_windivert.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.dpi_bypass_windivert.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.dpi_bypass_windivert.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.dpi_bypass_windivert.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.dpi_bypass_windivert.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.elgato_capture.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.elgato_capture.any.title"
+  },
+  {
+    "id": "conflict.elgato_capture.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.elgato_capture.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.ene_rgb_driver.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ene_rgb_driver.any.title"
+  },
+  {
+    "id": "conflict.ene_rgb_driver.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ene_rgb_driver.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.entech_se64a.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.entech_se64a.any.title"
+  },
+  {
+    "id": "conflict.entech_se64a.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.entech_se64a.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.exitlag.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.exitlag.any.title"
+  },
+  {
+    "id": "conflict.exitlag.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.exitlag.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.exitlag.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.exitlag.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.exploit_protection_override.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.exploit_protection_override.any.title"
+  },
+  {
+    "id": "conflict.fso_compat_flags.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.fso_compat_flags.any.title"
+  },
+  {
+    "id": "conflict.game_accelerators.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.game_accelerators.any.title"
+  },
+  {
+    "id": "conflict.game_accelerators.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.game_accelerators.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.game_accelerators.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.game_accelerators.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.gearup_booster.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.gearup_booster.any.title"
+  },
+  {
+    "id": "conflict.gearup_booster.crash_module",
+    "source": "conflict",
+    "titleKey": "signal.conflict.gearup_booster.crash_module.title"
+  },
+  {
+    "id": "conflict.gearup_booster.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.gearup_booster.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.gigabyte_gcc_rgbfusion.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.gigabyte_gcc_rgbfusion.any.title"
+  },
+  {
+    "id": "conflict.gigabyte_gcc_rgbfusion.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.gigabyte_gcc_rgbfusion.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.gigabyte_gcc_rgbfusion.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.gigabyte_gcc_rgbfusion.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.hags.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.hags.any.title"
+  },
+  {
+    "id": "conflict.huawei_pc_manager.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.huawei_pc_manager.any.title"
+  },
+  {
+    "id": "conflict.huawei_pc_manager.crash_module",
+    "source": "conflict",
+    "titleKey": "signal.conflict.huawei_pc_manager.crash_module.title"
+  },
+  {
+    "id": "conflict.huawei_pc_manager.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.huawei_pc_manager.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.hvci_off_when_required.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.hvci_off_when_required.any.title"
+  },
+  {
+    "id": "conflict.hyperv_hypervisor.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.hyperv_hypervisor.any.title"
+  },
+  {
+    "id": "conflict.hyperv_hypervisor.feature_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.hyperv_hypervisor.feature_enabled.title",
+    "entity": "windowsFeature"
+  },
+  {
+    "id": "conflict.hyperv_hypervisor.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.hyperv_hypervisor.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.hyperv_hypervisor.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.hyperv_hypervisor.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.inpoutx64.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.inpoutx64.any.title"
+  },
+  {
+    "id": "conflict.inpoutx64.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.inpoutx64.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.intel_nal_diag.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.intel_nal_diag.any.title"
+  },
+  {
+    "id": "conflict.intel_nal_diag.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.intel_nal_diag.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.intel_vmd_rst.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.intel_vmd_rst.any.title"
+  },
+  {
+    "id": "conflict.intel_vmd_rst.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.intel_vmd_rst.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.ipv6_binding.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ipv6_binding.any.title"
+  },
+  {
+    "id": "conflict.killer_suite.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.killer_suite.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.killer_suite.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.killer_suite.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.killer_suite.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.killer_suite.any.title"
+  },
+  {
+    "id": "conflict.killer_suite.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.killer_suite.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.lenovo_vantage.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.lenovo_vantage.any.title"
+  },
+  {
+    "id": "conflict.lenovo_vantage.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.lenovo_vantage.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.lenovo_vantage.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.lenovo_vantage.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.lenovo_vantage.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.lenovo_vantage.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.logitech_ghub.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.logitech_ghub.any.title"
+  },
+  {
+    "id": "conflict.logitech_ghub.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.logitech_ghub.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.logitech_ghub.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.logitech_ghub.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.logitech_ghub.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.logitech_ghub.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.logitech_ghub.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.logitech_ghub.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.macro_remap_tools.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.macro_remap_tools.any.title"
+  },
+  {
+    "id": "conflict.macro_remap_tools.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.macro_remap_tools.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.macro_remap_tools.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.macro_remap_tools.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.macro_remap_tools.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.macro_remap_tools.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.macro_remap_tools.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.macro_remap_tools.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.macro_remap_tools.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.macro_remap_tools.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.medal_clipping.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.medal_clipping.any.title"
+  },
+  {
+    "id": "conflict.medal_clipping.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.medal_clipping.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.medal_clipping.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.medal_clipping.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.mediatek_rz616.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.mediatek_rz616.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.mediatek_rz616.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.mediatek_rz616.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.mediatek_rz616.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.mediatek_rz616.any.title"
+  },
+  {
+    "id": "conflict.mediatek_rz616.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.mediatek_rz616.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.misc_flagged_drivers.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.misc_flagged_drivers.any.title"
+  },
+  {
+    "id": "conflict.misc_flagged_drivers.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.misc_flagged_drivers.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.modified_windows.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.modified_windows.any.title"
+  },
+  {
+    "id": "conflict.mpo.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.mpo.any.title"
+  },
+  {
+    "id": "conflict.msi_afterburner.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.msi_afterburner.any.title"
+  },
+  {
+    "id": "conflict.msi_afterburner.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.msi_afterburner.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.msi_afterburner.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.msi_afterburner.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.msi_afterburner.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.msi_afterburner.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.msi_center.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.msi_center.any.title"
+  },
+  {
+    "id": "conflict.msi_center.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.msi_center.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.msi_center.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.msi_center.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.nahimic.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nahimic.any.title"
+  },
+  {
+    "id": "conflict.nahimic.crash_module",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nahimic.crash_module.title"
+  },
+  {
+    "id": "conflict.nahimic.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nahimic.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.nahimic.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nahimic.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.nahimic.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nahimic.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.nahimic.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nahimic.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.ni_mdns.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ni_mdns.any.title"
+  },
+  {
+    "id": "conflict.ni_mdns.crash_module",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ni_mdns.crash_module.title"
+  },
+  {
+    "id": "conflict.ni_mdns.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ni_mdns.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.nielsen_meter.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nielsen_meter.any.title"
+  },
+  {
+    "id": "conflict.nielsen_meter.crash_module",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nielsen_meter.crash_module.title"
+  },
+  {
+    "id": "conflict.nielsen_meter.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nielsen_meter.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.nvidia_overlay.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nvidia_overlay.any.title"
+  },
+  {
+    "id": "conflict.nvidia_overlay.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nvidia_overlay.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.nvidia_overlay.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nvidia_overlay.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.nvidia_overlay.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nvidia_overlay.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.nvidia_overlay.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nvidia_overlay.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.nzxt_cam.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nzxt_cam.any.title"
+  },
+  {
+    "id": "conflict.nzxt_cam.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nzxt_cam.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.nzxt_cam.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.nzxt_cam.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.obs_streamlabs.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.obs_streamlabs.any.title"
+  },
+  {
+    "id": "conflict.obs_streamlabs.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.obs_streamlabs.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.omen_gaming_hub.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.omen_gaming_hub.any.title"
+  },
+  {
+    "id": "conflict.omen_gaming_hub.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.omen_gaming_hub.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.overwolf_trackers.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.overwolf_trackers.any.title"
+  },
+  {
+    "id": "conflict.overwolf_trackers.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.overwolf_trackers.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.overwolf_trackers.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.overwolf_trackers.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.premier_opinion.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.premier_opinion.any.title"
+  },
+  {
+    "id": "conflict.premier_opinion.crash_module",
+    "source": "conflict",
+    "titleKey": "signal.conflict.premier_opinion.crash_module.title"
+  },
+  {
+    "id": "conflict.premier_opinion.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.premier_opinion.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.presonus_firestudio.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.presonus_firestudio.any.title"
+  },
+  {
+    "id": "conflict.presonus_firestudio.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.presonus_firestudio.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.process_lasso.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.process_lasso.any.title"
+  },
+  {
+    "id": "conflict.process_lasso.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.process_lasso.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.process_lasso.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.process_lasso.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.process_lasso.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.process_lasso.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.process_lasso.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.process_lasso.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.razer_synapse.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.razer_synapse.any.title"
+  },
+  {
+    "id": "conflict.razer_synapse.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.razer_synapse.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.razer_synapse.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.razer_synapse.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.razer_synapse.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.razer_synapse.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.realtek_2_5gbe.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.realtek_2_5gbe.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.realtek_2_5gbe.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.realtek_2_5gbe.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.realtek_2_5gbe.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.realtek_2_5gbe.any.title"
+  },
+  {
+    "id": "conflict.realtek_2_5gbe.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.realtek_2_5gbe.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.realtek_gbe_family.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.realtek_gbe_family.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.realtek_gbe_family.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.realtek_gbe_family.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.realtek_gbe_family.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.realtek_gbe_family.any.title"
+  },
+  {
+    "id": "conflict.realtek_gbe_family.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.realtek_gbe_family.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.remote_desktop_tools.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.remote_desktop_tools.any.title"
+  },
+  {
+    "id": "conflict.remote_desktop_tools.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.remote_desktop_tools.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.remote_desktop_tools.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.remote_desktop_tools.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.remote_desktop_tools.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.remote_desktop_tools.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.remote_desktop_tools.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.remote_desktop_tools.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.required_services_disabled.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.required_services_disabled.any.title"
+  },
+  {
+    "id": "conflict.required_services_disabled.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.required_services_disabled.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.required_services_disabled.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.required_services_disabled.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.rtss.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.rtss.any.title"
+  },
+  {
+    "id": "conflict.rtss.crash_module",
+    "source": "conflict",
+    "titleKey": "signal.conflict.rtss.crash_module.title"
+  },
+  {
+    "id": "conflict.rtss.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.rtss.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.rtss.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.rtss.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.sandbox_rollback.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.sandbox_rollback.any.title"
+  },
+  {
+    "id": "conflict.sandbox_rollback.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.sandbox_rollback.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.sandbox_rollback.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.sandbox_rollback.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.sandbox_rollback.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.sandbox_rollback.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.sandbox_rollback.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.sandbox_rollback.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.smartbyte_cfosspeed.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.smartbyte_cfosspeed.any.title"
+  },
+  {
+    "id": "conflict.smartbyte_cfosspeed.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.smartbyte_cfosspeed.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.smartbyte_cfosspeed.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.smartbyte_cfosspeed.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.smartbyte_cfosspeed.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.smartbyte_cfosspeed.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.sound_blaster_iommu.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.sound_blaster_iommu.any.title"
+  },
+  {
+    "id": "conflict.sound_blaster_iommu.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.sound_blaster_iommu.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.stardock.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.stardock.any.title"
+  },
+  {
+    "id": "conflict.stardock.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.stardock.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.steam_overlay.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.steam_overlay.any.title"
+  },
+  {
+    "id": "conflict.steam_overlay.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.steam_overlay.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.steelseries_gg.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.steelseries_gg.any.title"
+  },
+  {
+    "id": "conflict.steelseries_gg.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.steelseries_gg.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.steelseries_gg.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.steelseries_gg.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.storage_oem_drivers.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.storage_oem_drivers.any.title"
+  },
+  {
+    "id": "conflict.storage_oem_drivers.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.storage_oem_drivers.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.system_proxy.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.system_proxy.any.title"
+  },
+  {
+    "id": "conflict.system_proxy.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.system_proxy.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.tcp_tweakers.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.tcp_tweakers.any.title"
+  },
+  {
+    "id": "conflict.timer_tools.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.timer_tools.any.title"
+  },
+  {
+    "id": "conflict.timer_tools.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.timer_tools.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.ultraviewer.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ultraviewer.any.title"
+  },
+  {
+    "id": "conflict.ultraviewer.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.ultraviewer.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.usb_selective_suspend.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.usb_selective_suspend.any.title"
+  },
+  {
+    "id": "conflict.virtual_audio_mics.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.virtual_audio_mics.any.title"
+  },
+  {
+    "id": "conflict.virtual_audio_mics.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.virtual_audio_mics.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.virtual_audio_mics.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.virtual_audio_mics.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.virtualbox.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.virtualbox.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.virtualbox.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.virtualbox.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.virtualbox.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.virtualbox.any.title"
+  },
+  {
+    "id": "conflict.virtualbox.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.virtualbox.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.virtualbox.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.virtualbox.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.virtualbox.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.virtualbox.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.virtualbox.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.virtualbox.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vmware.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vmware.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vmware.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vmware.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vmware.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vmware.any.title"
+  },
+  {
+    "id": "conflict.vmware.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vmware.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.vmware.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vmware.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vmware.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vmware.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vmware.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vmware.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_cloudflare_warp.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_cloudflare_warp.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_cloudflare_warp.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_cloudflare_warp.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_cloudflare_warp.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_cloudflare_warp.any.title"
+  },
+  {
+    "id": "conflict.vpn_cloudflare_warp.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_cloudflare_warp.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_cloudflare_warp.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_cloudflare_warp.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.vpn_cloudflare_warp.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_cloudflare_warp.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_cloudflare_warp.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_cloudflare_warp.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_corporate.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_corporate.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_corporate.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_corporate.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_corporate.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_corporate.any.title"
+  },
+  {
+    "id": "conflict.vpn_corporate.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_corporate.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_corporate.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_corporate.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.vpn_corporate.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_corporate.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_corporate.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_corporate.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_expressvpn.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_expressvpn.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_expressvpn.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_expressvpn.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_expressvpn.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_expressvpn.any.title"
+  },
+  {
+    "id": "conflict.vpn_expressvpn.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_expressvpn.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_expressvpn.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_expressvpn.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.vpn_expressvpn.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_expressvpn.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_expressvpn.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_expressvpn.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_generic.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_generic.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_generic.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_generic.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_generic.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_generic.any.title"
+  },
+  {
+    "id": "conflict.vpn_hamachi.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_hamachi.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_hamachi.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_hamachi.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_hamachi.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_hamachi.any.title"
+  },
+  {
+    "id": "conflict.vpn_hamachi.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_hamachi.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_hamachi.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_hamachi.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.vpn_hamachi.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_hamachi.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_hamachi.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_hamachi.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_mullvad_pia_windscribe.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_mullvad_pia_windscribe.any.title"
+  },
+  {
+    "id": "conflict.vpn_mullvad_pia_windscribe.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_mullvad_pia_windscribe.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_mullvad_pia_windscribe.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_mullvad_pia_windscribe.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.vpn_mullvad_pia_windscribe.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_mullvad_pia_windscribe.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_mullvad_pia_windscribe.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_mullvad_pia_windscribe.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_nordvpn.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_nordvpn.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_nordvpn.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_nordvpn.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_nordvpn.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_nordvpn.any.title"
+  },
+  {
+    "id": "conflict.vpn_nordvpn.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_nordvpn.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_nordvpn.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_nordvpn.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.vpn_nordvpn.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_nordvpn.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_nordvpn.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_nordvpn.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_openvpn_tap.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_openvpn_tap.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_openvpn_tap.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_openvpn_tap.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_openvpn_tap.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_openvpn_tap.any.title"
+  },
+  {
+    "id": "conflict.vpn_openvpn_tap.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_openvpn_tap.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.vpn_openvpn_tap.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_openvpn_tap.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_openvpn_tap.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_openvpn_tap.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_openvpn_tap.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_openvpn_tap.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_protonvpn.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_protonvpn.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_protonvpn.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_protonvpn.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_protonvpn.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_protonvpn.any.title"
+  },
+  {
+    "id": "conflict.vpn_protonvpn.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_protonvpn.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_protonvpn.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_protonvpn.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.vpn_radmin.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_radmin.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_radmin.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_radmin.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_radmin.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_radmin.any.title"
+  },
+  {
+    "id": "conflict.vpn_radmin.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_radmin.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_radmin.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_radmin.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_radmin.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_radmin.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_surfshark.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_surfshark.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_surfshark.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_surfshark.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_surfshark.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_surfshark.any.title"
+  },
+  {
+    "id": "conflict.vpn_surfshark.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_surfshark.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_surfshark.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_surfshark.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.vpn_tailscale.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_tailscale.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_tailscale.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_tailscale.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_tailscale.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_tailscale.any.title"
+  },
+  {
+    "id": "conflict.vpn_tailscale.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_tailscale.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_tailscale.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_tailscale.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.vpn_tailscale.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_tailscale.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_tailscale.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_tailscale.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_wireguard.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_wireguard.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_wireguard.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_wireguard.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_wireguard.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_wireguard.any.title"
+  },
+  {
+    "id": "conflict.vpn_wireguard.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_wireguard.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.vpn_wireguard.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_wireguard.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_wireguard.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_wireguard.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.vpn_zerotier.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_zerotier.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_zerotier.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_zerotier.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.vpn_zerotier.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_zerotier.any.title"
+  },
+  {
+    "id": "conflict.vpn_zerotier.installed",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_zerotier.installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "conflict.vpn_zerotier.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_zerotier.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.vpn_zerotier.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.vpn_zerotier.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.wallpaper_engine.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.wallpaper_engine.any.title"
+  },
+  {
+    "id": "conflict.wallpaper_engine.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.wallpaper_engine.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.windows_insider.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.windows_insider.any.title"
+  },
+  {
+    "id": "conflict.winring0_tools.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.winring0_tools.any.title"
+  },
+  {
+    "id": "conflict.winring0_tools.driver_loaded",
+    "source": "conflict",
+    "titleKey": "signal.conflict.winring0_tools.driver_loaded.title",
+    "entity": "driver"
+  },
+  {
+    "id": "conflict.winring0_tools.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.winring0_tools.running.title",
+    "entity": "process"
+  },
+  {
+    "id": "conflict.wsl_vmp.adapter_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.wsl_vmp.adapter_enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.wsl_vmp.adapter_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.wsl_vmp.adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "conflict.wsl_vmp.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.wsl_vmp.any.title"
+  },
+  {
+    "id": "conflict.wsl_vmp.feature_enabled",
+    "source": "conflict",
+    "titleKey": "signal.conflict.wsl_vmp.feature_enabled.title",
+    "entity": "windowsFeature"
+  },
+  {
+    "id": "conflict.wsl_vmp.service_present",
+    "source": "conflict",
+    "titleKey": "signal.conflict.wsl_vmp.service_present.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.wsl_vmp.service_running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.wsl_vmp.service_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "conflict.xbox_game_bar_dvr.any",
+    "source": "conflict",
+    "titleKey": "signal.conflict.xbox_game_bar_dvr.any.title"
+  },
+  {
+    "id": "conflict.xbox_game_bar_dvr.running",
+    "source": "conflict",
+    "titleKey": "signal.conflict.xbox_game_bar_dvr.running.title",
+    "entity": "process"
+  }
+]

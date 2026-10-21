@@ -1,0 +1,546 @@
+[
+  {
+    "id": "rtss",
+    "name": "RivaTuner Statistics Server (RTSS)",
+    "kind": "overlay",
+    "detect": {
+      "processNames": [
+        "RTSS.exe",
+        "RTSSHooksLoader64.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [
+        "RTSSHooks64.dll"
+      ],
+      "uninstallDisplayNameRegex": "RivaTuner Statistics Server",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.rtss.effect.0",
+      "conflict.rtss.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.rtss.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "high",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "evidence": {
+      "redditMentions": 68,
+      "solvedMentions": 18,
+      "exampleThreadIds": [
+        "1p8gqu9",
+        "1v2umet",
+        "1vf5i9t",
+        "1wcgit9",
+        "1x1ct30"
+      ],
+      "webSources": [
+        "https://www.thegamer.com/vanguard-anti-cheat-pc-problems-for-valorant-players/"
+      ]
+    }
+  },
+  {
+    "id": "stardock",
+    "name": "Stardock (Fences, Start11, WindowBlinds, Groupy, etc.)",
+    "kind": "overlay",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(Stardock|Fences|Start11|WindowBlinds|Groupy|ObjectDock|DeskScapes|Multiplicity|CursorFX)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.stardock.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.stardock.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "high",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "evidence": {
+      "redditMentions": 5,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1x1h2qy",
+        "1x1mpcs",
+        "1x1zi9x",
+        "1x1fa1n",
+        "1x29zzv"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "overwolf_trackers",
+    "name": "Overwolf + Valorant Tracker / Outplayed / Blitz / Mobalytics",
+    "kind": "overlay",
+    "detect": {
+      "processNames": [
+        "Overwolf.exe",
+        "OverwolfBrowser.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(Overwolf|Blitz|Mobalytics|Outplayed)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.overwolf_trackers.effect.0",
+      "conflict.overwolf_trackers.effect.1",
+      "conflict.overwolf_trackers.effect.2"
+    ],
+    "fix": {
+      "actionKey": "conflict.overwolf_trackers.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "high",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "evidence": {
+      "redditMentions": 82,
+      "solvedMentions": 20,
+      "exampleThreadIds": [
+        "1pjp2s6",
+        "1pw8ioc",
+        "1q5mj5i",
+        "1q5wflv",
+        "1q5wodp"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "discord_overlay",
+    "name": "Discord in-game overlay / hardware acceleration",
+    "kind": "overlay",
+    "detect": {
+      "processNames": [
+        "Discord.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.discord_overlay.effect.0",
+      "conflict.discord_overlay.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.discord_overlay.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "medium",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "evidence": {
+      "redditMentions": 31,
+      "solvedMentions": 6,
+      "exampleThreadIds": [
+        "1ock4o9",
+        "1p3fe4u",
+        "1ughj5n",
+        "1vgsf59",
+        "1w52oy9"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "nvidia_overlay",
+    "name": "NVIDIA App / GeForce Experience overlay (Instant Replay, filters)",
+    "kind": "overlay",
+    "detect": {
+      "processNames": [
+        "NVIDIA Overlay.exe",
+        "NVIDIA Share.exe",
+        "nvcontainer.exe"
+      ],
+      "serviceNames": [
+        "NvContainerLocalSystem"
+      ],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(NVIDIA App|NVIDIA GeForce Experience)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.nvidia_overlay.effect.0",
+      "conflict.nvidia_overlay.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.nvidia_overlay.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "medium",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "evidence": {
+      "redditMentions": 100,
+      "solvedMentions": 22,
+      "exampleThreadIds": [
+        "1oqcuks",
+        "1p13w2d",
+        "1p3trkn",
+        "1st6f1o",
+        "1t8qfuh"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "amd_adrenalin_features",
+    "name": "AMD Software: Adrenalin overlay & features (AFMF, Anti-Lag, RSR, Chill)",
+    "kind": "overlay",
+    "detect": {
+      "processNames": [
+        "RadeonSoftware.exe",
+        "AMDRSServ.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^AMD Software",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.amd_adrenalin_features.effect.0",
+      "conflict.amd_adrenalin_features.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.amd_adrenalin_features.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.gpu.clean_driver"
+      ]
+    },
+    "confidence": "medium",
+    "category": "gpu_driver",
+    "symptoms": [
+      "stutter",
+      "freeze_hard",
+      "display_issue"
+    ],
+    "evidence": {
+      "redditMentions": 160,
+      "solvedMentions": 30,
+      "exampleThreadIds": [
+        "1r4ms3i",
+        "1rpzz59",
+        "1t8madn",
+        "1temzh6",
+        "1v4mq6n"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "xbox_game_bar_dvr",
+    "name": "Xbox Game Bar / Game DVR background recording",
+    "kind": "overlay",
+    "detect": {
+      "processNames": [
+        "GameBar.exe",
+        "GameBarFTServer.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [
+        "HKCU\\System\\GameConfigStore\\GameDVR_Enabled",
+        "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR\\AppCaptureEnabled"
+      ],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.xbox_game_bar_dvr.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.xbox_game_bar_dvr.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.display.game_dvr_off"
+      ],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "medium",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "evidence": {
+      "redditMentions": 31,
+      "solvedMentions": 8,
+      "exampleThreadIds": [
+        "1p3trkn",
+        "1pkhb9y",
+        "1v571bz",
+        "1vf5i9t",
+        "1w52oy9"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "medal_clipping",
+    "name": "Medal.tv / SteelSeries Moments / clip recorders",
+    "kind": "overlay",
+    "detect": {
+      "processNames": [
+        "Medal.exe",
+        "MedalEncoder.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^Medal",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.medal_clipping.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.medal_clipping.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "medium",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "evidence": {
+      "redditMentions": 63,
+      "solvedMentions": 8,
+      "exampleThreadIds": [
+        "1pkhb9y",
+        "1sk57b3",
+        "1w11dt9",
+        "1x2bvn7",
+        "1oeh12j"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "obs_streamlabs",
+    "name": "OBS Studio / Streamlabs (game capture)",
+    "kind": "overlay",
+    "detect": {
+      "processNames": [
+        "obs64.exe",
+        "Streamlabs OBS.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.obs_streamlabs.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.obs_streamlabs.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "low",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "evidence": {
+      "redditMentions": 36,
+      "solvedMentions": 6,
+      "exampleThreadIds": [
+        "1ooy0y1",
+        "1pdkrjh",
+        "1vp6t5o",
+        "1pnf9q1",
+        "1prjou0"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "steam_overlay",
+    "name": "Steam overlay",
+    "kind": "overlay",
+    "detect": {
+      "processNames": [
+        "GameOverlayUI.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.steam_overlay.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.steam_overlay.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "low",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "evidence": {
+      "redditMentions": 1,
+      "solvedMentions": 0,
+      "exampleThreadIds": [
+        "1p4b8hj"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "wallpaper_engine",
+    "name": "Wallpaper Engine / Lively Wallpaper",
+    "kind": "overlay",
+    "detect": {
+      "processNames": [
+        "wallpaper32.exe",
+        "wallpaper64.exe",
+        "Lively.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.wallpaper_engine.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.wallpaper_engine.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.apps.close_overlays"
+      ]
+    },
+    "confidence": "medium",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ],
+    "evidence": {
+      "redditMentions": 8,
+      "solvedMentions": 3,
+      "exampleThreadIds": [
+        "1q5mj5i",
+        "1q8fp3n",
+        "1w1f9m2",
+        "1reshrp",
+        "1rpiajt"
+      ],
+      "webSources": []
+    }
+  }
+]

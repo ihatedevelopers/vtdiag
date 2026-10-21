@@ -1,0 +1,42 @@
+{
+  "id": "fix.net.dns_flush",
+  "titleKey": "fix.net.dns_flush.title",
+  "explainKey": "fix.net.dns_flush.explain",
+  "undoExplainKey": "fix.net.dns_flush.undo",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "oneWay",
+  "admin": true,
+  "reboot": "none",
+  "scope": "persistent",
+  "estMinutes": 0.1,
+  "appliesTo": [
+    "voice-chat-network-dns-ipv6",
+    "network-exceptions-download-stuck",
+    "local-network-packet-loss-jitter",
+    "van185-vanguard-disconnects"
+  ],
+  "bind": {},
+  "guards": [],
+  "steps": [
+    {
+      "op": "dns.flush",
+      "args": {},
+      "onFail": "abort"
+    }
+  ],
+  "verify": [],
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.connects_now"
+  },
+  "successPrior": {
+    "success": 8,
+    "trials": 75
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

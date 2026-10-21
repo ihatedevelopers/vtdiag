@@ -1,0 +1,42 @@
+{
+  "id": "slow-download-riot-cdn",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "install_update_corrupt",
+  "titleKey": "rule.slow-download-riot-cdn.title",
+  "summaryKey": "rule.slow-download-riot-cdn.summary",
+  "bucket": "riotOrAccount",
+  "symptoms": [
+    "install_update"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "friends",
+      "signal": "ask.friends_same_server",
+      "true": 1.0,
+      "ask": "ask.friends_same_server"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.riot.server_status",
+    "guide.net.cloudflare_warp"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "slow-download-riot-cdn",
+    "threadCount": 1,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1wdmkl6"
+    ],
+    "urls": []
+  }
+}

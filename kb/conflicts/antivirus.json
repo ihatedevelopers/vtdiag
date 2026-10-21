@@ -1,0 +1,638 @@
+[
+  {
+    "id": "av_avast",
+    "name": "Avast Antivirus / Avast One",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [
+        "AvastSvc.exe",
+        "AvastUI.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^Avast (Free Antivirus|Premium Security|One|Antivirus)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.av_avast.effect.0",
+      "conflict.av_avast.effect.1",
+      "conflict.av_avast.effect.2"
+    ],
+    "fix": {
+      "actionKey": "conflict.av_avast.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.av.exclusions"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 3,
+      "solvedMentions": 0,
+      "exampleThreadIds": [
+        "1qsl871",
+        "1wzn7w7",
+        "1x41hxj"
+      ],
+      "webSources": [
+        "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software"
+      ]
+    }
+  },
+  {
+    "id": "av_norton",
+    "name": "Norton 360 / Norton Security",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [
+        "NortonSvc.exe",
+        "NortonUI.exe",
+        "NortonSecurity.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^Norton (360|Security|AntiVirus|Internet Security)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.av_norton.effect.0",
+      "conflict.av_norton.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.av_norton.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.av.exclusions"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 4,
+      "solvedMentions": 2,
+      "exampleThreadIds": [
+        "1qz43n6",
+        "1w1f9m2",
+        "1qya1a6",
+        "1oks7pj"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "av_mcafee",
+    "name": "McAfee (Total Protection / LiveSafe, often OEM-preloaded)",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [
+        "mfemms.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^McAfee",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.av_mcafee.effect.0",
+      "conflict.av_mcafee.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.av_mcafee.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.av.exclusions"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 4,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1oh1ek6",
+        "1rng4db",
+        "1wzn7w7",
+        "1oks7pj"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "av_kaspersky",
+    "name": "Kaspersky",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [
+        "avp.exe",
+        "avpui.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^Kaspersky",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.av_kaspersky.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.av_kaspersky.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.av.exclusions"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 1,
+      "solvedMentions": 0,
+      "exampleThreadIds": [
+        "1qsl871"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "av_bitdefender",
+    "name": "Bitdefender",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [
+        "bdagent.exe",
+        "vsserv.exe",
+        "bdservicehost.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^Bitdefender",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.av_bitdefender.effect.0",
+      "conflict.av_bitdefender.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.av_bitdefender.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.av.exclusions"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 5,
+      "solvedMentions": 0,
+      "exampleThreadIds": [
+        "1srm8sp",
+        "1u9a51g",
+        "1oz6hx2",
+        "1qsl871",
+        "1x6h6nd"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "av_malwarebytes",
+    "name": "Malwarebytes",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [
+        "MBAMService.exe",
+        "Malwarebytes.exe"
+      ],
+      "serviceNames": [
+        "MBAMService"
+      ],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^Malwarebytes",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.av_malwarebytes.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.av_malwarebytes.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.av.exclusions"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 6,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1pjmbnb",
+        "1v9h4ow",
+        "1va9g12",
+        "1tqbk5e",
+        "1u3gpb2"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "av_trend_micro",
+    "name": "Trend Micro (Maximum Security / OEM)",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [
+        "PccNTMon.exe",
+        "coreServiceShell.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^Trend Micro",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.av_trend_micro.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.av_trend_micro.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.av.exclusions"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 1,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1r5zp2a"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "av_360",
+    "name": "360 Total Security",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [
+        "QHActiveDefense.exe",
+        "QHSafeTray.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^360 Total Security",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.av_360.effect.0",
+      "conflict.av_360.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.av_360.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.av.exclusions"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 1,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1r9bj7x"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "av_other_suites",
+    "name": "Other 3rd-party AV suites (AVG, ESET, Webroot, Comodo, Avira, Sophos, G DATA, F-Secure, Panda, Quick Heal, K7, TotalAV)",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [
+        "AVGSvc.exe",
+        "AVGUI.exe",
+        "ekrn.exe",
+        "egui.exe",
+        "WRSA.exe",
+        "cmdagent.exe"
+      ],
+      "serviceNames": [
+        "ekrn"
+      ],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(AVG (AntiVirus|Internet Security|Ultimate)|ESET|Webroot|COMODO|Avira|Sophos|G DATA|F-Secure|Panda (Dome|Free Antivirus)|Quick Heal|K7 |TotalAV)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.av_other_suites.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.av_other_suites.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.av.exclusions"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 1,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1vuavg9"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "defender_firewall_block",
+    "name": "Windows Defender Firewall / 3rd-party firewall rules blocking Riot",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [
+        "MpsSvc",
+        "BFE"
+      ],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.defender_firewall_block.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.defender_firewall_block.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.network.firewall"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "disconnect",
+      "error_code"
+    ],
+    "evidence": {
+      "redditMentions": 142,
+      "solvedMentions": 29,
+      "exampleThreadIds": [
+        "1pgygk9",
+        "1phz7w1",
+        "1pi4vz8",
+        "1pjgwh0",
+        "1ppm07w"
+      ],
+      "webSources": [
+        "https://support.riotgames.com/en-us/riot/performance/error-van-185"
+      ]
+    }
+  },
+  {
+    "id": "defender_cfa",
+    "name": "Defender Controlled Folder Access",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [
+        "HKLM\\SOFTWARE\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\Controlled Folder Access\\EnableControlledFolderAccess",
+        "HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\Controlled Folder Access\\EnableControlledFolderAccess"
+      ],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.defender_cfa.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.defender_cfa.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.av.exclusions"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 3,
+      "solvedMentions": 0,
+      "exampleThreadIds": [
+        "1prlyy4",
+        "1u5w2nr",
+        "1r3a9ju"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "defender_smart_app_control",
+    "name": "Windows 11 Smart App Control",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [
+        "HKLM\\SYSTEM\\CurrentControlSet\\Control\\CI\\Policy\\VerifiedAndReputablePolicyState"
+      ],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.defender_smart_app_control.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.defender_smart_app_control.fix",
+      "reversible": false,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.av.exclusions"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 2,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1rg8857",
+        "1weju7d"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "exploit_protection_override",
+    "name": "Exploit protection overrides (CFG/DEP/ASLR) on Riot executables or system-wide",
+    "kind": "antivirus",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [
+        "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\vgc.exe\\MitigationOptions",
+        "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\VALORANT-Win64-Shipping.exe\\MitigationOptions",
+        "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\kernel\\MitigationOptions"
+      ],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.exploit_protection_override.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.exploit_protection_override.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.sec.reset_exploit_overrides"
+      ],
+      "guideIds": []
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "error_code",
+      "wont_launch"
+    ],
+    "evidence": {
+      "redditMentions": 8,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1wdq18p",
+        "1pn2hbx",
+        "1sm9hpm",
+        "1u2eoha",
+        "1ukabw6"
+      ],
+      "webSources": []
+    }
+  }
+]

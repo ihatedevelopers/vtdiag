@@ -1,0 +1,76 @@
+{
+  "id": "fix.net.unbind_ipv6_active",
+  "titleKey": "fix.net.unbind_ipv6_active.title",
+  "explainKey": "fix.net.unbind_ipv6_active.explain",
+  "undoExplainKey": "fix.net.unbind_ipv6_active.undo",
+  "noticeKey": "fix.net.unbind_ipv6_active.notice",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "none",
+  "scope": "persistent",
+  "estMinutes": 0.3,
+  "appliesTo": [
+    "val57-59-ipv6-killer",
+    "voice-chat-network-dns-ipv6"
+  ],
+  "bind": {
+    "adapter": {
+      "kind": "adapter",
+      "fromSignal": "net.active_ipv6_bound",
+      "pick": "one"
+    }
+  },
+  "guards": [
+    {
+      "probe": "connectivity.internet",
+      "args": {},
+      "must": "true",
+      "severity": "block",
+      "failKey": "guard.no_internet"
+    }
+  ],
+  "steps": [
+    {
+      "op": "netadapter.unbindIpv6",
+      "args": {
+        "instanceId": "$adapter.id"
+      },
+      "onFail": "abort"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "netadapter.unbindIpv6",
+      "args": {
+        "instanceId": "$adapter.id"
+      },
+      "expect": {
+        "ipv6Bound": "false"
+      },
+      "when": "immediate"
+    }
+  ],
+  "deadman": {
+    "seconds": 60,
+    "check": "connectivity.internet"
+  },
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.connects_now"
+  },
+  "drift": {
+    "watch": true,
+    "reasonKey": "drift.setting_reverted"
+  },
+  "successPrior": {
+    "success": 2,
+    "trials": 12
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

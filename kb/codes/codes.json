@@ -1,0 +1,1860 @@
+[
+  {
+    "id": "van-restriction",
+    "codes": [
+      "VAN RESTRICTION"
+    ],
+    "category": "vanguard_restriction",
+    "meaningKey": "code.van-restriction.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "hvci-memory-integrity-required",
+        "logged": 2.0,
+        "typed": 1.2
+      },
+      {
+        "hypothesis": "tpm2-missing-or-unmet",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "secure-boot-not-detected-van9003",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "iommu-restriction",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "windows-version-too-old",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "van-restriction-hwid",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "secure-boot-enable-boot-failure",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/penalties/error-van-restriction",
+      "https://riotgames.com/en/news/vanguard-security-update-motherboard",
+      "https://support.riotgames.com/riot/support-tools/enabling-iommu"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-restriction-1",
+    "codes": [
+      "VAN RESTRICTION 1"
+    ],
+    "category": "vanguard_restriction",
+    "meaningKey": "code.van-restriction-1.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "secure-boot-not-detected-van9003",
+        "logged": 3.5,
+        "typed": 2.5
+      },
+      {
+        "hypothesis": "secure-boot-policy-wave-2026",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "dual-boot-secure-boot-van1",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/penalties/error-van-restriction-1",
+      "https://support.riotgames.com/riot/client/secure-boot-guide"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-restriction-3",
+    "codes": [
+      "VAN RESTRICTION 3"
+    ],
+    "category": "vanguard_restriction",
+    "meaningKey": "code.van-restriction-3.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 0.6,
+        "typed": 0.4
+      },
+      {
+        "hypothesis": "corrupt-system-or-game-files",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/penalties/error-van-restriction-3"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-restriction-4",
+    "codes": [
+      "VAN RESTRICTION 4"
+    ],
+    "category": "vanguard_restriction",
+    "meaningKey": "code.van-restriction-4.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "secure-boot-not-detected-van9003",
+        "logged": 2.0,
+        "typed": 1.2
+      },
+      {
+        "hypothesis": "secure-boot-policy-wave-2026",
+        "logged": 2.0,
+        "typed": 1.2
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/penalties/error-van-restriction-4"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "van-restriction-5",
+    "codes": [
+      "VAN RESTRICTION 5"
+    ],
+    "category": "vanguard_restriction",
+    "meaningKey": "code.van-restriction-5.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "hvci-memory-integrity-required",
+        "logged": 3.5,
+        "typed": 2.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/penalties/error-van-restriction-5",
+      "https://support.riotgames.com/riot/support-tools/enabling-memory-integrity"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-incompatible-software",
+    "codes": [
+      "VAN INCOMPATIBLE SOFTWARE"
+    ],
+    "category": "vanguard_conflict",
+    "meaningKey": "code.van-incompatible-software.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "incompatible-driver-component",
+        "logged": 2.5,
+        "typed": 1.5
+      },
+      {
+        "hypothesis": "third-party-hook-overlay-conflict",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vpn-anticheat-network-filter-conflict",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software",
+      "https://support.riotgames.com/riot/performance/error-van-incompatible-software"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-status-vmd-9001",
+    "codes": [
+      "VAN STATUS_VMD_9001"
+    ],
+    "category": "vanguard_driver",
+    "meaningKey": "code.van-status-vmd-9001.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "intel-vmd-status-vmd-9001",
+        "logged": 4.0,
+        "typed": 3.0
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-status-vmd-9001"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-incompatible-oem-driver",
+    "codes": [
+      "VAN INCOMPATIBLE OEM DRIVER"
+    ],
+    "category": "vanguard_driver",
+    "meaningKey": "code.van-incompatible-oem-driver.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "incompatible-driver-component",
+        "logged": 2.0,
+        "typed": 1.2
+      },
+      {
+        "hypothesis": "intel-vmd-status-vmd-9001",
+        "logged": 1.5,
+        "typed": 1.0
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/van-incompatible-oem-driver"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-status-sb-policy",
+    "codes": [
+      "VAN STATUS_SB_POLICY"
+    ],
+    "category": "vanguard_restriction",
+    "meaningKey": "code.van-status-sb-policy.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "secure-boot-policy-wave-2026",
+        "logged": 3.5,
+        "typed": 2.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-status-sb-policy",
+      "https://support.riotgames.com/riot/client/secure-boot-guide"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-missing-m117",
+    "codes": [
+      "VAN MISSING -117"
+    ],
+    "category": "vanguard_service",
+    "meaningKey": "code.van-missing-m117.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 2.0,
+        "typed": 1.2
+      },
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 1.5,
+        "typed": 1.0
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-missing--117"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-m104",
+    "codes": [
+      "VAN -104"
+    ],
+    "category": "vanguard_connection",
+    "meaningKey": "code.van-m104.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "wrong-system-clock-offline",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "van185-vanguard-disconnects",
+        "logged": 0.6,
+        "typed": 0.4
+      },
+      {
+        "hypothesis": "third-party-antivirus-conflict",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van--104"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-m102",
+    "codes": [
+      "VAN -102",
+      "VAN 102"
+    ],
+    "category": "vanguard_connection",
+    "meaningKey": "code.van-m102.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "van185-vanguard-disconnects",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vpn-anticheat-network-filter-conflict",
+        "logged": 0.8,
+        "typed": 0.5
+      },
+      {
+        "hypothesis": "third-party-antivirus-conflict",
+        "logged": 0.8,
+        "typed": 0.5
+      },
+      {
+        "hypothesis": "razer-synapse-escalation-kick",
+        "logged": 0.8,
+        "typed": 0.5
+      },
+      {
+        "hypothesis": "intel-graphics-chipset-driver-outdated",
+        "logged": 0.6,
+        "typed": 0.4
+      },
+      {
+        "hypothesis": "network-exceptions-download-stuck",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van--102"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-m101",
+    "codes": [
+      "VAN -101"
+    ],
+    "category": "vanguard_unsupported_system",
+    "meaningKey": "code.van-m101.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "windows-version-too-old",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "launch-fails-something-unusual",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van--101",
+      "https://support.riotgames.com/valorant/support-tools/minimum-recommended-pc-specs"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-m92",
+    "codes": [
+      "VAN -92"
+    ],
+    "category": "vanguard_connection",
+    "meaningKey": "code.van-m92.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 0.8,
+        "typed": 0.5
+      },
+      {
+        "hypothesis": "van185-vanguard-disconnects",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van--92"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-m83",
+    "codes": [
+      "VAN -83",
+      "VAN 83"
+    ],
+    "category": "vanguard_connection",
+    "meaningKey": "code.van-m83.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vanguard-install-loop",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van--83"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-m81",
+    "codes": [
+      "VAN -81",
+      "VAN 81"
+    ],
+    "category": "vanguard_connection",
+    "meaningKey": "code.van-m81.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "nahimic-audio-service-launch-hang",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 0.8,
+        "typed": 0.5
+      },
+      {
+        "hypothesis": "vgk-not-loaded-needs-reboot",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van--81",
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-m79",
+    "codes": [
+      "VAN -79",
+      "VAN 79",
+      "VAL 79"
+    ],
+    "category": "vanguard_connection",
+    "meaningKey": "code.van-m79.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 1.8,
+        "typed": 1.2
+      },
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van--79"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-m72",
+    "codes": [
+      "VAN -72",
+      "VAN 72"
+    ],
+    "category": "vanguard_connection",
+    "meaningKey": "code.van-m72.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "dual-network-adapter-desync",
+        "logged": 1.2,
+        "typed": 0.8
+      },
+      {
+        "hypothesis": "van185-vanguard-disconnects",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van--72"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-m1",
+    "codes": [
+      "VAN -1"
+    ],
+    "category": "vanguard_service",
+    "meaningKey": "code.van-m1.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 2.0,
+        "typed": 1.2
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van--1"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-0",
+    "codes": [
+      "VAN 0"
+    ],
+    "category": "vanguard_init",
+    "meaningKey": "code.van-0.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 1.2,
+        "typed": 0.8
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 0.8,
+        "typed": 0.5
+      },
+      {
+        "hypothesis": "vgk-not-loaded-needs-reboot",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-0"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-6",
+    "codes": [
+      "VAN 6"
+    ],
+    "category": "vanguard_init",
+    "meaningKey": "code.van-6.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 1.2,
+        "typed": 0.8
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 0.8,
+        "typed": 0.5
+      },
+      {
+        "hypothesis": "vgk-not-loaded-needs-reboot",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-6"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-25",
+    "codes": [
+      "VAN 25"
+    ],
+    "category": "vanguard_init",
+    "meaningKey": "code.van-25.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 1.2,
+        "typed": 0.8
+      },
+      {
+        "hypothesis": "launch-fails-something-unusual",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-25",
+      "https://support.riotgames.com/riot/security/restore-windows-security-to-normal-state"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-57",
+    "codes": [
+      "VAN 57"
+    ],
+    "category": "vanguard_service",
+    "meaningKey": "code.van-57.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "vgk-not-loaded-needs-reboot",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "outdated-bios-reboot-vgk-bsod",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "hvci-memory-integrity-required",
+        "logged": 0.8,
+        "typed": 0.5
+      },
+      {
+        "hypothesis": "launch-shortcut-tray-failure",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-57"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-59",
+    "codes": [
+      "VAN 59"
+    ],
+    "category": "vanguard_client_comm",
+    "meaningKey": "code.van-59.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "riot-client-update-stuck",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-59"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-68",
+    "codes": [
+      "VAN 68"
+    ],
+    "category": "vanguard_connection",
+    "meaningKey": "code.van-68.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "van185-vanguard-disconnects",
+        "logged": 1.5,
+        "typed": 1.0
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-68"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-84",
+    "codes": [
+      "VAN 84"
+    ],
+    "category": "vanguard_init",
+    "meaningKey": "code.van-84.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 1.2,
+        "typed": 0.8
+      },
+      {
+        "hypothesis": "hvci-memory-integrity-required",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-84"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-128",
+    "codes": [
+      "VAN 128"
+    ],
+    "category": "vanguard_init",
+    "meaningKey": "code.van-128.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "launch-fails-something-unusual",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-128",
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-133",
+    "codes": [
+      "VAN 133"
+    ],
+    "category": "vanguard_init",
+    "meaningKey": "code.van-133.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 1.2,
+        "typed": 0.8
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-133"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-135",
+    "codes": [
+      "VAN 135"
+    ],
+    "category": "vanguard_init",
+    "meaningKey": "code.van-135.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 1.2,
+        "typed": 0.8
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-135"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-138",
+    "codes": [
+      "VAN 138"
+    ],
+    "category": "vanguard_unsupported_system",
+    "meaningKey": "code.van-138.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "conflict-hyperv_hypervisor",
+        "logged": 3.0,
+        "typed": 2.5
+      },
+      {
+        "hypothesis": "conflict-vmware",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "conflict-virtualbox",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "conflict-android_emulators",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "conflict-sandbox_rollback",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-138",
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-140",
+    "codes": [
+      "VAN 140"
+    ],
+    "category": "vanguard_init",
+    "meaningKey": "code.van-140.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "riot-client-not-elevated",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 0.8,
+        "typed": 0.5
+      },
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-140"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-148",
+    "codes": [
+      "VAN 148"
+    ],
+    "category": "vanguard_init",
+    "meaningKey": "code.van-148.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "riot-client-not-elevated",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-148"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-152",
+    "codes": [
+      "VAN 152"
+    ],
+    "category": "ban",
+    "meaningKey": "code.van-152.meaning",
+    "route": "hwidBanAppeal",
+    "pointsTo": [],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-152",
+      "https://support.riotgames.com/riot/penalties/understanding-hardware-id-hwid-bans",
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-185",
+    "codes": [
+      "VAN 185",
+      "VAL 185"
+    ],
+    "category": "vanguard_connection",
+    "meaningKey": "code.van-185.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "van185-vanguard-disconnects",
+        "logged": 2.5,
+        "typed": 1.8
+      },
+      {
+        "hypothesis": "high-process-priority-van136-185",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "dual-network-adapter-desync",
+        "logged": 0.6,
+        "typed": 0.4
+      },
+      {
+        "hypothesis": "hvci-memory-integrity-required",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-185"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-193",
+    "codes": [
+      "VAN 193"
+    ],
+    "category": "vanguard_client_comm",
+    "meaningKey": "code.van-193.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "riot-client-update-stuck",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-193"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-1067",
+    "codes": [
+      "VAN 1067"
+    ],
+    "category": "vanguard_init",
+    "meaningKey": "code.van-1067.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vgk-not-loaded-needs-reboot",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 1.5,
+        "typed": 1.0
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-1067"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-2266",
+    "codes": [
+      "VAN 2266"
+    ],
+    "category": "vanguard_init",
+    "meaningKey": "code.van-2266.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 1.2,
+        "typed": 0.8
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/performance/error-van-2266"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-9001",
+    "codes": [
+      "VAN 9001"
+    ],
+    "category": "vanguard_requirement",
+    "meaningKey": "code.van-9001.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "tpm2-missing-or-unmet",
+        "logged": 3.5,
+        "typed": 2.5
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/client/error-van-9001",
+      "https://support.riotgames.com/riot/client/tpm-20-guide"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-9002",
+    "codes": [
+      "VAN 9002"
+    ],
+    "category": "vanguard_requirement",
+    "meaningKey": "code.van-9002.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "conflict-exploit_protection_override",
+        "logged": 3.0,
+        "typed": 2.0
+      },
+      {
+        "hypothesis": "hvci-memory-integrity-required",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/client/error-van-9002"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-9003",
+    "codes": [
+      "VAN 9003"
+    ],
+    "category": "vanguard_requirement",
+    "meaningKey": "code.van-9003.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "secure-boot-not-detected-van9003",
+        "logged": 4.0,
+        "typed": 2.5
+      },
+      {
+        "hypothesis": "secure-boot-enable-boot-failure",
+        "logged": 0.6,
+        "typed": 0.4
+      },
+      {
+        "hypothesis": "tpm2-missing-or-unmet",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/client/error-van-9003",
+      "https://support.riotgames.com/riot/client/secure-boot-guide"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-9004",
+    "codes": [
+      "VAN 9004"
+    ],
+    "category": "vanguard_requirement",
+    "meaningKey": "code.van-9004.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "windows-version-too-old",
+        "logged": 3.5,
+        "typed": 2.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/client/error-van-9004"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "van-9005",
+    "codes": [
+      "VAN 9005"
+    ],
+    "category": "vanguard_requirement",
+    "meaningKey": "code.van-9005.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "hvci-memory-integrity-required",
+        "logged": 2.0,
+        "typed": 1.2
+      },
+      {
+        "hypothesis": "tpm2-missing-or-unmet",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "secure-boot-not-detected-van9003",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/client/error-van-9005"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-9006",
+    "codes": [
+      "VAN 9006"
+    ],
+    "category": "vanguard_requirement",
+    "meaningKey": "code.van-9006.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "windows-version-too-old",
+        "logged": 3.5,
+        "typed": 2.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/client/error-van-9006"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "van-9051",
+    "codes": [
+      "VAN 9051"
+    ],
+    "category": "vanguard_service",
+    "meaningKey": "code.van-9051.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 1.5,
+        "typed": 1.0
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/client/error-van-9051"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-9090",
+    "codes": [
+      "VAN 9090"
+    ],
+    "category": "vanguard_requirement",
+    "meaningKey": "code.van-9090.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "tpm2-missing-or-unmet",
+        "logged": 2.5,
+        "typed": 1.8
+      },
+      {
+        "hypothesis": "secure-boot-not-detected-van9003",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/client/error-van-9090",
+      "https://support.riotgames.com/valorant/support-tools/troubleshooting-the-van-9001-van-9003-or-van-9090-error-on-windows-11-valorant"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-9100",
+    "codes": [
+      "VAN 9100"
+    ],
+    "category": "vanguard_unsupported_system",
+    "meaningKey": "code.van-9100.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "conflict-hyperv_hypervisor",
+        "logged": 3.0,
+        "typed": 2.5
+      },
+      {
+        "hypothesis": "conflict-vmware",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "conflict-virtualbox",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "conflict-android_emulators",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/client/error-van-9100"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "van-9101",
+    "codes": [
+      "VAN 9101"
+    ],
+    "category": "vanguard_attestation",
+    "meaningKey": "code.van-9101.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "van9101-attestation",
+        "logged": 3.0,
+        "typed": 2.0
+      },
+      {
+        "hypothesis": "secure-boot-policy-wave-2026",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/riot/client/error-van-9101"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "val-0-group",
+    "codes": [
+      "VAL 0",
+      "VAL 1",
+      "VAL 38"
+    ],
+    "category": "val_connection",
+    "meaningKey": "code.val-0-group.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "isp-routing-high-ping",
+        "logged": 0.6,
+        "typed": 0.4
+      },
+      {
+        "hypothesis": "local-network-packet-loss-jitter",
+        "logged": 0.6,
+        "typed": 0.4
+      },
+      {
+        "hypothesis": "riot-server-side-incident",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "val-4",
+    "codes": [
+      "VAL 4"
+    ],
+    "category": "val_account",
+    "meaningKey": "code.val-4.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "account-mfa-matchmaking-glitches",
+        "logged": 2.0,
+        "typed": 1.2
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "val-5",
+    "codes": [
+      "VAL 5"
+    ],
+    "category": "val_account",
+    "meaningKey": "code.val-5.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "van185-vanguard-disconnects",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "account-mfa-matchmaking-glitches",
+        "logged": 0.8,
+        "typed": 0.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "val-7",
+    "codes": [
+      "VAL 7"
+    ],
+    "category": "val_server",
+    "meaningKey": "code.val-7.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "riot-server-side-incident",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "network-exceptions-download-stuck",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "val-8-group",
+    "codes": [
+      "VAL 8",
+      "VAL 10",
+      "VAL 11",
+      "VAL 12",
+      "VAL 13",
+      "VAL 14",
+      "VAL 15",
+      "VAL 16",
+      "VAL 17",
+      "VAL 18",
+      "VAL 20",
+      "VAL 21"
+    ],
+    "category": "val_client",
+    "meaningKey": "code.val-8-group.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "riot-client-update-stuck",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "launch-shortcut-tray-failure",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "val-29",
+    "codes": [
+      "VAL 29"
+    ],
+    "category": "val_network",
+    "meaningKey": "code.val-29.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "network-exceptions-download-stuck",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vpn-anticheat-network-filter-conflict",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "isp-routing-high-ping",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant",
+      "https://support.riotgames.com/en-us/valorant/performance/your-firewall-vs-valorant"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "val-31-group",
+    "codes": [
+      "VAL 31",
+      "VAL 33",
+      "VAL 49",
+      "VAL 50",
+      "VAL 51",
+      "VAL 54",
+      "VAL 60",
+      "VAL 63",
+      "VAL 64",
+      "VAL 65",
+      "VAL 66"
+    ],
+    "category": "val_client",
+    "meaningKey": "code.val-31-group.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "riot-client-update-stuck",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "val-43",
+    "codes": [
+      "VAL 43"
+    ],
+    "category": "val_client",
+    "meaningKey": "code.val-43.meaning",
+    "route": "tryAnotherAccount",
+    "pointsTo": [
+      {
+        "hypothesis": "mdns-bonjour-ni-val43-loading",
+        "logged": 2.0,
+        "typed": 1.2
+      },
+      {
+        "hypothesis": "riot-client-update-stuck",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "askIfTyped": "ask.other_account_works",
+    "confidence": "medium"
+  },
+  {
+    "id": "val-39-group",
+    "codes": [
+      "VAL 39",
+      "VAL 46"
+    ],
+    "category": "val_server",
+    "meaningKey": "code.val-39-group.meaning",
+    "route": "riotServerIncident",
+    "pointsTo": [
+      {
+        "hypothesis": "riot-server-side-incident",
+        "logged": 3.5,
+        "typed": 2.5
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "val-44-group",
+    "codes": [
+      "VAL 44",
+      "VAL 45"
+    ],
+    "category": "val_vanguard",
+    "meaningKey": "code.val-44-group.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vgk-not-loaded-needs-reboot",
+        "logged": 2.0,
+        "typed": 1.2
+      },
+      {
+        "hypothesis": "vgc-service-not-running",
+        "logged": 1.5,
+        "typed": 1.0
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "val-52-group",
+    "codes": [
+      "VAL 52",
+      "VAL 53",
+      "VAL 55",
+      "VAL 56",
+      "VAL 58",
+      "VAL 67",
+      "VAL 68",
+      "VAL 69",
+      "VAL 70"
+    ],
+    "category": "val_client",
+    "meaningKey": "code.val-52-group.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "riot-client-update-stuck",
+        "logged": 0.8,
+        "typed": 0.5
+      },
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "val-57",
+    "codes": [
+      "VAL 57"
+    ],
+    "category": "val_client",
+    "meaningKey": "code.val-57.meaning",
+    "route": "tryAnotherAccount",
+    "pointsTo": [
+      {
+        "hypothesis": "val57-59-ipv6-killer",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "riot-client-update-stuck",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "askIfTyped": "ask.other_account_works",
+    "confidence": "medium"
+  },
+  {
+    "id": "val-59",
+    "codes": [
+      "VAL 59"
+    ],
+    "category": "val_client",
+    "meaningKey": "code.val-59.meaning",
+    "route": "tryAnotherAccount",
+    "pointsTo": [
+      {
+        "hypothesis": "val57-59-ipv6-killer",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "riot-client-update-stuck",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "askIfTyped": "ask.other_account_works",
+    "confidence": "medium"
+  },
+  {
+    "id": "val-61",
+    "codes": [
+      "VAL 61"
+    ],
+    "category": "val_client",
+    "meaningKey": "code.val-61.meaning",
+    "route": "hwidBanAppeal",
+    "pointsTo": [],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "val-62",
+    "codes": [
+      "VAL 62"
+    ],
+    "category": "val_client",
+    "meaningKey": "code.val-62.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "network-exceptions-download-stuck",
+        "logged": 1.5,
+        "typed": 1.0
+      },
+      {
+        "hypothesis": "isp-routing-high-ping",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "van-1",
+    "codes": [
+      "VAN 1"
+    ],
+    "category": "community",
+    "meaningKey": "code.van-1.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "dual-boot-secure-boot-van1",
+        "logged": 2.0,
+        "typed": 1.2
+      },
+      {
+        "hypothesis": "vanguard-corrupt-install",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [],
+    "confidence": "low"
+  },
+  {
+    "id": "van-5",
+    "codes": [
+      "VAN 5"
+    ],
+    "category": "community",
+    "meaningKey": "code.van-5.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "van185-vanguard-disconnects",
+        "logged": 1.5,
+        "typed": 1.0
+      }
+    ],
+    "officialUrls": [],
+    "confidence": "low"
+  },
+  {
+    "id": "van-136",
+    "codes": [
+      "VAN 136"
+    ],
+    "category": "community",
+    "meaningKey": "code.van-136.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "high-process-priority-van136-185",
+        "logged": 2.0,
+        "typed": 1.2
+      },
+      {
+        "hypothesis": "vgc-high-cpu",
+        "logged": 1.5,
+        "typed": 1.0
+      }
+    ],
+    "officialUrls": [],
+    "confidence": "low"
+  },
+  {
+    "id": "van-184",
+    "codes": [
+      "VAN 184"
+    ],
+    "category": "community",
+    "meaningKey": "code.van-184.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "hvci-memory-integrity-required",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [],
+    "confidence": "low"
+  },
+  {
+    "id": "van-216",
+    "codes": [
+      "VAN 216"
+    ],
+    "category": "community",
+    "meaningKey": "code.van-216.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "high-process-priority-van136-185",
+        "logged": 1.0,
+        "typed": 0.6
+      }
+    ],
+    "officialUrls": [],
+    "confidence": "low"
+  },
+  {
+    "id": "van-289",
+    "codes": [
+      "VAN 289",
+      "VAN 293"
+    ],
+    "category": "community",
+    "meaningKey": "code.van-289.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "vpn-anticheat-network-filter-conflict",
+        "logged": 1.5,
+        "typed": 1.0
+      }
+    ],
+    "officialUrls": [],
+    "confidence": "low"
+  },
+  {
+    "id": "van-iommu",
+    "codes": [
+      "VAN IOMMU"
+    ],
+    "category": "community",
+    "meaningKey": "code.van-iommu.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "iommu-restriction",
+        "logged": 2.5,
+        "typed": 1.8
+      }
+    ],
+    "officialUrls": [],
+    "confidence": "low"
+  },
+  {
+    "id": "val-102",
+    "codes": [
+      "VAL 102"
+    ],
+    "category": "community",
+    "meaningKey": "code.val-102.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "van185-vanguard-disconnects",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [],
+    "confidence": "low"
+  },
+  {
+    "id": "error-43",
+    "codes": [
+      "ERROR 43"
+    ],
+    "category": "community",
+    "meaningKey": "code.error-43.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "mdns-bonjour-ni-val43-loading",
+        "logged": 1.0,
+        "typed": 0.6
+      },
+      {
+        "hypothesis": "van185-vanguard-disconnects",
+        "logged": 0.6,
+        "typed": 0.4
+      }
+    ],
+    "officialUrls": [],
+    "confidence": "low"
+  },
+  {
+    "id": "err-0xc000012f",
+    "codes": [
+      "0XC000012F"
+    ],
+    "category": "community",
+    "meaningKey": "code.err-0xc000012f.meaning",
+    "pointsTo": [
+      {
+        "hypothesis": "xinput-directx-runtime-error",
+        "logged": 2.5,
+        "typed": 1.8
+      }
+    ],
+    "officialUrls": [],
+    "confidence": "low"
+  }
+]

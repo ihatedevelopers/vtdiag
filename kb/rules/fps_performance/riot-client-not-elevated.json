@@ -1,0 +1,56 @@
+{
+  "id": "riot-client-not-elevated",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.riot-client-not-elevated.title",
+  "summaryKey": "rule.riot-client-not-elevated.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "stutter",
+    "fps_low",
+    "launch_black_screen",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 10
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "not_elevated",
+      "signal": "riot.client_not_elevated",
+      "true": 0.4,
+      "veto": "false"
+    },
+    {
+      "id": "after_update",
+      "signal": "ask.started_after_update",
+      "true": 0.5,
+      "ask": "ask.started_after_update"
+    }
+  ],
+  "fixes": [
+    "fix.riot.client_runasadmin"
+  ],
+  "guides": [
+    "guide.riot.client_settings"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "riot-client-not-elevated",
+    "threadCount": 10,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1wo1tew",
+      "1wo2xpz",
+      "1wojomv",
+      "1wreu5w",
+      "1x1gvs3"
+    ],
+    "urls": []
+  }
+}

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: A4 Session & Engine. Layer and analyzers come from Directory.Build.targets. -->
+  <PropertyGroup>
+    <RootNamespace>VTD.Engine</RootNamespace>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>VTDiag.Engine</AssemblyName>
+    <!-- The bundled KB requires minApp 0.1.0 (M1 = v0.1); Directory.Build.props still says 0.0.1. Lead: bump the shared
+         <Version> to 0.1.0 and delete this line. -->
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- IPC App <-> Engine (centrally pinned; already approved in Directory.Packages.props). -->
+    <PackageReference Include="StreamJsonRpc" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="VTD.Engine.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VTD.Contracts\VTD.Contracts.csproj" />
+    <ProjectReference Include="..\VTD.Platform\VTD.Platform.csproj" />
+    <ProjectReference Include="..\VTD.Collectors\VTD.Collectors.csproj" />
+    <ProjectReference Include="..\VTD.Knowledge\VTD.Knowledge.csproj" />
+    <ProjectReference Include="..\VTD.Analysis\VTD.Analysis.csproj" />
+    <ProjectReference Include="..\VTD.Journal\VTD.Journal.csproj" />
+    <ProjectReference Include="..\VTD.Fixes\VTD.Fixes.csproj" />
+    <ProjectReference Include="..\VTD.Session\VTD.Session.csproj" />
+    <ProjectReference Include="..\VTD.Reporting\VTD.Reporting.csproj" />
+  </ItemGroup>
+</Project>

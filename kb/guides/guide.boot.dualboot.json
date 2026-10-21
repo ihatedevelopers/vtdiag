@@ -1,0 +1,124 @@
+{
+  "id": "guide.boot.dualboot",
+  "titleKey": "guide.boot.dualboot.title",
+  "summaryKey": "guide.boot.dualboot.summary",
+  "bucket": "guidedManual",
+  "risk": "high",
+  "reboot": "required",
+  "appliesTo": [
+    "dual-boot-secure-boot-van1"
+  ],
+  "preflight": [
+    {
+      "probe": "sec.bitlocker_on",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.boot.dualboot.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "dualboot",
+      "when": [
+        {
+          "signal": "fw.dualboot",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.boot.dualboot.dualboot.text",
+      "steps": [
+        {
+          "textKey": "guide.boot.dualboot.dualboot.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.boot.dualboot.dualboot.s2",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.boot.dualboot.dualboot.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.boot.dualboot.dualboot.s4",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.boot.dualboot.dualboot.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.boot.dualboot.dualboot.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.boot.dualboot.dualboot.s7",
+          "action": "runCheck",
+          "target": "sec.secureboot.on"
+        },
+        {
+          "textKey": "guide.boot.dualboot.dualboot.s8",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.secureboot.on",
+          "is": "true"
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "when": [],
+      "textKey": "guide.boot.dualboot.general.text",
+      "steps": [
+        {
+          "textKey": "guide.boot.dualboot.general.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.boot.dualboot.general.s2",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.boot.dualboot.general.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.boot.dualboot.general.s4",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.boot.dualboot.general.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.boot.dualboot.general.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.boot.dualboot.general.s7",
+          "action": "runCheck",
+          "target": "sec.secureboot.on"
+        },
+        {
+          "textKey": "guide.boot.dualboot.general.s8",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.secureboot.on",
+          "is": "true"
+        }
+      ]
+    }
+  ],
+  "docsPath": "docs/guides/dual-boot.md",
+  "outcomeAskKey": "guide.boot.dualboot.outcome"
+}

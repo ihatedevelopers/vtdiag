@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: A2 Knowledge & Analysis. Layer and analyzers come from Directory.Build.targets. -->
+  <PropertyGroup>
+    <RootNamespace>VTD.Analysis</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VTD.Contracts\VTD.Contracts.csproj" />
+    <ProjectReference Include="..\VTD.Knowledge\VTD.Knowledge.csproj" />
+  </ItemGroup>
+</Project>

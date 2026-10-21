@@ -1,0 +1,97 @@
+{
+  "id": "vanguard-corrupt-install",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.vanguard-corrupt-install.title",
+  "summaryKey": "rule.vanguard-corrupt-install.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "error_code",
+    "wont_launch",
+    "freeze_hard"
+  ],
+  "prior": {
+    "threads": 15
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "files",
+      "signal": "vg.files_missing",
+      "true": 2.0,
+      "textKey": "rule.vanguard-corrupt-install.ev.files"
+    },
+    {
+      "id": "vgc_missing",
+      "signal": "vg.vgc_missing",
+      "true": 1.5,
+      "group": "svc"
+    },
+    {
+      "id": "vgk_missing",
+      "signal": "vg.vgk_missing",
+      "true": 1.5,
+      "group": "svc"
+    },
+    {
+      "id": "bsod_vgk",
+      "signal": "events.bugcheck_vgk",
+      "true": 1.2
+    },
+    {
+      "id": "crash_loop",
+      "signal": "vg.vgc_crash_loop",
+      "true": 1.2,
+      "textKey": "rule.vanguard-corrupt-install.ev.crash_loop"
+    },
+    {
+      "id": "league",
+      "signal": "ask.league_also_broken",
+      "true": 1.5,
+      "false": -0.4,
+      "ask": "ask.league_also_broken"
+    },
+    {
+      "id": "vg_log",
+      "signal": "log.vanguard_init_failed",
+      "true": 0.8
+    },
+    {
+      "id": "stale",
+      "signal": "vg.stale_dat",
+      "true": 0.4
+    }
+  ],
+  "fixes": [
+    "fix.vg.quarantine_bootstatus",
+    "fix.vg.quarantine_stale_dat",
+    "fix.vg.vgc_automatic"
+  ],
+  "guides": [
+    "guide.vanguard.reinstall"
+  ],
+  "questions": [
+    "ask.league_also_broken"
+  ],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "vanguard-corrupt-install",
+    "threadCount": 15,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1oc0re3",
+      "1oepxus",
+      "1okcvzd",
+      "1okyvj9",
+      "1oqn9ke"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/performance/error-van--1",
+      "https://support.riotgames.com/riot/performance/error-van-84",
+      "https://support.riotgames.com/riot/performance/error-van-1067"
+    ]
+  }
+}

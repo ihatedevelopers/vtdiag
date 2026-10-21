@@ -1,0 +1,67 @@
+{
+  "id": "usb-selective-suspend-freeze",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "crash_freeze_bsod",
+  "titleKey": "rule.usb-selective-suspend-freeze.title",
+  "summaryKey": "rule.usb-selective-suspend-freeze.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "freeze_hard",
+    "stutter",
+    "mouse_input"
+  ],
+  "prior": {
+    "threads": 13
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "usb_ss",
+      "signal": "power.usb_selective_suspend_on",
+      "true": 0.6,
+      "veto": "false",
+      "textKey": "rule.usb-selective-suspend-freeze.ev.usb_ss"
+    },
+    {
+      "id": "kp41",
+      "signal": "events.kernel_power_41",
+      "true": 0.6
+    },
+    {
+      "id": "whole",
+      "signal": "ask.whole_pc_freezes",
+      "true": 0.6,
+      "ask": "ask.whole_pc_freezes"
+    },
+    {
+      "id": "fast",
+      "signal": "os.fast_startup_on",
+      "true": 0.2
+    }
+  ],
+  "fixes": [
+    "fix.power.usb_selective_suspend_off",
+    "fix.os.fast_startup_off"
+  ],
+  "guides": [
+    "guide.mouse.usb"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "usb-selective-suspend-freeze",
+    "threadCount": 13,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1rpzz59",
+      "1rtea3t",
+      "1sv79vh",
+      "1sz7m4j",
+      "1taws5u"
+    ],
+    "urls": []
+  }
+}

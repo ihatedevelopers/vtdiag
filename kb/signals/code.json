@@ -1,0 +1,362 @@
+[
+  {
+    "id": "code.err-0xc000012f",
+    "source": "code",
+    "titleKey": "signal.code.err-0xc000012f.title"
+  },
+  {
+    "id": "code.error-43",
+    "source": "code",
+    "titleKey": "signal.code.error-43.title"
+  },
+  {
+    "id": "code.val-0-group",
+    "source": "code",
+    "titleKey": "signal.code.val-0-group.title"
+  },
+  {
+    "id": "code.val-102",
+    "source": "code",
+    "titleKey": "signal.code.val-102.title"
+  },
+  {
+    "id": "code.val-29",
+    "source": "code",
+    "titleKey": "signal.code.val-29.title"
+  },
+  {
+    "id": "code.val-31-group",
+    "source": "code",
+    "titleKey": "signal.code.val-31-group.title"
+  },
+  {
+    "id": "code.val-39-group",
+    "source": "code",
+    "titleKey": "signal.code.val-39-group.title"
+  },
+  {
+    "id": "code.val-4",
+    "source": "code",
+    "titleKey": "signal.code.val-4.title"
+  },
+  {
+    "id": "code.val-43",
+    "source": "code",
+    "titleKey": "signal.code.val-43.title"
+  },
+  {
+    "id": "code.val-44-group",
+    "source": "code",
+    "titleKey": "signal.code.val-44-group.title"
+  },
+  {
+    "id": "code.val-5",
+    "source": "code",
+    "titleKey": "signal.code.val-5.title"
+  },
+  {
+    "id": "code.val-52-group",
+    "source": "code",
+    "titleKey": "signal.code.val-52-group.title"
+  },
+  {
+    "id": "code.val-57",
+    "source": "code",
+    "titleKey": "signal.code.val-57.title"
+  },
+  {
+    "id": "code.val-59",
+    "source": "code",
+    "titleKey": "signal.code.val-59.title"
+  },
+  {
+    "id": "code.val-61",
+    "source": "code",
+    "titleKey": "signal.code.val-61.title"
+  },
+  {
+    "id": "code.val-62",
+    "source": "code",
+    "titleKey": "signal.code.val-62.title"
+  },
+  {
+    "id": "code.val-7",
+    "source": "code",
+    "titleKey": "signal.code.val-7.title"
+  },
+  {
+    "id": "code.val-8-group",
+    "source": "code",
+    "titleKey": "signal.code.val-8-group.title"
+  },
+  {
+    "id": "code.van-0",
+    "source": "code",
+    "titleKey": "signal.code.van-0.title"
+  },
+  {
+    "id": "code.van-1",
+    "source": "code",
+    "titleKey": "signal.code.van-1.title"
+  },
+  {
+    "id": "code.van-1067",
+    "source": "code",
+    "titleKey": "signal.code.van-1067.title"
+  },
+  {
+    "id": "code.van-128",
+    "source": "code",
+    "titleKey": "signal.code.van-128.title"
+  },
+  {
+    "id": "code.van-133",
+    "source": "code",
+    "titleKey": "signal.code.van-133.title"
+  },
+  {
+    "id": "code.van-135",
+    "source": "code",
+    "titleKey": "signal.code.van-135.title"
+  },
+  {
+    "id": "code.van-136",
+    "source": "code",
+    "titleKey": "signal.code.van-136.title"
+  },
+  {
+    "id": "code.van-138",
+    "source": "code",
+    "titleKey": "signal.code.van-138.title"
+  },
+  {
+    "id": "code.van-140",
+    "source": "code",
+    "titleKey": "signal.code.van-140.title"
+  },
+  {
+    "id": "code.van-148",
+    "source": "code",
+    "titleKey": "signal.code.van-148.title"
+  },
+  {
+    "id": "code.van-152",
+    "source": "code",
+    "titleKey": "signal.code.van-152.title"
+  },
+  {
+    "id": "code.van-184",
+    "source": "code",
+    "titleKey": "signal.code.van-184.title"
+  },
+  {
+    "id": "code.van-185",
+    "source": "code",
+    "titleKey": "signal.code.van-185.title"
+  },
+  {
+    "id": "code.van-193",
+    "source": "code",
+    "titleKey": "signal.code.van-193.title"
+  },
+  {
+    "id": "code.van-216",
+    "source": "code",
+    "titleKey": "signal.code.van-216.title"
+  },
+  {
+    "id": "code.van-2266",
+    "source": "code",
+    "titleKey": "signal.code.van-2266.title"
+  },
+  {
+    "id": "code.van-25",
+    "source": "code",
+    "titleKey": "signal.code.van-25.title"
+  },
+  {
+    "id": "code.van-289",
+    "source": "code",
+    "titleKey": "signal.code.van-289.title"
+  },
+  {
+    "id": "code.van-5",
+    "source": "code",
+    "titleKey": "signal.code.van-5.title"
+  },
+  {
+    "id": "code.van-57",
+    "source": "code",
+    "titleKey": "signal.code.van-57.title"
+  },
+  {
+    "id": "code.van-59",
+    "source": "code",
+    "titleKey": "signal.code.van-59.title"
+  },
+  {
+    "id": "code.van-6",
+    "source": "code",
+    "titleKey": "signal.code.van-6.title"
+  },
+  {
+    "id": "code.van-68",
+    "source": "code",
+    "titleKey": "signal.code.van-68.title"
+  },
+  {
+    "id": "code.van-84",
+    "source": "code",
+    "titleKey": "signal.code.van-84.title"
+  },
+  {
+    "id": "code.van-9001",
+    "source": "code",
+    "titleKey": "signal.code.van-9001.title"
+  },
+  {
+    "id": "code.van-9002",
+    "source": "code",
+    "titleKey": "signal.code.van-9002.title"
+  },
+  {
+    "id": "code.van-9003",
+    "source": "code",
+    "titleKey": "signal.code.van-9003.title"
+  },
+  {
+    "id": "code.van-9004",
+    "source": "code",
+    "titleKey": "signal.code.van-9004.title"
+  },
+  {
+    "id": "code.van-9005",
+    "source": "code",
+    "titleKey": "signal.code.van-9005.title"
+  },
+  {
+    "id": "code.van-9006",
+    "source": "code",
+    "titleKey": "signal.code.van-9006.title"
+  },
+  {
+    "id": "code.van-9051",
+    "source": "code",
+    "titleKey": "signal.code.van-9051.title"
+  },
+  {
+    "id": "code.van-9090",
+    "source": "code",
+    "titleKey": "signal.code.van-9090.title"
+  },
+  {
+    "id": "code.van-9100",
+    "source": "code",
+    "titleKey": "signal.code.van-9100.title"
+  },
+  {
+    "id": "code.van-9101",
+    "source": "code",
+    "titleKey": "signal.code.van-9101.title"
+  },
+  {
+    "id": "code.van-incompatible-oem-driver",
+    "source": "code",
+    "titleKey": "signal.code.van-incompatible-oem-driver.title"
+  },
+  {
+    "id": "code.van-incompatible-software",
+    "source": "code",
+    "titleKey": "signal.code.van-incompatible-software.title"
+  },
+  {
+    "id": "code.van-iommu",
+    "source": "code",
+    "titleKey": "signal.code.van-iommu.title"
+  },
+  {
+    "id": "code.van-m1",
+    "source": "code",
+    "titleKey": "signal.code.van-m1.title"
+  },
+  {
+    "id": "code.van-m101",
+    "source": "code",
+    "titleKey": "signal.code.van-m101.title"
+  },
+  {
+    "id": "code.van-m102",
+    "source": "code",
+    "titleKey": "signal.code.van-m102.title"
+  },
+  {
+    "id": "code.van-m104",
+    "source": "code",
+    "titleKey": "signal.code.van-m104.title"
+  },
+  {
+    "id": "code.van-m72",
+    "source": "code",
+    "titleKey": "signal.code.van-m72.title"
+  },
+  {
+    "id": "code.van-m79",
+    "source": "code",
+    "titleKey": "signal.code.van-m79.title"
+  },
+  {
+    "id": "code.van-m81",
+    "source": "code",
+    "titleKey": "signal.code.van-m81.title"
+  },
+  {
+    "id": "code.van-m83",
+    "source": "code",
+    "titleKey": "signal.code.van-m83.title"
+  },
+  {
+    "id": "code.van-m92",
+    "source": "code",
+    "titleKey": "signal.code.van-m92.title"
+  },
+  {
+    "id": "code.van-missing-m117",
+    "source": "code",
+    "titleKey": "signal.code.van-missing-m117.title"
+  },
+  {
+    "id": "code.van-restriction",
+    "source": "code",
+    "titleKey": "signal.code.van-restriction.title"
+  },
+  {
+    "id": "code.van-restriction-1",
+    "source": "code",
+    "titleKey": "signal.code.van-restriction-1.title"
+  },
+  {
+    "id": "code.van-restriction-3",
+    "source": "code",
+    "titleKey": "signal.code.van-restriction-3.title"
+  },
+  {
+    "id": "code.van-restriction-4",
+    "source": "code",
+    "titleKey": "signal.code.van-restriction-4.title"
+  },
+  {
+    "id": "code.van-restriction-5",
+    "source": "code",
+    "titleKey": "signal.code.van-restriction-5.title"
+  },
+  {
+    "id": "code.van-status-sb-policy",
+    "source": "code",
+    "titleKey": "signal.code.van-status-sb-policy.title"
+  },
+  {
+    "id": "code.van-status-vmd-9001",
+    "source": "code",
+    "titleKey": "signal.code.van-status-vmd-9001.title"
+  }
+]

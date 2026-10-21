@@ -1,0 +1,54 @@
+{
+  "id": "wrong-system-clock-offline",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "login_account_client",
+  "titleKey": "rule.wrong-system-clock-offline.title",
+  "summaryKey": "rule.wrong-system-clock-offline.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "login_issue",
+    "error_code",
+    "disconnect"
+  ],
+  "prior": {
+    "threads": 2
+  },
+  "requires": [
+    "os.clock_skewed"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "skew",
+      "signal": "os.clock_skewed",
+      "true": 4.0,
+      "veto": "false",
+      "textKey": "rule.wrong-system-clock-offline.ev.skew"
+    },
+    {
+      "id": "auto_off",
+      "signal": "os.auto_time_off",
+      "true": 0.6
+    }
+  ],
+  "fixes": [
+    "fix.os.time_resync"
+  ],
+  "guides": [
+    "guide.clock.fix"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "wrong-system-clock-offline",
+    "threadCount": 2,
+    "evidence": "guide",
+    "threadIds": [
+      "1x5owqn",
+      "1x61dcn"
+    ],
+    "urls": []
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "nvidia-driver-packet-loss",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "network_ping",
+  "titleKey": "rule.nvidia-driver-packet-loss.title",
+  "summaryKey": "rule.nvidia-driver-packet-loss.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "high_ping",
+    "disconnect"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "nv",
+      "signal": "gpu.nvidia_dgpu",
+      "true": 0.3,
+      "veto": "false"
+    },
+    {
+      "id": "new",
+      "signal": "gpu.driver_recently_changed",
+      "true": 1.0
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.gpu.clean_driver"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "nvidia-driver-packet-loss",
+    "threadCount": 1,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1s845kt"
+    ],
+    "urls": []
+  }
+}

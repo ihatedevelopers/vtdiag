@@ -1,0 +1,76 @@
+{
+  "id": "fix.svc.disable_conflict_service",
+  "titleKey": "fix.svc.disable_conflict_service.title",
+  "explainKey": "fix.svc.disable_conflict_service.explain",
+  "undoExplainKey": "fix.svc.disable_conflict_service.undo",
+  "noticeKey": "fix.svc.disable_conflict_service.notice",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "none",
+  "scope": "persistent",
+  "estMinutes": 0.3,
+  "appliesTo": [
+    "nahimic-audio-service-launch-hang",
+    "mdns-bonjour-ni-val43-loading",
+    "razer-synapse-escalation-kick",
+    "third-party-hook-overlay-conflict"
+  ],
+  "template": true,
+  "bind": {
+    "svc": {
+      "kind": "service",
+      "fromSignal": "conflict.*.service_present",
+      "pick": "all"
+    }
+  },
+  "guards": [],
+  "steps": [
+    {
+      "op": "service.setStartType",
+      "args": {
+        "name": "$svc.id",
+        "startType": "Disabled"
+      },
+      "onFail": "abort"
+    },
+    {
+      "op": "service.stop",
+      "args": {
+        "name": "$svc.id",
+        "timeoutSec": "20"
+      },
+      "onFail": "continue"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "service.setStartType",
+      "args": {
+        "name": "$svc.id"
+      },
+      "expect": {
+        "startType": "Disabled"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "relaunch",
+    "askKey": "outcome.past_loading_screen"
+  },
+  "drift": {
+    "watch": true,
+    "reasonKey": "drift.oem_reinstalled"
+  },
+  "successPrior": {
+    "success": 27,
+    "trials": 110
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: A6 UI & Reporting. Layer and analyzers come from Directory.Build.targets. -->
+  <PropertyGroup>
+    <RootNamespace>VTD.Reporting</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VTD.Contracts\VTD.Contracts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="VTD.Reporting.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- The published plan schema (lead-owned, generated from the contracts) is linked, never copied, so the
+         "Copy for AI" digest always carries exactly kb/schema/plan.schema.json. -->
+    <EmbeddedResource Include="..\..\kb\schema\plan.schema.json" Link="Schemas\plan.schema.json" LogicalName="VTD.Reporting.Schemas.plan.schema.json" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,68 @@
+{
+  "id": "frametime-latency-spikes",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.frametime-latency-spikes.title",
+  "summaryKey": "rule.frametime-latency-spikes.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "stutter",
+    "fps_low"
+  ],
+  "prior": {
+    "threads": 4
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "discord",
+      "signal": "conflict.discord_overlay.running",
+      "true": 0.4
+    },
+    {
+      "id": "overlay",
+      "signal": "proc.overlay_running",
+      "true": 0.5
+    },
+    {
+      "id": "hags",
+      "signal": "display.hags_on",
+      "true": 0.3
+    },
+    {
+      "id": "jitter",
+      "signal": "net.region_jitter_high",
+      "true": 0.4
+    },
+    {
+      "id": "mon_periodic",
+      "signal": "mon.frametime.periodic_spikes",
+      "true": 0.5
+    }
+  ],
+  "fixes": [
+    "fix.proc.close_overlays",
+    "fix.display.hags_off"
+  ],
+  "guides": [
+    "guide.apps.close_overlays",
+    "guide.gpu.clean_driver"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "frametime-latency-spikes",
+    "threadCount": 4,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1qk4av0",
+      "1qnfnwf",
+      "1r5srfj",
+      "1rc5pmt"
+    ],
+    "urls": []
+  }
+}

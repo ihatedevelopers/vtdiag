@@ -1,0 +1,916 @@
+[
+  {
+    "id": "apps.conflict_installed",
+    "source": "builtin",
+    "titleKey": "signal.apps.conflict_installed.title",
+    "entity": "app"
+  },
+  {
+    "id": "apps.mdns_component",
+    "source": "builtin",
+    "titleKey": "signal.apps.mdns_component.title"
+  },
+  {
+    "id": "apps.nahimic_apo",
+    "source": "builtin",
+    "titleKey": "signal.apps.nahimic_apo.title"
+  },
+  {
+    "id": "apps.oem_tools",
+    "source": "builtin",
+    "titleKey": "signal.apps.oem_tools.title"
+  },
+  {
+    "id": "apps.other_anticheat",
+    "source": "builtin",
+    "titleKey": "signal.apps.other_anticheat.title"
+  },
+  {
+    "id": "apps.vcredist_missing",
+    "source": "builtin",
+    "titleKey": "signal.apps.vcredist_missing.title"
+  },
+  {
+    "id": "audio.bt_handsfree_default",
+    "source": "builtin",
+    "titleKey": "signal.audio.bt_handsfree_default.title"
+  },
+  {
+    "id": "audio.bt_handsfree_present",
+    "source": "builtin",
+    "titleKey": "signal.audio.bt_handsfree_present.title",
+    "entity": "device"
+  },
+  {
+    "id": "audio.many_outputs",
+    "source": "builtin",
+    "titleKey": "signal.audio.many_outputs.title"
+  },
+  {
+    "id": "audio.no_default_output",
+    "source": "builtin",
+    "titleKey": "signal.audio.no_default_output.title"
+  },
+  {
+    "id": "crash.gpu",
+    "source": "builtin",
+    "titleKey": "signal.crash.gpu.title"
+  },
+  {
+    "id": "crash.recent",
+    "source": "builtin",
+    "titleKey": "signal.crash.recent.title"
+  },
+  {
+    "id": "dev.problem_devices",
+    "source": "builtin",
+    "titleKey": "signal.dev.problem_devices.title",
+    "entity": "device"
+  },
+  {
+    "id": "dev.usb_optical_drive",
+    "source": "builtin",
+    "titleKey": "signal.dev.usb_optical_drive.title",
+    "entity": "device"
+  },
+  {
+    "id": "disk.dirty",
+    "source": "builtin",
+    "titleKey": "signal.disk.dirty.title"
+  },
+  {
+    "id": "disk.free_low",
+    "source": "builtin",
+    "titleKey": "signal.disk.free_low.title"
+  },
+  {
+    "id": "disk.riot_on_hdd",
+    "source": "builtin",
+    "titleKey": "signal.disk.riot_on_hdd.title"
+  },
+  {
+    "id": "disk.system_gpt",
+    "source": "builtin",
+    "titleKey": "signal.disk.system_gpt.title"
+  },
+  {
+    "id": "disk.system_hdd",
+    "source": "builtin",
+    "titleKey": "signal.disk.system_hdd.title"
+  },
+  {
+    "id": "display.game_dvr_on",
+    "source": "builtin",
+    "titleKey": "signal.display.game_dvr_on.title"
+  },
+  {
+    "id": "display.game_mode_off",
+    "source": "builtin",
+    "titleKey": "signal.display.game_mode_off.title"
+  },
+  {
+    "id": "display.hags_on",
+    "source": "builtin",
+    "titleKey": "signal.display.hags_on.title"
+  },
+  {
+    "id": "display.hdr_on",
+    "source": "builtin",
+    "titleKey": "signal.display.hdr_on.title"
+  },
+  {
+    "id": "display.mpo_enabled",
+    "source": "builtin",
+    "titleKey": "signal.display.mpo_enabled.title"
+  },
+  {
+    "id": "display.multi_monitor",
+    "source": "builtin",
+    "titleKey": "signal.display.multi_monitor.title"
+  },
+  {
+    "id": "display.refresh_60",
+    "source": "builtin",
+    "titleKey": "signal.display.refresh_60.title"
+  },
+  {
+    "id": "display.windowed_opt_on",
+    "source": "builtin",
+    "titleKey": "signal.display.windowed_opt_on.title"
+  },
+  {
+    "id": "events.bugcheck_recent",
+    "source": "builtin",
+    "titleKey": "signal.events.bugcheck_recent.title",
+    "requiresAdmin": true
+  },
+  {
+    "id": "events.bugcheck_vgk",
+    "source": "builtin",
+    "titleKey": "signal.events.bugcheck_vgk.title",
+    "requiresAdmin": true
+  },
+  {
+    "id": "events.bugcheck_wdfilter",
+    "source": "builtin",
+    "titleKey": "signal.events.bugcheck_wdfilter.title",
+    "requiresAdmin": true
+  },
+  {
+    "id": "events.disk_errors",
+    "source": "builtin",
+    "titleKey": "signal.events.disk_errors.title"
+  },
+  {
+    "id": "events.display_tdr",
+    "source": "builtin",
+    "titleKey": "signal.events.display_tdr.title"
+  },
+  {
+    "id": "events.kernel_power_41",
+    "source": "builtin",
+    "titleKey": "signal.events.kernel_power_41.title"
+  },
+  {
+    "id": "events.realtek_nic_resets",
+    "source": "builtin",
+    "titleKey": "signal.events.realtek_nic_resets.title"
+  },
+  {
+    "id": "events.riot_crash_hook_module",
+    "source": "builtin",
+    "titleKey": "signal.events.riot_crash_hook_module.title"
+  },
+  {
+    "id": "events.riot_crash_recent",
+    "source": "builtin",
+    "titleKey": "signal.events.riot_crash_recent.title"
+  },
+  {
+    "id": "events.riot_crash_unknown_module",
+    "source": "builtin",
+    "titleKey": "signal.events.riot_crash_unknown_module.title"
+  },
+  {
+    "id": "events.tpm_errors",
+    "source": "builtin",
+    "titleKey": "signal.events.tpm_errors.title"
+  },
+  {
+    "id": "events.vgm_crash_0xc0000409",
+    "source": "builtin",
+    "titleKey": "signal.events.vgm_crash_0xc0000409.title"
+  },
+  {
+    "id": "events.volmgr_161",
+    "source": "builtin",
+    "titleKey": "signal.events.volmgr_161.title"
+  },
+  {
+    "id": "events.whea_errors",
+    "source": "builtin",
+    "titleKey": "signal.events.whea_errors.title"
+  },
+  {
+    "id": "fw.dualboot",
+    "source": "builtin",
+    "titleKey": "signal.fw.dualboot.title"
+  },
+  {
+    "id": "fw.uefi",
+    "source": "builtin",
+    "titleKey": "signal.fw.uefi.title"
+  },
+  {
+    "id": "gpu.amd_dgpu",
+    "source": "builtin",
+    "titleKey": "signal.gpu.amd_dgpu.title"
+  },
+  {
+    "id": "gpu.amd_features_on",
+    "source": "builtin",
+    "titleKey": "signal.gpu.amd_features_on.title"
+  },
+  {
+    "id": "gpu.basic_display",
+    "source": "builtin",
+    "titleKey": "signal.gpu.basic_display.title",
+    "entity": "device"
+  },
+  {
+    "id": "gpu.driver_old",
+    "source": "builtin",
+    "titleKey": "signal.gpu.driver_old.title"
+  },
+  {
+    "id": "gpu.driver_recently_changed",
+    "source": "builtin",
+    "titleKey": "signal.gpu.driver_recently_changed.title"
+  },
+  {
+    "id": "gpu.hybrid",
+    "source": "builtin",
+    "titleKey": "signal.gpu.hybrid.title"
+  },
+  {
+    "id": "gpu.igpu_disabled",
+    "source": "builtin",
+    "titleKey": "signal.gpu.igpu_disabled.title",
+    "entity": "device"
+  },
+  {
+    "id": "gpu.igpu_present",
+    "source": "builtin",
+    "titleKey": "signal.gpu.igpu_present.title"
+  },
+  {
+    "id": "gpu.intel_driver_old",
+    "source": "builtin",
+    "titleKey": "signal.gpu.intel_driver_old.title"
+  },
+  {
+    "id": "gpu.monitor_on_igpu",
+    "source": "builtin",
+    "titleKey": "signal.gpu.monitor_on_igpu.title"
+  },
+  {
+    "id": "gpu.nv_profile_overrides",
+    "source": "builtin",
+    "titleKey": "signal.gpu.nv_profile_overrides.title"
+  },
+  {
+    "id": "gpu.nvidia_dgpu",
+    "source": "builtin",
+    "titleKey": "signal.gpu.nvidia_dgpu.title"
+  },
+  {
+    "id": "gpu.pref_not_high",
+    "source": "builtin",
+    "titleKey": "signal.gpu.pref_not_high.title",
+    "entity": "file"
+  },
+  {
+    "id": "gpu.problem_code",
+    "source": "builtin",
+    "titleKey": "signal.gpu.problem_code.title",
+    "entity": "device"
+  },
+  {
+    "id": "hw.bios_old",
+    "source": "builtin",
+    "titleKey": "signal.hw.bios_old.title"
+  },
+  {
+    "id": "hw.bios_very_old",
+    "source": "builtin",
+    "titleKey": "signal.hw.bios_very_old.title"
+  },
+  {
+    "id": "hw.cpu_arm",
+    "source": "builtin",
+    "titleKey": "signal.hw.cpu_arm.title"
+  },
+  {
+    "id": "hw.cpu_hybrid",
+    "source": "builtin",
+    "titleKey": "signal.hw.cpu_hybrid.title"
+  },
+  {
+    "id": "hw.cpu_x3d",
+    "source": "builtin",
+    "titleKey": "signal.hw.cpu_x3d.title"
+  },
+  {
+    "id": "hw.laptop",
+    "source": "builtin",
+    "titleKey": "signal.hw.laptop.title"
+  },
+  {
+    "id": "hw.ram_below_rated",
+    "source": "builtin",
+    "titleKey": "signal.hw.ram_below_rated.title"
+  },
+  {
+    "id": "hw.ram_low",
+    "source": "builtin",
+    "titleKey": "signal.hw.ram_low.title"
+  },
+  {
+    "id": "hw.ram_single_module",
+    "source": "builtin",
+    "titleKey": "signal.hw.ram_single_module.title"
+  },
+  {
+    "id": "hw.standby_mem_high",
+    "source": "builtin",
+    "titleKey": "signal.hw.standby_mem_high.title"
+  },
+  {
+    "id": "hw.thermal_throttle",
+    "source": "builtin",
+    "titleKey": "signal.hw.thermal_throttle.title"
+  },
+  {
+    "id": "input.mouse_accel_on",
+    "source": "builtin",
+    "titleKey": "signal.input.mouse_accel_on.title"
+  },
+  {
+    "id": "log.d3d_device_lost",
+    "source": "builtin",
+    "titleKey": "signal.log.d3d_device_lost.title"
+  },
+  {
+    "id": "log.fatal_error",
+    "source": "builtin",
+    "titleKey": "signal.log.fatal_error.title"
+  },
+  {
+    "id": "log.net_disconnects",
+    "source": "builtin",
+    "titleKey": "signal.log.net_disconnects.title"
+  },
+  {
+    "id": "log.platform_init_failed",
+    "source": "builtin",
+    "titleKey": "signal.log.platform_init_failed.title"
+  },
+  {
+    "id": "log.vanguard_init_failed",
+    "source": "builtin",
+    "titleKey": "signal.log.vanguard_init_failed.title"
+  },
+  {
+    "id": "net.active_adapter",
+    "source": "builtin",
+    "titleKey": "signal.net.active_adapter.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "net.active_ipv6_bound",
+    "source": "builtin",
+    "titleKey": "signal.net.active_ipv6_bound.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "net.firewall_blocks_riot",
+    "source": "builtin",
+    "titleKey": "signal.net.firewall_blocks_riot.title"
+  },
+  {
+    "id": "net.firewall_off",
+    "source": "builtin",
+    "titleKey": "signal.net.firewall_off.title"
+  },
+  {
+    "id": "net.gateway_loss",
+    "source": "builtin",
+    "titleKey": "signal.net.gateway_loss.title"
+  },
+  {
+    "id": "net.ipv6_disabled",
+    "source": "builtin",
+    "titleKey": "signal.net.ipv6_disabled.title"
+  },
+  {
+    "id": "net.lsp_third_party",
+    "source": "builtin",
+    "titleKey": "signal.net.lsp_third_party.title"
+  },
+  {
+    "id": "net.mdns_lsp",
+    "source": "builtin",
+    "titleKey": "signal.net.mdns_lsp.title"
+  },
+  {
+    "id": "net.multi_nic_up",
+    "source": "builtin",
+    "titleKey": "signal.net.multi_nic_up.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "net.nic_power_saving_on",
+    "source": "builtin",
+    "titleKey": "signal.net.nic_power_saving_on.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "net.no_internet",
+    "source": "builtin",
+    "titleKey": "signal.net.no_internet.title"
+  },
+  {
+    "id": "net.on_wifi",
+    "source": "builtin",
+    "titleKey": "signal.net.on_wifi.title"
+  },
+  {
+    "id": "net.proxy_on",
+    "source": "builtin",
+    "titleKey": "signal.net.proxy_on.title"
+  },
+  {
+    "id": "net.realtek25.active",
+    "source": "builtin",
+    "titleKey": "signal.net.realtek25.active.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "net.realtek25.enabled",
+    "source": "builtin",
+    "titleKey": "signal.net.realtek25.enabled.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "net.realtek25.present",
+    "source": "builtin",
+    "titleKey": "signal.net.realtek25.present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "net.realtek25.unused",
+    "source": "builtin",
+    "titleKey": "signal.net.realtek25.unused.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "net.region_jitter_high",
+    "source": "builtin",
+    "titleKey": "signal.net.region_jitter_high.title"
+  },
+  {
+    "id": "net.region_loss",
+    "source": "builtin",
+    "titleKey": "signal.net.region_loss.title"
+  },
+  {
+    "id": "net.region_ping_high",
+    "source": "builtin",
+    "titleKey": "signal.net.region_ping_high.title"
+  },
+  {
+    "id": "net.secondary_adapter_up",
+    "source": "builtin",
+    "titleKey": "signal.net.secondary_adapter_up.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "net.teredo_on",
+    "source": "builtin",
+    "titleKey": "signal.net.teredo_on.title"
+  },
+  {
+    "id": "net.virtual_adapter_present",
+    "source": "builtin",
+    "titleKey": "signal.net.virtual_adapter_present.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "net.vpn_adapter_up",
+    "source": "builtin",
+    "titleKey": "signal.net.vpn_adapter_up.title",
+    "entity": "adapter"
+  },
+  {
+    "id": "net.wifi_2_4ghz",
+    "source": "builtin",
+    "titleKey": "signal.net.wifi_2_4ghz.title"
+  },
+  {
+    "id": "net.wifi_weak",
+    "source": "builtin",
+    "titleKey": "signal.net.wifi_weak.title"
+  },
+  {
+    "id": "os.auto_time_off",
+    "source": "builtin",
+    "titleKey": "signal.os.auto_time_off.title"
+  },
+  {
+    "id": "os.build_below_19045",
+    "source": "builtin",
+    "titleKey": "signal.os.build_below_19045.title"
+  },
+  {
+    "id": "os.build_supported",
+    "source": "builtin",
+    "titleKey": "signal.os.build_supported.title"
+  },
+  {
+    "id": "os.clock_skewed",
+    "source": "builtin",
+    "titleKey": "signal.os.clock_skewed.title"
+  },
+  {
+    "id": "os.env_vars_broken",
+    "source": "builtin",
+    "titleKey": "signal.os.env_vars_broken.title"
+  },
+  {
+    "id": "os.fast_startup_on",
+    "source": "builtin",
+    "titleKey": "signal.os.fast_startup_on.title"
+  },
+  {
+    "id": "os.hotfix_kb5101650",
+    "source": "builtin",
+    "titleKey": "signal.os.hotfix_kb5101650.title"
+  },
+  {
+    "id": "os.insider",
+    "source": "builtin",
+    "titleKey": "signal.os.insider.title"
+  },
+  {
+    "id": "os.modified_windows",
+    "source": "builtin",
+    "titleKey": "signal.os.modified_windows.title"
+  },
+  {
+    "id": "os.pending_reboot",
+    "source": "builtin",
+    "titleKey": "signal.os.pending_reboot.title"
+  },
+  {
+    "id": "os.required_services_disabled",
+    "source": "builtin",
+    "titleKey": "signal.os.required_services_disabled.title",
+    "entity": "service"
+  },
+  {
+    "id": "os.system_files_suspect",
+    "source": "builtin",
+    "titleKey": "signal.os.system_files_suspect.title"
+  },
+  {
+    "id": "os.vm",
+    "source": "builtin",
+    "titleKey": "signal.os.vm.title"
+  },
+  {
+    "id": "os.win10",
+    "source": "builtin",
+    "titleKey": "signal.os.win10.title"
+  },
+  {
+    "id": "os.windows_n",
+    "source": "builtin",
+    "titleKey": "signal.os.windows_n.title"
+  },
+  {
+    "id": "os.wu_installing",
+    "source": "builtin",
+    "titleKey": "signal.os.wu_installing.title"
+  },
+  {
+    "id": "power.cpu_max_limited",
+    "source": "builtin",
+    "titleKey": "signal.power.cpu_max_limited.title"
+  },
+  {
+    "id": "power.on_battery",
+    "source": "builtin",
+    "titleKey": "signal.power.on_battery.title"
+  },
+  {
+    "id": "power.saver_plan",
+    "source": "builtin",
+    "titleKey": "signal.power.saver_plan.title"
+  },
+  {
+    "id": "power.usb_selective_suspend_on",
+    "source": "builtin",
+    "titleKey": "signal.power.usb_selective_suspend_on.title"
+  },
+  {
+    "id": "proc.overlay_running",
+    "source": "builtin",
+    "titleKey": "signal.proc.overlay_running.title",
+    "entity": "process"
+  },
+  {
+    "id": "riot.client_installed",
+    "source": "builtin",
+    "titleKey": "signal.riot.client_installed.title"
+  },
+  {
+    "id": "riot.client_not_elevated",
+    "source": "builtin",
+    "titleKey": "signal.riot.client_not_elevated.title",
+    "entity": "file"
+  },
+  {
+    "id": "riot.compat_layers_present",
+    "source": "builtin",
+    "titleKey": "signal.riot.compat_layers_present.title",
+    "entity": "compatLayer"
+  },
+  {
+    "id": "riot.config_corrupt",
+    "source": "builtin",
+    "titleKey": "signal.riot.config_corrupt.title"
+  },
+  {
+    "id": "riot.fso_disabled",
+    "source": "builtin",
+    "titleKey": "signal.riot.fso_disabled.title"
+  },
+  {
+    "id": "riot.game_running",
+    "source": "builtin",
+    "titleKey": "signal.riot.game_running.title"
+  },
+  {
+    "id": "riot.path_non_ascii",
+    "source": "builtin",
+    "titleKey": "signal.riot.path_non_ascii.title"
+  },
+  {
+    "id": "riot.status_incident",
+    "source": "builtin",
+    "titleKey": "signal.riot.status_incident.title"
+  },
+  {
+    "id": "riot.valorant_exe",
+    "source": "builtin",
+    "titleKey": "signal.riot.valorant_exe.title",
+    "entity": "file"
+  },
+  {
+    "id": "riot.valorant_installed",
+    "source": "builtin",
+    "titleKey": "signal.riot.valorant_installed.title"
+  },
+  {
+    "id": "sec.bcd.hypervisor_off",
+    "source": "builtin",
+    "titleKey": "signal.sec.bcd.hypervisor_off.title",
+    "requiresAdmin": true
+  },
+  {
+    "id": "sec.bcd.nx_off",
+    "source": "builtin",
+    "titleKey": "signal.sec.bcd.nx_off.title",
+    "requiresAdmin": true
+  },
+  {
+    "id": "sec.bcd.testsigning",
+    "source": "builtin",
+    "titleKey": "signal.sec.bcd.testsigning.title",
+    "requiresAdmin": true
+  },
+  {
+    "id": "sec.bitlocker_on",
+    "source": "builtin",
+    "titleKey": "signal.sec.bitlocker_on.title"
+  },
+  {
+    "id": "sec.defender_cfa_on",
+    "source": "builtin",
+    "titleKey": "signal.sec.defender_cfa_on.title",
+    "requiresAdmin": true
+  },
+  {
+    "id": "sec.defender_disabled_policy",
+    "source": "builtin",
+    "titleKey": "signal.sec.defender_disabled_policy.title",
+    "requiresAdmin": true
+  },
+  {
+    "id": "sec.exploit_override_riot",
+    "source": "builtin",
+    "titleKey": "signal.sec.exploit_override_riot.title",
+    "entity": "process"
+  },
+  {
+    "id": "sec.hvci.configured_not_running",
+    "source": "builtin",
+    "titleKey": "signal.sec.hvci.configured_not_running.title"
+  },
+  {
+    "id": "sec.hvci.incompatible_drivers",
+    "source": "builtin",
+    "titleKey": "signal.sec.hvci.incompatible_drivers.title",
+    "entity": "driver"
+  },
+  {
+    "id": "sec.hvci.running",
+    "source": "builtin",
+    "titleKey": "signal.sec.hvci.running.title"
+  },
+  {
+    "id": "sec.hypervisor_present",
+    "source": "builtin",
+    "titleKey": "signal.sec.hypervisor_present.title"
+  },
+  {
+    "id": "sec.ifeo_perfoptions_riot",
+    "source": "builtin",
+    "titleKey": "signal.sec.ifeo_perfoptions_riot.title",
+    "entity": "process"
+  },
+  {
+    "id": "sec.ifeo_riot_debugger",
+    "source": "builtin",
+    "titleKey": "signal.sec.ifeo_riot_debugger.title",
+    "entity": "process"
+  },
+  {
+    "id": "sec.iommu_available",
+    "source": "builtin",
+    "titleKey": "signal.sec.iommu_available.title"
+  },
+  {
+    "id": "sec.kernel_dma_protection",
+    "source": "builtin",
+    "titleKey": "signal.sec.kernel_dma_protection.title"
+  },
+  {
+    "id": "sec.secureboot.db_missing_ca2023",
+    "source": "builtin",
+    "titleKey": "signal.sec.secureboot.db_missing_ca2023.title",
+    "requiresAdmin": true
+  },
+  {
+    "id": "sec.secureboot.on",
+    "source": "builtin",
+    "titleKey": "signal.sec.secureboot.on.title"
+  },
+  {
+    "id": "sec.secureboot.setup_mode",
+    "source": "builtin",
+    "titleKey": "signal.sec.secureboot.setup_mode.title",
+    "requiresAdmin": true
+  },
+  {
+    "id": "sec.smart_app_control_on",
+    "source": "builtin",
+    "titleKey": "signal.sec.smart_app_control_on.title",
+    "requiresAdmin": true
+  },
+  {
+    "id": "sec.third_party_av",
+    "source": "builtin",
+    "titleKey": "signal.sec.third_party_av.title"
+  },
+  {
+    "id": "sec.tpm.firmware",
+    "source": "builtin",
+    "titleKey": "signal.sec.tpm.firmware.title"
+  },
+  {
+    "id": "sec.tpm.not_ready",
+    "source": "builtin",
+    "titleKey": "signal.sec.tpm.not_ready.title",
+    "requiresAdmin": true
+  },
+  {
+    "id": "sec.tpm.present",
+    "source": "builtin",
+    "titleKey": "signal.sec.tpm.present.title"
+  },
+  {
+    "id": "sec.tpm2",
+    "source": "builtin",
+    "titleKey": "signal.sec.tpm2.title"
+  },
+  {
+    "id": "sec.vbs.running",
+    "source": "builtin",
+    "titleKey": "signal.sec.vbs.running.title"
+  },
+  {
+    "id": "sec.virtualization.enabled",
+    "source": "builtin",
+    "titleKey": "signal.sec.virtualization.enabled.title"
+  },
+  {
+    "id": "storage.intel_vmd",
+    "source": "builtin",
+    "titleKey": "signal.storage.intel_vmd.title"
+  },
+  {
+    "id": "vg.bootstatus_dat",
+    "source": "builtin",
+    "titleKey": "signal.vg.bootstatus_dat.title",
+    "entity": "file"
+  },
+  {
+    "id": "vg.files_missing",
+    "source": "builtin",
+    "titleKey": "signal.vg.files_missing.title"
+  },
+  {
+    "id": "vg.installed",
+    "source": "builtin",
+    "titleKey": "signal.vg.installed.title"
+  },
+  {
+    "id": "vg.stale_dat",
+    "source": "builtin",
+    "titleKey": "signal.vg.stale_dat.title",
+    "entity": "file"
+  },
+  {
+    "id": "vg.vgc_automatic_needed",
+    "source": "builtin",
+    "titleKey": "signal.vg.vgc_automatic_needed.title",
+    "entity": "service"
+  },
+  {
+    "id": "vg.vgc_cpu_high",
+    "source": "builtin",
+    "titleKey": "signal.vg.vgc_cpu_high.title"
+  },
+  {
+    "id": "vg.vgc_crash_loop",
+    "source": "builtin",
+    "titleKey": "signal.vg.vgc_crash_loop.title"
+  },
+  {
+    "id": "vg.vgc_disabled",
+    "source": "builtin",
+    "titleKey": "signal.vg.vgc_disabled.title",
+    "entity": "service"
+  },
+  {
+    "id": "vg.vgc_logs_recent",
+    "source": "builtin",
+    "titleKey": "signal.vg.vgc_logs_recent.title"
+  },
+  {
+    "id": "vg.vgc_missing",
+    "source": "builtin",
+    "titleKey": "signal.vg.vgc_missing.title",
+    "entity": "service"
+  },
+  {
+    "id": "vg.vgc_never_started",
+    "source": "builtin",
+    "titleKey": "signal.vg.vgc_never_started.title"
+  },
+  {
+    "id": "vg.vgc_running",
+    "source": "builtin",
+    "titleKey": "signal.vg.vgc_running.title",
+    "entity": "service"
+  },
+  {
+    "id": "vg.vgk_missing",
+    "source": "builtin",
+    "titleKey": "signal.vg.vgk_missing.title",
+    "entity": "service"
+  },
+  {
+    "id": "vg.vgk_not_loaded",
+    "source": "builtin",
+    "titleKey": "signal.vg.vgk_not_loaded.title",
+    "entity": "service"
+  },
+  {
+    "id": "vg.vgk_running",
+    "source": "builtin",
+    "titleKey": "signal.vg.vgk_running.title",
+    "entity": "service"
+  }
+]

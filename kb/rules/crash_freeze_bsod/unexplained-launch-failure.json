@@ -1,0 +1,48 @@
+{
+  "id": "unexplained-launch-failure",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "crash_freeze_bsod",
+  "titleKey": "rule.unexplained-launch-failure.title",
+  "summaryKey": "rule.unexplained-launch-failure.summary",
+  "bucket": "riotOrAccount",
+  "symptoms": [
+    "wont_launch",
+    "crash_desktop"
+  ],
+  "prior": {
+    "threads": 3
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "crash",
+      "signal": "crash.recent",
+      "true": 0.4
+    },
+    {
+      "id": "unknown_mod",
+      "signal": "events.riot_crash_unknown_module",
+      "true": 0.6
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.riot.support_ticket"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "unexplained-launch-failure",
+    "threadCount": 3,
+    "evidence": "suggested",
+    "threadIds": [
+      "1pqumpj",
+      "1pxluh9",
+      "1pxm0fp"
+    ],
+    "urls": []
+  }
+}

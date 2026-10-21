@@ -1,0 +1,87 @@
+{
+  "id": "bios_keys",
+  "keyColumn": "vendor",
+  "rows": [
+    {
+      "vendor": "ASUSTeK COMPUTER INC.",
+      "key": "Del or F2",
+      "secureboot": "Boot > CSM: Disabled; Boot > Secure Boot > OS Type: Windows UEFI mode (laptops: Security > Secure Boot Control)",
+      "tpm": "Intel: Advanced > PCH-FW Configuration > PTT: Enable. AMD: Advanced > AMD fTPM Configuration > TPM Device Selection: Firmware TPM",
+      "virtualization": "Intel: Advanced > CPU Configuration > Intel Virtualization Technology. AMD: Advanced > CPU Configuration > SVM Mode",
+      "iommu": "Intel: Advanced > System Agent (SA) Configuration > VT-d. AMD: Advanced > AMD CBS > NBIO Common Options > IOMMU",
+      "flash_tool": "EZ Flash (Tool > ASUS EZ Flash Utility)"
+    },
+    {
+      "vendor": "Micro-Star International Co., Ltd.",
+      "key": "Del",
+      "secureboot": "Settings > Advanced > Windows OS Configuration > BIOS UEFI/CSM Mode: UEFI, then Secure Boot: Enabled (laptops: Security > Secure Boot)",
+      "tpm": "Settings > Security > Trusted Computing > Security Device Support: Enable (AMD fTPM or Intel PTT)",
+      "virtualization": "Intel: OC > CPU Features > Intel Virtualization Tech. AMD: OC > Advanced CPU Configuration > SVM Mode",
+      "iommu": "Intel: OC > CPU Features > Intel VT-D Tech. AMD: Settings > Advanced > AMD CBS > NBIO Common Options > IOMMU",
+      "flash_tool": "M-Flash (button on the left side of the BIOS screen)"
+    },
+    {
+      "vendor": "Gigabyte Technology Co., Ltd.",
+      "key": "Del",
+      "secureboot": "Boot > CSM Support: Disabled; Boot > Secure Boot > Secure Boot: Enabled",
+      "tpm": "Settings > Miscellaneous > Intel Platform Trust Technology (PTT) or AMD CPU fTPM: Enabled",
+      "virtualization": "Intel: Tweaker > Advanced CPU Settings > Intel Virtualization Technology. AMD: Tweaker > Advanced CPU Settings > SVM Mode",
+      "iommu": "Settings > Miscellaneous > Intel VT-d or IOMMU: Enabled",
+      "flash_tool": "Q-Flash (press End, or click Q-Flash at the top)"
+    },
+    {
+      "vendor": "ASRock",
+      "key": "F2 or Del",
+      "secureboot": "Boot > CSM: Disabled; Security > Secure Boot: Enabled (Secure Boot Mode: Standard)",
+      "tpm": "Security > Intel Platform Trust Technology or AMD fTPM switch: Enabled (older boards: Advanced > CPU Configuration)",
+      "virtualization": "Advanced > CPU Configuration > Intel Virtualization Technology or SVM Mode: Enabled",
+      "iommu": "Intel: Advanced > Chipset Configuration > VT-d. AMD: Advanced > AMD CBS > NBIO Common Options > IOMMU",
+      "flash_tool": "Instant Flash (Tool > Instant Flash)"
+    },
+    {
+      "vendor": "Dell Inc.",
+      "key": "F2 (F12 opens the one-time boot menu)",
+      "secureboot": "Boot Configuration > Enable Secure Boot: ON (older BIOS: General > Boot Sequence: UEFI, then Secure Boot > Secure Boot Enable)",
+      "tpm": "Security > TPM 2.0 Security: ON",
+      "virtualization": "Virtualization Support > Intel Virtualization Technology (or AMD-V): ON",
+      "iommu": "Virtualization Support > VT for Direct I/O: ON (also Pre-boot / OS Kernel DMA Support if shown)",
+      "flash_tool": "the BIOS update file from dell.com/support (or F12 menu > BIOS Flash Update with a USB stick)"
+    },
+    {
+      "vendor": "HP",
+      "key": "Esc, then F10 (or F10 right away)",
+      "secureboot": "System Configuration > Boot Options > Secure Boot: Enabled, Legacy Support: Disabled (business PCs: Advanced > Secure Boot Configuration)",
+      "tpm": "Security > TPM Embedded Security > TPM Device: Available, TPM State: Enabled",
+      "virtualization": "System Configuration > Virtualization Technology: Enabled (business PCs: Advanced > System Options)",
+      "iommu": "System Configuration or Advanced > System Options > VTd / AMD IOMMU / DMA Protection (some consumer models hide it)",
+      "flash_tool": "the BIOS update from support.hp.com or the HP Support Assistant app"
+    },
+    {
+      "vendor": "LENOVO",
+      "key": "F2 or Fn+F2 (ThinkPad/ThinkCentre: F1; some laptops: the small Novo button)",
+      "secureboot": "Security > Secure Boot: Enabled; Boot > Boot Mode: UEFI",
+      "tpm": "Security > Intel Platform Trust Technology / AMD fTPM / Security Chip: Enabled",
+      "virtualization": "Configuration > Intel Virtual Technology or AMD SVM Technology: Enabled (ThinkPad: Security > Virtualization)",
+      "iommu": "Configuration > Intel VT-d / AMD IOMMU if shown (ThinkPad: Security > Virtualization > VT-d, Kernel DMA Protection)",
+      "flash_tool": "Lenovo Vantage > System Update, or the BIOS update file from pcsupport.lenovo.com"
+    },
+    {
+      "vendor": "Acer",
+      "key": "F2 (Del on many desktops)",
+      "secureboot": "Boot > Boot Mode: UEFI, then Secure Boot: Enabled (if it is grey: set a Supervisor Password in Security first and write it down)",
+      "tpm": "Security or Advanced > TPM / Intel PTT / AMD fTPM: Enabled",
+      "virtualization": "Main or Advanced > Intel Virtualization Technology or AMD-V / SVM: Enabled",
+      "iommu": "Main or Advanced > Intel VT-d or AMD IOMMU, if shown",
+      "flash_tool": "the BIOS update file from acer.com/support (run it in Windows with the charger plugged in)"
+    },
+    {
+      "vendor": "default",
+      "key": "Del or F2 (the start screen often shows it; some laptops use F1, F10, F12 or Esc)",
+      "secureboot": "Boot or Security > Secure Boot: Enabled; CSM / Legacy: Disabled; Boot Mode: UEFI",
+      "tpm": "Security or Advanced > TPM / Firmware TPM / fTPM (AMD) / PTT (Intel): Enabled",
+      "virtualization": "Advanced > CPU Configuration > SVM Mode (AMD) or Intel Virtualization Technology (VT-x): Enabled",
+      "iommu": "Advanced or Chipset > IOMMU / AMD-Vi (AMD) or VT-d (Intel): Enabled",
+      "flash_tool": "the BIOS flash tool built into the BIOS, or the update file from the maker's support page"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "third-party-hook-overlay-conflict",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.third-party-hook-overlay-conflict.title",
+  "summaryKey": "rule.third-party-hook-overlay-conflict.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "stutter",
+    "fps_low",
+    "launch_black_screen",
+    "crash_desktop"
+  ],
+  "prior": {
+    "threads": 49
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "overlay_running",
+      "signal": "proc.overlay_running",
+      "true": 1.2,
+      "false": -0.8,
+      "textKey": "rule.third-party-hook-overlay-conflict.ev.overlay_running"
+    },
+    {
+      "id": "hook_crash",
+      "signal": "events.riot_crash_hook_module",
+      "true": 2.5,
+      "textKey": "rule.third-party-hook-overlay-conflict.ev.hook_crash"
+    },
+    {
+      "id": "rtss",
+      "signal": "conflict.rtss.running",
+      "true": 0.8,
+      "group": "known_hook"
+    },
+    {
+      "id": "overwolf",
+      "signal": "conflict.overwolf_trackers.running",
+      "true": 0.6,
+      "group": "known_hook"
+    },
+    {
+      "id": "premier",
+      "signal": "conflict.premier_opinion.installed",
+      "true": 1.5,
+      "group": "known_hook2"
+    },
+    {
+      "id": "nielsen",
+      "signal": "conflict.nielsen_meter.installed",
+      "true": 1.2,
+      "group": "known_hook2"
+    },
+    {
+      "id": "screenxpert",
+      "signal": "conflict.asus_screenxpert.installed",
+      "true": 1.0,
+      "group": "known_hook2"
+    },
+    {
+      "id": "dvr",
+      "signal": "display.game_dvr_on",
+      "true": 0.3
+    },
+    {
+      "id": "after_update",
+      "signal": "ask.started_after_update",
+      "true": 0.4,
+      "ask": "ask.started_after_update"
+    }
+  ],
+  "wave": {
+    "from": "2026-10-05",
+    "to": "2026-12-31",
+    "boost": 0.6
+  },
+  "fixes": [
+    "fix.proc.close_overlays",
+    "fix.display.game_dvr_off",
+    "fix.svc.disable_conflict_service"
+  ],
+  "guides": [
+    "guide.apps.close_overlays",
+    "guide.apps.uninstall_conflict"
+  ],
+  "questions": [
+    "ask.started_after_update"
+  ],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "third-party-hook-overlay-conflict",
+    "threadCount": 49,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1ocjhpj",
+      "1ock4o9",
+      "1p3fe4u",
+      "1pjrrfi",
+      "1pkhb9y"
+    ],
+    "urls": []
+  }
+}

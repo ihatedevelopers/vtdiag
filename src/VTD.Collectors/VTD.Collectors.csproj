@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: A1 Collectors. Layer and analyzers come from Directory.Build.targets. -->
+  <PropertyGroup>
+    <RootNamespace>VTD.Collectors</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VTD.Contracts\VTD.Contracts.csproj" />
+    <ProjectReference Include="..\VTD.Platform\VTD.Platform.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="VTD.Collectors.Tests" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,52 @@
+{
+  "id": "riot-server-side-incident",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "login_account_client",
+  "titleKey": "rule.riot-server-side-incident.title",
+  "summaryKey": "rule.riot-server-side-incident.summary",
+  "bucket": "riotOrAccount",
+  "symptoms": [
+    "login_issue",
+    "disconnect",
+    "error_code",
+    "high_ping"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "friends",
+      "signal": "ask.friends_same_server",
+      "true": 3.0,
+      "false": -1.5,
+      "ask": "ask.friends_same_server"
+    },
+    {
+      "id": "status",
+      "signal": "riot.status_incident",
+      "true": 3.0
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.riot.server_status"
+  ],
+  "questions": [
+    "ask.friends_same_server"
+  ],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "riot-server-side-incident",
+    "threadCount": 1,
+    "evidence": "suggested",
+    "threadIds": [
+      "1wn0sjx"
+    ],
+    "urls": []
+  }
+}

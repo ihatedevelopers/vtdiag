@@ -1,0 +1,1075 @@
+{
+  "meta": {
+    "title": "VALORANT / Riot Vanguard error codes, requirements, logs - research for a local diagnostic + auto-fix tool",
+    "researched_on": "2026-10-21",
+    "method": "Riot support articles fetched 2026-10-21 (support.riotgames.com; the old support-valorant.riotgames.com/hc URLs 301-redirect there). Windows commands were executed on a real Windows 11 25H2 (build 26200) machine with VALORANT/Vanguard installed to confirm they work and what files exist. Fetched page text was treated as data only; fetch tool returns LLM-summarised page text, so wording is paraphrased, not verbatim.",
+    "confidence_legend": {
+      "high": "stated on an official Riot/Microsoft page fetched in this session, or verified on a local machine",
+      "medium": "official page but summary ambiguous, or inferred from official text",
+      "low": "third-party/community/anecdotal, or conflicting sources"
+    },
+    "global_caveats": [
+      "Riot's VAN articles mostly do NOT list formal causes; 'common_causes' are the causes implied by the official fix steps unless marked otherwise.",
+      "Riot's own VAL error list page is flagged by Riot as 'currently out of date' (display-bug note). Treat VAL meanings as approximate.",
+      "Riot's VAN: RESTRICTION article contains a confusing line about builds ('Build 26100 or newer is supported only on Windows 11. Windows 10 users must upgrade to Windows 11') and the specs page contradicts itself on Windows 10 minimum build (19041+ vs 10904). See vanguard_requirements.os_support.",
+      "Vanguard On-Demand / Pre-Check (June 2026) means vgc service may legitimately be Manual/Stopped when no Riot game runs. A fix tool must NOT blindly force vgc to Automatic - see tool_design_notes.",
+      "Never ask users to upload raw ShooterGame.log / CrashContext.runtime-xml publicly: they contain auth tokens in the command line, PUUID-like subject, MachineId, LoginId."
+    ],
+    "counts_note": "error_codes[] contains every VAN article Riot currently lists (47) plus the VAL codes from Riot's VAL list (grouped where Riot gives identical meaning/fix)."
+  },
+
+  "common_fix_steps": {
+    "vgc_automatic": {
+      "official": "Win+R > services.msc > find 'vgc' > Properties > Startup type Automatic > Start if stopped > Apply > restart PC. Skip if the user enabled Vanguard Pre-Check (on-demand).",
+      "source_url": "https://support.riotgames.com/riot/security/set-vgc-as-automatic",
+      "confidence": "high"
+    },
+    "manual_vanguard_uninstall": {
+      "official": "Exit Riot Client and Vanguard from tray; uninstall via tray (Advanced > Uninstall Vanguard) or Settings > Apps; if it will not uninstall: elevated cmd 'sc delete vgc' and 'sc delete vgk', restart, delete the leftover 'Riot Vanguard' folder in Program Files; launch the Riot Client / game to reinstall Vanguard.",
+      "source_url": "https://support.riotgames.com/valorant/performance/uninstalling-and-disabling-riot-vanguard",
+      "confidence": "high"
+    },
+    "restore_windows_security": {
+      "official": "Elevated cmd: 'bcdedit /set TESTSIGNING off' and 'bcdedit /set nointegritychecks OFF' (skip the second if Windows replies it is protected by Secure Boot policy); restart.",
+      "source_url": "https://support.riotgames.com/riot/security/restore-windows-security-to-normal-state",
+      "confidence": "high"
+    },
+    "clean_boot": {
+      "official": "Perform a Windows clean boot (msconfig: hide Microsoft services, disable the rest; disable startup apps) to find background software interfering with Vanguard.",
+      "source_url": "https://support.riotgames.com/riot/performance/error-van--104",
+      "confidence": "high"
+    },
+    "time_date": {
+      "official": "Verify Windows date, time and time zone are correct (wrong clock breaks services and secure connections).",
+      "source_url": "https://support.riotgames.com/riot/performance/error-van--102",
+      "confidence": "high"
+    },
+    "gather_logs": {
+      "official": "If nothing helps: Riot Repair Tool (RRT, run as admin) -> select VALORANT -> attach generated .zip to a Player Support ticket.",
+      "source_url": "https://support.riotgames.com/riot/performance/gathering-logs-riot-repair-tool-rrt",
+      "confidence": "high"
+    },
+    "safe_test_note": "Riot recommends testing after each step in Practice Tool / custom game to avoid penalties in matchmade games (stated on VAN 59/68/193/9101 pages)."
+  },
+
+  "error_codes": [
+    {
+      "code": "VAN: RESTRICTION",
+      "category": "vanguard_restriction",
+      "official_meaning": "Vanguard requires a Windows update or a Windows/BIOS security feature to be enabled before the game can launch; the error message itself names the requirement (Windows update, TPM 2.0, Secure Boot, Memory Integrity (HVCI/VBS), or IOMMU). Applies to the un-numbered variant only.",
+      "common_causes": [
+        "Windows older than minimum build (article: minimum build 19045 or newer)",
+        "TPM 2.0 / Secure Boot / Memory Integrity (HVCI/VBS) / IOMMU not enabled",
+        "Account or HWID flagged so Vanguard enforces stricter boot-security checks (Riot dev blog 2025-12-18: applied at account or HWID level; not an accusation of cheating, means config resembles those used by cheaters)",
+        "Motherboard firmware that reports Pre-Boot DMA Protection before IOMMU is fully initialized (needs BIOS update)"
+      ],
+      "official_fixes": [
+        "If message says Windows update: install all Windows updates (min build 19045 per article), restart",
+        "If message names a feature: enable it (TPM 2.0 guide, Secure Boot guide, Memory Integrity guide, IOMMU guide), restart",
+        "If IOMMU 'update motherboard firmware' warning: note BaseBoard Manufacturer/Product in msinfo32, flash latest BIOS, then re-check IOMMU is still enabled",
+        "Submit ticket with RRT logs"
+      ],
+      "community_fixes": [],
+      "detectable_locally": "Yes - check each requirement (see vanguard_requirements.checks): OS build via registry, tpmtool getdeviceinformation, SecureBoot\\State registry, Win32_DeviceGuard, IOMMU only partially (Win32_DeviceGuard AvailableSecurityProperties contains 3 = DMA protection; msinfo32 Kernel DMA Protection; BIOS IOMMU setting itself needs admin/UEFI and is not directly readable). Also compare BIOS release date against vendor advisories (ASUS CVE-2025-11901, Gigabyte CVE-2025-14302, MSI CVE-2025-14303, ASRock CVE-2025-14304, CERT VU#382314).",
+      "source_urls": [
+        "https://support.riotgames.com/riot/penalties/error-van-restriction",
+        "https://riotgames.com/en/news/vanguard-security-update-motherboard",
+        "https://support.riotgames.com/riot/support-tools/enabling-iommu"
+      ],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN: RESTRICTION: 1",
+      "category": "vanguard_restriction",
+      "official_meaning": "Vanguard couldn't verify that Secure Boot is enabled and working correctly.",
+      "common_causes": ["Secure Boot disabled", "System not booted in UEFI mode (Legacy/CSM)", "Motherboard BIOS needs update"],
+      "official_fixes": [
+        "Enable Secure Boot per Riot guide, restart, relaunch",
+        "If Secure Boot already enabled: update BIOS, relaunch",
+        "Ticket with RRT logs"
+      ],
+      "community_fixes": [],
+      "detectable_locally": "Yes - HKLM\\SYSTEM\\CurrentControlSet\\Control\\SecureBoot\\State UEFISecureBootEnabled (verified readable without admin); Confirm-SecureBootUEFI needs admin; disk partition style (Get-Disk) must be GPT; BIOS version/date via Win32_BIOS.",
+      "source_urls": ["https://support.riotgames.com/riot/penalties/error-van-restriction-1", "https://support.riotgames.com/riot/client/secure-boot-guide"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN: RESTRICTION: 3",
+      "category": "vanguard_restriction",
+      "official_meaning": "Vanguard couldn't verify the game from the drive where it is installed.",
+      "common_causes": ["Game installed on a drive other than the one running Windows (external USB or secondary internal drive)"],
+      "official_fixes": [
+        "Find the drive containing the Windows folder (usually C:)",
+        "Uninstall and reinstall the game on that same internal drive",
+        "Restart PC and relaunch"
+      ],
+      "community_fixes": [],
+      "detectable_locally": "Yes - read install path from C:\\ProgramData\\Riot Games\\RiotClientInstalls.json / Metadata\\*\\*.product_settings.yaml and compare drive letter to $env:SystemDrive. (This machine's game root: C:/Riot Games/VALORANT/live/ per CrashContext BaseDir.) Auto-fix = reinstall, not safe to automate; just guide.",
+      "source_urls": ["https://support.riotgames.com/riot/penalties/error-van-restriction-3"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN: RESTRICTION: 4",
+      "category": "vanguard_restriction",
+      "official_meaning": "Vanguard couldn't verify your PC's Secure Boot configuration (page title/error text: 'Secure Boot verification failure'). Verified by two fetches quoting the first paragraph.",
+      "common_causes": ["Secure Boot disabled or misconfigured (article lists no separate causes)"],
+      "official_fixes": ["Enable Secure Boot per guide", "Restart", "Relaunch", "Ticket with RRT logs if persists"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as RESTRICTION: 1 (SecureBoot\\State, GPT, UEFI). Also check secure boot key state (see VAN: STATUS_SB_POLICY).",
+      "source_urls": ["https://support.riotgames.com/riot/penalties/error-van-restriction-4"],
+      "confidence": "medium",
+      "note": "Distinction between RESTRICTION 1 and 4 is not explained by Riot; both name Secure Boot. 4 may mean configuration/policy verification vs 1 = enabled-and-working."
+    },
+    {
+      "code": "VAN: RESTRICTION: 5",
+      "category": "vanguard_restriction",
+      "official_meaning": "Vanguard couldn't verify that Memory Integrity (HVCI/VBS, part of Windows Core Isolation) is enabled and running correctly.",
+      "common_causes": ["Memory Integrity off", "CPU virtualization (Intel VT-x / AMD SVM) not enabled in BIOS", "NX/XD (No Execute / Execute Disable) disabled in BIOS (stated on the LoL/2XKO mirrors of this article)", "Incompatible driver blocks HVCI", "Required BIOS/UEFI security setting not configured"],
+      "official_fixes": [
+        "Enable Memory Integrity: Windows Security > Device security > Core isolation > Memory integrity On (guide)",
+        "If VBS 'enabled but not running' in msinfo32: enable VT-x+XD (Intel) or SVM+NX (AMD) in BIOS; ensure Hyper-V / Windows Hypervisor Platform feature not disabled",
+        "If toggle greyed/incompatible driver: review incompatible drivers, update/uninstall (old anti-cheat, RGB, hardware drivers common); list drivers with 'dism /online /get-drivers /format:table'",
+        "Restart, relaunch; ticket with RRT logs"
+      ],
+      "community_fixes": [],
+      "detectable_locally": "Yes - Win32_DeviceGuard: VirtualizationBasedSecurityStatus (2=running), SecurityServicesRunning contains 2 (HVCI); registry ...\\DeviceGuard\\Scenarios\\HypervisorEnforcedCodeIntegrity Enabled=1 (verified on test machine: status 2, services running {2}, Enabled=1); systeminfo 'Virtualization-based security: Status: Running'. Incompatible drivers: Event log Microsoft-Windows-CodeIntegrity/Operational and 'Get-CimInstance Win32_SystemDriver'.",
+      "source_urls": ["https://support.riotgames.com/riot/penalties/error-van-restriction-5", "https://support.riotgames.com/riot/support-tools/enabling-memory-integrity", "https://support-leagueoflegends.riotgames.com/hc/en-us/articles/49277523219859-Error-VAN-RESTRICTION-5"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN: Incompatible Software",
+      "category": "vanguard_conflict",
+      "official_meaning": "Vanguard found software or a driver that fails its security requirements ('Incompatible software component detected'); the error shows the offending file path (.sys).",
+      "common_causes": ["Incompatible software/driver identified by file path in the message", "VPN or proxy used to connect to the game server (article lists as connection cause)"],
+      "official_fixes": [
+        "Note the file path in the error",
+        "Uninstall the associated software (Settings > Apps > Installed apps / Programs and Features), restart",
+        "If cannot uninstall: delete the flagged .sys file, restart",
+        "Configure DNS per Riot DNS guide",
+        "Disable VPN/proxy",
+        "Manually reinstall Vanguard",
+        "Ticket with RRT logs"
+      ],
+      "community_fixes": [
+        {"fix": "Frequently flagged files per community guide: ene.sys (RGB lighting controllers), rtcore64.sys (MSI Afterburner/RivaTuner older versions). Remove/update that software.", "source": "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error", "confidence": "low"}
+      ],
+      "detectable_locally": "Partly - Riot names no list. Tool can (a) list loaded third-party kernel drivers (Get-CimInstance Win32_SystemDriver | State=Running), (b) read Microsoft-Windows-CodeIntegrity/Operational events (3077 = blocked by blocklist/policy, 3033/3063 = unsigned/policy failures), (c) match against a community watch-list (ene.sys, rtcore64.sys, etc.) flagged confidence low, (d) detect VPN/proxy adapters and WinINET/WinHTTP proxy settings. Riot does NOT publish a block list.",
+      "source_urls": ["https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software", "https://support.riotgames.com/riot/performance/error-van-incompatible-software"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN: STATUS_VMD_9001",
+      "category": "vanguard_driver",
+      "official_meaning": "Vanguard detected a problem communicating with the Intel Volume Management Device (VMD) controller: 'The VMD controller has encountered a fatal unrecoverable error. Process will terminate.'",
+      "common_causes": ["Communication problem with Intel VMD controller, most common on systems using Intel Rapid Storage Technology (RST) driver"],
+      "official_fixes": [
+        "Install the correct Intel RST driver: prebuilt PCs from OEM support site (Lenovo/Legion, HP/OMEN, Dell/Alienware, ASUS/ROG, MSI, Acer/Predator, Surface); custom builds from Intel's generic RST driver page",
+        "Restart and relaunch",
+        "Ticket with logs if persists"
+      ],
+      "community_fixes": [],
+      "detectable_locally": "Yes - Storage controllers via Get-PnpDevice -Class SCSIAdapter / 'Intel RST VMD Controller' name, driver provider/version via Get-CimInstance Win32_PnPSignedDriver; flag iaStorVD.sys / iaStorAC.sys old versions; BIOS 'VMD Controller' setting not readable.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-status-vmd-9001"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN: Incompatible OEM Driver",
+      "category": "vanguard_driver",
+      "official_meaning": "Vanguard detected a driver that doesn't meet its security requirements. Named cases: Intel VMD/RST (iastorvd.sys), third-party NVMe/SATA drivers (secnvme.sys, solidnvm.sys, asstahci64.sys), MediaTek RZ616 Wi-Fi 6E driver (mtkwl6ex.sys) older than 3.5.",
+      "common_causes": ["Intel VMD/RST driver incompatible (iastorvd.sys)", "Samsung/Solidigm-style third-party NVMe drivers secnvme.sys / solidnvm.sys", "ASMedia-style SATA driver asstahci64.sys", "MediaTek RZ616 Wi-Fi 6E driver v3.4 or lower"],
+      "official_fixes": [
+        "iastorvd.sys: install Intel RST driver from Intel 'RST Installation for 12th to 15th Gen Platforms' (download ID 930427), restart",
+        "secnvme.sys / solidnvm.sys: Device Manager > Storage controllers > Update driver > Browse > Let me pick > 'NVM Express Controller' (Microsoft)",
+        "asstahci64.sys: switch to 'Standard SATA AHCI Controller' (Microsoft); verify Provider = Microsoft Corporation",
+        "mtkwl6ex.sys: update RZ616 Wi-Fi driver to >= 3.5 via Windows Update > Optional updates or Microsoft Update Catalog",
+        "Different driver named: ticket with driver name + RRT logs"
+      ],
+      "community_fixes": [],
+      "detectable_locally": "Yes - this is the best auto-detectable driver code. Get-CimInstance Win32_SystemDriver / Win32_PnPSignedDriver and look for ImagePath/filenames iastorvd.sys, secnvme.sys, solidnvm.sys, asstahci64.sys, mtkwl6ex.sys (+ MediaTek RZ616 driver version < 3.5). Can offer guided swap to Microsoft driver (needs user confirmation; risk of boot failure -> do not automate silently).",
+      "source_urls": ["https://support.riotgames.com/riot/performance/van-incompatible-oem-driver"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN: STATUS_SB_POLICY",
+      "category": "vanguard_restriction",
+      "official_meaning": "Vanguard could not verify the device's Secure Boot policy ('The secure boot policy on this device could not be verified.'). Can occur even when Secure Boot is ON.",
+      "common_causes": ["Secure Boot database not at factory default / bad keys"],
+      "official_fixes": [
+        "Reset Secure Boot keys to factory default (BIOS > Key Management > Restore Factory Keys / Install Default Secure Boot Keys), even if Secure Boot is enabled. Suspend BitLocker or have recovery key first.",
+        "Restart and relaunch; ticket with RRT logs"
+      ],
+      "community_fixes": [],
+      "detectable_locally": "Partly - Secure Boot on/off readable; key database contents need admin: Get-SecureBootUEFI -Name PK/KEK/db (admin) and compare; (Get-SecureBootPolicy). BitLocker status via Get-BitLockerVolume (admin) / manage-bde -status to warn before key reset. Auto-fix not possible from OS (BIOS operation).",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-status-sb-policy", "https://support.riotgames.com/riot/client/secure-boot-guide"],
+      "confidence": "high"
+    },
+
+    {
+      "code": "VAN Missing -117",
+      "category": "vanguard_service",
+      "official_meaning": "Usually means Riot Vanguard isn't running; the client closes automatically because Vanguard is required.",
+      "common_causes": ["Temporary Vanguard startup problem", "Background apps/services interfering", "Corrupted/missing game files"],
+      "official_fixes": ["Restart PC", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - vgc service state/start type (sc qc vgc), vgk driver service (HKLM\\SYSTEM\\CurrentControlSet\\Services\\vgk, Start value; ImagePath exists), existence of C:\\Program Files\\Riot Vanguard\\vgk.sys/vgc.exe, vgc_*.log being written.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-missing--117"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN -104",
+      "category": "vanguard_connection",
+      "official_meaning": "Usually means Vanguard is having trouble starting or staying connected while the game launches/runs.",
+      "common_causes": ["Temporary connection problem", "Wrong Windows date/time/time zone", "vgc not running / not Automatic", "Background apps/services interfering", "Corrupted/missing game files", "General connection issues"],
+      "official_fixes": ["Restart PC", "Check date/time/time zone", "Set vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "PC Connection Troubleshooting Guide", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - clock vs NTP (w32tm /stripchart or compare with HTTP Date header; note W32Time service was Stopped on the test machine, error 0x80070426), time zone (Get-TimeZone), vgc state, connectivity to Riot hosts.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van--104"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN -102",
+      "category": "vanguard_connection",
+      "official_meaning": "Usually means Vanguard is having trouble starting, staying connected, or confirming everything is ready during launch/gameplay.",
+      "common_causes": ["vgc not running or not set to auto-start", "Wrong date/time/time zone", "Corrupted/missing Vanguard or game files", "Background apps interfering", "Connection problems"],
+      "official_fixes": ["Restart PC", "Check date/time/time zone", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as VAN -104.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van--102"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN -101",
+      "category": "vanguard_unsupported_system",
+      "official_meaning": "Usually means Vanguard detected an unsupported system configuration (client closes).",
+      "common_causes": ["Computer or OS doesn't meet Riot's system requirements (article links League of Legends requirements page - note the page is a shared Vanguard article)"],
+      "official_fixes": ["Compare hardware/OS with minimum requirements", "Use a supported computer/OS", "If requirements met: ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - OS arch (64-bit), build, CPU SSE4.2/AVX, DirectX 11, ARM detection (PROCESSOR_ARCHITECTURE), VM detection, RAM.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van--101", "https://support.riotgames.com/valorant/support-tools/minimum-recommended-pc-specs"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN -92",
+      "category": "vanguard_connection",
+      "official_meaning": "Usually means Vanguard is having trouble starting, staying connected, or confirming everything is ready while the game launches/runs.",
+      "common_causes": ["Vanguard not running", "Wrong date/time/time zone", "Background apps/services", "Corrupted/missing files", "Connection problems"],
+      "official_fixes": ["Restart PC", "Check date/time/time zone", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as VAN -104.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van--92"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN -83",
+      "category": "vanguard_connection",
+      "official_meaning": "Usually means Vanguard is having trouble starting, staying connected, or confirming everything is ready during launch/play.",
+      "common_causes": ["Vanguard not running", "Connection problems between Vanguard and game", "Wrong date/time", "vgc not Automatic", "Corrupted files", "Background apps"],
+      "official_fixes": ["Restart PC", "Check date/time/time zone", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as VAN -104.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van--83"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN -81",
+      "category": "vanguard_connection",
+      "official_meaning": "Usually means Vanguard is having trouble starting, staying connected, or confirming everything is ready while the game launches/runs. (VAL list page also describes -81 as 'service start failed'.)",
+      "common_causes": ["Wrong date/time/time zone", "Background apps/services", "vgc not running if not auto-start", "Corrupted/missing game files", "Connection problems"],
+      "official_fixes": ["Restart PC", "Check date/time/time zone", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as VAN -104; also 'sc query vgc' / 'sc query vgk' errors and System event log (Service Control Manager 7000/7009/7023/7031 for vgc/vgk).",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van--81", "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN -79",
+      "category": "vanguard_connection",
+      "official_meaning": "Vanguard having trouble starting, staying connected, or confirming it's ready; in-game text: 'VALORANT has encountered a connection error. Please relaunch the client to reconnect.'",
+      "common_causes": ["Vanguard not running", "Wrong date/time/time zone", "Background apps", "Corrupted/missing files", "Connection problems"],
+      "official_fixes": ["Restart PC", "Check date/time/time zone", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as VAN -104.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van--79"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN -72",
+      "category": "vanguard_connection",
+      "official_meaning": "Vanguard having trouble starting, staying connected, or confirming it's ready while the game launches/runs.",
+      "common_causes": ["Vanguard failing to start/stay connected", "Wrong date/time/time zone", "vgc not running", "Corrupted/missing files", "Background apps", "Connection problems"],
+      "official_fixes": ["Restart PC", "Check date/time/time zone", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as VAN -104.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van--72"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN -1",
+      "category": "vanguard_service",
+      "official_meaning": "Usually means Vanguard was unable to start correctly or one of its required services is unavailable.",
+      "common_causes": ["Vanguard failed to start properly", "A required service (vgc/vgk) unavailable"],
+      "official_fixes": ["Manually uninstall Vanguard, restart, relaunch to reinstall", "Set vgc to Automatic (unless Pre-Check)", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - vgc/vgk service presence, start type, state; vgk.sys exists; kernel driver loaded (sc query vgk, or fltmc / driverquery).",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van--1"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 0",
+      "category": "vanguard_init",
+      "official_meaning": "Vanguard couldn't verify that the PC is ready to run the game or hit a problem while starting up.",
+      "common_causes": ["Windows out of date", "vgc not running", "Damaged/non-default Vanguard install", "Background apps", "Corrupted game files", "Connection issues"],
+      "official_fixes": ["Install Windows updates + restart", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - pending Windows updates (Get-WindowsUpdateLog / COM Microsoft.Update.Session search for IsInstalled=0), vgc state, OS build vs minimum.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-0"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 6",
+      "category": "vanguard_init",
+      "official_meaning": "Vanguard couldn't verify the PC is ready to run the game or had an issue while initializing.",
+      "common_causes": ["Windows updates changing system services Vanguard relies on", "vgc not running", "Corrupted Vanguard install", "Corrupted game files", "Background apps", "Connection problems"],
+      "official_fixes": ["Windows updates + restart", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as VAN 0.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-6"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 25",
+      "category": "vanguard_init",
+      "official_meaning": "Vanguard couldn't finish one of its startup or system trust checks. Client text: 'An unexpected error with Vanguard has occurred and the client will now close.'",
+      "common_causes": ["Windows security settings preventing verification (e.g. test signing / integrity checks off)", "Pending Windows updates", "vgc not running", "Corrupted/missing Vanguard files", "Background apps", "Corrupted game files"],
+      "official_fixes": ["Restore Windows security to normal (bcdedit TESTSIGNING off, nointegritychecks OFF)", "Windows updates + restart", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - bcdedit /enum {current} (admin) shows testsigning / nointegritychecks / debug / bootmenupolicy; auto-fix: bcdedit /set TESTSIGNING off (admin, requires user OK + reboot). Also HKLM\\SYSTEM\\CurrentControlSet\\Control\\CI\\Config (VulnerableDriverBlocklistEnable).",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-25", "https://support.riotgames.com/riot/security/restore-windows-security-to-normal-state"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 57",
+      "category": "vanguard_service",
+      "official_meaning": "Usually means Vanguard isn't running or couldn't start correctly. Client text: 'An unexpected error with Vanguard has occurred and the client will now close.'",
+      "common_causes": ["Vanguard not starting (vgc not Automatic)", "Temporary startup problem", "Background apps/services", "Corrupted game files"],
+      "official_fixes": ["Set vgc Automatic (unless Pre-Check), restart if changed", "Restart PC", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - vgc start type/state, vgk driver, tray process vgtray.exe. NOTE: with Pre-Check/On-Demand, vgc Manual is expected.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-57"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 59",
+      "category": "vanguard_client_comm",
+      "official_meaning": "Usually means Vanguard ran into an unexpected issue while starting or communicating with the Riot Client (can close the client). NOT the same as VAL 59.",
+      "common_causes": ["Temporary launch/connection problem between Vanguard and Riot Client", "Corrupted/missing game files"],
+      "official_fixes": ["Fully close and reopen Riot Client", "Manual Vanguard reinstall", "Reinstall game", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Partly - multiple RiotClientServices.exe instances, vgc state, Riot Client Logs.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-59"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 68",
+      "category": "vanguard_connection",
+      "official_meaning": "Vanguard lost the connection or session it needs while the game was launching or running.",
+      "common_causes": ["Lost connection/session", "Wrong date/time/time zone", "vgc not running", "Damaged Vanguard install", "Corrupted game files", "Background apps", "Killer Network Service traffic prioritization (only official code page that names it)", "General connection problems"],
+      "official_fixes": ["Restart PC", "Check date/time/time zone", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Turn off Killer Network Service, relaunch", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - Killer Network Service present/running (Get-Service 'Killer Network Service' / 'Killer*'), clock, vgc.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-68"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 84",
+      "category": "vanguard_init",
+      "official_meaning": "Vanguard couldn't verify the PC is ready to run the game or errored while starting up.",
+      "common_causes": ["Pending Windows updates", "vgc not running", "Corrupted/missing files", "Background apps", "Connection problems"],
+      "official_fixes": ["Windows updates", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as VAN 0.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-84"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 128",
+      "category": "vanguard_init",
+      "official_meaning": "Vanguard couldn't complete one of its startup or system trust checks. (VAL list page: 'connection error'.)",
+      "common_causes": ["Windows security settings stopping verification", "Windows debugging setting: debug memory dumps enabled", "Missing Windows updates", "vgc not running", "Corrupted Vanguard/game files", "Background apps"],
+      "official_fixes": [
+        "Restore Windows security to normal state",
+        "Disable debug memory dumps: sysdm.cpl > Advanced > Startup and Recovery > Settings > Write debugging information = (none) > OK, restart",
+        "Windows updates + restart",
+        "vgc Automatic (unless Pre-Check)",
+        "Manual Vanguard reinstall",
+        "Clean boot",
+        "Reinstall game",
+        "Ticket with RRT logs"
+      ],
+      "community_fixes": [],
+      "detectable_locally": "Yes - HKLM\\SYSTEM\\CurrentControlSet\\Control\\CrashControl CrashDumpEnabled (0 = none; test machine had 3 = small dump; per Riot this setting is a VAN 128 trigger, medium confidence since article only says 'debug memory dumps'), bcdedit flags. Auto-fix candidate: set CrashDumpEnabled=0 (needs admin + user consent since it disables crash dumps).",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-128", "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 133",
+      "category": "vanguard_init",
+      "official_meaning": "Vanguard couldn't verify the PC is ready or hit an error while starting up (not a general connection error).",
+      "common_causes": ["Outdated Windows components", "vgc not running", "Corrupted files", "Background apps", "Connection problems"],
+      "official_fixes": ["Windows updates", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as VAN 0.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-133"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 135",
+      "category": "vanguard_init",
+      "official_meaning": "Vanguard couldn't verify the PC is ready or had an issue while initializing.",
+      "common_causes": ["Outdated Windows components", "vgc not running", "Damaged/incomplete Vanguard install", "Background apps", "Corrupted game files", "Connection problems"],
+      "official_fixes": ["Windows updates", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as VAN 0.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-135"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 138",
+      "category": "vanguard_unsupported_system",
+      "official_meaning": "Game/Vanguard is running in a virtual machine or unsupported virtualized environment (not supported). Shows as 'Connection Error: VALORANT encountered a connection error. Please relaunch the client to reconnect.'",
+      "common_causes": ["Running in a VM / virtualized environment", "Background apps", "Firewall blocking Riot Client from servers", "Corrupted game files"],
+      "official_fixes": ["Run on a standard (physical) Windows PC, not a VM", "Manual Vanguard reinstall", "Clean boot", "Configure firewall to allow Riot Client", "Reinstall game", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - Win32_ComputerSystem Manufacturer/Model (VMware, VirtualBox, QEMU, Microsoft Corporation 'Virtual Machine'), Win32_BIOS, SMBIOS strings, HypervisorPresent (WARNING: HypervisorPresent=True on a physical PC with VBS/HVCI running - do NOT use it alone; verified True on the test machine's real hardware), CPUID hypervisor vendor, Windows Firewall rules for Riot executables.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-138", "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 140",
+      "category": "vanguard_init",
+      "official_meaning": "Startup or connection issue involving VALORANT, Riot Client and Vanguard; typical text is a connection error asking to relaunch the client.",
+      "common_causes": ["Windows updates changing security/system services", "Windows launch/permission behavior interfering between Riot Client, game and Vanguard", "Vanguard not running", "Corrupted/missing game files"],
+      "official_fixes": [
+        "Install Windows updates + restart",
+        "On game shortcut and RiotClientServices.exe: Properties > Compatibility > 'Disable fullscreen optimizations', 'Run this program as an administrator', Change high DPI settings > Override high DPI scaling = Application",
+        "vgc Automatic (unless Pre-Check)",
+        "Manual Vanguard reinstall",
+        "Reinstall game",
+        "Ticket with RRT logs"
+      ],
+      "community_fixes": [
+        {"fix": "Some third-party blogs claim VAN 140 = 'unsupported Windows version'. Riot's own article does NOT say this - ignore.", "source": "https://www.exitlag.com/blog/valorant-van-140-fix/", "confidence": "low"}
+      ],
+      "detectable_locally": "Yes - AppCompatFlags\\Layers registry (HKCU/HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers) for the exe paths: DISABLEDXMAXIMIZEDWINDOWEDMODE, RUNASADMIN, HIGHDPIAWARE flags. Auto-fix feasible: write those layer values (HKCU, no admin needed for HKCU).",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-140"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 148",
+      "category": "vanguard_init",
+      "official_meaning": "Vanguard ran into an unexpected issue while starting or checking in with your system (client closes).",
+      "common_causes": ["Outdated Windows components", "Windows permission conflicts between Riot Client/game/Vanguard", "vgc not running", "Background apps", "Corrupted files", "Connection problems"],
+      "official_fixes": ["Windows updates + restart", "Run Riot Client as administrator", "vgc Automatic (unless Pre-Check)", "Clean boot", "Manual Vanguard reinstall", "Connection troubleshooting", "Reinstall game", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - AppCompatFlags RUNASADMIN on RiotClientServices.exe, UAC level (HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System EnableLUA), vgc.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-148"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 152",
+      "category": "ban",
+      "official_meaning": "The device is restricted from playing due to a hardware ID (HWID) ban after a review found an account on this device violated User Rules (Section 7) of the Terms of Service. NOT a Vanguard install/connection problem. (VAL list page: typically lasts 4 months.)",
+      "common_causes": ["HWID ban", "Buying/using second-hand hardware previously used for cheating (Riot treats logging in on an HWID-banned PC as ban evasion)"],
+      "official_fixes": ["No technical fix. Reinstalling Vanguard/game, changing connection or restarting does not lift it.", "See 'Understanding Hardware ID (HWID) Bans'; review possible via Player Support (separate ticket per account), not guaranteed"],
+      "community_fixes": [],
+      "detectable_locally": "NO - purely server-side. Tool must NOT attempt any 'fix', spoofer or HWID workaround; show the official explanation and the appeal link only. Can only detect that the user sees VAN 152 in Riot Client logs.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-152", "https://support.riotgames.com/riot/penalties/understanding-hardware-id-hwid-bans", "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 185",
+      "category": "vanguard_connection",
+      "official_meaning": "Session or connection issue between the game, Riot Client and Vanguard.",
+      "common_causes": ["PC below minimum requirements", "Controllers/USB devices connected", "Riot Client session conflict with another PC", "Vanguard startup problems", "Background apps", "Connection problems", "Corrupted game files"],
+      "official_fixes": ["Verify minimum requirements", "Unplug controllers/unnecessary USB devices", "Fully close/reopen Riot Client", "Log out of Riot Client on any other PC", "Restart PC", "Manual Vanguard reinstall", "Clean boot", "Connection troubleshooting", "Reinstall game", "Ticket with RRT logs"],
+      "community_fixes": [{"fix": "Third-party guides call VAN 185 'not an official/unconfirmed' code - false; Riot lists it.", "source": "https://www.thespike.gg/valorant/error-codes/van-185", "confidence": "low"}],
+      "detectable_locally": "Partly - min-spec check, enumerate USB/HID devices (Get-PnpDevice -Class HIDClass,USB -Status OK), connectivity checks.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-185"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 193",
+      "category": "vanguard_client_comm",
+      "official_meaning": "Vanguard had trouble starting or communicating correctly with the Riot Client.",
+      "common_causes": ["Multiple Riot Client sessions running", "Vanguard not running", "Windows security settings preventing verification", "Corrupted Vanguard boot status file (vgkbootstatus.dat)", "Background apps", "Corrupted Vanguard/game files"],
+      "official_fixes": ["Close extra Riot Client instances", "Restart PC", "vgc Automatic (unless Pre-Check)", "Restore Windows security to normal", "Delete vgkbootstatus.dat so Vanguard recreates it", "Clean boot", "Manual Vanguard reinstall", "Reinstall game", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - count RiotClientServices.exe/RiotClientUx.exe instances; vgkbootstatus.dat existence (location not stated by Riot: typically C:\\Program Files\\Riot Vanguard\\ - UNVERIFIED, medium/low; on test machine the file was not in the top-level folder listing, so search C:\\Program Files\\Riot Vanguard and C:\\ProgramData\\Riot Games); bcdedit flags. Auto-fix candidate: delete vgkbootstatus.dat after stopping vgc/Riot Client.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-193"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 1067",
+      "category": "vanguard_init",
+      "official_meaning": "Vanguard ran into an unexpected issue while starting or checking in with your system. Typically shows as a connection error asking to relaunch the client; can disconnect from a match. (Also the Windows system error number 1067 'The process terminated unexpectedly' - for the vgc service this is the same event.)",
+      "common_causes": ["Outdated Windows components", "Controllers/USB devices connected", "Windows permission conflicts", "vgc not running", "Background apps/services", "Malware", "Corrupted/incomplete Vanguard install", "Connection problems", "Corrupted game files"],
+      "official_fixes": ["Windows updates + restart", "Unplug controllers/unneeded USB devices", "Run Riot Client as administrator", "vgc Automatic (unless Pre-Check)", "Clean boot", "Full malware scan (Windows Security)", "Manual Vanguard reinstall", "Connection troubleshooting", "Reinstall game", "Ticket with RRT logs"],
+      "community_fixes": [
+        {"fix": "Remove Audinate Dante Controller / Dante virtual soundcard driver if installed (one Reddit-sourced anecdote reported by The Spike).", "source": "https://www.thespike.gg/league-of-legends/errors/vanguard-1067-error-fix", "confidence": "low"}
+      ],
+      "detectable_locally": "Yes - System event log: Service Control Manager event 7034/7031/7023 for 'VALORANT' / 'vgc' with 'terminated unexpectedly'; HID/USB devices; Defender status (Get-MpComputerStatus); vgc state.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-1067"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 2266",
+      "category": "vanguard_init",
+      "official_meaning": "Vanguard couldn't verify the PC is ready or had an issue while initializing.",
+      "common_causes": ["Pending Windows updates", "vgc not running", "Corrupted Vanguard/game files", "Background apps", "Connection problems"],
+      "official_fixes": ["Windows updates", "vgc Automatic (unless Pre-Check)", "Manual Vanguard reinstall", "Clean boot", "Reinstall game", "Connection troubleshooting", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as VAN 0.",
+      "source_urls": ["https://support.riotgames.com/riot/performance/error-van-2266"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 9001",
+      "category": "vanguard_requirement",
+      "official_meaning": "Vanguard doesn't detect TPM 2.0 as enabled. Text: 'This build of Vanguard requires TPM 2.0 to be enabled in order to play.'",
+      "common_causes": ["TPM 2.0 (Intel PTT / AMD fTPM / discrete) disabled in BIOS", "TPM 1.2 only", "Older BIOS/AGESA bug where TPM reports not ready even though enabled", "TPM recently cleared"],
+      "official_fixes": ["Enable TPM 2.0 per Riot TPM guide (tpm.msc must show 'ready for use' + Specification Version 2.0), launch again", "If tpm.msc says ready but error persists: note Manufacturer Version, update BIOS (AMD older AGESA affected), re-check fTPM/PTT still enabled", "Note: discrete TPM satisfies VAN 9001 but VAN: RESTRICTION needs firmware TPM (Intel PTT/AMD fTPM)"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - 'tpmtool getdeviceinformation' (works without admin; verified: TPM Present/Version 2.0/Manufacturer/Ready For Attestation), Get-PnpDevice -Class SecurityDevices (verified: 'Trusted Platform Module 2.0', ACPI\\MSFT0101), Get-Tpm and Win32_Tpm WMI need ADMIN (verified: Access denied / empty as normal user), tpm.msc.",
+      "source_urls": ["https://support.riotgames.com/riot/client/error-van-9001", "https://support.riotgames.com/riot/client/tpm-20-guide"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 9002",
+      "category": "vanguard_requirement",
+      "official_meaning": "Vanguard can't find a required Windows security feature enabled: Windows Exploit Protection is disabled/altered.",
+      "common_causes": ["Exploit Protection system settings changed from default (CFG, DEP, Mandatory ASLR, Bottom-up ASLR, High-entropy ASLR, SEHOP, Heap integrity)", "Per-program Exploit Protection overrides on Riot/Vanguard executables"],
+      "official_fixes": ["Exploit Protection > System settings: set each of CFG, DEP, Mandatory ASLR, Bottom-up ASLR, High entropy ASLR, SEHOP, Heap integrity validation to 'Use default' (do not restart yet)", "Program settings: remove every entry for Riot Games / Riot Vanguard / any Riot title", "Restart", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - Get-ProcessMitigation -System (verified works; DEP Enable: NOTSET = default) and Get-ProcessMitigation -Name <exe> / Get-ProcessMitigation for Riot exes; any non-default or per-program Riot entry = finding. Auto-fix: Set-ProcessMitigation -System -Reset? (use Set-ProcessMitigation -Name <exe> -Remove / -Disable overrides) - admin; recommend resetting only the Riot entries and the listed system toggles back to NOTSET.",
+      "source_urls": ["https://support.riotgames.com/riot/client/error-van-9002"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 9003",
+      "category": "vanguard_requirement",
+      "official_meaning": "Secure Boot is not enabled. Text: 'This build of Vanguard requires secure boot to be enabled in order to play.'",
+      "common_causes": ["Secure Boot disabled in firmware", "Legacy/CSM boot or MBR disk (Secure Boot requires UEFI + GPT)"],
+      "official_fixes": ["Enable Secure Boot per Riot guide (msinfo32: BIOS Mode UEFI + Secure Boot State On; GPT required; mbr2gpt /validate /allowFullOS then /convert /allowFullOS for MBR disks - irreversible, back up first; BIOS: UEFI mode, CSM off, Secure Boot Enabled; Restore Factory Keys if greyed out)"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - SecureBoot\\State\\UEFISecureBootEnabled registry (no admin), Confirm-SecureBootUEFI (admin; verified errors for normal user), Get-Disk PartitionStyle (verified), msinfo32 BIOS Mode, 'bcdedit /enum {bootmgr}' path \\EFI\\... indicates UEFI. mbr2gpt /validate needs admin.",
+      "source_urls": ["https://support.riotgames.com/riot/client/error-van-9003", "https://support.riotgames.com/riot/client/secure-boot-guide"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 9004",
+      "category": "vanguard_requirement",
+      "official_meaning": "Vanguard requires 'Windows 10 20H1 or newer' but doesn't detect that version on the PC.",
+      "common_causes": ["Windows build older than 20H1 (19041) or missing updates"],
+      "official_fixes": ["Install all Windows updates", "Restart", "Relaunch"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - CurrentBuild/UBR/DisplayVersion registry and Win32_OperatingSystem.BuildNumber (verified: 26200, 25H2, UBR 9711).",
+      "source_urls": ["https://support.riotgames.com/riot/client/error-van-9004"],
+      "confidence": "medium",
+      "note": "Fetch summary of the 9004 and 9006 pages are near-identical; 9004 vs 9006 wording may differ slightly."
+    },
+    {
+      "code": "VAN 9005",
+      "category": "vanguard_requirement",
+      "official_meaning": "Vanguard requires TPM 2.0 and UEFI-compliant firmware to use Virtualization-Based Security (VBS) but can't detect that security setup.",
+      "common_causes": ["TPM 2.0 not enabled", "Secure Boot not enabled", "Memory Integrity / VBS not running correctly"],
+      "official_fixes": ["Enable TPM 2.0", "Enable Secure Boot", "Check Memory Integrity (troubleshooting guide)", "Restart and relaunch after each change", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - combine TPM + Secure Boot + Win32_DeviceGuard checks.",
+      "source_urls": ["https://support.riotgames.com/riot/client/error-van-9005", "https://support-2xko.riotgames.com/hc/en-us/articles/48069717321235-Error-VAN-9005"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 9006",
+      "category": "vanguard_requirement",
+      "official_meaning": "Vanguard requires Windows 10 version 20H1 or newer and can't detect it; may also appear as 'VAN9006: This version of Vanguard requires Windows 20H1 or later and may not function as expected' (a warning in the Vanguard tray notification center).",
+      "common_causes": ["Windows build older than 20H1, or missing updates"],
+      "official_fixes": ["Install Windows updates", "Restart", "Relaunch", "Check Vanguard notification center in system tray"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - OS build (same as 9004).",
+      "source_urls": ["https://support.riotgames.com/riot/client/error-van-9006"],
+      "confidence": "medium"
+    },
+    {
+      "code": "VAN 9051",
+      "category": "vanguard_service",
+      "official_meaning": "Vanguard hit an internal error it couldn't recover from ('encountered a critical error and cannot continue'); client closes so Vanguard can start fresh.",
+      "common_causes": ["Internal Vanguard failure (no specific cause listed; temporary Vanguard errors)"],
+      "official_fixes": ["Restart PC", "Manual Vanguard uninstall + restart + relaunch (reinstalls with default settings)", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Partly - vgc/vgk presence and state; Vanguard logs are encrypted (cannot parse); Windows crash events for vgc.exe (Application log 1000/1001).",
+      "source_urls": ["https://support.riotgames.com/riot/client/error-van-9051"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 9090",
+      "category": "vanguard_requirement",
+      "official_meaning": "Vanguard requires TPM 2.0 but the TPM 2.0 module did not initialize correctly.",
+      "common_causes": ["TPM recently cleared or needs to be set up again"],
+      "official_fixes": ["Enable/re-initialize TPM 2.0 per Riot TPM guide", "Restart", "Relaunch"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - 'tpmtool getdeviceinformation' fields Is Initialized / Ready For Storage / Ready For Attestation / Clear Needed To Recover (verified readable without admin), Get-Tpm (admin) TpmReady, tpm.msc status.",
+      "source_urls": ["https://support.riotgames.com/riot/client/error-van-9090", "https://support.riotgames.com/valorant/support-tools/troubleshooting-the-van-9001-van-9003-or-van-9090-error-on-windows-11-valorant"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 9100",
+      "category": "vanguard_unsupported_system",
+      "official_meaning": "Vanguard detected the game running in a virtual machine or other unsupported virtualized environment.",
+      "common_causes": ["Running in VM / virtualized environment"],
+      "official_fixes": ["Install/run game and Vanguard on a regular Windows install", "Manual Vanguard uninstall/reinstall", "Ticket with RRT logs if on a normal Windows install"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - same as VAN 138 (SMBIOS/WMI manufacturer+model, not HypervisorPresent alone).",
+      "source_urls": ["https://support.riotgames.com/riot/client/error-van-9100"],
+      "confidence": "high"
+    },
+    {
+      "code": "VAN 9101",
+      "category": "vanguard_attestation",
+      "official_meaning": "Attestation failure: Vanguard couldn't fully verify the PC's current system state.",
+      "common_causes": ["Outdated drivers", "Connected devices", "Background software interfering with Vanguard checks"],
+      "official_fixes": ["Update graphics, chipset, storage and other drivers via OEM tools", "Unplug non-essential USB devices/adapters/controllers, restart", "Clean boot", "Verify Windows hasn't been modified, required security features enabled, pending updates installed", "Test in Practice Tool", "Ticket with RRT logs"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - driver ages (Win32_PnPSignedDriver DriverDate), requirements checks, bcdedit flags, TPM attestation readiness (tpmtool: Ready For Attestation).",
+      "source_urls": ["https://support.riotgames.com/riot/client/error-van-9101"],
+      "confidence": "high"
+    },
+
+    {
+      "code": "VAL 0 / VAL 1 / VAL 38",
+      "category": "val_connection",
+      "official_meaning": "Connection error.",
+      "common_causes": ["Network interruption or Riot Client/game connection failure"],
+      "official_fixes": ["Close and reopen VALORANT and the Riot Client"],
+      "community_fixes": [],
+      "detectable_locally": "Partly - connectivity/DNS to Riot endpoints, packet loss; ShooterGame.log 'LogNet' / 'RNET_NOT_CONNECTED'.",
+      "source_urls": ["https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "medium"
+    },
+    {
+      "code": "VAL 4",
+      "category": "val_account",
+      "official_meaning": "Invalid display name.",
+      "common_causes": ["Riot ID problem"],
+      "official_fixes": ["Check Riot ID and change it via Riot's name-change link"],
+      "community_fixes": [],
+      "detectable_locally": "No - account-side.",
+      "source_urls": ["https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "medium"
+    },
+    {
+      "code": "VAL 5",
+      "category": "val_account",
+      "official_meaning": "Logged in elsewhere.",
+      "common_causes": ["Same account logged in on another device"],
+      "official_fixes": ["Sign out of all devices"],
+      "community_fixes": [],
+      "detectable_locally": "No.",
+      "source_urls": ["https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "medium"
+    },
+    {
+      "code": "VAL 7",
+      "category": "val_server",
+      "official_meaning": "Session service unreachable.",
+      "common_causes": ["Possible account suspension (check email)", "Platform issue (check Discord / Support banners)"],
+      "official_fixes": ["Check email for suspension", "Check Riot status banners / VALORANT Discord"],
+      "community_fixes": [],
+      "detectable_locally": "Partly - can query Riot status endpoints if public; otherwise no.",
+      "source_urls": ["https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "medium"
+    },
+    {
+      "code": "VAL 8-21 (Riot Client problems; 9 and 19 not on page)",
+      "category": "val_client",
+      "official_meaning": "Riot Client problems.",
+      "common_causes": ["Riot Client startup/communication failure"],
+      "official_fixes": ["Relaunch the Riot Client"],
+      "community_fixes": [],
+      "detectable_locally": "Partly - Riot Client logs (%LOCALAPPDATA%\\Riot Games\\Riot Client\\Logs).",
+      "source_urls": ["https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "medium"
+    },
+    {
+      "code": "VAL 29",
+      "category": "val_network",
+      "official_meaning": "Network issue.",
+      "common_causes": ["Firewall blocking VALORANT / Riot Client"],
+      "official_fixes": ["Allow VALORANT through the firewall (Riot article 'Your Firewall VS. VALORANT')"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - Get-NetFirewallRule / Get-NetFirewallApplicationFilter for RiotClientServices.exe, VALORANT-Win64-Shipping.exe, vgc.exe; 3rd-party AV firewalls (Get-CimInstance -Namespace root/SecurityCenter2 AntivirusProduct).",
+      "source_urls": ["https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant", "https://support.riotgames.com/en-us/valorant/performance/your-firewall-vs-valorant"],
+      "confidence": "medium"
+    },
+    {
+      "code": "VAL 31 / VAL 33 / VAL 43 / VAL 49 / VAL 50 / VAL 51 / VAL 54 / VAL 60 / VAL 63 / VAL 64 / VAL 65 / VAL 66",
+      "category": "val_client",
+      "official_meaning": "31 player name info failed; 33 Riot Client closed; 43 system timed out; 49 chat didn't initialize; 50 voice didn't initialize; 51 party creation problem; 54 content retrieval failed; 60 PatchInitFailure; 63 ManagerDeleted; 64 SessionFetchFailure; 65 PatchAvailabilityInitFailure; 66 ContentIndexInitFailure (startup failures).",
+      "common_causes": ["Transient Riot Client / backend failure"],
+      "official_fixes": ["Relaunch the Riot Client"],
+      "community_fixes": [],
+      "detectable_locally": "Partly - ShooterGame.log PlatformInitializerV2 'Failed to initialize: <Manager> (error: ...)' lines identify the failing manager.",
+      "source_urls": ["https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "medium"
+    },
+    {
+      "code": "VAL 39 / VAL 46",
+      "category": "val_server",
+      "official_meaning": "39 server unavailable (likely maintenance); 46 planned platform downtime.",
+      "common_causes": ["Maintenance"],
+      "official_fixes": ["Try logging in later"],
+      "community_fixes": [],
+      "detectable_locally": "No (server-side).",
+      "source_urls": ["https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "medium"
+    },
+    {
+      "code": "VAL 44 / VAL 45",
+      "category": "val_vanguard",
+      "official_meaning": "44 Vanguard not initialized; 45 Vanguard reboot required.",
+      "common_causes": ["Vanguard not running / needs restart after install"],
+      "official_fixes": ["Relaunch Riot Client", "If persists: uninstall Riot Vanguard, then restart VALORANT", "(45) reboot the PC"],
+      "community_fixes": [],
+      "detectable_locally": "Yes - vgc/vgk state, pending reboot flags (HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Component Based Servicing\\RebootPending, HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager PendingFileRenameOperations).",
+      "source_urls": ["https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "medium"
+    },
+    {
+      "code": "VAL 52 / 53 / 55 / 56 / 57 / 58 / 59 / 61 / 62 / 67 / 68 / 69 / 70",
+      "category": "val_client",
+      "official_meaning": "52 player skill info fetch failed; 53 Riot Client chat problem; 55 ApplicationRepairManagerInitFailure; 56 LegalInfoInitFailure; 57 PlayerAffinityInitFailure; 58 RSOValidationFailure; 59 LoginQueueFetchTokenFailure (login queue; NOT VAN 59); 61 account banned from VALORANT; 62 NoGamepodsToPingFailure (network); 67 ChatFriendMetadataInitFailure; 68/69/70 owned-content (entitlements / wallets / store offers) fetch errors.",
+      "common_causes": ["Transient backend/Riot Client failure (61 = account penalty)", "62: cannot reach/ping game servers (network, DNS, VPN, firewall)"],
+      "official_fixes": ["Relaunch Riot Client (and VALORANT for 67)", "Check Support-site banners; if persists submit ticket", "61: submit ticket (account ban)", "59: also check Support-site banners"],
+      "community_fixes": [],
+      "detectable_locally": "Partly - 62: ping Riot gamepod endpoints/DNS/VPN; others from ShooterGame.log.",
+      "source_urls": ["https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"],
+      "confidence": "medium"
+    }
+  ],
+
+  "vanguard_requirements": {
+    "summary": "As of 2026-10-21, Vanguard has a base requirement set (64-bit Windows 10 20H1+/Windows 11, UEFI + Secure Boot + TPM 2.0 on Windows 11, no VMs, no ARM) and a growing 'enforced when flagged' set (VAN: RESTRICTION: TPM 2.0, Secure Boot, Memory Integrity/HVCI+VBS, IOMMU, Windows build, firmware update) applied at account/HWID level. Riot says only a small fraction of players are currently forced into the stricter set. Vanguard Pre-Check/On-Demand (June 24, 2026) is an OPTIONAL mode available only if the strict set is all met.",
+    "official_pages": {
+      "vanguard_security_requirements": "https://support.riotgames.com/riot/performance/vanguard-security-requirements",
+      "minimum_specs": "https://support.riotgames.com/valorant/support-tools/minimum-recommended-pc-specs",
+      "pre_check": "https://support.riotgames.com/en-us/riot/support-tools/vanguard-pre-check",
+      "dev_blog_pre_boot_gap": "https://riotgames.com/en/news/vanguard-security-update-motherboard"
+    },
+    "os_support": {
+      "officially_listed": "Windows 10 (build 19041+, 64-bit) and Windows 11 (64-bit). Specs page ALSO contains a contradicting line 'Windows 10 support starts at Build 10904' (typo/outdated). VAN 9004/9006 say Windows 10 20H1 (=19041) minimum. VAN: RESTRICTION page says minimum build 19045 (=Windows 10 22H2) for the restriction case and an unclear line 'Build 26100 or newer is supported only on Windows 11. Windows 10 users must upgrade to Windows 11 to keep playing.'",
+      "history": [
+        "2022-11-24: Windows 10 1507-1709 dropped (exputer.com citing Riot)",
+        "2023-03-14: Windows 7/8/8.1 dropped",
+        "2023-12-01: Windows 10 1909 or earlier dropped (OC3D, secondary)",
+        "2026-05 (GamerDoc X post quoting Riot, secondary/low): 'VALORANT and Vanguard still support Windows 10'; stricter requirements hit only a small fraction of flagged players, which may need security features only in some Windows 11 builds"
+      ],
+      "on_demand_pre_check_min": "Windows 11 version 25H2 or newer (official Pre-Check page)",
+      "not_supported": ["ARM CPUs", "Virtual machines", "Cloud gaming", "Windows 7/8/8.1", "Windows 10 < 20H1 (19041)"],
+      "confidence": "medium",
+      "uncertainty": "Treat 19041 as hard minimum, 19045 (22H2) as 'recommended safe floor', and 25H2 as On-Demand floor. Re-check Riot pages before shipping. Windows 10 consumer end-of-support was 2025-10-14 (Microsoft)."
+    },
+    "hardware": {
+      "cpu": "SSE 4.2 or AVX; DirectX 11 GPU; 64-bit; ARM unsupported",
+      "specs_30fps_min": "Intel i3-540 / AMD Athlon 200GE, Intel HD 4000 / Radeon R5 220, 4 GB RAM (+1GB VRAM if discrete)",
+      "specs_60fps_recommended": "i3-4150 / Ryzen 3 1200, GT 730 / R7 240, 4 GB RAM",
+      "specs_144fps_high": "i5-9400F / Ryzen 5 2600X, GTX 1050 Ti / R7 370 / Arc A310, 4 GB RAM"
+    },
+    "requirements": [
+      {
+        "id": "tpm2",
+        "name": "TPM 2.0",
+        "enforcement": "Required on Windows 11 (base requirement with Secure Boot); error VAN 9001 / 9090 / 9005; also checked under VAN: RESTRICTION. Firmware TPM (Intel PTT / AMD fTPM) needed for RESTRICTION; discrete TPM OK for 9001.",
+        "triggers_errors": ["VAN 9001", "VAN 9005", "VAN 9090", "VAN: RESTRICTION"],
+        "how_to_check_locally": [
+          {"cmd": "tpmtool getdeviceinformation", "needs_admin": false, "verified": true, "reads": "TPM Present, TPM Version (want 2.0), Manufacturer, Is Initialized, Ready For Storage, Ready For Attestation, Clear Needed To Recover"},
+          {"cmd": "Get-PnpDevice -Class SecurityDevices | Select Status,FriendlyName,InstanceId", "needs_admin": false, "verified": true, "reads": "Device present and Status OK (ACPI\\MSFT0101 = TPM 2.0). FriendlyName is localized (Turkish: 'Guvenilir Platform Modulu 2.0') so match on InstanceId ACPI\\MSFT0101 / MSFT0200 not name"},
+          {"cmd": "Get-Tpm | Select TpmPresent,TpmReady,TpmEnabled,TpmActivated,ManufacturerVersion", "needs_admin": true, "verified": "returned empty as normal user"},
+          {"cmd": "Get-CimInstance -Namespace root\\cimv2\\security\\microsofttpm -ClassName Win32_Tpm | Select SpecVersion,IsEnabled_InitialValue,IsActivated_InitialValue", "needs_admin": true, "verified": "Access denied as normal user"},
+          {"cmd": "tpm.msc (GUI)", "needs_admin": false, "reads": "Status text + Specification Version"}
+        ]
+      },
+      {
+        "id": "secure_boot",
+        "name": "UEFI Secure Boot (+ GPT disk, UEFI mode)",
+        "enforcement": "Required on Windows 11; errors VAN 9003, VAN: RESTRICTION 1 / 4, STATUS_SB_POLICY. Windows 10 not hard-required unless flagged/RESTRICTION.",
+        "triggers_errors": ["VAN 9003", "VAN 9005", "VAN: RESTRICTION: 1", "VAN: RESTRICTION: 4", "VAN: STATUS_SB_POLICY"],
+        "how_to_check_locally": [
+          {"cmd": "(Get-ItemProperty 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecureBoot\\State').UEFISecureBootEnabled", "needs_admin": false, "verified": true, "reads": "1 = on; key missing = Legacy BIOS/unsupported"},
+          {"cmd": "Confirm-SecureBootUEFI", "needs_admin": true, "verified": "fails with 'Unable to set proper privileges' as normal user", "reads": "True/False; throws on Legacy BIOS"},
+          {"cmd": "Get-Disk | Select Number,PartitionStyle", "needs_admin": false, "verified": true, "reads": "Windows disk must be GPT"},
+          {"cmd": "Get-SecureBootUEFI -Name PK|KEK|db|dbx", "needs_admin": true, "reads": "Key database presence/contents for STATUS_SB_POLICY (factory-default check)"},
+          {"cmd": "msinfo32 -> BIOS Mode / Secure Boot State / PCR7 Configuration", "needs_admin": false}
+        ]
+      },
+      {
+        "id": "hvci_vbs",
+        "name": "Memory Integrity (HVCI) + Virtualization-Based Security",
+        "enforcement": "Enforced when VAN: RESTRICTION: 5 / VAN 9005; required for Vanguard Pre-Check (On-Demand).",
+        "triggers_errors": ["VAN: RESTRICTION: 5", "VAN 9005"],
+        "prerequisites": ["CPU virtualization enabled in BIOS: Intel VT-x (+ XD) / AMD SVM (+ NX)", "Hyper-V / Windows Hypervisor Platform not disabled", "No incompatible kernel drivers"],
+        "how_to_check_locally": [
+          {"cmd": "Get-CimInstance -ClassName Win32_DeviceGuard -Namespace root\\Microsoft\\Windows\\DeviceGuard | Select VirtualizationBasedSecurityStatus,SecurityServicesConfigured,SecurityServicesRunning,AvailableSecurityProperties,RequiredSecurityProperties", "needs_admin": false, "verified": true, "reads": "VirtualizationBasedSecurityStatus: 0 off / 1 enabled-not-running / 2 running. SecurityServicesRunning: 1 Credential Guard, 2 HVCI (Memory Integrity), 3 System Guard Secure Launch, 4 SMM firmware measurement. AvailableSecurityProperties: 1 base virtualization, 2 Secure Boot, 3 DMA protection, 4 secure memory overwrite, 5 UEFI code readonly, 6 SMM mitigations, 7 MBEC, 8 APIC virtualization. Test machine: status 2, running {2}, available 1,2,3,5,6,7,8"},
+          {"cmd": "(Get-ItemProperty 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\DeviceGuard\\Scenarios\\HypervisorEnforcedCodeIntegrity').Enabled", "needs_admin": false, "verified": true, "reads": "1 = Memory Integrity configured on (configured, not necessarily running)"},
+          {"cmd": "systeminfo | findstr /i \"Virtualization-based\"", "needs_admin": false, "verified": true, "reads": "'Virtualization-based security: Status: Running'; localized on non-English Windows - prefer WMI"},
+          {"cmd": "msinfo32 -> 'Virtualization-based security' and 'Virtualization-based security services running'", "needs_admin": false},
+          {"cmd": "Event log Microsoft-Windows-CodeIntegrity/Operational", "needs_admin": false, "reads": "Blocked / incompatible drivers (HVCI block events 3033/3034/3063/3064/3077)"}
+        ],
+        "autofix": "Enabling Memory Integrity via registry (HypervisorEnforcedCodeIntegrity Enabled=1, EnableVirtualizationBasedSecurity=1) is possible with admin + reboot, but can cause BSOD with incompatible drivers; Riot's recovery step: from WinRE cmd 'reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\DeviceGuard\\Scenarios\\HypervisorEnforcedCodeIntegrity\" /v Enabled /t REG_DWORD /d 0 /f'. Recommend guiding (Windows Security UI) not silent enabling."
+      },
+      {
+        "id": "iommu",
+        "name": "IOMMU (Intel VT-d / AMD IOMMU, AMD-Vi) in BIOS; Kernel DMA Protection",
+        "enforcement": "Riot enabled IOMMU enforcement for accounts flagged for DMA-cheat use (Wikipedia: 2026-05-19); baseline in dev blog 2025-12-18 alongside Secure Boot and VBS; required for Pre-Check. Riot says Vanguard checks the BIOS IOMMU setting, NOT that Windows reports Kernel DMA Protection 'On'.",
+        "triggers_errors": ["VAN: RESTRICTION (message names IOMMU / 'update motherboard firmware')"],
+        "bios_names": {
+          "intel": "VT-d; 'Control IOMMU Pre-boot Behavior' = Enable IOMMU during boot (ASUS: Advanced > System Agent Configuration; MSI: OC > CPU Features; Gigabyte: Settings > Miscellaneous > Intel VT-d; ASRock: Advanced > Chipset Configuration > VT-d)",
+          "amd": "IOMMU (AMD-Vi); plus DMA Protection and DMAr Support where present (ASUS: Advanced > AMD CBS > IOMMU / NBIO Common Options; MSI/ASRock: AMD CBS > NBIO Common Options > IOMMU; Gigabyte: Settings > Miscellaneous > IOMMU)"
+        },
+        "how_to_check_locally": [
+          {"cmd": "Win32_DeviceGuard.AvailableSecurityProperties contains 3 (DMA protection)", "needs_admin": false, "verified": true, "reads": "Indicates Windows sees DMA remapping/Kernel DMA Protection capability - good proxy, medium confidence"},
+          {"cmd": "msinfo32 -> 'Kernel DMA Protection' (On/Off/missing)", "needs_admin": false, "reads": "Per Riot: Off or missing is usually acceptable; on Off still enable IOMMU in BIOS. (msinfo32 /report to a text file failed in my headless test; GUI works - low confidence for scripting)"},
+          {"cmd": "Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-Kernel-IoMmu/Operational'}", "needs_admin": false, "reads": "IOMMU initialization events (if log exists) - low confidence"},
+          {"cmd": "Win32_BIOS.ReleaseDate / SMBIOSBIOSVersion + Win32_BaseBoard.Manufacturer/Product", "needs_admin": false, "verified": true, "reads": "Compare to vendor's BIOS release that fixes CVE-2025-11901 (ASUS), CVE-2025-14302 (Gigabyte), CVE-2025-14303 (MSI), CVE-2025-14304 (ASRock); test machine MSI MS-7E02, BIOS A.D0, released 2025-08-04"}
+        ],
+        "limits": "BIOS IOMMU toggle itself is not readable from OS; a local tool can only infer and then instruct the user. Full shutdown (not restart) recommended after changing; some boards reset setting after a failed boot."
+      },
+      {
+        "id": "cpu_virtualization_nx",
+        "name": "CPU virtualization (VT-x/SVM) and NX/XD",
+        "enforcement": "Prerequisite of VBS/HVCI; RESTRICTION 5 frequently caused by NX/XD off (per LoL/2XKO mirror of the article, medium).",
+        "how_to_check_locally": [
+          {"cmd": "Get-CimInstance Win32_Processor | Select Name,VirtualizationFirmwareEnabled,SecondLevelAddressTranslationExtensions,VMMonitorModeExtensions", "needs_admin": false, "reads": "VirtualizationFirmwareEnabled false when a hypervisor is active is common - unreliable when VBS already running; treat VBS status as the truth"},
+          {"cmd": "(Get-CimInstance Win32_OperatingSystem).DataExecutionPrevention_Available", "needs_admin": false, "reads": "DEP/NX available"}
+        ]
+      },
+      {
+        "id": "vm_block",
+        "name": "No virtual machines / cloud gaming",
+        "triggers_errors": ["VAN 138", "VAN 9100"],
+        "how_to_check_locally": [
+          {"cmd": "Get-CimInstance Win32_ComputerSystem | Select Manufacturer,Model,HypervisorPresent", "needs_admin": false, "verified": true, "reads": "Manufacturer/Model for VMware/VirtualBox/QEMU/'Microsoft Corporation Virtual Machine'. WARNING: HypervisorPresent is True on physical PCs when VBS/HVCI/Hyper-V is on (verified True on real MSI hardware)."}
+        ]
+      },
+      {
+        "id": "windows_build",
+        "name": "Windows build",
+        "triggers_errors": ["VAN 9004", "VAN 9006", "VAN: RESTRICTION (Windows update)", "VAN 0/6/84/133/135/2266 (update advised)"],
+        "how_to_check_locally": [
+          {"cmd": "Get-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion' | Select DisplayVersion,CurrentBuild,UBR", "needs_admin": false, "verified": true, "reads": "e.g. 25H2 / 26200 / 9711"},
+          {"cmd": "Get-CimInstance Win32_OperatingSystem | Select Caption,Version,BuildNumber", "needs_admin": false, "verified": true},
+          {"cmd": "[Environment]::Is64BitOperatingSystem; $env:PROCESSOR_ARCHITECTURE", "needs_admin": false, "reads": "64-bit and not ARM64"}
+        ]
+      },
+      {
+        "id": "windows_security_state",
+        "name": "Windows security not tampered (test signing, integrity checks, debug)",
+        "triggers_errors": ["VAN 25", "VAN 128", "VAN 193"],
+        "how_to_check_locally": [
+          {"cmd": "bcdedit /enum {current}  (look for testsigning, nointegritychecks, debug, loadoptions DISABLE_INTEGRITY_CHECKS)", "needs_admin": true, "verified": "fails (invalid entry type / needs elevation) as normal user", "autofix": "bcdedit /set TESTSIGNING off ; bcdedit /set nointegritychecks OFF (skip if Secure Boot policy protects)"},
+          {"cmd": "(Get-ItemProperty 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\CrashControl').CrashDumpEnabled", "needs_admin": false, "verified": true, "reads": "0 none, 1 complete, 2 kernel, 3 small, 7 automatic; Riot VAN 128 fix says set to (none)"},
+          {"cmd": "Get-ProcessMitigation -System ; Get-ProcessMitigation -Name RiotClientServices.exe", "needs_admin": false, "verified": "system query works", "reads": "Exploit Protection overrides (VAN 9002)"}
+        ]
+      },
+      {
+        "id": "driver_blocklist",
+        "name": "Microsoft vulnerable driver blocklist / third-party kernel drivers",
+        "enforcement": "Riot publishes NO explicit tie to the Microsoft blocklist. Vanguard blocks drivers by its own rules (VAN: Incompatible Software / OEM Driver). Microsoft's April 2026 security updates added protections against known-vulnerable kernel drivers (e.g. psmounterex.sys); blocked loads log Event ID 3077 in Microsoft-Windows-CodeIntegrity/Operational. Interaction with Vanguard is NOT confirmed (low).",
+        "how_to_check_locally": [
+          {"cmd": "(Get-ItemProperty 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\CI\\Config').VulnerableDriverBlocklistEnable", "needs_admin": false, "verified": true, "reads": "1 = blocklist enabled (test machine: 1). Also in Windows Security > Device security > Core isolation > 'Microsoft Vulnerable Driver Blocklist'."},
+          {"cmd": "Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-CodeIntegrity/Operational'; Id=3077,3033,3063,3064}", "needs_admin": "log read may need elevation on some systems", "reads": "Drivers blocked or failing code integrity"},
+          {"cmd": "Get-CimInstance Win32_SystemDriver | Where-Object State -eq 'Running' | Select Name,PathName", "needs_admin": false, "reads": "Loaded kernel drivers to match watch-list"}
+        ],
+        "source_urls": ["https://support.microsoft.com/en-US/servicing/os/windows/docs/2026/04/april-2026-windows-security-updates-introduce-protections-to-known-vulnerable-kernel-drivers"],
+        "confidence": "low"
+      },
+      {
+        "id": "pre_boot_firmware",
+        "name": "Motherboard firmware pre-boot DMA protection fix",
+        "enforcement": "Dev blog 2025-12-18: stricter boot-security checks for certain players; Riot investigating extending to all players Ascendant rank and above (no date). Fix = enable Secure Boot/VBS/IOMMU or update BIOS.",
+        "advisories": ["CERT VU#382314", "ASUS CVE-2025-11901", "Gigabyte CVE-2025-14302", "MSI CVE-2025-14303", "ASRock CVE-2025-14304"],
+        "how_to_check_locally": [{"cmd": "Win32_BaseBoard (Manufacturer, Product) + Win32_BIOS (SMBIOSBIOSVersion, ReleaseDate)", "needs_admin": false, "verified": true, "reads": "Show to user with link to vendor BIOS page; tool cannot know which BIOS version contains the fix (no machine-readable list) - flag any BIOS older than ~2025-12 as 'check for update', confidence low"}]
+      }
+    ],
+    "van_restriction_variants": {
+      "VAN: RESTRICTION": "Generic; the on-screen text names what is needed (Windows update, TPM 2.0, Secure Boot, Memory Integrity, IOMMU, or 'update motherboard firmware').",
+      "VAN: RESTRICTION: 1": "Secure Boot not verified enabled/working",
+      "VAN: RESTRICTION: 3": "Game not on the same internal drive as Windows",
+      "VAN: RESTRICTION: 4": "Secure Boot configuration verification failure",
+      "VAN: RESTRICTION: 5": "Memory Integrity (HVCI/VBS) not verified",
+      "VAN: RESTRICTION: 2": "Not listed by Riot (index shows only 1,3,4,5). Unknown.",
+      "who_gets_them": "Account/HWID-level, when Vanguard detects suspicious hardware behavior/statistical anomalies or a config resembling cheater setups (dev blog 2025-12-18). Not an accusation. Pre-Check page: Vanguard tray (VGTray) shows which requirement needs attention."
+    },
+    "vanguard_on_demand": {
+      "released": "2026-06-24 (Wikipedia/TweakTown/Notebookcheck; secondary)",
+      "what": "Optional 'Vanguard Pre-Check': driver (vgk) and vgc start when a Riot game starts and shut down after, instead of at Windows boot. Requires Windows 11 25H2+, Secure Boot, TPM 2.0, IOMMU, VBS, HVCI. Reportedly ~35% of players qualify (FinalBoss, secondary/low).",
+      "implication_for_tool": "On the test machine vgc StartMode=Manual and State=Stopped, vgk Start=1 (system) - do not treat as an error. Riot's own error pages say 'set vgc Automatic unless you use Pre-Check'.",
+      "source_urls": ["https://support.riotgames.com/en-us/riot/support-tools/vanguard-pre-check"],
+      "confidence": "medium"
+    },
+    "services_and_components": {
+      "vgk": "Kernel driver, C:\\Program Files\\Riot Vanguard\\vgk.sys (service name vgk; test machine Start=1 System)",
+      "vgc": "User-mode service, C:\\Program Files\\Riot Vanguard\\vgc.exe (service name vgc; test machine StartMode Manual)",
+      "vgtray": "vgtray.exe tray UI; shows requirement status and notification center",
+      "other_files_seen": ["vgm.exe", "vgrl.dll", "log-uploader.exe", "uninstall.exe", "Logs\\"],
+      "confidence": "high"
+    }
+  },
+
+  "log_locations": [
+    {
+      "name": "VALORANT game log (current)",
+      "path": "%LOCALAPPDATA%\\VALORANT\\Saved\\Logs\\ShooterGame.log",
+      "also": "Rotated: ShooterGame-backup-<yyyy.mm.dd-hh.mm.ss>.log (10 kept on test machine), ShooterGame_<n>.log; Chromium UI logs cef3.log / cef3-backup-*.log",
+      "official_source": "https://support.riotgames.com/valorant/support-tools/gathering-logs-in-valorant (official page names the folder %localappdata%\\VALORANT\\saved\\Logs; file names verified on a local machine)",
+      "encrypted": false,
+      "readable": "Plain-text Unreal Engine 4.27 log; test file was 13 MB",
+      "useful_signals": [
+        "First line 'LogInit: OS: Windows 11 (25H2) [10.0.26200.xxxx], CPU: <model>, GPU: <model>, Disk: SSD' - OS/CPU/GPU/disk type",
+        "LogD3D11RHI adapter list: VendorId, DedicatedVideo MB, 'Microsoft Basic Render Driver' presence; 'Creating new Direct3DDevice'; texture pool size",
+        "'LogPlatformInitializerV2: Initializing/Initialized/Failed to initialize: <Manager> (error: X)' - includes VanguardManager init status; startup failure names (e.g. ContractsManager RecruitmentInitConfigurationFailure) map to VAL 55-70 codes",
+        "'LogRSOManager ... RNET_NOT_CONNECTED', 'LogPregameManager network error', HTTPStatus lines - connectivity/login problems",
+        "'Fatal error', 'D3D device being lost (Error: 0x887A0005 REMOVED)' - GPU crash/TDR",
+        "LogNet disconnects, packet loss and ping lines during matches (search 'LogNet', 'Disconnect')"
+      ],
+      "privacy_warning": "Contains Riot account identifiers; do not upload publicly.",
+      "confidence": "high"
+    },
+    {
+      "name": "VALORANT crash folders / dumps",
+      "path": "%LOCALAPPDATA%\\VALORANT\\Saved\\Crashes\\UECC-Windows-<GUID>_0000\\ and UE4CC-Windows-<GUID>_0000\\",
+      "contents": ["CrashContext.runtime-xml", "ShooterGame.log (copy at crash time)", "cef3.log", "UE4Minidump.dmp (in some crashes)", "__sentry-event"],
+      "official_source": "Korean Riot support page (support.riotgames.com/ko-kr/valorant/support-tools) lists Saved\\Crashes alongside Logs; contents verified locally. Official English article does not describe crash dumps.",
+      "encrypted": false,
+      "readable": "XML is plain text; .dmp is a standard minidump (WinDbg)",
+      "useful_signals": ["<CrashType> (e.g. GPUCrash)", "<ErrorMessage> (e.g. Unreal Engine is exiting due to D3D device being lost, 0x887A0005 REMOVED)", "<SecondsSinceStart>", "<BuildVersion>, <EngineVersion>", "<BaseDir>/<RootDir> = install path (VAN: RESTRICTION: 3 drive check)", "<AppDefaultLocale>"],
+      "privacy_warning": "<CommandLine> contains -remoting-auth-token=..., -subject=<puuid>; <MachineId>, <LoginId>, <UserName>. Strip before sharing.",
+      "confidence": "high"
+    },
+    {
+      "name": "Riot Client logs",
+      "path": "%LOCALAPPDATA%\\Riot Games\\Riot Client\\Logs\\",
+      "subfolders_observed": ["Agent\\<timestamp>_<pid>_Agent.log", "Launcher\\<timestamp>_<pid>_Launcher.log", "startup-perf.log", "(others such as 'Riot Client' UX logs)"],
+      "official_source": "https://support.riotgames.com/riot/performance/network-system-and-logs-windows",
+      "encrypted": false,
+      "readable": "Plain text (small files, 2-3 KB for Agent/Launcher)",
+      "useful_signals": ["Launcher start/exit per session", "Patch/update failures", "Login/RSO errors", "startup-perf timings", "Vanguard-related VAN codes surfaced by the client (search 'VAN')"],
+      "confidence": "high"
+    },
+    {
+      "name": "Riot Client crash data",
+      "path": "%LOCALAPPDATA%\\Riot Games\\Riot Client\\Crashes\\Riot Client\\",
+      "contents": ["Sentry breadcrumbs", "__sentry-event", "session.json", "settings.dat"],
+      "encrypted": false,
+      "useful_signals": ["Whether Riot Client crashed (non-empty __sentry-event)"],
+      "confidence": "medium"
+    },
+    {
+      "name": "Vanguard logs",
+      "path": "C:\\Program Files\\Riot Vanguard\\Logs\\vgc_<yyyy-mm-dd>_<hh-mm-ss>.log",
+      "official_source": "https://support.riotgames.com/riot/performance/network-system-and-logs-windows (path stated) ; filenames verified locally",
+      "encrypted": true,
+      "readable": "NOT readable. Verified: files start with binary header 'pvpv' followed by high-entropy data, not text. Intended for Riot (RRT / log-uploader.exe collect and send them). A local tool can only use metadata: file existence, creation/modify times, size, count.",
+      "useful_signals": [
+        "Metadata only: a vgc_*.log is created each time vgc starts => proves vgc ran and when; no recent log when user expects Vanguard => Vanguard did not start",
+        "Many tiny logs in short time => crash-restart loop (e.g. 7 KB log then restart)",
+        "Cannot read error content; do NOT promise parsing"
+      ],
+      "access": "Folder is under Program Files; reading list/metadata worked as normal user on the test machine.",
+      "confidence": "high"
+    },
+    {
+      "name": "Windows event logs relevant to Vanguard",
+      "path": "Event Viewer: System (Service Control Manager 7000/7009/7023/7031/7034 for vgc/vgk), Application (1000/1001 app crash for vgc.exe / VALORANT-Win64-Shipping.exe / RiotClientServices.exe), Microsoft-Windows-CodeIntegrity/Operational (verified exists and enabled), Microsoft-Windows-Kernel-IoMmu/Operational, Microsoft-Windows-Kernel-Boot",
+      "encrypted": false,
+      "readable": "Yes via Get-WinEvent",
+      "useful_signals": ["vgc terminated unexpectedly (VAN 1067 equivalent)", "CodeIntegrity 3033/3063/3077 blocked/unsigned drivers (VAN Incompatible Software, HVCI incompatibilities)", "Windows Error Reporting reports and LiveKernelEvent/BugCheck 1001 for blue screens after enabling HVCI"],
+      "official_source": "Microsoft documentation (not Riot); medium confidence on exact event IDs",
+      "confidence": "medium"
+    },
+    {
+      "name": "Windows minidumps (BSOD)",
+      "path": "C:\\Windows\\Minidump\\*.dmp and C:\\Windows\\MEMORY.DMP (depends on CrashControl CrashDumpEnabled; test machine CrashDumpEnabled=3 small dump). If 0 (none) per VAN 128 fix, no dumps are produced.",
+      "encrypted": false,
+      "readable": "Needs admin to read; parse with WinDbg/BlueScreenView",
+      "useful_signals": ["Faulting driver name (vgk.sys or third party)"],
+      "confidence": "medium"
+    },
+    {
+      "name": "Other config/state files",
+      "paths": [
+        "C:\\ProgramData\\Riot Games\\RiotClientInstalls.json (install paths of Riot Client)",
+        "C:\\ProgramData\\Riot Games\\machine.cfg",
+        "C:\\ProgramData\\Riot Games\\Metadata\\<product>\\<product>.product_settings.yaml (install path for VALORANT)",
+        "%LOCALAPPDATA%\\VALORANT\\Saved\\Config\\<id>\\WindowsClient\\GameUserSettings.ini (graphics settings; useful for FPS optimisation features)",
+        "Riot Games root default C:\\Riot Games\\VALORANT\\live\\ShooterGame\\Binaries\\Win64\\VALORANT-Win64-Shipping.exe",
+        "vgkbootstatus.dat (VAN 193 fix; exact folder not stated by Riot, UNVERIFIED)"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Riot Repair Tool (RRT) output",
+      "path": "Desktop .zip created by RRT (run as admin, select VALORANT)",
+      "official_source": "https://support.riotgames.com/riot/performance/gathering-logs-riot-repair-tool-rrt",
+      "note": "Riot's article does not list contents or paths; it states RRT also collects the Vanguard logs."
+    }
+  ],
+
+  "incompatible_software": {
+    "official_list_exists": false,
+    "statement": "Riot does NOT publish a list of incompatible/conflicting software. Its 'VAN: Incompatible Software' article names no program (only a placeholder IncompatibleDriver.sys); the in-error file path identifies the culprit. Riot does name specific drivers on 'VAN: Incompatible OEM Driver' (see below).",
+    "official_named_drivers": [
+      {"file": "iastorvd.sys", "what": "Intel VMD/RST storage driver (incompatible version)", "fix": "Install Intel RST driver (download ID 930427) for 12th-15th gen platforms", "source": "https://support.riotgames.com/riot/performance/van-incompatible-oem-driver"},
+      {"file": "secnvme.sys", "what": "Third-party NVMe driver", "fix": "Switch to Microsoft 'NVM Express Controller'", "source": "https://support.riotgames.com/riot/performance/van-incompatible-oem-driver"},
+      {"file": "solidnvm.sys", "what": "Third-party NVMe driver", "fix": "Switch to Microsoft 'NVM Express Controller'", "source": "https://support.riotgames.com/riot/performance/van-incompatible-oem-driver"},
+      {"file": "asstahci64.sys", "what": "Third-party SATA AHCI driver", "fix": "Switch to Microsoft 'Standard SATA AHCI Controller'", "source": "https://support.riotgames.com/riot/performance/van-incompatible-oem-driver"},
+      {"file": "mtkwl6ex.sys", "what": "MediaTek RZ616 Wi-Fi 6E driver version 3.4 or lower", "fix": "Update to 3.5+ via Windows Update optional updates / Microsoft Update Catalog", "source": "https://support.riotgames.com/riot/performance/van-incompatible-oem-driver"},
+      {"file": "Intel RST VMD controller driver", "what": "Triggers VAN: STATUS_VMD_9001", "fix": "Install correct Intel RST driver from OEM or Intel", "source": "https://support.riotgames.com/riot/performance/error-van-status-vmd-9001"}
+    ],
+    "official_other_conflicts": [
+      {"item": "Virtual machines / virtualized environments / cloud gaming", "errors": ["VAN 138", "VAN 9100"], "source": "https://support.riotgames.com/valorant/support-tools/minimum-recommended-pc-specs"},
+      {"item": "VPNs and proxies used to connect to game servers", "errors": ["VAN: Incompatible Software"], "source": "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software"},
+      {"item": "Killer Network Service (traffic prioritization)", "errors": ["VAN 68"], "source": "https://support.riotgames.com/riot/performance/error-van-68"},
+      {"item": "Controllers / extra USB devices", "errors": ["VAN 185", "VAN 1067", "VAN 9101"], "source": "https://support.riotgames.com/riot/performance/error-van-185"},
+      {"item": "Windows Exploit Protection overrides on Riot executables or non-default system mitigations", "errors": ["VAN 9002"], "source": "https://support.riotgames.com/riot/client/error-van-9002"},
+      {"item": "Test signing / integrity checks off / debug memory dumps", "errors": ["VAN 25", "VAN 128", "VAN 193"], "source": "https://support.riotgames.com/riot/security/restore-windows-security-to-normal-state"},
+      {"item": "Malware (full scan advised)", "errors": ["VAN 1067"], "source": "https://support.riotgames.com/riot/performance/error-van-1067"},
+      {"item": "Old kernel drivers (older anti-cheat, RGB, hardware drivers) that block Memory Integrity", "errors": ["VAN: RESTRICTION: 5"], "source": "https://support.riotgames.com/riot/support-tools/enabling-memory-integrity"}
+    ],
+    "community_watchlist_low_confidence": [
+      {"item": "ene.sys (RGB controller drivers)", "source": "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error", "confidence": "low"},
+      {"item": "rtcore64.sys (MSI Afterburner / RivaTuner)", "source": "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error", "confidence": "low"},
+      {"item": "Audinate Dante Controller driver (VAN 1067 anecdote)", "source": "https://www.thespike.gg/league-of-legends/errors/vanguard-1067-error-fix", "confidence": "low"},
+      {"item": "VMware / VirtualBox / remote-desktop tools", "source": "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error", "confidence": "low"},
+      {"item": "Hardware monitoring tools (VALORANT beta era report about MSI Afterburner)", "source": "https://www.thegamer.com/vanguard-anti-cheat-pc-problems-for-valorant-players/", "confidence": "low"}
+    ],
+    "microsoft_blocklist_note": "Microsoft's vulnerable driver blocklist is a separate mechanism; no Riot statement ties it to Vanguard (low confidence)."
+  },
+
+  "tool_design_notes": [
+    "Do NOT force vgc to Automatic if Vanguard Pre-Check/On-Demand is in use (vgc Manual + stopped when idle is normal; verified on test machine). Only recommend it when the user reports VAN 0/6/25/57/-1/-72..-104/128/133/135/148/193/1067/2266 AND Pre-Check is not active (no obvious public registry flag found - ask the user or check VGTray).",
+    "Many checks work as a normal user: tpmtool getdeviceinformation, Get-PnpDevice -Class SecurityDevices, SecureBoot\\State registry, Win32_DeviceGuard, DeviceGuard registry, Get-Disk, Win32_BIOS/BaseBoard, CI Config registry, CrashControl registry, Get-ProcessMitigation -System. Admin needed: Get-Tpm, Win32_Tpm, Confirm-SecureBootUEFI, Get-SecureBootUEFI, bcdedit, BitLocker status, Minidump read.",
+    "Windows UI language can be non-English (test machine is Turkish): match device InstanceIds and WMI numeric values, not localized names or systeminfo text.",
+    "Auto-fix candidates that are safe/reversible: AppCompat flags for VAN 140/148; deleting vgkbootstatus.dat (stop services first); reset Exploit Protection overrides for Riot exes (VAN 9002); Windows time resync (w32tm /resync, start W32Time service); bcdedit testsigning off (admin + reboot); CrashDumpEnabled=0 for VAN 128 (inform user crash dumps disabled).",
+    "Guide-only (never automate): BIOS settings (TPM, Secure Boot, IOMMU, VT-x/SVM, NX), Secure Boot key reset (BitLocker lockout risk), MBR2GPT, driver swaps for storage controllers (boot failure risk), enabling HVCI with incompatible drivers (BSOD risk), BIOS flashing.",
+    "VAN 152 / VAL 61 / HWID bans: never offer fixes or HWID changing; show Riot's explanation and appeal link only.",
+    "Never parse or upload Vanguard logs (encrypted); for ShooterGame.log and crash XML redact CommandLine, -remoting-auth-token, -subject, MachineId, LoginId, UserName before any export."
+  ],
+
+  "open_questions_to_recheck_before_shipping": [
+    "Exact Windows 10 minimum build in 2026 (19041 vs 19045 vs 'Windows 11 only' hint on VAN: RESTRICTION page).",
+    "Whether VAN: RESTRICTION: 4 differs from 1 (both Secure Boot).",
+    "Location of vgkbootstatus.dat.",
+    "How to programmatically detect that Vanguard Pre-Check/On-Demand is enabled.",
+    "Which BIOS versions per vendor contain the pre-boot DMA fix (no machine-readable list found).",
+    "Reliable scripted read of 'Kernel DMA Protection' (msinfo32 /report did not produce a file in a headless test)."
+  ]
+}

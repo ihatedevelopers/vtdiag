@@ -1,0 +1,59 @@
+{
+  "id": "mouse-acceleration-floaty-aim",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "input_mouse",
+  "titleKey": "rule.mouse-acceleration-floaty-aim.title",
+  "summaryKey": "rule.mouse-acceleration-floaty-aim.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "mouse_input"
+  ],
+  "prior": {
+    "threads": 5
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "accel",
+      "signal": "input.mouse_accel_on",
+      "true": 2.5,
+      "false": -1.0,
+      "textKey": "rule.mouse-acceleration-floaty-aim.ev.accel"
+    },
+    {
+      "id": "windowed",
+      "signal": "display.windowed_opt_on",
+      "true": 0.4
+    },
+    {
+      "id": "hags",
+      "signal": "display.hags_on",
+      "true": 0.2
+    }
+  ],
+  "fixes": [
+    "fix.input.mouse_accel_off",
+    "fix.display.hags_off"
+  ],
+  "guides": [
+    "guide.mouse.usb"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "mouse-acceleration-floaty-aim",
+    "threadCount": 5,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1ooy0y1",
+      "1oq9zuf",
+      "1vovhrh",
+      "1vsakj2",
+      "1vt5ofr"
+    ],
+    "urls": []
+  }
+}

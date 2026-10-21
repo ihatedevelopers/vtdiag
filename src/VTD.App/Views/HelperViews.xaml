@@ -1,0 +1,116 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:VTD.App.Controls"
+                    xmlns:l="clr-namespace:VTD.App.Localization"
+                    xmlns:vm="clr-namespace:VTD.App.ViewModels">
+
+  <DataTemplate DataType="{x:Type vm:HelperViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Helper.Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{l:T Helper.Lead}" Margin="0,8,0,18" />
+      <StackPanel Orientation="Horizontal">
+        <Button Style="{StaticResource Primary}" Content="{l:T Helper.Open}" Command="{Binding OpenCommand}" />
+        <Button Style="{StaticResource Ghost}" Content="{l:T Helper.OpenSample}" Command="{Binding OpenSampleCommand}" Margin="12,0,0,0" Visibility="{Binding Shell.IsDemo, Converter={StaticResource Visible}}" />
+      </StackPanel>
+      <TextBlock Style="{StaticResource Small}" Text="{Binding Status}" Visibility="{Binding Status, Converter={StaticResource Visible}}" Margin="0,12,0,0" />
+
+      <StackPanel Visibility="{Binding IsLoaded, Converter={StaticResource Visible}}" Margin="0,18,0,0">
+        <TextBlock Style="{StaticResource Small}" Text="{Binding BundleLine}" />
+        <TabControl Margin="0,10,0,0">
+          <TabItem Header="{l:T Helper.Tab.Summary}">
+            <TextBox Text="{Binding Summary, Mode=OneWay}" IsReadOnly="True" Height="420" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" FontFamily="Cascadia Mono, Consolas" FontSize="12" />
+          </TabItem>
+          <TabItem Header="{l:T Helper.Tab.Ranking}">
+            <StackPanel>
+              <TextBlock Style="{StaticResource Mono}" Text="{Binding UnknownLine}" Margin="0,0,0,12" />
+              <ItemsControl ItemsSource="{Binding Hypotheses}" Focusable="False">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <c:ChamferBorder Style="{StaticResource Card}" Padding="16,12">
+                      <StackPanel>
+                        <TextBlock Style="{StaticResource Body}" FontWeight="SemiBold" Text="{Binding Title}" MaxWidth="900" />
+                        <TextBlock Style="{StaticResource Mono}" Text="{Binding Header}" Margin="0,4,0,8" />
+                        <ItemsControl ItemsSource="{Binding Lines}" Focusable="False">
+                          <ItemsControl.ItemTemplate>
+                            <DataTemplate><TextBlock Style="{StaticResource Mono}" Text="{Binding}" /></DataTemplate>
+                          </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                      </StackPanel>
+                    </c:ChamferBorder>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </StackPanel>
+          </TabItem>
+          <TabItem Header="{l:T Helper.Tab.Facts}">
+            <StackPanel>
+              <TextBox Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}" Width="360" HorizontalAlignment="Left" Margin="0,0,0,10" AutomationProperties.Name="{l:T Helper.Search}" />
+              <ListBox ItemsSource="{Binding Facts}" Height="400">
+                <ListBox.ItemTemplate>
+                  <DataTemplate><TextBlock Style="{StaticResource Mono}" Text="{Binding}" Foreground="{StaticResource TextBrush}" /></DataTemplate>
+                </ListBox.ItemTemplate>
+              </ListBox>
+            </StackPanel>
+          </TabItem>
+          <TabItem Header="{l:T Helper.Tab.Plan}">
+            <Grid>
+              <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="24" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+              <StackPanel>
+                <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Helper.Candidates}" />
+                <ItemsControl ItemsSource="{Binding Candidates}" Focusable="False">
+                  <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                      <c:ChamferBorder Style="{StaticResource Card}" Padding="14,10" Chamfer="8" Margin="0,0,0,8">
+                        <Grid>
+                          <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                          <StackPanel>
+                            <TextBlock Style="{StaticResource Body}" Text="{Binding Title}" />
+                            <TextBlock Style="{StaticResource Mono}" Text="{Binding Detail}" Margin="0,2,0,0" />
+                          </StackPanel>
+                          <Button Grid.Column="1" Style="{StaticResource Ghost}" Content="{l:T Helper.Add}" Command="{Binding AddCommand}" VerticalAlignment="Top" />
+                        </Grid>
+                      </c:ChamferBorder>
+                    </DataTemplate>
+                  </ItemsControl.ItemTemplate>
+                </ItemsControl>
+              </StackPanel>
+              <StackPanel Grid.Column="2">
+                <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Helper.YourName}" />
+                <TextBox Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}" MaxLength="60" Margin="0,0,0,12" />
+                <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Helper.Message}" />
+                <TextBox Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" TextWrapping="Wrap" Height="80" Margin="0,0,0,12" />
+                <TextBlock Style="{StaticResource SectionLabel}" Text="{Binding DraftCount}" />
+                <ItemsControl ItemsSource="{Binding Draft}" Focusable="False">
+                  <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                      <c:ChamferBorder Style="{StaticResource Card}" Padding="14,10" Chamfer="8" Margin="0,0,0,8">
+                        <StackPanel>
+                          <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Style="{StaticResource Body}" FontWeight="SemiBold" Text="{Binding Title}" />
+                            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                              <Button Style="{StaticResource Ghost}" Content="{l:T Helper.Up}" Command="{Binding UpCommand}" />
+                              <Button Style="{StaticResource Ghost}" Content="{l:T Helper.Down}" Command="{Binding DownCommand}" />
+                              <Button Style="{StaticResource Ghost}" Content="{l:T Helper.Remove}" Command="{Binding RemoveCommand}" />
+                            </StackPanel>
+                          </Grid>
+                          <TextBox Text="{Binding Note, UpdateSourceTrigger=PropertyChanged}" Margin="0,8,0,0" AutomationProperties.Name="{l:T Helper.Note}" />
+                        </StackPanel>
+                      </c:ChamferBorder>
+                    </DataTemplate>
+                  </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <WrapPanel Margin="0,8,0,0">
+                  <Button Style="{StaticResource Primary}" Content="{l:T Helper.SavePlan}" Command="{Binding SavePlanCommand}" Margin="0,0,10,10" />
+                  <Button Style="{StaticResource Secondary}" Content="{l:T Helper.CopyPlan}" Command="{Binding CopyPlanCommand}" Margin="0,0,10,10" />
+                  <Button Style="{StaticResource Secondary}" Content="{l:T Report.Ai}" Command="{Binding CopyAiCommand}" Margin="0,0,10,10" />
+                </WrapPanel>
+                <TextBlock Style="{StaticResource Small}" Text="{l:T Helper.PlanRules}" />
+              </StackPanel>
+            </Grid>
+          </TabItem>
+        </TabControl>
+      </StackPanel>
+    </StackPanel>
+  </DataTemplate>
+</ResourceDictionary>

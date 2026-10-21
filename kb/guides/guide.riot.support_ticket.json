@@ -1,0 +1,82 @@
+{
+  "id": "guide.riot.support_ticket",
+  "titleKey": "guide.riot.support_ticket.title",
+  "summaryKey": "guide.riot.support_ticket.summary",
+  "bucket": "riotOrAccount",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "van-restriction-hwid",
+    "van9101-attestation",
+    "unexplained-launch-failure",
+    "secure-boot-policy-wave-2026"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "ticket",
+      "when": [],
+      "textKey": "guide.riot.support_ticket.ticket.text",
+      "steps": [
+        {
+          "textKey": "guide.riot.support_ticket.ticket.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.support_ticket.ticket.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.support_ticket.ticket.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.support_ticket.ticket.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.support_ticket.ticket.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.support_ticket.ticket.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.support_ticket.ticket.s7",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "hwid_ban",
+      "when": [],
+      "textKey": "guide.riot.support_ticket.hwid_ban.text",
+      "steps": [
+        {
+          "textKey": "guide.riot.support_ticket.hwid_ban.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.support_ticket.hwid_ban.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.support_ticket.hwid_ban.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.support_ticket.hwid_ban.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.support_ticket.hwid_ban.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.riot.support_ticket.outcome"
+}

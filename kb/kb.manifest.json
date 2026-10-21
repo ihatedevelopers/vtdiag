@@ -1,0 +1,1079 @@
+{
+  "format": 1,
+  "version": "2026.10.21.1",
+  "minApp": "0.1.0",
+  "createdUtc": "2026-10-21T00:00:00Z",
+  "channel": "stable",
+  "files": [
+    {
+      "path": "codes/codes.json",
+      "sha256": "63e9c791dd4be5fb3044bd80b8d20515a90a770a0cdcf405d09dfb86426bf763",
+      "size": 41874
+    },
+    {
+      "path": "collectors/collectors.json",
+      "sha256": "d915a57d5f53f12d143818fedd1e3d8c10b989e64f7f04bcc32c2667849b86ff",
+      "size": 7586
+    },
+    {
+      "path": "conflicts/anticheat.json",
+      "sha256": "9d37ba8538e87b06de7c37aa6826abb4485123d05d346d6c08488d842e757a9b",
+      "size": 6016
+    },
+    {
+      "path": "conflicts/antivirus.json",
+      "sha256": "d91685b1bd8a2bf0b501a5a1abf57bd5677c847da563f60d66d628f4f83ca304",
+      "size": 14832
+    },
+    {
+      "path": "conflicts/audio.json",
+      "sha256": "06fa7acc513b4092774dd0bb4ae3bd22845691581761b33d31ea4e0eb805e7de",
+      "size": 7156
+    },
+    {
+      "path": "conflicts/driver.json",
+      "sha256": "5f59e9a603270732f02e005ed4aff6b64b5b7be3b0d5d984e90f8452f084b32f",
+      "size": 9972
+    },
+    {
+      "path": "conflicts/monitoring.json",
+      "sha256": "c6370b7c05d90cf7572be1239770466d7716898399a91b0abc6187389b08abe5",
+      "size": 3927
+    },
+    {
+      "path": "conflicts/network_optimizer.json",
+      "sha256": "ada45afe7f927cce6a4cf6603fcbd94341f6da94f0257dc22d61c485af19fc9c",
+      "size": 5663
+    },
+    {
+      "path": "conflicts/other.json",
+      "sha256": "eb6c83afa4315fee206bd3b9cfb44820cf09c6e7046a60ed71c541187fd94f05",
+      "size": 19635
+    },
+    {
+      "path": "conflicts/overlay.json",
+      "sha256": "a864a9d0ef31170ab6e51c20f3d72e30f1da6ef6115208e8442f18847068929c",
+      "size": 12234
+    },
+    {
+      "path": "conflicts/rgb_vendor.json",
+      "sha256": "d251752ae7444fb53def9dfa257aef73d37d01321756a766d53b8027722aa91e",
+      "size": 14534
+    },
+    {
+      "path": "conflicts/tweak_tool.json",
+      "sha256": "e069f316cf420727849f25f82c1b5e4344d769fd94f2dac1daec739d5b80d000",
+      "size": 8997
+    },
+    {
+      "path": "conflicts/virtualization.json",
+      "sha256": "f8a495c0a95430cd4c6cfaa0a278af692e672c4eac7a112080f21bd7bac5b102",
+      "size": 8135
+    },
+    {
+      "path": "conflicts/vpn.json",
+      "sha256": "4ee975900c8c92b66150fb9578ab73c45e8355c0e6ea30a54a7be26cbcdf4863",
+      "size": 18577
+    },
+    {
+      "path": "fixes/audio/fix.audio.bt_handsfree_off.json",
+      "sha256": "022a0732d05a6aa008332569a6d0b25b36d2c7472af41baf600c9e01e5b8dda4",
+      "size": 1324
+    },
+    {
+      "path": "fixes/display/fix.display.disable_fso.json",
+      "sha256": "5d292dc1e15e7fafc9cc384b665500fe96d3a61ad5d703c13602954e3573663d",
+      "size": 1310
+    },
+    {
+      "path": "fixes/display/fix.display.game_dvr_off.json",
+      "sha256": "629571e6cce7469fb5ec0a4a3c345d70d3e54c060f99c505a6af5b350e75543f",
+      "size": 1509
+    },
+    {
+      "path": "fixes/display/fix.display.gpu_pref_high.json",
+      "sha256": "6cd1e4a9e38520e35a8899a88d49c0485a4581de7eae537019023b9188fcc186",
+      "size": 1344
+    },
+    {
+      "path": "fixes/display/fix.display.hags_off.json",
+      "sha256": "a23c61857868c8d79eda138537fe9864b363d309a3df8633faa62e8fefcf5cac",
+      "size": 1379
+    },
+    {
+      "path": "fixes/display/fix.display.mpo_off.json",
+      "sha256": "e39511a587dd5bc1e965bda3e2aadb8cb010b9ca5e22776a0186dc382c376d8b",
+      "size": 1326
+    },
+    {
+      "path": "fixes/generic/fix.generic.close_process.json",
+      "sha256": "9129065adebc04a44a0662fd677630e7265c5455bfdcc39f7a4928b574a975b4",
+      "size": 1112
+    },
+    {
+      "path": "fixes/generic/fix.generic.disable_device.json",
+      "sha256": "58191aff881fc20e582ae3309be9d4649f79e2730066995de048f03618c34036",
+      "size": 1131
+    },
+    {
+      "path": "fixes/generic/fix.generic.disable_startup_hkcu.json",
+      "sha256": "c1548a6984220146963e05e88d65d287c43c33b2fdcf63e710debad09c9435da",
+      "size": 1140
+    },
+    {
+      "path": "fixes/generic/fix.generic.disable_startup_hklm.json",
+      "sha256": "ddfdc2badc17f12e5c99427416311739ced7c6534f25edc08f9f28f21f016b73",
+      "size": 1139
+    },
+    {
+      "path": "fixes/generic/fix.generic.remove_compat_layer.json",
+      "sha256": "099c12693cf566031107272ae9ea118db789bd4af182ca186e8452717c808222",
+      "size": 1255
+    },
+    {
+      "path": "fixes/generic/fix.generic.unbind_ipv6.json",
+      "sha256": "3ffe42fa85af1526971093e84a1aee3996944bb566372e5a3f07cc11ff0af165",
+      "size": 1296
+    },
+    {
+      "path": "fixes/input/fix.input.mouse_accel_off.json",
+      "sha256": "9f909bbd8d4a11b5a1156970cfaacd5a24a35a27f03e65464f5b2e4b84c4d54d",
+      "size": 1659
+    },
+    {
+      "path": "fixes/net/fix.net.disable_second_adapter.json",
+      "sha256": "5c7ea89b8f4c80e0e80a64d87763a6318e3f1f2b4650971ce1c29ed5f9304142",
+      "size": 1900
+    },
+    {
+      "path": "fixes/net/fix.net.disable_unused_adapter.json",
+      "sha256": "da3c1f32897d06ba84f81f04fc05b905287858ebef531a4dda1cf76236b71ddb",
+      "size": 2002
+    },
+    {
+      "path": "fixes/net/fix.net.dns_flush.json",
+      "sha256": "00ea73c3713fd1310a4bf7cd902df6cb3aadf307ee47be1bc7c99d72cbf55374",
+      "size": 848
+    },
+    {
+      "path": "fixes/net/fix.net.realtek_power_saving_off.json",
+      "sha256": "95317f6c4aa392652a0b4ecf63528d44999f3c331b17f7cd6b50b79aed824de2",
+      "size": 2343
+    },
+    {
+      "path": "fixes/net/fix.net.unbind_ipv6_active.json",
+      "sha256": "cc0d2fe808398b5271395899a595e6ce3f73f547df39534e76246e0ef31bb4cc",
+      "size": 1530
+    },
+    {
+      "path": "fixes/net/fix.net.winsock_reset.json",
+      "sha256": "a380dbf505c8e8cbe6e99ec539012f3cafe8ee4581ab51dd2ab2bb91fb2335b8",
+      "size": 1226
+    },
+    {
+      "path": "fixes/os/fix.os.fast_startup_off.json",
+      "sha256": "b1e4a181bdc6cfda1f205268e6b881245347cd75a87df4dcb102627772375e63",
+      "size": 1436
+    },
+    {
+      "path": "fixes/os/fix.os.time_resync.json",
+      "sha256": "4436d9743d8cace8f4c7cd4a7cf5a3421318b76d94ab4f6ddb0518406a7c8763",
+      "size": 883
+    },
+    {
+      "path": "fixes/power/fix.power.cpu_max_100.json",
+      "sha256": "d87d5b6fb9de368f0bd512f523655b3eb7c8156d21eae7b68be42f799ff49e4a",
+      "size": 1339
+    },
+    {
+      "path": "fixes/power/fix.power.high_performance.json",
+      "sha256": "e7c923ec66e2eb366bea2b4aff2caae1cc9d540f6317272d39963954548c9278",
+      "size": 1269
+    },
+    {
+      "path": "fixes/power/fix.power.usb_selective_suspend_off.json",
+      "sha256": "b8534e8b75b1e6ff77d03076a2e0444fcb5628ac85c73968e2d96dd70df7fc98",
+      "size": 1580
+    },
+    {
+      "path": "fixes/proc/fix.proc.close_overlays.json",
+      "sha256": "ffa9c7bc7189c9c09d5214db6f3536c62831a2c5981a6ecd296cad68ab9cbc2c",
+      "size": 1301
+    },
+    {
+      "path": "fixes/riot/fix.riot.client_runasadmin.json",
+      "sha256": "3c551433a17a531bace1aa520f4a9d5e492f1e6e5e7f70bd5be2ce182a31686b",
+      "size": 1282
+    },
+    {
+      "path": "fixes/sec/fix.sec.remove_riot_perfoptions.json",
+      "sha256": "fc28101192329817e16affce4639a72f2e80c101dc21b777a50f6e5726c2b87e",
+      "size": 1222
+    },
+    {
+      "path": "fixes/sec/fix.sec.reset_exploit_overrides.json",
+      "sha256": "c4d98e2edb0bfa03154006c91f22a2ff96edac3f19e193fcb97e260205fc9dc0",
+      "size": 1231
+    },
+    {
+      "path": "fixes/svc/fix.svc.disable_conflict_service.json",
+      "sha256": "29480181cfb95baa528b430ca79ff3341704727b01418faac9be5d71362dabba",
+      "size": 1608
+    },
+    {
+      "path": "fixes/vg/fix.vg.quarantine_bootstatus.json",
+      "sha256": "d65ddd548662413b072420cc0ff0cd8ef9af13fbf37c9cd48eff9445b2308e17",
+      "size": 1216
+    },
+    {
+      "path": "fixes/vg/fix.vg.quarantine_stale_dat.json",
+      "sha256": "853b4d677484c22234d9c2f6571ba90d0de22aa29c6a0629928c113f3f8b9a69",
+      "size": 1177
+    },
+    {
+      "path": "fixes/vg/fix.vg.vgc_automatic.json",
+      "sha256": "b111de9dd8591640420ba6efc8ccb835e21a6f57624adaa5466d0ef257585c1e",
+      "size": 1424
+    },
+    {
+      "path": "guides/guide.account.other_account.json",
+      "sha256": "934725bdb6f596e5c137eb2e60705ca224d5f89ee1ed51eae65268db90bdaa49",
+      "size": 2197
+    },
+    {
+      "path": "guides/guide.apps.close_overlays.json",
+      "sha256": "fd5be643da1c5315ea3f9500c4e6426b4fa6b0946d5702549cda72ef5928359f",
+      "size": 4033
+    },
+    {
+      "path": "guides/guide.apps.uninstall_bonjour.json",
+      "sha256": "9528a2028a5e84958b897aaf9dd0f153e98013c4449a900f89dd4d63e4e731e0",
+      "size": 2365
+    },
+    {
+      "path": "guides/guide.apps.uninstall_conflict.json",
+      "sha256": "200791b0d70298952e4c1dc7baf64c4d412bfebc231150dd4e5a38f99510aa74",
+      "size": 2740
+    },
+    {
+      "path": "guides/guide.apps.uninstall_nahimic.json",
+      "sha256": "4b055cc89c5ea7650eac49d8dd8b9323e4c71499678c4bc1c6170d423b3972ea",
+      "size": 2709
+    },
+    {
+      "path": "guides/guide.audio.bt_handsfree.json",
+      "sha256": "a673f78b3276204bfa48da9f6f07544125c799cb76d51bd9032f27f5e1c89a29",
+      "size": 2955
+    },
+    {
+      "path": "guides/guide.audio.output_device.json",
+      "sha256": "545c88bad5256dd0688f1c3320a467f26134bb57f03be908d8ac120424d768ea",
+      "size": 3486
+    },
+    {
+      "path": "guides/guide.av.exclusions.json",
+      "sha256": "6f7d3ad68764aee260e3b558e89b5e21b8d2a610e3038233df5533549e858c08",
+      "size": 4089
+    },
+    {
+      "path": "guides/guide.bcd.restore_security.json",
+      "sha256": "af652b9979122ccea2ab21cd92fa3a419bfe24eda8b96250cce2f8aec22786b0",
+      "size": 4939
+    },
+    {
+      "path": "guides/guide.bios.update.json",
+      "sha256": "3a85be08763f7cd4557bdbd76ad4f2840f71c6b9df5a43e1cbb87eb2002bc7f5",
+      "size": 4134
+    },
+    {
+      "path": "guides/guide.boot.dualboot.json",
+      "sha256": "a80cc388f6535ce3aab00203938810bd40360c59bc4f887a6bce02c9c2c36851",
+      "size": 3019
+    },
+    {
+      "path": "guides/guide.clock.fix.json",
+      "sha256": "7688639241d0445a930d6e4d0282ea2472eeb0aefaff0c0374f3149b8273ffbe",
+      "size": 1631
+    },
+    {
+      "path": "guides/guide.discord.stream_audio.json",
+      "sha256": "c2d519efe0a290cb5304c6ca40a6a168cc20d13fdefb8a81705835fb3c074ac6",
+      "size": 2101
+    },
+    {
+      "path": "guides/guide.display.settings.json",
+      "sha256": "447f39ede05d7e886bb309f8e974cf318b0472e02cdc8be6bb352e42f248a6a8",
+      "size": 4107
+    },
+    {
+      "path": "guides/guide.display.stretched_res.json",
+      "sha256": "7ac517535484a4405a19b4018e52e81ded9ba34e724cc1918edfd526286a9841",
+      "size": 4152
+    },
+    {
+      "path": "guides/guide.env_vars.restore.json",
+      "sha256": "9b1135b51be77b4c59a9dac94f7f2fa3fc739caba32aae1020897713fae8505e",
+      "size": 3339
+    },
+    {
+      "path": "guides/guide.gpu.clean_driver.json",
+      "sha256": "4193a29ca139141b49a6f8e68738ef283d8a30091abca50d9e96c49c1420f114",
+      "size": 4393
+    },
+    {
+      "path": "guides/guide.gpu.igpu.json",
+      "sha256": "3bba7f2dcb612981aef5f89289523c597dfa8a81642d292b791b89e31d0f3092",
+      "size": 4698
+    },
+    {
+      "path": "guides/guide.hardware.freeze_checks.json",
+      "sha256": "a2dfbb712bd56d1a5d0b62d0d9de1677988e61e57510bc8735fcea73c7f2bc35",
+      "size": 5450
+    },
+    {
+      "path": "guides/guide.hardware.thermal.json",
+      "sha256": "546a0232300d9571dc7dc6d2c63083c79435d9d415f542890e0bc8b85fcd47f0",
+      "size": 2927
+    },
+    {
+      "path": "guides/guide.hvci.enable.json",
+      "sha256": "f1aaf637bf5aee50465c439db4a64976f1f5c9db446d4fef337eb534dc5e91dc",
+      "size": 6546
+    },
+    {
+      "path": "guides/guide.hybrid_cpu.priority.json",
+      "sha256": "4dfd26d7f4468b228c49467ce21faacfbc368bc65d187d8106a0c5eab71143fa",
+      "size": 3029
+    },
+    {
+      "path": "guides/guide.iommu.enable.json",
+      "sha256": "e0d1a285e6df6063f6fbd704990e181864acad1cade892b58020348c081e1aeb",
+      "size": 4555
+    },
+    {
+      "path": "guides/guide.mouse.usb.json",
+      "sha256": "836e0e2c74a5d10edfb5b931ab099e3fbf404421bd65f067b23ee672e8a4bb75",
+      "size": 3193
+    },
+    {
+      "path": "guides/guide.msi_x3d.game_mode.json",
+      "sha256": "abde83a21be7d3c0ffba3b4984f2ec1031d438bb1dd5ec3d0e2955a3a55289a5",
+      "size": 1820
+    },
+    {
+      "path": "guides/guide.net.cloudflare_warp.json",
+      "sha256": "c163c6676072c7b19f7e861e5303765d1c454178dbc37c431721732a0878c770",
+      "size": 2910
+    },
+    {
+      "path": "guides/guide.net.dns_ipv6.json",
+      "sha256": "90cc0f28eaf7d6ea421c7b9e60744ceb98d5fa69581f1ca5f0124232a9c91f38",
+      "size": 2814
+    },
+    {
+      "path": "guides/guide.net.local_connection.json",
+      "sha256": "74a050c84280d84fe5ee75429641f6a4e5dc4c6da0cb29e47d5192709295c424",
+      "size": 5365
+    },
+    {
+      "path": "guides/guide.network.firewall.json",
+      "sha256": "5d3db0c441b0ce0208558d757b033cc74dff4d5063c48945bb71a7dfe9c1e51b",
+      "size": 2927
+    },
+    {
+      "path": "guides/guide.performance.basics.json",
+      "sha256": "0790dd992fec4a802d8306dc3524bbfa46d4cdd1eb6bbaad1092fb5cd564d8c8",
+      "size": 5109
+    },
+    {
+      "path": "guides/guide.power.laptop_mode.json",
+      "sha256": "e260cbcaad6a1cfc216176ebea9a7b3187bdc42e75fe9baf2e370462a858bfdf",
+      "size": 3492
+    },
+    {
+      "path": "guides/guide.riot.client_repair.json",
+      "sha256": "866b621949ad9c0e769097baad6bf861878d3ce2ce071f16e177bd473e5e80fc",
+      "size": 2479
+    },
+    {
+      "path": "guides/guide.riot.client_settings.json",
+      "sha256": "2599b3211076557b5491c83ed3956bed00005f7c0dde7d53fb13ec7c332bc757",
+      "size": 2571
+    },
+    {
+      "path": "guides/guide.riot.server_status.json",
+      "sha256": "4192ae7056531063d5f2ba847e4e99235d58ea521c7b7d4e11e0bceb0cca9f6f",
+      "size": 2412
+    },
+    {
+      "path": "guides/guide.riot.support_ticket.json",
+      "sha256": "0a4d37850ad95c75fa077c8d98e4bc8077d446c564079d129570db12f12a5f25",
+      "size": 2069
+    },
+    {
+      "path": "guides/guide.runtimes.install.json",
+      "sha256": "68d05ef95c6507599c95759effe50d712d3f7c7e8c308aef86ce5a0603514e77",
+      "size": 3418
+    },
+    {
+      "path": "guides/guide.secureboot.enable.json",
+      "sha256": "1e66d4e781f196d2e3d498e1e6dfeee0d6f777a6e2414150abb0fa800b7efb01",
+      "size": 10673
+    },
+    {
+      "path": "guides/guide.secureboot.policy_wave.json",
+      "sha256": "cceaedbc68a2f63862e890af3923fd768c4a0cb3411be46f30e2a2e6730c55c3",
+      "size": 4753
+    },
+    {
+      "path": "guides/guide.shader_cache.warmup.json",
+      "sha256": "3833bda041b8df97b5f43348e561ffb52735b296175e020ad975e2bce9ac8b3a",
+      "size": 2288
+    },
+    {
+      "path": "guides/guide.standby_memory.json",
+      "sha256": "24c006d690b596b669be8bc4f50c4e9790251058acf100579cd5be80e821d564",
+      "size": 1997
+    },
+    {
+      "path": "guides/guide.storage.chkdsk.json",
+      "sha256": "0302b53bda60daca37906cb370ae6b8baf449d610b7254e9f037f9da3e564460",
+      "size": 3141
+    },
+    {
+      "path": "guides/guide.storage.intel_vmd.json",
+      "sha256": "d9da8ebdd843c35905df481b76fb715e7f0186e4680f1658d951840bdc6ab8c6",
+      "size": 3504
+    },
+    {
+      "path": "guides/guide.tpm.enable.json",
+      "sha256": "c3b7b73eb88509a1355cfe21dc87fd573a952df678627595ed751458efdaad24",
+      "size": 5422
+    },
+    {
+      "path": "guides/guide.valorant.config_reset.json",
+      "sha256": "c0f726864f6e07bb1470b321b2db91743e542b14124f8f714094b5f6a8c8a2b9",
+      "size": 2662
+    },
+    {
+      "path": "guides/guide.vanguard.precheck.json",
+      "sha256": "32a99194db1a1864c4d6ac369334a36f8508c9b4e74cb8b6fffe20c897e6d0ef",
+      "size": 2741
+    },
+    {
+      "path": "guides/guide.vanguard.real_restart.json",
+      "sha256": "f4d5351fa76bdd4a805c7748f6f55ac93abfb468a48d7eb0c818e51404b66433",
+      "size": 4090
+    },
+    {
+      "path": "guides/guide.vanguard.reinstall.json",
+      "sha256": "3ba95fe8aa10156579c8fc7abdbc389cee9c5bc4035445983f95f86ae6955055",
+      "size": 4626
+    },
+    {
+      "path": "guides/guide.virtualization.enable.json",
+      "sha256": "15f9f079430751c346720777436b699c389c56898e1a248948c8a88c4e91eda0",
+      "size": 3024
+    },
+    {
+      "path": "guides/guide.vpn.remove.json",
+      "sha256": "c2a1765111b3d8784738d561b82a33ab30447574d9850cd023b9e23236ef10d3",
+      "size": 4116
+    },
+    {
+      "path": "guides/guide.wdfilter.reset.json",
+      "sha256": "ed6bcc29a2aa95ab3f58bf93c1a1baf8db652aae8b59f75c55be3c4ae70b84a2",
+      "size": 2232
+    },
+    {
+      "path": "guides/guide.windows.update.json",
+      "sha256": "67514b60eaf7e3178c096c6885db6ddb4c44461163a05cbda701616b545f5ee3",
+      "size": 6397
+    },
+    {
+      "path": "questions/questions.json",
+      "sha256": "504ea0441a852cebb451c5f4b28ed69459fa6e6c641070249c5fcec49ee0a3d5",
+      "size": 8419
+    },
+    {
+      "path": "rules/audio_mic/audio-device-config-issues.json",
+      "sha256": "e231de99f6c873fd8681cdd3f52b197ca387cdcb88123248ac3bb80660e4f144",
+      "size": 1333
+    },
+    {
+      "path": "rules/audio_mic/bluetooth-headset-hfp-voice-chat.json",
+      "sha256": "e00d568cf71a64661458b50b63dd6e403d05614459b42dfb28ded5ecc606ba6c",
+      "size": 1418
+    },
+    {
+      "path": "rules/audio_mic/discord-stream-no-voice.json",
+      "sha256": "c9a5b115bfc032a7d79183798b372668d2874650792077acc3222dda8d56defe",
+      "size": 781
+    },
+    {
+      "path": "rules/audio_mic/voice-chat-network-dns-ipv6.json",
+      "sha256": "d2dc58dbcb5cf4b17450a8567c04eedf6fd10ba1ffe4870599318807e0b8c978",
+      "size": 1379
+    },
+    {
+      "path": "rules/crash_freeze_bsod/fast-startup-stale-dat-bsod.json",
+      "sha256": "0b2f5e4cfbd2d45c13d9e1556f744b1f467929624d708ed11684a1bcdc1b33e1",
+      "size": 1344
+    },
+    {
+      "path": "rules/crash_freeze_bsod/freeze-on-click-lobby-misc.json",
+      "sha256": "7a81a29d8fda765b735eb79619b504c3951b5575baec161d33fad4370a66ed11",
+      "size": 971
+    },
+    {
+      "path": "rules/crash_freeze_bsod/igpu-disabled-or-driverless-freeze.json",
+      "sha256": "b5eda2cdae43b3cb4dd9938cff12927c0cbd9c33767cb45bba51abe15f2f2a24",
+      "size": 1407
+    },
+    {
+      "path": "rules/crash_freeze_bsod/insider-build-vgk-bsod.json",
+      "sha256": "dc876e8499f3c8793d4d1d7e665c9c04bac5e5bef7992b537e5689cf7f795c1f",
+      "size": 1046
+    },
+    {
+      "path": "rules/crash_freeze_bsod/nahimic-audio-service-launch-hang.json",
+      "sha256": "39d2fb03e76cd9242ecfafa78ca63860643322a805c0cdd927a2a7c5be5afe24",
+      "size": 1816
+    },
+    {
+      "path": "rules/crash_freeze_bsod/outdated-bios-reboot-vgk-bsod.json",
+      "sha256": "daf5d746f7c027bcf671ab443ccc2c2c3bdcf4517344accad6cdecb449c88a80",
+      "size": 1731
+    },
+    {
+      "path": "rules/crash_freeze_bsod/unexplained-launch-failure.json",
+      "sha256": "54ce3559d2c7a151e42f6939bff6b7209f5dd28bc3e9520e1b4243cd9873c88e",
+      "size": 929
+    },
+    {
+      "path": "rules/crash_freeze_bsod/usb-selective-suspend-freeze.json",
+      "sha256": "4d79e92159f9aeed45e959a96eda188f1ead2e95c6beab50bc24cec82b2159ef",
+      "size": 1360
+    },
+    {
+      "path": "rules/crash_freeze_bsod/wdfilter-bsod.json",
+      "sha256": "4edccaa414f7aa964e96192db912b4299262522d5fa71e2736021969926b2f8c",
+      "size": 822
+    },
+    {
+      "path": "rules/crash_freeze_bsod/whole-pc-freeze-kernel-power-41.json",
+      "sha256": "48648a6e2d142ba463ab6427109862886819810433aa207379629b0e0db6db27",
+      "size": 1920
+    },
+    {
+      "path": "rules/display_resolution/display-misc-blur-wrong-res.json",
+      "sha256": "95ac1b3ab8f52a16ca357089b9cf5d96e15107ff73890ec7f414ac2773d27878",
+      "size": 1026
+    },
+    {
+      "path": "rules/display_resolution/fullscreen-optimizations-mpo.json",
+      "sha256": "aa3a76d1e412b559196d7e68abb9b4cf8b2bc6cafeab8f3de751a44ae8b1204a",
+      "size": 1262
+    },
+    {
+      "path": "rules/display_resolution/stretched-resolution-issues.json",
+      "sha256": "11356b259c867b1762651f9efec2d61ed707e19a3e5bbea64968dbea351f342f",
+      "size": 854
+    },
+    {
+      "path": "rules/display_resolution/vsync-gsync-tearing-fps-lock.json",
+      "sha256": "ab15e07f919530a7abeef5c50fc3d8420c200bf59d8ff45cf9fffa0ee683bea9",
+      "size": 1049
+    },
+    {
+      "path": "rules/fps_performance/fps-decay-over-time.json",
+      "sha256": "db7e3bc657c1a387cdbfdc9a6d1cc24ca9651aafc9e6d914dcb4ead559b09b26",
+      "size": 1377
+    },
+    {
+      "path": "rules/fps_performance/fps-lower-than-expected-caps.json",
+      "sha256": "82ef6270dc25be5fd697beafe2d2a5789420a109e398730258e73fb14bddb310",
+      "size": 1422
+    },
+    {
+      "path": "rules/fps_performance/frametime-latency-spikes.json",
+      "sha256": "6ca587f52e4781cf9fbe78b4a394551aebeedccf8118cca4782001cf01d9b76d",
+      "size": 1314
+    },
+    {
+      "path": "rules/fps_performance/intel-hybrid-cpu-ecore-stutter.json",
+      "sha256": "dea411b6a60e9c8757e977ec5e491a0577ea8904f942ad63cb58a2b73c2db36d",
+      "size": 1227
+    },
+    {
+      "path": "rules/fps_performance/low-gpu-usage-after-ue5-patch.json",
+      "sha256": "07cf3437e1cb244b0feb0f20fbcc76147b2ef3c1fe23a8a579a4f0e1e196f766",
+      "size": 1752
+    },
+    {
+      "path": "rules/fps_performance/msi-x3d-game-mode-lobby-freeze.json",
+      "sha256": "f111b10f3b641f08025435fac7758a7d4cce9370332310017999df7dc4a4ee71",
+      "size": 939
+    },
+    {
+      "path": "rules/fps_performance/patch-13-01-fps-drop.json",
+      "sha256": "914f945561a2854e1139b32f21c8c690b4a465f5adad627234058b4bc23390b3",
+      "size": 1065
+    },
+    {
+      "path": "rules/fps_performance/power-plan-throttling-low-fps.json",
+      "sha256": "e284d7f06e5da1bb7cd91d9e345ebf90bc5a3929474d6e877f3161568b55fc71",
+      "size": 1829
+    },
+    {
+      "path": "rules/fps_performance/realtek-2-5gbe-nic-stutter.json",
+      "sha256": "fcf16733036e5ce403d1c2edd39760194967eadaba31fd9546a3af3943472921",
+      "size": 2467
+    },
+    {
+      "path": "rules/fps_performance/riot-client-hardware-acceleration.json",
+      "sha256": "20b3270917d70d42caf224ee2bf08b328131148753cffc858a1b396601c990d9",
+      "size": 781
+    },
+    {
+      "path": "rules/fps_performance/riot-client-not-elevated.json",
+      "sha256": "ca81ee1b57218765bcf5773e7b503436898ebf6fab92b5fb476b4091f92267df",
+      "size": 1105
+    },
+    {
+      "path": "rules/fps_performance/shader-cache-compilation-stutter.json",
+      "sha256": "6dd010fa119dae6ccc1216f0539f9d7a5c2bb3a4dbccfa355b9f9922b62a6974",
+      "size": 1393
+    },
+    {
+      "path": "rules/fps_performance/standby-memory-stutter.json",
+      "sha256": "9ce97000de1ad3ac61f4006fad1b02f3369e0858c973dbe7b04d78f58f585ee7",
+      "size": 1055
+    },
+    {
+      "path": "rules/fps_performance/third-party-hook-overlay-conflict.json",
+      "sha256": "6333ad18b85d985adf77680f762086e53c8083e376a6ff77560461918a4f48d4",
+      "size": 2385
+    },
+    {
+      "path": "rules/fps_performance/windows-update-kb5101650-microstutter.json",
+      "sha256": "ca1ce843471fdfa964e424a5a20f33826b49951340d3dd74186a45b9eea76405",
+      "size": 1200
+    },
+    {
+      "path": "rules/generated/audio_mic.json",
+      "sha256": "134ab6f3c148012fa5515766f4d1c367a11d726e965e6404ac2f8dd87ff96147",
+      "size": 3919
+    },
+    {
+      "path": "rules/generated/crash_freeze_bsod.json",
+      "sha256": "6686c93486574769287d2e5844c116e5b48f5c86f78724a40940cc40f7c924a7",
+      "size": 3524
+    },
+    {
+      "path": "rules/generated/display_resolution.json",
+      "sha256": "40b34695b9fbd39a77f0f1d1b3db96234019ed338da1a6d7a911d0962023bb0e",
+      "size": 1897
+    },
+    {
+      "path": "rules/generated/fps_performance.json",
+      "sha256": "136c280ee083a3d7c63b94735e09d9a876819d54545740f5c6b95fb87a49d102",
+      "size": 19972
+    },
+    {
+      "path": "rules/generated/gpu_driver.json",
+      "sha256": "10e4774fb4e995cbabcfbb532e286c792e33c4219c1bbb42bddcaee5742a87b7",
+      "size": 1183
+    },
+    {
+      "path": "rules/generated/login_account_client.json",
+      "sha256": "524b2c8ea24def6d7dc990786cd19f6618cf2b73139b97b86adc4638869dfa06",
+      "size": 3034
+    },
+    {
+      "path": "rules/generated/network_ping.json",
+      "sha256": "9b8e02b337cb42a4ad63a5a03c18afc83887be53f00f33bf85d86eb11c6ee696",
+      "size": 30265
+    },
+    {
+      "path": "rules/generated/other.json",
+      "sha256": "e19c2c3ef2afd9160f6781e6291265bc348e8cdceb5ed4b0afe86e545d2c7736",
+      "size": 8607
+    },
+    {
+      "path": "rules/generated/tpm_secureboot_bios.json",
+      "sha256": "a44541467b7069c0d890c4de33df3353c7dcb1a63ce5ccea8da7aedb55684880",
+      "size": 2980
+    },
+    {
+      "path": "rules/generated/vanguard.json",
+      "sha256": "5eec901a9e1130a964cfe9d6f75ab98e82e19acb21c8df279a928d32f6c4694b",
+      "size": 53973
+    },
+    {
+      "path": "rules/gpu_driver/amd-adrenalin-driver-regression.json",
+      "sha256": "3918df01dfd0fb2acf9ea6a1035a0546c44df80f92299b9f2bd0b7feaca9459c",
+      "size": 1878
+    },
+    {
+      "path": "rules/gpu_driver/gpu-driver-corrupt-needs-clean-install.json",
+      "sha256": "4d6882b3d7aad08224d70214acaa7048935c6b1d6152264d929d3a9e203665e5",
+      "size": 1572
+    },
+    {
+      "path": "rules/gpu_driver/intel-graphics-chipset-driver-outdated.json",
+      "sha256": "0385fa134bf87ac3c946aed6e98be6b31fe97ff4e744f3ea3ba720f40459fcb6",
+      "size": 1029
+    },
+    {
+      "path": "rules/gpu_driver/nvidia-vsync-fast-critical-error.json",
+      "sha256": "e1a166379380deacbf93685353cf23beba29ecf7496ff0c5e8eccec5056c88f4",
+      "size": 1068
+    },
+    {
+      "path": "rules/gpu_driver/wrong-gpu-or-display-output.json",
+      "sha256": "fb3c2fcc76e676f920d56ecd33950b80b12a540174fb36e235096d8dbaf671ad",
+      "size": 1107
+    },
+    {
+      "path": "rules/hardware_other/usb-optical-drive-restart.json",
+      "sha256": "945df9a9805787ea35aa0fee073575595141eab12be5d9e644e11e1e7e7cb69f",
+      "size": 884
+    },
+    {
+      "path": "rules/hardware_other/volmgr-161-black-screen-fan.json",
+      "sha256": "fdb67e99ce7caad4d0d83358497c8fd6765d7c519ef8a4c1646190c4316b5073",
+      "size": 1001
+    },
+    {
+      "path": "rules/input_mouse/mouse-acceleration-floaty-aim.json",
+      "sha256": "50da6df0f312c368b33ebb41ca406e6b87f73c90d68cbe67c8bdcb33d4d335a5",
+      "size": 1169
+    },
+    {
+      "path": "rules/input_mouse/mouse-clicks-stop-after-alt-tab.json",
+      "sha256": "032fcb91c7e697b3984d0c66d80ec15d4a800c9204b278cb54ff563e6832f462",
+      "size": 997
+    },
+    {
+      "path": "rules/input_mouse/mouse-usb-port-polling-lag.json",
+      "sha256": "5e91164fa7011b13c718f3ca5ab0c2dad39d6c2ee36278b0cc501a3626df5fe3",
+      "size": 974
+    },
+    {
+      "path": "rules/install_update_corrupt/corrupt-system-or-game-files.json",
+      "sha256": "454484941f7d1f29b8f19245d497dcc9ce77af1e3c6bbd0b2aa2acf47974f82c",
+      "size": 1194
+    },
+    {
+      "path": "rules/install_update_corrupt/launch-shortcut-tray-failure.json",
+      "sha256": "250aa242b256a40d5706e4a07602665b8440f1801c2bdbbd75dcb0a5a2ae4a70",
+      "size": 1153
+    },
+    {
+      "path": "rules/install_update_corrupt/riot-client-update-stuck.json",
+      "sha256": "65ec22e47523656030e605aa665de8fec8b485133f914f4a7aedea1bf52e3df0",
+      "size": 1409
+    },
+    {
+      "path": "rules/install_update_corrupt/side-by-side-config-error.json",
+      "sha256": "f65c9afae69ec8f9a8c7b371f48f1c260d65bacd5e4cc5f14c083898197ab5a3",
+      "size": 877
+    },
+    {
+      "path": "rules/install_update_corrupt/slow-download-riot-cdn.json",
+      "sha256": "f7e89d4d14c351631025099007c28e086079c707ea23ae2fe886d4c965738c18",
+      "size": 844
+    },
+    {
+      "path": "rules/install_update_corrupt/valorant-config-corrupt.json",
+      "sha256": "49de8923d1e006badf9b0c0429f95c6d744438bb7e0080f51e1a0e677f445c05",
+      "size": 940
+    },
+    {
+      "path": "rules/install_update_corrupt/vanguard-install-loop.json",
+      "sha256": "4d2d2abe92efb98c67cad156547220de6119a0f62faef68a30575bb70c52101f",
+      "size": 1594
+    },
+    {
+      "path": "rules/install_update_corrupt/windows-version-too-old.json",
+      "sha256": "8cfa96f2c0f28f5bf8ad510f32916b072b2b13d56ab742a65eaccfbdcb7ca05f",
+      "size": 1040
+    },
+    {
+      "path": "rules/install_update_corrupt/xinput-directx-runtime-error.json",
+      "sha256": "2425a12becb5feafd02c2199ff859d6b1086cb1f6e96cf2643bd20737cdf1491",
+      "size": 906
+    },
+    {
+      "path": "rules/login_account_client/account-mfa-matchmaking-glitches.json",
+      "sha256": "51b81ada6225a742e33df786006596d6bafed3c9ed471d6af90405f66e4a7195",
+      "size": 974
+    },
+    {
+      "path": "rules/login_account_client/console-ps5-errors.json",
+      "sha256": "76778944a4c261e965fb3905dc5bbf7e340d2344e809eeb05e335a7f2076fbe1",
+      "size": 853
+    },
+    {
+      "path": "rules/login_account_client/mdns-bonjour-ni-val43-loading.json",
+      "sha256": "f0c5bb4218b60d3f7b3d934b64d4f6402d4cb475f28b3b522d507d91d377ce63",
+      "size": 2068
+    },
+    {
+      "path": "rules/login_account_client/riot-server-side-incident.json",
+      "sha256": "446885c97073ac7722fda6423b71d4d9266fe1979162fc0aefcf34f9e4fd6168",
+      "size": 1015
+    },
+    {
+      "path": "rules/login_account_client/terms-not-accepted-failed-to-launch.json",
+      "sha256": "925412c1c70d8894caca63b05070ef6b615090566807dbe52821e0589c5004e5",
+      "size": 740
+    },
+    {
+      "path": "rules/login_account_client/val57-59-ipv6-killer.json",
+      "sha256": "ca1263a5e8dbea36265bdbfa29c5b0bf907c0032f8a41466d827e0a657e67a83",
+      "size": 1233
+    },
+    {
+      "path": "rules/login_account_client/wrong-system-clock-offline.json",
+      "sha256": "411d60cca69fcb056cecf7dfcf7c813145ffd7a2c1aea51425afdb941e9fbd90",
+      "size": 1033
+    },
+    {
+      "path": "rules/network_ping/dual-network-adapter-desync.json",
+      "sha256": "d139b63a96c704794a08aa91c706d4ef951fac104089e3d1655837b416ea1120",
+      "size": 1133
+    },
+    {
+      "path": "rules/network_ping/isp-routing-high-ping.json",
+      "sha256": "876a80dc73640e96591ee37f708db317946a51d8fbfae86204c0059d87eb9ff3",
+      "size": 1473
+    },
+    {
+      "path": "rules/network_ping/lenovo-vantage-wifi-collapse.json",
+      "sha256": "83de0eaef91207de3884958fa90e1d373a1b828ed38782fb79f77acfd4ad9758",
+      "size": 981
+    },
+    {
+      "path": "rules/network_ping/local-network-packet-loss-jitter.json",
+      "sha256": "69613693c93a39ddf4011e334f23c0d217996d0fee9c7327af29e5b96b9350e7",
+      "size": 1870
+    },
+    {
+      "path": "rules/network_ping/network-exceptions-download-stuck.json",
+      "sha256": "a31133cfe943d3e4b951dfaebdd4dac7667af10e625670cbbed7b7a3e2ad0bbb",
+      "size": 1359
+    },
+    {
+      "path": "rules/network_ping/nvidia-driver-packet-loss.json",
+      "sha256": "68b449f8d34ee3de4cf3dc42e93802d0669fc431c3a6e6febba2ebab17a90751",
+      "size": 890
+    },
+    {
+      "path": "rules/other/replay-system-issues.json",
+      "sha256": "0eebf0f1b9092d85329c6061da402f97ea923e601a46da422c98e816230b2c1e",
+      "size": 692
+    },
+    {
+      "path": "rules/routes/route-account-side.json",
+      "sha256": "7429e244521e0ec19771ce204d6aa043d5d2226e29afb30c1e2b10448c9a5305",
+      "size": 473
+    },
+    {
+      "path": "rules/routes/route-arm-cpu.json",
+      "sha256": "8551f1e3be4c22bdf436a5af3cfb72682d83b77062265dbc71b3e70d96eb9b6c",
+      "size": 447
+    },
+    {
+      "path": "rules/routes/route-console.json",
+      "sha256": "7bd39fc85b63c245c806822212d859472542a1a1f7629ca35a6daa6852f440aa",
+      "size": 451
+    },
+    {
+      "path": "rules/routes/route-riot-incident.json",
+      "sha256": "9d37b66a60ce93d03dadb5978b0d85236b4e252aaaeabce982b4af19154edebf",
+      "size": 474
+    },
+    {
+      "path": "rules/routes/route-virtual-machine.json",
+      "sha256": "f4864bcb5251107e2038e6e844d875a5dec1a4090f98f801797b32d2e7f8374c",
+      "size": 466
+    },
+    {
+      "path": "rules/tpm_secureboot_bios/ftpm-event-14-17-stutter.json",
+      "sha256": "35cc8144d81c5595acceb5c0d57e48c2fc0ddf058f5f2f98365eb63de9752a65",
+      "size": 1227
+    },
+    {
+      "path": "rules/tpm_secureboot_bios/hvci-memory-integrity-required.json",
+      "sha256": "a8adb0d7506eab203c88bc74b22119c1ca97c46abdf24ce2957bc7ac2456bb8d",
+      "size": 2086
+    },
+    {
+      "path": "rules/tpm_secureboot_bios/intel-vmd-status-vmd-9001.json",
+      "sha256": "e6c25c0d78d097474a41cb64269a453f4c25bf1134e41a6b6338fcf442949566",
+      "size": 1026
+    },
+    {
+      "path": "rules/tpm_secureboot_bios/iommu-restriction.json",
+      "sha256": "64036ac83efdf2e5bd55b1f2b3fc201e2d98a372784aa123d96bc96027eb1b35",
+      "size": 1182
+    },
+    {
+      "path": "rules/tpm_secureboot_bios/secure-boot-enable-boot-failure.json",
+      "sha256": "00caeeee27a81e21ec2504192fce5950293f38f8750cb54e9fc0f7816b306263",
+      "size": 1845
+    },
+    {
+      "path": "rules/tpm_secureboot_bios/secure-boot-not-detected-van9003.json",
+      "sha256": "02ec25dad375d2715ebe7e604b9f1f8b70327f0557f9838500782e63ba9a4904",
+      "size": 2158
+    },
+    {
+      "path": "rules/tpm_secureboot_bios/secure-boot-policy-wave-2026.json",
+      "sha256": "f60dad77042bf172e7480b46f7463e24eeecefd5528cfb78b144e49183619164",
+      "size": 1532
+    },
+    {
+      "path": "rules/tpm_secureboot_bios/tpm2-missing-or-unmet.json",
+      "sha256": "9c53ec3c9fc7e213b9e9d11dd4fa08623f4472a4c3b8ba89bf3c877e644f9974",
+      "size": 1384
+    },
+    {
+      "path": "rules/tpm_secureboot_bios/van9101-attestation.json",
+      "sha256": "6c78a83ef5cad5761e1f7e657cdf11dfc555bcc2b157a5296ba2ac4fe067d1b8",
+      "size": 896
+    },
+    {
+      "path": "rules/vanguard/dual-boot-secure-boot-van1.json",
+      "sha256": "c44b189c5846b4d6d55200981b2c6561c76da4800d21ad3a5dc8a6c3b2f6170e",
+      "size": 983
+    },
+    {
+      "path": "rules/vanguard/high-process-priority-van136-185.json",
+      "sha256": "23019445beab83ccb4fba7017884a1f5f6271bef404310f0a8745fb658f9846a",
+      "size": 1311
+    },
+    {
+      "path": "rules/vanguard/incompatible-driver-component.json",
+      "sha256": "9806d1104b937b9bce51cb4dc17b33fb68980938f7f06efc7969dfd236132f1c",
+      "size": 1894
+    },
+    {
+      "path": "rules/vanguard/launch-fails-something-unusual.json",
+      "sha256": "54b2196416b6f1db9d8bc13a6c2bbb9511f04642814d3252920f57a09e2680bf",
+      "size": 1510
+    },
+    {
+      "path": "rules/vanguard/missing-environment-variables.json",
+      "sha256": "3badd101b025bf3f16bfad8f37afd0101b4bb4d113533b7420e1eb1b66e4aed7",
+      "size": 923
+    },
+    {
+      "path": "rules/vanguard/razer-synapse-escalation-kick.json",
+      "sha256": "dbd99762dcac32679325dbcded28b60a307c7c98a32e78126e708414baf22c2c",
+      "size": 1057
+    },
+    {
+      "path": "rules/vanguard/third-party-antivirus-conflict.json",
+      "sha256": "45e1dfd7329dce0b06097328fbb4ab13d6b4bce52cb674652946a4457de0dc6b",
+      "size": 1271
+    },
+    {
+      "path": "rules/vanguard/van-restriction-hwid.json",
+      "sha256": "9605d3b8f7ab22b4680f7800c445ee2d88a7333611d81c84b5d7b90829a3a7d0",
+      "size": 1068
+    },
+    {
+      "path": "rules/vanguard/van185-vanguard-disconnects.json",
+      "sha256": "1d5cb3ed6609c1da690908e71fbb7635fc1c334dab83fa1f4aa5ea31ddc94a1c",
+      "size": 2498
+    },
+    {
+      "path": "rules/vanguard/vanguard-blocks-chkdsk.json",
+      "sha256": "0bbaf037ffae6062b4a7084066e58142f589f28ddd4f7490f77bba86e42bce79",
+      "size": 939
+    },
+    {
+      "path": "rules/vanguard/vanguard-corrupt-install.json",
+      "sha256": "33a4876298d6a670d9779a27391cc9559f2c441c1e69570e9008e4a94cae8433",
+      "size": 2079
+    },
+    {
+      "path": "rules/vanguard/vgc-high-cpu.json",
+      "sha256": "293b00b69931fe2de90b4a109dec1e4848115fa0b2508116fc501ad16ec40c89",
+      "size": 1064
+    },
+    {
+      "path": "rules/vanguard/vgc-service-not-running.json",
+      "sha256": "553acbffaeae843b1d1e585142682c7f429c81214d02c8dc4bf0a472f7d67a5f",
+      "size": 1863
+    },
+    {
+      "path": "rules/vanguard/vgk-not-loaded-needs-reboot.json",
+      "sha256": "128633e82d51bef592b9fcfa96ccf64dc8607b1037b2ab4e2327512d1363fc0b",
+      "size": 1505
+    },
+    {
+      "path": "rules/vanguard/vpn-anticheat-network-filter-conflict.json",
+      "sha256": "796014d55630479c12bd76f456edc7f07ba3af3e87f359f7860673597b5ed4ce",
+      "size": 1729
+    },
+    {
+      "path": "signals/ask.json",
+      "sha256": "37762bc833cd7d5a9f7c4b83fd9d17436b42a87eb0483899a53361a569b03d06",
+      "size": 3132
+    },
+    {
+      "path": "signals/builtin.json",
+      "sha256": "95967e6f5613022c95e066e21f247f833513bb7698311bc4ee17a838b33ec14c",
+      "size": 21416
+    },
+    {
+      "path": "signals/code.json",
+      "sha256": "6c54179eec851ded62f2eab87b4bfdc5e2d243bf4d5563642cbe29325611d0e5",
+      "size": 7569
+    },
+    {
+      "path": "signals/collector.json",
+      "sha256": "5f684ae26fa3591bf894fb2b9aded838bd66e5f730c58a4f6c12af3418f0f13e",
+      "size": 6088
+    },
+    {
+      "path": "signals/conflict.json",
+      "sha256": "d1aef5437f9897add35ea40bd30eee4dc8c0cc8287b19dfb93746b4453f85da8",
+      "size": 63307
+    },
+    {
+      "path": "signals/monitor.json",
+      "sha256": "1a4e7f24e13999b68da8d161898d8488b57ad1d271110e9e9989ab1c7d41ffe7",
+      "size": 875
+    },
+    {
+      "path": "strings/en.json",
+      "sha256": "8be3f9e84f378fd928333525d7b2da41eb33ed6931603db6889bed3f0d0d36cd",
+      "size": 406454
+    },
+    {
+      "path": "strings/tr.json",
+      "sha256": "5fabe2aa195665ced9323e7d7d73ee4b3b5a35a735f4bd36303f2264cb11e938",
+      "size": 439168
+    },
+    {
+      "path": "symptoms.json",
+      "sha256": "70f5a76b3bf4aa4e3e996150ebb82c1da19f9b502bd2b5440944d6839e59e1b7",
+      "size": 2748
+    },
+    {
+      "path": "tables/bios_keys.json",
+      "sha256": "57177fc3d864c1a806ca505e038bbf9a6a5281a4f88b56de6f8854f5e67467cb",
+      "size": 5864
+    },
+    {
+      "path": "trusted_helpers.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size": 3
+    }
+  ]
+}

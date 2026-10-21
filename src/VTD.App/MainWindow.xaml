@@ -1,0 +1,41 @@
+<Window x:Class="VTD.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:VTD.App.Views"
+        xmlns:l="clr-namespace:VTD.App.Localization"
+        Title="VTDiag" Width="1120" Height="760" MinWidth="900" MinHeight="600"
+        WindowStartupLocation="CenterScreen" Background="{StaticResource InkBrush}"
+        WindowStyle="SingleBorderWindow" ResizeMode="CanResize">
+  <WindowChrome.WindowChrome>
+    <WindowChrome CaptionHeight="38" ResizeBorderThickness="6" GlassFrameThickness="0" CornerRadius="0" UseAeroCaptionButtons="False" />
+  </WindowChrome.WindowChrome>
+  <Window.Template>
+    <ControlTemplate TargetType="Window">
+      <Border x:Name="Frame" Background="{StaticResource InkBrush}" BorderBrush="{StaticResource LineBrush}" BorderThickness="1">
+        <DockPanel>
+          <Grid DockPanel.Dock="Top" Height="38" Background="{StaticResource SurfaceBrush}">
+            <TextBlock Text="{l:T Window.Title}" Foreground="{StaticResource TextMutedBrush}" FontSize="12" VerticalAlignment="Center" Margin="16,0,0,0" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True">
+              <Button x:Name="MinButton" Style="{StaticResource Ghost}" Width="46" MinHeight="38" Padding="0" AutomationProperties.Name="{l:T Window.Minimize}">
+                <Path Data="M0,0 L10,0" Stroke="{StaticResource TextMutedBrush}" StrokeThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="10" Height="1" />
+              </Button>
+              <Button x:Name="MaxButton" Style="{StaticResource Ghost}" Width="46" MinHeight="38" Padding="0" AutomationProperties.Name="{l:T Window.Maximize}">
+                <Rectangle Width="10" Height="10" Stroke="{StaticResource TextMutedBrush}" StrokeThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+              </Button>
+              <Button x:Name="CloseButton" Style="{StaticResource Ghost}" Width="46" MinHeight="38" Padding="0" AutomationProperties.Name="{l:T Window.Close}">
+                <Path Data="M0,0 L10,10 M10,0 L0,10" Stroke="{StaticResource TextMutedBrush}" StrokeThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="10" Height="10" />
+              </Button>
+            </StackPanel>
+          </Grid>
+          <ContentPresenter />
+        </DockPanel>
+      </Border>
+      <ControlTemplate.Triggers>
+        <Trigger Property="WindowState" Value="Maximized">
+          <Setter TargetName="Frame" Property="BorderThickness" Value="7" />
+        </Trigger>
+      </ControlTemplate.Triggers>
+    </ControlTemplate>
+  </Window.Template>
+  <v:ShellView x:Name="Shell" />
+</Window>

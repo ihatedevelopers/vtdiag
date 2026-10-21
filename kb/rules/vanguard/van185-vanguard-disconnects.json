@@ -1,0 +1,120 @@
+{
+  "id": "van185-vanguard-disconnects",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.van185-vanguard-disconnects.title",
+  "summaryKey": "rule.van185-vanguard-disconnects.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "disconnect",
+    "error_code"
+  ],
+  "prior": {
+    "threads": 24
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "vgc_disabled",
+      "signal": "vg.vgc_disabled",
+      "true": 1.5,
+      "textKey": "rule.van185-vanguard-disconnects.ev.vgc_disabled"
+    },
+    {
+      "id": "vgc_auto",
+      "signal": "vg.vgc_automatic_needed",
+      "true": 1.2
+    },
+    {
+      "id": "av",
+      "signal": "sec.third_party_av",
+      "true": 0.6
+    },
+    {
+      "id": "fw_block",
+      "signal": "net.firewall_blocks_riot",
+      "true": 1.5,
+      "textKey": "rule.van185-vanguard-disconnects.ev.fw_block"
+    },
+    {
+      "id": "vpn",
+      "signal": "net.vpn_adapter_up",
+      "true": 0.6
+    },
+    {
+      "id": "wifi",
+      "signal": "net.on_wifi",
+      "true": 0.3
+    },
+    {
+      "id": "weak",
+      "signal": "net.wifi_weak",
+      "true": 0.6
+    },
+    {
+      "id": "loss",
+      "signal": "net.gateway_loss",
+      "true": 0.8
+    },
+    {
+      "id": "rloss",
+      "signal": "net.region_loss",
+      "true": 0.6
+    },
+    {
+      "id": "multi",
+      "signal": "net.multi_nic_up",
+      "true": 0.4
+    },
+    {
+      "id": "log_disc",
+      "signal": "log.net_disconnects",
+      "true": 0.8
+    },
+    {
+      "id": "perf",
+      "signal": "sec.ifeo_perfoptions_riot",
+      "true": 0.6
+    },
+    {
+      "id": "mon_loss",
+      "signal": "mon.network.packet_loss",
+      "true": 1.2
+    }
+  ],
+  "fixes": [
+    "fix.vg.vgc_automatic",
+    "fix.net.disable_second_adapter",
+    "fix.net.dns_flush",
+    "fix.display.disable_fso"
+  ],
+  "guides": [
+    "guide.net.local_connection",
+    "guide.av.exclusions",
+    "guide.network.firewall"
+  ],
+  "questions": [
+    "ask.vanguard_precheck_on",
+    "ask.friends_same_server"
+  ],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "van185-vanguard-disconnects",
+    "threadCount": 24,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1ovyqyn",
+      "1ow0tt1",
+      "1oysrpq",
+      "1p0za6n",
+      "1p79pf8"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/performance/error-van-185",
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ]
+  }
+}

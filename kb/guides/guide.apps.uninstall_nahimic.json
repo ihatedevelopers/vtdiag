@@ -1,0 +1,100 @@
+{
+  "id": "guide.apps.uninstall_nahimic",
+  "titleKey": "guide.apps.uninstall_nahimic.title",
+  "summaryKey": "guide.apps.uninstall_nahimic.summary",
+  "bucket": "guidedManual",
+  "risk": "medium",
+  "reboot": "recommended",
+  "appliesTo": [
+    "nahimic-audio-service-launch-hang"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "service",
+      "when": [],
+      "textKey": "guide.apps.uninstall_nahimic.service.text",
+      "steps": [
+        {
+          "textKey": "guide.apps.uninstall_nahimic.service.s1",
+          "action": "runFix",
+          "target": "fix.svc.disable_conflict_service"
+        },
+        {
+          "textKey": "guide.apps.uninstall_nahimic.service.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_nahimic.service.s3",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "uninstall"
+    },
+    {
+      "id": "uninstall",
+      "when": [],
+      "textKey": "guide.apps.uninstall_nahimic.uninstall.text",
+      "steps": [
+        {
+          "textKey": "guide.apps.uninstall_nahimic.uninstall.s1",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.apps.uninstall_nahimic.uninstall.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_nahimic.uninstall.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_nahimic.uninstall.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_nahimic.uninstall.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_nahimic.uninstall.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_nahimic.uninstall.s7",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "comes_back"
+    },
+    {
+      "id": "comes_back",
+      "when": [],
+      "textKey": "guide.apps.uninstall_nahimic.comes_back.text",
+      "steps": [
+        {
+          "textKey": "guide.apps.uninstall_nahimic.comes_back.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_nahimic.comes_back.s2",
+          "action": "runFix",
+          "target": "fix.svc.disable_conflict_service"
+        },
+        {
+          "textKey": "guide.apps.uninstall_nahimic.comes_back.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_nahimic.comes_back.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.apps.uninstall_nahimic.outcome"
+}

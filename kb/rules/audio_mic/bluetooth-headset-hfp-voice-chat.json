@@ -1,0 +1,67 @@
+{
+  "id": "bluetooth-headset-hfp-voice-chat",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "audio_mic",
+  "titleKey": "rule.bluetooth-headset-hfp-voice-chat.title",
+  "summaryKey": "rule.bluetooth-headset-hfp-voice-chat.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "voice_chat",
+    "no_audio"
+  ],
+  "prior": {
+    "threads": 29
+  },
+  "requires": [
+    "audio.bt_handsfree_present"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "hfp",
+      "signal": "audio.bt_handsfree_present",
+      "true": 1.5,
+      "textKey": "rule.bluetooth-headset-hfp-voice-chat.ev.hfp"
+    },
+    {
+      "id": "default",
+      "signal": "audio.bt_handsfree_default",
+      "true": 1.0,
+      "textKey": "rule.bluetooth-headset-hfp-voice-chat.ev.default"
+    },
+    {
+      "id": "uses",
+      "signal": "ask.uses_bluetooth_headset",
+      "true": 1.0,
+      "false": -2.5,
+      "ask": "ask.uses_bluetooth_headset"
+    }
+  ],
+  "fixes": [
+    "fix.audio.bt_handsfree_off"
+  ],
+  "guides": [
+    "guide.audio.bt_handsfree"
+  ],
+  "questions": [
+    "ask.uses_bluetooth_headset"
+  ],
+  "supersedes": [
+    "conflict-bluetooth_handsfree"
+  ],
+  "related": [],
+  "sources": {
+    "catalog": "bluetooth-headset-hfp-voice-chat",
+    "threadCount": 29,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1odf1xo",
+      "1of8rej",
+      "1p40lyh",
+      "1pcuhhd",
+      "1pd19hv"
+    ],
+    "urls": []
+  }
+}

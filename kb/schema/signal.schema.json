@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:signal:1",
+  "title": "VTDiag KB signal declaration",
+  "description": "kb/signals/*.json: declares signal ids so every reference can be checked; collector-derived signals say how they are computed.",
+  "$defs": {
+    "item": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Dotted id, for example events.realtek_nic_resets, sec.secureboot.on."
+        },
+        "source": {
+          "enum": [
+            "builtin",
+            "collector",
+            "conflict",
+            "monitor",
+            "ask",
+            "code"
+          ],
+          "description": "Where it is computed."
+        },
+        "titleKey": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "String key used for \"could not check X\" and the helper's fact browser."
+        },
+        "entity": {
+          "enum": [
+            "adapter",
+            "service",
+            "process",
+            "driver",
+            "app",
+            "file",
+            "registryValue",
+            "device",
+            "startupItem",
+            "compatLayer",
+            "audioEndpoint",
+            "powerSetting",
+            "windowsFeature",
+            null
+          ],
+          "description": "Entity kind the signal returns (used to bind fixes)."
+        },
+        "requiresAdmin": {
+          "type": "boolean",
+          "description": "Needs an elevated scan; Unknown(NeedsAdmin) in limited mode."
+        },
+        "fromCollector": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "collector": {
+              "type": "string",
+              "description": "Collector id."
+            },
+            "minCount": {
+              "type": "integer",
+              "description": "Minimum matching items for True."
+            },
+            "withinDays": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "description": "Only count items newer than this many days before the scan."
+            },
+            "fieldEquals": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Only count items whose fields equal these values (ordinal, case-insensitive)."
+            },
+            "saturateAt": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "description": "Count at which strength reaches 1.0 (default: MinCount)."
+            }
+          },
+          "required": [
+            "collector"
+          ],
+          "additionalProperties": false,
+          "description": "For Collector: the derivation."
+        },
+        "question": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "For Ask: the question id."
+        }
+      },
+      "required": [
+        "id",
+        "source"
+      ],
+      "additionalProperties": false,
+      "description": "Declares a signal id so the KB lint can check every reference, and (for collector signals) how it is derived. File: kb/signals/*.json. Schema: kb/schema/signal.schema.json."
+    }
+  },
+  "anyOf": [
+    {
+      "$ref": "#/$defs/item"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  ]
+}

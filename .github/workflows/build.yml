@@ -1,0 +1,58 @@
+# VTDiag CI. Owner: Lead.
+# Builds the whole solution with warnings as errors (banned-API analyzers, culture rules, nullable) and runs every test
+# project, including tests/VTD.Policy.Tests, which scans the built binaries' P/Invoke import table for forbidden
+# functions (DESIGN.md section 2) and guards against analyzer opt-outs.
+name: build
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+      DOTNET_NOLOGO: "1"
+      DOTNET_CLI_UI_LANGUAGE: en
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET (version from global.json)
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Restore
+        run: dotnet restore VTDiag.sln
+
+      - name: Build (Release, warnings are errors)
+        run: dotnet build VTDiag.sln -c Release --no-restore
+
+      - name: Test (contracts, policy, every agent project)
+        run: dotnet test VTDiag.sln -c Release --no-build --logger "trx" --results-directory TestResults
+
+      - name: Schemas and fixtures are checked in and current
+        shell: pwsh
+        run: |
+          git diff --exit-code -- kb/schema tests/fixtures
+          if ($LASTEXITCODE -ne 0) { Write-Error "kb/schema or tests/fixtures changed during the build; regenerate locally with VTD_UPDATE_SCHEMAS=1 / VTD_UPDATE_FIXTURES=1 and commit." }
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: TestResults
+          if-no-files-found: ignore

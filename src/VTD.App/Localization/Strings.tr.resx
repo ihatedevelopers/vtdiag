@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the A6 string table (key / en / tr). Edit both files together; tests check they have the same keys. -->
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="About.NotAffiliated" xml:space="preserve"><value>VTDiag, Riot Games ile bağlantılı değildir, Riot Games tarafından desteklenmez veya yapılmamıştır. VALORANT ve Riot Vanguard Riot Games'e aittir.</value></data>
+  <data name="About.OpenSource" xml:space="preserve"><value>Ücretsiz ve açık kaynak. Topluluk tarafından, topluluk için yapıldı.</value></data>
+  <data name="About.Privacy" xml:space="preserve"><value>Gizlilik</value></data>
+  <data name="About.Privacy.Collected" xml:space="preserve"><value>Sadece teknik ayarları okuruz: Windows sürümü, sürücüler, güvenlik ayarları, ağ kurulumu, oyun dosyası bilgileri ve hata kayıtları.</value></data>
+  <data name="About.Privacy.Never" xml:space="preserve"><value>Şifreleri, Wi-Fi anahtarlarını, giriş anahtarlarını, tarayıcı verilerini, belgelerini, Riot ID'ni veya Vanguard kayıtlarının içeriğini asla toplamayız.</value></data>
+  <data name="About.Privacy.NoTelemetry" xml:space="preserve"><value>Telemetri yok. Sen kopyalamadıkça veya kaydetmedikçe hiçbir şey hiçbir yere gönderilmez.</value></data>
+  <data name="About.Privacy.Share" xml:space="preserve"><value>Bir şey bilgisayarından çıkmadan önce kullanıcı adını, bilgisayar adını ve seri numaralarını çıkarır, sana bir önizleme gösteririz. Yine de özel bir şey gözden kaçarsa dışa aktarma durdurulur.</value></data>
+  <data name="About.Title" xml:space="preserve"><value>VTDiag hakkında</value></data>
+  <data name="About.Vanguard" xml:space="preserve"><value>Vanguard ile güvenli</value></data>
+  <data name="About.Vanguard.Detail" xml:space="preserve"><value>VTDiag oyuna veya Vanguard'a asla müdahale etmez, belleklerini okumaz, onları açmaz. Çekirdek sürücüsü kullanmaz. Sen oynarken sadece dışarıdan izler.</value></data>
+  <data name="About.Version" xml:space="preserve"><value>Sürüm {app} · bilgi tabanı {kb}</value></data>
+  <data name="About.What" xml:space="preserve"><value>VTDiag, VALORANT oyuncuları için r/ValorantTechSupport'a yönelik yapılmış ücretsiz ve açık kaynaklı bir PC kontrolüdür. Olası nedenleri bulur, sade bir dille anlatır ve sadece senin onayladığın şeyleri değiştirir.</value></data>
+  <data name="Answer.no" xml:space="preserve"><value>Hayır</value></data>
+  <data name="Answer.unsure" xml:space="preserve"><value>Emin değilim</value></data>
+  <data name="Answer.yes" xml:space="preserve"><value>Evet</value></data>
+  <data name="Applying.Backup" xml:space="preserve"><value>Şu anki durum kaydediliyor (geri alabilmen için)</value></data>
+  <data name="Applying.DontClose" xml:space="preserve"><value>Neredeyse bitti. VTDiag'ı şimdi kapatmak işi yarım bırakabilir, bu yüzden pencere kapansa bile devam ediyoruz.</value></data>
+  <data name="Applying.Step" xml:space="preserve"><value>Adım {n}</value></data>
+  <data name="Applying.Title" xml:space="preserve"><value>Şimdi düzeltiliyor</value></data>
+  <data name="Applying.Verify" xml:space="preserve"><value>İşe yaradığı kontrol ediliyor</value></data>
+  <data name="Area.Apps" xml:space="preserve"><value>Arka planda çalışan uygulamalar</value></data>
+  <data name="Area.Drivers" xml:space="preserve"><value>Aygıtlar ve sürücüler</value></data>
+  <data name="Area.Game" xml:space="preserve"><value>Oyun ve Riot Client dosyaları</value></data>
+  <data name="Area.Hardware" xml:space="preserve"><value>Donanım</value></data>
+  <data name="Area.Logs" xml:space="preserve"><value>Kayıtlar ve çökme raporları</value></data>
+  <data name="Area.Network" xml:space="preserve"><value>Ağ</value></data>
+  <data name="Area.Security" xml:space="preserve"><value>Güvenlik ve Vanguard gereksinimleri</value></data>
+  <data name="Area.Windows" xml:space="preserve"><value>Windows</value></data>
+  <data name="Attempt.Applied" xml:space="preserve"><value>Uygulandı</value></data>
+  <data name="Attempt.Applying" xml:space="preserve"><value>Uygulanıyor</value></data>
+  <data name="Attempt.AwaitingReboot" xml:space="preserve"><value>Yeniden başlatma bekleniyor</value></data>
+  <data name="Attempt.AwaitingSecondConsent" xml:space="preserve"><value>İkinci onayını bekliyor</value></data>
+  <data name="Attempt.Failed" xml:space="preserve"><value>Çalışmadı</value></data>
+  <data name="Attempt.InDoubt" xml:space="preserve"><value>Kararını bekliyor</value></data>
+  <data name="Attempt.RolledBack" xml:space="preserve"><value>Eski haline getirildi</value></data>
+  <data name="Attempt.UndoConflict" xml:space="preserve"><value>Düzeltmemizden sonra yeniden değişti</value></data>
+  <data name="Attempt.Undone" xml:space="preserve"><value>Geri alındı</value></data>
+  <data name="Attempt.Verified" xml:space="preserve"><value>Yerinde</value></data>
+  <data name="Attempt.VerifyFailed" xml:space="preserve"><value>Tutmadı, geri alındı</value></data>
+  <data name="Attention.Changed" xml:space="preserve"><value>İşte değiştirdiklerimiz</value></data>
+  <data name="Attention.Generic" xml:space="preserve"><value>Bir şey beklediğimiz gibi bitmedi, bu yüzden durduk ve her şeyi güvende tuttuk.</value></data>
+  <data name="Attention.Keep" xml:space="preserve"><value>Değişiklikleri koru</value></data>
+  <data name="Attention.Title" xml:space="preserve"><value>Buna bakman gerekiyor</value></data>
+  <data name="Attention.UndoAll" xml:space="preserve"><value>Her şeyi geri al</value></data>
+  <data name="Badge.Minutes" xml:space="preserve"><value>Yaklaşık {n} dk</value></data>
+  <data name="Badge.Reboot.None" xml:space="preserve"><value>Yeniden başlatma yok</value></data>
+  <data name="Badge.Reboot.Recommended" xml:space="preserve"><value>Yeniden başlatma önerilir</value></data>
+  <data name="Badge.Reboot.Required" xml:space="preserve"><value>Yeniden başlatma gerekir</value></data>
+  <data name="Badge.Risk.High" xml:space="preserve"><value>Yüksek risk</value></data>
+  <data name="Badge.Risk.Low" xml:space="preserve"><value>Düşük risk</value></data>
+  <data name="Badge.Risk.Medium" xml:space="preserve"><value>Orta risk</value></data>
+  <data name="Badge.Seconds" xml:space="preserve"><value>Yaklaşık {n} sn</value></data>
+  <data name="Badge.Undo.BestEffort" xml:space="preserve"><value>Büyük ölçüde geri alınabilir</value></data>
+  <data name="Badge.Undo.Exact" xml:space="preserve"><value>Geri alınabilir</value></data>
+  <data name="Badge.Undo.OneWay" xml:space="preserve"><value>Tek tıkla geri alınamaz</value></data>
+  <data name="Badge.Undo.SessionOnly" xml:space="preserve"><value>Yeniden başlatmaya kadar sürer</value></data>
+  <data name="Band.Likely" xml:space="preserve"><value>Olası</value></data>
+  <data name="Band.LongShot" xml:space="preserve"><value>Pek olası değil</value></data>
+  <data name="Band.Possible" xml:space="preserve"><value>Mümkün</value></data>
+  <data name="Band.VeryLikely" xml:space="preserve"><value>Çok olası</value></data>
+  <data name="Banner.Demo" xml:space="preserve"><value>Demo modu: bu sonuçlar örnek bir test bilgisayarından geliyor. Bu bilgisayarda hiçbir şey okunmuyor veya değiştirilmiyor.</value></data>
+  <data name="Banner.Drift" xml:space="preserve"><value>Daha önce yaptığımız {count} değişiklik artık yerinde değil. Geri alma sayfasına bak.</value></data>
+  <data name="Banner.Limited" xml:space="preserve"><value>İzin olmadan çalışıyor: bazı şeyler kontrol edilemedi ve düzeltmeler kapalı.</value></data>
+  <data name="Bucket.ExternalNetwork" xml:space="preserve"><value>Bilgisayarının dışında (ağ)</value></data>
+  <data name="Bucket.ExternalNetwork.Explain" xml:space="preserve"><value>Bu, bilgisayarının dışındaki internet bağlantın gibi görünüyor (modem veya internet sağlayıcısı). Bir PC aracı bunu düzeltemez ama onlara ne söyleyeceğini gösteririz.</value></data>
+  <data name="Bucket.FixableHere" xml:space="preserve"><value>Burada düzeltilebilir</value></data>
+  <data name="Bucket.FixableHere.Explain" xml:space="preserve"><value>İyi haber: bu burada düzeltilebilir görünüyor ve her düzeltme geri alınabilir.</value></data>
+  <data name="Bucket.GuidedManual" xml:space="preserve"><value>Kendin yapacağın bir adım</value></data>
+  <data name="Bucket.GuidedManual.Explain" xml:space="preserve"><value>Bu, sadece senin yapabileceğin bir adım gerektiriyor (BIOS'taki bir ayar gibi). Sana adım adım yol gösterip sonra kontrol edeceğiz.</value></data>
+  <data name="Bucket.LikelyHardware" xml:space="preserve"><value>Muhtemelen donanım</value></data>
+  <data name="Bucket.LikelyHardware.Explain" xml:space="preserve"><value>Bu bir donanım sorunu gibi görünüyor. Donanımı düzeltemeyiz ama gördüklerimizi anlatırız, böylece bir servis veya yardımcı kontrol edebilir.</value></data>
+  <data name="Bucket.RiotOrAccount" xml:space="preserve"><value>Riot veya hesap tarafı</value></data>
+  <data name="Bucket.RiotOrAccount.Explain" xml:space="preserve"><value>Bu senin bilgisayarındaki bir şey değil. Riot tarafında ya da hesabınla ilgili, bu yüzden çözüm Riot'tan gelmeli.</value></data>
+  <data name="Bucket.Unknown" xml:space="preserve"><value>Henüz belli değil</value></data>
+  <data name="Bucket.Unknown.Explain" xml:space="preserve"><value>Bunu henüz kesin olarak bulamadık. İşte neyi kontrol ettiğimiz ve nasıl daha fazla yardım alabileceğin.</value></data>
+  <data name="Common.Continue" xml:space="preserve"><value>Devam et</value></data>
+  <data name="Common.Dismiss" xml:space="preserve"><value>Kapat</value></data>
+  <data name="Common.ListSeparator" xml:space="preserve"><value> ·</value></data>
+  <data name="Common.Next" xml:space="preserve"><value>İleri</value></data>
+  <data name="Common.NotAffiliated" xml:space="preserve"><value>Riot Games ile bağlantısı yoktur.</value></data>
+  <data name="Common.WhatDoesThisMean" xml:space="preserve"><value>Bu ne demek?</value></data>
+  <data name="Completed.Report" xml:space="preserve"><value>Raporu kaydet veya paylaş</value></data>
+  <data name="Completed.Sub.Abandoned" xml:space="preserve"><value>Değişikliklerin, "Değişiklikleri geri al"dan geri alana kadar kalır.</value></data>
+  <data name="Completed.Sub.Completed" xml:space="preserve"><value>Değişikliklerin korunuyor. Hepsini daha sonra "Değişiklikleri geri al"dan geri alabilirsin.</value></data>
+  <data name="Completed.Sub.NeedsAttention" xml:space="preserve"><value>İşte değiştirdiklerimiz.</value></data>
+  <data name="Completed.Sub.RolledBack" xml:space="preserve"><value>Bu oturumdaki tüm değişiklikleri geri aldık.</value></data>
+  <data name="Completed.Title.Abandoned" xml:space="preserve"><value>Durduruldu</value></data>
+  <data name="Completed.Title.Completed" xml:space="preserve"><value>Her şey tamam</value></data>
+  <data name="Completed.Title.NeedsAttention" xml:space="preserve"><value>Buna bakman gerekiyor</value></data>
+  <data name="Completed.Title.RolledBack" xml:space="preserve"><value>Her şey eski haline döndü</value></data>
+  <data name="Completed.Undo" xml:space="preserve"><value>Bir şeyi geri al</value></data>
+  <data name="Completed.Watch" xml:space="preserve"><value>Bir sonraki maçımı izle</value></data>
+  <data name="Deadman.Countdown" xml:space="preserve"><value>{seconds} sn içinde kendiliğinden geri alınacak</value></data>
+  <data name="Deadman.Keep" xml:space="preserve"><value>Evet, tut</value></data>
+  <data name="Deadman.Lead" xml:space="preserve"><value>Herhangi bir siteyi aç veya Discord'a bak. Çalışıyorsa değişikliği tut. Hiçbir şey yapmazsan eski haline kendimiz getiririz.</value></data>
+  <data name="Deadman.TimeUp" xml:space="preserve"><value>Süre doldu, eski haline getiriyoruz.</value></data>
+  <data name="Deadman.Title" xml:space="preserve"><value>İnternetin hâlâ çalışıyor mu?</value></data>
+  <data name="Deadman.Undo" xml:space="preserve"><value>Hayır, geri al</value></data>
+  <data name="Error.Generic" xml:space="preserve"><value>Bir şeyler ters gitti. Hiçbir şey değişmedi. Tekrar dene veya bir yardımcı için rapor kaydet.</value></data>
+  <data name="Error.command.not_allowed" xml:space="preserve"><value>Bunu sadece sen, bu pencereden onaylayabilirsin.</value></data>
+  <data name="Error.consent.blocked" xml:space="preserve"><value>Bu düzeltme şu an çalıştırılamaz. Yukarıdaki nedenlere bak.</value></data>
+  <data name="Error.consent.expired" xml:space="preserve"><value>Biraz uzun sürdü, o yüzden tekrar kontrol ettik. Bir göz at ve bir kez daha tıkla.</value></data>
+  <data name="Error.consent.limited_mode" xml:space="preserve"><value>Düzeltmeler izin ister. VTDiag'ı yeniden başlat ve Windows penceresinde Evet'e tıkla.</value></data>
+  <data name="Error.consent.preview_changed" xml:space="preserve"><value>Bunu gösterdiğimizden beri bilgisayarında bir şey değişti. Bir göz at ve bir kez daha tıkla.</value></data>
+  <data name="Error.consent.replayed" xml:space="preserve"><value>Bu zaten bir kez onaylandı. Devam etmek için düzeltmeyi tekrar aç.</value></data>
+  <data name="Error.consent.second_consent_mismatch" xml:space="preserve"><value>Lütfen tekrar onayla.</value></data>
+  <data name="Error.consent.unknown_preview" xml:space="preserve"><value>Bu düzeltmenin süresi doldu. Tekrar aç.</value></data>
+  <data name="Error.file.too_large" xml:space="preserve"><value>Bu dosya bir VTDiag dosyası olamayacak kadar büyük.</value></data>
+  <data name="Error.restart.token_invalid" xml:space="preserve"><value>Yeniden başlatma düğmesinin süresi doldu. Tekrar tıkla.</value></data>
+  <data name="Error.undo.unknown_attempt" xml:space="preserve"><value>O değişikliği bulamadık.</value></data>
+  <data name="Fix.AgentCaution" xml:space="preserve"><value>Bunu yalnızca bilgisayarına bakması için bir yapay zekâ yardımcısından sen istediysen onayla.</value></data>
+  <data name="Fix.Deadman" xml:space="preserve"><value>İnternetin kesilirse {seconds} saniye sonra kendimiz eski haline getiririz.</value></data>
+  <data name="Fix.Diy" xml:space="preserve"><value>Kendim nasıl yaparım, göster</value></data>
+  <data name="Fix.ExternalBindingUnknown" xml:space="preserve"><value>Bu önerinin tam olarak neyi değiştireceğini göremiyoruz, bu yüzden buradan çalıştırılamaz. Düzeltmeyi sonuçların üzerinden aç.</value></data>
+  <data name="Fix.FixIt" xml:space="preserve"><value>Düzelt</value></data>
+  <data name="Fix.HowToUndo" xml:space="preserve"><value>Nasıl geri alınır</value></data>
+  <data name="Fix.Label" xml:space="preserve"><value>Düzeltme</value></data>
+  <data name="Fix.LimitedMode" xml:space="preserve"><value>Düzeltmeler izin ister. VTDiag'ı yeniden başlat ve Windows penceresinde Evet'e tıkla.</value></data>
+  <data name="Fix.NeedsRestart" xml:space="preserve"><value>Bu değişiklik ancak yeniden başlattıktan sonra çalışır. Yeniden başlatmadan önce soracağız.</value></data>
+  <data name="Fix.NoNonce" xml:space="preserve"><value>Bir düzeltmeyi sadece bu bilgisayardaki VTDiag penceresi onaylayabilir.</value></data>
+  <data name="Fix.Notice" xml:space="preserve"><value>Ne fark edeceksin</value></data>
+  <data name="Fix.OneWayNote" xml:space="preserve"><value>Bu tek tıkla geri alınamaz, bu yüzden sana ikinci kez soracağız.</value></data>
+  <data name="Fix.OneWayUndo" xml:space="preserve"><value>Bu tek tıkla geri alınamaz. Windows bir geri yükleme noktası tutar ama bazı şeyleri elle yeniden ayarlaman gerekebilir.</value></data>
+  <data name="Fix.OnlyYouApprove" xml:space="preserve"><value>Öneride bulunabilir ama onayı burada sadece sen verebilirsin.</value></data>
+  <data name="Fix.RestorePointFirst" xml:space="preserve"><value>Bu düzeltmeden önce bir Windows geri yükleme noktası (ayarlarının güvenlik kopyası) oluştururuz.</value></data>
+  <data name="Fix.Second.Detail" xml:space="preserve"><value>Henüz hiçbir şey değişmedi. Devam edersen bu daha sonra tek tıkla geri alınamaz. Emin değil misin? "Yapma"yı seç.</value></data>
+  <data name="Fix.Second.No" xml:space="preserve"><value>Yapma</value></data>
+  <data name="Fix.Second.Title" xml:space="preserve"><value>Bu tek tıkla geri alınamaz</value></data>
+  <data name="Fix.Second.Understand" xml:space="preserve"><value>Bunun tek tıkla geri alınamayacağını anlıyorum</value></data>
+  <data name="Fix.Second.Yes" xml:space="preserve"><value>Evet, yine de yap</value></data>
+  <data name="Fix.Skip" xml:space="preserve"><value>Bunu atla</value></data>
+  <data name="Fix.StepGeneric" xml:space="preserve"><value>{op}: {what}</value></data>
+  <data name="Fix.Targets" xml:space="preserve"><value>Değiştireceği: {what}</value></data>
+  <data name="Fix.ThisPc" xml:space="preserve"><value>bu bilgisayar</value></data>
+  <data name="Fix.WhatWeDo" xml:space="preserve"><value>Ne yapacağız</value></data>
+  <data name="Guide.BeforeYouStart" xml:space="preserve"><value>Başlamadan önce</value></data>
+  <data name="Guide.Branch.csm" xml:space="preserve"><value>BIOS'um Legacy/CSM modunda</value></data>
+  <data name="Guide.Branch.mbr" xml:space="preserve"><value>Diskim eski MBR türünü kullanıyor</value></data>
+  <data name="Guide.Branch.setup_mode" xml:space="preserve"><value>Secure Boot açık ama "Setup mode" yazıyor</value></data>
+  <data name="Guide.Branch.uefi_sb_off" xml:space="preserve"><value>Secure Boot sadece kapalı</value></data>
+  <data name="Guide.CheckNow" xml:space="preserve"><value>Şimdi kontrol et</value></data>
+  <data name="Guide.Copy" xml:space="preserve"><value>Kopyala</value></data>
+  <data name="Guide.DefaultKey" xml:space="preserve"><value>Del veya F2</value></data>
+  <data name="Guide.DefaultPath" xml:space="preserve"><value>Boot veya Security menüsü</value></data>
+  <data name="Guide.Docs" xml:space="preserve"><value>Aynı adımlar {path} adresinde de var, böylece bilgisayar BIOS'tayken telefonundan takip edebilirsin.</value></data>
+  <data name="Guide.Label" xml:space="preserve"><value>Yönlendirmeli adım</value></data>
+  <data name="Guide.Later" xml:space="preserve"><value>Daha sonra yapacağım</value></data>
+  <data name="Guide.MarkDone" xml:space="preserve"><value>Tamam</value></data>
+  <data name="Guide.OtherBranches" xml:space="preserve"><value>Gördüğünle uyuşmuyor mu?</value></data>
+  <data name="Guide.RestartBios" xml:space="preserve"><value>BIOS'a yeniden başlat</value></data>
+  <data name="Guide.UnknownVendor" xml:space="preserve"><value>bilinmiyor</value></data>
+  <data name="Guide.Vendor" xml:space="preserve"><value>Bilgisayarının üreticisi: {vendor}. BIOS tuşu genelde {key}.</value></data>
+  <data name="Health.CouldNotCheck" xml:space="preserve"><value>{count} şeyi kontrol edemedik</value></data>
+  <data name="Health.Explain" xml:space="preserve"><value>Sağlıklı: kontrol ettik, sorun yok. Bakmaya değer: bozuk değil ama sorun çıkarabilir. Başarısız: VALORANT bunu istiyor ve doğru değil. Kontrol edilemedi: okuyamadık, bu yüzden asla sorunsuz saymayız.</value></data>
+  <data name="Health.Headline" xml:space="preserve"><value>İyi haber: {count} şey sağlıklı görünüyor.</value></data>
+  <data name="Health.HeadlineNone" xml:space="preserve"><value>İşte bilgisayarının sağlık kontrolü.</value></data>
+  <data name="Health.LimitedNote" xml:space="preserve"><value>İzin olmadan çalıştık, bu yüzden bazı maddeler "kontrol edilemedi" diyor. Bu, bozuk ya da sağlam oldukları anlamına gelmez. Sadece henüz bilmiyoruz.</value></data>
+  <data name="Health.NeedLook" xml:space="preserve"><value>{count} şeye bakmak lazım</value></data>
+  <data name="Health.Next" xml:space="preserve"><value>Ne bulduğumuza bak</value></data>
+  <data name="Health.Status.Fail" xml:space="preserve"><value>Gereksinimi karşılamıyor</value></data>
+  <data name="Health.Status.NotApplicable" xml:space="preserve"><value>Geçerli değil</value></data>
+  <data name="Health.Status.Ok" xml:space="preserve"><value>Sağlıklı</value></data>
+  <data name="Health.Status.Unknown" xml:space="preserve"><value>Kontrol edilemedi</value></data>
+  <data name="Health.Status.Warn" xml:space="preserve"><value>Bakmaya değer</value></data>
+  <data name="Health.UnknownDetail" xml:space="preserve"><value>Kontrol edilemedi: {reason}</value></data>
+  <data name="HealthGroup.BackgroundApps" xml:space="preserve"><value>Arka plan uygulamaları</value></data>
+  <data name="HealthGroup.Drivers" xml:space="preserve"><value>Sürücüler</value></data>
+  <data name="HealthGroup.Network" xml:space="preserve"><value>Ağ</value></data>
+  <data name="HealthGroup.Services" xml:space="preserve"><value>Hizmetler</value></data>
+  <data name="HealthGroup.Storage" xml:space="preserve"><value>Depolama</value></data>
+  <data name="HealthGroup.VanguardReadiness" xml:space="preserve"><value>Vanguard gereksinimleri</value></data>
+  <data name="HealthGroup.Windows" xml:space="preserve"><value>Windows</value></data>
+  <data name="Helper.Add" xml:space="preserve"><value>Ekle</value></data>
+  <data name="Helper.AnonymousHelper" xml:space="preserve"><value>Bir yardımcı</value></data>
+  <data name="Helper.BadBundle" xml:space="preserve"><value>Bu tarama dosyasını açamadık ({code}). Oyuncudan tekrar kaydetmesini iste.</value></data>
+  <data name="Helper.BundleLine" xml:space="preserve"><value>{date} taraması · VTDiag {app} · bilgi tabanı {kb} · {mode}</value></data>
+  <data name="Helper.Candidates" xml:space="preserve"><value>Önerebileceklerin</value></data>
+  <data name="Helper.CopyPlan" xml:space="preserve"><value>Planı kopyala</value></data>
+  <data name="Helper.Down" xml:space="preserve"><value>Aşağı</value></data>
+  <data name="Helper.HighRiskGuideOnly" xml:space="preserve"><value>yüksek risk: oyuncuya bunun yerine rehber gösterilir</value></data>
+  <data name="Helper.Kind.Guide" xml:space="preserve"><value>rehber</value></data>
+  <data name="Helper.Kind.Monitor" xml:space="preserve"><value>maç izleme</value></data>
+  <data name="Helper.Kind.Question" xml:space="preserve"><value>soru</value></data>
+  <data name="Helper.Lead" xml:space="preserve"><value>Bir oyuncunun tarama dosyasını aç. Bu bilgisayarda hiçbir şey değişmez ve izin gerekmez.</value></data>
+  <data name="Helper.Message" xml:space="preserve"><value>Oyuncuya mesaj (düz metin)</value></data>
+  <data name="Helper.Mode.Elevated" xml:space="preserve"><value>tam tarama</value></data>
+  <data name="Helper.Mode.Limited" xml:space="preserve"><value>sınırlı tarama (izin yok)</value></data>
+  <data name="Helper.Note" xml:space="preserve"><value>Bu adım için not</value></data>
+  <data name="Helper.Open" xml:space="preserve"><value>Tarama dosyası aç</value></data>
+  <data name="Helper.OpenSample" xml:space="preserve"><value>Demo taramasını aç</value></data>
+  <data name="Helper.PlanCopied" xml:space="preserve"><value>Plan kopyalandı.</value></data>
+  <data name="Helper.PlanRules" xml:space="preserve"><value>Planlar sadece VTDiag'ın kendi düzeltmelerini, rehberlerini ve sorularını kullanabilir. Komut, dosya yolu veya bağlantı eylem olarak kullanılamaz. Oyuncu her adımı onaylar ve plan 7 gün sonra geçersiz olur.</value></data>
+  <data name="Helper.Remove" xml:space="preserve"><value>Kaldır</value></data>
+  <data name="Helper.SavePlan" xml:space="preserve"><value>Planı kaydet…</value></data>
+  <data name="Helper.Search" xml:space="preserve"><value>Bilgilerde ara</value></data>
+  <data name="Helper.StepCount" xml:space="preserve"><value>Plan: {max} adımdan {count}</value></data>
+  <data name="Helper.Tab.Facts" xml:space="preserve"><value>Tüm bilgiler</value></data>
+  <data name="Helper.Tab.Plan" xml:space="preserve"><value>Plan yaz</value></data>
+  <data name="Helper.Tab.Ranking" xml:space="preserve"><value>Sıralama ve hesap</value></data>
+  <data name="Helper.Tab.Summary" xml:space="preserve"><value>Özet</value></data>
+  <data name="Helper.Title" xml:space="preserve"><value>Yardımcı modu</value></data>
+  <data name="Helper.TooManySteps" xml:space="preserve"><value>Bir planda en fazla {max} adım olabilir.</value></data>
+  <data name="Helper.Up" xml:space="preserve"><value>Yukarı</value></data>
+  <data name="Helper.YourName" xml:space="preserve"><value>Adın (oyuncuya gösterilir)</value></data>
+  <data name="Intake.CodeKnown" xml:space="preserve"><value>Bunu biliyoruz: {code}, {meaning}</value></data>
+  <data name="Intake.CodeLabel" xml:space="preserve"><value>Hata kodu gördün mü? Buraya yaz (isteğe bağlı)</value></data>
+  <data name="Intake.CodeUnknown" xml:space="preserve"><value>Bu kodu henüz bilmiyoruz. Yine de her şeyi kontrol edeceğiz.</value></data>
+  <data name="Intake.Lead" xml:space="preserve"><value>Uyan her şeyi seç. Birden fazla seçebilirsin.</value></data>
+  <data name="Intake.Title" xml:space="preserve"><value>Sorun ne?</value></data>
+  <data name="Intake.WhenLabel" xml:space="preserve"><value>Ne zaman oluyor? (isteğe bağlı)</value></data>
+  <data name="Monitor.Fps" xml:space="preserve"><value>FPS: {fps}</value></data>
+  <data name="Monitor.Lead" xml:space="preserve"><value>Normal oyna. VTDiag FPS'ini düşürmemek için sistem tepsisinde bekliyor.</value></data>
+  <data name="Monitor.NoData" xml:space="preserve"><value>veri yok</value></data>
+  <data name="Monitor.Ping" xml:space="preserve"><value>Ping: {ms} ms</value></data>
+  <data name="Monitor.Self" xml:space="preserve"><value>VTDiag'ın kendi işlemci kullanımı: %{pct}</value></data>
+  <data name="Monitor.Spikes" xml:space="preserve"><value>Şu ana kadar takılma: {count}</value></data>
+  <data name="Monitor.Title" xml:space="preserve"><value>Maçın izleniyor</value></data>
+  <data name="Monitor.Waiting" xml:space="preserve"><value>VALORANT'ın açılması bekleniyor…</value></data>
+  <data name="Nav.About" xml:space="preserve"><value>Hakkında ve gizlilik</value></data>
+  <data name="Nav.Back" xml:space="preserve"><value>Geri</value></data>
+  <data name="Nav.Helper" xml:space="preserve"><value>Yardımcı modu</value></data>
+  <data name="Nav.Plan" xml:space="preserve"><value>Yardımcının planını aç</value></data>
+  <data name="Nav.Report" xml:space="preserve"><value>Sonuçları paylaş</value></data>
+  <data name="Nav.Settings" xml:space="preserve"><value>Ayarlar</value></data>
+  <data name="Nav.Undo" xml:space="preserve"><value>Değişiklikleri geri al</value></data>
+  <data name="Op.appcompat" xml:space="preserve"><value>Uyumluluk ayarlarını değiştir</value></data>
+  <data name="Op.bcd" xml:space="preserve"><value>Bir başlangıç ayarını değiştir</value></data>
+  <data name="Op.defender" xml:space="preserve"><value>Bir Microsoft Defender ayarını değiştir</value></data>
+  <data name="Op.device" xml:space="preserve"><value>Bir aygıtı kapat</value></data>
+  <data name="Op.dns" xml:space="preserve"><value>DNS önbelleğini temizle</value></data>
+  <data name="Op.file" xml:space="preserve"><value>Bir dosyayı karantinaya taşı</value></data>
+  <data name="Op.firewall" xml:space="preserve"><value>Bir güvenlik duvarı kuralını değiştir</value></data>
+  <data name="Op.ifeo" xml:space="preserve"><value>Bir programın özel ayarlarını sıfırla</value></data>
+  <data name="Op.netadapter" xml:space="preserve"><value>Bir ağ bağdaştırıcısı ayarını değiştir</value></data>
+  <data name="Op.oneway" xml:space="preserve"><value>Windows'un bir kısmını sıfırla</value></data>
+  <data name="Op.powercfg" xml:space="preserve"><value>Bir güç ayarını değiştir</value></data>
+  <data name="Op.process" xml:space="preserve"><value>Bir programı kapat</value></data>
+  <data name="Op.registry" xml:space="preserve"><value>Bir Windows ayarını değiştir</value></data>
+  <data name="Op.service" xml:space="preserve"><value>Bir arka plan hizmetini değiştir</value></data>
+  <data name="Op.startup" xml:space="preserve"><value>Bir programın Windows ile açılmasını durdur</value></data>
+  <data name="Op.systemProtection" xml:space="preserve"><value>Geri yükleme noktalarını aç</value></data>
+  <data name="Op.time" xml:space="preserve"><value>Saati eşitle</value></data>
+  <data name="Outcome.Fixed" xml:space="preserve"><value>İşe yaradı</value></data>
+  <data name="Outcome.Fps" xml:space="preserve"><value>Ortalama FPS: {fps}</value></data>
+  <data name="Outcome.No" xml:space="preserve"><value>Hayır, hâlâ bozuk</value></data>
+  <data name="Outcome.NoMeans" xml:space="preserve"><value>Hâlâ bozuksa bir sonraki şüpheliye geçeriz. Değişiklik, sen geri alana kadar kalır.</value></data>
+  <data name="Outcome.NotFixed" xml:space="preserve"><value>İşe yaramadı</value></data>
+  <data name="Outcome.NotSure" xml:space="preserve"><value>Henüz emin değilim</value></data>
+  <data name="Outcome.Pending" xml:space="preserve"><value>Henüz sorulmadı</value></data>
+  <data name="Outcome.Ping" xml:space="preserve"><value>Ping: yaklaşık {ms} ms</value></data>
+  <data name="Outcome.Seen" xml:space="preserve"><value>Test sırasında gördüklerimiz</value></data>
+  <data name="Outcome.SelfCost" xml:space="preserve"><value>VTDiag'ın kendi işlemci kullanımı: %{pct}</value></data>
+  <data name="Outcome.Spikes" xml:space="preserve"><value>Takılmalar: {seconds} saniyede {count}</value></data>
+  <data name="Outcome.Test.Lead" xml:space="preserve"><value>Bir Deathmatch oyna veya Range'de 5 dakika geçir. Arka planda sessizce izleyeceğiz. FPS'ini etkilemez.</value></data>
+  <data name="Outcome.Test.Skip" xml:space="preserve"><value>İzlemeden test et</value></data>
+  <data name="Outcome.Test.Start" xml:space="preserve"><value>Testi başlat (maçımı izle)</value></data>
+  <data name="Outcome.Test.Title" xml:space="preserve"><value>Bitti. Şimdi test edelim</value></data>
+  <data name="Outcome.Title" xml:space="preserve"><value>İşe yaradı mı?</value></data>
+  <data name="Outcome.Unsure" xml:space="preserve"><value>Emin değil</value></data>
+  <data name="Outcome.Yes" xml:space="preserve"><value>Evet, düzeldi</value></data>
+  <data name="Permission.Lead" xml:space="preserve"><value>Birazdan Windows şunu soracak: "Bu uygulamanın cihazınızda değişiklik yapmasına izin vermek istiyor musunuz?" Evet'e tıkla.</value></data>
+  <data name="Permission.Limited" xml:space="preserve"><value>İzin vermeden tara</value></data>
+  <data name="Permission.LimitedDetail" xml:space="preserve"><value>İzin olmadan birkaç şeyi (Secure Boot anahtarları gibi) kontrol edemeyiz ve hiçbir şeyi düzeltemeyiz. Neyi kontrol edemediğimizi tek tek gösteririz.</value></data>
+  <data name="Permission.Prompt" xml:space="preserve"><value>Neden gerekiyor</value></data>
+  <data name="Permission.Title" xml:space="preserve"><value>Windows izin isteyecek</value></data>
+  <data name="Permission.Why" xml:space="preserve"><value>VALORANT'ın kontrol ettiği güvenlik ayarlarını (Secure Boot ve TPM gibi) okumak için ve daha sonra bir düzeltme uygulamak için. Ama sadece o düzeltmeye sen evet dersen.</value></data>
+  <data name="Plan.Filter" xml:space="preserve"><value>VTDiag planı|*.vtdplan</value></data>
+  <data name="Plan.Lead" xml:space="preserve"><value>Bir yardımcı sana bir plan dosyası (.vtdplan) gönderebilir. Önce bilgisayarına göre kontrol ederiz. Her adım bir şeyi değiştirmeden önce yine sana sorar.</value></data>
+  <data name="Plan.LinkFromHelper" xml:space="preserve"><value>(yardımcıdan gelen bağlantı, açmayacağız)</value></data>
+  <data name="Plan.Message" xml:space="preserve"><value>Yardımcıdan mesaj</value></data>
+  <data name="Plan.NotUsable" xml:space="preserve"><value>Bu planı kullanamıyoruz. Yardımcından yeni bir plan iste.</value></data>
+  <data name="Plan.Open" xml:space="preserve"><value>Plan dosyası aç</value></data>
+  <data name="Plan.Ready" xml:space="preserve"><value>Hazır olduğunda istediğin adımı başlat. Her biri önce sana sorar.</value></data>
+  <data name="Plan.ScanFirst" xml:space="preserve"><value>Önce bilgisayarını tara, sonra planı aç. Kontrol için yeni bir tarama gerekiyor.</value></data>
+  <data name="Plan.Start" xml:space="preserve"><value>Bu adımı başlat</value></data>
+  <data name="Plan.Step.Monitor" xml:space="preserve"><value>Biz izlerken {minutes} dakika oyna</value></data>
+  <data name="Plan.Step.Unknown" xml:space="preserve"><value>Bilinmeyen adım ({id})</value></data>
+  <data name="Plan.Steps" xml:space="preserve"><value>Adımlar</value></data>
+  <data name="Plan.Title" xml:space="preserve"><value>Yardımcının planını aç</value></data>
+  <data name="Plan.Trust.Bad" xml:space="preserve"><value>Bu plan imzalandıktan sonra değiştirilmiş. Kullanmayacağız.</value></data>
+  <data name="Plan.Trust.SignedUnknown" xml:space="preserve"><value>"{name}" tarafından imzalanmış ama bu yardımcıyı tanımıyoruz. Sadece ona güveniyorsan devam et.</value></data>
+  <data name="Plan.Trust.Unsigned" xml:space="preserve"><value>"{name}" kişisinden. Tanıdığın biri mi? Sadece ona güveniyorsan devam et.</value></data>
+  <data name="Plan.Trust.Verified" xml:space="preserve"><value>Doğrulanmış r/ValorantTechSupport yardımcısı: {name}</value></data>
+  <data name="Plan.Unreadable" xml:space="preserve"><value>Bu dosya okuyabildiğimiz bir plan değil.</value></data>
+  <data name="PlanIssue.bad_signature" xml:space="preserve"><value>İmza uyuşmuyor. Plan değiştirilmiş olabilir.</value></data>
+  <data name="PlanIssue.expired" xml:space="preserve"><value>Bu planın süresi dolmuş (planlar 7 gün geçerli). Yenisini iste.</value></data>
+  <data name="PlanIssue.kb_too_old" xml:space="preserve"><value>Bu plan daha yeni bir VTDiag bilgi tabanı istiyor. Önce VTDiag'ı güncelle.</value></data>
+  <data name="PlanIssue.other" xml:space="preserve"><value>Bu planda izin verilmeyen bir şey var.</value></data>
+  <data name="PlanIssue.schema" xml:space="preserve"><value>Bu dosya geçerli bir plan değil.</value></data>
+  <data name="PlanIssue.snapshot_mismatch" xml:space="preserve"><value>Bu plan başka bir bilgisayar için yazılmış.</value></data>
+  <data name="PlanIssue.too_many_steps" xml:space="preserve"><value>Bu planda çok fazla adım var (en fazla 10).</value></data>
+  <data name="PlanIssue.unknown_id" xml:space="preserve"><value>Bazı adımlar VTDiag'ın bilmediği şeyler kullanıyor.</value></data>
+  <data name="PlanReason.generic" xml:space="preserve"><value>Bu adım şu an bilgisayarına uymuyor.</value></data>
+  <data name="PlanReason.plan.step.binding_count" xml:space="preserve"><value>Bu adım yanlış sayıda şeyi gösteriyor.</value></data>
+  <data name="PlanReason.plan.step.binding_missing" xml:space="preserve"><value>Bu adım neyin değişeceğini söylemiyor.</value></data>
+  <data name="PlanReason.plan.step.binding_not_suggested" xml:space="preserve"><value>Taramamız bu adımı sorununla ilişkilendirmiyor.</value></data>
+  <data name="PlanReason.plan.step.binding_unknown" xml:space="preserve"><value>Bu adım bilgisayarında bulamadığımız bir şeyi gösteriyor.</value></data>
+  <data name="PlanReason.plan.step.binding_unresolved" xml:space="preserve"><value>Bu adım artık bilgisayarına uymuyor.</value></data>
+  <data name="PlanReason.plan.step.fix_deprecated" xml:space="preserve"><value>Bu düzeltme kullanımdan kalktı. Yardımcından yeni bir plan iste.</value></data>
+  <data name="PlanReason.plan.step.high_risk_guide_only" xml:space="preserve"><value>Bunu otomatik yapmak çok riskli. Bunun yerine adım adım rehberi iste.</value></data>
+  <data name="PlanReason.plan.step.monitor_minutes" xml:space="preserve"><value>İzleme adımları 1 ile 60 dakika arasında olmalı.</value></data>
+  <data name="PlanReason.plan.step.over_limit" xml:space="preserve"><value>Planlarda en fazla 10 adım olabilir.</value></data>
+  <data name="PlanReason.plan.step.protected_target" xml:space="preserve"><value>Bu adım oyuna, Vanguard'a veya Windows güvenliğine dokunur. Bunu asla yapmayız.</value></data>
+  <data name="PlanReason.plan.step.unknown_branch" xml:space="preserve"><value>Rehberin bu kısmı yok.</value></data>
+  <data name="PlanReason.plan.step.unknown_fix" xml:space="preserve"><value>VTDiag bu düzeltmeyi bilmiyor.</value></data>
+  <data name="PlanReason.plan.step.unknown_guide" xml:space="preserve"><value>VTDiag bu rehberi bilmiyor.</value></data>
+  <data name="PlanReason.plan.step.unknown_question" xml:space="preserve"><value>VTDiag bu soruyu bilmiyor.</value></data>
+  <data name="Proposer.Cli" xml:space="preserve"><value>Bir komut satırı aracı önerdi</value></data>
+  <data name="Proposer.Mcp" xml:space="preserve"><value>Bir yapay zekâ ajanı önerdi</value></data>
+  <data name="Proposer.McpLabel" xml:space="preserve"><value>Bir yapay zekâ ajanı önerdi (kendine "{label}" diyor)</value></data>
+  <data name="Proposer.Plan" xml:space="preserve"><value>"{name}" adlı yardımcının planında önerildi (isim doğrulanmadı)</value></data>
+  <data name="Proposer.PlanNoName" xml:space="preserve"><value>Bir yardımcının planında önerildi</value></data>
+  <data name="Proposer.PlanVerified" xml:space="preserve"><value>{name} adlı doğrulanmış r/ValorantTechSupport yardımcısının planında önerildi</value></data>
+  <data name="Rail.Describe" xml:space="preserve"><value>Anlat</value></data>
+  <data name="Rail.Fix" xml:space="preserve"><value>Düzelt</value></data>
+  <data name="Rail.Results" xml:space="preserve"><value>Sonuçlar</value></data>
+  <data name="Rail.Scan" xml:space="preserve"><value>Tara</value></data>
+  <data name="Rail.Share" xml:space="preserve"><value>Paylaş</value></data>
+  <data name="Rail.Test" xml:space="preserve"><value>Test et</value></data>
+  <data name="Report.Ai" xml:space="preserve"><value>Yapay zekâ için kopyala</value></data>
+  <data name="Report.Ai.Detail" xml:space="preserve"><value>ChatGPT, Claude veya başka bir yapay zekâ yardımcısı için. Güvenli bir düzeltme planı yazma kurallarını da içerir.</value></data>
+  <data name="Report.Blocked" xml:space="preserve"><value>Bu dışa aktarmayı durdurduk çünkü şu kısımda özel bir bilgi gözümüzden kaçmış: {sections}. O kısmı çıkarıp tekrar dene.</value></data>
+  <data name="Report.BlockedNoSection" xml:space="preserve"><value>Bu dışa aktarmayı durdurduk çünkü özel bir bilgi gözümüzden kaçmış. Hiçbir şey kopyalanmadı veya kaydedilmedi.</value></data>
+  <data name="Report.Bundle" xml:space="preserve"><value>Yardımcı için tarama dosyası kaydet</value></data>
+  <data name="Report.Bundle.Detail" xml:space="preserve"><value>Yardımcının VTDiag'ın yardımcı modunda açtığı bir .vtdscan dosyası.</value></data>
+  <data name="Report.Copied.Ai" xml:space="preserve"><value>Kopyalandı. Yapay zekâ sohbetine yapıştır.</value></data>
+  <data name="Report.Copied.Reddit" xml:space="preserve"><value>Kopyalandı. Reddit gönderine veya yorumuna yapıştır.</value></data>
+  <data name="Report.Copy" xml:space="preserve"><value>Kopyala</value></data>
+  <data name="Report.Failed" xml:space="preserve"><value>Raporu oluşturamadık. Tekrar taramayı dene.</value></data>
+  <data name="Report.Filter.Bundle" xml:space="preserve"><value>VTDiag taraması|*.vtdscan</value></data>
+  <data name="Report.Filter.Html" xml:space="preserve"><value>Rapor|*.html</value></data>
+  <data name="Report.Filter.Json" xml:space="preserve"><value>JSON|*.json</value></data>
+  <data name="Report.Helper.Detail" xml:space="preserve"><value>Bir tarama dosyası kaydet ve r/ValorantTechSupport ya da Discord'daki bir yardımcıya gönder. Sana bir plan gönderebilirler ve her adımı sen onaylarsın.</value></data>
+  <data name="Report.Helper.Title" xml:space="preserve"><value>Bir yardımcıdan destek al</value></data>
+  <data name="Report.Html" xml:space="preserve"><value>Tam raporu kaydet</value></data>
+  <data name="Report.Html.Detail" xml:space="preserve"><value>Her tarayıcıda açılır, internetsiz çalışır, betik içermez.</value></data>
+  <data name="Report.Inside" xml:space="preserve"><value>İçinde ne var</value></data>
+  <data name="Report.Json" xml:space="preserve"><value>Araçlar için JSON</value></data>
+  <data name="Report.Lead" xml:space="preserve"><value>Buradaki her şey önce temizlenir: kullanıcı adı, bilgisayar adı, seri numarası, şifre veya giriş anahtarı yoktur.</value></data>
+  <data name="Report.LeaveOut" xml:space="preserve"><value>O kısmı çıkar ve tekrar dene</value></data>
+  <data name="Report.LeftOut" xml:space="preserve"><value>Tamam. O kısım artık dahil değil.</value></data>
+  <data name="Report.Length" xml:space="preserve"><value>{count} karakter (Reddit 10.000'e izin verir)</value></data>
+  <data name="Report.NoScan" xml:space="preserve"><value>Önce bilgisayarını tara. Rapor taramandan oluşturulur.</value></data>
+  <data name="Report.Preview" xml:space="preserve"><value>Paylaşılacak içeriğin önizlemesi</value></data>
+  <data name="Report.Redacted" xml:space="preserve"><value>{what} gibi {count} şeyi gizledik veya değiştirdik.</value></data>
+  <data name="Report.RedactedNone" xml:space="preserve"><value>Gizlenecek özel bir şey bulunmadı.</value></data>
+  <data name="Report.Reddit" xml:space="preserve"><value>Reddit için kopyala</value></data>
+  <data name="Report.Reddit.Detail" xml:space="preserve"><value>Bir gönderiye veya yoruma yapıştır. Reddit'in sınırına sığar.</value></data>
+  <data name="Report.Save" xml:space="preserve"><value>Kaydet…</value></data>
+  <data name="Report.Saved" xml:space="preserve"><value>{name} kaydedildi.</value></data>
+  <data name="Report.ServerIp" xml:space="preserve"><value>Oyun sunucusu adresini ekle (sadece internet sağlayıcın isterse)</value></data>
+  <data name="Report.Title" xml:space="preserve"><value>Sonuçlarını paylaş</value></data>
+  <data name="Report.UpdatePreview" xml:space="preserve"><value>Önizlemeyi güncelle</value></data>
+  <data name="Restart.Battery" xml:space="preserve"><value>Pildesin. Önce şarj aletini tak.</value></data>
+  <data name="Restart.Bios.Lead" xml:space="preserve"><value>Bilgisayarın doğrudan BIOS ayarlarına yeniden başlar. Adımları telefonunda açık tut. Orada işin bitince kaydet ve çık; oturum açtıktan sonra VTDiag devam eder.</value></data>
+  <data name="Restart.Bios.Now" xml:space="preserve"><value>BIOS'a yeniden başlat</value></data>
+  <data name="Restart.Bios.Title" xml:space="preserve"><value>BIOS'a yeniden başlat</value></data>
+  <data name="Restart.Later" xml:space="preserve"><value>Daha sonra yeniden başlat</value></data>
+  <data name="Restart.Later.Done" xml:space="preserve"><value>Tamam. VTDiag bir sonraki yeniden başlatmadan sonra devam eder. Kapat'ı değil, Yeniden başlat'ı kullan.</value></data>
+  <data name="Restart.Lead" xml:space="preserve"><value>Bu değişiklik ancak yeniden başlattıktan sonra çalışır. Önce işlerini kaydet ve oyunu kapat.</value></data>
+  <data name="Restart.Now" xml:space="preserve"><value>Şimdi yeniden başlat</value></data>
+  <data name="Restart.Resume.Manual" xml:space="preserve"><value>Yeniden başlattıktan sonra VTDiag'ı Başlat menüsünden aç, kaldığımız yerden devam edelim.</value></data>
+  <data name="Restart.Resume.None" xml:space="preserve"><value>Yeniden başlattıktan sonra VTDiag'ı Başlat menüsünden aç, kaldığımız yerden devam edelim.</value></data>
+  <data name="Restart.Resume.RunOnceUi" xml:space="preserve"><value>Oturum açtıktan sonra yeniden açılacağız. Windows bir kez daha izin isteyebilir.</value></data>
+  <data name="Restart.Resume.ScheduledTasks" xml:space="preserve"><value>Oturum açtıktan sonra kendiliğimizden açılıp düzeltmeyi kontrol edeceğiz.</value></data>
+  <data name="Restart.Title" xml:space="preserve"><value>Yeniden başlatma gerekiyor</value></data>
+  <data name="Restarting.Bios" xml:space="preserve"><value>BIOS'ta telefonundaki adımları izle, sonra "Kaydet ve çık"ı seç.</value></data>
+  <data name="Restarting.Lead" xml:space="preserve"><value>Tekrar oturum açtığında VTDiag kendiliğinden açılır ve düzeltmeyi kontrol eder.</value></data>
+  <data name="Restarting.Simulate" xml:space="preserve"><value>Demo: bilgisayar geri geldi</value></data>
+  <data name="Restarting.Title" xml:space="preserve"><value>Bilgisayarın yeniden başlatılıyor…</value></data>
+  <data name="Resume.Checking" xml:space="preserve"><value>{fix}: hâlâ kontrol ediliyor</value></data>
+  <data name="Resume.InPlace" xml:space="preserve"><value>{fix}: artık yerinde</value></data>
+  <data name="Resume.Lead" xml:space="preserve"><value>Yeniden başlatmadan sonra düzeltmeyi kontrol ettik.</value></data>
+  <data name="Resume.NotInPlace" xml:space="preserve"><value>{fix}: tutmadı</value></data>
+  <data name="Resume.NotInPlaceDetail" xml:space="preserve"><value>Her şeyi eski haline getirdik. Bilgisayardaki başka bir şey bunu değiştiriyor olabilir.</value></data>
+  <data name="Resume.Title" xml:space="preserve"><value>Tekrar hoş geldin</value></data>
+  <data name="Resume.UndoAll" xml:space="preserve"><value>Dur ve her şeyi geri al</value></data>
+  <data name="Rule.device" xml:space="preserve"><value>aygıt seri bilgileri</value></data>
+  <data name="Rule.email" xml:space="preserve"><value>e-posta adresleri</value></data>
+  <data name="Rule.hash" xml:space="preserve"><value>Wi-Fi ve aygıt adları</value></data>
+  <data name="Rule.host" xml:space="preserve"><value>bilgisayar adın</value></data>
+  <data name="Rule.identifier" xml:space="preserve"><value>bilgisayar ve kullanıcı adların</value></data>
+  <data name="Rule.mac" xml:space="preserve"><value>ağ kartı adresleri</value></data>
+  <data name="Rule.net" xml:space="preserve"><value>ağ adresleri</value></data>
+  <data name="Rule.other" xml:space="preserve"><value>diğer özel bilgiler</value></data>
+  <data name="Rule.path" xml:space="preserve"><value>adını içeren klasör yolları</value></data>
+  <data name="Rule.pii" xml:space="preserve"><value>kişisel bilgiler</value></data>
+  <data name="Rule.secret" xml:space="preserve"><value>giriş anahtarları</value></data>
+  <data name="Rule.section" xml:space="preserve"><value>çıkardığın kısımlar</value></data>
+  <data name="Rule.sid" xml:space="preserve"><value>Windows hesap kimlikleri</value></data>
+  <data name="Scan.Lead" xml:space="preserve"><value>Yaklaşık bir dakika sürer. Bilgisayarını kullanmaya devam edebilirsin.</value></data>
+  <data name="Scan.Cancel" xml:space="preserve"><value>Taramayı durdur</value></data>
+  <data name="Outcome.Summary" xml:space="preserve"><value>Testin tamamı: {spikes} takılma, kötü olarak işaretlediğin {marked} an.</value></data>
+  <data name="Outcome.Summary.Short" xml:space="preserve"><value>Test karar vermek için çok kısaydı; senin cevabın geçerli.</value></data>
+  <data name="Scan.NeverHangs" xml:space="preserve"><value>Bir kısım çok uzun sürerse atlarız ve bunu söyleriz. Tarama asla takılı kalmaz.</value></data>
+  <data name="Scan.Partial" xml:space="preserve"><value>Bazı kısımlar okunamadı</value></data>
+  <data name="Scan.Progress" xml:space="preserve"><value>{total} kontrolden {done} tanesi bitti</value></data>
+  <data name="Scan.Skipped.Failed" xml:space="preserve"><value>Bu kısım okunamadı</value></data>
+  <data name="Scan.Skipped.NoAdmin" xml:space="preserve"><value>İzin gerekiyor</value></data>
+  <data name="Scan.Skipped.Slow" xml:space="preserve"><value>Atlandı, çok uzun sürdü</value></data>
+  <data name="Scan.Starting" xml:space="preserve"><value>Başlıyor…</value></data>
+  <data name="Scan.Title" xml:space="preserve"><value>Bilgisayarın kontrol ediliyor</value></data>
+  <data name="Section.analysis" xml:space="preserve"><value>Analizimiz</value></data>
+  <data name="Section.apps" xml:space="preserve"><value>Yüklü uygulamalar</value></data>
+  <data name="Section.attempts" xml:space="preserve"><value>Denenen düzeltmeler</value></data>
+  <data name="Section.audio" xml:space="preserve"><value>Ses aygıtları</value></data>
+  <data name="Section.devices" xml:space="preserve"><value>Aygıtlar</value></data>
+  <data name="Section.display" xml:space="preserve"><value>Ekranlar</value></data>
+  <data name="Section.drivers" xml:space="preserve"><value>Sürücüler</value></data>
+  <data name="Section.events" xml:space="preserve"><value>Windows olay özeti</value></data>
+  <data name="Section.firmware" xml:space="preserve"><value>Donanım yazılımı (BIOS)</value></data>
+  <data name="Section.hardware" xml:space="preserve"><value>Donanım</value></data>
+  <data name="Section.input" xml:space="preserve"><value>Fare ayarları</value></data>
+  <data name="Section.monitor" xml:space="preserve"><value>Maç izleyici</value></data>
+  <data name="Section.network" xml:space="preserve"><value>Ağ</value></data>
+  <data name="Section.optionalFeatures" xml:space="preserve"><value>Windows özellikleri</value></data>
+  <data name="Section.os" xml:space="preserve"><value>Windows sürümü</value></data>
+  <data name="Section.pack" xml:space="preserve"><value>Ek kontroller</value></data>
+  <data name="Section.power" xml:space="preserve"><value>Güç ayarları</value></data>
+  <data name="Section.processes" xml:space="preserve"><value>Çalışan programlar</value></data>
+  <data name="Section.riot" xml:space="preserve"><value>Riot ve VALORANT dosyaları</value></data>
+  <data name="Section.runs" xml:space="preserve"><value>Tarama kapsamı</value></data>
+  <data name="Section.security" xml:space="preserve"><value>Güvenlik</value></data>
+  <data name="Section.services" xml:space="preserve"><value>Hizmetler</value></data>
+  <data name="Section.startup" xml:space="preserve"><value>Başlangıç programları</value></data>
+  <data name="Section.storage" xml:space="preserve"><value>Diskler</value></data>
+  <data name="Settings.Developer" xml:space="preserve"><value>Geliştirici araçları</value></data>
+  <data name="Settings.Developer.Detail" xml:space="preserve"><value>Sadece demo modunda. Gerçek bir bilgisayarın veya yardımcının yapacağı şeyleri taklit ederler.</value></data>
+  <data name="Settings.Language" xml:space="preserve"><value>Dil</value></data>
+  <data name="Settings.Pseudo" xml:space="preserve"><value>Sahte dil (uzun metin testi için)</value></data>
+  <data name="Settings.ReportLanguage" xml:space="preserve"><value>Paylaştığın raporların bir kısmı İngilizce kalır, böylece subreddit'teki yardımcılar okuyabilir.</value></data>
+  <data name="Settings.SimulateAgent" xml:space="preserve"><value>Bir yapay zekâ ajanının düzeltme önermesini taklit et</value></data>
+  <data name="Settings.Title" xml:space="preserve"><value>Ayarlar</value></data>
+  <data name="Suspects.BackToHealth" xml:space="preserve"><value>Kontrol listesine dön</value></data>
+  <data name="Suspects.CouldNotCheck" xml:space="preserve"><value>Bunları kontrol edemedik, kontrol edebildiğimizde sonuçlar değişebilir</value></data>
+  <data name="Suspects.CouldNotCheckLine" xml:space="preserve"><value>{what}: {reason}</value></data>
+  <data name="Suspects.Explain" xml:space="preserve"><value>"Çok olası", kanıtların güçlü şekilde buna işaret ettiği anlamına gelir. Her şüpheli için en fazla birkaç neden gösteririz. Soldaki renk sorunun türünü söyler: burada düzeltilebilir, kendin yapacağın bir adım (BIOS gibi), bilgisayarının dışında (internet sağlayıcısı), Riot tarafında veya muhtemelen donanım.</value></data>
+  <data name="Suspects.FixLabel" xml:space="preserve"><value>Düzeltme:</value></data>
+  <data name="Suspects.GetHelp" xml:space="preserve"><value>Bir yardımcıdan destek al</value></data>
+  <data name="Suspects.GuideLabel" xml:space="preserve"><value>Adımlar:</value></data>
+  <data name="Suspects.Math" xml:space="preserve"><value>Bu sıralama neden (yardımcılar için)</value></data>
+  <data name="Suspects.NeedsPermission" xml:space="preserve"><value>Bu düzeltme izin istiyor. VTDiag'ı yeniden başlat ve Windows penceresinde Evet'e tıkla.</value></data>
+  <data name="Suspects.NotAvailable" xml:space="preserve"><value>Bu düzeltme şu an çalıştırılamıyor.</value></data>
+  <data name="Suspects.OpenFix" xml:space="preserve"><value>Bu düzeltmeyi aç</value></data>
+  <data name="Suspects.Question" xml:space="preserve"><value>Hızlı bir soru</value></data>
+  <data name="Suspects.ShowAll" xml:space="preserve"><value>Hepsini göster ({count} tane daha)</value></data>
+  <data name="Suspects.ShowFewer" xml:space="preserve"><value>Daha azını göster</value></data>
+  <data name="Suspects.ShowSteps" xml:space="preserve"><value>Adımları göster</value></data>
+  <data name="Suspects.Title" xml:space="preserve"><value>Ne bulduk</value></data>
+  <data name="Suspects.TryFirstFix" xml:space="preserve"><value>İlk düzeltmeyi dene</value></data>
+  <data name="Suspects.Unknown.Detail" xml:space="preserve"><value>Kontrol ettiğimiz hiçbir şey bunu yeterince açıklamıyor. Bu senin suçun değil ve hiçbir sorun olmadığı anlamına da gelmez.</value></data>
+  <data name="Suspects.Unknown.Ladder" xml:space="preserve"><value>Sonraki adımlar: 1. Bir yardımcıdan destek al (sonuçlarını paylaş). 2. Biz izlerken bir maç oyna, sorunu olurken görelim. 3. "Reddit için kopyala" ile r/ValorantTechSupport'a yaz.</value></data>
+  <data name="Suspects.Unknown.Title" xml:space="preserve"><value>Bunu kesin olarak bulamadık</value></data>
+  <data name="Suspects.Why" xml:space="preserve"><value>Neden böyle düşünüyoruz</value></data>
+  <data name="Symptom.crash_freeze" xml:space="preserve"><value>Çöküyor veya donuyor</value></data>
+  <data name="Symptom.error_code" xml:space="preserve"><value>Hata kodu</value></data>
+  <data name="Symptom.just_check" xml:space="preserve"><value>Sadece bilgisayarımı kontrol et</value></data>
+  <data name="Symptom.lag_ping" xml:space="preserve"><value>Gecikme veya yüksek ping</value></data>
+  <data name="Symptom.launch_black_screen" xml:space="preserve"><value>Açılışta siyah ekran</value></data>
+  <data name="Symptom.stutter" xml:space="preserve"><value>Takılma veya düşük FPS</value></data>
+  <data name="Symptom.voice_sound" xml:space="preserve"><value>Ses veya mikrofon</value></data>
+  <data name="Symptom.wont_start" xml:space="preserve"><value>Açılmıyor</value></data>
+  <data name="Tray.Exit" xml:space="preserve"><value>Çıkış</value></data>
+  <data name="Tray.Idle" xml:space="preserve"><value>İzlemiyor</value></data>
+  <data name="Tray.MarkBad" xml:space="preserve"><value>Son maçı kötü olarak işaretle</value></data>
+  <data name="Tray.Monitoring" xml:space="preserve"><value>Maçın izleniyor</value></data>
+  <data name="Tray.Open" xml:space="preserve"><value>VTDiag'ı aç</value></data>
+  <data name="Undo.All" xml:space="preserve"><value>Her şeyi geri al</value></data>
+  <data name="Undo.Conflict" xml:space="preserve"><value>Bu ayar düzeltmemizden sonra tekrar değişti (muhtemelen Windows Update yüzünden). VTDiag'dan önceki haline getirilsin mi?</value></data>
+  <data name="Undo.Empty" xml:space="preserve"><value>Henüz hiçbir şey değişmedi. Bir düzeltme uyguladığında burada görünür.</value></data>
+  <data name="Undo.Lead" xml:space="preserve"><value>VTDiag'ın bu bilgisayarda değiştirdiği her şey. Geri al, her şeyi önceki haline getirir.</value></data>
+  <data name="Undo.OneWay" xml:space="preserve"><value>Bu tek tıkla geri alınamaz.</value></data>
+  <data name="Undo.OneWayRestorePoint" xml:space="preserve"><value>Bu tek tıkla geri alınamaz. Windows {date} tarihinde bir geri yükleme noktası oluşturdu.</value></data>
+  <data name="Undo.PutBack" xml:space="preserve"><value>Evet, eski haline getir</value></data>
+  <data name="Undo.Title" xml:space="preserve"><value>Değişiklikleri geri al</value></data>
+  <data name="Undo.Undo" xml:space="preserve"><value>Geri al</value></data>
+  <data name="UndoConsent.No" xml:space="preserve"><value>Kalsın</value></data>
+  <data name="UndoConsent.Title" xml:space="preserve"><value>Bu değişiklik geri alınsın mı?</value></data>
+  <data name="UndoConsent.Yes" xml:space="preserve"><value>Geri al</value></data>
+  <data name="Unknown.AccessDenied" xml:space="preserve"><value>Windows okumamıza izin vermedi</value></data>
+  <data name="Unknown.Failed" xml:space="preserve"><value>okuma başarısız oldu</value></data>
+  <data name="Unknown.InsufficientData" xml:space="preserve"><value>henüz yeterli veri yok</value></data>
+  <data name="Unknown.NeedsAdmin" xml:space="preserve"><value>izin gerekiyor</value></data>
+  <data name="Unknown.NotCollected" xml:space="preserve"><value>bu kısım taranmadı</value></data>
+  <data name="Unknown.Redacted" xml:space="preserve"><value>gizlilik için çıkarıldı</value></data>
+  <data name="Unknown.Incomplete" xml:space="preserve"><value>listenin sadece bir kısmı okunabildi</value></data>
+  <data name="Unknown.TimedOut" xml:space="preserve"><value>çok uzun sürdü</value></data>
+  <data name="Unknown.Unparseable" xml:space="preserve"><value>anlamlandıramadık</value></data>
+  <data name="Unknown.Unsupported" xml:space="preserve"><value>bu bilgisayar bunu göstermiyor</value></data>
+  <data name="Welcome.HelperHint" xml:space="preserve"><value>Birine mi yardım ediyorsun?</value></data>
+  <data name="Welcome.HelperLink" xml:space="preserve"><value>Tarama dosyasını aç</value></data>
+  <data name="Welcome.Lead" xml:space="preserve"><value>r/ValorantTechSupport için yapılmış ücretsiz bir PC kontrolü. Yaklaşık bir dakika sürer ve kontrol baştan sona sende kalır.</value></data>
+  <data name="Welcome.Privacy" xml:space="preserve"><value>Gizlilik ayrıntıları</value></data>
+  <data name="Welcome.Promise1" xml:space="preserve"><value>Sadece senin onayladığın şeyleri değiştiririz.</value></data>
+  <data name="Welcome.Promise1.Detail" xml:space="preserve"><value>Her düzeltme önce anlatılır. Sen tıklamadan hiçbir şey olmaz.</value></data>
+  <data name="Welcome.Promise2" xml:space="preserve"><value>Her şey geri alınabilir.</value></data>
+  <data name="Welcome.Promise2.Detail" xml:space="preserve"><value>Tek tıkla geri alınamayan bir şey varsa önce söyleriz ve iki kez sorarız.</value></data>
+  <data name="Welcome.Promise3" xml:space="preserve"><value>Vanguard ile güvenli.</value></data>
+  <data name="Welcome.Promise3.Detail" xml:space="preserve"><value>Oyuna, oyunun belleğine veya Riot'un hile korumasına asla dokunmayız.</value></data>
+  <data name="Welcome.Start" xml:space="preserve"><value>Başla</value></data>
+  <data name="Welcome.Title" xml:space="preserve"><value>VALORANT neden düzgün çalışmıyor, birlikte bulalım.</value></data>
+  <data name="When.always" xml:space="preserve"><value>Her zaman</value></data>
+  <data name="When.at_launch" xml:space="preserve"><value>Açılırken</value></data>
+  <data name="When.in_match" xml:space="preserve"><value>Maçta</value></data>
+  <data name="When.in_menu" xml:space="preserve"><value>Menüde</value></data>
+  <data name="Window.Close" xml:space="preserve"><value>Kapat</value></data>
+  <data name="Window.Maximize" xml:space="preserve"><value>Ekranı kapla</value></data>
+  <data name="Window.Minimize" xml:space="preserve"><value>Simge durumuna küçült</value></data>
+  <data name="Window.Title" xml:space="preserve"><value>VTDiag · VALORANT için PC kontrolü</value></data>
+  <data name="kb.ask.league_also_broken.no" xml:space="preserve"><value>Hayır, League çalışıyor</value></data>
+  <data name="kb.ask.league_also_broken.text" xml:space="preserve"><value>League of Legends da oynuyor musun? O da bozuk mu?</value></data>
+  <data name="kb.ask.league_also_broken.unsure" xml:space="preserve"><value>League oynamıyorum</value></data>
+  <data name="kb.ask.league_also_broken.yes" xml:space="preserve"><value>Evet, League de bozuk</value></data>
+  <data name="kb.ask.only_valorant_affected.no" xml:space="preserve"><value>Diğer oyunlar da</value></data>
+  <data name="kb.ask.only_valorant_affected.text" xml:space="preserve"><value>Sadece VALORANT'ta mı, yoksa diğer oyunlar da takılıyor mu?</value></data>
+  <data name="kb.ask.only_valorant_affected.unsure" xml:space="preserve"><value>Emin değilim</value></data>
+  <data name="kb.ask.only_valorant_affected.yes" xml:space="preserve"><value>Sadece VALORANT</value></data>
+  <data name="kb.code.val_account.meaning" xml:space="preserve"><value>Hesap tarafında bir hata</value></data>
+  <data name="kb.code.van152.meaning" xml:space="preserve"><value>Donanım Riot tarafından kısıtlanmış (sadece itiraz)</value></data>
+  <data name="kb.code.van9003.meaning" xml:space="preserve"><value>Secure Boot kapalı</value></data>
+  <data name="kb.consent.one_way_confirm" xml:space="preserve"><value>Bu tek tıkla geri alınamaz. Bir kez daha onayla.</value></data>
+  <data name="kb.couldnotcheck.needs_admin" xml:space="preserve"><value>Kontrol edilemedi: izin gerekiyor</value></data>
+  <data name="kb.drift.adapter_reenabled" xml:space="preserve"><value>Ağ girişi tekrar açılmış (genelde bir sürücü güncellemesi yüzünden).</value></data>
+  <data name="kb.drift.oem_reinstalled" xml:space="preserve"><value>Ses yazılımı bir Windows veya üretici güncellemesinden sonra geri gelmiş.</value></data>
+  <data name="kb.fix.disable_adapter.explain" xml:space="preserve"><value>Kullanmadığın kablolu ağ girişini kapatacağız. Wi-Fi'dasın, internetin kesilmez. Tek tıkla geri açabilirsin.</value></data>
+  <data name="kb.fix.disable_adapter.notice" xml:space="preserve"><value>Hiçbir şey; tabii daha sonra o girişe kablo takmazsan. Takarsan önce geri aç.</value></data>
+  <data name="kb.fix.disable_adapter.title" xml:space="preserve"><value>Kullanmadığın ağ girişini kapat</value></data>
+  <data name="kb.fix.disable_adapter.undo" xml:space="preserve"><value>"Değişiklikleri geri al"da tek tık, girişi tam eskisi gibi geri açar.</value></data>
+  <data name="kb.fix.disable_service.explain" xml:space="preserve"><value>Nahimic ses hizmetini durdurup Windows ile açılmasını engelleyeceğiz. Sesin normal Windows sürücüsüyle çalışmaya devam eder.</value></data>
+  <data name="kb.fix.disable_service.title" xml:space="preserve"><value>Çakışan ses hizmetini kapat</value></data>
+  <data name="kb.fix.disable_service.undo" xml:space="preserve"><value>"Değişiklikleri geri al"da tek tık, hizmeti tam eskisi gibi geri açar.</value></data>
+  <data name="kb.fix.dns_flush.explain" xml:space="preserve"><value>Windows'un hatırladığı site adresleri listesini temizleyeceğiz, böylece onları yeniden arar. Bu bazı "bağlanamıyor" hatalarını düzeltir.</value></data>
+  <data name="kb.fix.dns_flush.title" xml:space="preserve"><value>DNS önbelleğini temizle</value></data>
+  <data name="kb.fix.dns_flush.undo" xml:space="preserve"><value>Geri getirilecek bir şey yok: Windows sen gezindikçe listeyi kendisi yeniden oluşturur.</value></data>
+  <data name="kb.fix.net.disable_unused_adapter.step0" xml:space="preserve"><value>Kullanılmayan kablolu ağ girişini kapat</value></data>
+  <data name="kb.fix.net.dns_flush.step0" xml:space="preserve"><value>DNS önbelleğini temizle</value></data>
+  <data name="kb.fix.svc.disable_conflict_service.step0" xml:space="preserve"><value>Hizmetin Windows ile açılmasını engelle</value></data>
+  <data name="kb.fix.svc.disable_conflict_service.step1" xml:space="preserve"><value>Hizmeti şimdi durdur</value></data>
+  <data name="kb.guard.adapter_is_active" xml:space="preserve"><value>Bu giriş şu anda internetinin kullandığı giriş, bu yüzden kapatmayacağız.</value></data>
+  <data name="kb.guard.no_other_connection" xml:space="preserve"><value>Çalışan başka bir bağlantın yok, bunu kapatmak internetini keser.</value></data>
+  <data name="kb.guide.apps.uninstall_nahimic" xml:space="preserve"><value>Nahimic'i tamamen kaldır</value></data>
+  <data name="kb.guide.secureboot.bitlocker_key_first" xml:space="preserve"><value>BitLocker açık. Önce kurtarma anahtarını kaydet (aka.ms/myrecoverykey), yoksa BIOS değişikliğinden sonra Windows bunu isteyebilir.</value></data>
+  <data name="kb.guide.secureboot.csm.step1" xml:space="preserve"><value>BIOS'ta (bilgisayar açılırken {key}) {path} bölümüne git ve CSM / Legacy önyüklemeyi kapat.</value></data>
+  <data name="kb.guide.secureboot.enable.step1" xml:space="preserve"><value>BIOS'a yeniden başlat (bilgisayar açılırken {key} tuşuna bas). {path} bölümüne git, Secure Boot'u Enabled yap, sonra Save and exit'i seç.</value></data>
+  <data name="kb.guide.secureboot.factory_keys.step1" xml:space="preserve"><value>BIOS'ta ({key}) {path} bölümüne git ve "Restore factory keys" (veya "Install default Secure Boot keys") seç.</value></data>
+  <data name="kb.guide.secureboot.mbr.step1" xml:space="preserve"><value>Diskinin veri kaybetmeden GPT'ye dönüştürülüp dönüştürülemeyeceğini kontrol et.</value></data>
+  <data name="kb.guide.secureboot.mbr.text" xml:space="preserve"><value>Sistem diskin eski MBR türünü kullanıyor. Secure Boot için GPT gerekir, önce bu yapılmalı.</value></data>
+  <data name="kb.guide.secureboot.restart_bios" xml:space="preserve"><value>Doğrudan BIOS'a yeniden başlat. Sonra burada devam edeceğiz.</value></data>
+  <data name="kb.guide.secureboot.title" xml:space="preserve"><value>BIOS'unda Secure Boot'u aç</value></data>
+  <data name="kb.health.free_space" xml:space="preserve"><value>Yeterli boş disk alanı var</value></data>
+  <data name="kb.health.pending_reboot" xml:space="preserve"><value>Bekleyen Windows yeniden başlatması yok</value></data>
+  <data name="kb.health.secure_boot" xml:space="preserve"><value>Secure Boot</value></data>
+  <data name="kb.health.secure_boot_keys" xml:space="preserve"><value>Secure Boot anahtarları kurulu</value></data>
+  <data name="kb.health.test_signing_off" xml:space="preserve"><value>Test imzalama kapalı</value></data>
+  <data name="kb.health.tpm2" xml:space="preserve"><value>TPM 2.0 açık</value></data>
+  <data name="kb.health.uefi_gpt" xml:space="preserve"><value>Bilgisayar GPT diskten UEFI modunda açılıyor</value></data>
+  <data name="kb.outcome.connects_now" xml:space="preserve"><value>Artık bağlanıyor mu?</value></data>
+  <data name="kb.outcome.game_launches" xml:space="preserve"><value>Oyun artık açılıyor mu?</value></data>
+  <data name="kb.outcome.past_loading_screen" xml:space="preserve"><value>VALORANT artık yükleme ekranını geçiyor mu?</value></data>
+  <data name="kb.outcome.stutter_gone" xml:space="preserve"><value>Takılmalar geçti mi?</value></data>
+  <data name="kb.proposal.reason.quick_harmless_undoable" xml:space="preserve"><value>Hızlı, zararsız ve geri alınabilir, bu yüzden büyük şeylerden önce bunu deneriz.</value></data>
+  <data name="kb.report.disclaimer.not_affiliated" xml:space="preserve"><value>VTDiag'ın Riot Games ile bağlantısı yoktur.</value></data>
+  <data name="kb.restart.use_restart_not_shutdown" xml:space="preserve"><value>"Kapat"ı değil, "Yeniden başlat"ı kullan. Hızlı Başlatma açıkken Kapat, Windows'u gerçekten yeniden başlatmaz.</value></data>
+  <data name="kb.rule.nahimic.ev.module" xml:space="preserve"><value>VALORANT {module} içinde çöktü ({count} kez)</value></data>
+  <data name="kb.rule.nahimic.title" xml:space="preserve"><value>Nahimic ses yazılımı VALORANT'ın açılmasını engelliyor</value></data>
+  <data name="kb.rule.realtek25.ev.resets" xml:space="preserve"><value>14 günde {count} Realtek sürücü sıfırlaması</value></data>
+  <data name="kb.rule.realtek25.ev.unused" xml:space="preserve"><value>Realtek 2.5G girişi açık ama takılı kablo yok</value></data>
+  <data name="kb.rule.realtek25.title" xml:space="preserve"><value>Kullanmadığın kablolu ağ girişi (Realtek 2.5G) takılmalara yol açıyor</value></data>
+  <data name="kb.rule.route.hwid_ban.title" xml:space="preserve"><value>Bilgisayarın Riot tarafından kısıtlanmış (VAN 152)</value></data>
+  <data name="kb.rule.van9003.ev.sb_off" xml:space="preserve"><value>BIOS'unda Secure Boot kapalı</value></data>
+  <data name="kb.rule.van9003.title" xml:space="preserve"><value>Secure Boot kapalı (VAN 9003)</value></data>
+  <data name="kb.signal.net.realtek25.unused" xml:space="preserve"><value>Kullanılmayan Realtek 2.5G girişi</value></data>
+  <data name="kb.signal.sec.secureboot.on" xml:space="preserve"><value>Secure Boot</value></data>
+  <data name="kb.signal.sec.secureboot.setup_mode" xml:space="preserve"><value>Secure Boot anahtarları</value></data>
+  <data name="Debug.Title" xml:space="preserve"><value>Hata ayıklama paketi</value></data>
+  <data name="Debug.Detail" xml:space="preserve"><value>Bir şey ters giderse; kayıtları, son taramayı ve analizi (özel bilgiler çıkarılmış) tek bir dosyada toplayıp sana yardım eden kişiye gönderebilirsin.</value></data>
+  <data name="Debug.Toggle" xml:space="preserve"><value>Hata ayıklama modu (sorunu yeniden oluştururken kayıtta daha fazla ayrıntı)</value></data>
+  <data name="Debug.Create" xml:space="preserve"><value>Hata ayıklama paketi oluştur</value></data>
+  <data name="Debug.Blocked" xml:space="preserve"><value>Paketi durdurduk, şurada özel bir bilgi kaçmış: {sections}. Hiçbir şey kaydedilmedi.</value></data>
+  <data name="Debug.Failed" xml:space="preserve"><value>Hata ayıklama paketi oluşturulamadı.</value></data>
+  <data name="Debug.Filter" xml:space="preserve"><value>VTDiag hata ayıklama paketi|*.vtddebug</value></data>
+  <data name="Error.engine.missing" xml:space="preserve"><value>VTDiag'in motor dosyası eksik. VTDiag'i yeniden kur.</value></data>
+  <data name="Error.engine.start_failed" xml:space="preserve"><value>VTDiag motoru başlatılamadı.</value></data>
+  <data name="Error.engine.unverified" xml:space="preserve"><value>Motorun gerçekten VTDiag'e ait olduğunu doğrulayamadık, bu yüzden bağlanmadık.</value></data>
+  <data name="Error.engine.connection_lost" xml:space="preserve"><value>VTDiag motoruyla bağlantı koptu. VTDiag'i yeniden başlat.</value></data>
+</root>

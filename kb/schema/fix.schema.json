@@ -1,0 +1,424 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:fix:1",
+  "title": "VTDiag KB fix",
+  "description": "kb/fixes/<area>/<id>.json: a fix composed only of audited primitives; no commands, scripts, URLs or free paths.",
+  "$defs": {
+    "item": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable id fix.<area>.<name>."
+        },
+        "rev": {
+          "type": "integer",
+          "description": "Revision."
+        },
+        "titleKey": {
+          "type": "string",
+          "description": "Title key."
+        },
+        "explainKey": {
+          "type": "string",
+          "description": "What and why, at most 3 sentences, 6th-grade reading level."
+        },
+        "undoExplainKey": {
+          "type": "string",
+          "description": "How to undo, in plain words."
+        },
+        "noticeKey": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "What the player will notice (\"You'll stay on Wi-Fi, internet keeps working\")."
+        },
+        "sideEffectKeys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Side effects (\"headset mic will stop working in Hands-Free mode\")."
+        },
+        "risk": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "description": "Declared risk."
+        },
+        "reversibility": {
+          "enum": [
+            "exact",
+            "bestEffort",
+            "sessionOnly",
+            "oneWay"
+          ],
+          "description": "Declared reversibility."
+        },
+        "admin": {
+          "type": "boolean",
+          "description": "Needs the elevated engine."
+        },
+        "reboot": {
+          "enum": [
+            "none",
+            "recommended",
+            "required"
+          ],
+          "description": "Reboot need."
+        },
+        "scope": {
+          "enum": [
+            "persistent",
+            "session"
+          ],
+          "description": "Persistent or session-only."
+        },
+        "estMinutes": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Estimated minutes (for the cost term and the badge)."
+        },
+        "appliesTo": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Hypotheses this fix addresses."
+        },
+        "template": {
+          "type": "boolean",
+          "description": "Generic entity-bound template (DESIGN.md section 3.1: close process, disable service, disable device, remove compat layer, unbind IPv6, disable startup entry): bindings may come from a helper plan or an agent, still subject to ProtectedTargetPolicy and per-step consent."
+        },
+        "bind": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "adapter",
+                  "service",
+                  "process",
+                  "driver",
+                  "app",
+                  "file",
+                  "registryValue",
+                  "device",
+                  "startupItem",
+                  "compatLayer",
+                  "audioEndpoint",
+                  "powerSetting",
+                  "windowsFeature"
+                ],
+                "description": "Entity kind."
+              },
+              "fromSignal": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Signal whose Entities supply candidates (supports a * wildcard segment, for example conflict.*.service_present). Null for template bindings that come only from a plan."
+              },
+              "pick": {
+                "enum": [
+                  "one",
+                  "all"
+                ],
+                "description": "One or all."
+              }
+            },
+            "required": [
+              "kind"
+            ],
+            "additionalProperties": false,
+            "description": "A binding: which entities a fix acts on."
+          },
+          "description": "Entity bindings by name (for example adapter, svc)."
+        },
+        "guards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "probe": {
+                "type": "string",
+                "description": "A GuardIds id or a live-probeable signal id."
+              },
+              "args": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "description": "Arguments (may reference $bind.id)."
+              },
+              "must": {
+                "enum": [
+                  "unknown",
+                  "false",
+                  "true",
+                  "notApplicable"
+                ],
+                "description": "Required value. An Unknown probe result never passes a Block guard."
+              },
+              "severity": {
+                "enum": [
+                  "block",
+                  "warn"
+                ],
+                "description": "Block or warn."
+              },
+              "failKey": {
+                "type": "string",
+                "description": "String key shown when the guard fails (\"Close VALORANT first\")."
+              }
+            },
+            "required": [
+              "probe",
+              "failKey"
+            ],
+            "additionalProperties": false,
+            "description": "A guard or preflight check."
+          },
+          "description": "Guards, re-evaluated with FRESH probes right before apply. The standard set (game not running, no pending reboot or WU install, disk free, not monitoring) is added by the FixRunner to every persistent fix."
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "op": {
+                "type": "string",
+                "description": "Primitive id, for example device.disable, service.setStartType."
+              },
+              "args": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "description": "Arguments (invariant strings; validated against the primitive's Args)."
+              },
+              "onFail": {
+                "enum": [
+                  "abort",
+                  "continue"
+                ],
+                "description": "Failure handling."
+              }
+            },
+            "required": [
+              "op"
+            ],
+            "additionalProperties": false,
+            "description": "One primitive step."
+          },
+          "description": "Primitive steps, applied in order; undone in reverse."
+        },
+        "verify": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "probe": {
+                "type": "string",
+                "description": "Primitive id whose ProbeAsync reads the state (for example device.disable reads device state), or a live probe id."
+              },
+              "args": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "description": "Arguments."
+              },
+              "expect": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "description": "Expected values of the probed state map (invariant strings, for example enabled = false)."
+              },
+              "when": {
+                "enum": [
+                  "immediate",
+                  "postReboot"
+                ],
+                "description": "When it runs."
+              }
+            },
+            "required": [
+              "probe",
+              "expect"
+            ],
+            "additionalProperties": false,
+            "description": "One verification check."
+          },
+          "description": "Mechanical verification (\"did the change land?\")."
+        },
+        "deadman": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "seconds": {
+              "type": "integer",
+              "description": "Countdown (seconds, default 60)."
+            },
+            "check": {
+              "type": "string",
+              "description": "Live probe that must stay True (default InternetReachable)."
+            }
+          },
+          "additionalProperties": false,
+          "description": "Auto-revert unless confirmed (required for network-cutting changes)."
+        },
+        "outcome": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "playtest",
+                "relaunch",
+                "errorGone",
+                "monitorCompare"
+              ],
+              "description": "Kind."
+            },
+            "askKey": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Question key (\"Did the stutter stop?\")."
+            },
+            "monitorSignals": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Monitor signals to compare before/after."
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "additionalProperties": false,
+          "description": "\"Did it help?\" measurement."
+        },
+        "drift": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "watch": {
+              "type": "boolean",
+              "description": "Watch for reverts."
+            },
+            "reasonKey": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Message key (\"Nahimic came back after a Windows update\")."
+            }
+          },
+          "required": [
+            "watch"
+          ],
+          "additionalProperties": false,
+          "description": "Re-probe on every rescan; offer to re-apply if Windows Update or an OEM tool reverted it."
+        },
+        "successPrior": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "success": {
+              "type": "integer",
+              "description": "Successes."
+            },
+            "trials": {
+              "type": "integer",
+              "description": "Trials."
+            }
+          },
+          "required": [
+            "success",
+            "trials"
+          ],
+          "additionalProperties": false,
+          "description": "Seed for P(fix works | cause), from the catalog's fix evidence counts."
+        },
+        "minApp": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Minimum app version that has every primitive used."
+        },
+        "tested": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Windows builds this fix was tested on (for example win11-25H2)."
+        },
+        "deprecated": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "since": {
+              "type": "string",
+              "description": "KB version that deprecated it."
+            },
+            "replacedBy": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Replacement id."
+            }
+          },
+          "required": [
+            "since"
+          ],
+          "additionalProperties": false,
+          "description": "Set when retired."
+        }
+      },
+      "required": [
+        "id",
+        "titleKey",
+        "explainKey",
+        "undoExplainKey",
+        "risk",
+        "reversibility"
+      ],
+      "additionalProperties": false,
+      "description": "A fix: JSON that only composes audited C# primitives (design_B.md section 4.3, about 25 IOperations). It contains no commands, scripts, URLs-as-actions or paths outside primitive allowlists. Argument values are invariant strings; $<bind>.id and $<bind>.name reference bound entities. Effective risk, reversibility, admin and reboot are computed from the primitives and may be raised, never lowered; a high-risk fix has no steps (guide only); a network-affecting fix must declare a Deadman. File: kb/fixes/<area>/<id>.json. Schema: kb/schema/fix.schema.json."
+    }
+  },
+  "anyOf": [
+    {
+      "$ref": "#/$defs/item"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  ]
+}

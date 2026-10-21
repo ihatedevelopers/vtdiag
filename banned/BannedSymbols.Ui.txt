@@ -1,0 +1,10 @@
+# VTDiag banned APIs: UI layer (VTD.App), on top of Common + ReadOnly. Owner: Lead.
+# The UI always runs unelevated as the player and holds no system-reading or system-writing interop:
+# it talks only to the Engine over IEngineRpc. Launching the engine ("runas") and opening an official link are
+# the only process starts, and they live in allowlisted files (banned/rs0030-allowlist.txt).
+
+T:System.Runtime.InteropServices.DllImportAttribute;The UI declares no P/Invoke. Ask the Engine over IEngineRpc, or request an allowlisted helper
+T:System.Runtime.InteropServices.LibraryImportAttribute;The UI declares no P/Invoke. Ask the Engine over IEngineRpc, or request an allowlisted helper
+M:System.Threading.Thread.Sleep(System.Int32);Never block the UI thread; await Task.Delay(TimeSpan, TimeProvider)
+M:System.Threading.Thread.Sleep(System.TimeSpan);Never block the UI thread; await Task.Delay(TimeSpan, TimeProvider)
+M:System.Environment.SetEnvironmentVariable(System.String,System.String);The UI does not change its environment

@@ -1,0 +1,126 @@
+{
+  "id": "guide.storage.chkdsk",
+  "titleKey": "guide.storage.chkdsk.title",
+  "summaryKey": "guide.storage.chkdsk.summary",
+  "bucket": "guidedManual",
+  "risk": "high",
+  "reboot": "required",
+  "appliesTo": [
+    "vanguard-blocks-chkdsk",
+    "corrupt-system-or-game-files"
+  ],
+  "preflight": [
+    {
+      "probe": "riot.game_running",
+      "must": "false",
+      "severity": "block",
+      "failKey": "guide.storage.chkdsk.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "dirty",
+      "when": [
+        {
+          "signal": "disk.dirty",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.storage.chkdsk.dirty.text",
+      "steps": [
+        {
+          "textKey": "guide.storage.chkdsk.dirty.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.dirty.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.dirty.s3",
+          "action": "copyText",
+          "target": "chkdsk C: /f /r"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.dirty.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.dirty.s5",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.dirty.s6",
+          "action": "copyText",
+          "target": "DISM /Online /Cleanup-Image /RestoreHealth"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.dirty.s7",
+          "action": "copyText",
+          "target": "sfc /scannow"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.dirty.s8",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "disk.dirty",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "when": [],
+      "textKey": "guide.storage.chkdsk.general.text",
+      "steps": [
+        {
+          "textKey": "guide.storage.chkdsk.general.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.general.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.general.s3",
+          "action": "copyText",
+          "target": "chkdsk C: /f /r"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.general.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.general.s5",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.general.s6",
+          "action": "copyText",
+          "target": "DISM /Online /Cleanup-Image /RestoreHealth"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.general.s7",
+          "action": "copyText",
+          "target": "sfc /scannow"
+        },
+        {
+          "textKey": "guide.storage.chkdsk.general.s8",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "disk.dirty",
+          "is": "false"
+        }
+      ]
+    }
+  ],
+  "outcomeAskKey": "guide.storage.chkdsk.outcome"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "secure-boot-policy-wave-2026",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "tpm_secureboot_bios",
+  "titleKey": "rule.secure-boot-policy-wave-2026.title",
+  "summaryKey": "rule.secure-boot-policy-wave-2026.summary",
+  "bucket": "riotOrAccount",
+  "symptoms": [
+    "error_code",
+    "bios_requirement"
+  ],
+  "prior": {
+    "threads": 7
+  },
+  "requires": [
+    "sec.secureboot.on"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "sb_on",
+      "signal": "sec.secureboot.on",
+      "true": 0.6,
+      "veto": "false"
+    },
+    {
+      "id": "ca2023",
+      "signal": "sec.secureboot.db_missing_ca2023",
+      "true": 1.2,
+      "textKey": "rule.secure-boot-policy-wave-2026.ev.ca2023"
+    },
+    {
+      "id": "bios_old",
+      "signal": "hw.bios_old",
+      "true": 0.4
+    }
+  ],
+  "wave": {
+    "from": "2026-05-01",
+    "to": "2026-12-31",
+    "boost": 0.4
+  },
+  "fixes": [],
+  "guides": [
+    "guide.secureboot.policy_wave",
+    "guide.riot.support_ticket"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "secure-boot-policy-wave-2026",
+    "threadCount": 7,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1tdrpic",
+      "1te3s1z",
+      "1thd7eq",
+      "1thf6vr",
+      "1thfcmq"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/penalties/error-van-restriction-1",
+      "https://support.riotgames.com/riot/client/secure-boot-guide",
+      "https://support.riotgames.com/riot/performance/error-van-status-sb-policy"
+    ]
+  }
+}

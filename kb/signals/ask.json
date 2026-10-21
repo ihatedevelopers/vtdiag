@@ -1,0 +1,116 @@
+[
+  {
+    "id": "ask.fps_drops_over_time",
+    "source": "ask",
+    "titleKey": "signal.ask.fps_drops_over_time.title",
+    "question": "ask.fps_drops_over_time"
+  },
+  {
+    "id": "ask.friends_same_server",
+    "source": "ask",
+    "titleKey": "signal.ask.friends_same_server.title",
+    "question": "ask.friends_same_server"
+  },
+  {
+    "id": "ask.league_also_broken",
+    "source": "ask",
+    "titleKey": "signal.ask.league_also_broken.title",
+    "question": "ask.league_also_broken"
+  },
+  {
+    "id": "ask.on_console",
+    "source": "ask",
+    "titleKey": "signal.ask.on_console.title",
+    "question": "ask.on_console"
+  },
+  {
+    "id": "ask.on_wifi_or_cable",
+    "source": "ask",
+    "titleKey": "signal.ask.on_wifi_or_cable.title",
+    "question": "ask.on_wifi_or_cable"
+  },
+  {
+    "id": "ask.on_wifi_or_cable.cable",
+    "source": "ask",
+    "titleKey": "signal.ask.on_wifi_or_cable.cable.title",
+    "question": "ask.on_wifi_or_cable"
+  },
+  {
+    "id": "ask.on_wifi_or_cable.unsure",
+    "source": "ask",
+    "titleKey": "signal.ask.on_wifi_or_cable.unsure.title",
+    "question": "ask.on_wifi_or_cable"
+  },
+  {
+    "id": "ask.on_wifi_or_cable.wifi",
+    "source": "ask",
+    "titleKey": "signal.ask.on_wifi_or_cable.wifi.title",
+    "question": "ask.on_wifi_or_cable"
+  },
+  {
+    "id": "ask.only_first_matches",
+    "source": "ask",
+    "titleKey": "signal.ask.only_first_matches.title",
+    "question": "ask.only_first_matches"
+  },
+  {
+    "id": "ask.only_valorant_affected",
+    "source": "ask",
+    "titleKey": "signal.ask.only_valorant_affected.title",
+    "question": "ask.only_valorant_affected"
+  },
+  {
+    "id": "ask.other_account_works",
+    "source": "ask",
+    "titleKey": "signal.ask.other_account_works.title",
+    "question": "ask.other_account_works"
+  },
+  {
+    "id": "ask.others_cant_hear_me",
+    "source": "ask",
+    "titleKey": "signal.ask.others_cant_hear_me.title",
+    "question": "ask.others_cant_hear_me"
+  },
+  {
+    "id": "ask.pc_built_recently",
+    "source": "ask",
+    "titleKey": "signal.ask.pc_built_recently.title",
+    "question": "ask.pc_built_recently"
+  },
+  {
+    "id": "ask.secureboot_enable_broke_boot",
+    "source": "ask",
+    "titleKey": "signal.ask.secureboot_enable_broke_boot.title",
+    "question": "ask.secureboot_enable_broke_boot"
+  },
+  {
+    "id": "ask.started_after_update",
+    "source": "ask",
+    "titleKey": "signal.ask.started_after_update.title",
+    "question": "ask.started_after_update"
+  },
+  {
+    "id": "ask.stutter_periodic",
+    "source": "ask",
+    "titleKey": "signal.ask.stutter_periodic.title",
+    "question": "ask.stutter_periodic"
+  },
+  {
+    "id": "ask.uses_bluetooth_headset",
+    "source": "ask",
+    "titleKey": "signal.ask.uses_bluetooth_headset.title",
+    "question": "ask.uses_bluetooth_headset"
+  },
+  {
+    "id": "ask.vanguard_precheck_on",
+    "source": "ask",
+    "titleKey": "signal.ask.vanguard_precheck_on.title",
+    "question": "ask.vanguard_precheck_on"
+  },
+  {
+    "id": "ask.whole_pc_freezes",
+    "source": "ask",
+    "titleKey": "signal.ask.whole_pc_freezes.title",
+    "question": "ask.whole_pc_freezes"
+  }
+]

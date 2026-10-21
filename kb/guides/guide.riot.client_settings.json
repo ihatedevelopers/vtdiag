@@ -1,0 +1,99 @@
+{
+  "id": "guide.riot.client_settings",
+  "titleKey": "guide.riot.client_settings.title",
+  "summaryKey": "guide.riot.client_settings.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "terms-not-accepted-failed-to-launch",
+    "riot-client-hardware-acceleration",
+    "launch-shortcut-tray-failure",
+    "riot-client-not-elevated"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "terms",
+      "when": [],
+      "textKey": "guide.riot.client_settings.terms.text",
+      "steps": [
+        {
+          "textKey": "guide.riot.client_settings.terms.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_settings.terms.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_settings.terms.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_settings.terms.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "hw_accel",
+      "when": [],
+      "textKey": "guide.riot.client_settings.hw_accel.text",
+      "steps": [
+        {
+          "textKey": "guide.riot.client_settings.hw_accel.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_settings.hw_accel.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_settings.hw_accel.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_settings.hw_accel.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "tray_launch",
+      "when": [],
+      "textKey": "guide.riot.client_settings.tray_launch.text",
+      "steps": [
+        {
+          "textKey": "guide.riot.client_settings.tray_launch.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_settings.tray_launch.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_settings.tray_launch.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_settings.tray_launch.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_settings.tray_launch.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_settings.tray_launch.s6",
+          "action": "runFix",
+          "target": "fix.riot.client_runasadmin"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.riot.client_settings.outcome"
+}

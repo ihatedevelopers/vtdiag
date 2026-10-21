@@ -1,0 +1,93 @@
+{
+  "id": "amd-adrenalin-driver-regression",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "gpu_driver",
+  "titleKey": "rule.amd-adrenalin-driver-regression.title",
+  "summaryKey": "rule.amd-adrenalin-driver-regression.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "freeze_hard",
+    "crash_desktop",
+    "stutter",
+    "display_issue"
+  ],
+  "prior": {
+    "threads": 21
+  },
+  "requires": [
+    "gpu.amd_dgpu"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "amd",
+      "signal": "gpu.amd_dgpu",
+      "true": 0.6,
+      "veto": "false"
+    },
+    {
+      "id": "tdr",
+      "signal": "events.display_tdr",
+      "true": 1.5,
+      "textKey": "rule.amd-adrenalin-driver-regression.ev.tdr"
+    },
+    {
+      "id": "d3d",
+      "signal": "log.d3d_device_lost",
+      "true": 1.2,
+      "textKey": "rule.amd-adrenalin-driver-regression.ev.d3d"
+    },
+    {
+      "id": "gpu_crash",
+      "signal": "crash.gpu",
+      "true": 1.0
+    },
+    {
+      "id": "new",
+      "signal": "gpu.driver_recently_changed",
+      "true": 0.8
+    },
+    {
+      "id": "features",
+      "signal": "conflict.amd_adrenalin_features.running",
+      "true": 0.3
+    },
+    {
+      "id": "mpo",
+      "signal": "display.mpo_enabled",
+      "true": 0.2
+    },
+    {
+      "id": "after_update",
+      "signal": "ask.started_after_update",
+      "true": 0.4,
+      "ask": "ask.started_after_update"
+    }
+  ],
+  "fixes": [
+    "fix.display.mpo_off",
+    "fix.display.hags_off"
+  ],
+  "guides": [
+    "guide.gpu.clean_driver"
+  ],
+  "questions": [],
+  "supersedes": [
+    "conflict-amd_adrenalin_features"
+  ],
+  "related": [],
+  "sources": {
+    "catalog": "amd-adrenalin-driver-regression",
+    "threadCount": 21,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1t7nvs0",
+      "1t7y2yq",
+      "1t7y3p2",
+      "1t8madn",
+      "1t8qfuh"
+    ],
+    "urls": []
+  }
+}

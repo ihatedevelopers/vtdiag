@@ -1,0 +1,47 @@
+{
+  "id": "van-restriction-hwid",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.van-restriction-hwid.title",
+  "summaryKey": "rule.van-restriction-hwid.summary",
+  "bucket": "riotOrAccount",
+  "symptoms": [
+    "error_code"
+  ],
+  "prior": {
+    "threads": 3
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "dualboot",
+      "signal": "fw.dualboot",
+      "true": 0.3
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.riot.support_ticket"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "van-restriction-hwid",
+    "threadCount": 3,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1q28pby",
+      "1q7oxxb",
+      "1v7msu8"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/penalties/error-van-restriction",
+      "https://riotgames.com/en/news/vanguard-security-update-motherboard",
+      "https://support.riotgames.com/riot/support-tools/enabling-iommu",
+      "https://support.riotgames.com/riot/performance/error-van-152"
+    ]
+  }
+}

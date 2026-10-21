@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Owner: Lead ONLY. Every other agent consumes this project and never edits it: request changes in your report.
+    DTOs, records, enums, interfaces and the JSON contract. No package dependencies, no I/O, no system access.
+    The only logic allowed here is contract-defining: Fact<T> semantics, its JSON converter, id generation,
+    the canonical hash used for consent binding, and constants that two or more agents must agree on.
+  -->
+  <PropertyGroup>
+    <RootNamespace>VTD.Contracts</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>false</IsPackable>
+    <!-- SYSLIB1034: the camelCase enum converter is the non-generic JsonStringEnumConverter, which is not Native-AOT
+         friendly. VTDiag is not AOT-compiled (self-contained JIT, no trimming), so this is accepted deliberately. -->
+    <NoWarn>$(NoWarn);SYSLIB1034</NoWarn>
+  </PropertyGroup>
+</Project>

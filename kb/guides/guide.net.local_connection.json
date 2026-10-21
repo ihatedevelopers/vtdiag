@@ -1,0 +1,225 @@
+{
+  "id": "guide.net.local_connection",
+  "titleKey": "guide.net.local_connection.title",
+  "summaryKey": "guide.net.local_connection.summary",
+  "bucket": "externalNetwork",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "local-network-packet-loss-jitter",
+    "dual-network-adapter-desync",
+    "frametime-latency-spikes"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "two_connections",
+      "when": [
+        {
+          "signal": "net.multi_nic_up",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.net.local_connection.two_connections.text",
+      "steps": [
+        {
+          "textKey": "guide.net.local_connection.two_connections.s1",
+          "action": "runFix",
+          "target": "fix.net.disable_second_adapter"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "net.multi_nic_up",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "wifi_weak",
+      "when": [
+        {
+          "signal": "net.on_wifi",
+          "is": "true"
+        },
+        {
+          "signal": "net.wifi_weak",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.net.local_connection.wifi_weak.text",
+      "steps": [
+        {
+          "textKey": "guide.net.local_connection.wifi_weak.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.wifi_weak.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.wifi_weak.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.wifi_weak.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.wifi_weak.s5",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "net.wifi_weak",
+          "is": "false"
+        }
+      ],
+      "nextOnFail": "cable"
+    },
+    {
+      "id": "wifi_24",
+      "when": [
+        {
+          "signal": "net.on_wifi",
+          "is": "true"
+        },
+        {
+          "signal": "net.wifi_2_4ghz",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.net.local_connection.wifi_24.text",
+      "steps": [
+        {
+          "textKey": "guide.net.local_connection.wifi_24.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.wifi_24.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.wifi_24.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.wifi_24.s4",
+          "action": "openSettings",
+          "target": "ms-settings:network-status"
+        },
+        {
+          "textKey": "guide.net.local_connection.wifi_24.s5",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "net.wifi_2_4ghz",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "cable",
+      "when": [
+        {
+          "signal": "net.on_wifi",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.net.local_connection.cable.text",
+      "steps": [
+        {
+          "textKey": "guide.net.local_connection.cable.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.cable.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.cable.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.cable.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "router",
+      "when": [
+        {
+          "signal": "net.gateway_loss",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.net.local_connection.router.text",
+      "steps": [
+        {
+          "textKey": "guide.net.local_connection.router.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.router.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.router.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.router.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.router.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.router.s6",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "net.gateway_loss",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "when": [],
+      "textKey": "guide.net.local_connection.general.text",
+      "steps": [
+        {
+          "textKey": "guide.net.local_connection.general.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.general.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.general.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.general.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.local_connection.general.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.net.local_connection.outcome"
+}

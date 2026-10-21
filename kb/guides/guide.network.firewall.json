@@ -1,0 +1,120 @@
+{
+  "id": "guide.network.firewall",
+  "titleKey": "guide.network.firewall.title",
+  "summaryKey": "guide.network.firewall.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "network-exceptions-download-stuck"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "block_rules",
+      "when": [
+        {
+          "signal": "net.firewall_blocks_riot",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.network.firewall.block_rules.text",
+      "steps": [
+        {
+          "textKey": "guide.network.firewall.block_rules.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.network.firewall.block_rules.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.network.firewall.block_rules.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.network.firewall.block_rules.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.network.firewall.block_rules.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.network.firewall.block_rules.s6",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "net.firewall_blocks_riot",
+          "is": "false"
+        }
+      ],
+      "nextOnFail": "allow"
+    },
+    {
+      "id": "third_party",
+      "when": [
+        {
+          "signal": "sec.third_party_av",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.network.firewall.third_party.text",
+      "steps": [
+        {
+          "textKey": "guide.network.firewall.third_party.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.network.firewall.third_party.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.network.firewall.third_party.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.network.firewall.third_party.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "allow",
+      "when": [],
+      "textKey": "guide.network.firewall.allow.text",
+      "steps": [
+        {
+          "textKey": "guide.network.firewall.allow.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsdefender"
+        },
+        {
+          "textKey": "guide.network.firewall.allow.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.network.firewall.allow.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.network.firewall.allow.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.network.firewall.allow.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.network.firewall.allow.s6",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.network.firewall.outcome"
+}

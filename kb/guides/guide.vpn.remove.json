@@ -1,0 +1,177 @@
+{
+  "id": "guide.vpn.remove",
+  "titleKey": "guide.vpn.remove.title",
+  "summaryKey": "guide.vpn.remove.summary",
+  "bucket": "guidedManual",
+  "risk": "medium",
+  "reboot": "recommended",
+  "appliesTo": [
+    "vpn-anticheat-network-filter-conflict"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "vpn_on",
+      "when": [
+        {
+          "signal": "net.vpn_adapter_up",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.vpn.remove.vpn_on.text",
+      "steps": [
+        {
+          "textKey": "guide.vpn.remove.vpn_on.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.vpn_on.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.vpn_on.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.vpn_on.s4",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "net.vpn_adapter_up",
+          "is": "false"
+        }
+      ],
+      "nextOnFail": "uninstall"
+    },
+    {
+      "id": "proxy",
+      "when": [
+        {
+          "signal": "net.proxy_on",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.vpn.remove.proxy.text",
+      "steps": [
+        {
+          "textKey": "guide.vpn.remove.proxy.s1",
+          "action": "openSettings",
+          "target": "ms-settings:network-status"
+        },
+        {
+          "textKey": "guide.vpn.remove.proxy.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.proxy.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.proxy.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.proxy.s5",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "net.proxy_on",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "service",
+      "when": [],
+      "textKey": "guide.vpn.remove.service.text",
+      "steps": [
+        {
+          "textKey": "guide.vpn.remove.service.s1",
+          "action": "runFix",
+          "target": "fix.svc.disable_conflict_service"
+        },
+        {
+          "textKey": "guide.vpn.remove.service.s2",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "uninstall"
+    },
+    {
+      "id": "uninstall",
+      "when": [],
+      "textKey": "guide.vpn.remove.uninstall.text",
+      "steps": [
+        {
+          "textKey": "guide.vpn.remove.uninstall.s1",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.vpn.remove.uninstall.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.uninstall.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.uninstall.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.uninstall.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.uninstall.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.uninstall.s7",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "adapters"
+    },
+    {
+      "id": "adapters",
+      "when": [],
+      "textKey": "guide.vpn.remove.adapters.text",
+      "steps": [
+        {
+          "textKey": "guide.vpn.remove.adapters.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.adapters.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.adapters.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.adapters.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.adapters.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vpn.remove.adapters.s6",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.vpn.remove.outcome"
+}

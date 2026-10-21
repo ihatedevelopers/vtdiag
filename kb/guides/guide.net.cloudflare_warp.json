@@ -1,0 +1,119 @@
+{
+  "id": "guide.net.cloudflare_warp",
+  "titleKey": "guide.net.cloudflare_warp.title",
+  "summaryKey": "guide.net.cloudflare_warp.summary",
+  "bucket": "externalNetwork",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "isp-routing-high-ping",
+    "network-exceptions-download-stuck",
+    "slow-download-riot-cdn"
+  ],
+  "preflight": [
+    {
+      "probe": "net.gateway_loss",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.net.cloudflare_warp.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "server_wide",
+      "when": [
+        {
+          "signal": "ask.friends_same_server",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.net.cloudflare_warp.server_wide.text",
+      "steps": [
+        {
+          "textKey": "guide.net.cloudflare_warp.server_wide.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.cloudflare_warp.server_wide.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.cloudflare_warp.server_wide.s3",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "warp",
+      "when": [],
+      "textKey": "guide.net.cloudflare_warp.warp.text",
+      "steps": [
+        {
+          "textKey": "guide.net.cloudflare_warp.warp.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.cloudflare_warp.warp.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.cloudflare_warp.warp.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.cloudflare_warp.warp.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.cloudflare_warp.warp.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.cloudflare_warp.warp.s6",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "net.region_ping_high",
+          "is": "false"
+        }
+      ],
+      "nextOnFail": "tell_isp"
+    },
+    {
+      "id": "tell_isp",
+      "when": [],
+      "textKey": "guide.net.cloudflare_warp.tell_isp.text",
+      "steps": [
+        {
+          "textKey": "guide.net.cloudflare_warp.tell_isp.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.cloudflare_warp.tell_isp.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.cloudflare_warp.tell_isp.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.cloudflare_warp.tell_isp.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.cloudflare_warp.tell_isp.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.cloudflare_warp.tell_isp.s6",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.net.cloudflare_warp.outcome"
+}

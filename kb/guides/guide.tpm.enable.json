@@ -1,0 +1,231 @@
+{
+  "id": "guide.tpm.enable",
+  "titleKey": "guide.tpm.enable.title",
+  "summaryKey": "guide.tpm.enable.summary",
+  "bucket": "guidedManual",
+  "risk": "high",
+  "reboot": "required",
+  "appliesTo": [
+    "tpm2-missing-or-unmet"
+  ],
+  "preflight": [
+    {
+      "probe": "sec.bitlocker_on",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.tpm.enable.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "tpm12_only",
+      "when": [
+        {
+          "signal": "sec.tpm.present",
+          "is": "true"
+        },
+        {
+          "signal": "sec.tpm2",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.tpm.enable.tpm12_only.text",
+      "steps": [
+        {
+          "textKey": "guide.tpm.enable.tpm12_only.s1",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.tpm.enable.tpm12_only.s2",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.tpm.enable.tpm12_only.s3",
+          "action": "runCheck",
+          "target": "sec.tpm2"
+        },
+        {
+          "textKey": "guide.tpm.enable.tpm12_only.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.tpm12_only.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.tpm12_only.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.tpm12_only.s7",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.tpm2",
+          "is": "true"
+        }
+      ]
+    },
+    {
+      "id": "not_ready",
+      "when": [
+        {
+          "signal": "sec.tpm.present",
+          "is": "true"
+        },
+        {
+          "signal": "sec.tpm.not_ready",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.tpm.enable.not_ready.text",
+      "steps": [
+        {
+          "textKey": "guide.tpm.enable.not_ready.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.not_ready.s2",
+          "action": "runCheck",
+          "target": "sec.tpm.not_ready"
+        },
+        {
+          "textKey": "guide.tpm.enable.not_ready.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.not_ready.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.not_ready.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.not_ready.s6",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.tpm.enable.not_ready.s7",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.tpm.enable.not_ready.s8",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.tpm.not_ready",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "no_tpm",
+      "when": [
+        {
+          "signal": "sec.tpm.present",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.tpm.enable.no_tpm.text",
+      "steps": [
+        {
+          "textKey": "guide.tpm.enable.no_tpm.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.no_tpm.s2",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.tpm.enable.no_tpm.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.no_tpm.s4",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.tpm.enable.no_tpm.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.no_tpm.s6",
+          "action": "runCheck",
+          "target": "sec.tpm2"
+        },
+        {
+          "textKey": "guide.tpm.enable.no_tpm.s7",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.tpm.present",
+          "is": "true"
+        },
+        {
+          "signal": "sec.tpm2",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "tpm12_only"
+    },
+    {
+      "id": "general",
+      "when": [],
+      "textKey": "guide.tpm.enable.general.text",
+      "steps": [
+        {
+          "textKey": "guide.tpm.enable.general.s1",
+          "action": "runCheck",
+          "target": "sec.tpm2"
+        },
+        {
+          "textKey": "guide.tpm.enable.general.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.general.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.general.s4",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.tpm.enable.general.s5",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.tpm.enable.general.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.tpm.enable.general.s7",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.tpm2",
+          "is": "true"
+        }
+      ]
+    }
+  ],
+  "docsPath": "docs/guides/tpm.md",
+  "outcomeAskKey": "guide.tpm.enable.outcome"
+}

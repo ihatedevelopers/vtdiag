@@ -1,0 +1,89 @@
+{
+  "id": "vgc-service-not-running",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.vgc-service-not-running.title",
+  "summaryKey": "rule.vgc-service-not-running.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "error_code",
+    "wont_launch",
+    "launch_black_screen"
+  ],
+  "prior": {
+    "threads": 5
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "disabled",
+      "signal": "vg.vgc_disabled",
+      "true": 2.5,
+      "textKey": "rule.vgc-service-not-running.ev.disabled"
+    },
+    {
+      "id": "needed",
+      "signal": "vg.vgc_automatic_needed",
+      "true": 1.5,
+      "group": "vgc_fail"
+    },
+    {
+      "id": "never",
+      "signal": "vg.vgc_never_started",
+      "true": 1.2,
+      "group": "vgc_fail",
+      "textKey": "rule.vgc-service-not-running.ev.never"
+    },
+    {
+      "id": "running",
+      "signal": "vg.vgc_running",
+      "true": -1.2
+    },
+    {
+      "id": "precheck",
+      "signal": "ask.vanguard_precheck_on",
+      "true": -1.0,
+      "ask": "ask.vanguard_precheck_on"
+    },
+    {
+      "id": "insider",
+      "signal": "os.insider",
+      "true": 0.6
+    },
+    {
+      "id": "vg_log",
+      "signal": "log.vanguard_init_failed",
+      "true": 1.0
+    }
+  ],
+  "fixes": [
+    "fix.vg.vgc_automatic"
+  ],
+  "guides": [
+    "guide.vanguard.precheck",
+    "guide.vanguard.reinstall"
+  ],
+  "questions": [
+    "ask.vanguard_precheck_on"
+  ],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "vgc-service-not-running",
+    "threadCount": 5,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1rldj6n",
+      "1s3zr6h",
+      "1sbmqlg",
+      "1sjezkc",
+      "1wp8boi"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/client/error-van-9001",
+      "https://support.riotgames.com/riot/client/tpm-20-guide"
+    ]
+  }
+}

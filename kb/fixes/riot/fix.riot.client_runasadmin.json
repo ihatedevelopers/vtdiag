@@ -1,0 +1,63 @@
+{
+  "id": "fix.riot.client_runasadmin",
+  "titleKey": "fix.riot.client_runasadmin.title",
+  "explainKey": "fix.riot.client_runasadmin.explain",
+  "undoExplainKey": "fix.riot.client_runasadmin.undo",
+  "noticeKey": "fix.riot.client_runasadmin.notice",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "none",
+  "scope": "persistent",
+  "estMinutes": 0.3,
+  "appliesTo": [
+    "riot-client-not-elevated"
+  ],
+  "bind": {
+    "exe": {
+      "kind": "file",
+      "fromSignal": "riot.client_not_elevated",
+      "pick": "one"
+    }
+  },
+  "guards": [],
+  "steps": [
+    {
+      "op": "appcompat.setLayers",
+      "args": {
+        "exePath": "$exe.id",
+        "hive": "HKCU",
+        "layers": "~ RUNASADMIN"
+      },
+      "onFail": "abort"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "appcompat.setLayers",
+      "args": {
+        "exePath": "$exe.id",
+        "hive": "HKCU",
+        "layers": "~ RUNASADMIN"
+      },
+      "expect": {
+        "exists": "true"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "relaunch",
+    "askKey": "outcome.past_loading_screen"
+  },
+  "successPrior": {
+    "success": 7,
+    "trials": 10
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

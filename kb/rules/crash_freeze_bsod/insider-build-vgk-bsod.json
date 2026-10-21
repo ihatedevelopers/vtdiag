@@ -1,0 +1,55 @@
+{
+  "id": "insider-build-vgk-bsod",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "crash_freeze_bsod",
+  "titleKey": "rule.insider-build-vgk-bsod.title",
+  "summaryKey": "rule.insider-build-vgk-bsod.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "freeze_hard",
+    "error_code",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 3
+  },
+  "requires": [
+    "os.insider"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "insider",
+      "signal": "os.insider",
+      "true": 2.5,
+      "veto": "false",
+      "textKey": "rule.insider-build-vgk-bsod.ev.insider"
+    },
+    {
+      "id": "vgk_bsod",
+      "signal": "events.bugcheck_vgk",
+      "true": 1.0
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.windows.update"
+  ],
+  "questions": [],
+  "supersedes": [
+    "conflict-windows_insider"
+  ],
+  "related": [],
+  "sources": {
+    "catalog": "insider-build-vgk-bsod",
+    "threadCount": 3,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1s5zmes",
+      "1sceo31",
+      "1sh04kq"
+    ],
+    "urls": []
+  }
+}

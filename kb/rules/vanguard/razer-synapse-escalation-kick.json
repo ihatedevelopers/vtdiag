@@ -1,0 +1,53 @@
+{
+  "id": "razer-synapse-escalation-kick",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.razer-synapse-escalation-kick.title",
+  "summaryKey": "rule.razer-synapse-escalation-kick.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "disconnect",
+    "error_code"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [
+    "conflict.razer_synapse.installed"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "installed",
+      "signal": "conflict.razer_synapse.installed",
+      "true": 0.8,
+      "veto": "false"
+    },
+    {
+      "id": "service",
+      "signal": "conflict.razer_synapse.service_present",
+      "true": 0.8
+    }
+  ],
+  "fixes": [
+    "fix.svc.disable_conflict_service"
+  ],
+  "guides": [
+    "guide.apps.uninstall_conflict"
+  ],
+  "questions": [],
+  "supersedes": [
+    "conflict-razer_synapse"
+  ],
+  "related": [],
+  "sources": {
+    "catalog": "razer-synapse-escalation-kick",
+    "threadCount": 1,
+    "evidence": "guide",
+    "threadIds": [
+      "1selw1n"
+    ],
+    "urls": []
+  }
+}

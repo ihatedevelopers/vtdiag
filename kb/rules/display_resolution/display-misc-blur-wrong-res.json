@@ -1,0 +1,54 @@
+{
+  "id": "display-misc-blur-wrong-res",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "display_resolution",
+  "titleKey": "rule.display-misc-blur-wrong-res.title",
+  "summaryKey": "rule.display-misc-blur-wrong-res.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "display_issue"
+  ],
+  "prior": {
+    "threads": 11
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "multi",
+      "signal": "display.multi_monitor",
+      "true": 0.5
+    },
+    {
+      "id": "problem",
+      "signal": "dev.problem_devices",
+      "true": 0.4
+    },
+    {
+      "id": "hdr",
+      "signal": "display.hdr_on",
+      "true": 0.3
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.display.settings"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "display-misc-blur-wrong-res",
+    "threadCount": 11,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1odbqn0",
+      "1oqcuks",
+      "1snyh8y",
+      "1uj694k",
+      "1vke7d3"
+    ],
+    "urls": []
+  }
+}

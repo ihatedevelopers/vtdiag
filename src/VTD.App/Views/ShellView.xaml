@@ -1,0 +1,116 @@
+<UserControl x:Class="VTD.App.Views.ShellView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:VTD.App.Controls"
+             xmlns:l="clr-namespace:VTD.App.Localization"
+             Background="{StaticResource InkBrush}"
+             TextElement.FontFamily="{StaticResource BodyFont}"
+             TextElement.Foreground="{StaticResource TextBrush}"
+             TextOptions.TextFormattingMode="Display">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="236" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <!-- Route rail -->
+    <Border Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource LineBrush}" BorderThickness="0,0,1,0">
+      <DockPanel Margin="24,26,18,20">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,34">
+          <Grid Width="30" Height="30">
+            <Path Data="M0,0 L22,0 L30,8 L30,30 L0,30 Z" Fill="{StaticResource RaisedBrush}" Stroke="{StaticResource LineStrongBrush}" StrokeThickness="1" />
+            <Path Data="M8,15.5 L13,20.5 L22.5,10" Stroke="{StaticResource BoneBrush}" StrokeThickness="2.6" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" />
+          </Grid>
+          <TextBlock Text="VTDiag" FontFamily="{StaticResource DisplayFont}" FontWeight="SemiBold" FontSize="21" VerticalAlignment="Center" Margin="12,0,0,0" Foreground="{StaticResource TextBrush}" />
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom">
+          <Button Style="{StaticResource Ghost}" Content="{l:T Nav.Undo}" Command="{Binding GoUndoCommand}" />
+          <Button Style="{StaticResource Ghost}" Content="{l:T Nav.Report}" Command="{Binding GoReportCommand}" />
+          <Button Style="{StaticResource Ghost}" Content="{l:T Nav.Plan}" Command="{Binding GoPlanImportCommand}" />
+          <Button Style="{StaticResource Ghost}" Content="{l:T Nav.Helper}" Command="{Binding GoHelperCommand}" />
+          <Button Style="{StaticResource Ghost}" Content="{l:T Nav.Settings}" Command="{Binding GoSettingsCommand}" />
+          <Button Style="{StaticResource Ghost}" Content="{l:T Nav.About}" Command="{Binding GoAboutCommand}" />
+          <TextBlock Text="{l:T Common.NotAffiliated}" Style="{StaticResource Small}" FontSize="11" Foreground="{StaticResource TextFaintBrush}" Margin="10,14,0,0" />
+        </StackPanel>
+
+        <ItemsControl ItemsSource="{Binding Rail}" Focusable="False" VerticalAlignment="Top">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <Grid Height="46">
+                <Grid.ColumnDefinitions><ColumnDefinition Width="30" /><ColumnDefinition /></Grid.ColumnDefinitions>
+                <!-- the route line -->
+                <Rectangle Width="1" Fill="{StaticResource LineStrongBrush}" HorizontalAlignment="Center" Margin="0,24,0,-2" Visibility="{Binding IsLast, Converter={StaticResource Visible}, ConverterParameter=invert}" />
+                <Grid Width="22" Height="22" VerticalAlignment="Top">
+                  <Rectangle x:Name="Marker" Width="15" Height="15" Fill="{StaticResource SurfaceBrush}" Stroke="{StaticResource LineStrongBrush}" StrokeThickness="1.5" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform><RotateTransform Angle="45" /></Rectangle.RenderTransform>
+                  </Rectangle>
+                  <TextBlock x:Name="Num" Text="{Binding Number}" FontSize="10" FontWeight="SemiBold" FontFamily="{StaticResource DisplayFont}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource TextFaintBrush}" />
+                </Grid>
+                <TextBlock x:Name="Label" Grid.Column="1" Text="{Binding Label}" FontFamily="{StaticResource DisplayFont}" FontSize="14.5" Foreground="{StaticResource TextFaintBrush}" Margin="8,2,0,0" VerticalAlignment="Top" />
+              </Grid>
+              <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding IsDone}" Value="True">
+                  <Setter TargetName="Marker" Property="Fill" Value="{StaticResource RaisedBrush}" />
+                  <Setter TargetName="Marker" Property="Stroke" Value="{StaticResource GoodBrush}" />
+                  <Setter TargetName="Num" Property="Foreground" Value="{StaticResource GoodBrush}" />
+                  <Setter TargetName="Label" Property="Foreground" Value="{StaticResource TextMutedBrush}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsCurrent}" Value="True">
+                  <Setter TargetName="Marker" Property="Fill" Value="{StaticResource BoneBrush}" />
+                  <Setter TargetName="Marker" Property="Stroke" Value="{StaticResource BoneBrush}" />
+                  <Setter TargetName="Num" Property="Foreground" Value="{StaticResource InkBrush}" />
+                  <Setter TargetName="Label" Property="Foreground" Value="{StaticResource TextBrush}" />
+                  <Setter TargetName="Label" Property="FontWeight" Value="SemiBold" />
+                </DataTrigger>
+              </DataTemplate.Triggers>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </DockPanel>
+    </Border>
+
+    <!-- Content -->
+    <DockPanel Grid.Column="1">
+      <Grid DockPanel.Dock="Top" Margin="48,18,32,0">
+        <Button Style="{StaticResource Ghost}" Content="{l:T Nav.Back}" Command="{Binding BackCommand}" HorizontalAlignment="Left"
+                Visibility="{Binding IsSidePage, Converter={StaticResource Visible}}" Margin="-10,0,0,0" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+          <Button x:Name="En" Style="{StaticResource Ghost}" Content="EN" Command="{Binding SetLanguageCommand}" CommandParameter="en" AutomationProperties.Name="English" />
+          <Button x:Name="Tr" Style="{StaticResource Ghost}" Content="TR" Command="{Binding SetLanguageCommand}" CommandParameter="tr" AutomationProperties.Name="Türkçe" />
+        </StackPanel>
+      </Grid>
+
+      <c:ChamferBorder DockPanel.Dock="Top" Background="{StaticResource WarnWashBrush}" BorderBrush="{StaticResource WarnBrush}" Chamfer="8" Padding="14,8" Margin="48,10,32,0"
+                       Visibility="{Binding IsDemo, Converter={StaticResource Visible}}">
+        <TextBlock Style="{StaticResource Small}" Foreground="{StaticResource WarnBrush}" Text="{l:T Banner.Demo}" MaxWidth="900" />
+      </c:ChamferBorder>
+      <c:ChamferBorder DockPanel.Dock="Top" Background="{StaticResource UnknownWashBrush}" BorderBrush="{StaticResource UnknownToneBrush}" Chamfer="8" Padding="14,8" Margin="48,8,32,0"
+                       Visibility="{Binding IsLimited, Converter={StaticResource Visible}}">
+        <TextBlock Style="{StaticResource Small}" Foreground="{StaticResource UnknownToneBrush}" Text="{l:T Banner.Limited}" MaxWidth="900" />
+      </c:ChamferBorder>
+      <c:ChamferBorder DockPanel.Dock="Top" Background="{StaticResource FailWashBrush}" BorderBrush="{StaticResource FailBrush}" Chamfer="8" Padding="14,8" Margin="48,8,32,0"
+                       Visibility="{Binding Error, Converter={StaticResource Visible}}">
+        <DockPanel>
+          <Button DockPanel.Dock="Right" Style="{StaticResource Ghost}" Content="{l:T Common.Dismiss}" Command="{Binding DismissErrorCommand}" Padding="8,2" MinHeight="0" />
+          <TextBlock Style="{StaticResource Body}" Text="{Binding Error}" VerticalAlignment="Center" />
+        </DockPanel>
+      </c:ChamferBorder>
+      <c:ChamferBorder DockPanel.Dock="Top" Background="{StaticResource GoodWashBrush}" BorderBrush="{StaticResource GoodBrush}" Chamfer="8" Padding="14,8" Margin="48,8,32,0"
+                       Visibility="{Binding Banner, Converter={StaticResource Visible}}">
+        <TextBlock Style="{StaticResource Small}" Foreground="{StaticResource GoodBrush}" Text="{Binding Banner}" />
+      </c:ChamferBorder>
+
+      <ScrollViewer x:Name="Scroller" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Focusable="False">
+        <!-- One reading column, left-aligned, at most 860 wide (cards line up on every page). -->
+        <Grid Margin="48,26,40,40">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MaxWidth="860" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <ContentControl Content="{Binding Page}" Focusable="False" IsTabStop="False" />
+        </Grid>
+      </ScrollViewer>
+    </DockPanel>
+  </Grid>
+</UserControl>

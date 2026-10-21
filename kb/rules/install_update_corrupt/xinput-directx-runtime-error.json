@@ -1,0 +1,47 @@
+{
+  "id": "xinput-directx-runtime-error",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "install_update_corrupt",
+  "titleKey": "rule.xinput-directx-runtime-error.title",
+  "summaryKey": "rule.xinput-directx-runtime-error.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "wont_launch",
+    "crash_desktop"
+  ],
+  "prior": {
+    "threads": 2
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "vcredist",
+      "signal": "apps.vcredist_missing",
+      "true": 0.5
+    },
+    {
+      "id": "n",
+      "signal": "os.windows_n",
+      "true": 0.8
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.runtimes.install"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "xinput-directx-runtime-error",
+    "threadCount": 2,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1ocmdx0",
+      "1sce18i"
+    ],
+    "urls": []
+  }
+}

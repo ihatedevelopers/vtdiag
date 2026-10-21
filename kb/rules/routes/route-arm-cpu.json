@@ -1,0 +1,24 @@
+{
+  "id": "route-arm-cpu",
+  "rev": 1,
+  "kind": "route",
+  "category": "other",
+  "titleKey": "rule.route-arm-cpu.title",
+  "summaryKey": "rule.route-arm-cpu.summary",
+  "bucket": "riotOrAccount",
+  "route": "unsupportedPlatform",
+  "symptoms": [],
+  "prior": {
+    "threads": 0
+  },
+  "requires": [
+    "hw.cpu_arm"
+  ],
+  "excludes": [],
+  "evidence": [],
+  "fixes": [],
+  "guides": [],
+  "questions": [],
+  "supersedes": [],
+  "related": []
+}

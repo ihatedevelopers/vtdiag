@@ -1,0 +1,66 @@
+{
+  "id": "riot-client-update-stuck",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "install_update_corrupt",
+  "titleKey": "rule.riot-client-update-stuck.title",
+  "summaryKey": "rule.riot-client-update-stuck.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "install_update",
+    "login_issue",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 17
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "pending",
+      "signal": "os.pending_reboot",
+      "true": 0.6
+    },
+    {
+      "id": "non_ascii",
+      "signal": "riot.path_non_ascii",
+      "true": 1.0,
+      "textKey": "rule.riot-client-update-stuck.ev.non_ascii"
+    },
+    {
+      "id": "mdns",
+      "signal": "net.mdns_lsp",
+      "true": 0.6
+    },
+    {
+      "id": "disk_low",
+      "signal": "disk.free_low",
+      "true": 1.0,
+      "textKey": "rule.riot-client-update-stuck.ev.disk_low"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.riot.client_repair",
+    "guide.apps.uninstall_bonjour"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "riot-client-update-stuck",
+    "threadCount": 17,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1pi4vz8",
+      "1pjrrfi",
+      "1pvl3wg",
+      "1q4529o",
+      "1q69cud"
+    ],
+    "urls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ]
+  }
+}

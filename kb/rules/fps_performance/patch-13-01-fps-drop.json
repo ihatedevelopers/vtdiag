@@ -1,0 +1,55 @@
+{
+  "id": "patch-13-01-fps-drop",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.patch-13-01-fps-drop.title",
+  "summaryKey": "rule.patch-13-01-fps-drop.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "fps_low"
+  ],
+  "prior": {
+    "threads": 3
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "after_update",
+      "signal": "ask.started_after_update",
+      "true": 0.8,
+      "false": -0.6,
+      "ask": "ask.started_after_update"
+    },
+    {
+      "id": "standby",
+      "signal": "hw.standby_mem_high",
+      "true": 0.4
+    },
+    {
+      "id": "vgc_cpu",
+      "signal": "vg.vgc_cpu_high",
+      "true": 0.6
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.riot.client_repair",
+    "guide.shader_cache.warmup"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "patch-13-01-fps-drop",
+    "threadCount": 3,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1uweb47",
+      "1uzn5jv",
+      "1v4mq6n"
+    ],
+    "urls": []
+  }
+}

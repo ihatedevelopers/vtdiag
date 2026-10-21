@@ -1,0 +1,50 @@
+{
+  "id": "intel-graphics-chipset-driver-outdated",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "gpu_driver",
+  "titleKey": "rule.intel-graphics-chipset-driver-outdated.title",
+  "summaryKey": "rule.intel-graphics-chipset-driver-outdated.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "crash_desktop",
+    "error_code",
+    "fps_low"
+  ],
+  "prior": {
+    "threads": 5
+  },
+  "requires": [
+    "gpu.intel_driver_old"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "old",
+      "signal": "gpu.intel_driver_old",
+      "true": 1.5,
+      "veto": "false",
+      "textKey": "rule.intel-graphics-chipset-driver-outdated.ev.old"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.gpu.igpu"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "intel-graphics-chipset-driver-outdated",
+    "threadCount": 5,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1ofiezk",
+      "1onk48n",
+      "1uzy90i",
+      "1v0uwpn",
+      "1vmrjya"
+    ],
+    "urls": []
+  }
+}

@@ -1,0 +1,393 @@
+[
+  {
+    "id": "conflict-dcontrol_defender_disabled",
+    "rev": 1,
+    "kind": "generated",
+    "category": "other",
+    "titleKey": "rule.conflict-dcontrol_defender_disabled.title",
+    "summaryKey": "rule.conflict-dcontrol_defender_disabled.summary",
+    "bucket": "guidedManual",
+    "symptoms": [],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "sec.defender_disabled_policy",
+        "true": 1.0
+      },
+      {
+        "id": "e1",
+        "signal": "conflict.dcontrol_defender_disabled.running",
+        "true": 0.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.av.exclusions"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oc4ujw",
+        "1oc4vyk"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-ultraviewer",
+    "rev": 1,
+    "kind": "generated",
+    "category": "other",
+    "titleKey": "rule.conflict-ultraviewer.title",
+    "summaryKey": "rule.conflict-ultraviewer.summary",
+    "bucket": "guidedManual",
+    "symptoms": [],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.ultraviewer.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.ultraviewer.installed",
+        "true": 0.8,
+        "group": "presence"
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1x29zzv"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-elgato_capture",
+    "rev": 1,
+    "kind": "generated",
+    "category": "other",
+    "titleKey": "rule.conflict-elgato_capture.title",
+    "summaryKey": "rule.conflict-elgato_capture.summary",
+    "bucket": "guidedManual",
+    "symptoms": [],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.elgato_capture.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.elgato_capture.installed",
+        "true": 0.8,
+        "group": "presence"
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1w52oy9",
+        "1ro2ssi"
+      ],
+      "urls": [
+        "https://help.elgato.com/hc/en-us/articles/9482241809805-Issues-with-Valorant-and-Elgato-Capture-Devices"
+      ]
+    }
+  },
+  {
+    "id": "conflict-tcp_tweakers",
+    "rev": 1,
+    "kind": "generated",
+    "category": "other",
+    "titleKey": "rule.conflict-tcp_tweakers.title",
+    "summaryKey": "rule.conflict-tcp_tweakers.summary",
+    "bucket": "fixableHere",
+    "symptoms": [],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "net.lsp_third_party",
+        "true": 0.3
+      }
+    ],
+    "fixes": [
+      "fix.net.winsock_reset"
+    ],
+    "guides": [],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1p2mu8m",
+        "1pezpw3",
+        "1r928is",
+        "1ubk96w"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-remote_desktop_tools",
+    "rev": 1,
+    "kind": "generated",
+    "category": "other",
+    "titleKey": "rule.conflict-remote_desktop_tools.title",
+    "summaryKey": "rule.conflict-remote_desktop_tools.summary",
+    "bucket": "guidedManual",
+    "symptoms": [],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.remote_desktop_tools.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.remote_desktop_tools.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.remote_desktop_tools.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.remote_desktop_tools.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.remote_desktop_tools.service_running",
+        "true": 0.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1raxl34",
+        "1wsn8uy",
+        "1prv2rb",
+        "1v040nb",
+        "1w3ywe1"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-macro_remap_tools",
+    "rev": 1,
+    "kind": "generated",
+    "category": "other",
+    "titleKey": "rule.conflict-macro_remap_tools.title",
+    "summaryKey": "rule.conflict-macro_remap_tools.summary",
+    "bucket": "fixableHere",
+    "symptoms": [],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.macro_remap_tools.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.macro_remap_tools.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.macro_remap_tools.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.macro_remap_tools.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.macro_remap_tools.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.macro_remap_tools.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [
+      "fix.svc.disable_conflict_service",
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1tolnhq",
+        "1q7oxxb",
+        "1qdlwwp",
+        "1sk19ls",
+        "1tdn7de"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-modified_windows",
+    "rev": 1,
+    "kind": "generated",
+    "category": "other",
+    "titleKey": "rule.conflict-modified_windows.title",
+    "summaryKey": "rule.conflict-modified_windows.summary",
+    "bucket": "guidedManual",
+    "symptoms": [],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "os.modified_windows",
+        "true": 1.5
+      },
+      {
+        "id": "e1",
+        "signal": "conflict.modified_windows.file_present",
+        "true": 0.8
+      }
+    ],
+    "fixes": [],
+    "guides": [],
+    "sources": {
+      "threadCount": 7,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1u843d4",
+        "1uzcyt4",
+        "1vonruw",
+        "1t8madn",
+        "1ut5x5q"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-cleaners_boosters",
+    "rev": 1,
+    "kind": "generated",
+    "category": "other",
+    "titleKey": "rule.conflict-cleaners_boosters.title",
+    "summaryKey": "rule.conflict-cleaners_boosters.summary",
+    "bucket": "guidedManual",
+    "symptoms": [],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.cleaners_boosters.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.cleaners_boosters.installed",
+        "true": 0.8,
+        "group": "presence"
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1p30ckd",
+        "1t2lqq4",
+        "1oorwr0",
+        "1uxn8se",
+        "1uxnbzw"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-timer_tools",
+    "rev": 1,
+    "kind": "generated",
+    "category": "other",
+    "titleKey": "rule.conflict-timer_tools.title",
+    "summaryKey": "rule.conflict-timer_tools.summary",
+    "bucket": "fixableHere",
+    "symptoms": [],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.timer_tools.any"
+    ],
+    "evidence": [
+      {
+        "id": "running",
+        "signal": "conflict.timer_tools.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oi3opu",
+        "1vle98p",
+        "1qzd8na",
+        "1rjm2yk",
+        "1thnsai"
+      ],
+      "urls": []
+    }
+  }
+]

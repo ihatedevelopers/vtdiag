@@ -1,0 +1,89 @@
+{
+  "id": "fix.net.disable_second_adapter",
+  "titleKey": "fix.net.disable_second_adapter.title",
+  "explainKey": "fix.net.disable_second_adapter.explain",
+  "undoExplainKey": "fix.net.disable_second_adapter.undo",
+  "noticeKey": "fix.net.disable_second_adapter.notice",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "none",
+  "scope": "persistent",
+  "estMinutes": 0.2,
+  "appliesTo": [
+    "dual-network-adapter-desync",
+    "local-network-packet-loss-jitter",
+    "lenovo-vantage-wifi-collapse",
+    "van185-vanguard-disconnects"
+  ],
+  "bind": {
+    "adapter": {
+      "kind": "adapter",
+      "fromSignal": "net.secondary_adapter_up",
+      "pick": "one"
+    }
+  },
+  "guards": [
+    {
+      "probe": "adapter.not_default_route",
+      "args": {
+        "instanceId": "$adapter.id"
+      },
+      "must": "true",
+      "severity": "block",
+      "failKey": "guard.adapter_is_active"
+    },
+    {
+      "probe": "connectivity.other_adapter_online",
+      "args": {
+        "exceptInstanceId": "$adapter.id"
+      },
+      "must": "true",
+      "severity": "block",
+      "failKey": "guard.no_other_connection"
+    }
+  ],
+  "steps": [
+    {
+      "op": "device.disable",
+      "args": {
+        "instanceId": "$adapter.id"
+      },
+      "onFail": "abort"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "device.disable",
+      "args": {
+        "instanceId": "$adapter.id"
+      },
+      "expect": {
+        "enabled": "false"
+      },
+      "when": "immediate"
+    }
+  ],
+  "deadman": {
+    "seconds": 60,
+    "check": "connectivity.internet"
+  },
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.connects_now"
+  },
+  "drift": {
+    "watch": true,
+    "reasonKey": "drift.adapter_reenabled"
+  },
+  "successPrior": {
+    "success": 3,
+    "trials": 67
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

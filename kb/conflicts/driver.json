@@ -1,0 +1,423 @@
+[
+  {
+    "id": "inpoutx64",
+    "name": "InpOut32/64 low-level I/O driver",
+    "kind": "driver",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "inpoutx64.sys"
+      ],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.inpoutx64.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.inpoutx64.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "error_code"
+    ],
+    "evidence": {
+      "redditMentions": 0,
+      "solvedMentions": 0,
+      "exampleThreadIds": [],
+      "webSources": [
+        "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error"
+      ]
+    }
+  },
+  {
+    "id": "realtek_2_5gbe",
+    "name": "Realtek 2.5GbE / Gaming 2.5GbE Family Controller",
+    "kind": "driver",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "rt25cx21x64.sys"
+      ],
+      "moduleNames": [],
+      "networkAdapterRegex": "Realtek.*2\\.5GbE|Realtek Gaming 2\\.5GbE",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.realtek_2_5gbe.effect.0",
+      "conflict.realtek_2_5gbe.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.realtek_2_5gbe.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.net.disable_unused_adapter",
+        "fix.net.realtek_power_saving_off"
+      ],
+      "guideIds": [
+        "guide.net.local_connection"
+      ]
+    },
+    "confidence": "high",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter"
+    ],
+    "evidence": {
+      "redditMentions": 174,
+      "solvedMentions": 46,
+      "exampleThreadIds": [
+        "1orgew9",
+        "1osbhay",
+        "1ox2x2m",
+        "1pb93al",
+        "1pbqpqu"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "realtek_gbe_family",
+    "name": "Realtek PCIe GbE Family Controller",
+    "kind": "driver",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "rt640x64.sys"
+      ],
+      "moduleNames": [],
+      "networkAdapterRegex": "Realtek PCIe GbE Family Controller|Realtek Gaming GbE",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.realtek_gbe_family.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.realtek_gbe_family.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.net.disable_unused_adapter",
+        "fix.net.realtek_power_saving_off"
+      ],
+      "guideIds": [
+        "guide.net.local_connection"
+      ]
+    },
+    "confidence": "high",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter"
+    ],
+    "evidence": {
+      "redditMentions": 171,
+      "solvedMentions": 39,
+      "exampleThreadIds": [
+        "1oe4bzl",
+        "1p2y9mb",
+        "1pbqpqu",
+        "1ph4fsn",
+        "1poah2f"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "mediatek_rz616",
+    "name": "MediaTek RZ616 / MT7922 Wi-Fi 6E (mtkwl6ex.sys)",
+    "kind": "driver",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "mtkwl6ex.sys"
+      ],
+      "moduleNames": [],
+      "networkAdapterRegex": "RZ616|MT7922|MediaTek Wi-Fi 6E",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.mediatek_rz616.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.mediatek_rz616.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.hvci.enable"
+      ]
+    },
+    "confidence": "high",
+    "category": "vanguard",
+    "symptoms": [
+      "error_code",
+      "bios_requirement"
+    ],
+    "evidence": {
+      "redditMentions": 5,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1vbeday",
+        "1p4zkvt",
+        "1smcv3q",
+        "1wzqchq",
+        "1xam9ni"
+      ],
+      "webSources": [
+        "https://support.riotgames.com/en-us/riot/performance/van-incompatible-oem-driver"
+      ]
+    }
+  },
+  {
+    "id": "storage_oem_drivers",
+    "name": "Third-party storage drivers (Samsung secnvme, SK hynix/Solidigm solidnvm, ASMedia asstahci64)",
+    "kind": "driver",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "secnvme.sys",
+        "solidnvm.sys",
+        "asstahci64.sys"
+      ],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.storage_oem_drivers.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.storage_oem_drivers.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.riot.support_ticket"
+      ]
+    },
+    "confidence": "high",
+    "category": "vanguard",
+    "symptoms": [
+      "error_code"
+    ],
+    "evidence": {
+      "redditMentions": 1,
+      "solvedMentions": 0,
+      "exampleThreadIds": [
+        "1rezy5s"
+      ],
+      "webSources": [
+        "https://support.riotgames.com/en-us/riot/performance/van-incompatible-oem-driver"
+      ]
+    }
+  },
+  {
+    "id": "intel_vmd_rst",
+    "name": "Intel VMD / RST storage driver (iastorvd.sys)",
+    "kind": "driver",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "iaStorVD.sys"
+      ],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.intel_vmd_rst.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.intel_vmd_rst.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.storage.intel_vmd"
+      ]
+    },
+    "confidence": "high",
+    "category": "tpm_secureboot_bios",
+    "symptoms": [
+      "error_code"
+    ],
+    "evidence": {
+      "redditMentions": 6,
+      "solvedMentions": 2,
+      "exampleThreadIds": [
+        "1ufzky5",
+        "1u71s5f",
+        "1u9qwwi",
+        "1w1ygp7",
+        "1v3otva"
+      ],
+      "webSources": [
+        "https://support.riotgames.com/en-us/riot/performance/van-incompatible-oem-driver"
+      ]
+    }
+  },
+  {
+    "id": "intel_nal_diag",
+    "name": "Intel Network Adapter Diagnostic driver (iqvw64e.sys)",
+    "kind": "driver",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "iqvw64e.sys"
+      ],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.intel_nal_diag.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.intel_nal_diag.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "error_code"
+    ],
+    "evidence": {
+      "redditMentions": 1,
+      "solvedMentions": 0,
+      "exampleThreadIds": [
+        "1tm311u"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "entech_se64a",
+    "name": "EnTech softEngine driver (se64a.sys; monitor-control tools e.g. Dell Monitor Asset Manager / softOSD)",
+    "kind": "driver",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "se64a.sys"
+      ],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.entech_se64a.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.entech_se64a.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "error_code",
+      "bios_requirement"
+    ],
+    "evidence": {
+      "redditMentions": 1,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1qf6z3u"
+      ],
+      "webSources": [
+        "https://www.freefixer.com/library/file/se64a.sys-85801"
+      ]
+    }
+  },
+  {
+    "id": "misc_flagged_drivers",
+    "name": "Other drivers seen in Vanguard 'incompatible' popups (EPMVolFlt.sys, osfdisk.sys, adlocknetdrv.sys, NPWEBP_64.sys, DirectX64.sys, e1g6032e.sys)",
+    "kind": "driver",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "EPMVolFlt.sys",
+        "osfdisk.sys",
+        "adlocknetdrv.sys",
+        "NPWEBP_64.sys",
+        "DirectX64.sys",
+        "e1g6032e.sys"
+      ],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.misc_flagged_drivers.effect.0",
+      "conflict.misc_flagged_drivers.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.misc_flagged_drivers.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "error_code",
+      "bios_requirement"
+    ],
+    "evidence": {
+      "redditMentions": 5,
+      "solvedMentions": 0,
+      "exampleThreadIds": [
+        "1ts863h",
+        "1umg6p0",
+        "1ur4vrw",
+        "1pgvh31",
+        "1stj4yu"
+      ],
+      "webSources": [
+        "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error",
+        "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software"
+      ]
+    }
+  }
+]

@@ -1,0 +1,375 @@
+[
+  {
+    "id": "dcontrol_defender_disabled",
+    "name": "Defender Control (dControl) / Defender force-disabled by policy",
+    "kind": "tweak_tool",
+    "detect": {
+      "processNames": [
+        "dControl.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [
+        "HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\DisableAntiSpyware"
+      ],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.dcontrol_defender_disabled.effect.0",
+      "conflict.dcontrol_defender_disabled.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.dcontrol_defender_disabled.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.av.exclusions"
+      ]
+    },
+    "confidence": "low",
+    "category": "other",
+    "symptoms": [],
+    "evidence": {
+      "redditMentions": 2,
+      "solvedMentions": 0,
+      "exampleThreadIds": [
+        "1oc4ujw",
+        "1oc4vyk"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "tcp_tweakers",
+    "name": "TCP/registry network tweakers (TCP Optimizer, Leatrix Latency Fix)",
+    "kind": "tweak_tool",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [
+        "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces"
+      ],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.tcp_tweakers.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.tcp_tweakers.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [
+        "fix.net.winsock_reset"
+      ],
+      "guideIds": []
+    },
+    "confidence": "low",
+    "category": "other",
+    "symptoms": [],
+    "evidence": {
+      "redditMentions": 4,
+      "solvedMentions": 2,
+      "exampleThreadIds": [
+        "1p2mu8m",
+        "1pezpw3",
+        "1r928is",
+        "1ubk96w"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "process_lasso",
+    "name": "Process Lasso / ParkControl (priority & affinity rules)",
+    "kind": "tweak_tool",
+    "detect": {
+      "processNames": [
+        "ProcessLasso.exe",
+        "ProcessGovernor.exe"
+      ],
+      "serviceNames": [
+        "ProcessGovernor"
+      ],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(Process Lasso|ParkControl)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.process_lasso.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.process_lasso.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.sec.remove_riot_perfoptions",
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.hybrid_cpu.priority"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "disconnect",
+      "stutter"
+    ],
+    "evidence": {
+      "redditMentions": 41,
+      "solvedMentions": 10,
+      "exampleThreadIds": [
+        "1p3fe4u",
+        "1tkcqk5",
+        "1tkqt7f",
+        "1ughj5n",
+        "1w1f9m2"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "required_services_disabled",
+    "name": "Debloat scripts / tweakers that disable services Vanguard & Riot need (WinUtil, Chris Titus, O&O ShutUp10, privacy.sexy, batch 'optimizers')",
+    "kind": "tweak_tool",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [
+        "vgc",
+        "vgk",
+        "TBS",
+        "Winmgmt",
+        "BFE",
+        "Dnscache",
+        "EventLog"
+      ],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [
+        "HKLM\\SYSTEM\\CurrentControlSet\\Services\\vgc\\Start",
+        "HKLM\\SYSTEM\\CurrentControlSet\\Services\\vgk\\Start",
+        "HKLM\\SYSTEM\\CurrentControlSet\\Services\\TBS\\Start"
+      ],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.required_services_disabled.effect.0",
+      "conflict.required_services_disabled.effect.1",
+      "conflict.required_services_disabled.effect.2"
+    ],
+    "fix": {
+      "actionKey": "conflict.required_services_disabled.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.vanguard.reinstall"
+      ]
+    },
+    "confidence": "high",
+    "category": "vanguard",
+    "symptoms": [
+      "error_code",
+      "wont_launch"
+    ],
+    "evidence": {
+      "redditMentions": 68,
+      "solvedMentions": 11,
+      "exampleThreadIds": [
+        "1oi3opu",
+        "1posm3j",
+        "1pzsqpm",
+        "1ufdav9",
+        "1wir0rj"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "modified_windows",
+    "name": "Modified / debloated Windows builds (AtlasOS, ReviOS, Tiny11, Ghost Spectre) and LTSC",
+    "kind": "tweak_tool",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [
+        "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\EditionID"
+      ],
+      "filePaths": [
+        "C:\\Windows\\AtlasModules"
+      ],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.modified_windows.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.modified_windows.fix",
+      "reversible": false,
+      "risk": "high",
+      "fixIds": [],
+      "guideIds": []
+    },
+    "confidence": "medium",
+    "category": "other",
+    "symptoms": [],
+    "evidence": {
+      "redditMentions": 53,
+      "solvedMentions": 7,
+      "exampleThreadIds": [
+        "1u843d4",
+        "1uzcyt4",
+        "1vonruw",
+        "1t8madn",
+        "1ut5x5q"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "cleaners_boosters",
+    "name": "Cleaners / game boosters / driver updaters (CCleaner, IObit, Driver Booster, Driver Easy, Wise, Razer Cortex)",
+    "kind": "tweak_tool",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(CCleaner|Advanced SystemCare|Driver Booster|Driver Easy|Wise Care|Wise Game Booster|Razer Cortex|IObit)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.cleaners_boosters.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.cleaners_boosters.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "low",
+    "category": "other",
+    "symptoms": [],
+    "evidence": {
+      "redditMentions": 10,
+      "solvedMentions": 2,
+      "exampleThreadIds": [
+        "1p30ckd",
+        "1t2lqq4",
+        "1oorwr0",
+        "1uxn8se",
+        "1uxnbzw"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "timer_tools",
+    "name": "Timer resolution / standby-list tools (ISLC, TimerResolution)",
+    "kind": "tweak_tool",
+    "detect": {
+      "processNames": [
+        "Intelligent standby list cleaner ISLC.exe",
+        "TimerResolution.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.timer_tools.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.timer_tools.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "low",
+    "category": "other",
+    "symptoms": [],
+    "evidence": {
+      "redditMentions": 15,
+      "solvedMentions": 2,
+      "exampleThreadIds": [
+        "1oi3opu",
+        "1vle98p",
+        "1qzd8na",
+        "1rjm2yk",
+        "1thnsai"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "bcd_tweaks",
+    "name": "BCD tweaks: test signing / debug / hypervisor off / platform clock",
+    "kind": "tweak_tool",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.bcd_tweaks.effect.0",
+      "conflict.bcd_tweaks.effect.1",
+      "conflict.bcd_tweaks.effect.2"
+    ],
+    "fix": {
+      "actionKey": "conflict.bcd_tweaks.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.bcd.restore_security"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "error_code",
+      "wont_launch"
+    ],
+    "evidence": {
+      "redditMentions": 20,
+      "solvedMentions": 5,
+      "exampleThreadIds": [
+        "1v72yar",
+        "1t4z7xu",
+        "1u3ra0k",
+        "1ufzky5",
+        "1wxj2w0"
+      ],
+      "webSources": []
+    }
+  }
+]

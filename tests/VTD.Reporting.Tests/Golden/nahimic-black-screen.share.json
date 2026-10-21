@@ -1,0 +1,1230 @@
+{
+  "schemaVersion": 1,
+  "meta": {
+    "snapshotId": "01JB6R7X3K9M2N4P5Q6R7S8T9W",
+    "appVersion": "0.1.0",
+    "kbVersion": "2026.10.21.1",
+    "createdUtc": "2026-10-18T20:15:00+00:00",
+    "durationMs": 31480,
+    "mode": "full",
+    "privilege": "elevated",
+    "origin": "fixture",
+    "boot": {
+      "status": "known",
+      "value": {
+        "bootId": 412,
+        "lastBootUpTimeUtc": "2026-10-18T17:15:00+00:00",
+        "kind": "cold"
+      },
+      "source": "os/registry:PrefetchParameters\\BootId"
+    },
+    "osUiCulture": "en-US",
+    "appLanguage": "en",
+    "redaction": {
+      "level": "share",
+      "rulesVersion": 1,
+      "appliedRules": [
+        "device.instance_tail",
+        "hash.salted",
+        "host.name",
+        "identifier.drop",
+        "net.ip_class",
+        "net.mac",
+        "path.profile",
+        "user.name"
+      ]
+    },
+    "machineKey": "mk1:7f3c2a9e41d05b6c"
+  },
+  "runs": [
+    {
+      "collectorId": "os",
+      "status": "ok",
+      "elapsedMs": 420,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "hardware",
+      "status": "ok",
+      "elapsedMs": 2150,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "firmware",
+      "status": "ok",
+      "elapsedMs": 40,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "security",
+      "status": "ok",
+      "elapsedMs": 3900,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "storage",
+      "status": "ok",
+      "elapsedMs": 1100,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "devices",
+      "status": "ok",
+      "elapsedMs": 900,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "software",
+      "status": "ok",
+      "elapsedMs": 3400,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "network",
+      "status": "ok",
+      "elapsedMs": 6100,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "power",
+      "status": "ok",
+      "elapsedMs": 60,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "display",
+      "status": "ok",
+      "elapsedMs": 150,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "audio",
+      "status": "ok",
+      "elapsedMs": 240,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "input",
+      "status": "ok",
+      "elapsedMs": 5,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "riot",
+      "status": "ok",
+      "elapsedMs": 1900,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "events",
+      "status": "ok",
+      "elapsedMs": 6800,
+      "issueCodes": []
+    },
+    {
+      "collectorId": "pack",
+      "status": "ok",
+      "elapsedMs": 25,
+      "issueCodes": []
+    }
+  ],
+  "os": {
+    "productName": {
+      "status": "known",
+      "value": "Windows 10 Pro",
+      "source": "os/registry:CurrentVersion"
+    },
+    "build": {
+      "status": "known",
+      "value": 26200,
+      "source": "os/registry:CurrentVersion"
+    },
+    "ubr": {
+      "status": "known",
+      "value": 6899,
+      "source": "os/registry:CurrentVersion"
+    },
+    "displayVersion": {
+      "status": "known",
+      "value": "25H2",
+      "source": "os/registry:CurrentVersion"
+    },
+    "editionId": {
+      "status": "known",
+      "value": "Professional",
+      "source": "os/registry:CurrentVersion"
+    },
+    "insiderBranch": {
+      "status": "notApplicable",
+      "detail": "not an insider build",
+      "source": "os/registry:WindowsSelfHost"
+    },
+    "installDateUtc": {
+      "status": "known",
+      "value": "2025-11-02T14:20:00+00:00",
+      "source": "os/registry:CurrentVersion"
+    },
+    "isVirtualMachine": {
+      "status": "known",
+      "value": false,
+      "source": "os/wmi:Win32_ComputerSystem"
+    },
+    "pendingReboot": {
+      "status": "known",
+      "value": {
+        "componentServicing": false,
+        "windowsUpdate": false,
+        "pendingFileRename": false
+      },
+      "source": "os/registry"
+    },
+    "windowsUpdateInstalling": {
+      "status": "known",
+      "value": false,
+      "source": "os/wua"
+    },
+    "fastStartupEnabled": {
+      "status": "known",
+      "value": true,
+      "source": "os/registry:HiberbootEnabled"
+    },
+    "hibernationEnabled": {
+      "status": "known",
+      "value": true,
+      "source": "os/registry:HibernateEnabled"
+    },
+    "clock": {
+      "status": "known",
+      "value": {
+        "skewSeconds": 1,
+        "referenceSource": "https-date",
+        "timeZoneId": "Turkey Standard Time",
+        "autoTimeSync": true
+      },
+      "source": "os/clock"
+    },
+    "hotfixes": {
+      "status": "known",
+      "value": [
+        {
+          "id": "KB5066835",
+          "installedOn": "2026-10-15"
+        }
+      ],
+      "source": "os/wua:history"
+    },
+    "modifiedWindowsMarkers": {
+      "status": "known",
+      "value": [],
+      "source": "os/markers"
+    },
+    "environmentIssues": {
+      "status": "known",
+      "value": [],
+      "source": "os/env"
+    },
+    "taskSchedulerAvailable": {
+      "status": "known",
+      "value": true,
+      "source": "os/scm:Schedule"
+    },
+    "interactiveUserIsAdmin": {
+      "status": "known",
+      "value": true,
+      "source": "os/token"
+    }
+  },
+  "hardware": {
+    "cpu": {
+      "status": "known",
+      "value": {
+        "vendor": "intel",
+        "model": "13th Gen Intel(R) Core(TM) i7-13700H",
+        "architecture": "x64",
+        "cores": 14,
+        "logicalProcessors": 20,
+        "hybrid": true,
+        "performanceCores": 6,
+        "efficiencyCores": 8,
+        "virtualizationSupported": true
+      },
+      "source": "hardware/cpuid"
+    },
+    "memory": {
+      "status": "known",
+      "value": {
+        "totalMb": 32768,
+        "availableMb": 21400,
+        "standbyMb": 6100,
+        "modules": [
+          {
+            "capacityMb": 16384,
+            "ratedMts": 6000,
+            "configuredMts": 6000,
+            "slot": "DIMM_A2",
+            "manufacturer": "G Skill Intl"
+          },
+          {
+            "capacityMb": 16384,
+            "ratedMts": 6000,
+            "configuredMts": 6000,
+            "slot": "DIMM_B2",
+            "manufacturer": "G Skill Intl"
+          }
+        ]
+      },
+      "source": "hardware/wmi:Win32_PhysicalMemory"
+    },
+    "gpus": {
+      "status": "known",
+      "value": [
+        {
+          "instanceId": "PCI\\VEN_10DE&DEV_28E0&SUBSYS_13A51462&REV_A1\\h:248c505c4083fbd2",
+          "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+          "vendor": "nvidia",
+          "pciVendorId": "10DE",
+          "pciDeviceId": "28E0",
+          "isIntegrated": false,
+          "enabled": true,
+          "problemCode": 0,
+          "driverVersion": "32.0.15.8157",
+          "driverDate": "2026-09-24",
+          "driverProvider": "NVIDIA",
+          "dedicatedVideoMb": 8188,
+          "isBasicDisplayAdapter": false
+        },
+        {
+          "instanceId": "PCI\\VEN_8086&DEV_A7A0&SUBSYS_13A51462&REV_04\\h:e64806ed307d9a71",
+          "name": "Intel(R) Iris(R) Xe Graphics",
+          "vendor": "intel",
+          "pciVendorId": "8086",
+          "pciDeviceId": "A7A0",
+          "isIntegrated": true,
+          "enabled": true,
+          "problemCode": 0,
+          "driverVersion": "32.0.101.6913",
+          "driverDate": "2026-06-03",
+          "driverProvider": "Intel Corporation",
+          "dedicatedVideoMb": 128,
+          "isBasicDisplayAdapter": false
+        }
+      ],
+      "source": "hardware/dxgi+pnp"
+    },
+    "board": {
+      "status": "known",
+      "value": {
+        "boardManufacturer": "Micro-Star International Co., Ltd.",
+        "boardProduct": "MS-15M2",
+        "systemManufacturer": "Micro-Star International Co., Ltd.",
+        "systemProduct": "Katana 15 B13VFK",
+        "biosVendor": "American Megatrends International, LLC.",
+        "biosVersion": "E15M2IMS.31A",
+        "biosReleaseDate": "2025-01-14",
+        "isLaptop": true
+      },
+      "source": "hardware/wmi:Win32_BaseBoard+Win32_BIOS"
+    }
+  },
+  "firmware": {
+    "type": {
+      "status": "known",
+      "value": "uefi",
+      "source": "firmware/GetFirmwareType"
+    },
+    "bootToFirmwareSupported": {
+      "status": "known",
+      "value": true,
+      "source": "firmware/OsIndicationsSupported"
+    },
+    "otherOsBootEntries": {
+      "status": "known",
+      "value": 0,
+      "source": "firmware/bcd"
+    }
+  },
+  "security": {
+    "secureBootEnabled": {
+      "status": "known",
+      "value": true,
+      "source": "security/registry:SecureBoot\\State"
+    },
+    "secureBootSetupMode": {
+      "status": "known",
+      "value": false,
+      "source": "security/firmware:SetupMode"
+    },
+    "secureBootDbHasCa2023": {
+      "status": "known",
+      "value": true,
+      "source": "security/firmware:db"
+    },
+    "tpm": {
+      "status": "known",
+      "value": {
+        "present": true,
+        "specVersion": "2.0",
+        "kind": "firmware",
+        "ready": true,
+        "enabled": true,
+        "activated": true,
+        "manufacturerId": "AMD",
+        "instanceId": "ACPI\\MSFT0101\\h:9470d6432dea4806"
+      },
+      "source": "security/tbs+wmi:Win32_Tpm"
+    },
+    "vbs": {
+      "status": "known",
+      "value": {
+        "status": "running",
+        "hvciConfigured": true,
+        "hvciRunning": true,
+        "availableSecurityProperties": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7
+        ],
+        "requiredSecurityProperties": [],
+        "securityServicesRunning": [
+          2
+        ]
+      },
+      "source": "security/wmi:Win32_DeviceGuard"
+    },
+    "hvciIncompatibleDrivers": {
+      "status": "known",
+      "value": [],
+      "source": "security/codeintegrity"
+    },
+    "virtualizationFirmwareEnabled": {
+      "status": "known",
+      "value": true,
+      "source": "security/wmi:Win32_Processor"
+    },
+    "hypervisorPresent": {
+      "status": "known",
+      "value": true,
+      "source": "security/cpuid"
+    },
+    "kernelDmaProtection": {
+      "status": "known",
+      "value": true,
+      "source": "security/wmi:Win32_DeviceGuard"
+    },
+    "bcd": {
+      "status": "known",
+      "value": {
+        "testSigning": false,
+        "noIntegrityChecks": false,
+        "nx": "OptIn",
+        "hypervisorLaunchType": "Auto",
+        "safeBoot": false,
+        "debug": false
+      },
+      "source": "security/wmi:BcdStore"
+    },
+    "systemVolumeBitLocker": {
+      "status": "known",
+      "value": "off",
+      "source": "security/shell:BitLockerProtection"
+    },
+    "defender": {
+      "status": "known",
+      "value": {
+        "realTimeProtection": true,
+        "tamperProtection": true,
+        "controlledFolderAccess": false,
+        "smartAppControl": "off",
+        "disabledByPolicy": false
+      },
+      "source": "security/wmi:MSFT_MpComputerStatus"
+    },
+    "antivirusProducts": {
+      "status": "known",
+      "value": [
+        {
+          "name": "Windows Defender",
+          "enabled": true,
+          "upToDate": true,
+          "isDefender": true
+        }
+      ],
+      "source": "security/wmi:SecurityCenter2"
+    },
+    "exploitOverrides": {
+      "status": "known",
+      "value": [],
+      "source": "security/registry:IFEO"
+    },
+    "ifeo": {
+      "status": "known",
+      "value": [],
+      "source": "security/registry:IFEO"
+    }
+  },
+  "storage": {
+    "disks": {
+      "status": "known",
+      "value": [
+        {
+          "number": 0,
+          "model": "Samsung SSD 990 PRO 2TB",
+          "media": "ssd",
+          "bus": "nvme",
+          "sizeGb": 1863,
+          "style": "gpt",
+          "isSystemDisk": true
+        }
+      ],
+      "source": "storage/wmi:MSFT_PhysicalDisk"
+    },
+    "systemDiskPartitionStyle": {
+      "status": "known",
+      "value": "gpt",
+      "source": "storage/wmi:MSFT_Disk"
+    },
+    "volumes": {
+      "status": "known",
+      "value": [
+        {
+          "driveLetter": "C:",
+          "fileSystem": "NTFS",
+          "sizeMb": 1906000,
+          "freeMb": 1240000,
+          "dirty": false,
+          "isSystem": true,
+          "hostsRiotGames": true
+        }
+      ],
+      "source": "storage/volumes"
+    },
+    "controllers": {
+      "status": "known",
+      "value": [
+        {
+          "instanceId": "PCI\\VEN_144D&DEV_A80C&SUBSYS_A801144D&REV_00\\h:83730c891308e108",
+          "name": "Standard NVM Express Controller",
+          "driverFile": "stornvme.sys",
+          "driverVersion": "10.0.26100.6899",
+          "isVmd": false,
+          "isBootController": true
+        }
+      ],
+      "source": "storage/pnp"
+    }
+  },
+  "devices": {
+    "status": "known",
+    "value": [
+      {
+        "instanceId": "PCI\\VEN_10DE&DEV_2783&SUBSYS_51831462&REV_A1\\h:5d718654705ef019",
+        "classGuid": "{4d36e968-e325-11ce-bfc1-08002be10318}",
+        "className": "Display",
+        "enumerator": "PCI",
+        "friendlyName": "NVIDIA GeForce RTX 4070 SUPER",
+        "hardwareIds": [],
+        "present": true,
+        "enabled": true,
+        "problemCode": 0,
+        "service": "nvlddmkm",
+        "driverVersion": "32.0.15.8157",
+        "driverDate": "2026-09-24",
+        "driverProvider": "NVIDIA"
+      },
+      {
+        "instanceId": "PCI\\VEN_8086&DEV_2725&SUBSYS_00248086&REV_1A\\h:7886c9f7bc9eaa09",
+        "classGuid": "{4d36e972-e325-11ce-bfc1-08002be10318}",
+        "className": "Net",
+        "enumerator": "PCI",
+        "friendlyName": "Intel(R) Wi-Fi 6E AX210 160MHz",
+        "hardwareIds": [],
+        "present": true,
+        "enabled": true,
+        "problemCode": 0,
+        "service": "Netwtw10",
+        "driverVersion": "23.110.0.5",
+        "driverDate": "2025-02-10",
+        "driverProvider": "Intel"
+      }
+    ],
+    "source": "devices/cfgmgr32"
+  },
+  "drivers": {
+    "status": "known",
+    "value": [
+      {
+        "name": "nvlddmkm.sys",
+        "path": "\\SystemRoot\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_0a1b2c3d4e5f6a7b\\nvlddmkm.sys",
+        "version": "32.0.15.8157",
+        "signer": {
+          "status": "valid",
+          "publisher": "Microsoft Windows Hardware Compatibility Publisher",
+          "isMicrosoft": true
+        }
+      },
+      {
+        "name": "vgk.sys",
+        "path": "\\??\\C:\\Program Files\\Riot Vanguard\\vgk.sys",
+        "version": "1.17.9.5",
+        "signer": {
+          "status": "valid",
+          "publisher": "Riot Games, Inc.",
+          "isMicrosoft": false
+        }
+      },
+      {
+        "name": "Netwtw10.sys",
+        "path": "\\SystemRoot\\System32\\drivers\\Netwtw10.sys",
+        "version": "23.110.0.5",
+        "signer": {
+          "status": "valid",
+          "publisher": "Microsoft Windows Hardware Compatibility Publisher",
+          "isMicrosoft": true
+        }
+      }
+    ],
+    "source": "drivers/EnumDeviceDrivers"
+  },
+  "services": {
+    "status": "known",
+    "value": [
+      {
+        "name": "vgc",
+        "displayName": "vgc",
+        "kind": "win32",
+        "startType": "manual",
+        "delayedAutoStart": false,
+        "state": "stopped",
+        "imagePath": "C:\\Program Files\\Riot Vanguard\\vgc.exe",
+        "signer": {
+          "status": "valid",
+          "publisher": "Riot Games, Inc.",
+          "isMicrosoft": false
+        }
+      },
+      {
+        "name": "vgk",
+        "displayName": "vgk",
+        "kind": "kernelDriver",
+        "startType": "system",
+        "delayedAutoStart": false,
+        "state": "running",
+        "imagePath": "C:\\Program Files\\Riot Vanguard\\vgk.sys",
+        "signer": {
+          "status": "valid",
+          "publisher": "Riot Games, Inc.",
+          "isMicrosoft": false
+        }
+      },
+      {
+        "name": "TBS",
+        "displayName": "TPM Base Services",
+        "kind": "win32",
+        "startType": "manual",
+        "delayedAutoStart": false,
+        "state": "running",
+        "imagePath": "C:\\Windows\\System32\\svchost.exe"
+      },
+      {
+        "name": "Winmgmt",
+        "displayName": "Windows Management Instrumentation",
+        "kind": "win32",
+        "startType": "automatic",
+        "delayedAutoStart": false,
+        "state": "running",
+        "imagePath": "C:\\Windows\\System32\\svchost.exe"
+      },
+      {
+        "name": "NahimicService",
+        "displayName": "Nahimic service",
+        "kind": "win32",
+        "startType": "automatic",
+        "delayedAutoStart": false,
+        "state": "running",
+        "imagePath": "C:\\Windows\\System32\\NahimicSvc64.exe",
+        "signer": {
+          "status": "valid",
+          "publisher": "A-Volute",
+          "isMicrosoft": false
+        }
+      }
+    ],
+    "source": "software/scm"
+  },
+  "processes": {
+    "status": "known",
+    "value": [
+      {
+        "name": "explorer.exe",
+        "processId": 7412,
+        "parentProcessId": 7380,
+        "threadCount": 96,
+        "isProtectedRiotProcess": false
+      },
+      {
+        "name": "Discord.exe",
+        "processId": 11208,
+        "parentProcessId": 7412,
+        "threadCount": 54,
+        "isProtectedRiotProcess": false
+      },
+      {
+        "name": "RiotClientServices.exe",
+        "processId": 13020,
+        "parentProcessId": 7412,
+        "threadCount": 61,
+        "isProtectedRiotProcess": true
+      },
+      {
+        "name": "NahimicSvc64.exe",
+        "processId": 4120,
+        "parentProcessId": 1032,
+        "threadCount": 12,
+        "isProtectedRiotProcess": false
+      },
+      {
+        "name": "NahimicSvc32.exe",
+        "processId": 9384,
+        "parentProcessId": 4120,
+        "threadCount": 6,
+        "isProtectedRiotProcess": false
+      }
+    ],
+    "source": "software/toolhelp"
+  },
+  "apps": {
+    "status": "known",
+    "value": [
+      {
+        "displayName": "Riot Vanguard",
+        "publisher": "Riot Games, Inc.",
+        "version": "1.17.9.5",
+        "hive": "hklm",
+        "keyName": "Riot Vanguard",
+        "hasQuietUninstall": false,
+        "systemComponent": false
+      },
+      {
+        "displayName": "Discord",
+        "publisher": "Discord Inc.",
+        "version": "1.0.9210",
+        "hive": "hkcu",
+        "keyName": "Discord",
+        "hasQuietUninstall": false,
+        "systemComponent": false,
+        "installLocation": "%USERPROFILE%\\AppData\\Local\\Discord"
+      },
+      {
+        "displayName": "NVIDIA Graphics Driver 581.57",
+        "publisher": "NVIDIA Corporation",
+        "version": "581.57",
+        "hive": "hklm",
+        "keyName": "{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_Display.Driver",
+        "hasQuietUninstall": false,
+        "systemComponent": false
+      },
+      {
+        "displayName": "Nahimic",
+        "publisher": "A-Volute",
+        "version": "1.10.6.0",
+        "hive": "hklm",
+        "keyName": "{2F1A6B3C-7E8D-4A9B-B0C1-D2E3F4A5B6C7}",
+        "hasQuietUninstall": false,
+        "systemComponent": false
+      }
+    ],
+    "source": "software/uninstall"
+  },
+  "startup": {
+    "status": "known",
+    "value": [
+      {
+        "name": "Discord",
+        "location": "hkcuRun",
+        "imageName": "Update.exe",
+        "targetPath": "%USERPROFILE%\\AppData\\Local\\Discord\\Update.exe",
+        "enabled": true
+      }
+    ],
+    "source": "software/startup"
+  },
+  "optionalFeatures": {
+    "status": "known",
+    "value": [
+      "Microsoft-Windows-Subsystem-Linux"
+    ],
+    "source": "software/features"
+  },
+  "network": {
+    "adapters": {
+      "status": "known",
+      "value": [
+        {
+          "instanceId": "PCI\\VEN_8086&DEV_2725&SUBSYS_00248086&REV_1A\\h:7886c9f7bc9eaa09",
+          "description": "Intel(R) Wi-Fi 6E AX210 160MHz",
+          "alias": "Wi-Fi",
+          "kind": "wiFi",
+          "physical": true,
+          "enabled": true,
+          "status": "up",
+          "linkSpeedBps": 1201000000,
+          "isDefaultRoute": true,
+          "hasInternet": true,
+          "ipv4Metric": 35,
+          "automaticMetric": true,
+          "ipv6Bound": true,
+          "driverFile": "Netwtw10.sys",
+          "driverVersion": "23.110.0.5",
+          "driverDate": "2025-02-10",
+          "driverProvider": "Intel",
+          "advancedProperties": {},
+          "allowPowerOff": false,
+          "mac": "D8:F2:CA:h:1aad60a26750",
+          "ipv4Addresses": [
+            "private/24"
+          ],
+          "dnsServers": [
+            "private/24"
+          ]
+        }
+      ],
+      "source": "network/iphlpapi+pnp"
+    },
+    "connectivity": {
+      "status": "known",
+      "value": {
+        "ipv4Internet": true,
+        "ipv6Internet": false,
+        "localOnly": false
+      },
+      "source": "network/nlm"
+    },
+    "proxy": {
+      "status": "known",
+      "value": {
+        "winHttpProxy": false,
+        "userProxyEnabled": false,
+        "autoConfigUrl": false
+      },
+      "source": "network/winhttp+wininet"
+    },
+    "ipv6": {
+      "status": "known",
+      "value": {
+        "disabledComponents": 0,
+        "teredoEnabled": false
+      },
+      "source": "network/registry:Tcpip6"
+    },
+    "winsockProviders": {
+      "status": "known",
+      "value": [],
+      "source": "network/registry:WinSock2"
+    },
+    "winsockNamespaceProviders": {
+      "status": "known",
+      "value": [],
+      "source": "network/registry:WinSock2-NameSpace"
+    },
+    "riotFirewallRules": {
+      "status": "known",
+      "value": [],
+      "source": "network/INetFwPolicy2"
+    },
+    "firewall": {
+      "status": "known",
+      "value": {
+        "domainOn": true,
+        "privateOn": true,
+        "publicOn": true
+      },
+      "source": "network/INetFwPolicy2"
+    },
+    "wlan": {
+      "status": "known",
+      "value": {
+        "connected": true,
+        "signalQualityPercent": 88,
+        "rssiDbm": -52,
+        "band": "ghz5",
+        "phyType": "802.11ax",
+        "linkSpeedMbps": 1201,
+        "ssid": "h:b04bc1f47020c006"
+      },
+      "source": "network/wlanapi"
+    },
+    "probes": {
+      "status": "known",
+      "value": [
+        {
+          "target": "gateway",
+          "kind": "gateway",
+          "sent": 10,
+          "received": 10,
+          "rttAvgMs": 2.1,
+          "rttP95Ms": 3.4,
+          "jitterMs": 0.6
+        },
+        {
+          "target": "eu-central",
+          "kind": "region",
+          "sent": 10,
+          "received": 10,
+          "rttAvgMs": 41.8,
+          "rttP95Ms": 44,
+          "jitterMs": 1.2
+        }
+      ],
+      "source": "network/icmp"
+    }
+  },
+  "power": {
+    "activeScheme": {
+      "status": "known",
+      "value": {
+        "guid": "381b4222-f694-41f0-9685-ff5bb260df2e",
+        "kind": "balanced",
+        "name": "Balanced"
+      },
+      "source": "power/PowerGetActiveScheme"
+    },
+    "mode": {
+      "status": "known",
+      "value": "bestPerformance",
+      "source": "power/overlay"
+    },
+    "usbSelectiveSuspendAc": {
+      "status": "known",
+      "value": true,
+      "source": "power/PowerReadACValueIndex"
+    },
+    "usbSelectiveSuspendDc": {
+      "status": "known",
+      "value": true,
+      "source": "power/PowerReadDCValueIndex"
+    },
+    "processorMinPercentAc": {
+      "status": "known",
+      "value": 5,
+      "source": "power/PowerReadACValueIndex"
+    },
+    "processorMaxPercentAc": {
+      "status": "known",
+      "value": 100,
+      "source": "power/PowerReadACValueIndex"
+    },
+    "battery": {
+      "status": "known",
+      "value": {
+        "present": true,
+        "onAc": true,
+        "chargePercent": 94
+      },
+      "source": "power/GetSystemPowerStatus"
+    }
+  },
+  "display": {
+    "monitors": {
+      "status": "known",
+      "value": [
+        {
+          "name": "VG27AQ3A",
+          "primary": true,
+          "width": 2560,
+          "height": 1440,
+          "refreshHz": 180,
+          "hdrEnabled": false,
+          "internal": false,
+          "gpuInstanceId": "PCI\\VEN_10DE&DEV_2783&SUBSYS_51831462&REV_A1\\h:5d718654705ef019"
+        }
+      ],
+      "source": "display/QueryDisplayConfig"
+    },
+    "hagsEnabled": {
+      "status": "known",
+      "value": true,
+      "source": "display/registry:HwSchMode"
+    },
+    "mpoDisabled": {
+      "status": "known",
+      "value": false,
+      "source": "display/registry:OverlayTestMode"
+    },
+    "gameModeEnabled": {
+      "status": "known",
+      "value": true,
+      "source": "display/registry:AutoGameModeEnabled"
+    },
+    "gameDvrEnabled": {
+      "status": "known",
+      "value": false,
+      "source": "display/registry:GameDVR_Enabled"
+    },
+    "windowedOptimizations": {
+      "status": "known",
+      "value": true,
+      "source": "display/registry:DirectXUserGlobalSettings"
+    },
+    "gpuPreferences": {
+      "status": "known",
+      "value": [],
+      "source": "display/registry:UserGpuPreferences"
+    }
+  },
+  "audio": {
+    "endpoints": {
+      "status": "known",
+      "value": [
+        {
+          "id": "h:c956dd1ec0cc7001",
+          "name": "h:7e91a047bde27a01",
+          "flow": "render",
+          "state": "active",
+          "formFactor": "speakers",
+          "isDefault": true,
+          "isDefaultCommunications": true,
+          "isBluetoothHandsFree": false,
+          "apoClsids": [
+            "{0A8B5F2C-1D3E-4F6A-9B7C-8D9E0F1A2B3C}"
+          ]
+        }
+      ],
+      "source": "audio/mmdevice"
+    }
+  },
+  "input": {
+    "mouse": {
+      "status": "known",
+      "value": {
+        "enhancePointerPrecision": false,
+        "speed": 10
+      },
+      "source": "input/SystemParametersInfo"
+    }
+  },
+  "riot": {
+    "client": {
+      "status": "known",
+      "value": {
+        "installed": true,
+        "path": "C:\\Riot Games\\Riot Client",
+        "version": "113.0.2.2271",
+        "drive": "C:",
+        "onSystemDrive": true,
+        "pathHasNonAscii": false
+      },
+      "source": "riot/RiotClientInstalls.json"
+    },
+    "valorant": {
+      "status": "known",
+      "value": {
+        "installed": true,
+        "path": "C:\\Riot Games\\VALORANT\\live",
+        "version": "release-11.08-shipping-14-3988147",
+        "drive": "C:",
+        "onSystemDrive": true,
+        "pathHasNonAscii": false
+      },
+      "source": "riot/product_settings"
+    },
+    "vanguard": {
+      "status": "known",
+      "value": {
+        "installed": true,
+        "vgc": {
+          "name": "vgc",
+          "displayName": "vgc",
+          "kind": "win32",
+          "startType": "manual",
+          "delayedAutoStart": false,
+          "state": "stopped",
+          "imagePath": "C:\\Program Files\\Riot Vanguard\\vgc.exe",
+          "signer": {
+            "status": "valid",
+            "publisher": "Riot Games, Inc.",
+            "isMicrosoft": false
+          }
+        },
+        "vgk": {
+          "name": "vgk",
+          "displayName": "vgk",
+          "kind": "kernelDriver",
+          "startType": "system",
+          "delayedAutoStart": false,
+          "state": "running",
+          "imagePath": "C:\\Program Files\\Riot Vanguard\\vgk.sys",
+          "signer": {
+            "status": "valid",
+            "publisher": "Riot Games, Inc.",
+            "isMicrosoft": false
+          }
+        },
+        "installPath": "C:\\Program Files\\Riot Vanguard",
+        "version": "1.17.9.5",
+        "files": [
+          {
+            "name": "vgc.exe",
+            "location": "vanguard",
+            "exists": true,
+            "sizeBytes": 18431256,
+            "modifiedUtc": "2026-10-08T12:00:00+00:00",
+            "version": "1.17.9.5"
+          },
+          {
+            "name": "vgk.sys",
+            "location": "vanguard",
+            "exists": true,
+            "sizeBytes": 25102920,
+            "modifiedUtc": "2026-10-08T12:00:00+00:00",
+            "version": "1.17.9.5"
+          },
+          {
+            "name": "vgkbootstatus.dat",
+            "location": "vanguard",
+            "exists": false
+          },
+          {
+            "name": "392667600.dat",
+            "location": "system32",
+            "exists": false
+          }
+        ],
+        "logs": {
+          "fileCount": 6,
+          "newestUtc": "2026-10-18T18:15:00+00:00",
+          "oldestUtc": "2026-10-12T20:15:00+00:00",
+          "countLastHour": 0,
+          "countLast24Hours": 2,
+          "totalBytes": 61440,
+          "recent": []
+        }
+      },
+      "source": "riot/vanguard"
+    },
+    "compatLayers": {
+      "status": "known",
+      "value": [],
+      "source": "riot/registry:AppCompatFlags\\Layers"
+    },
+    "gameConfig": {
+      "status": "known",
+      "value": {
+        "accountConfigCount": 1,
+        "settings": {
+          "FullscreenMode": "0",
+          "ResolutionSizeX": "2560",
+          "ResolutionSizeY": "1440",
+          "FrameRateLimit": "0"
+        },
+        "corruptMarkers": false
+      },
+      "source": "riot/GameUserSettings.ini"
+    },
+    "shooterLog": {
+      "status": "known",
+      "value": {
+        "lastWriteUtc": "2026-10-18T19:55:00+00:00",
+        "backupLogCount": 10,
+        "gameVersion": "release-11.08-shipping-14-3988147",
+        "hardware": {
+          "os": "Windows 11 (25H2) [10.0.26200.6899]",
+          "cpu": "13th Gen Intel(R) Core(TM) i7-13700H",
+          "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+          "disk": "SSD"
+        },
+        "platformInitFailures": [],
+        "d3dDeviceLostCount": 0,
+        "fatalErrorCount": 2,
+        "netDisconnectCount": 0,
+        "patternCounts": {
+          "log.fatal_error": 2
+        }
+      },
+      "source": "riot/ShooterGame.log"
+    },
+    "clientLogs": {
+      "status": "known",
+      "value": {
+        "fileCount": 8,
+        "newestUtc": "2026-10-18T19:15:00+00:00",
+        "patternCounts": {}
+      },
+      "source": "riot/RiotClientLogs"
+    },
+    "crashes": {
+      "status": "known",
+      "value": [
+        {
+          "folderName": "UECC-Windows-4F1D2C3B4A5E6F708192A3B4C5D6E7F8_0000",
+          "createdUtc": "2026-10-18T19:54:00+00:00",
+          "crashType": "Crash",
+          "errorPattern": "crash.access_violation",
+          "installDrive": "C:"
+        }
+      ],
+      "source": "riot/Crashes"
+    },
+    "detectedCodes": {
+      "status": "known",
+      "value": [],
+      "source": "riot/logs"
+    },
+    "gameRunning": {
+      "status": "known",
+      "value": false,
+      "source": "riot/toolhelp"
+    },
+    "clientRunning": {
+      "status": "known",
+      "value": true,
+      "source": "riot/toolhelp"
+    }
+  },
+  "events": {
+    "windowStartUtc": "2026-10-04T20:15:00+00:00",
+    "windowEndUtc": "2026-10-18T20:15:00+00:00",
+    "hits": {
+      "status": "known",
+      "value": [],
+      "source": "events/EventLogReader"
+    },
+    "appCrashes": {
+      "status": "known",
+      "value": [
+        {
+          "exe": "VALORANT-Win64-Shipping.exe",
+          "exeVersion": "11.8.0.3988147",
+          "module": "ProductInfo.dll",
+          "moduleVersion": "1.10.6.0",
+          "exceptionCode": "0xc0000005",
+          "kind": "crash",
+          "utc": "2026-10-18T19:54:00+00:00"
+        },
+        {
+          "exe": "VALORANT-Win64-Shipping.exe",
+          "exeVersion": "11.8.0.3988147",
+          "module": "ProductInfo.dll",
+          "moduleVersion": "1.10.6.0",
+          "exceptionCode": "0xc0000005",
+          "kind": "crash",
+          "utc": "2026-10-17T20:15:00+00:00"
+        }
+      ],
+      "source": "events/EventLogReader:Application"
+    },
+    "bugChecks": {
+      "status": "known",
+      "value": [],
+      "source": "events/EventLogReader:System"
+    },
+    "minidumps": {
+      "status": "known",
+      "value": [],
+      "source": "events/minidump"
+    }
+  },
+  "pack": []
+}

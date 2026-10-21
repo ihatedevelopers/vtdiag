@@ -1,0 +1,24 @@
+{
+  "id": "route-account-side",
+  "rev": 1,
+  "kind": "route",
+  "category": "other",
+  "titleKey": "rule.route-account-side.title",
+  "summaryKey": "rule.route-account-side.summary",
+  "bucket": "riotOrAccount",
+  "route": "tryAnotherAccount",
+  "symptoms": [],
+  "prior": {
+    "threads": 0
+  },
+  "requires": [
+    "ask.other_account_works"
+  ],
+  "excludes": [],
+  "evidence": [],
+  "fixes": [],
+  "guides": [],
+  "questions": [],
+  "supersedes": [],
+  "related": []
+}

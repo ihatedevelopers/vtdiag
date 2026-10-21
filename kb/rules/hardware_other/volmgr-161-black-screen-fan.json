@@ -1,0 +1,50 @@
+{
+  "id": "volmgr-161-black-screen-fan",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "hardware_other",
+  "titleKey": "rule.volmgr-161-black-screen-fan.title",
+  "summaryKey": "rule.volmgr-161-black-screen-fan.summary",
+  "bucket": "likelyHardware",
+  "symptoms": [
+    "freeze_hard"
+  ],
+  "prior": {
+    "threads": 2
+  },
+  "requires": [
+    "events.volmgr_161"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "volmgr",
+      "signal": "events.volmgr_161",
+      "true": 2.5,
+      "veto": "false",
+      "textKey": "rule.volmgr-161-black-screen-fan.ev.volmgr"
+    },
+    {
+      "id": "kp41",
+      "signal": "events.kernel_power_41",
+      "true": 0.5
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.hardware.freeze_checks"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "volmgr-161-black-screen-fan",
+    "threadCount": 2,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1sargep",
+      "1srq0jx"
+    ],
+    "urls": []
+  }
+}

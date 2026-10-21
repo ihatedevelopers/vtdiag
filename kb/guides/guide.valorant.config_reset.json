@@ -1,0 +1,101 @@
+{
+  "id": "guide.valorant.config_reset",
+  "titleKey": "guide.valorant.config_reset.title",
+  "summaryKey": "guide.valorant.config_reset.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "valorant-config-corrupt"
+  ],
+  "preflight": [
+    {
+      "probe": "riot.game_running",
+      "must": "false",
+      "severity": "block",
+      "failKey": "guide.valorant.config_reset.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "config_corrupt",
+      "when": [
+        {
+          "signal": "riot.config_corrupt",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.valorant.config_reset.config_corrupt.text",
+      "steps": [
+        {
+          "textKey": "guide.valorant.config_reset.config_corrupt.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.valorant.config_reset.config_corrupt.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.valorant.config_reset.config_corrupt.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.valorant.config_reset.config_corrupt.s4",
+          "action": "copyText",
+          "target": "%LOCALAPPDATA%\\VALORANT\\Saved"
+        },
+        {
+          "textKey": "guide.valorant.config_reset.config_corrupt.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.valorant.config_reset.config_corrupt.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.valorant.config_reset.config_corrupt.s7",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "general",
+      "when": [],
+      "textKey": "guide.valorant.config_reset.general.text",
+      "steps": [
+        {
+          "textKey": "guide.valorant.config_reset.general.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.valorant.config_reset.general.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.valorant.config_reset.general.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.valorant.config_reset.general.s4",
+          "action": "copyText",
+          "target": "%LOCALAPPDATA%\\VALORANT\\Saved"
+        },
+        {
+          "textKey": "guide.valorant.config_reset.general.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.valorant.config_reset.general.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.valorant.config_reset.general.s7",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.valorant.config_reset.outcome"
+}

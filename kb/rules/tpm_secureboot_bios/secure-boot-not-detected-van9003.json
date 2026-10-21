@@ -1,0 +1,89 @@
+{
+  "id": "secure-boot-not-detected-van9003",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "tpm_secureboot_bios",
+  "titleKey": "rule.secure-boot-not-detected-van9003.title",
+  "summaryKey": "rule.secure-boot-not-detected-van9003.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "error_code",
+    "bios_requirement",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 19
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "sb_off",
+      "signal": "sec.secureboot.on",
+      "false": 3.0,
+      "veto": "true",
+      "textKey": "rule.secure-boot-not-detected-van9003.ev.sb_off"
+    },
+    {
+      "id": "legacy",
+      "signal": "fw.uefi",
+      "false": 1.0,
+      "textKey": "rule.secure-boot-not-detected-van9003.ev.legacy"
+    },
+    {
+      "id": "mbr",
+      "signal": "disk.system_gpt",
+      "false": 1.0,
+      "textKey": "rule.secure-boot-not-detected-van9003.ev.mbr"
+    },
+    {
+      "id": "setup_mode",
+      "signal": "sec.secureboot.setup_mode",
+      "true": 1.5,
+      "textKey": "rule.secure-boot-not-detected-van9003.ev.setup_mode"
+    },
+    {
+      "id": "ca2023",
+      "signal": "sec.secureboot.db_missing_ca2023",
+      "true": 0.4
+    },
+    {
+      "id": "bios_old",
+      "signal": "hw.bios_old",
+      "true": 0.3
+    },
+    {
+      "id": "broke_boot",
+      "signal": "ask.secureboot_enable_broke_boot",
+      "true": -0.5
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.secureboot.enable"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [
+    "secure-boot-enable-boot-failure",
+    "secure-boot-policy-wave-2026"
+  ],
+  "sources": {
+    "catalog": "secure-boot-not-detected-van9003",
+    "threadCount": 19,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1omfcsy",
+      "1omz94b",
+      "1p710j2",
+      "1p9085e",
+      "1ph8580"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/penalties/error-van-restriction",
+      "https://riotgames.com/en/news/vanguard-security-update-motherboard",
+      "https://support.riotgames.com/riot/support-tools/enabling-iommu",
+      "https://support.riotgames.com/riot/penalties/error-van-restriction-1"
+    ]
+  }
+}

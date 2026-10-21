@@ -1,0 +1,58 @@
+# VTDiag banned APIs: COMMON layer (every project, including tests). Owner: Lead.
+# Source: DESIGN.md section 2, design_B.md section 13.2. Format: <documentation comment id>;<message>
+# Overloads must be listed one by one (an id without a parameter list bans only the parameterless overload).
+# P/Invoke targets (OpenProcess, ReadProcessMemory, WriteProcessMemory, CreateRemoteThread, SetWindowsHookEx,
+# NtQuerySystemInformation, timeBeginPeriod, ...) are user-declared, so they are enforced by
+# tests/VTD.Policy.Tests (source scan + metadata ImplMap scan of every built VTD.* binary), not here.
+
+# ---- Culture-sensitive string operations (Turkish dotted-I; "nahimic".ToUpper() == "NAHİMİC" under tr-TR) ----
+M:System.String.ToUpper;Culture-sensitive. Use ToUpperInvariant() or compare with StringComparison.OrdinalIgnoreCase
+M:System.String.ToLower;Culture-sensitive. Use ToLowerInvariant() or compare with StringComparison.OrdinalIgnoreCase
+M:System.Char.ToUpper(System.Char);Culture-sensitive. Use char.ToUpperInvariant
+M:System.Char.ToLower(System.Char);Culture-sensitive. Use char.ToLowerInvariant
+M:System.String.Compare(System.String,System.String);Culture-sensitive. Use string.CompareOrdinal or pass StringComparison.Ordinal(IgnoreCase)
+M:System.String.Compare(System.String,System.String,System.Boolean);Culture-sensitive. Pass StringComparison.Ordinal(IgnoreCase)
+M:System.String.Compare(System.String,System.Int32,System.String,System.Int32,System.Int32);Culture-sensitive. Pass StringComparison.Ordinal(IgnoreCase)
+M:System.String.Compare(System.String,System.Int32,System.String,System.Int32,System.Int32,System.Boolean);Culture-sensitive. Pass StringComparison.Ordinal(IgnoreCase)
+M:System.String.CompareTo(System.String);Culture-sensitive. Use string.CompareOrdinal
+M:System.String.CompareTo(System.Object);Culture-sensitive. Use string.CompareOrdinal
+M:System.String.StartsWith(System.String);Culture-sensitive. Pass StringComparison.Ordinal(IgnoreCase)
+M:System.String.EndsWith(System.String);Culture-sensitive. Pass StringComparison.Ordinal(IgnoreCase)
+M:System.String.IndexOf(System.String);Culture-sensitive. Pass StringComparison.Ordinal(IgnoreCase)
+M:System.String.IndexOf(System.String,System.Int32);Culture-sensitive. Pass StringComparison.Ordinal(IgnoreCase)
+M:System.String.IndexOf(System.String,System.Int32,System.Int32);Culture-sensitive. Pass StringComparison.Ordinal(IgnoreCase)
+M:System.String.LastIndexOf(System.String);Culture-sensitive. Pass StringComparison.Ordinal(IgnoreCase)
+M:System.String.LastIndexOf(System.String,System.Int32);Culture-sensitive. Pass StringComparison.Ordinal(IgnoreCase)
+M:System.String.LastIndexOf(System.String,System.Int32,System.Int32);Culture-sensitive. Pass StringComparison.Ordinal(IgnoreCase)
+P:System.StringComparer.CurrentCulture;Culture-sensitive. Use StringComparer.Ordinal(IgnoreCase)
+P:System.StringComparer.CurrentCultureIgnoreCase;Culture-sensitive. Use StringComparer.Ordinal(IgnoreCase)
+F:System.StringComparison.CurrentCulture;Culture-sensitive. Use StringComparison.Ordinal(IgnoreCase)
+F:System.StringComparison.CurrentCultureIgnoreCase;Culture-sensitive. Use StringComparison.Ordinal(IgnoreCase)
+
+# ---- Ambient clock: inject System.TimeProvider (FakeClock in tests) so sessions, waves, expiry are testable ----
+P:System.DateTime.Now;Inject TimeProvider and use GetUtcNow(); local time never goes into machine data
+P:System.DateTime.Today;Inject TimeProvider
+P:System.DateTime.UtcNow;Inject TimeProvider and use GetUtcNow()
+P:System.DateTimeOffset.Now;Inject TimeProvider and use GetUtcNow()
+P:System.DateTimeOffset.UtcNow;Inject TimeProvider and use GetUtcNow()
+
+# ---- Vanguard coexistence (S8): no process handles, no enumeration that yields handle-opening objects ----
+# Process lists come from VTD.Platform's ToolHelp snapshot (names/PIDs only). The only Process objects allowed
+# are the ones a Write-layer project started itself.
+M:System.Diagnostics.Process.GetProcesses;Use the Platform process snapshot (names only, no handles)
+M:System.Diagnostics.Process.GetProcesses(System.String);Use the Platform process snapshot (names only, no handles)
+M:System.Diagnostics.Process.GetProcessesByName(System.String);Use the Platform process snapshot (names only, no handles)
+M:System.Diagnostics.Process.GetProcessesByName(System.String,System.String);Use the Platform process snapshot (names only, no handles)
+M:System.Diagnostics.Process.GetProcessById(System.Int32);Never obtain a Process for a PID you did not start
+M:System.Diagnostics.Process.GetProcessById(System.Int32,System.String);Never obtain a Process for a PID you did not start
+M:System.Diagnostics.Process.EnterDebugMode;Never enable SeDebugPrivilege
+P:System.Diagnostics.Process.Handle;No raw process handles
+P:System.Diagnostics.Process.SafeHandle;No raw process handles
+P:System.Diagnostics.Process.Modules;Never enumerate modules of any process
+P:System.Diagnostics.Process.MainModule;Never enumerate modules of any process
+M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String);Local machine only
+M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String,Microsoft.Win32.RegistryView);Local machine only
+
+# ---- Process lifetime ----
+M:System.Environment.FailFast(System.String);Throw or exit cleanly so the journal and session stay consistent
+M:System.Environment.FailFast(System.String,System.Exception);Throw or exit cleanly so the journal and session stay consistent

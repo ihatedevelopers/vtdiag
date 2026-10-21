@@ -1,0 +1,87 @@
+{
+  "id": "nahimic-audio-service-launch-hang",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "crash_freeze_bsod",
+  "titleKey": "rule.nahimic-audio-service-launch-hang.title",
+  "summaryKey": "rule.nahimic-audio-service-launch-hang.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "launch_black_screen",
+    "crash_desktop",
+    "error_code"
+  ],
+  "prior": {
+    "threads": 29
+  },
+  "requires": [
+    "conflict.nahimic.any"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "installed",
+      "signal": "conflict.nahimic.installed",
+      "true": 0.6,
+      "group": "present"
+    },
+    {
+      "id": "service",
+      "signal": "conflict.nahimic.service_present",
+      "true": 0.8,
+      "group": "present"
+    },
+    {
+      "id": "running",
+      "signal": "conflict.nahimic.running",
+      "true": 1.2,
+      "false": -0.6,
+      "textKey": "rule.nahimic-audio-service-launch-hang.ev.running"
+    },
+    {
+      "id": "crash_module",
+      "signal": "conflict.nahimic.crash_module",
+      "true": 3.0,
+      "textKey": "rule.nahimic-audio-service-launch-hang.ev.crash_module"
+    },
+    {
+      "id": "apo",
+      "signal": "apps.nahimic_apo",
+      "true": 0.5
+    },
+    {
+      "id": "fatal",
+      "signal": "log.fatal_error",
+      "true": 0.3
+    }
+  ],
+  "wave": {
+    "from": "2026-09-01",
+    "to": "2026-12-31",
+    "boost": 0.7
+  },
+  "fixes": [
+    "fix.svc.disable_conflict_service"
+  ],
+  "guides": [
+    "guide.apps.uninstall_nahimic"
+  ],
+  "questions": [],
+  "supersedes": [
+    "conflict-nahimic"
+  ],
+  "related": [],
+  "sources": {
+    "catalog": "nahimic-audio-service-launch-hang",
+    "threadCount": 29,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1wciq6n",
+      "1wcto1j",
+      "1wdcqnv",
+      "1wdq18p",
+      "1wdqy1s"
+    ],
+    "urls": []
+  }
+}

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: A6 UI & Reporting. xUnit v3 packages and analyzers come from Directory.Build.targets (Test layer). -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VTD.Reporting.Tests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VTD.Reporting\VTD.Reporting.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Testing.Fakes\VTD.Testing.Fakes.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Contracts\VTD.Contracts.csproj" />
+  </ItemGroup>
+</Project>

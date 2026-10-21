@@ -1,0 +1,165 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:VTD.App.Controls"
+                    xmlns:l="clr-namespace:VTD.App.Localization"
+                    xmlns:vm="clr-namespace:VTD.App.ViewModels">
+
+  <!-- 4 Health -->
+  <DataTemplate DataType="{x:Type vm:HealthViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{Binding Headline}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{Binding Summary}" Margin="0,8,0,20" Visibility="{Binding Summary, Converter={StaticResource Visible}}" />
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource UnknownToneBrush}" Visibility="{Binding ShowLimitedNote, Converter={StaticResource Visible}}">
+        <TextBlock Style="{StaticResource Body}" Text="{l:T Health.LimitedNote}" />
+      </c:ChamferBorder>
+      <ItemsControl ItemsSource="{Binding Groups}" Focusable="False">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <StackPanel Margin="0,8,0,14">
+              <TextBlock Style="{StaticResource SectionLabel}" Text="{Binding Name}" />
+              <ItemsControl ItemsSource="{Binding Items}" ItemTemplate="{StaticResource LineTemplate}" Focusable="False" />
+            </StackPanel>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+      <Button Style="{StaticResource Primary}" Content="{l:T Health.Next}" Command="{Binding NextCommand}" Margin="0,8,0,0" />
+      <Expander Style="{StaticResource Explainer}" Header="{l:T Common.WhatDoesThisMean}">
+        <TextBlock Style="{StaticResource Muted}" Text="{l:T Health.Explain}" />
+      </Expander>
+    </StackPanel>
+  </DataTemplate>
+
+  <!-- 5 Suspects -->
+  <DataTemplate x:Key="SuspectCard" DataType="{x:Type vm:SuspectViewModel}">
+    <c:ChamferBorder Style="{StaticResource Card}" Accent="{Binding Bucket, Converter={StaticResource BucketBrush}}" Padding="24,20">
+      <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+          <TextBlock Text="{Binding BandText}" FontFamily="{StaticResource DisplayFont}" FontWeight="SemiBold" FontSize="13" Foreground="{StaticResource BoneBrush}" VerticalAlignment="Center" />
+          <Border BorderBrush="{Binding Bucket, Converter={StaticResource BucketBrush}}" BorderThickness="1" CornerRadius="2" Padding="7,1" Margin="12,0,0,0" VerticalAlignment="Center">
+            <TextBlock Text="{Binding BucketText}" FontSize="12" Foreground="{Binding Bucket, Converter={StaticResource BucketBrush}}" TextWrapping="NoWrap" />
+          </Border>
+        </StackPanel>
+        <TextBlock Style="{StaticResource H3}" Text="{Binding Title}" />
+        <StackPanel Visibility="{Binding HasWhy, Converter={StaticResource Visible}}" Margin="0,14,0,0">
+          <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Suspects.Why}" Margin="0,0,0,6" />
+          <ItemsControl ItemsSource="{Binding Why}" Focusable="False">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Grid Margin="0,0,0,4">
+                  <Grid.ColumnDefinitions><ColumnDefinition Width="18" /><ColumnDefinition /></Grid.ColumnDefinitions>
+                  <Rectangle Width="6" Height="6" Fill="{StaticResource TextMutedBrush}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1,7,0,0" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform><RotateTransform Angle="45" /></Rectangle.RenderTransform>
+                  </Rectangle>
+                  <TextBlock Grid.Column="1" Style="{StaticResource Body}" Text="{Binding}" />
+                </Grid>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+        <StackPanel Visibility="{Binding HasFix, Converter={StaticResource Visible}}" Margin="0,14,0,0">
+          <TextBlock Style="{StaticResource Body}" Margin="0,0,0,8">
+            <Run Text="{l:T Suspects.FixLabel}" Foreground="{StaticResource TextMutedBrush}" /><Run Text=" " /><Run Text="{Binding FixTitle, Mode=OneWay}" />
+          </TextBlock>
+          <ItemsControl ItemsSource="{Binding Badges}" ItemTemplate="{StaticResource BadgeTemplate}" Focusable="False">
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate><WrapPanel /></ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+          </ItemsControl>
+          <TextBlock Style="{StaticResource Small}" Foreground="{StaticResource WarnBrush}" Text="{Binding UnavailableText}" Visibility="{Binding UnavailableText, Converter={StaticResource Visible}}" Margin="0,2,0,0" />
+        </StackPanel>
+        <TextBlock Style="{StaticResource Body}" Margin="0,12,0,0" Visibility="{Binding HasGuide, Converter={StaticResource Visible}}">
+          <Run Text="{l:T Suspects.GuideLabel}" Foreground="{StaticResource TextMutedBrush}" /><Run Text=" " /><Run Text="{Binding GuideTitle, Mode=OneWay}" />
+        </TextBlock>
+        <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+          <Button Style="{StaticResource Secondary}" Content="{l:T Suspects.OpenFix}" Command="{Binding TryFixCommand}" Visibility="{Binding CanTryFix, Converter={StaticResource Visible}}" Margin="0,0,10,0" Padding="14,7" MinHeight="34" FontSize="13.5" />
+          <Button Style="{StaticResource Secondary}" Content="{l:T Suspects.ShowSteps}" Command="{Binding ShowGuideCommand}" Visibility="{Binding HasGuide, Converter={StaticResource Visible}}" Padding="14,7" MinHeight="34" FontSize="13.5" />
+        </StackPanel>
+        <Expander Style="{StaticResource Explainer}" Header="{l:T Suspects.Math}" Margin="0,12,0,0">
+          <StackPanel>
+            <TextBlock Style="{StaticResource Mono}" Text="{Binding MathHeader}" Margin="0,0,0,6" />
+            <ItemsControl ItemsSource="{Binding Math}" Focusable="False">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate><TextBlock Style="{StaticResource Mono}" Text="{Binding}" /></DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </StackPanel>
+        </Expander>
+      </StackPanel>
+    </c:ChamferBorder>
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type vm:SuspectsViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Suspects.Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{Binding BucketLine}" Margin="0,8,0,20" />
+
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource WarnBrush}" Visibility="{Binding HasRoute, Converter={StaticResource Visible}}">
+        <StackPanel>
+          <TextBlock Style="{StaticResource H3}" Text="{Binding RouteText}" />
+          <ItemsControl ItemsSource="{Binding RouteLinks}" Focusable="False" Margin="0,8,0,0">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Button Style="{StaticResource Link}" Content="{Binding}" Command="{Binding DataContext.OpenLinkCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}" />
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </c:ChamferBorder>
+
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource UnknownToneBrush}" Visibility="{Binding UnknownLeading, Converter={StaticResource Visible}}">
+        <StackPanel>
+          <TextBlock Style="{StaticResource H3}" Text="{l:T Suspects.Unknown.Title}" />
+          <TextBlock Style="{StaticResource Muted}" Text="{l:T Suspects.Unknown.Detail}" Margin="0,6,0,10" />
+          <TextBlock Style="{StaticResource Body}" Text="{l:T Suspects.Unknown.Ladder}" />
+        </StackPanel>
+      </c:ChamferBorder>
+
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource InfoBrush}" Visibility="{Binding HasQuestion, Converter={StaticResource Visible}}">
+        <StackPanel>
+          <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Suspects.Question}" />
+          <TextBlock Style="{StaticResource H3}" Text="{Binding QuestionText}" />
+          <ItemsControl ItemsSource="{Binding QuestionOptions}" Focusable="False" Margin="0,12,0,0">
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate><WrapPanel /></ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Button Style="{StaticResource Secondary}" Content="{Binding Text}" Margin="0,0,10,0" Padding="14,7" MinHeight="34"
+                        Command="{Binding DataContext.AnswerCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding Id}" />
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </c:ChamferBorder>
+
+      <ItemsControl ItemsSource="{Binding Suspects}" ItemTemplate="{StaticResource SuspectCard}" Focusable="False" />
+      <Button Style="{StaticResource Ghost}" Content="{Binding ToggleAllText}" Command="{Binding ToggleAllCommand}" Visibility="{Binding CanToggleAll, Converter={StaticResource Visible}}" />
+
+      <c:ChamferBorder Style="{StaticResource Card}" Background="Transparent" Accent="{StaticResource UnknownToneBrush}" Visibility="{Binding HasCouldNotCheck, Converter={StaticResource Visible}}" Margin="0,8,0,12">
+        <StackPanel>
+          <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Suspects.CouldNotCheck}" />
+          <ItemsControl ItemsSource="{Binding CouldNotCheck}" Focusable="False">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Grid Margin="0,0,0,6">
+                  <Grid.ColumnDefinitions><ColumnDefinition Width="28" /><ColumnDefinition /></Grid.ColumnDefinitions>
+                  <c:StatusGlyph Status="Unknown" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                  <TextBlock Grid.Column="1" Style="{StaticResource Body}" Text="{Binding}" />
+                </Grid>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </c:ChamferBorder>
+
+      <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+        <Button Style="{StaticResource Primary}" Content="{Binding PrimaryText}" Command="{Binding PrimaryCommand}" Visibility="{Binding HasPrimary, Converter={StaticResource Visible}}" Margin="0,0,12,0" />
+        <Button Style="{StaticResource Ghost}" Content="{l:T Suspects.GetHelp}" Command="{Binding HelpCommand}" />
+        <Button Style="{StaticResource Ghost}" Content="{l:T Suspects.BackToHealth}" Command="{Binding BackToHealthCommand}" />
+      </StackPanel>
+      <Expander Style="{StaticResource Explainer}" Header="{l:T Common.WhatDoesThisMean}">
+        <TextBlock Style="{StaticResource Muted}" Text="{l:T Suspects.Explain}" />
+      </Expander>
+    </StackPanel>
+  </DataTemplate>
+</ResourceDictionary>

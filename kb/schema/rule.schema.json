@@ -1,0 +1,352 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:rule:1",
+  "title": "VTDiag KB rule",
+  "description": "kb/rules/<category>/<id>.json: a hypothesis or route rule made of weighted signal references.",
+  "$defs": {
+    "item": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable kebab-case id (catalog id), never reused; deprecate instead."
+        },
+        "rev": {
+          "type": "integer",
+          "description": "Revision; bumped on every change (outcome cards record id@rev)."
+        },
+        "kind": {
+          "enum": [
+            "hypothesis",
+            "route",
+            "generated"
+          ],
+          "description": "Kind."
+        },
+        "category": {
+          "enum": [
+            "fps_performance",
+            "vanguard",
+            "crash_freeze_bsod",
+            "tpm_secureboot_bios",
+            "install_update_corrupt",
+            "login_account_client",
+            "network_ping",
+            "gpu_driver",
+            "audio_mic",
+            "display_resolution",
+            "input_mouse",
+            "hardware_other",
+            "other"
+          ],
+          "description": "Catalog category (sets the flat smoothed prior group)."
+        },
+        "titleKey": {
+          "type": "string",
+          "description": "String key of the title."
+        },
+        "summaryKey": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "String key of the one-paragraph summary."
+        },
+        "bucket": {
+          "enum": [
+            "fixableHere",
+            "guidedManual",
+            "externalNetwork",
+            "riotOrAccount",
+            "likelyHardware",
+            "unknown"
+          ],
+          "description": "The honesty bucket this cause falls into when it is the answer (DESIGN.md section 1)."
+        },
+        "route": {
+          "enum": [
+            "hwidBanAppeal",
+            "tryAnotherAccount",
+            "unsupportedPlatform",
+            "riotServerIncident",
+            "hardwareCannotComply",
+            "riotSupportTicket",
+            null
+          ],
+          "description": "For Route: the route."
+        },
+        "symptoms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Symptom ids (from SymptomDef) this cause explains; chips set priors, never veto."
+        },
+        "prior": {
+          "type": "object",
+          "properties": {
+            "threads": {
+              "type": "integer",
+              "description": "Solved threads (thread_count in data/catalog.json); 0 for generated rules."
+            },
+            "override": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "Explicit prior probability override (rare; needs OverrideReason)."
+            },
+            "overrideReason": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Why the override exists."
+            }
+          },
+          "required": [
+            "threads"
+          ],
+          "additionalProperties": false,
+          "description": "Prior inputs."
+        },
+        "requires": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Hard gates: signal ids that must not be definitely False. Unknown never fires a gate."
+        },
+        "excludes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Exclusions: if any of these signals is definitely True, the hypothesis is ruled out."
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Stable id within the rule."
+              },
+              "signal": {
+                "type": "string",
+                "description": "Signal id."
+              },
+              "true": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Log-odds added when the signal is True (scaled by the signal strength 0..1)."
+              },
+              "false": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "Log-odds added when the signal is False."
+              },
+              "veto": {
+                "enum": [
+                  "true",
+                  "false",
+                  null
+                ],
+                "description": "Rule out the hypothesis when the signal is definitely this value. Unknown never vetoes."
+              },
+              "group": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Correlated evidence group: only the item with the largest |delta| in a group counts."
+              },
+              "ask": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Question id the planner may ask when this signal is Unknown."
+              },
+              "textKey": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "String key for the \"why we think so\" bullet; args come from the signal's evidence."
+              },
+              "onlyIfSymptoms": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Count this evidence only when one of these symptoms was chosen."
+              }
+            },
+            "required": [
+              "id",
+              "signal"
+            ],
+            "additionalProperties": false,
+            "description": "One weighted evidence item. Weights are log-odds added when the signal is definitely True or definitely False. There is deliberately no weight for Unknown: evidence that rests on an Unknown fact contributes nothing."
+          },
+          "description": "Weighted evidence."
+        },
+        "wave": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "from": {
+              "type": "string",
+              "format": "date",
+              "description": "First day."
+            },
+            "to": {
+              "type": "string",
+              "format": "date",
+              "description": "Last day."
+            },
+            "boost": {
+              "type": "number",
+              "description": "Log-odds added while the analysis date is inside the window."
+            }
+          },
+          "required": [
+            "from",
+            "to",
+            "boost"
+          ],
+          "additionalProperties": false,
+          "description": "Date-limited outbreak boost (Nahimic, Bonjour, hook waves)."
+        },
+        "fixes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Candidate fix ids, KB-preferred order."
+        },
+        "guides": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Guide ids."
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Question ids that may be asked to separate this hypothesis from a close rival."
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Rule ids this rule replaces when both fire (for example Nahimic supersedes conflict-nahimic)."
+        },
+        "related": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Related rule ids (UI \"see also\")."
+        },
+        "sources": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "catalog": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Catalog id in data/catalog.json."
+            },
+            "threadCount": {
+              "type": "integer",
+              "description": "Solved threads."
+            },
+            "evidence": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Best evidence label (op_confirmed, commenter_suggested...)."
+            },
+            "threadIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Example Reddit thread ids."
+            },
+            "urls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Official or reference URLs."
+            }
+          },
+          "additionalProperties": false,
+          "description": "Provenance of the rule."
+        },
+        "deprecated": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "since": {
+              "type": "string",
+              "description": "KB version that deprecated it."
+            },
+            "replacedBy": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Replacement id."
+            }
+          },
+          "required": [
+            "since"
+          ],
+          "additionalProperties": false,
+          "description": "Set when the rule is retired."
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "titleKey",
+        "prior"
+      ],
+      "additionalProperties": false,
+      "description": "A hypothesis rule: weighted references to signals (design_B.md section 4.2) evaluated with three-valued logic (design_A.md section 6.3). File: kb/rules/<category>/<id>.json. Schema: kb/schema/rule.schema.json."
+    }
+  },
+  "anyOf": [
+    {
+      "$ref": "#/$defs/item"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  ]
+}

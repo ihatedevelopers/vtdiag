@@ -1,0 +1,157 @@
+{
+  "id": "guide.apps.close_overlays",
+  "titleKey": "guide.apps.close_overlays.title",
+  "summaryKey": "guide.apps.close_overlays.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "third-party-hook-overlay-conflict",
+    "fps-decay-over-time",
+    "frametime-latency-spikes"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "close_now",
+      "when": [],
+      "textKey": "guide.apps.close_overlays.close_now.text",
+      "steps": [
+        {
+          "textKey": "guide.apps.close_overlays.close_now.s1",
+          "action": "runFix",
+          "target": "fix.proc.close_overlays"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.close_now.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.close_now.s3",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "rtss",
+      "when": [],
+      "textKey": "guide.apps.close_overlays.rtss.text",
+      "steps": [
+        {
+          "textKey": "guide.apps.close_overlays.rtss.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.rtss.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.rtss.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.rtss.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.rtss.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "trackers",
+      "when": [],
+      "textKey": "guide.apps.close_overlays.trackers.text",
+      "steps": [
+        {
+          "textKey": "guide.apps.close_overlays.trackers.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.trackers.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.trackers.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.trackers.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.trackers.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "builtin",
+      "when": [],
+      "textKey": "guide.apps.close_overlays.builtin.text",
+      "steps": [
+        {
+          "textKey": "guide.apps.close_overlays.builtin.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.builtin.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.builtin.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.builtin.s4",
+          "action": "openSettings",
+          "target": "ms-settings:gaming-gamebar"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.builtin.s5",
+          "action": "runFix",
+          "target": "fix.display.game_dvr_off"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "bundled",
+      "when": [],
+      "textKey": "guide.apps.close_overlays.bundled.text",
+      "steps": [
+        {
+          "textKey": "guide.apps.close_overlays.bundled.s1",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.bundled.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.bundled.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.bundled.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.bundled.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.close_overlays.bundled.s6",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.apps.close_overlays.outcome"
+}

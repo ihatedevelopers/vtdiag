@@ -1,0 +1,78 @@
+{
+  "id": "fix.input.mouse_accel_off",
+  "titleKey": "fix.input.mouse_accel_off.title",
+  "explainKey": "fix.input.mouse_accel_off.explain",
+  "undoExplainKey": "fix.input.mouse_accel_off.undo",
+  "noticeKey": "fix.input.mouse_accel_off.notice",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": false,
+  "reboot": "recommended",
+  "scope": "persistent",
+  "estMinutes": 0.2,
+  "appliesTo": [
+    "mouse-acceleration-floaty-aim",
+    "mouse-usb-port-polling-lag"
+  ],
+  "bind": {},
+  "guards": [],
+  "steps": [
+    {
+      "op": "registry.setValue",
+      "args": {
+        "path": "HKCU\\Control Panel\\Mouse",
+        "name": "MouseSpeed",
+        "kind": "String",
+        "data": "0"
+      },
+      "onFail": "abort"
+    },
+    {
+      "op": "registry.setValue",
+      "args": {
+        "path": "HKCU\\Control Panel\\Mouse",
+        "name": "MouseThreshold1",
+        "kind": "String",
+        "data": "0"
+      },
+      "onFail": "abort"
+    },
+    {
+      "op": "registry.setValue",
+      "args": {
+        "path": "HKCU\\Control Panel\\Mouse",
+        "name": "MouseThreshold2",
+        "kind": "String",
+        "data": "0"
+      },
+      "onFail": "abort"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "registry.setValue",
+      "args": {
+        "path": "HKCU\\Control Panel\\Mouse",
+        "name": "MouseSpeed"
+      },
+      "expect": {
+        "data": "0"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.mouse_ok"
+  },
+  "successPrior": {
+    "success": 2,
+    "trials": 12
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

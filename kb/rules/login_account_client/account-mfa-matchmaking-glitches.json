@@ -1,0 +1,47 @@
+{
+  "id": "account-mfa-matchmaking-glitches",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "login_account_client",
+  "titleKey": "rule.account-mfa-matchmaking-glitches.title",
+  "summaryKey": "rule.account-mfa-matchmaking-glitches.summary",
+  "bucket": "riotOrAccount",
+  "symptoms": [
+    "login_issue"
+  ],
+  "prior": {
+    "threads": 5
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "other_acct",
+      "signal": "ask.other_account_works",
+      "true": 1.5,
+      "false": -1.0,
+      "ask": "ask.other_account_works"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.account.other_account",
+    "guide.riot.support_ticket"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "account-mfa-matchmaking-glitches",
+    "threadCount": 5,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1qnm3id",
+      "1r44bnd",
+      "1rcbgpa",
+      "1sy4u6z",
+      "1x6jtf9"
+    ],
+    "urls": []
+  }
+}

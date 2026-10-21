@@ -1,0 +1,1347 @@
+[
+  {
+    "id": "conflict-vpn_nordvpn",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_nordvpn.title",
+    "summaryKey": "rule.conflict-vpn_nordvpn.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_nordvpn.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_nordvpn.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.vpn_nordvpn.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.vpn_nordvpn.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.vpn_nordvpn.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vpn_nordvpn.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vpn_nordvpn.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oh1ek6",
+        "1rztvdo",
+        "1piwqfg",
+        "1rztxve"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software"
+      ]
+    }
+  },
+  {
+    "id": "conflict-vpn_expressvpn",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_expressvpn.title",
+    "summaryKey": "rule.conflict-vpn_expressvpn.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_expressvpn.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_expressvpn.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.vpn_expressvpn.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.vpn_expressvpn.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.vpn_expressvpn.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vpn_expressvpn.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vpn_expressvpn.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1rn7tau"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software"
+      ]
+    }
+  },
+  {
+    "id": "conflict-vpn_protonvpn",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_protonvpn.title",
+    "summaryKey": "rule.conflict-vpn_protonvpn.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_protonvpn.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_protonvpn.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.vpn_protonvpn.running",
+        "true": 0.7
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vpn_protonvpn.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vpn_protonvpn.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 4,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1pajvzc",
+        "1oh1ek6",
+        "1s4ykfg",
+        "1wj5f0s",
+        "1pgtluv"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software"
+      ]
+    }
+  },
+  {
+    "id": "conflict-vpn_surfshark",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_surfshark.title",
+    "summaryKey": "rule.conflict-vpn_surfshark.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_surfshark.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_surfshark.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.vpn_surfshark.running",
+        "true": 0.7
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vpn_surfshark.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vpn_surfshark.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1w7rxi2"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software"
+      ]
+    }
+  },
+  {
+    "id": "conflict-vpn_cloudflare_warp",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_cloudflare_warp.title",
+    "summaryKey": "rule.conflict-vpn_cloudflare_warp.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_cloudflare_warp.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_cloudflare_warp.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.vpn_cloudflare_warp.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.vpn_cloudflare_warp.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.vpn_cloudflare_warp.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vpn_cloudflare_warp.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vpn_cloudflare_warp.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 18,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oh1ek6",
+        "1owponj",
+        "1pgygk9",
+        "1r82ebw",
+        "1skrf5h"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software"
+      ]
+    }
+  },
+  {
+    "id": "conflict-vpn_openvpn_tap",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_openvpn_tap.title",
+    "summaryKey": "rule.conflict-vpn_openvpn_tap.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_openvpn_tap.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_openvpn_tap.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.vpn_openvpn_tap.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.vpn_openvpn_tap.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.vpn_openvpn_tap.driver_loaded",
+        "true": 0.9
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vpn_openvpn_tap.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vpn_openvpn_tap.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oh1ek6",
+        "1uvpua5"
+      ],
+      "urls": [
+        "https://windowsreport.com/valorant-error-code-84/"
+      ]
+    }
+  },
+  {
+    "id": "conflict-vpn_wireguard",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_wireguard.title",
+    "summaryKey": "rule.conflict-vpn_wireguard.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_wireguard.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_wireguard.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.vpn_wireguard.running",
+        "true": 0.7
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.vpn_wireguard.driver_loaded",
+        "true": 0.9
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vpn_wireguard.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vpn_wireguard.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1qqgb23"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-vpn_radmin",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_radmin.title",
+    "summaryKey": "rule.conflict-vpn_radmin.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_radmin.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_radmin.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.vpn_radmin.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.vpn_radmin.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vpn_radmin.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vpn_radmin.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1uwkqjo"
+      ],
+      "urls": [
+        "https://windowsreport.com/valorant-error-code-84/"
+      ]
+    }
+  },
+  {
+    "id": "conflict-vpn_hamachi",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_hamachi.title",
+    "summaryKey": "rule.conflict-vpn_hamachi.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_hamachi.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_hamachi.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.vpn_hamachi.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.vpn_hamachi.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.vpn_hamachi.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vpn_hamachi.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vpn_hamachi.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [],
+      "urls": [
+        "https://windowsreport.com/valorant-error-code-84/"
+      ]
+    }
+  },
+  {
+    "id": "conflict-vpn_zerotier",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_zerotier.title",
+    "summaryKey": "rule.conflict-vpn_zerotier.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_zerotier.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_zerotier.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.vpn_zerotier.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.vpn_zerotier.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vpn_zerotier.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vpn_zerotier.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [],
+      "urls": [
+        "https://windowsreport.com/valorant-error-code-84/"
+      ]
+    }
+  },
+  {
+    "id": "conflict-vpn_tailscale",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_tailscale.title",
+    "summaryKey": "rule.conflict-vpn_tailscale.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_tailscale.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_tailscale.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.vpn_tailscale.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.vpn_tailscale.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.vpn_tailscale.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vpn_tailscale.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vpn_tailscale.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1x2biny",
+        "1peukzk"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-vpn_mullvad_pia_windscribe",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_mullvad_pia_windscribe.title",
+    "summaryKey": "rule.conflict-vpn_mullvad_pia_windscribe.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_mullvad_pia_windscribe.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_mullvad_pia_windscribe.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.vpn_mullvad_pia_windscribe.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.vpn_mullvad_pia_windscribe.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.vpn_mullvad_pia_windscribe.service_running",
+        "true": 0.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 3,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1t7ukwr",
+        "1uueir7",
+        "1vj31ce",
+        "1uqonfw"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software"
+      ]
+    }
+  },
+  {
+    "id": "conflict-vpn_corporate",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-vpn_corporate.title",
+    "summaryKey": "rule.conflict-vpn_corporate.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vpn_corporate.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vpn_corporate.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.vpn_corporate.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.vpn_corporate.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.vpn_corporate.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vpn_corporate.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vpn_corporate.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1wdi8ec",
+        "1rk4t0x",
+        "1s7pi5l"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-dpi_bypass_windivert",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-dpi_bypass_windivert.title",
+    "summaryKey": "rule.conflict-dpi_bypass_windivert.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.dpi_bypass_windivert.any"
+    ],
+    "evidence": [
+      {
+        "id": "running",
+        "signal": "conflict.dpi_bypass_windivert.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.dpi_bypass_windivert.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.dpi_bypass_windivert.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.dpi_bypass_windivert.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-system_proxy",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-system_proxy.title",
+    "summaryKey": "rule.conflict-system_proxy.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "net.proxy_on",
+        "true": 1.0
+      },
+      {
+        "id": "e1",
+        "signal": "conflict.system_proxy.running",
+        "true": 0.6
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 5,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1ovpgj0",
+        "1q69cud",
+        "1rimipa",
+        "1wijr66",
+        "1x2yw07"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software"
+      ]
+    }
+  },
+  {
+    "id": "conflict-gearup_booster",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-gearup_booster.title",
+    "summaryKey": "rule.conflict-gearup_booster.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "launch_black_screen",
+      "crash_desktop",
+      "high_ping"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.gearup_booster.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.gearup_booster.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "crash_module",
+        "signal": "conflict.gearup_booster.crash_module",
+        "true": 3.5
+      },
+      {
+        "id": "file_present",
+        "signal": "conflict.gearup_booster.file_present",
+        "true": 0.8,
+        "group": "presence"
+      }
+    ],
+    "wave": {
+      "from": "2026-10-05",
+      "to": "2026-12-31",
+      "boost": 0.6
+    },
+    "fixes": [
+      "fix.net.winsock_reset"
+    ],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1x1h2qy",
+        "1piy7lb",
+        "1ppkfqx",
+        "1qdfk5i",
+        "1snf9wc"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-lenovo_vantage",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-lenovo_vantage.title",
+    "summaryKey": "rule.conflict-lenovo_vantage.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "disconnect",
+      "high_ping"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.lenovo_vantage.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.lenovo_vantage.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.lenovo_vantage.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.lenovo_vantage.service_running",
+        "true": 0.5
+      }
+    ],
+    "fixes": [
+      "fix.svc.disable_conflict_service"
+    ],
+    "guides": [
+      "guide.power.laptop_mode"
+    ],
+    "sources": {
+      "threadCount": 3,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1wdcqnv",
+        "1qycvf3",
+        "1uvkqr6",
+        "1rnd17h",
+        "1slij5z"
+      ],
+      "urls": []
+    },
+    "related": [
+      "lenovo-vantage-wifi-collapse"
+    ]
+  },
+  {
+    "id": "conflict-exitlag",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-exitlag.title",
+    "summaryKey": "rule.conflict-exitlag.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.exitlag.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.exitlag.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.exitlag.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 8,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oh1ek6",
+        "1rejb1u",
+        "1rhmv1j",
+        "1sjmu4v",
+        "1vp5554"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-game_accelerators",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-game_accelerators.title",
+    "summaryKey": "rule.conflict-game_accelerators.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.game_accelerators.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.game_accelerators.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.game_accelerators.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 4,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1sjmu4v",
+        "1vj31ce",
+        "1vp4h9l",
+        "1wvf1o4",
+        "1ownet5"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-killer_suite",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-killer_suite.title",
+    "summaryKey": "rule.conflict-killer_suite.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "login_issue",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.killer_suite.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.killer_suite.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.killer_suite.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.killer_suite.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.net.dns_ipv6"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1rczb6g",
+        "1wo7vz5",
+        "1ug8dr7",
+        "1tncviv"
+      ],
+      "urls": []
+    },
+    "related": [
+      "val57-59-ipv6-killer"
+    ]
+  },
+  {
+    "id": "conflict-smartbyte_cfosspeed",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-smartbyte_cfosspeed.title",
+    "summaryKey": "rule.conflict-smartbyte_cfosspeed.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.smartbyte_cfosspeed.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.smartbyte_cfosspeed.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.smartbyte_cfosspeed.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.smartbyte_cfosspeed.service_running",
+        "true": 0.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1uxxnir",
+        "1oh9eve",
+        "1qcz1w4",
+        "1r250hy",
+        "1tbhgas"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-ipv6_binding",
+    "rev": 1,
+    "kind": "generated",
+    "category": "network_ping",
+    "titleKey": "rule.conflict-ipv6_binding.title",
+    "summaryKey": "rule.conflict-ipv6_binding.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "voice_chat",
+      "login_issue"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "net.ipv6_disabled",
+        "true": 0.8
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.net.dns_ipv6"
+    ],
+    "sources": {
+      "threadCount": 18,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1p30ckd",
+        "1pd0nao",
+        "1pdotlv",
+        "1pgygk9",
+        "1pw8ioc"
+      ],
+      "urls": []
+    }
+  }
+]

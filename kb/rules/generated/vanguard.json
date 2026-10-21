@@ -1,0 +1,2453 @@
+[
+  {
+    "id": "conflict-av_avast",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-av_avast.title",
+    "summaryKey": "rule.conflict-av_avast.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.av_avast.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.av_avast.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.av_avast.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.av.exclusions"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1qsl871",
+        "1wzn7w7",
+        "1x41hxj"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software"
+      ]
+    }
+  },
+  {
+    "id": "conflict-av_norton",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-av_norton.title",
+    "summaryKey": "rule.conflict-av_norton.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.av_norton.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.av_norton.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.av_norton.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.av.exclusions"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1qz43n6",
+        "1w1f9m2",
+        "1qya1a6",
+        "1oks7pj"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-av_mcafee",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-av_mcafee.title",
+    "summaryKey": "rule.conflict-av_mcafee.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.av_mcafee.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.av_mcafee.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.av_mcafee.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.av.exclusions"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oh1ek6",
+        "1rng4db",
+        "1wzn7w7",
+        "1oks7pj"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-av_kaspersky",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-av_kaspersky.title",
+    "summaryKey": "rule.conflict-av_kaspersky.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.av_kaspersky.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.av_kaspersky.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.av_kaspersky.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.av.exclusions"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1qsl871"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-av_bitdefender",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-av_bitdefender.title",
+    "summaryKey": "rule.conflict-av_bitdefender.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.av_bitdefender.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.av_bitdefender.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.av_bitdefender.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.av.exclusions"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1srm8sp",
+        "1u9a51g",
+        "1oz6hx2",
+        "1qsl871",
+        "1x6h6nd"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-av_malwarebytes",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-av_malwarebytes.title",
+    "summaryKey": "rule.conflict-av_malwarebytes.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.av_malwarebytes.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.av_malwarebytes.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.av_malwarebytes.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.av_malwarebytes.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.av_malwarebytes.service_running",
+        "true": 0.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.av.exclusions"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1pjmbnb",
+        "1v9h4ow",
+        "1va9g12",
+        "1tqbk5e",
+        "1u3gpb2"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-av_trend_micro",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-av_trend_micro.title",
+    "summaryKey": "rule.conflict-av_trend_micro.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.av_trend_micro.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.av_trend_micro.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.av_trend_micro.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.av.exclusions"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1r5zp2a"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-av_360",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-av_360.title",
+    "summaryKey": "rule.conflict-av_360.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.av_360.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.av_360.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.av_360.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.av.exclusions"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1r9bj7x"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-av_other_suites",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-av_other_suites.title",
+    "summaryKey": "rule.conflict-av_other_suites.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.av_other_suites.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.av_other_suites.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.av_other_suites.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.av_other_suites.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.av_other_suites.service_running",
+        "true": 0.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.av.exclusions"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1vuavg9"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-defender_firewall_block",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-defender_firewall_block.title",
+    "summaryKey": "rule.conflict-defender_firewall_block.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "disconnect",
+      "error_code"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "net.firewall_blocks_riot",
+        "true": 2.0
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.network.firewall"
+    ],
+    "sources": {
+      "threadCount": 29,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1pgygk9",
+        "1phz7w1",
+        "1pi4vz8",
+        "1pjgwh0",
+        "1ppm07w"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/riot/performance/error-van-185"
+      ]
+    }
+  },
+  {
+    "id": "conflict-defender_cfa",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-defender_cfa.title",
+    "summaryKey": "rule.conflict-defender_cfa.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "sec.defender_cfa_on",
+        "true": 1.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.av.exclusions"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1prlyy4",
+        "1u5w2nr",
+        "1r3a9ju"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-defender_smart_app_control",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-defender_smart_app_control.title",
+    "summaryKey": "rule.conflict-defender_smart_app_control.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "sec.smart_app_control_on",
+        "true": 1.0
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.av.exclusions"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1rg8857",
+        "1weju7d"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-exploit_protection_override",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-exploit_protection_override.title",
+    "summaryKey": "rule.conflict-exploit_protection_override.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "error_code",
+      "wont_launch"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "sec.exploit_override_riot",
+        "true": 2.5
+      }
+    ],
+    "fixes": [
+      "fix.sec.reset_exploit_overrides"
+    ],
+    "guides": [],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1wdq18p",
+        "1pn2hbx",
+        "1sm9hpm",
+        "1u2eoha",
+        "1ukabw6"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-vpn_generic",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-vpn_generic.title",
+    "summaryKey": "rule.conflict-vpn_generic.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "disconnect",
+      "error_code",
+      "high_ping"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "net.vpn_adapter_up",
+        "true": 1.0
+      },
+      {
+        "id": "e1",
+        "signal": "conflict.vpn_generic.adapter_enabled",
+        "true": 0.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 35,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oh1ek6",
+        "1ovpgj0",
+        "1owponj",
+        "1pcr1c8",
+        "1pd0nao"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software",
+        "https://windowsreport.com/valorant-error-code-84/"
+      ]
+    }
+  },
+  {
+    "id": "conflict-ac_faceit",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-ac_faceit.title",
+    "summaryKey": "rule.conflict-ac_faceit.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.ac_faceit.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.ac_faceit.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.ac_faceit.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.ac_faceit.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.ac_faceit.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 4,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1q0q794",
+        "1r6kf92",
+        "1wdi8ec",
+        "1qx5g3s",
+        "1s7aq9u"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-ac_esea",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-ac_esea.title",
+    "summaryKey": "rule.conflict-ac_esea.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.ac_esea.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.ac_esea.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.ac_esea.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.ac_esea.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.ac_esea.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-ac_battleye",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-ac_battleye.title",
+    "summaryKey": "rule.conflict-ac_battleye.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.ac_battleye.any"
+    ],
+    "evidence": [
+      {
+        "id": "service_present",
+        "signal": "conflict.ac_battleye.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.ac_battleye.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.ac_battleye.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1wkj9fb"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-ac_easyanticheat",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-ac_easyanticheat.title",
+    "summaryKey": "rule.conflict-ac_easyanticheat.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.ac_easyanticheat.any"
+    ],
+    "evidence": [
+      {
+        "id": "service_present",
+        "signal": "conflict.ac_easyanticheat.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.ac_easyanticheat.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.ac_easyanticheat.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1siytc7",
+        "1vegb5f",
+        "1piqc6i",
+        "1trv2zs",
+        "1uf81r6"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-ac_xigncode",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-ac_xigncode.title",
+    "summaryKey": "rule.conflict-ac_xigncode.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.ac_xigncode.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.ac_xigncode.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1qybh9e"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-ac_mhyprot",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-ac_mhyprot.title",
+    "summaryKey": "rule.conflict-ac_mhyprot.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.ac_mhyprot.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.ac_mhyprot.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vpn.remove"
+    ],
+    "sources": {
+      "threadCount": 3,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1wlqajy",
+        "1pwojup",
+        "1wjjgr6",
+        "1r33yv5",
+        "1sz2ier"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-omen_gaming_hub",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-omen_gaming_hub.title",
+    "summaryKey": "rule.conflict-omen_gaming_hub.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.omen_gaming_hub.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.omen_gaming_hub.installed",
+        "true": 0.8,
+        "group": "presence"
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1p26j80",
+        "1pcbc8q",
+        "1pcs5y9",
+        "1sys4ky",
+        "1p88ofa"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-ene_rgb_driver",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-ene_rgb_driver.title",
+    "summaryKey": "rule.conflict-ene_rgb_driver.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code",
+      "bios_requirement"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.ene_rgb_driver.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.ene_rgb_driver.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "wave": {
+      "from": "2026-01-01",
+      "to": "2026-02-28",
+      "boost": 0.5
+    },
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict",
+      "guide.hvci.enable"
+    ],
+    "sources": {
+      "threadCount": 3,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1qraeid",
+        "1qp3284",
+        "1qrafx2",
+        "1qq9m8g",
+        "1qrh71f"
+      ],
+      "urls": [
+        "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error",
+        "https://www.esports.net/wiki/guides/valorant-incompatible-software-error-fix/"
+      ]
+    }
+  },
+  {
+    "id": "conflict-asus_armoury_crate",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-asus_armoury_crate.title",
+    "summaryKey": "rule.conflict-asus_armoury_crate.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.asus_armoury_crate.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.asus_armoury_crate.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.asus_armoury_crate.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.asus_armoury_crate.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.asus_armoury_crate.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [
+      "fix.svc.disable_conflict_service"
+    ],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1rah5lw",
+        "1x1f6jt",
+        "1olhbot",
+        "1q7kf54",
+        "1s1tv64"
+      ],
+      "urls": [
+        "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error"
+      ]
+    }
+  },
+  {
+    "id": "conflict-corsair_icue",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-corsair_icue.title",
+    "summaryKey": "rule.conflict-corsair_icue.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.corsair_icue.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.corsair_icue.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.corsair_icue.running",
+        "true": 0.7
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.corsair_icue.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 3,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1qw6tdz",
+        "1rah5lw",
+        "1w8rhft",
+        "1p2v1sf",
+        "1pnu8a5"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-razer_synapse",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-razer_synapse.title",
+    "summaryKey": "rule.conflict-razer_synapse.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "disconnect",
+      "error_code"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.razer_synapse.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.razer_synapse.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.razer_synapse.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.razer_synapse.service_running",
+        "true": 0.5
+      }
+    ],
+    "fixes": [
+      "fix.svc.disable_conflict_service"
+    ],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 6,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1or3q42",
+        "1qp3284",
+        "1selw1n",
+        "1viuppt",
+        "1wqriwf"
+      ],
+      "urls": []
+    },
+    "related": [
+      "razer-synapse-escalation-kick"
+    ]
+  },
+  {
+    "id": "conflict-logitech_ghub",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-logitech_ghub.title",
+    "summaryKey": "rule.conflict-logitech_ghub.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.logitech_ghub.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.logitech_ghub.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.logitech_ghub.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.logitech_ghub.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.logitech_ghub.service_running",
+        "true": 0.5
+      }
+    ],
+    "fixes": [
+      "fix.svc.disable_conflict_service",
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1rpzz59",
+        "1tolnhq",
+        "1oe0zyw",
+        "1oz6hx2",
+        "1qdlwwp"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-steelseries_gg",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-steelseries_gg.title",
+    "summaryKey": "rule.conflict-steelseries_gg.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.steelseries_gg.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.steelseries_gg.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.steelseries_gg.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1t8madn",
+        "1pkhb9y",
+        "1rppkb9",
+        "1ovn34b",
+        "1phryto"
+      ],
+      "urls": [
+        "https://www.neowin.net/news/windows-1110-is-flagging-winring0-on-your-pc-monitoring-fan-control-apps-heres-why/"
+      ]
+    }
+  },
+  {
+    "id": "conflict-msi_center",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-msi_center.title",
+    "summaryKey": "rule.conflict-msi_center.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.msi_center.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.msi_center.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.msi_center.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1qp3284",
+        "1rah5lw",
+        "1p3trmy"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-gigabyte_gcc_rgbfusion",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-gigabyte_gcc_rgbfusion.title",
+    "summaryKey": "rule.conflict-gigabyte_gcc_rgbfusion.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.gigabyte_gcc_rgbfusion.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.gigabyte_gcc_rgbfusion.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.gigabyte_gcc_rgbfusion.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1w1f9m2",
+        "1pnteup",
+        "1rxevce",
+        "1ueeg5h",
+        "1x7j3x5"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-nzxt_cam",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-nzxt_cam.title",
+    "summaryKey": "rule.conflict-nzxt_cam.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.nzxt_cam.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.nzxt_cam.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.nzxt_cam.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1qw6tdz"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-winring0_tools",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-winring0_tools.title",
+    "summaryKey": "rule.conflict-winring0_tools.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "error_code",
+      "bios_requirement"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.winring0_tools.any"
+    ],
+    "evidence": [
+      {
+        "id": "running",
+        "signal": "conflict.winring0_tools.running",
+        "true": 0.7
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.winring0_tools.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.close_overlays"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1w52oy9",
+        "1qlt0a5",
+        "1qt3igk",
+        "1sm9hpm",
+        "1u4z3n0"
+      ],
+      "urls": [
+        "https://www.neowin.net/news/windows-1110-is-flagging-winring0-on-your-pc-monitoring-fan-control-apps-heres-why/",
+        "https://forums.evga.com/EVGA-Update-all-of-your-programs-because-they-have-vulnerability-FIXED-with-PX1-v-107-m3050791.aspx"
+      ]
+    }
+  },
+  {
+    "id": "conflict-inpoutx64",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-inpoutx64.title",
+    "summaryKey": "rule.conflict-inpoutx64.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.inpoutx64.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.inpoutx64.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [],
+      "urls": [
+        "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error"
+      ]
+    }
+  },
+  {
+    "id": "conflict-mediatek_rz616",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-mediatek_rz616.title",
+    "summaryKey": "rule.conflict-mediatek_rz616.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code",
+      "bios_requirement"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.mediatek_rz616.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.mediatek_rz616.driver_loaded",
+        "true": 0.9
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.mediatek_rz616.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.mediatek_rz616.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.hvci.enable"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1vbeday",
+        "1p4zkvt",
+        "1smcv3q",
+        "1wzqchq",
+        "1xam9ni"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/riot/performance/van-incompatible-oem-driver"
+      ]
+    }
+  },
+  {
+    "id": "conflict-storage_oem_drivers",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-storage_oem_drivers.title",
+    "summaryKey": "rule.conflict-storage_oem_drivers.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.storage_oem_drivers.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.storage_oem_drivers.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.riot.support_ticket"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1rezy5s"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/riot/performance/van-incompatible-oem-driver"
+      ]
+    }
+  },
+  {
+    "id": "conflict-intel_nal_diag",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-intel_nal_diag.title",
+    "summaryKey": "rule.conflict-intel_nal_diag.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.intel_nal_diag.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.intel_nal_diag.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1tm311u"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-entech_se64a",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-entech_se64a.title",
+    "summaryKey": "rule.conflict-entech_se64a.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code",
+      "bios_requirement"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.entech_se64a.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.entech_se64a.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1qf6z3u"
+      ],
+      "urls": [
+        "https://www.freefixer.com/library/file/se64a.sys-85801"
+      ]
+    }
+  },
+  {
+    "id": "conflict-misc_flagged_drivers",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-misc_flagged_drivers.title",
+    "summaryKey": "rule.conflict-misc_flagged_drivers.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code",
+      "bios_requirement"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.misc_flagged_drivers.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.misc_flagged_drivers.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1ts863h",
+        "1umg6p0",
+        "1ur4vrw",
+        "1pgvh31",
+        "1stj4yu"
+      ],
+      "urls": [
+        "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error",
+        "https://support.riotgames.com/en-us/valorant/performance/van-incompatible-software"
+      ]
+    }
+  },
+  {
+    "id": "conflict-hyperv_hypervisor",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-hyperv_hypervisor.title",
+    "summaryKey": "rule.conflict-hyperv_hypervisor.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.hyperv_hypervisor.any"
+    ],
+    "evidence": [
+      {
+        "id": "service_present",
+        "signal": "conflict.hyperv_hypervisor.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.hyperv_hypervisor.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "feature_enabled",
+        "signal": "conflict.hyperv_hypervisor.feature_enabled",
+        "true": 0.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 9,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1p8ly4l",
+        "1pqxng6",
+        "1pzp13r",
+        "1tp5uyi",
+        "1u71s5f"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/riot/performance/error-van-138",
+        "https://www.thespike.gg/valorant/valorant-van-9100-error-causes-and-solutions-of-the-error-code"
+      ]
+    }
+  },
+  {
+    "id": "conflict-vmware",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-vmware.title",
+    "summaryKey": "rule.conflict-vmware.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.vmware.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.vmware.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.vmware.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.vmware.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.vmware.driver_loaded",
+        "true": 0.9
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.vmware.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.vmware.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 3,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1pqxng6",
+        "1u5dpcq",
+        "1uvpua5"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/riot/performance/error-van-138"
+      ]
+    }
+  },
+  {
+    "id": "conflict-virtualbox",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-virtualbox.title",
+    "summaryKey": "rule.conflict-virtualbox.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.virtualbox.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.virtualbox.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.virtualbox.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.virtualbox.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.virtualbox.driver_loaded",
+        "true": 0.9
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.virtualbox.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.virtualbox.adapter_enabled",
+        "true": 0.4
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1uvpua5"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/riot/performance/error-van-138"
+      ]
+    }
+  },
+  {
+    "id": "conflict-wsl_vmp",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-wsl_vmp.title",
+    "summaryKey": "rule.conflict-wsl_vmp.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.wsl_vmp.any"
+    ],
+    "evidence": [
+      {
+        "id": "service_present",
+        "signal": "conflict.wsl_vmp.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.wsl_vmp.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "adapter_present",
+        "signal": "conflict.wsl_vmp.adapter_present",
+        "true": 0.4,
+        "group": "presence"
+      },
+      {
+        "id": "adapter_enabled",
+        "signal": "conflict.wsl_vmp.adapter_enabled",
+        "true": 0.4
+      },
+      {
+        "id": "feature_enabled",
+        "signal": "conflict.wsl_vmp.feature_enabled",
+        "true": 0.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oz6hx2",
+        "1q7lj5n",
+        "1tgpxzw",
+        "1pyphds"
+      ],
+      "urls": [
+        "https://www.thespike.gg/valorant/valorant-van-9100-error-causes-and-solutions-of-the-error-code"
+      ]
+    }
+  },
+  {
+    "id": "conflict-docker_desktop",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-docker_desktop.title",
+    "summaryKey": "rule.conflict-docker_desktop.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.docker_desktop.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.docker_desktop.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.docker_desktop.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.docker_desktop.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.docker_desktop.service_running",
+        "true": 0.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1uxxnir",
+        "1uwkqjo",
+        "1tyi77m",
+        "1wl35yb"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-android_emulators",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-android_emulators.title",
+    "summaryKey": "rule.conflict-android_emulators.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.android_emulators.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.android_emulators.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.android_emulators.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1odf1xo",
+        "1senyyi",
+        "1tr2b2m"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-sandbox_rollback",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-sandbox_rollback.title",
+    "summaryKey": "rule.conflict-sandbox_rollback.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.sandbox_rollback.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.sandbox_rollback.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.sandbox_rollback.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.sandbox_rollback.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.sandbox_rollback.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1sct5b7"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-cheat_engine",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-cheat_engine.title",
+    "summaryKey": "rule.conflict-cheat_engine.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "error_code",
+      "wont_launch"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.cheat_engine.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.cheat_engine.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.cheat_engine.running",
+        "true": 0.7
+      },
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.cheat_engine.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.apps.uninstall_conflict"
+    ],
+    "sources": {
+      "threadCount": 1,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1qml6yx",
+        "1sdtvl1",
+        "1pdzasi",
+        "1qkp4m1",
+        "1to79et"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-process_lasso",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-process_lasso.title",
+    "summaryKey": "rule.conflict-process_lasso.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "disconnect",
+      "stutter"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.process_lasso.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.process_lasso.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.process_lasso.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.process_lasso.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.process_lasso.service_running",
+        "true": 0.5
+      }
+    ],
+    "fixes": [
+      "fix.sec.remove_riot_perfoptions",
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.hybrid_cpu.priority"
+    ],
+    "sources": {
+      "threadCount": 10,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1p3fe4u",
+        "1tkcqk5",
+        "1tkqt7f",
+        "1ughj5n",
+        "1w1f9m2"
+      ],
+      "urls": []
+    },
+    "related": [
+      "high-process-priority-van136-185"
+    ]
+  },
+  {
+    "id": "conflict-required_services_disabled",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-required_services_disabled.title",
+    "summaryKey": "rule.conflict-required_services_disabled.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code",
+      "wont_launch"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "os.required_services_disabled",
+        "true": 2.0
+      },
+      {
+        "id": "e1",
+        "signal": "vg.vgc_disabled",
+        "true": 1.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.vanguard.reinstall"
+    ],
+    "sources": {
+      "threadCount": 11,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1oi3opu",
+        "1posm3j",
+        "1pzsqpm",
+        "1ufdav9",
+        "1wir0rj"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-bcd_tweaks",
+    "rev": 1,
+    "kind": "generated",
+    "category": "vanguard",
+    "titleKey": "rule.conflict-bcd_tweaks.title",
+    "summaryKey": "rule.conflict-bcd_tweaks.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code",
+      "wont_launch"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "sec.bcd.testsigning",
+        "true": 1.5
+      },
+      {
+        "id": "e1",
+        "signal": "sec.bcd.hypervisor_off",
+        "true": 0.8
+      },
+      {
+        "id": "e2",
+        "signal": "sec.bcd.nx_off",
+        "true": 1.0
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.bcd.restore_security"
+    ],
+    "sources": {
+      "threadCount": 5,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1v72yar",
+        "1t4z7xu",
+        "1u3ra0k",
+        "1ufzky5",
+        "1wxj2w0"
+      ],
+      "urls": []
+    }
+  }
+]

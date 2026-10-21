@@ -1,0 +1,408 @@
+{
+  "id": "guide.secureboot.enable",
+  "titleKey": "guide.secureboot.enable.title",
+  "summaryKey": "guide.secureboot.enable.summary",
+  "bucket": "guidedManual",
+  "risk": "high",
+  "reboot": "required",
+  "appliesTo": [
+    "secure-boot-not-detected-van9003",
+    "secure-boot-enable-boot-failure"
+  ],
+  "preflight": [
+    {
+      "probe": "sec.bitlocker_on",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.secureboot.enable.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "boot_failed_after_enable",
+      "when": [
+        {
+          "signal": "ask.secureboot_enable_broke_boot",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.secureboot.enable.boot_failed_after_enable.text",
+      "steps": [
+        {
+          "textKey": "guide.secureboot.enable.boot_failed_after_enable.s1",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.boot_failed_after_enable.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.boot_failed_after_enable.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.boot_failed_after_enable.s4",
+          "action": "runCheck",
+          "target": "disk.system_gpt"
+        },
+        {
+          "textKey": "guide.secureboot.enable.boot_failed_after_enable.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.boot_failed_after_enable.s6",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.boot_failed_after_enable.s7",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.boot_failed_after_enable.s8",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.secureboot.on",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "setup_mode"
+    },
+    {
+      "id": "mbr",
+      "when": [
+        {
+          "signal": "disk.system_gpt",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.secureboot.enable.mbr.text",
+      "steps": [
+        {
+          "textKey": "guide.secureboot.enable.mbr.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.mbr.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.mbr.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.mbr.s4",
+          "action": "copyText",
+          "target": "mbr2gpt /validate /allowFullOS"
+        },
+        {
+          "textKey": "guide.secureboot.enable.mbr.s5",
+          "action": "copyText",
+          "target": "mbr2gpt /convert /allowFullOS"
+        },
+        {
+          "textKey": "guide.secureboot.enable.mbr.s6",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.mbr.s7",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.mbr.s8",
+          "action": "runCheck",
+          "target": "sec.secureboot.on"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "disk.system_gpt",
+          "is": "true"
+        },
+        {
+          "signal": "sec.secureboot.on",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "uefi_sb_off"
+    },
+    {
+      "id": "csm",
+      "when": [
+        {
+          "signal": "fw.uefi",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.secureboot.enable.csm.text",
+      "steps": [
+        {
+          "textKey": "guide.secureboot.enable.csm.s1",
+          "action": "runCheck",
+          "target": "disk.system_gpt"
+        },
+        {
+          "textKey": "guide.secureboot.enable.csm.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.csm.s3",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.csm.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.csm.s5",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.csm.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.csm.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.csm.s8",
+          "action": "runCheck",
+          "target": "sec.secureboot.on"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "fw.uefi",
+          "is": "true"
+        },
+        {
+          "signal": "sec.secureboot.on",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "setup_mode"
+    },
+    {
+      "id": "setup_mode",
+      "when": [
+        {
+          "signal": "sec.secureboot.setup_mode",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.secureboot.enable.setup_mode.text",
+      "steps": [
+        {
+          "textKey": "guide.secureboot.enable.setup_mode.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.setup_mode.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.setup_mode.s3",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.setup_mode.s4",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.setup_mode.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.setup_mode.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.setup_mode.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.setup_mode.s8",
+          "action": "runCheck",
+          "target": "sec.secureboot.setup_mode"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.secureboot.setup_mode",
+          "is": "false"
+        },
+        {
+          "signal": "sec.secureboot.on",
+          "is": "true"
+        }
+      ]
+    },
+    {
+      "id": "uefi_sb_off",
+      "when": [
+        {
+          "signal": "fw.uefi",
+          "is": "true"
+        },
+        {
+          "signal": "sec.secureboot.on",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.secureboot.enable.uefi_sb_off.text",
+      "steps": [
+        {
+          "textKey": "guide.secureboot.enable.uefi_sb_off.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.uefi_sb_off.s2",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.uefi_sb_off.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.uefi_sb_off.s4",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.uefi_sb_off.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.uefi_sb_off.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.uefi_sb_off.s7",
+          "action": "runCheck",
+          "target": "sec.secureboot.on"
+        },
+        {
+          "textKey": "guide.secureboot.enable.uefi_sb_off.s8",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.secureboot.on",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "setup_mode"
+    },
+    {
+      "id": "sb_on_still_failing",
+      "when": [
+        {
+          "signal": "sec.secureboot.on",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.secureboot.enable.sb_on_still_failing.text",
+      "steps": [
+        {
+          "textKey": "guide.secureboot.enable.sb_on_still_failing.s1",
+          "action": "runCheck",
+          "target": "sec.secureboot.on"
+        },
+        {
+          "textKey": "guide.secureboot.enable.sb_on_still_failing.s2",
+          "action": "openSettings",
+          "target": "ms-settings:windowsupdate"
+        },
+        {
+          "textKey": "guide.secureboot.enable.sb_on_still_failing.s3",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.sb_on_still_failing.s4",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.sb_on_still_failing.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.sb_on_still_failing.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.sb_on_still_failing.s7",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "general",
+      "when": [],
+      "textKey": "guide.secureboot.enable.general.text",
+      "steps": [
+        {
+          "textKey": "guide.secureboot.enable.general.s1",
+          "action": "runCheck",
+          "target": "disk.system_gpt"
+        },
+        {
+          "textKey": "guide.secureboot.enable.general.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.general.s3",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.general.s4",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.enable.general.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.general.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.general.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.enable.general.s8",
+          "action": "runCheck",
+          "target": "sec.secureboot.on"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.secureboot.on",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "setup_mode"
+    }
+  ],
+  "docsPath": "docs/guides/secure-boot.md",
+  "outcomeAskKey": "guide.secureboot.enable.outcome"
+}

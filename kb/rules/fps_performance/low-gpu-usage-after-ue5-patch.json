@@ -1,0 +1,86 @@
+{
+  "id": "low-gpu-usage-after-ue5-patch",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.low-gpu-usage-after-ue5-patch.title",
+  "summaryKey": "rule.low-gpu-usage-after-ue5-patch.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "fps_low"
+  ],
+  "prior": {
+    "threads": 11
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "hybrid",
+      "signal": "gpu.hybrid",
+      "true": 0.6
+    },
+    {
+      "id": "pref",
+      "signal": "gpu.pref_not_high",
+      "true": 1.2,
+      "textKey": "rule.low-gpu-usage-after-ue5-patch.ev.pref"
+    },
+    {
+      "id": "monitor_igpu",
+      "signal": "gpu.monitor_on_igpu",
+      "true": 1.5,
+      "textKey": "rule.low-gpu-usage-after-ue5-patch.ev.monitor_igpu"
+    },
+    {
+      "id": "saver",
+      "signal": "power.saver_plan",
+      "true": 0.6
+    },
+    {
+      "id": "battery",
+      "signal": "power.on_battery",
+      "true": 0.6
+    },
+    {
+      "id": "driver_old",
+      "signal": "gpu.driver_old",
+      "true": 0.5
+    },
+    {
+      "id": "mon_gpu",
+      "signal": "mon.gpu.low_usage",
+      "true": 1.5
+    },
+    {
+      "id": "after_update",
+      "signal": "ask.started_after_update",
+      "true": 0.4,
+      "ask": "ask.started_after_update"
+    }
+  ],
+  "fixes": [
+    "fix.display.gpu_pref_high",
+    "fix.power.high_performance"
+  ],
+  "guides": [
+    "guide.gpu.igpu",
+    "guide.gpu.clean_driver"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "low-gpu-usage-after-ue5-patch",
+    "threadCount": 11,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1on80q7",
+      "1oru4j7",
+      "1ovvn9l",
+      "1ox2x2m",
+      "1p13w2d"
+    ],
+    "urls": []
+  }
+}

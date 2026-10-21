@@ -1,0 +1,70 @@
+{
+  "id": "voice-chat-network-dns-ipv6",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "audio_mic",
+  "titleKey": "rule.voice-chat-network-dns-ipv6.title",
+  "summaryKey": "rule.voice-chat-network-dns-ipv6.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "voice_chat"
+  ],
+  "prior": {
+    "threads": 8
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "ipv6",
+      "signal": "net.active_ipv6_bound",
+      "true": 0.4
+    },
+    {
+      "id": "teredo",
+      "signal": "net.teredo_on",
+      "true": 0.4
+    },
+    {
+      "id": "ipv6_off",
+      "signal": "net.ipv6_disabled",
+      "true": 0.6
+    },
+    {
+      "id": "cant_hear",
+      "signal": "ask.others_cant_hear_me",
+      "true": 0.3,
+      "ask": "ask.others_cant_hear_me"
+    },
+    {
+      "id": "bt",
+      "signal": "ask.uses_bluetooth_headset",
+      "true": -0.8,
+      "ask": "ask.uses_bluetooth_headset"
+    }
+  ],
+  "fixes": [
+    "fix.net.dns_flush",
+    "fix.net.unbind_ipv6_active"
+  ],
+  "guides": [
+    "guide.net.dns_ipv6",
+    "guide.net.cloudflare_warp"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "voice-chat-network-dns-ipv6",
+    "threadCount": 8,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1vhl2fj",
+      "1viuppt",
+      "1vj6qb0",
+      "1w421se",
+      "1w4rq7g"
+    ],
+    "urls": []
+  }
+}

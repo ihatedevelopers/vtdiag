@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Owner: Lead. Repository policy tests (run in CI and locally by dotnet test):
+    forbidden P/Invoke targets in source AND in every built VTD binary's metadata (the managed import table),
+    RS0030 suppressions only in allowlisted files, no analyzer opt-outs in project files, one .editorconfig,
+    layer mapping as designed, every project in the solution.
+    The src projects are referenced only for build ordering (no assembly reference).
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VTD.Policy.Tests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VTD.Analysis\VTD.Analysis.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.App\VTD.App.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.Collectors\VTD.Collectors.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.Contracts\VTD.Contracts.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.Engine\VTD.Engine.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.Fixes\VTD.Fixes.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.Journal\VTD.Journal.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.Knowledge\VTD.Knowledge.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.Monitor\VTD.Monitor.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.Monitor.Core\VTD.Monitor.Core.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.Platform\VTD.Platform.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.Reporting\VTD.Reporting.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.Session\VTD.Session.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+    <ProjectReference Include="..\..\src\VTD.Testing.Fakes\VTD.Testing.Fakes.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+  </ItemGroup>
+</Project>

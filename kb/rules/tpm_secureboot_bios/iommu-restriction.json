@@ -1,0 +1,61 @@
+{
+  "id": "iommu-restriction",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "tpm_secureboot_bios",
+  "titleKey": "rule.iommu-restriction.title",
+  "summaryKey": "rule.iommu-restriction.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "bios_requirement",
+    "error_code"
+  ],
+  "prior": {
+    "threads": 3
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "dma_off",
+      "signal": "sec.kernel_dma_protection",
+      "false": 1.5,
+      "veto": "true",
+      "textKey": "rule.iommu-restriction.ev.dma_off"
+    },
+    {
+      "id": "no_iommu",
+      "signal": "sec.iommu_available",
+      "false": 1.0
+    },
+    {
+      "id": "virt_off",
+      "signal": "sec.virtualization.enabled",
+      "false": 0.6
+    },
+    {
+      "id": "bios_old",
+      "signal": "hw.bios_old",
+      "true": 0.4
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.iommu.enable",
+    "guide.bios.update"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "iommu-restriction",
+    "threadCount": 3,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1p1gd1y",
+      "1p7a46w",
+      "1qml6yx"
+    ],
+    "urls": []
+  }
+}

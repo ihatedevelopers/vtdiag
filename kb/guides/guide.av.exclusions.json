@@ -1,0 +1,163 @@
+{
+  "id": "guide.av.exclusions",
+  "titleKey": "guide.av.exclusions.title",
+  "summaryKey": "guide.av.exclusions.summary",
+  "bucket": "guidedManual",
+  "risk": "medium",
+  "reboot": "recommended",
+  "appliesTo": [
+    "third-party-antivirus-conflict"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "third_party",
+      "when": [
+        {
+          "signal": "sec.third_party_av",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.av.exclusions.third_party.text",
+      "steps": [
+        {
+          "textKey": "guide.av.exclusions.third_party.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.third_party.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.third_party.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.third_party.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.third_party.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.third_party.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.third_party.s7",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "switch_to_defender"
+    },
+    {
+      "id": "cfa",
+      "when": [
+        {
+          "signal": "sec.defender_cfa_on",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.av.exclusions.cfa.text",
+      "steps": [
+        {
+          "textKey": "guide.av.exclusions.cfa.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsdefender"
+        },
+        {
+          "textKey": "guide.av.exclusions.cfa.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.cfa.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.cfa.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.cfa.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "defender",
+      "when": [],
+      "textKey": "guide.av.exclusions.defender.text",
+      "steps": [
+        {
+          "textKey": "guide.av.exclusions.defender.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsdefender"
+        },
+        {
+          "textKey": "guide.av.exclusions.defender.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.defender.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.defender.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.defender.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "switch_to_defender",
+      "when": [
+        {
+          "signal": "sec.third_party_av",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.av.exclusions.switch_to_defender.text",
+      "steps": [
+        {
+          "textKey": "guide.av.exclusions.switch_to_defender.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.switch_to_defender.s2",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.av.exclusions.switch_to_defender.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.switch_to_defender.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.switch_to_defender.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.av.exclusions.switch_to_defender.s6",
+          "action": "openSettings",
+          "target": "ms-settings:windowsdefender"
+        },
+        {
+          "textKey": "guide.av.exclusions.switch_to_defender.s7",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.av.exclusions.outcome"
+}

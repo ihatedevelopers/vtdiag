@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:manifest:1",
+  "title": "VTDiag KB manifest",
+  "description": "kb/kb.manifest.json: every file of the pack with its SHA-256; signed with Ed25519 into kb.manifest.sig.",
+  "type": "object",
+  "properties": {
+    "format": {
+      "type": "integer",
+      "description": "KB file format major."
+    },
+    "version": {
+      "type": "string",
+      "description": "CalVer version."
+    },
+    "minApp": {
+      "type": "string",
+      "description": "Minimum app version (SemVer)."
+    },
+    "createdUtc": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Build time (UTC)."
+    },
+    "channel": {
+      "type": "string",
+      "description": "Release channel: stable, beta or dev."
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Path relative to kb/, forward slashes."
+          },
+          "sha256": {
+            "type": "string",
+            "description": "Lowercase hex SHA-256."
+          },
+          "size": {
+            "type": "integer",
+            "description": "Size (bytes)."
+          }
+        },
+        "required": [
+          "path",
+          "sha256",
+          "size"
+        ],
+        "additionalProperties": false,
+        "description": "One file listed in the KB manifest."
+      },
+      "description": "Every file of the pack with its hash; anything not listed is ignored."
+    }
+  },
+  "required": [
+    "format",
+    "version",
+    "minApp",
+    "createdUtc",
+    "files"
+  ],
+  "additionalProperties": false
+}

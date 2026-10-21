@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: Lead. Contract tests: fixtures, schemas, Fact semantics, sensitivity coverage, RPC wire contract, fakes. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VTD.Contracts.Tests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VTD.Contracts\VTD.Contracts.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Testing.Fakes\VTD.Testing.Fakes.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="JsonSchema.Net" />
+    <PackageReference Include="StreamJsonRpc" />
+  </ItemGroup>
+</Project>

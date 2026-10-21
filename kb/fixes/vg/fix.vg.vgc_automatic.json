@@ -1,0 +1,71 @@
+{
+  "id": "fix.vg.vgc_automatic",
+  "titleKey": "fix.vg.vgc_automatic.title",
+  "explainKey": "fix.vg.vgc_automatic.explain",
+  "undoExplainKey": "fix.vg.vgc_automatic.undo",
+  "noticeKey": "fix.vg.vgc_automatic.notice",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "recommended",
+  "scope": "persistent",
+  "estMinutes": 0.5,
+  "appliesTo": [
+    "vgc-service-not-running",
+    "van185-vanguard-disconnects",
+    "vanguard-corrupt-install",
+    "launch-shortcut-tray-failure"
+  ],
+  "bind": {
+    "svc": {
+      "kind": "service",
+      "fromSignal": "vg.vgc_automatic_needed",
+      "pick": "one"
+    }
+  },
+  "guards": [],
+  "steps": [
+    {
+      "op": "service.setStartType",
+      "args": {
+        "name": "$svc.id",
+        "startType": "Automatic"
+      },
+      "onFail": "abort"
+    },
+    {
+      "op": "service.start",
+      "args": {
+        "name": "$svc.id",
+        "timeoutSec": "30"
+      },
+      "onFail": "continue"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "service.setStartType",
+      "args": {
+        "name": "$svc.id"
+      },
+      "expect": {
+        "startType": "Automatic"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.error_gone"
+  },
+  "successPrior": {
+    "success": 7,
+    "trials": 65
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

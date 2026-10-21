@@ -1,0 +1,44 @@
+{
+  "id": "stretched-resolution-issues",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "display_resolution",
+  "titleKey": "rule.stretched-resolution-issues.title",
+  "summaryKey": "rule.stretched-resolution-issues.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "display_issue"
+  ],
+  "prior": {
+    "threads": 14
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "multi",
+      "signal": "display.multi_monitor",
+      "true": 0.3
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.display.stretched_res"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "stretched-resolution-issues",
+    "threadCount": 14,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1s4teu1",
+      "1sh703p",
+      "1smphsm",
+      "1te10k1",
+      "1temzh6"
+    ],
+    "urls": []
+  }
+}

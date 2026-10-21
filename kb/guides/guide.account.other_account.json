@@ -1,0 +1,90 @@
+{
+  "id": "guide.account.other_account",
+  "titleKey": "guide.account.other_account.title",
+  "summaryKey": "guide.account.other_account.summary",
+  "bucket": "riotOrAccount",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "account-mfa-matchmaking-glitches",
+    "van-restriction-hwid"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "other_works",
+      "when": [
+        {
+          "signal": "ask.other_account_works",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.account.other_account.other_works.text",
+      "steps": [
+        {
+          "textKey": "guide.account.other_account.other_works.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.account.other_account.other_works.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.account.other_account.other_works.s3",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "other_fails",
+      "when": [
+        {
+          "signal": "ask.other_account_works",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.account.other_account.other_fails.text",
+      "steps": [
+        {
+          "textKey": "guide.account.other_account.other_fails.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.account.other_account.other_fails.s2",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "test",
+      "when": [],
+      "textKey": "guide.account.other_account.test.text",
+      "steps": [
+        {
+          "textKey": "guide.account.other_account.test.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.account.other_account.test.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.account.other_account.test.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.account.other_account.test.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.account.other_account.test.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.account.other_account.outcome"
+}

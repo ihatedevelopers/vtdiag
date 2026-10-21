@@ -1,0 +1,63 @@
+{
+  "id": "fix.proc.close_overlays",
+  "titleKey": "fix.proc.close_overlays.title",
+  "explainKey": "fix.proc.close_overlays.explain",
+  "undoExplainKey": "fix.proc.close_overlays.undo",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "sessionOnly",
+  "admin": false,
+  "reboot": "none",
+  "scope": "session",
+  "estMinutes": 0.2,
+  "appliesTo": [
+    "third-party-hook-overlay-conflict",
+    "shader-cache-compilation-stutter",
+    "fps-decay-over-time",
+    "frametime-latency-spikes",
+    "igpu-disabled-or-driverless-freeze",
+    "van185-vanguard-disconnects"
+  ],
+  "bind": {
+    "proc": {
+      "kind": "process",
+      "fromSignal": "proc.overlay_running",
+      "pick": "all"
+    }
+  },
+  "guards": [],
+  "steps": [
+    {
+      "op": "process.closeGraceful",
+      "args": {
+        "imageName": "$proc.id"
+      },
+      "onFail": "continue"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "process.closeGraceful",
+      "args": {
+        "imageName": "$proc.id"
+      },
+      "expect": {
+        "running": "false"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.stutter_gone"
+  },
+  "successPrior": {
+    "success": 26,
+    "trials": 127
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

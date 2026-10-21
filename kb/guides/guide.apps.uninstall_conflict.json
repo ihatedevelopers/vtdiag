@@ -1,0 +1,104 @@
+{
+  "id": "guide.apps.uninstall_conflict",
+  "titleKey": "guide.apps.uninstall_conflict.title",
+  "summaryKey": "guide.apps.uninstall_conflict.summary",
+  "bucket": "guidedManual",
+  "risk": "medium",
+  "reboot": "recommended",
+  "appliesTo": [
+    "razer-synapse-escalation-kick",
+    "incompatible-driver-component"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "gentle",
+      "when": [],
+      "textKey": "guide.apps.uninstall_conflict.gentle.text",
+      "steps": [
+        {
+          "textKey": "guide.apps.uninstall_conflict.gentle.s1",
+          "action": "runFix",
+          "target": "fix.svc.disable_conflict_service"
+        },
+        {
+          "textKey": "guide.apps.uninstall_conflict.gentle.s2",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "uninstall"
+    },
+    {
+      "id": "needed",
+      "when": [],
+      "textKey": "guide.apps.uninstall_conflict.needed.text",
+      "steps": [
+        {
+          "textKey": "guide.apps.uninstall_conflict.needed.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_conflict.needed.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_conflict.needed.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_conflict.needed.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "uninstall",
+      "when": [],
+      "textKey": "guide.apps.uninstall_conflict.uninstall.text",
+      "steps": [
+        {
+          "textKey": "guide.apps.uninstall_conflict.uninstall.s1",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.apps.uninstall_conflict.uninstall.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_conflict.uninstall.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_conflict.uninstall.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "startup",
+      "when": [],
+      "textKey": "guide.apps.uninstall_conflict.startup.text",
+      "steps": [
+        {
+          "textKey": "guide.apps.uninstall_conflict.startup.s1",
+          "action": "openSettings",
+          "target": "ms-settings:startupapps"
+        },
+        {
+          "textKey": "guide.apps.uninstall_conflict.startup.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.apps.uninstall_conflict.startup.s3",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.apps.uninstall_conflict.outcome"
+}

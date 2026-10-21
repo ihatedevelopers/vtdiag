@@ -1,0 +1,95 @@
+[
+  {
+    "id": "conflict-mpo",
+    "rev": 1,
+    "kind": "generated",
+    "category": "display_resolution",
+    "titleKey": "rule.conflict-mpo.title",
+    "summaryKey": "rule.conflict-mpo.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "stutter",
+      "display_issue"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "display.mpo_enabled",
+        "true": 0.3
+      }
+    ],
+    "fixes": [
+      "fix.display.mpo_off"
+    ],
+    "guides": [
+      "guide.display.settings"
+    ],
+    "sources": {
+      "threadCount": 9,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1rleoxr",
+        "1v4hcwl",
+        "1vd35fa",
+        "1vf5i9t",
+        "1vjv7ct"
+      ],
+      "urls": [
+        "https://nvidia.custhelp.com/app/answers/detail/a_id/5157"
+      ]
+    },
+    "related": [
+      "fullscreen-optimizations-mpo"
+    ]
+  },
+  {
+    "id": "conflict-fso_compat_flags",
+    "rev": 1,
+    "kind": "generated",
+    "category": "display_resolution",
+    "titleKey": "rule.conflict-fso_compat_flags.title",
+    "summaryKey": "rule.conflict-fso_compat_flags.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "stutter",
+      "display_issue",
+      "wont_launch"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "riot.compat_layers_present",
+        "true": 0.8
+      }
+    ],
+    "fixes": [
+      "fix.generic.remove_compat_layer"
+    ],
+    "guides": [
+      "guide.display.settings"
+    ],
+    "sources": {
+      "threadCount": 31,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1p06p3x",
+        "1p3trkn",
+        "1pbqpqu",
+        "1pzp13r",
+        "1q8fp3n"
+      ],
+      "urls": []
+    },
+    "related": [
+      "fullscreen-optimizations-mpo"
+    ]
+  }
+]

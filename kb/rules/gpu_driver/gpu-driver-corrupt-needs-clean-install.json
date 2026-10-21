@@ -1,0 +1,74 @@
+{
+  "id": "gpu-driver-corrupt-needs-clean-install",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "gpu_driver",
+  "titleKey": "rule.gpu-driver-corrupt-needs-clean-install.title",
+  "summaryKey": "rule.gpu-driver-corrupt-needs-clean-install.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "crash_desktop",
+    "freeze_hard",
+    "display_issue"
+  ],
+  "prior": {
+    "threads": 7
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "tdr",
+      "signal": "events.display_tdr",
+      "true": 1.5,
+      "textKey": "rule.gpu-driver-corrupt-needs-clean-install.ev.tdr"
+    },
+    {
+      "id": "d3d",
+      "signal": "log.d3d_device_lost",
+      "true": 1.5,
+      "textKey": "rule.gpu-driver-corrupt-needs-clean-install.ev.d3d"
+    },
+    {
+      "id": "gpu_crash",
+      "signal": "crash.gpu",
+      "true": 1.0
+    },
+    {
+      "id": "problem",
+      "signal": "gpu.problem_code",
+      "true": 1.5,
+      "textKey": "rule.gpu-driver-corrupt-needs-clean-install.ev.problem"
+    },
+    {
+      "id": "basic",
+      "signal": "gpu.basic_display",
+      "true": 1.2
+    },
+    {
+      "id": "old",
+      "signal": "gpu.driver_old",
+      "true": 0.4
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.gpu.clean_driver"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "gpu-driver-corrupt-needs-clean-install",
+    "threadCount": 7,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1pgpukn",
+      "1q0q794",
+      "1q0yyou",
+      "1q6i6wo",
+      "1ss8yi8"
+    ],
+    "urls": []
+  }
+}

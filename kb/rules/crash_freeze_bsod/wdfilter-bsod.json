@@ -1,0 +1,44 @@
+{
+  "id": "wdfilter-bsod",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "crash_freeze_bsod",
+  "titleKey": "rule.wdfilter-bsod.title",
+  "summaryKey": "rule.wdfilter-bsod.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "freeze_hard"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [
+    "events.bugcheck_wdfilter"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "wdf",
+      "signal": "events.bugcheck_wdfilter",
+      "true": 3.0,
+      "veto": "false",
+      "textKey": "rule.wdfilter-bsod.ev.wdf"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.wdfilter.reset"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "wdfilter-bsod",
+    "threadCount": 1,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1q3l3s4"
+    ],
+    "urls": []
+  }
+}

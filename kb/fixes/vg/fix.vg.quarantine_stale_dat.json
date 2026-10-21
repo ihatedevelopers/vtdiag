@@ -1,0 +1,60 @@
+{
+  "id": "fix.vg.quarantine_stale_dat",
+  "titleKey": "fix.vg.quarantine_stale_dat.title",
+  "explainKey": "fix.vg.quarantine_stale_dat.explain",
+  "undoExplainKey": "fix.vg.quarantine_stale_dat.undo",
+  "noticeKey": "fix.vg.quarantine_stale_dat.notice",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "required",
+  "scope": "persistent",
+  "estMinutes": 1,
+  "appliesTo": [
+    "fast-startup-stale-dat-bsod",
+    "vanguard-corrupt-install"
+  ],
+  "bind": {
+    "file": {
+      "kind": "file",
+      "fromSignal": "vg.stale_dat",
+      "pick": "all"
+    }
+  },
+  "guards": [],
+  "steps": [
+    {
+      "op": "file.quarantine",
+      "args": {
+        "path": "$file.id"
+      },
+      "onFail": "abort"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "file.quarantine",
+      "args": {
+        "path": "$file.id"
+      },
+      "expect": {
+        "exists": "false"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.error_gone"
+  },
+  "successPrior": {
+    "success": 1,
+    "trials": 18
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

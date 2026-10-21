@@ -1,0 +1,251 @@
+[
+  {
+    "id": "gearup_booster",
+    "name": "GearUP Booster",
+    "kind": "network_optimizer",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [
+        "udp_connect_lsp64.dll"
+      ],
+      "uninstallDisplayNameRegex": "GearUP",
+      "registryKeys": [],
+      "filePaths": [
+        "C:\\Windows\\GearUPBooster"
+      ],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.gearup_booster.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.gearup_booster.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.net.winsock_reset"
+      ],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "high",
+    "category": "network_ping",
+    "symptoms": [
+      "launch_black_screen",
+      "crash_desktop",
+      "high_ping"
+    ],
+    "wave": {
+      "from": "2026-10-05",
+      "to": "2026-12-31",
+      "boost": 0.6
+    },
+    "evidence": {
+      "redditMentions": 11,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1x1h2qy",
+        "1piy7lb",
+        "1ppkfqx",
+        "1qdfk5i",
+        "1snf9wc"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "exitlag",
+    "name": "ExitLag",
+    "kind": "network_optimizer",
+    "detect": {
+      "processNames": [
+        "ExitLag.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^ExitLag",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.exitlag.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.exitlag.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "medium",
+    "category": "network_ping",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "evidence": {
+      "redditMentions": 65,
+      "solvedMentions": 8,
+      "exampleThreadIds": [
+        "1oh1ek6",
+        "1rejb1u",
+        "1rhmv1j",
+        "1sjmu4v",
+        "1vp5554"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "game_accelerators",
+    "name": "Other game VPN accelerators (NoPing, WTFast, Mudfish, LagoFast, Haste, Outfox, PingZapper)",
+    "kind": "network_optimizer",
+    "detect": {
+      "processNames": [
+        "WTFast.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(NoPing|WTFast|Mudfish|LagoFast|Haste|Outfox|PingZapper)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.game_accelerators.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.game_accelerators.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "low",
+    "category": "network_ping",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "evidence": {
+      "redditMentions": 28,
+      "solvedMentions": 4,
+      "exampleThreadIds": [
+        "1sjmu4v",
+        "1vj31ce",
+        "1vp4h9l",
+        "1wvf1o4",
+        "1ownet5"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "killer_suite",
+    "name": "Intel/Rivet Killer Intelligence/Control Center (prioritization)",
+    "kind": "network_optimizer",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "Killer (Intelligence Center|Control Center|Performance Driver Suite|Network Manager)",
+      "networkAdapterRegex": "Killer",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.killer_suite.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.killer_suite.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.net.dns_ipv6"
+      ]
+    },
+    "confidence": "medium",
+    "category": "network_ping",
+    "symptoms": [
+      "login_issue",
+      "voice_chat"
+    ],
+    "evidence": {
+      "redditMentions": 4,
+      "solvedMentions": 2,
+      "exampleThreadIds": [
+        "1rczb6g",
+        "1wo7vz5",
+        "1ug8dr7",
+        "1tncviv"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "smartbyte_cfosspeed",
+    "name": "Traffic shapers (Dell SmartByte, cFosSpeed, ASUS GameFirst, NetLimiter)",
+    "kind": "network_optimizer",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [
+        "nlsvc"
+      ],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(SmartByte|cFosSpeed|GameFirst|NetLimiter)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.smartbyte_cfosspeed.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.smartbyte_cfosspeed.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "low",
+    "category": "network_ping",
+    "symptoms": [
+      "stutter",
+      "disconnect",
+      "high_ping",
+      "voice_chat"
+    ],
+    "evidence": {
+      "redditMentions": 5,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1uxxnir",
+        "1oh9eve",
+        "1qcz1w4",
+        "1r250hy",
+        "1tbhgas"
+      ],
+      "webSources": []
+    }
+  }
+]

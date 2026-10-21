@@ -1,0 +1,216 @@
+{
+  "id": "guide.hardware.freeze_checks",
+  "titleKey": "guide.hardware.freeze_checks.title",
+  "summaryKey": "guide.hardware.freeze_checks.summary",
+  "bucket": "likelyHardware",
+  "risk": "medium",
+  "reboot": "recommended",
+  "appliesTo": [
+    "whole-pc-freeze-kernel-power-41",
+    "usb-optical-drive-restart",
+    "usb-selective-suspend-freeze"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "optical",
+      "when": [
+        {
+          "signal": "dev.usb_optical_drive",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.hardware.freeze_checks.optical.text",
+      "steps": [
+        {
+          "textKey": "guide.hardware.freeze_checks.optical.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.optical.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.optical.s3",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "dev.usb_optical_drive",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "whea",
+      "when": [
+        {
+          "signal": "events.whea_errors",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.hardware.freeze_checks.whea.text",
+      "steps": [
+        {
+          "textKey": "guide.hardware.freeze_checks.whea.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.whea.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.whea.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.whea.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "realtek",
+      "when": [
+        {
+          "signal": "net.realtek25.active",
+          "is": "true"
+        },
+        {
+          "signal": "net.on_wifi",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.hardware.freeze_checks.realtek.text",
+      "steps": [
+        {
+          "textKey": "guide.hardware.freeze_checks.realtek.s1",
+          "action": "runFix",
+          "target": "fix.net.disable_unused_adapter"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "temps",
+      "when": [],
+      "textKey": "guide.hardware.freeze_checks.temps.text",
+      "steps": [
+        {
+          "textKey": "guide.hardware.freeze_checks.temps.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.temps.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.temps.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.temps.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.temps.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "ram_oc",
+      "when": [],
+      "textKey": "guide.hardware.freeze_checks.ram_oc.text",
+      "steps": [
+        {
+          "textKey": "guide.hardware.freeze_checks.ram_oc.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.ram_oc.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.ram_oc.s3",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.ram_oc.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.ram_oc.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.ram_oc.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.ram_oc.s7",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "power_usb",
+      "when": [],
+      "textKey": "guide.hardware.freeze_checks.power_usb.text",
+      "steps": [
+        {
+          "textKey": "guide.hardware.freeze_checks.power_usb.s1",
+          "action": "runFix",
+          "target": "fix.power.usb_selective_suspend_off"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.power_usb.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.power_usb.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.power_usb.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.power_usb.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "bios_drivers",
+      "when": [],
+      "textKey": "guide.hardware.freeze_checks.bios_drivers.text",
+      "steps": [
+        {
+          "textKey": "guide.hardware.freeze_checks.bios_drivers.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.bios_drivers.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.bios_drivers.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.freeze_checks.bios_drivers.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.hardware.freeze_checks.outcome"
+}

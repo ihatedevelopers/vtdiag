@@ -1,0 +1,67 @@
+{
+  "id": "fullscreen-optimizations-mpo",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "display_resolution",
+  "titleKey": "rule.fullscreen-optimizations-mpo.title",
+  "summaryKey": "rule.fullscreen-optimizations-mpo.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "stutter",
+    "display_issue",
+    "freeze_hard"
+  ],
+  "prior": {
+    "threads": 5
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "mpo",
+      "signal": "display.mpo_enabled",
+      "true": 0.4
+    },
+    {
+      "id": "fso_off",
+      "signal": "riot.fso_disabled",
+      "true": -1.0
+    },
+    {
+      "id": "multi",
+      "signal": "display.multi_monitor",
+      "true": 0.4
+    },
+    {
+      "id": "amd",
+      "signal": "gpu.amd_dgpu",
+      "true": 0.2
+    }
+  ],
+  "fixes": [
+    "fix.display.disable_fso",
+    "fix.display.mpo_off"
+  ],
+  "guides": [
+    "guide.display.settings"
+  ],
+  "questions": [],
+  "supersedes": [
+    "conflict-mpo",
+    "conflict-fso_compat_flags"
+  ],
+  "related": [],
+  "sources": {
+    "catalog": "fullscreen-optimizations-mpo",
+    "threadCount": 5,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1socby0",
+      "1v571bz",
+      "1vd35fa",
+      "1vf5i9t",
+      "1wy15l5"
+    ],
+    "urls": []
+  }
+}

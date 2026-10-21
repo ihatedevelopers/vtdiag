@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from the A6 string table (key / en / tr). Edit both files together; tests check they have the same keys. -->
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="About.NotAffiliated" xml:space="preserve"><value>VTDiag is not affiliated with, endorsed by or made by Riot Games. VALORANT and Riot Vanguard belong to Riot Games.</value></data>
+  <data name="About.OpenSource" xml:space="preserve"><value>Free and open source. Made by the community, for the community.</value></data>
+  <data name="About.Privacy" xml:space="preserve"><value>Privacy</value></data>
+  <data name="About.Privacy.Collected" xml:space="preserve"><value>We read technical settings only: Windows version, drivers, security settings, network setup, game file details and error logs.</value></data>
+  <data name="About.Privacy.Never" xml:space="preserve"><value>We never collect passwords, Wi-Fi keys, login tokens, browser data, your documents, your Riot ID or the contents of Vanguard's logs.</value></data>
+  <data name="About.Privacy.NoTelemetry" xml:space="preserve"><value>No telemetry. Nothing is sent anywhere unless you copy or save it yourself.</value></data>
+  <data name="About.Privacy.Share" xml:space="preserve"><value>Before anything leaves your PC, we remove your user name, PC name and serial numbers, and show you a preview. If something private still slips through, the export is stopped.</value></data>
+  <data name="About.Title" xml:space="preserve"><value>About VTDiag</value></data>
+  <data name="About.Vanguard" xml:space="preserve"><value>Safe with Vanguard</value></data>
+  <data name="About.Vanguard.Detail" xml:space="preserve"><value>VTDiag never injects into, reads the memory of, or opens the game or Vanguard. It uses no kernel drivers. While you play, it only watches from the outside.</value></data>
+  <data name="About.Version" xml:space="preserve"><value>Version {app} · knowledge base {kb}</value></data>
+  <data name="About.What" xml:space="preserve"><value>VTDiag is a free, open-source PC check for VALORANT players, made for r/ValorantTechSupport. It finds likely causes, explains them in plain words, and only changes what you approve.</value></data>
+  <data name="Answer.no" xml:space="preserve"><value>No</value></data>
+  <data name="Answer.unsure" xml:space="preserve"><value>Not sure</value></data>
+  <data name="Answer.yes" xml:space="preserve"><value>Yes</value></data>
+  <data name="Applying.Backup" xml:space="preserve"><value>Saving how things are now (so you can undo)</value></data>
+  <data name="Applying.DontClose" xml:space="preserve"><value>Almost done. Closing VTDiag now could leave things half-finished, so we keep going even if the window closes.</value></data>
+  <data name="Applying.Step" xml:space="preserve"><value>Step {n}</value></data>
+  <data name="Applying.Title" xml:space="preserve"><value>Fixing now</value></data>
+  <data name="Applying.Verify" xml:space="preserve"><value>Checking that it worked</value></data>
+  <data name="Area.Apps" xml:space="preserve"><value>Apps running in the background</value></data>
+  <data name="Area.Drivers" xml:space="preserve"><value>Devices and drivers</value></data>
+  <data name="Area.Game" xml:space="preserve"><value>Game and Riot Client files</value></data>
+  <data name="Area.Hardware" xml:space="preserve"><value>Hardware</value></data>
+  <data name="Area.Logs" xml:space="preserve"><value>Logs and crash reports</value></data>
+  <data name="Area.Network" xml:space="preserve"><value>Network</value></data>
+  <data name="Area.Security" xml:space="preserve"><value>Security and Vanguard requirements</value></data>
+  <data name="Area.Windows" xml:space="preserve"><value>Windows</value></data>
+  <data name="Attempt.Applied" xml:space="preserve"><value>Applied</value></data>
+  <data name="Attempt.Applying" xml:space="preserve"><value>Being applied</value></data>
+  <data name="Attempt.AwaitingReboot" xml:space="preserve"><value>Waiting for a restart</value></data>
+  <data name="Attempt.AwaitingSecondConsent" xml:space="preserve"><value>Waiting for your second OK</value></data>
+  <data name="Attempt.Failed" xml:space="preserve"><value>Didn't run</value></data>
+  <data name="Attempt.InDoubt" xml:space="preserve"><value>Needs your decision</value></data>
+  <data name="Attempt.RolledBack" xml:space="preserve"><value>Put back</value></data>
+  <data name="Attempt.UndoConflict" xml:space="preserve"><value>Changed again since our fix</value></data>
+  <data name="Attempt.Undone" xml:space="preserve"><value>Undone</value></data>
+  <data name="Attempt.Verified" xml:space="preserve"><value>In place</value></data>
+  <data name="Attempt.VerifyFailed" xml:space="preserve"><value>Didn't stick, undone</value></data>
+  <data name="Attention.Changed" xml:space="preserve"><value>Here's what we changed</value></data>
+  <data name="Attention.Generic" xml:space="preserve"><value>Something didn't finish the way we expected, so we stopped and kept everything safe.</value></data>
+  <data name="Attention.Keep" xml:space="preserve"><value>Keep the changes</value></data>
+  <data name="Attention.Title" xml:space="preserve"><value>We need you to look at this</value></data>
+  <data name="Attention.UndoAll" xml:space="preserve"><value>Undo everything</value></data>
+  <data name="Badge.Minutes" xml:space="preserve"><value>About {n} min</value></data>
+  <data name="Badge.Reboot.None" xml:space="preserve"><value>No restart</value></data>
+  <data name="Badge.Reboot.Recommended" xml:space="preserve"><value>Restart recommended</value></data>
+  <data name="Badge.Reboot.Required" xml:space="preserve"><value>Needs a restart</value></data>
+  <data name="Badge.Risk.High" xml:space="preserve"><value>High risk</value></data>
+  <data name="Badge.Risk.Low" xml:space="preserve"><value>Low risk</value></data>
+  <data name="Badge.Risk.Medium" xml:space="preserve"><value>Medium risk</value></data>
+  <data name="Badge.Seconds" xml:space="preserve"><value>About {n} s</value></data>
+  <data name="Badge.Undo.BestEffort" xml:space="preserve"><value>Mostly undoable</value></data>
+  <data name="Badge.Undo.Exact" xml:space="preserve"><value>Undoable</value></data>
+  <data name="Badge.Undo.OneWay" xml:space="preserve"><value>Can't be undone with a click</value></data>
+  <data name="Badge.Undo.SessionOnly" xml:space="preserve"><value>Lasts until restart</value></data>
+  <data name="Band.Likely" xml:space="preserve"><value>Likely</value></data>
+  <data name="Band.LongShot" xml:space="preserve"><value>Long shot</value></data>
+  <data name="Band.Possible" xml:space="preserve"><value>Possible</value></data>
+  <data name="Band.VeryLikely" xml:space="preserve"><value>Very likely</value></data>
+  <data name="Banner.Demo" xml:space="preserve"><value>Demo mode: these results come from a sample test PC. Nothing on this PC is read or changed.</value></data>
+  <data name="Banner.Drift" xml:space="preserve"><value>{count} change(s) we made earlier aren't in place anymore. Check the undo page.</value></data>
+  <data name="Banner.Limited" xml:space="preserve"><value>Running without permission: some things couldn't be checked, and fixes are turned off.</value></data>
+  <data name="Bucket.ExternalNetwork" xml:space="preserve"><value>Outside your PC (network)</value></data>
+  <data name="Bucket.ExternalNetwork.Explain" xml:space="preserve"><value>This looks like your internet connection outside this PC (router or internet provider). A PC tool can't fix that, but we'll show you what to tell them.</value></data>
+  <data name="Bucket.FixableHere" xml:space="preserve"><value>Fixable here</value></data>
+  <data name="Bucket.FixableHere.Explain" xml:space="preserve"><value>Good news: this looks fixable right here, and every fix can be undone.</value></data>
+  <data name="Bucket.GuidedManual" xml:space="preserve"><value>A step you do yourself</value></data>
+  <data name="Bucket.GuidedManual.Explain" xml:space="preserve"><value>This needs a step only you can do (like a setting in your BIOS). We'll guide you through it and check it afterwards.</value></data>
+  <data name="Bucket.LikelyHardware" xml:space="preserve"><value>Likely hardware</value></data>
+  <data name="Bucket.LikelyHardware.Explain" xml:space="preserve"><value>This looks like a hardware problem. We can't fix hardware, but we'll tell you what we saw so a shop or helper can check it.</value></data>
+  <data name="Bucket.RiotOrAccount" xml:space="preserve"><value>Riot or account side</value></data>
+  <data name="Bucket.RiotOrAccount.Explain" xml:space="preserve"><value>This isn't something on your PC. It's on Riot's side or tied to your account, so the fix has to come from Riot.</value></data>
+  <data name="Bucket.Unknown" xml:space="preserve"><value>Not sure yet</value></data>
+  <data name="Bucket.Unknown.Explain" xml:space="preserve"><value>We couldn't pin this down yet. Here's what we checked and how to get more help.</value></data>
+  <data name="Common.Continue" xml:space="preserve"><value>Continue</value></data>
+  <data name="Common.Dismiss" xml:space="preserve"><value>Dismiss</value></data>
+  <data name="Common.ListSeparator" xml:space="preserve"><value> · </value></data>
+  <data name="Common.Next" xml:space="preserve"><value>Next</value></data>
+  <data name="Common.NotAffiliated" xml:space="preserve"><value>Not affiliated with Riot Games.</value></data>
+  <data name="Common.WhatDoesThisMean" xml:space="preserve"><value>What does this mean?</value></data>
+  <data name="Completed.Report" xml:space="preserve"><value>Save or share the report</value></data>
+  <data name="Completed.Sub.Abandoned" xml:space="preserve"><value>Your changes stay until you undo them from "Undo changes".</value></data>
+  <data name="Completed.Sub.Completed" xml:space="preserve"><value>Your changes are kept. You can undo any of them later from "Undo changes".</value></data>
+  <data name="Completed.Sub.NeedsAttention" xml:space="preserve"><value>Here's what we changed.</value></data>
+  <data name="Completed.Sub.RolledBack" xml:space="preserve"><value>We undid every change from this session.</value></data>
+  <data name="Completed.Title.Abandoned" xml:space="preserve"><value>Stopped</value></data>
+  <data name="Completed.Title.Completed" xml:space="preserve"><value>All done</value></data>
+  <data name="Completed.Title.NeedsAttention" xml:space="preserve"><value>We need you to look at this</value></data>
+  <data name="Completed.Title.RolledBack" xml:space="preserve"><value>Everything is back to how it was</value></data>
+  <data name="Completed.Undo" xml:space="preserve"><value>Undo something</value></data>
+  <data name="Completed.Watch" xml:space="preserve"><value>Watch my next match</value></data>
+  <data name="Deadman.Countdown" xml:space="preserve"><value>Undoing by itself in {seconds} s</value></data>
+  <data name="Deadman.Keep" xml:space="preserve"><value>Yes, keep it</value></data>
+  <data name="Deadman.Lead" xml:space="preserve"><value>Open any website or check Discord. If it works, keep the change. If you do nothing, we put it back by ourselves.</value></data>
+  <data name="Deadman.TimeUp" xml:space="preserve"><value>Time ran out, so we're putting it back.</value></data>
+  <data name="Deadman.Title" xml:space="preserve"><value>Is your internet still working?</value></data>
+  <data name="Deadman.Undo" xml:space="preserve"><value>No, undo it</value></data>
+  <data name="Error.Generic" xml:space="preserve"><value>Something went wrong. Nothing was changed. Try again, or save a report for a helper.</value></data>
+  <data name="Error.command.not_allowed" xml:space="preserve"><value>Only you can approve this, in this window.</value></data>
+  <data name="Error.consent.blocked" xml:space="preserve"><value>This fix can't run right now. See the reasons above.</value></data>
+  <data name="Error.consent.expired" xml:space="preserve"><value>That took a while, so we checked again. Look it over and click once more.</value></data>
+  <data name="Error.consent.limited_mode" xml:space="preserve"><value>Fixes need permission. Restart VTDiag and click Yes on the Windows prompt.</value></data>
+  <data name="Error.consent.preview_changed" xml:space="preserve"><value>Something on your PC changed since we showed this. Look it over and click once more.</value></data>
+  <data name="Error.consent.replayed" xml:space="preserve"><value>This was already approved once. Open the fix again to continue.</value></data>
+  <data name="Error.consent.second_consent_mismatch" xml:space="preserve"><value>Please confirm again.</value></data>
+  <data name="Error.consent.unknown_preview" xml:space="preserve"><value>This fix expired. Open it again.</value></data>
+  <data name="Error.file.too_large" xml:space="preserve"><value>That file is too big to be a VTDiag file.</value></data>
+  <data name="Error.restart.token_invalid" xml:space="preserve"><value>The restart button timed out. Click it again.</value></data>
+  <data name="Error.undo.unknown_attempt" xml:space="preserve"><value>We couldn't find that change.</value></data>
+  <data name="Fix.AgentCaution" xml:space="preserve"><value>Only continue if you yourself asked an AI helper to look at your PC.</value></data>
+  <data name="Fix.Deadman" xml:space="preserve"><value>If your internet stops working, we put it back by ourselves after {seconds} seconds.</value></data>
+  <data name="Fix.Diy" xml:space="preserve"><value>Show me how to do it myself</value></data>
+  <data name="Fix.ExternalBindingUnknown" xml:space="preserve"><value>We can't tell exactly what this suggestion would change, so it can't run from here. Open the fix from your results instead.</value></data>
+  <data name="Fix.FixIt" xml:space="preserve"><value>Fix it</value></data>
+  <data name="Fix.HowToUndo" xml:space="preserve"><value>How to undo it</value></data>
+  <data name="Fix.Label" xml:space="preserve"><value>Fix</value></data>
+  <data name="Fix.LimitedMode" xml:space="preserve"><value>Fixes need permission. Restart VTDiag and click Yes on the Windows prompt.</value></data>
+  <data name="Fix.NeedsRestart" xml:space="preserve"><value>This change only works after a restart. We'll ask before restarting.</value></data>
+  <data name="Fix.NoNonce" xml:space="preserve"><value>Only the VTDiag window on this PC can approve a fix.</value></data>
+  <data name="Fix.Notice" xml:space="preserve"><value>What you'll notice</value></data>
+  <data name="Fix.OneWayNote" xml:space="preserve"><value>This one can't be undone with a click, so we'll ask you a second time.</value></data>
+  <data name="Fix.OneWayUndo" xml:space="preserve"><value>This one can't be undone with a click. Windows keeps a restore point, but you may have to set some things again by hand.</value></data>
+  <data name="Fix.OnlyYouApprove" xml:space="preserve"><value>It can suggest things, but only you can approve them here.</value></data>
+  <data name="Fix.RestorePointFirst" xml:space="preserve"><value>Before this fix, we make a Windows restore point (a safety copy of your settings).</value></data>
+  <data name="Fix.Second.Detail" xml:space="preserve"><value>Nothing has changed yet. If you go ahead, this can't be put back later with one click. Not sure? Choose "Don't do it".</value></data>
+  <data name="Fix.Second.No" xml:space="preserve"><value>Don't do it</value></data>
+  <data name="Fix.Second.Title" xml:space="preserve"><value>This one can't be undone with a click</value></data>
+  <data name="Fix.Second.Understand" xml:space="preserve"><value>I understand this can't be undone with a click</value></data>
+  <data name="Fix.Second.Yes" xml:space="preserve"><value>Yes, do it anyway</value></data>
+  <data name="Fix.Skip" xml:space="preserve"><value>Skip this one</value></data>
+  <data name="Fix.StepGeneric" xml:space="preserve"><value>{op}: {what}</value></data>
+  <data name="Fix.Targets" xml:space="preserve"><value>It changes: {what}</value></data>
+  <data name="Fix.ThisPc" xml:space="preserve"><value>this PC</value></data>
+  <data name="Fix.WhatWeDo" xml:space="preserve"><value>What we'll do</value></data>
+  <data name="Guide.BeforeYouStart" xml:space="preserve"><value>Before you start</value></data>
+  <data name="Guide.Branch.csm" xml:space="preserve"><value>My BIOS is in Legacy/CSM mode</value></data>
+  <data name="Guide.Branch.mbr" xml:space="preserve"><value>My disk uses the old MBR style</value></data>
+  <data name="Guide.Branch.setup_mode" xml:space="preserve"><value>Secure Boot is on but shows "Setup mode"</value></data>
+  <data name="Guide.Branch.uefi_sb_off" xml:space="preserve"><value>Secure Boot is just switched off</value></data>
+  <data name="Guide.CheckNow" xml:space="preserve"><value>Check now</value></data>
+  <data name="Guide.Copy" xml:space="preserve"><value>Copy</value></data>
+  <data name="Guide.DefaultKey" xml:space="preserve"><value>Del or F2</value></data>
+  <data name="Guide.DefaultPath" xml:space="preserve"><value>the Boot or Security menu</value></data>
+  <data name="Guide.Docs" xml:space="preserve"><value>The same steps are online at {path}, so you can follow them on your phone while the PC is in the BIOS.</value></data>
+  <data name="Guide.Label" xml:space="preserve"><value>Guided step</value></data>
+  <data name="Guide.Later" xml:space="preserve"><value>I'll do it later</value></data>
+  <data name="Guide.MarkDone" xml:space="preserve"><value>Done</value></data>
+  <data name="Guide.OtherBranches" xml:space="preserve"><value>Doesn't match what you see?</value></data>
+  <data name="Guide.RestartBios" xml:space="preserve"><value>Restart into BIOS</value></data>
+  <data name="Guide.UnknownVendor" xml:space="preserve"><value>unknown</value></data>
+  <data name="Guide.Vendor" xml:space="preserve"><value>Your PC maker: {vendor}. The BIOS key is usually {key}.</value></data>
+  <data name="Health.CouldNotCheck" xml:space="preserve"><value>{count} we couldn't check</value></data>
+  <data name="Health.Explain" xml:space="preserve"><value>Healthy: we checked it and it's fine. Worth a look: not broken, but it can cause trouble. Fails: VALORANT needs this and it isn't right. Couldn't check: we couldn't read it, so we never count it as fine.</value></data>
+  <data name="Health.Headline" xml:space="preserve"><value>Good news: {count} things look healthy.</value></data>
+  <data name="Health.HeadlineNone" xml:space="preserve"><value>Here's your PC's health check.</value></data>
+  <data name="Health.LimitedNote" xml:space="preserve"><value>We ran without permission, so some items say "couldn't check". That doesn't mean they're broken or fine. We just don't know yet.</value></data>
+  <data name="Health.NeedLook" xml:space="preserve"><value>{count} need a look</value></data>
+  <data name="Health.Next" xml:space="preserve"><value>See what we found</value></data>
+  <data name="Health.Status.Fail" xml:space="preserve"><value>Doesn't meet the requirement</value></data>
+  <data name="Health.Status.NotApplicable" xml:space="preserve"><value>Doesn't apply</value></data>
+  <data name="Health.Status.Ok" xml:space="preserve"><value>Healthy</value></data>
+  <data name="Health.Status.Unknown" xml:space="preserve"><value>Couldn't check</value></data>
+  <data name="Health.Status.Warn" xml:space="preserve"><value>Worth a look</value></data>
+  <data name="Health.UnknownDetail" xml:space="preserve"><value>Couldn't check: {reason}</value></data>
+  <data name="HealthGroup.BackgroundApps" xml:space="preserve"><value>Background apps</value></data>
+  <data name="HealthGroup.Drivers" xml:space="preserve"><value>Drivers</value></data>
+  <data name="HealthGroup.Network" xml:space="preserve"><value>Network</value></data>
+  <data name="HealthGroup.Services" xml:space="preserve"><value>Services</value></data>
+  <data name="HealthGroup.Storage" xml:space="preserve"><value>Storage</value></data>
+  <data name="HealthGroup.VanguardReadiness" xml:space="preserve"><value>Vanguard requirements</value></data>
+  <data name="HealthGroup.Windows" xml:space="preserve"><value>Windows</value></data>
+  <data name="Helper.Add" xml:space="preserve"><value>Add</value></data>
+  <data name="Helper.AnonymousHelper" xml:space="preserve"><value>A helper</value></data>
+  <data name="Helper.BadBundle" xml:space="preserve"><value>We couldn't open this scan file ({code}). Ask the player to save it again.</value></data>
+  <data name="Helper.BundleLine" xml:space="preserve"><value>Scan from {date} · VTDiag {app} · knowledge base {kb} · {mode}</value></data>
+  <data name="Helper.Candidates" xml:space="preserve"><value>What you can suggest</value></data>
+  <data name="Helper.CopyPlan" xml:space="preserve"><value>Copy plan</value></data>
+  <data name="Helper.Down" xml:space="preserve"><value>Down</value></data>
+  <data name="Helper.HighRiskGuideOnly" xml:space="preserve"><value>high risk: players get the guide instead</value></data>
+  <data name="Helper.Kind.Guide" xml:space="preserve"><value>guide</value></data>
+  <data name="Helper.Kind.Monitor" xml:space="preserve"><value>watch a match</value></data>
+  <data name="Helper.Kind.Question" xml:space="preserve"><value>question</value></data>
+  <data name="Helper.Lead" xml:space="preserve"><value>Open a player's scan file. Nothing on this PC changes, and no permission is needed.</value></data>
+  <data name="Helper.Message" xml:space="preserve"><value>Message to the player (plain text)</value></data>
+  <data name="Helper.Mode.Elevated" xml:space="preserve"><value>full scan</value></data>
+  <data name="Helper.Mode.Limited" xml:space="preserve"><value>limited scan (no permission)</value></data>
+  <data name="Helper.Note" xml:space="preserve"><value>Note for this step</value></data>
+  <data name="Helper.Open" xml:space="preserve"><value>Open a scan file</value></data>
+  <data name="Helper.OpenSample" xml:space="preserve"><value>Open the demo scan</value></data>
+  <data name="Helper.PlanCopied" xml:space="preserve"><value>Plan copied.</value></data>
+  <data name="Helper.PlanRules" xml:space="preserve"><value>Plans can only use VTDiag's own fixes, guides and questions. No commands, paths or links as actions. The player approves every step, and a plan expires after 7 days.</value></data>
+  <data name="Helper.Remove" xml:space="preserve"><value>Remove</value></data>
+  <data name="Helper.SavePlan" xml:space="preserve"><value>Save plan…</value></data>
+  <data name="Helper.Search" xml:space="preserve"><value>Search facts</value></data>
+  <data name="Helper.StepCount" xml:space="preserve"><value>Plan: {count} of {max} steps</value></data>
+  <data name="Helper.Tab.Facts" xml:space="preserve"><value>All facts</value></data>
+  <data name="Helper.Tab.Plan" xml:space="preserve"><value>Write a plan</value></data>
+  <data name="Helper.Tab.Ranking" xml:space="preserve"><value>Ranking and math</value></data>
+  <data name="Helper.Tab.Summary" xml:space="preserve"><value>Summary</value></data>
+  <data name="Helper.Title" xml:space="preserve"><value>Helper mode</value></data>
+  <data name="Helper.TooManySteps" xml:space="preserve"><value>A plan can have at most {max} steps.</value></data>
+  <data name="Helper.Up" xml:space="preserve"><value>Up</value></data>
+  <data name="Helper.YourName" xml:space="preserve"><value>Your name (shown to the player)</value></data>
+  <data name="Intake.CodeKnown" xml:space="preserve"><value>We know this one: {code}, {meaning}</value></data>
+  <data name="Intake.CodeLabel" xml:space="preserve"><value>Saw an error code? Type it here (optional)</value></data>
+  <data name="Intake.CodeUnknown" xml:space="preserve"><value>We don't know this code yet. We'll still check everything.</value></data>
+  <data name="Intake.Lead" xml:space="preserve"><value>Pick everything that fits. You can pick more than one.</value></data>
+  <data name="Intake.Title" xml:space="preserve"><value>What's going wrong?</value></data>
+  <data name="Intake.WhenLabel" xml:space="preserve"><value>When does it happen? (optional)</value></data>
+  <data name="Monitor.Fps" xml:space="preserve"><value>FPS: {fps}</value></data>
+  <data name="Monitor.Lead" xml:space="preserve"><value>Play normally. VTDiag waits in the tray so it doesn't cost FPS.</value></data>
+  <data name="Monitor.NoData" xml:space="preserve"><value>no data</value></data>
+  <data name="Monitor.Ping" xml:space="preserve"><value>Ping: {ms} ms</value></data>
+  <data name="Monitor.Self" xml:space="preserve"><value>VTDiag's own CPU use: {pct} %</value></data>
+  <data name="Monitor.Spikes" xml:space="preserve"><value>Stutters so far: {count}</value></data>
+  <data name="Monitor.Title" xml:space="preserve"><value>Watching your match</value></data>
+  <data name="Monitor.Waiting" xml:space="preserve"><value>Waiting for VALORANT to start…</value></data>
+  <data name="Nav.About" xml:space="preserve"><value>About and privacy</value></data>
+  <data name="Nav.Back" xml:space="preserve"><value>Back</value></data>
+  <data name="Nav.Helper" xml:space="preserve"><value>Helper mode</value></data>
+  <data name="Nav.Plan" xml:space="preserve"><value>Open a helper's plan</value></data>
+  <data name="Nav.Report" xml:space="preserve"><value>Share results</value></data>
+  <data name="Nav.Settings" xml:space="preserve"><value>Settings</value></data>
+  <data name="Nav.Undo" xml:space="preserve"><value>Undo changes</value></data>
+  <data name="Op.appcompat" xml:space="preserve"><value>Change compatibility settings</value></data>
+  <data name="Op.bcd" xml:space="preserve"><value>Change a startup setting</value></data>
+  <data name="Op.defender" xml:space="preserve"><value>Change a Microsoft Defender setting</value></data>
+  <data name="Op.device" xml:space="preserve"><value>Turn off a device</value></data>
+  <data name="Op.dns" xml:space="preserve"><value>Clear the DNS cache</value></data>
+  <data name="Op.file" xml:space="preserve"><value>Move a file to quarantine</value></data>
+  <data name="Op.firewall" xml:space="preserve"><value>Change a firewall rule</value></data>
+  <data name="Op.ifeo" xml:space="preserve"><value>Reset a program's special settings</value></data>
+  <data name="Op.netadapter" xml:space="preserve"><value>Change a network adapter setting</value></data>
+  <data name="Op.oneway" xml:space="preserve"><value>Reset part of Windows</value></data>
+  <data name="Op.powercfg" xml:space="preserve"><value>Change a power setting</value></data>
+  <data name="Op.process" xml:space="preserve"><value>Close a program</value></data>
+  <data name="Op.registry" xml:space="preserve"><value>Change a Windows setting</value></data>
+  <data name="Op.service" xml:space="preserve"><value>Change a background service</value></data>
+  <data name="Op.startup" xml:space="preserve"><value>Stop a program from starting with Windows</value></data>
+  <data name="Op.systemProtection" xml:space="preserve"><value>Turn on restore points</value></data>
+  <data name="Op.time" xml:space="preserve"><value>Sync the clock</value></data>
+  <data name="Outcome.Fixed" xml:space="preserve"><value>It helped</value></data>
+  <data name="Outcome.Fps" xml:space="preserve"><value>Average FPS: {fps}</value></data>
+  <data name="Outcome.No" xml:space="preserve"><value>No, still broken</value></data>
+  <data name="Outcome.NoMeans" xml:space="preserve"><value>If it's still broken, we'll move to the next suspect. The change stays until you undo it.</value></data>
+  <data name="Outcome.NotFixed" xml:space="preserve"><value>Didn't help</value></data>
+  <data name="Outcome.NotSure" xml:space="preserve"><value>Not sure yet</value></data>
+  <data name="Outcome.Pending" xml:space="preserve"><value>Not asked yet</value></data>
+  <data name="Outcome.Ping" xml:space="preserve"><value>Ping: about {ms} ms</value></data>
+  <data name="Outcome.Seen" xml:space="preserve"><value>What we saw during the test</value></data>
+  <data name="Outcome.SelfCost" xml:space="preserve"><value>VTDiag's own CPU use: {pct} %</value></data>
+  <data name="Outcome.Spikes" xml:space="preserve"><value>Stutters: {count} in {seconds} seconds</value></data>
+  <data name="Outcome.Test.Lead" xml:space="preserve"><value>Play one Deathmatch or 5 minutes in the Range. We'll watch quietly in the background. It won't affect your FPS.</value></data>
+  <data name="Outcome.Test.Skip" xml:space="preserve"><value>Test without watching</value></data>
+  <data name="Outcome.Test.Start" xml:space="preserve"><value>Start test (watch my match)</value></data>
+  <data name="Outcome.Test.Title" xml:space="preserve"><value>Done. Now let's test it</value></data>
+  <data name="Outcome.Title" xml:space="preserve"><value>Did it help?</value></data>
+  <data name="Outcome.Unsure" xml:space="preserve"><value>Not sure</value></data>
+  <data name="Outcome.Yes" xml:space="preserve"><value>Yes, it's fixed</value></data>
+  <data name="Permission.Lead" xml:space="preserve"><value>Next, Windows asks: "Do you want to allow this app to make changes to your device?" Click Yes.</value></data>
+  <data name="Permission.Limited" xml:space="preserve"><value>Scan without permission</value></data>
+  <data name="Permission.LimitedDetail" xml:space="preserve"><value>Without permission we can't check a few things (like Secure Boot keys) and can't fix anything. We'll show you exactly what we couldn't check.</value></data>
+  <data name="Permission.Prompt" xml:space="preserve"><value>Why we need it</value></data>
+  <data name="Permission.Title" xml:space="preserve"><value>Windows will ask for permission</value></data>
+  <data name="Permission.Why" xml:space="preserve"><value>To read security settings that VALORANT checks (like Secure Boot and TPM), and later to apply a fix, but only after you say yes to that fix.</value></data>
+  <data name="Plan.Filter" xml:space="preserve"><value>VTDiag plan|*.vtdplan</value></data>
+  <data name="Plan.Lead" xml:space="preserve"><value>A helper can send you a plan file (.vtdplan). We check it against your PC first. Every step still asks you before it changes anything.</value></data>
+  <data name="Plan.LinkFromHelper" xml:space="preserve"><value>(link from helper, we won't open it)</value></data>
+  <data name="Plan.Message" xml:space="preserve"><value>Message from the helper</value></data>
+  <data name="Plan.NotUsable" xml:space="preserve"><value>We can't use this plan. Ask your helper for a new one.</value></data>
+  <data name="Plan.Open" xml:space="preserve"><value>Open a plan file</value></data>
+  <data name="Plan.Ready" xml:space="preserve"><value>Start any step when you're ready. Each one asks you first.</value></data>
+  <data name="Plan.ScanFirst" xml:space="preserve"><value>Scan your PC first, then open the plan. We need a fresh scan to check it.</value></data>
+  <data name="Plan.Start" xml:space="preserve"><value>Start this step</value></data>
+  <data name="Plan.Step.Monitor" xml:space="preserve"><value>Play for {minutes} minutes while we watch</value></data>
+  <data name="Plan.Step.Unknown" xml:space="preserve"><value>Unknown step ({id})</value></data>
+  <data name="Plan.Steps" xml:space="preserve"><value>Steps</value></data>
+  <data name="Plan.Title" xml:space="preserve"><value>Open a helper's plan</value></data>
+  <data name="Plan.Trust.Bad" xml:space="preserve"><value>This plan was changed after it was signed. We won't use it.</value></data>
+  <data name="Plan.Trust.SignedUnknown" xml:space="preserve"><value>Signed by "{name}", but we don't know this helper. Only continue if you trust them.</value></data>
+  <data name="Plan.Trust.Unsigned" xml:space="preserve"><value>From "{name}". From someone you know? Only continue if you trust them.</value></data>
+  <data name="Plan.Trust.Verified" xml:space="preserve"><value>Verified r/ValorantTechSupport helper: {name}</value></data>
+  <data name="Plan.Unreadable" xml:space="preserve"><value>This file isn't a plan we can read.</value></data>
+  <data name="PlanIssue.bad_signature" xml:space="preserve"><value>The signature doesn't match. The plan may have been changed.</value></data>
+  <data name="PlanIssue.expired" xml:space="preserve"><value>This plan has expired (plans last 7 days). Ask for a new one.</value></data>
+  <data name="PlanIssue.kb_too_old" xml:space="preserve"><value>This plan needs a newer VTDiag knowledge base. Update VTDiag first.</value></data>
+  <data name="PlanIssue.other" xml:space="preserve"><value>Something in this plan isn't allowed.</value></data>
+  <data name="PlanIssue.schema" xml:space="preserve"><value>This file isn't a valid plan.</value></data>
+  <data name="PlanIssue.snapshot_mismatch" xml:space="preserve"><value>This plan was written for a different PC.</value></data>
+  <data name="PlanIssue.too_many_steps" xml:space="preserve"><value>This plan has too many steps (at most 10).</value></data>
+  <data name="PlanIssue.unknown_id" xml:space="preserve"><value>Some steps use things VTDiag doesn't know.</value></data>
+  <data name="PlanReason.generic" xml:space="preserve"><value>This step doesn't fit your PC right now.</value></data>
+  <data name="PlanReason.plan.step.binding_count" xml:space="preserve"><value>This step points at the wrong number of things.</value></data>
+  <data name="PlanReason.plan.step.binding_missing" xml:space="preserve"><value>This step doesn't say what to change.</value></data>
+  <data name="PlanReason.plan.step.binding_not_suggested" xml:space="preserve"><value>Our scan doesn't connect this step to your problem.</value></data>
+  <data name="PlanReason.plan.step.binding_unknown" xml:space="preserve"><value>This step points at something we can't find on your PC.</value></data>
+  <data name="PlanReason.plan.step.binding_unresolved" xml:space="preserve"><value>This step doesn't match your PC anymore.</value></data>
+  <data name="PlanReason.plan.step.fix_deprecated" xml:space="preserve"><value>This fix was retired. Ask your helper for a new plan.</value></data>
+  <data name="PlanReason.plan.step.high_risk_guide_only" xml:space="preserve"><value>This is too risky to do automatically. Ask for the step-by-step guide instead.</value></data>
+  <data name="PlanReason.plan.step.monitor_minutes" xml:space="preserve"><value>Monitor steps must be between 1 and 60 minutes.</value></data>
+  <data name="PlanReason.plan.step.over_limit" xml:space="preserve"><value>Plans can have at most 10 steps.</value></data>
+  <data name="PlanReason.plan.step.protected_target" xml:space="preserve"><value>This step would touch the game, Vanguard or Windows security. We never do that.</value></data>
+  <data name="PlanReason.plan.step.unknown_branch" xml:space="preserve"><value>This part of the guide doesn't exist.</value></data>
+  <data name="PlanReason.plan.step.unknown_fix" xml:space="preserve"><value>VTDiag doesn't know this fix.</value></data>
+  <data name="PlanReason.plan.step.unknown_guide" xml:space="preserve"><value>VTDiag doesn't know this guide.</value></data>
+  <data name="PlanReason.plan.step.unknown_question" xml:space="preserve"><value>VTDiag doesn't know this question.</value></data>
+  <data name="Proposer.Cli" xml:space="preserve"><value>Suggested by a command-line tool</value></data>
+  <data name="Proposer.Mcp" xml:space="preserve"><value>Suggested by an AI agent</value></data>
+  <data name="Proposer.McpLabel" xml:space="preserve"><value>Suggested by an AI agent (it calls itself "{label}")</value></data>
+  <data name="Proposer.Plan" xml:space="preserve"><value>Suggested in a helper's plan from "{name}" (name not verified)</value></data>
+  <data name="Proposer.PlanNoName" xml:space="preserve"><value>Suggested in a helper's plan</value></data>
+  <data name="Proposer.PlanVerified" xml:space="preserve"><value>Suggested in a plan from verified r/ValorantTechSupport helper {name}</value></data>
+  <data name="Rail.Describe" xml:space="preserve"><value>Tell us</value></data>
+  <data name="Rail.Fix" xml:space="preserve"><value>Fix</value></data>
+  <data name="Rail.Results" xml:space="preserve"><value>Results</value></data>
+  <data name="Rail.Scan" xml:space="preserve"><value>Scan</value></data>
+  <data name="Rail.Share" xml:space="preserve"><value>Share</value></data>
+  <data name="Rail.Test" xml:space="preserve"><value>Test</value></data>
+  <data name="Report.Ai" xml:space="preserve"><value>Copy for AI</value></data>
+  <data name="Report.Ai.Detail" xml:space="preserve"><value>For ChatGPT, Claude or another AI helper. It includes the rules for writing a safe fix plan.</value></data>
+  <data name="Report.Blocked" xml:space="preserve"><value>We stopped this export because something private slipped through in: {sections}. Leave that part out and try again.</value></data>
+  <data name="Report.BlockedNoSection" xml:space="preserve"><value>We stopped this export because something private slipped through. Nothing was copied or saved.</value></data>
+  <data name="Report.Bundle" xml:space="preserve"><value>Save a scan file for a helper</value></data>
+  <data name="Report.Bundle.Detail" xml:space="preserve"><value>A .vtdscan file a helper opens in VTDiag's helper mode.</value></data>
+  <data name="Report.Copied.Ai" xml:space="preserve"><value>Copied. Paste it into your AI chat.</value></data>
+  <data name="Report.Copied.Reddit" xml:space="preserve"><value>Copied. Paste it into your Reddit post or comment.</value></data>
+  <data name="Report.Copy" xml:space="preserve"><value>Copy</value></data>
+  <data name="Report.Failed" xml:space="preserve"><value>We couldn't build the report. Try scanning again.</value></data>
+  <data name="Report.Filter.Bundle" xml:space="preserve"><value>VTDiag scan|*.vtdscan</value></data>
+  <data name="Report.Filter.Html" xml:space="preserve"><value>Report|*.html</value></data>
+  <data name="Report.Filter.Json" xml:space="preserve"><value>JSON|*.json</value></data>
+  <data name="Report.Helper.Detail" xml:space="preserve"><value>Save a scan file and send it to a helper on r/ValorantTechSupport or Discord. They can send you back a plan, and you approve every step.</value></data>
+  <data name="Report.Helper.Title" xml:space="preserve"><value>Get help from a helper</value></data>
+  <data name="Report.Html" xml:space="preserve"><value>Save the full report</value></data>
+  <data name="Report.Html.Detail" xml:space="preserve"><value>Opens in any browser, works offline, no scripts.</value></data>
+  <data name="Report.Inside" xml:space="preserve"><value>What's inside</value></data>
+  <data name="Report.Json" xml:space="preserve"><value>JSON for tools</value></data>
+  <data name="Report.Lead" xml:space="preserve"><value>Everything here is cleaned first: no user name, PC name, serial numbers, passwords or login tokens.</value></data>
+  <data name="Report.LeaveOut" xml:space="preserve"><value>Leave it out and try again</value></data>
+  <data name="Report.LeftOut" xml:space="preserve"><value>Done. That part is left out now.</value></data>
+  <data name="Report.Length" xml:space="preserve"><value>{count} characters (Reddit allows 10,000)</value></data>
+  <data name="Report.NoScan" xml:space="preserve"><value>Scan your PC first. The report is built from your scan.</value></data>
+  <data name="Report.Preview" xml:space="preserve"><value>Preview of what will be shared</value></data>
+  <data name="Report.Redacted" xml:space="preserve"><value>We hid or changed {count} things, like {what}.</value></data>
+  <data name="Report.RedactedNone" xml:space="preserve"><value>Nothing private was found to hide.</value></data>
+  <data name="Report.Reddit" xml:space="preserve"><value>Copy for Reddit</value></data>
+  <data name="Report.Reddit.Detail" xml:space="preserve"><value>Paste it into a post or comment. It fits Reddit's limit.</value></data>
+  <data name="Report.Save" xml:space="preserve"><value>Save…</value></data>
+  <data name="Report.Saved" xml:space="preserve"><value>Saved {name}.</value></data>
+  <data name="Report.ServerIp" xml:space="preserve"><value>Include the game server address (only if your internet provider asks for it)</value></data>
+  <data name="Report.Title" xml:space="preserve"><value>Share your results</value></data>
+  <data name="Report.UpdatePreview" xml:space="preserve"><value>Update the preview</value></data>
+  <data name="Restart.Battery" xml:space="preserve"><value>You're on battery. Plug in your charger first.</value></data>
+  <data name="Restart.Bios.Lead" xml:space="preserve"><value>Your PC restarts straight into its BIOS settings. Keep the steps open on your phone. When you're done there, save and exit; VTDiag continues after you sign in.</value></data>
+  <data name="Restart.Bios.Now" xml:space="preserve"><value>Restart into BIOS</value></data>
+  <data name="Restart.Bios.Title" xml:space="preserve"><value>Restart into BIOS</value></data>
+  <data name="Restart.Later" xml:space="preserve"><value>Restart later</value></data>
+  <data name="Restart.Later.Done" xml:space="preserve"><value>Okay. VTDiag continues after your next restart. Use Restart, not Shut down.</value></data>
+  <data name="Restart.Lead" xml:space="preserve"><value>This change only works after a restart. Save your stuff first and close the game.</value></data>
+  <data name="Restart.Now" xml:space="preserve"><value>Restart now</value></data>
+  <data name="Restart.Resume.Manual" xml:space="preserve"><value>After the restart, open VTDiag from the Start menu and we'll continue.</value></data>
+  <data name="Restart.Resume.None" xml:space="preserve"><value>After the restart, open VTDiag from the Start menu and we'll continue.</value></data>
+  <data name="Restart.Resume.RunOnceUi" xml:space="preserve"><value>We'll open again after you sign in. Windows may ask for permission once more.</value></data>
+  <data name="Restart.Resume.ScheduledTasks" xml:space="preserve"><value>We'll open again by ourselves after you sign in, and check the fix.</value></data>
+  <data name="Restart.Title" xml:space="preserve"><value>Restart needed</value></data>
+  <data name="Restarting.Bios" xml:space="preserve"><value>In the BIOS, follow the steps on your phone, then choose "Save and exit".</value></data>
+  <data name="Restarting.Lead" xml:space="preserve"><value>When you sign in again, VTDiag opens by itself and checks the fix.</value></data>
+  <data name="Restarting.Simulate" xml:space="preserve"><value>Demo: the PC comes back</value></data>
+  <data name="Restarting.Title" xml:space="preserve"><value>Restarting your PC…</value></data>
+  <data name="Resume.Checking" xml:space="preserve"><value>{fix}: still checking</value></data>
+  <data name="Resume.InPlace" xml:space="preserve"><value>{fix}: in place now</value></data>
+  <data name="Resume.Lead" xml:space="preserve"><value>We checked the fix after the restart.</value></data>
+  <data name="Resume.NotInPlace" xml:space="preserve"><value>{fix}: didn't stick</value></data>
+  <data name="Resume.NotInPlaceDetail" xml:space="preserve"><value>We put things back the way they were. Something else on the PC may be changing it.</value></data>
+  <data name="Resume.Title" xml:space="preserve"><value>Welcome back</value></data>
+  <data name="Resume.UndoAll" xml:space="preserve"><value>Stop and undo everything</value></data>
+  <data name="Rule.device" xml:space="preserve"><value>device serial parts</value></data>
+  <data name="Rule.email" xml:space="preserve"><value>email addresses</value></data>
+  <data name="Rule.hash" xml:space="preserve"><value>Wi-Fi and device names</value></data>
+  <data name="Rule.host" xml:space="preserve"><value>your PC name</value></data>
+  <data name="Rule.identifier" xml:space="preserve"><value>your PC and user names</value></data>
+  <data name="Rule.mac" xml:space="preserve"><value>network card addresses</value></data>
+  <data name="Rule.net" xml:space="preserve"><value>network addresses</value></data>
+  <data name="Rule.other" xml:space="preserve"><value>other private details</value></data>
+  <data name="Rule.path" xml:space="preserve"><value>folder paths with your name</value></data>
+  <data name="Rule.pii" xml:space="preserve"><value>personal details</value></data>
+  <data name="Rule.secret" xml:space="preserve"><value>login tokens</value></data>
+  <data name="Rule.section" xml:space="preserve"><value>parts you left out</value></data>
+  <data name="Rule.sid" xml:space="preserve"><value>Windows account ids</value></data>
+  <data name="Scan.Lead" xml:space="preserve"><value>This takes about a minute. You can keep using your PC.</value></data>
+  <data name="Scan.Cancel" xml:space="preserve"><value>Stop the scan</value></data>
+  <data name="Outcome.Summary" xml:space="preserve"><value>Whole test: {spikes} stutter spikes, {marked} moments you marked as bad.</value></data>
+  <data name="Outcome.Summary.Short" xml:space="preserve"><value>The test was too short to judge; your own answer counts.</value></data>
+  <data name="Scan.NeverHangs" xml:space="preserve"><value>If a part takes too long, we skip it and say so. The scan never gets stuck.</value></data>
+  <data name="Scan.Partial" xml:space="preserve"><value>Some parts couldn't be read</value></data>
+  <data name="Scan.Progress" xml:space="preserve"><value>{done} of {total} checks done</value></data>
+  <data name="Scan.Skipped.Failed" xml:space="preserve"><value>Couldn't read this part</value></data>
+  <data name="Scan.Skipped.NoAdmin" xml:space="preserve"><value>Needs permission</value></data>
+  <data name="Scan.Skipped.Slow" xml:space="preserve"><value>Skipped, it took too long</value></data>
+  <data name="Scan.Starting" xml:space="preserve"><value>Starting…</value></data>
+  <data name="Scan.Title" xml:space="preserve"><value>Checking your PC</value></data>
+  <data name="Section.analysis" xml:space="preserve"><value>Our analysis</value></data>
+  <data name="Section.apps" xml:space="preserve"><value>Installed apps</value></data>
+  <data name="Section.attempts" xml:space="preserve"><value>Fixes tried</value></data>
+  <data name="Section.audio" xml:space="preserve"><value>Audio devices</value></data>
+  <data name="Section.devices" xml:space="preserve"><value>Devices</value></data>
+  <data name="Section.display" xml:space="preserve"><value>Displays</value></data>
+  <data name="Section.drivers" xml:space="preserve"><value>Drivers</value></data>
+  <data name="Section.events" xml:space="preserve"><value>Windows event summary</value></data>
+  <data name="Section.firmware" xml:space="preserve"><value>Firmware (BIOS)</value></data>
+  <data name="Section.hardware" xml:space="preserve"><value>Hardware</value></data>
+  <data name="Section.input" xml:space="preserve"><value>Mouse settings</value></data>
+  <data name="Section.monitor" xml:space="preserve"><value>Match monitor</value></data>
+  <data name="Section.network" xml:space="preserve"><value>Network</value></data>
+  <data name="Section.optionalFeatures" xml:space="preserve"><value>Windows features</value></data>
+  <data name="Section.os" xml:space="preserve"><value>Windows version</value></data>
+  <data name="Section.pack" xml:space="preserve"><value>Extra checks</value></data>
+  <data name="Section.power" xml:space="preserve"><value>Power settings</value></data>
+  <data name="Section.processes" xml:space="preserve"><value>Running programs</value></data>
+  <data name="Section.riot" xml:space="preserve"><value>Riot and VALORANT files</value></data>
+  <data name="Section.runs" xml:space="preserve"><value>Scan coverage</value></data>
+  <data name="Section.security" xml:space="preserve"><value>Security</value></data>
+  <data name="Section.services" xml:space="preserve"><value>Services</value></data>
+  <data name="Section.startup" xml:space="preserve"><value>Startup programs</value></data>
+  <data name="Section.storage" xml:space="preserve"><value>Disks</value></data>
+  <data name="Settings.Developer" xml:space="preserve"><value>Developer tools</value></data>
+  <data name="Settings.Developer.Detail" xml:space="preserve"><value>Only in demo mode. They simulate things a real PC or helper would do.</value></data>
+  <data name="Settings.Language" xml:space="preserve"><value>Language</value></data>
+  <data name="Settings.Pseudo" xml:space="preserve"><value>Pseudo-language (for testing longer text)</value></data>
+  <data name="Settings.ReportLanguage" xml:space="preserve"><value>Reports you share keep a part in English, so helpers on the subreddit can read them.</value></data>
+  <data name="Settings.SimulateAgent" xml:space="preserve"><value>Simulate an AI agent suggesting a fix</value></data>
+  <data name="Settings.Title" xml:space="preserve"><value>Settings</value></data>
+  <data name="Suspects.BackToHealth" xml:space="preserve"><value>Back to the checklist</value></data>
+  <data name="Suspects.CouldNotCheck" xml:space="preserve"><value>We couldn't check these, so the results may change once we can</value></data>
+  <data name="Suspects.CouldNotCheckLine" xml:space="preserve"><value>{what}: {reason}</value></data>
+  <data name="Suspects.Explain" xml:space="preserve"><value>"Very likely" means the evidence points strongly to it. We show at most a few reasons per suspect. The colour on the left says what kind of problem it is: fixable here, a step you do yourself (like BIOS), outside your PC (internet provider), on Riot's side, or likely hardware.</value></data>
+  <data name="Suspects.FixLabel" xml:space="preserve"><value>Fix:</value></data>
+  <data name="Suspects.GetHelp" xml:space="preserve"><value>Get help from a helper</value></data>
+  <data name="Suspects.GuideLabel" xml:space="preserve"><value>Steps:</value></data>
+  <data name="Suspects.Math" xml:space="preserve"><value>Why this ranking (for helpers)</value></data>
+  <data name="Suspects.NeedsPermission" xml:space="preserve"><value>This fix needs permission. Restart VTDiag and click Yes on the Windows prompt.</value></data>
+  <data name="Suspects.NotAvailable" xml:space="preserve"><value>This fix can't run right now.</value></data>
+  <data name="Suspects.OpenFix" xml:space="preserve"><value>Open this fix</value></data>
+  <data name="Suspects.Question" xml:space="preserve"><value>One quick question</value></data>
+  <data name="Suspects.ShowAll" xml:space="preserve"><value>Show all ({count} more)</value></data>
+  <data name="Suspects.ShowFewer" xml:space="preserve"><value>Show fewer</value></data>
+  <data name="Suspects.ShowSteps" xml:space="preserve"><value>Show me the steps</value></data>
+  <data name="Suspects.Title" xml:space="preserve"><value>What we found</value></data>
+  <data name="Suspects.TryFirstFix" xml:space="preserve"><value>Try the first fix</value></data>
+  <data name="Suspects.Unknown.Detail" xml:space="preserve"><value>Nothing we checked explains it well enough. That's not your fault, and it doesn't mean nothing is wrong.</value></data>
+  <data name="Suspects.Unknown.Ladder" xml:space="preserve"><value>Next steps: 1. Get help from a helper (share your results). 2. Play one match while we watch, so we can see the problem happen. 3. Post on r/ValorantTechSupport with "Copy for Reddit".</value></data>
+  <data name="Suspects.Unknown.Title" xml:space="preserve"><value>We couldn't pin this down</value></data>
+  <data name="Suspects.Why" xml:space="preserve"><value>Why we think so</value></data>
+  <data name="Symptom.crash_freeze" xml:space="preserve"><value>Crash or freeze</value></data>
+  <data name="Symptom.error_code" xml:space="preserve"><value>Error code</value></data>
+  <data name="Symptom.just_check" xml:space="preserve"><value>Just check my PC</value></data>
+  <data name="Symptom.lag_ping" xml:space="preserve"><value>Lag or high ping</value></data>
+  <data name="Symptom.launch_black_screen" xml:space="preserve"><value>Black screen at launch</value></data>
+  <data name="Symptom.stutter" xml:space="preserve"><value>Stutter or low FPS</value></data>
+  <data name="Symptom.voice_sound" xml:space="preserve"><value>Voice or sound</value></data>
+  <data name="Symptom.wont_start" xml:space="preserve"><value>Won't start</value></data>
+  <data name="Tray.Exit" xml:space="preserve"><value>Exit</value></data>
+  <data name="Tray.Idle" xml:space="preserve"><value>Not watching</value></data>
+  <data name="Tray.MarkBad" xml:space="preserve"><value>Mark last match as bad</value></data>
+  <data name="Tray.Monitoring" xml:space="preserve"><value>Watching your match</value></data>
+  <data name="Tray.Open" xml:space="preserve"><value>Open VTDiag</value></data>
+  <data name="Undo.All" xml:space="preserve"><value>Undo everything</value></data>
+  <data name="Undo.Conflict" xml:space="preserve"><value>This setting was changed again after our fix (probably by Windows Update). Put it back to how it was before VTDiag?</value></data>
+  <data name="Undo.Empty" xml:space="preserve"><value>Nothing changed yet. When you apply a fix, it shows up here.</value></data>
+  <data name="Undo.Lead" xml:space="preserve"><value>Everything VTDiag changed on this PC. Undo puts it back to how it was before.</value></data>
+  <data name="Undo.OneWay" xml:space="preserve"><value>This can't be undone with a click.</value></data>
+  <data name="Undo.OneWayRestorePoint" xml:space="preserve"><value>This can't be undone with a click. Windows made a restore point on {date}.</value></data>
+  <data name="Undo.PutBack" xml:space="preserve"><value>Yes, put it back</value></data>
+  <data name="Undo.Title" xml:space="preserve"><value>Undo changes</value></data>
+  <data name="Undo.Undo" xml:space="preserve"><value>Undo</value></data>
+  <data name="UndoConsent.No" xml:space="preserve"><value>Keep it</value></data>
+  <data name="UndoConsent.Title" xml:space="preserve"><value>Undo this change?</value></data>
+  <data name="UndoConsent.Yes" xml:space="preserve"><value>Undo it</value></data>
+  <data name="Unknown.AccessDenied" xml:space="preserve"><value>Windows didn't let us read it</value></data>
+  <data name="Unknown.Failed" xml:space="preserve"><value>reading it failed</value></data>
+  <data name="Unknown.InsufficientData" xml:space="preserve"><value>not enough data yet</value></data>
+  <data name="Unknown.NeedsAdmin" xml:space="preserve"><value>needs permission</value></data>
+  <data name="Unknown.NotCollected" xml:space="preserve"><value>this part wasn't scanned</value></data>
+  <data name="Unknown.Redacted" xml:space="preserve"><value>removed for privacy</value></data>
+  <data name="Unknown.Incomplete" xml:space="preserve"><value>only part of the list could be read</value></data>
+  <data name="Unknown.TimedOut" xml:space="preserve"><value>it took too long</value></data>
+  <data name="Unknown.Unparseable" xml:space="preserve"><value>we couldn't make sense of it</value></data>
+  <data name="Unknown.Unsupported" xml:space="preserve"><value>this PC doesn't show it</value></data>
+  <data name="Welcome.HelperHint" xml:space="preserve"><value>Helping someone?</value></data>
+  <data name="Welcome.HelperLink" xml:space="preserve"><value>Open their scan file</value></data>
+  <data name="Welcome.Lead" xml:space="preserve"><value>A free PC check made for r/ValorantTechSupport. It takes about a minute, and you stay in control the whole time.</value></data>
+  <data name="Welcome.Privacy" xml:space="preserve"><value>Privacy details</value></data>
+  <data name="Welcome.Promise1" xml:space="preserve"><value>We only change things you approve.</value></data>
+  <data name="Welcome.Promise1.Detail" xml:space="preserve"><value>Every fix is explained first. Nothing happens until you click.</value></data>
+  <data name="Welcome.Promise2" xml:space="preserve"><value>Everything can be undone.</value></data>
+  <data name="Welcome.Promise2.Detail" xml:space="preserve"><value>If something can't be undone with one click, we tell you first and ask twice.</value></data>
+  <data name="Welcome.Promise3" xml:space="preserve"><value>Safe with Vanguard.</value></data>
+  <data name="Welcome.Promise3.Detail" xml:space="preserve"><value>We never touch the game, its memory or Riot's anti-cheat.</value></data>
+  <data name="Welcome.Start" xml:space="preserve"><value>Start</value></data>
+  <data name="Welcome.Title" xml:space="preserve"><value>Let's find out why VALORANT isn't working right.</value></data>
+  <data name="When.always" xml:space="preserve"><value>All the time</value></data>
+  <data name="When.at_launch" xml:space="preserve"><value>At launch</value></data>
+  <data name="When.in_match" xml:space="preserve"><value>In a match</value></data>
+  <data name="When.in_menu" xml:space="preserve"><value>In the menu</value></data>
+  <data name="Window.Close" xml:space="preserve"><value>Close</value></data>
+  <data name="Window.Maximize" xml:space="preserve"><value>Maximize</value></data>
+  <data name="Window.Minimize" xml:space="preserve"><value>Minimize</value></data>
+  <data name="Window.Title" xml:space="preserve"><value>VTDiag · PC check for VALORANT</value></data>
+  <data name="kb.ask.league_also_broken.no" xml:space="preserve"><value>No, League works</value></data>
+  <data name="kb.ask.league_also_broken.text" xml:space="preserve"><value>Do you also play League of Legends? Is it broken too?</value></data>
+  <data name="kb.ask.league_also_broken.unsure" xml:space="preserve"><value>I don't play League</value></data>
+  <data name="kb.ask.league_also_broken.yes" xml:space="preserve"><value>Yes, League is broken too</value></data>
+  <data name="kb.ask.only_valorant_affected.no" xml:space="preserve"><value>Other games too</value></data>
+  <data name="kb.ask.only_valorant_affected.text" xml:space="preserve"><value>Is it only VALORANT, or do other games stutter too?</value></data>
+  <data name="kb.ask.only_valorant_affected.unsure" xml:space="preserve"><value>Not sure</value></data>
+  <data name="kb.ask.only_valorant_affected.yes" xml:space="preserve"><value>Only VALORANT</value></data>
+  <data name="kb.code.val_account.meaning" xml:space="preserve"><value>An account-side error</value></data>
+  <data name="kb.code.van152.meaning" xml:space="preserve"><value>Hardware restricted by Riot (appeal only)</value></data>
+  <data name="kb.code.van9003.meaning" xml:space="preserve"><value>Secure Boot is off</value></data>
+  <data name="kb.consent.one_way_confirm" xml:space="preserve"><value>This can't be undone with a click. Confirm once more.</value></data>
+  <data name="kb.couldnotcheck.needs_admin" xml:space="preserve"><value>Couldn't check: needs permission</value></data>
+  <data name="kb.drift.adapter_reenabled" xml:space="preserve"><value>The network port was turned back on (often by a driver update).</value></data>
+  <data name="kb.drift.oem_reinstalled" xml:space="preserve"><value>The audio software came back after a Windows or vendor update.</value></data>
+  <data name="kb.fix.disable_adapter.explain" xml:space="preserve"><value>We'll turn off the wired network port you're not using. You're on Wi-Fi, so your internet stays on. One click turns it back on.</value></data>
+  <data name="kb.fix.disable_adapter.notice" xml:space="preserve"><value>Nothing, unless you plug a cable into that port later. Then turn it back on first.</value></data>
+  <data name="kb.fix.disable_adapter.title" xml:space="preserve"><value>Turn off the network port you're not using</value></data>
+  <data name="kb.fix.disable_adapter.undo" xml:space="preserve"><value>One click in "Undo changes" turns the port back on, exactly as it was.</value></data>
+  <data name="kb.fix.disable_service.explain" xml:space="preserve"><value>We'll stop the Nahimic audio service and keep it from starting with Windows. Your sound keeps working through the normal Windows driver.</value></data>
+  <data name="kb.fix.disable_service.title" xml:space="preserve"><value>Turn off the conflicting audio service</value></data>
+  <data name="kb.fix.disable_service.undo" xml:space="preserve"><value>One click in "Undo changes" turns the service back on, exactly as it was.</value></data>
+  <data name="kb.fix.dns_flush.explain" xml:space="preserve"><value>We'll clear Windows' list of remembered website addresses, so it looks them up fresh. This fixes some "can't connect" errors.</value></data>
+  <data name="kb.fix.dns_flush.title" xml:space="preserve"><value>Clear the DNS cache</value></data>
+  <data name="kb.fix.dns_flush.undo" xml:space="preserve"><value>There's nothing to put back: Windows rebuilds the list by itself as you browse.</value></data>
+  <data name="kb.fix.net.disable_unused_adapter.step0" xml:space="preserve"><value>Turn off the unused wired network port</value></data>
+  <data name="kb.fix.net.dns_flush.step0" xml:space="preserve"><value>Clear the DNS cache</value></data>
+  <data name="kb.fix.svc.disable_conflict_service.step0" xml:space="preserve"><value>Stop the service from starting with Windows</value></data>
+  <data name="kb.fix.svc.disable_conflict_service.step1" xml:space="preserve"><value>Stop the service now</value></data>
+  <data name="kb.guard.adapter_is_active" xml:space="preserve"><value>This port is the one your internet uses right now, so we won't turn it off.</value></data>
+  <data name="kb.guard.no_other_connection" xml:space="preserve"><value>You have no other working connection, so turning this off would cut your internet.</value></data>
+  <data name="kb.guide.apps.uninstall_nahimic" xml:space="preserve"><value>Uninstall Nahimic completely</value></data>
+  <data name="kb.guide.secureboot.bitlocker_key_first" xml:space="preserve"><value>BitLocker is on. Save your recovery key first (aka.ms/myrecoverykey), or Windows may ask for it after the BIOS change.</value></data>
+  <data name="kb.guide.secureboot.csm.step1" xml:space="preserve"><value>In the BIOS ({key} while the PC starts), go to {path} and turn off CSM / Legacy boot.</value></data>
+  <data name="kb.guide.secureboot.enable.step1" xml:space="preserve"><value>Restart into the BIOS (press {key} while the PC starts). Go to {path}, set Secure Boot to Enabled, then choose Save and exit.</value></data>
+  <data name="kb.guide.secureboot.factory_keys.step1" xml:space="preserve"><value>In the BIOS ({key}), go to {path} and choose "Restore factory keys" (or "Install default Secure Boot keys").</value></data>
+  <data name="kb.guide.secureboot.mbr.step1" xml:space="preserve"><value>Check whether your disk can be converted to GPT without losing data.</value></data>
+  <data name="kb.guide.secureboot.mbr.text" xml:space="preserve"><value>Your system disk uses the old MBR style. Secure Boot needs GPT, so that comes first.</value></data>
+  <data name="kb.guide.secureboot.restart_bios" xml:space="preserve"><value>Restart straight into the BIOS. We'll continue here afterwards.</value></data>
+  <data name="kb.guide.secureboot.title" xml:space="preserve"><value>Turn on Secure Boot in your BIOS</value></data>
+  <data name="kb.health.free_space" xml:space="preserve"><value>Enough free disk space</value></data>
+  <data name="kb.health.pending_reboot" xml:space="preserve"><value>No Windows restart waiting</value></data>
+  <data name="kb.health.secure_boot" xml:space="preserve"><value>Secure Boot</value></data>
+  <data name="kb.health.secure_boot_keys" xml:space="preserve"><value>Secure Boot keys are set up</value></data>
+  <data name="kb.health.test_signing_off" xml:space="preserve"><value>Test signing is off</value></data>
+  <data name="kb.health.tpm2" xml:space="preserve"><value>TPM 2.0 is on</value></data>
+  <data name="kb.health.uefi_gpt" xml:space="preserve"><value>PC starts in UEFI mode from a GPT disk</value></data>
+  <data name="kb.outcome.connects_now" xml:space="preserve"><value>Does it connect now?</value></data>
+  <data name="kb.outcome.game_launches" xml:space="preserve"><value>Does the game start now?</value></data>
+  <data name="kb.outcome.past_loading_screen" xml:space="preserve"><value>Does VALORANT get past the loading screen now?</value></data>
+  <data name="kb.outcome.stutter_gone" xml:space="preserve"><value>Are the stutters gone?</value></data>
+  <data name="kb.proposal.reason.quick_harmless_undoable" xml:space="preserve"><value>It's quick, harmless and undoable, so we'll try it before the bigger stuff.</value></data>
+  <data name="kb.report.disclaimer.not_affiliated" xml:space="preserve"><value>VTDiag is not affiliated with Riot Games.</value></data>
+  <data name="kb.restart.use_restart_not_shutdown" xml:space="preserve"><value>Use "Restart", not "Shut down". Shut down with Fast Startup doesn't really restart Windows.</value></data>
+  <data name="kb.rule.nahimic.ev.module" xml:space="preserve"><value>VALORANT crashed in {module} ({count} times)</value></data>
+  <data name="kb.rule.nahimic.title" xml:space="preserve"><value>Nahimic audio software is blocking VALORANT at launch</value></data>
+  <data name="kb.rule.realtek25.ev.resets" xml:space="preserve"><value>{count} Realtek driver resets in 14 days</value></data>
+  <data name="kb.rule.realtek25.ev.unused" xml:space="preserve"><value>The Realtek 2.5G port is turned on but no cable is plugged in</value></data>
+  <data name="kb.rule.realtek25.title" xml:space="preserve"><value>Your unused wired network port (Realtek 2.5G) is causing the stutters</value></data>
+  <data name="kb.rule.route.hwid_ban.title" xml:space="preserve"><value>Your PC is restricted by Riot (VAN 152)</value></data>
+  <data name="kb.rule.van9003.ev.sb_off" xml:space="preserve"><value>Secure Boot is switched off in your BIOS</value></data>
+  <data name="kb.rule.van9003.title" xml:space="preserve"><value>Secure Boot is off (VAN 9003)</value></data>
+  <data name="kb.signal.net.realtek25.unused" xml:space="preserve"><value>Unused Realtek 2.5G port</value></data>
+  <data name="kb.signal.sec.secureboot.on" xml:space="preserve"><value>Secure Boot</value></data>
+  <data name="kb.signal.sec.secureboot.setup_mode" xml:space="preserve"><value>Secure Boot keys</value></data>
+  <data name="Debug.Title" xml:space="preserve"><value>Debug bundle</value></data>
+  <data name="Debug.Detail" xml:space="preserve"><value>If something goes wrong, create one file with the logs, the last scan and the analysis (private details removed) and send it to whoever is helping you.</value></data>
+  <data name="Debug.Toggle" xml:space="preserve"><value>Debug mode (more detail in the log while you reproduce the problem)</value></data>
+  <data name="Debug.Create" xml:space="preserve"><value>Create debug bundle</value></data>
+  <data name="Debug.Blocked" xml:space="preserve"><value>We stopped the bundle because something private slipped through in: {sections}. Nothing was saved.</value></data>
+  <data name="Debug.Failed" xml:space="preserve"><value>We couldn't create the debug bundle.</value></data>
+  <data name="Debug.Filter" xml:space="preserve"><value>VTDiag debug bundle|*.vtddebug</value></data>
+  <data name="Error.engine.missing" xml:space="preserve"><value>VTDiag's engine file is missing. Reinstall VTDiag.</value></data>
+  <data name="Error.engine.start_failed" xml:space="preserve"><value>The VTDiag engine could not be started.</value></data>
+  <data name="Error.engine.unverified" xml:space="preserve"><value>We could not confirm the engine is really VTDiag's, so we did not connect.</value></data>
+  <data name="Error.engine.connection_lost" xml:space="preserve"><value>The connection to the VTDiag engine was lost. Restart VTDiag.</value></data>
+</root>

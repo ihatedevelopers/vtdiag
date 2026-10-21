@@ -1,0 +1,212 @@
+{
+  "id": "guide.gpu.igpu",
+  "titleKey": "guide.gpu.igpu.title",
+  "summaryKey": "guide.gpu.igpu.summary",
+  "bucket": "guidedManual",
+  "risk": "medium",
+  "reboot": "recommended",
+  "appliesTo": [
+    "igpu-disabled-or-driverless-freeze",
+    "intel-graphics-chipset-driver-outdated",
+    "wrong-gpu-or-display-output"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "cable",
+      "when": [
+        {
+          "signal": "gpu.monitor_on_igpu",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.gpu.igpu.cable.text",
+      "steps": [
+        {
+          "textKey": "guide.gpu.igpu.cable.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.cable.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.cable.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.cable.s4",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "gpu.monitor_on_igpu",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "no_driver",
+      "when": [
+        {
+          "signal": "gpu.basic_display",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.gpu.igpu.no_driver.text",
+      "steps": [
+        {
+          "textKey": "guide.gpu.igpu.no_driver.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.no_driver.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.no_driver.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.no_driver.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.no_driver.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.no_driver.s6",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "gpu.basic_display",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "disabled",
+      "when": [
+        {
+          "signal": "gpu.igpu_disabled",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.gpu.igpu.disabled.text",
+      "steps": [
+        {
+          "textKey": "guide.gpu.igpu.disabled.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.disabled.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.disabled.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.disabled.s4",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "gpu.igpu_disabled",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "intel_old",
+      "when": [
+        {
+          "signal": "gpu.intel_driver_old",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.gpu.igpu.intel_old.text",
+      "steps": [
+        {
+          "textKey": "guide.gpu.igpu.intel_old.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.intel_old.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.intel_old.s3",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "gpu.intel_driver_old",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "hybrid",
+      "when": [
+        {
+          "signal": "gpu.hybrid",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.gpu.igpu.hybrid.text",
+      "steps": [
+        {
+          "textKey": "guide.gpu.igpu.hybrid.s1",
+          "action": "runFix",
+          "target": "fix.display.gpu_pref_high"
+        },
+        {
+          "textKey": "guide.gpu.igpu.hybrid.s2",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "bios_auto",
+      "when": [],
+      "textKey": "guide.gpu.igpu.bios_auto.text",
+      "steps": [
+        {
+          "textKey": "guide.gpu.igpu.bios_auto.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.bios_auto.s2",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.gpu.igpu.bios_auto.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.bios_auto.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.bios_auto.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.igpu.bios_auto.s6",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.gpu.igpu.outcome"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "guide.audio.bt_handsfree",
+  "titleKey": "guide.audio.bt_handsfree.title",
+  "summaryKey": "guide.audio.bt_handsfree.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "bluetooth-headset-hfp-voice-chat"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "auto",
+      "when": [
+        {
+          "signal": "audio.bt_handsfree_present",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.audio.bt_handsfree.auto.text",
+      "steps": [
+        {
+          "textKey": "guide.audio.bt_handsfree.auto.s1",
+          "action": "runFix",
+          "target": "fix.audio.bt_handsfree_off"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.auto.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.auto.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.auto.s4",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "audio.bt_handsfree_present",
+          "is": "false"
+        }
+      ],
+      "nextOnFail": "manual"
+    },
+    {
+      "id": "manual",
+      "when": [],
+      "textKey": "guide.audio.bt_handsfree.manual.text",
+      "steps": [
+        {
+          "textKey": "guide.audio.bt_handsfree.manual.s1",
+          "action": "openSettings",
+          "target": "ms-settings:bluetooth"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.manual.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.manual.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.manual.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.manual.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.manual.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.manual.s7",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "other_options",
+      "when": [],
+      "textKey": "guide.audio.bt_handsfree.other_options.text",
+      "steps": [
+        {
+          "textKey": "guide.audio.bt_handsfree.other_options.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.other_options.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.other_options.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.other_options.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.bt_handsfree.other_options.s5",
+          "action": "openSettings",
+          "target": "ms-settings:sound"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.audio.bt_handsfree.outcome"
+}

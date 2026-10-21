@@ -1,0 +1,118 @@
+{
+  "id": "guide.net.dns_ipv6",
+  "titleKey": "guide.net.dns_ipv6.title",
+  "summaryKey": "guide.net.dns_ipv6.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "voice-chat-network-dns-ipv6",
+    "val57-59-ipv6-killer"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "flush",
+      "when": [],
+      "textKey": "guide.net.dns_ipv6.flush.text",
+      "steps": [
+        {
+          "textKey": "guide.net.dns_ipv6.flush.s1",
+          "action": "runFix",
+          "target": "fix.net.dns_flush"
+        },
+        {
+          "textKey": "guide.net.dns_ipv6.flush.s2",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "dns"
+    },
+    {
+      "id": "dns",
+      "when": [],
+      "textKey": "guide.net.dns_ipv6.dns.text",
+      "steps": [
+        {
+          "textKey": "guide.net.dns_ipv6.dns.s1",
+          "action": "openSettings",
+          "target": "ms-settings:network-status"
+        },
+        {
+          "textKey": "guide.net.dns_ipv6.dns.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.dns_ipv6.dns.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.dns_ipv6.dns.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.dns_ipv6.dns.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.dns_ipv6.dns.s6",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "ipv6"
+    },
+    {
+      "id": "ipv6",
+      "when": [],
+      "textKey": "guide.net.dns_ipv6.ipv6.text",
+      "steps": [
+        {
+          "textKey": "guide.net.dns_ipv6.ipv6.s1",
+          "action": "runFix",
+          "target": "fix.net.unbind_ipv6_active"
+        },
+        {
+          "textKey": "guide.net.dns_ipv6.ipv6.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.dns_ipv6.ipv6.s3",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "voice_checks"
+    },
+    {
+      "id": "voice_checks",
+      "when": [],
+      "textKey": "guide.net.dns_ipv6.voice_checks.text",
+      "steps": [
+        {
+          "textKey": "guide.net.dns_ipv6.voice_checks.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.dns_ipv6.voice_checks.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.dns_ipv6.voice_checks.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.dns_ipv6.voice_checks.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.net.dns_ipv6.voice_checks.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.net.dns_ipv6.outcome"
+}

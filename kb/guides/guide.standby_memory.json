@@ -1,0 +1,88 @@
+{
+  "id": "guide.standby_memory",
+  "titleKey": "guide.standby_memory.title",
+  "summaryKey": "guide.standby_memory.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "recommended",
+  "appliesTo": [
+    "standby-memory-stutter"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "basics",
+      "when": [],
+      "textKey": "guide.standby_memory.basics.text",
+      "steps": [
+        {
+          "textKey": "guide.standby_memory.basics.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.standby_memory.basics.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.standby_memory.basics.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.standby_memory.basics.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "low_ram",
+      "when": [
+        {
+          "signal": "hw.ram_low",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.standby_memory.low_ram.text",
+      "steps": [
+        {
+          "textKey": "guide.standby_memory.low_ram.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.standby_memory.low_ram.s2",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "islc",
+      "when": [],
+      "textKey": "guide.standby_memory.islc.text",
+      "steps": [
+        {
+          "textKey": "guide.standby_memory.islc.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.standby_memory.islc.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.standby_memory.islc.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.standby_memory.islc.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.standby_memory.islc.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.standby_memory.outcome"
+}

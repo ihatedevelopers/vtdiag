@@ -1,0 +1,72 @@
+{
+  "id": "guide.clock.fix",
+  "titleKey": "guide.clock.fix.title",
+  "summaryKey": "guide.clock.fix.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "wrong-system-clock-offline"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "skewed",
+      "when": [
+        {
+          "signal": "os.clock_skewed",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.clock.fix.skewed.text",
+      "steps": [
+        {
+          "textKey": "guide.clock.fix.skewed.s1",
+          "action": "runFix",
+          "target": "fix.os.time_resync"
+        },
+        {
+          "textKey": "guide.clock.fix.skewed.s2",
+          "action": "openSettings",
+          "target": "ms-settings:dateandtime"
+        },
+        {
+          "textKey": "guide.clock.fix.skewed.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.clock.fix.skewed.s4",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "os.clock_skewed",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "when": [],
+      "textKey": "guide.clock.fix.general.text",
+      "steps": [
+        {
+          "textKey": "guide.clock.fix.general.s1",
+          "action": "openSettings",
+          "target": "ms-settings:dateandtime"
+        },
+        {
+          "textKey": "guide.clock.fix.general.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.clock.fix.general.s3",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.clock.fix.outcome"
+}

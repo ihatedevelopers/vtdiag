@@ -1,0 +1,119 @@
+{
+  "id": "guide.hardware.thermal",
+  "titleKey": "guide.hardware.thermal.title",
+  "summaryKey": "guide.hardware.thermal.summary",
+  "bucket": "likelyHardware",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "fps-decay-over-time",
+    "vgc-high-cpu",
+    "power-plan-throttling-low-fps"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "laptop",
+      "when": [
+        {
+          "signal": "hw.laptop",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.hardware.thermal.laptop.text",
+      "steps": [
+        {
+          "textKey": "guide.hardware.thermal.laptop.s1",
+          "action": "runCheck",
+          "target": "power.on_battery"
+        },
+        {
+          "textKey": "guide.hardware.thermal.laptop.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.laptop.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.laptop.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.laptop.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.laptop.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.laptop.s7",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "desktop",
+      "when": [],
+      "textKey": "guide.hardware.thermal.desktop.text",
+      "steps": [
+        {
+          "textKey": "guide.hardware.thermal.desktop.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.desktop.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.desktop.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.desktop.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.desktop.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.desktop.s6",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "fps_over_time",
+      "when": [],
+      "textKey": "guide.hardware.thermal.fps_over_time.text",
+      "steps": [
+        {
+          "textKey": "guide.hardware.thermal.fps_over_time.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.fps_over_time.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.fps_over_time.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.fps_over_time.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hardware.thermal.fps_over_time.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.hardware.thermal.outcome"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "usb-optical-drive-restart",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "hardware_other",
+  "titleKey": "rule.usb-optical-drive-restart.title",
+  "summaryKey": "rule.usb-optical-drive-restart.summary",
+  "bucket": "likelyHardware",
+  "symptoms": [
+    "freeze_hard"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [
+    "dev.usb_optical_drive"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "optical",
+      "signal": "dev.usb_optical_drive",
+      "true": 2.5,
+      "veto": "false",
+      "textKey": "rule.usb-optical-drive-restart.ev.optical"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.hardware.freeze_checks"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "usb-optical-drive-restart",
+    "threadCount": 1,
+    "evidence": "guide",
+    "threadIds": [
+      "1pyzwg3"
+    ],
+    "urls": []
+  }
+}

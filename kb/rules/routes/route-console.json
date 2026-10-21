@@ -1,0 +1,24 @@
+{
+  "id": "route-console",
+  "rev": 1,
+  "kind": "route",
+  "category": "other",
+  "titleKey": "rule.route-console.title",
+  "summaryKey": "rule.route-console.summary",
+  "bucket": "riotOrAccount",
+  "route": "unsupportedPlatform",
+  "symptoms": [],
+  "prior": {
+    "threads": 0
+  },
+  "requires": [
+    "ask.on_console"
+  ],
+  "excludes": [],
+  "evidence": [],
+  "fixes": [],
+  "guides": [],
+  "questions": [],
+  "supersedes": [],
+  "related": []
+}

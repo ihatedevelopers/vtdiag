@@ -1,0 +1,94 @@
+{
+  "id": "mdns-bonjour-ni-val43-loading",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "login_account_client",
+  "titleKey": "rule.mdns-bonjour-ni-val43-loading.title",
+  "summaryKey": "rule.mdns-bonjour-ni-val43-loading.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "launch_black_screen",
+    "error_code",
+    "login_issue"
+  ],
+  "prior": {
+    "threads": 19
+  },
+  "requires": [
+    "apps.mdns_component"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "bonjour",
+      "signal": "conflict.bonjour_mdns.installed",
+      "true": 1.2,
+      "group": "present",
+      "textKey": "rule.mdns-bonjour-ni-val43-loading.ev.bonjour"
+    },
+    {
+      "id": "ni",
+      "signal": "conflict.ni_mdns.installed",
+      "true": 1.2,
+      "group": "present",
+      "textKey": "rule.mdns-bonjour-ni-val43-loading.ev.ni"
+    },
+    {
+      "id": "lsp",
+      "signal": "net.mdns_lsp",
+      "true": 1.0,
+      "textKey": "rule.mdns-bonjour-ni-val43-loading.ev.lsp"
+    },
+    {
+      "id": "svc",
+      "signal": "conflict.bonjour_mdns.running",
+      "true": 0.5
+    },
+    {
+      "id": "crash_b",
+      "signal": "conflict.bonjour_mdns.crash_module",
+      "true": 2.5,
+      "group": "crash"
+    },
+    {
+      "id": "crash_n",
+      "signal": "conflict.ni_mdns.crash_module",
+      "true": 2.5,
+      "group": "crash"
+    }
+  ],
+  "wave": {
+    "from": "2025-10-01",
+    "to": "2025-11-30",
+    "boost": 0.5
+  },
+  "fixes": [
+    "fix.svc.disable_conflict_service",
+    "fix.net.winsock_reset"
+  ],
+  "guides": [
+    "guide.apps.uninstall_bonjour",
+    "guide.vanguard.reinstall"
+  ],
+  "questions": [],
+  "supersedes": [
+    "conflict-bonjour_mdns",
+    "conflict-ni_mdns"
+  ],
+  "related": [],
+  "sources": {
+    "catalog": "mdns-bonjour-ni-val43-loading",
+    "threadCount": 19,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1op09ot",
+      "1op29lw",
+      "1opaw96",
+      "1opjy44",
+      "1oplxlt"
+    ],
+    "urls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ]
+  }
+}

@@ -1,0 +1,434 @@
+[
+  {
+    "id": "ask.league_also_broken",
+    "textKey": "ask.league_also_broken.text",
+    "helpKey": "ask.league_also_broken.help",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "intake": true,
+    "symptoms": []
+  },
+  {
+    "id": "ask.other_account_works",
+    "textKey": "ask.other_account_works.text",
+    "helpKey": "ask.other_account_works.help",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "error_code",
+      "login_issue",
+      "launch_black_screen",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "ask.only_valorant_affected",
+    "textKey": "ask.only_valorant_affected.text",
+    "helpKey": "ask.only_valorant_affected.help",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "stutter",
+      "fps_low",
+      "high_ping",
+      "freeze_hard"
+    ]
+  },
+  {
+    "id": "ask.stutter_periodic",
+    "textKey": "ask.stutter_periodic.text",
+    "helpKey": "ask.stutter_periodic.help",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ]
+  },
+  {
+    "id": "ask.whole_pc_freezes",
+    "textKey": "ask.whole_pc_freezes.text",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "stutter",
+      "freeze_hard",
+      "crash_desktop"
+    ]
+  },
+  {
+    "id": "ask.vanguard_precheck_on",
+    "textKey": "ask.vanguard_precheck_on.text",
+    "helpKey": "ask.vanguard_precheck_on.help",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "error_code",
+      "wont_launch",
+      "launch_black_screen",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "ask.uses_bluetooth_headset",
+    "textKey": "ask.uses_bluetooth_headset.text",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "voice_chat",
+      "no_audio"
+    ]
+  },
+  {
+    "id": "ask.started_after_update",
+    "textKey": "ask.started_after_update.text",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": []
+  },
+  {
+    "id": "ask.on_console",
+    "textKey": "ask.on_console.text",
+    "helpKey": "ask.on_console.help",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "error_code",
+      "login_issue",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "ask.friends_same_server",
+    "textKey": "ask.friends_same_server.text",
+    "helpKey": "ask.friends_same_server.help",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "high_ping",
+      "disconnect",
+      "login_issue",
+      "error_code"
+    ]
+  },
+  {
+    "id": "ask.only_first_matches",
+    "textKey": "ask.only_first_matches.text",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "stutter",
+      "fps_low"
+    ]
+  },
+  {
+    "id": "ask.fps_drops_over_time",
+    "textKey": "ask.fps_drops_over_time.text",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "fps_low",
+      "stutter"
+    ]
+  },
+  {
+    "id": "ask.on_wifi_or_cable",
+    "textKey": "ask.on_wifi_or_cable.text",
+    "kind": "singleChoice",
+    "options": [
+      {
+        "id": "wifi",
+        "textKey": "ask.on_wifi_or_cable.wifi",
+        "sets": "true"
+      },
+      {
+        "id": "cable",
+        "textKey": "ask.on_wifi_or_cable.cable",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "ask.on_wifi_or_cable.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "high_ping",
+      "disconnect",
+      "stutter",
+      "voice_chat"
+    ]
+  },
+  {
+    "id": "ask.others_cant_hear_me",
+    "textKey": "ask.others_cant_hear_me.text",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "voice_chat"
+    ]
+  },
+  {
+    "id": "ask.secureboot_enable_broke_boot",
+    "textKey": "ask.secureboot_enable_broke_boot.text",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "bios_requirement",
+      "error_code",
+      "wont_launch"
+    ]
+  },
+  {
+    "id": "ask.pc_built_recently",
+    "textKey": "ask.pc_built_recently.text",
+    "kind": "yesNo",
+    "options": [
+      {
+        "id": "yes",
+        "textKey": "answer.yes",
+        "sets": "true"
+      },
+      {
+        "id": "no",
+        "textKey": "answer.no",
+        "sets": "false"
+      },
+      {
+        "id": "unsure",
+        "textKey": "answer.unsure",
+        "sets": "unknown"
+      }
+    ],
+    "symptoms": [
+      "stutter",
+      "freeze_hard",
+      "crash_desktop",
+      "fps_low"
+    ]
+  }
+]

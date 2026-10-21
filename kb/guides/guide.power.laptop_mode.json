@@ -1,0 +1,150 @@
+{
+  "id": "guide.power.laptop_mode",
+  "titleKey": "guide.power.laptop_mode.title",
+  "summaryKey": "guide.power.laptop_mode.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "power-plan-throttling-low-fps",
+    "lenovo-vantage-wifi-collapse",
+    "low-gpu-usage-after-ue5-patch"
+  ],
+  "preflight": [
+    {
+      "probe": "power.on_ac",
+      "must": "true",
+      "severity": "warn",
+      "failKey": "guide.power.laptop_mode.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "battery",
+      "when": [
+        {
+          "signal": "power.on_battery",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.power.laptop_mode.battery.text",
+      "steps": [
+        {
+          "textKey": "guide.power.laptop_mode.battery.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.power.laptop_mode.battery.s2",
+          "action": "runCheck",
+          "target": "power.on_battery"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "power.on_battery",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "saver_plan",
+      "when": [
+        {
+          "signal": "power.saver_plan",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.power.laptop_mode.saver_plan.text",
+      "steps": [
+        {
+          "textKey": "guide.power.laptop_mode.saver_plan.s1",
+          "action": "runFix",
+          "target": "fix.power.high_performance"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "power.saver_plan",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "power_mode",
+      "when": [],
+      "textKey": "guide.power.laptop_mode.power_mode.text",
+      "steps": [
+        {
+          "textKey": "guide.power.laptop_mode.power_mode.s1",
+          "action": "openSettings",
+          "target": "ms-settings:powersleep"
+        },
+        {
+          "textKey": "guide.power.laptop_mode.power_mode.s2",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "vendor_app",
+      "when": [
+        {
+          "signal": "hw.laptop",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.power.laptop_mode.vendor_app.text",
+      "steps": [
+        {
+          "textKey": "guide.power.laptop_mode.vendor_app.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.power.laptop_mode.vendor_app.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.power.laptop_mode.vendor_app.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.power.laptop_mode.vendor_app.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.power.laptop_mode.vendor_app.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.power.laptop_mode.vendor_app.s6",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "gpu",
+      "when": [
+        {
+          "signal": "gpu.hybrid",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.power.laptop_mode.gpu.text",
+      "steps": [
+        {
+          "textKey": "guide.power.laptop_mode.gpu.s1",
+          "action": "runFix",
+          "target": "fix.display.gpu_pref_high"
+        },
+        {
+          "textKey": "guide.power.laptop_mode.gpu.s2",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.power.laptop_mode.outcome"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "fps-lower-than-expected-caps",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.fps-lower-than-expected-caps.title",
+  "summaryKey": "rule.fps-lower-than-expected-caps.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "fps_low"
+  ],
+  "prior": {
+    "threads": 7
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "single",
+      "signal": "hw.ram_single_module",
+      "true": 0.8,
+      "textKey": "rule.fps-lower-than-expected-caps.ev.single"
+    },
+    {
+      "id": "below_rated",
+      "signal": "hw.ram_below_rated",
+      "true": 0.6
+    },
+    {
+      "id": "ram_low",
+      "signal": "hw.ram_low",
+      "true": 0.6
+    },
+    {
+      "id": "saver",
+      "signal": "power.saver_plan",
+      "true": 0.6
+    },
+    {
+      "id": "cpu_max",
+      "signal": "power.cpu_max_limited",
+      "true": 0.8
+    },
+    {
+      "id": "hdd",
+      "signal": "disk.riot_on_hdd",
+      "true": 0.5
+    }
+  ],
+  "fixes": [
+    "fix.power.high_performance",
+    "fix.power.cpu_max_100"
+  ],
+  "guides": [
+    "guide.performance.basics"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "fps-lower-than-expected-caps",
+    "threadCount": 7,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1rmfm02",
+      "1s31f5l",
+      "1sit455",
+      "1sjmu4v",
+      "1slvjlc"
+    ],
+    "urls": []
+  }
+}

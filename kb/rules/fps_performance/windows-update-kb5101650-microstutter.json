@@ -1,0 +1,58 @@
+{
+  "id": "windows-update-kb5101650-microstutter",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.windows-update-kb5101650-microstutter.title",
+  "summaryKey": "rule.windows-update-kb5101650-microstutter.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "stutter"
+  ],
+  "prior": {
+    "threads": 2
+  },
+  "requires": [
+    "os.hotfix_kb5101650"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "kb",
+      "signal": "os.hotfix_kb5101650",
+      "true": 3.5,
+      "veto": "false",
+      "textKey": "rule.windows-update-kb5101650-microstutter.ev.kb"
+    },
+    {
+      "id": "mpo",
+      "signal": "display.mpo_enabled",
+      "true": 0.2
+    },
+    {
+      "id": "after_update",
+      "signal": "ask.started_after_update",
+      "true": 0.4,
+      "ask": "ask.started_after_update"
+    }
+  ],
+  "fixes": [
+    "fix.display.mpo_off"
+  ],
+  "guides": [
+    "guide.windows.update"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "windows-update-kb5101650-microstutter",
+    "threadCount": 2,
+    "evidence": "suggested",
+    "threadIds": [
+      "1v4hcwl",
+      "1v4mq6n"
+    ],
+    "urls": []
+  }
+}

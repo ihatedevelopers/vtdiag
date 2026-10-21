@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Owner: Lead. Fakes every agent develops against (B section 18). Read-only layer like every non-writer project.
+    The fixture snapshots under tests/fixtures/snapshots are embedded so any test can load them by name.
+  -->
+  <PropertyGroup>
+    <RootNamespace>VTD.Testing.Fakes</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VTD.Contracts\VTD.Contracts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\tests\fixtures\snapshots\*.json" LogicalName="VTD.Fixtures.Snapshots.%(Filename)%(Extension)" Link="Fixtures\%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

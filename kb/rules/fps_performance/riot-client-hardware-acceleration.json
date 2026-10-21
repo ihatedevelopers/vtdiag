@@ -1,0 +1,40 @@
+{
+  "id": "riot-client-hardware-acceleration",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.riot-client-hardware-acceleration.title",
+  "summaryKey": "rule.riot-client-hardware-acceleration.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "fps_low"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "hybrid",
+      "signal": "gpu.hybrid",
+      "true": 0.3
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.riot.client_settings"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "riot-client-hardware-acceleration",
+    "threadCount": 1,
+    "evidence": "guide",
+    "threadIds": [
+      "1p6io3n"
+    ],
+    "urls": []
+  }
+}

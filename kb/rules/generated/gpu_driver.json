@@ -1,0 +1,56 @@
+[
+  {
+    "id": "conflict-amd_adrenalin_features",
+    "rev": 1,
+    "kind": "generated",
+    "category": "gpu_driver",
+    "titleKey": "rule.conflict-amd_adrenalin_features.title",
+    "summaryKey": "rule.conflict-amd_adrenalin_features.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "stutter",
+      "freeze_hard",
+      "display_issue"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.amd_adrenalin_features.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.amd_adrenalin_features.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.amd_adrenalin_features.running",
+        "true": 0.7
+      }
+    ],
+    "fixes": [
+      "fix.generic.close_process"
+    ],
+    "guides": [
+      "guide.gpu.clean_driver"
+    ],
+    "sources": {
+      "threadCount": 30,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1r4ms3i",
+        "1rpzz59",
+        "1t8madn",
+        "1temzh6",
+        "1v4mq6n"
+      ],
+      "urls": []
+    },
+    "related": [
+      "amd-adrenalin-driver-regression"
+    ]
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "id": "console-ps5-errors",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "login_account_client",
+  "titleKey": "rule.console-ps5-errors.title",
+  "summaryKey": "rule.console-ps5-errors.summary",
+  "bucket": "riotOrAccount",
+  "symptoms": [
+    "error_code",
+    "login_issue",
+    "disconnect"
+  ],
+  "prior": {
+    "threads": 3
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "console",
+      "signal": "ask.on_console",
+      "true": 4.0,
+      "false": -3.0,
+      "ask": "ask.on_console"
+    }
+  ],
+  "fixes": [],
+  "guides": [],
+  "questions": [
+    "ask.on_console"
+  ],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "console-ps5-errors",
+    "threadCount": 3,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1qsv7ip",
+      "1r99fvf",
+      "1wxkan2"
+    ],
+    "urls": []
+  }
+}

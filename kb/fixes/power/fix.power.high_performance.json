@@ -1,0 +1,58 @@
+{
+  "id": "fix.power.high_performance",
+  "titleKey": "fix.power.high_performance.title",
+  "explainKey": "fix.power.high_performance.explain",
+  "undoExplainKey": "fix.power.high_performance.undo",
+  "noticeKey": "fix.power.high_performance.notice",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "none",
+  "scope": "persistent",
+  "estMinutes": 0.2,
+  "appliesTo": [
+    "power-plan-throttling-low-fps",
+    "low-gpu-usage-after-ue5-patch",
+    "fps-lower-than-expected-caps",
+    "fps-decay-over-time"
+  ],
+  "bind": {},
+  "guards": [],
+  "steps": [
+    {
+      "op": "powercfg.setActiveScheme",
+      "args": {
+        "scheme": "8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c"
+      },
+      "onFail": "abort"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "powercfg.setActiveScheme",
+      "args": {},
+      "expect": {
+        "activeScheme": "8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.fps_better"
+  },
+  "drift": {
+    "watch": true,
+    "reasonKey": "drift.setting_reverted"
+  },
+  "successPrior": {
+    "success": 5,
+    "trials": 54
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

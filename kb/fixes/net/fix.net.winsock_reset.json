@@ -1,0 +1,58 @@
+{
+  "id": "fix.net.winsock_reset",
+  "titleKey": "fix.net.winsock_reset.title",
+  "explainKey": "fix.net.winsock_reset.explain",
+  "undoExplainKey": "fix.net.winsock_reset.undo",
+  "noticeKey": "fix.net.winsock_reset.notice",
+  "sideEffectKeys": [
+    "fix.net.winsock_reset.side.0"
+  ],
+  "risk": "medium",
+  "reversibility": "oneWay",
+  "admin": true,
+  "reboot": "required",
+  "scope": "persistent",
+  "estMinutes": 3,
+  "appliesTo": [
+    "local-network-packet-loss-jitter",
+    "network-exceptions-download-stuck",
+    "mdns-bonjour-ni-val43-loading",
+    "conflict-gearup_booster",
+    "conflict-tcp_tweakers"
+  ],
+  "bind": {},
+  "guards": [
+    {
+      "probe": "connectivity.internet",
+      "args": {},
+      "must": "true",
+      "severity": "block",
+      "failKey": "guard.no_internet"
+    }
+  ],
+  "steps": [
+    {
+      "op": "oneway.winsockReset",
+      "args": {},
+      "onFail": "abort"
+    }
+  ],
+  "verify": [],
+  "deadman": {
+    "seconds": 60,
+    "check": "connectivity.internet"
+  },
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.connects_now"
+  },
+  "successPrior": {
+    "success": 6,
+    "trials": 51
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

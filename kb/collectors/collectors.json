@@ -1,0 +1,320 @@
+[
+  {
+    "kind": "eventLog",
+    "id": "realtek_nic_errors",
+    "descriptionKey": "collector.realtek_nic_errors.desc",
+    "log": "System",
+    "providers": [
+      "rt25cx21",
+      "rtcx21",
+      "rt640x64",
+      "rt68cx21",
+      "rtux64w10"
+    ],
+    "levels": [
+      "critical",
+      "error",
+      "warning"
+    ],
+    "sinceDays": 14,
+    "max": 500,
+    "project": []
+  },
+  {
+    "kind": "eventLog",
+    "id": "kernel_power_41",
+    "descriptionKey": "collector.kernel_power_41.desc",
+    "log": "System",
+    "providers": [
+      "Microsoft-Windows-Kernel-Power"
+    ],
+    "eventIds": [
+      41
+    ],
+    "sinceDays": 30,
+    "max": 100,
+    "project": [
+      "BugcheckCode"
+    ]
+  },
+  {
+    "kind": "eventLog",
+    "id": "display_tdr",
+    "descriptionKey": "collector.display_tdr.desc",
+    "log": "System",
+    "providers": [
+      "Display"
+    ],
+    "eventIds": [
+      4101
+    ],
+    "sinceDays": 30,
+    "max": 100,
+    "project": []
+  },
+  {
+    "kind": "eventLog",
+    "id": "tpm_errors",
+    "descriptionKey": "collector.tpm_errors.desc",
+    "log": "System",
+    "providers": [
+      "TPM",
+      "Microsoft-Windows-TPM-WMI"
+    ],
+    "eventIds": [
+      14,
+      17
+    ],
+    "sinceDays": 30,
+    "max": 200,
+    "project": []
+  },
+  {
+    "kind": "eventLog",
+    "id": "whea_errors",
+    "descriptionKey": "collector.whea_errors.desc",
+    "log": "System",
+    "providers": [
+      "Microsoft-Windows-WHEA-Logger"
+    ],
+    "eventIds": [
+      1,
+      17,
+      18,
+      19,
+      47
+    ],
+    "sinceDays": 30,
+    "max": 200,
+    "project": []
+  },
+  {
+    "kind": "eventLog",
+    "id": "volmgr_161",
+    "descriptionKey": "collector.volmgr_161.desc",
+    "log": "System",
+    "providers": [
+      "volmgr"
+    ],
+    "eventIds": [
+      161
+    ],
+    "sinceDays": 30,
+    "max": 50,
+    "project": []
+  },
+  {
+    "kind": "eventLog",
+    "id": "scm_crash_loop",
+    "descriptionKey": "collector.scm_crash_loop.desc",
+    "log": "System",
+    "providers": [
+      "Service Control Manager"
+    ],
+    "eventIds": [
+      7031,
+      7034
+    ],
+    "sinceDays": 7,
+    "max": 500,
+    "project": [
+      "param1"
+    ]
+  },
+  {
+    "kind": "eventLog",
+    "id": "disk_errors",
+    "descriptionKey": "collector.disk_errors.desc",
+    "log": "System",
+    "providers": [
+      "disk",
+      "Ntfs",
+      "Microsoft-Windows-Ntfs"
+    ],
+    "eventIds": [
+      7,
+      55,
+      153
+    ],
+    "sinceDays": 30,
+    "max": 200,
+    "project": []
+  },
+  {
+    "kind": "eventLog",
+    "id": "codeintegrity_blocks",
+    "descriptionKey": "collector.codeintegrity_blocks.desc",
+    "log": "Microsoft-Windows-CodeIntegrity/Operational",
+    "providers": [
+      "Microsoft-Windows-CodeIntegrity"
+    ],
+    "eventIds": [
+      3033,
+      3063,
+      3077
+    ],
+    "sinceDays": 14,
+    "max": 200,
+    "project": [
+      "FileNameBuffer"
+    ]
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_defender_cfa_reg",
+    "hive": "hklm",
+    "key": "SOFTWARE\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\Controlled Folder Access",
+    "values": [
+      "EnableControlledFolderAccess"
+    ],
+    "descriptionKey": "collector.conflict_defender_cfa_reg.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_defender_smart_app_control_reg",
+    "hive": "hklm",
+    "key": "SYSTEM\\CurrentControlSet\\Control\\CI\\Policy",
+    "values": [
+      "VerifiedAndReputablePolicyState"
+    ],
+    "descriptionKey": "collector.conflict_defender_smart_app_control_reg.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_exploit_protection_override_reg",
+    "hive": "hklm",
+    "key": "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\vgc.exe",
+    "values": [
+      "MitigationOptions"
+    ],
+    "descriptionKey": "collector.conflict_exploit_protection_override_reg.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_dcontrol_defender_disabled_reg",
+    "hive": "hklm",
+    "key": "SOFTWARE\\Policies\\Microsoft\\Windows Defender",
+    "values": [
+      "DisableAntiSpyware"
+    ],
+    "descriptionKey": "collector.conflict_dcontrol_defender_disabled_reg.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_hvci_off_when_required_reg",
+    "hive": "hklm",
+    "key": "SYSTEM\\CurrentControlSet\\Control\\DeviceGuard\\Scenarios\\HypervisorEnforcedCodeIntegrity",
+    "values": [
+      "Enabled"
+    ],
+    "descriptionKey": "collector.conflict_hvci_off_when_required_reg.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_system_proxy_reg",
+    "hive": "hkcuPlayer",
+    "key": "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings",
+    "values": [
+      "ProxyEnable"
+    ],
+    "descriptionKey": "collector.conflict_system_proxy_reg.desc"
+  },
+  {
+    "kind": "fileExists",
+    "id": "conflict_gearup_booster_file",
+    "path": "%SystemRoot%\\GearUPBooster",
+    "descriptionKey": "collector.conflict_gearup_booster_file.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_xbox_game_bar_dvr_reg",
+    "hive": "hkcuPlayer",
+    "key": "System\\GameConfigStore",
+    "values": [
+      "GameDVR_Enabled"
+    ],
+    "descriptionKey": "collector.conflict_xbox_game_bar_dvr_reg.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_tcp_tweakers_reg",
+    "hive": "hklm",
+    "key": "SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces",
+    "values": [],
+    "descriptionKey": "collector.conflict_tcp_tweakers_reg.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_required_services_disabled_reg",
+    "hive": "hklm",
+    "key": "SYSTEM\\CurrentControlSet\\Services\\vgc",
+    "values": [
+      "Start"
+    ],
+    "descriptionKey": "collector.conflict_required_services_disabled_reg.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_modified_windows_reg",
+    "hive": "hklm",
+    "key": "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion",
+    "values": [
+      "EditionID"
+    ],
+    "descriptionKey": "collector.conflict_modified_windows_reg.desc"
+  },
+  {
+    "kind": "fileExists",
+    "id": "conflict_modified_windows_file",
+    "path": "%SystemRoot%\\AtlasModules",
+    "descriptionKey": "collector.conflict_modified_windows_file.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_hags_reg",
+    "hive": "hklm",
+    "key": "SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers",
+    "values": [
+      "HwSchMode"
+    ],
+    "descriptionKey": "collector.conflict_hags_reg.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_mpo_reg",
+    "hive": "hklm",
+    "key": "SOFTWARE\\Microsoft\\Windows\\Dwm",
+    "values": [
+      "OverlayTestMode"
+    ],
+    "descriptionKey": "collector.conflict_mpo_reg.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_fso_compat_flags_reg",
+    "hive": "hkcuPlayer",
+    "key": "Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers",
+    "values": [],
+    "descriptionKey": "collector.conflict_fso_compat_flags_reg.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_ipv6_binding_reg",
+    "hive": "hklm",
+    "key": "SYSTEM\\CurrentControlSet\\Services\\Tcpip6\\Parameters",
+    "values": [
+      "DisabledComponents"
+    ],
+    "descriptionKey": "collector.conflict_ipv6_binding_reg.desc"
+  },
+  {
+    "kind": "registryValue",
+    "id": "conflict_windows_insider_reg",
+    "hive": "hklm",
+    "key": "SOFTWARE\\Microsoft\\WindowsSelfHost\\Applicability",
+    "values": [
+      "BranchName"
+    ],
+    "descriptionKey": "collector.conflict_windows_insider_reg.desc"
+  }
+]

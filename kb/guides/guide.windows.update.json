@@ -1,0 +1,260 @@
+{
+  "id": "guide.windows.update",
+  "titleKey": "guide.windows.update.title",
+  "summaryKey": "guide.windows.update.summary",
+  "bucket": "guidedManual",
+  "risk": "medium",
+  "reboot": "required",
+  "appliesTo": [
+    "windows-version-too-old",
+    "windows-update-kb5101650-microstutter",
+    "insider-build-vgk-bsod"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "pending_reboot",
+      "when": [
+        {
+          "signal": "os.pending_reboot",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.windows.update.pending_reboot.text",
+      "steps": [
+        {
+          "textKey": "guide.windows.update.pending_reboot.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.pending_reboot.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.pending_reboot.s3",
+          "action": "runCheck",
+          "target": "os.pending_reboot"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "os.pending_reboot",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "too_old",
+      "when": [
+        {
+          "signal": "os.build_supported",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.windows.update.too_old.text",
+      "steps": [
+        {
+          "textKey": "guide.windows.update.too_old.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsupdate"
+        },
+        {
+          "textKey": "guide.windows.update.too_old.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.too_old.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.too_old.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.too_old.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.too_old.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.too_old.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.too_old.s8",
+          "action": "runCheck",
+          "target": "os.build_supported"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "os.build_supported",
+          "is": "true"
+        }
+      ]
+    },
+    {
+      "id": "below_22h2",
+      "when": [
+        {
+          "signal": "os.build_below_19045",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.windows.update.below_22h2.text",
+      "steps": [
+        {
+          "textKey": "guide.windows.update.below_22h2.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsupdate"
+        },
+        {
+          "textKey": "guide.windows.update.below_22h2.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.below_22h2.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.below_22h2.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.below_22h2.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.below_22h2.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.below_22h2.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.below_22h2.s8",
+          "action": "runCheck",
+          "target": "os.build_supported"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "os.build_below_19045",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "insider",
+      "when": [
+        {
+          "signal": "os.insider",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.windows.update.insider.text",
+      "steps": [
+        {
+          "textKey": "guide.windows.update.insider.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsinsider"
+        },
+        {
+          "textKey": "guide.windows.update.insider.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.insider.s3",
+          "action": "openSettings",
+          "target": "ms-settings:recovery"
+        },
+        {
+          "textKey": "guide.windows.update.insider.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.insider.s5",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "os.insider",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "kb5101650",
+      "when": [
+        {
+          "signal": "os.hotfix_kb5101650",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.windows.update.kb5101650.text",
+      "steps": [
+        {
+          "textKey": "guide.windows.update.kb5101650.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsupdate-history"
+        },
+        {
+          "textKey": "guide.windows.update.kb5101650.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.kb5101650.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.kb5101650.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.kb5101650.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.kb5101650.s6",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "general",
+      "when": [],
+      "textKey": "guide.windows.update.general.text",
+      "steps": [
+        {
+          "textKey": "guide.windows.update.general.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsupdate"
+        },
+        {
+          "textKey": "guide.windows.update.general.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.general.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.general.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.windows.update.general.s5",
+          "action": "runCheck",
+          "target": "os.build_supported"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.windows.update.outcome"
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:strings:1",
+  "title": "VTDiag KB string table",
+  "description": "kb/strings/<lang>.json: flat key to ICU MessageFormat text.",
+  "type": "object",
+  "additionalProperties": {
+    "type": "string"
+  }
+}

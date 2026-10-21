@@ -1,0 +1,71 @@
+{
+  "id": "fix.display.game_dvr_off",
+  "titleKey": "fix.display.game_dvr_off.title",
+  "explainKey": "fix.display.game_dvr_off.explain",
+  "undoExplainKey": "fix.display.game_dvr_off.undo",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": false,
+  "reboot": "none",
+  "scope": "persistent",
+  "estMinutes": 0.2,
+  "appliesTo": [
+    "third-party-hook-overlay-conflict",
+    "conflict-xbox_game_bar_dvr"
+  ],
+  "bind": {},
+  "guards": [],
+  "steps": [
+    {
+      "op": "registry.setValue",
+      "args": {
+        "path": "HKCU\\System\\GameConfigStore",
+        "name": "GameDVR_Enabled",
+        "kind": "DWord",
+        "data": "0"
+      },
+      "onFail": "abort"
+    },
+    {
+      "op": "registry.setValue",
+      "args": {
+        "path": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR",
+        "name": "AppCaptureEnabled",
+        "kind": "DWord",
+        "data": "0"
+      },
+      "onFail": "abort"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "registry.setValue",
+      "args": {
+        "path": "HKCU\\System\\GameConfigStore",
+        "name": "GameDVR_Enabled"
+      },
+      "expect": {
+        "data": "0"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.fps_better"
+  },
+  "drift": {
+    "watch": true,
+    "reasonKey": "drift.setting_reverted"
+  },
+  "successPrior": {
+    "success": 1,
+    "trials": 51
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

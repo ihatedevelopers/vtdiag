@@ -1,0 +1,83 @@
+{
+  "id": "secure-boot-enable-boot-failure",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "tpm_secureboot_bios",
+  "titleKey": "rule.secure-boot-enable-boot-failure.title",
+  "summaryKey": "rule.secure-boot-enable-boot-failure.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "bios_requirement",
+    "error_code",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 32
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "broke_boot",
+      "signal": "ask.secureboot_enable_broke_boot",
+      "true": 3.0,
+      "false": -1.5,
+      "ask": "ask.secureboot_enable_broke_boot"
+    },
+    {
+      "id": "mbr",
+      "signal": "disk.system_gpt",
+      "false": 1.2
+    },
+    {
+      "id": "legacy",
+      "signal": "fw.uefi",
+      "false": 1.0
+    },
+    {
+      "id": "bios_old",
+      "signal": "hw.bios_old",
+      "true": 0.6,
+      "group": "age"
+    },
+    {
+      "id": "bios_very_old",
+      "signal": "hw.bios_very_old",
+      "true": 1.0,
+      "group": "age"
+    },
+    {
+      "id": "setup",
+      "signal": "sec.secureboot.setup_mode",
+      "true": 0.6
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.secureboot.enable",
+    "guide.bios.update"
+  ],
+  "questions": [
+    "ask.secureboot_enable_broke_boot"
+  ],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "secure-boot-enable-boot-failure",
+    "threadCount": 32,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1obdlx4",
+      "1obt4cz",
+      "1oc9dnf",
+      "1omfcsy",
+      "1osl4hy"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/penalties/error-van-restriction",
+      "https://riotgames.com/en/news/vanguard-security-update-motherboard",
+      "https://support.riotgames.com/riot/support-tools/enabling-iommu",
+      "https://support.riotgames.com/riot/client/error-van-9003"
+    ]
+  }
+}

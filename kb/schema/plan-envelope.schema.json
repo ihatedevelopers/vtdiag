@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:plan-envelope:1",
+  "title": "VTDiag signed plan envelope",
+  "description": "A signed .vtdplan: base64 plan JSON bytes plus a detached Ed25519 signature over exactly those bytes.",
+  "type": "object",
+  "properties": {
+    "format": {
+      "type": "string",
+      "description": "Format (CurrentFormat)."
+    },
+    "payload": {
+      "type": "string",
+      "description": "Base64 of the UTF-8 plan JSON bytes (a FixPlan)."
+    },
+    "publicKey": {
+      "type": "string",
+      "description": "Public key, ed25519:<base64>."
+    },
+    "signature": {
+      "type": "string",
+      "description": "Base64 Ed25519 signature over the decoded Payload bytes."
+    }
+  },
+  "required": [
+    "format",
+    "payload",
+    "publicKey",
+    "signature"
+  ],
+  "additionalProperties": false
+}

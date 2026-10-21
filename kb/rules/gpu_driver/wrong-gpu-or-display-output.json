@@ -1,0 +1,57 @@
+{
+  "id": "wrong-gpu-or-display-output",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "gpu_driver",
+  "titleKey": "rule.wrong-gpu-or-display-output.title",
+  "summaryKey": "rule.wrong-gpu-or-display-output.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "fps_low",
+    "display_issue"
+  ],
+  "prior": {
+    "threads": 4
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "monitor",
+      "signal": "gpu.monitor_on_igpu",
+      "true": 2.5,
+      "textKey": "rule.wrong-gpu-or-display-output.ev.monitor"
+    },
+    {
+      "id": "pref",
+      "signal": "gpu.pref_not_high",
+      "true": 1.0
+    },
+    {
+      "id": "igpu_off",
+      "signal": "gpu.igpu_disabled",
+      "true": 0.4
+    }
+  ],
+  "fixes": [
+    "fix.display.gpu_pref_high"
+  ],
+  "guides": [
+    "guide.gpu.igpu"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "wrong-gpu-or-display-output",
+    "threadCount": 4,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1u8zyhl",
+      "1u9fk70",
+      "1woalwh",
+      "1x83630"
+    ],
+    "urls": []
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "isp-routing-high-ping",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "network_ping",
+  "titleKey": "rule.isp-routing-high-ping.title",
+  "summaryKey": "rule.isp-routing-high-ping.summary",
+  "bucket": "externalNetwork",
+  "symptoms": [
+    "high_ping",
+    "disconnect",
+    "voice_chat"
+  ],
+  "prior": {
+    "threads": 26
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "high",
+      "signal": "net.region_ping_high",
+      "true": 1.5,
+      "textKey": "rule.isp-routing-high-ping.ev.high"
+    },
+    {
+      "id": "rloss",
+      "signal": "net.region_loss",
+      "true": 1.2,
+      "textKey": "rule.isp-routing-high-ping.ev.rloss"
+    },
+    {
+      "id": "jitter",
+      "signal": "net.region_jitter_high",
+      "true": 0.8
+    },
+    {
+      "id": "gw_bad",
+      "signal": "net.gateway_loss",
+      "true": -1.0
+    },
+    {
+      "id": "friends",
+      "signal": "ask.friends_same_server",
+      "true": 0.6,
+      "ask": "ask.friends_same_server"
+    },
+    {
+      "id": "mon_ping",
+      "signal": "mon.network.ping_spikes",
+      "true": 0.8
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.net.cloudflare_warp"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "isp-routing-high-ping",
+    "threadCount": 26,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1oh1ek6",
+      "1oufw3d",
+      "1ovpgj0",
+      "1owponj",
+      "1ql5bmo"
+    ],
+    "urls": []
+  }
+}

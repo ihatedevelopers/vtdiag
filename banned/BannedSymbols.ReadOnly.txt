@@ -1,0 +1,231 @@
+# VTDiag banned APIs: READ-ONLY layer. Owner: Lead.
+# Applies to: Contracts, Platform, Collectors, Knowledge, Analysis, Reporting, Monitor.Core, Monitor,
+# Testing.Fakes, App (via the Ui layer) and any new project by default. Only VTD.Fixes, VTD.Journal,
+# VTD.Session and VTD.Engine may change system state, files or processes.
+# Reading files: File.OpenRead / File.ReadAll* / File.ReadLines / Directory.Enumerate*. A shared-read helper for
+# files held open by the game (ShooterGame.log) belongs in VTD.Platform as an allowlisted file
+# (banned/rs0030-allowlist.txt). User-chosen export destinations are written through the stream a
+# SaveFileDialog returns, or by the Engine.
+
+# ---- Registry writes ----
+M:Microsoft.Win32.RegistryKey.SetValue(System.String,System.Object);Read-only layer: registry writes belong to VTD.Fixes primitives
+M:Microsoft.Win32.RegistryKey.SetValue(System.String,System.Object,Microsoft.Win32.RegistryValueKind);Read-only layer
+M:Microsoft.Win32.Registry.SetValue(System.String,System.String,System.Object);Read-only layer
+M:Microsoft.Win32.Registry.SetValue(System.String,System.String,System.Object,Microsoft.Win32.RegistryValueKind);Read-only layer
+M:Microsoft.Win32.RegistryKey.DeleteValue(System.String);Read-only layer
+M:Microsoft.Win32.RegistryKey.DeleteValue(System.String,System.Boolean);Read-only layer
+M:Microsoft.Win32.RegistryKey.CreateSubKey(System.String);Read-only layer
+M:Microsoft.Win32.RegistryKey.CreateSubKey(System.String,System.Boolean);Read-only layer
+M:Microsoft.Win32.RegistryKey.CreateSubKey(System.String,Microsoft.Win32.RegistryKeyPermissionCheck);Read-only layer
+M:Microsoft.Win32.RegistryKey.CreateSubKey(System.String,System.Boolean,Microsoft.Win32.RegistryOptions);Read-only layer
+M:Microsoft.Win32.RegistryKey.CreateSubKey(System.String,Microsoft.Win32.RegistryKeyPermissionCheck,System.Security.AccessControl.RegistrySecurity);Read-only layer
+M:Microsoft.Win32.RegistryKey.CreateSubKey(System.String,Microsoft.Win32.RegistryKeyPermissionCheck,Microsoft.Win32.RegistryOptions);Read-only layer
+M:Microsoft.Win32.RegistryKey.CreateSubKey(System.String,Microsoft.Win32.RegistryKeyPermissionCheck,Microsoft.Win32.RegistryOptions,System.Security.AccessControl.RegistrySecurity);Read-only layer
+M:Microsoft.Win32.RegistryKey.DeleteSubKey(System.String);Read-only layer
+M:Microsoft.Win32.RegistryKey.DeleteSubKey(System.String,System.Boolean);Read-only layer
+M:Microsoft.Win32.RegistryKey.DeleteSubKeyTree(System.String);Read-only layer
+M:Microsoft.Win32.RegistryKey.DeleteSubKeyTree(System.String,System.Boolean);Read-only layer
+M:Microsoft.Win32.RegistryKey.OpenSubKey(System.String,System.Boolean);Read-only layer: use OpenSubKey(string)
+M:Microsoft.Win32.RegistryKey.OpenSubKey(System.String,Microsoft.Win32.RegistryKeyPermissionCheck);Read-only layer: use OpenSubKey(string)
+M:Microsoft.Win32.RegistryKey.OpenSubKey(System.String,System.Security.AccessControl.RegistryRights);Read-only layer: use OpenSubKey(string)
+M:Microsoft.Win32.RegistryKey.OpenSubKey(System.String,Microsoft.Win32.RegistryKeyPermissionCheck,System.Security.AccessControl.RegistryRights);Read-only layer: use OpenSubKey(string)
+M:Microsoft.Win32.RegistryKey.SetAccessControl(System.Security.AccessControl.RegistrySecurity);Read-only layer
+
+# ---- File system writes ----
+M:System.IO.File.Delete(System.String);Read-only layer. Files are never deleted anywhere (S13): quarantine via VTD.Fixes
+M:System.IO.File.Move(System.String,System.String);Read-only layer
+M:System.IO.File.Move(System.String,System.String,System.Boolean);Read-only layer
+M:System.IO.File.Copy(System.String,System.String);Read-only layer
+M:System.IO.File.Copy(System.String,System.String,System.Boolean);Read-only layer
+M:System.IO.File.Replace(System.String,System.String,System.String);Read-only layer
+M:System.IO.File.Replace(System.String,System.String,System.String,System.Boolean);Read-only layer
+M:System.IO.File.Create(System.String);Read-only layer
+M:System.IO.File.Create(System.String,System.Int32);Read-only layer
+M:System.IO.File.Create(System.String,System.Int32,System.IO.FileOptions);Read-only layer
+M:System.IO.File.CreateText(System.String);Read-only layer
+M:System.IO.File.CreateSymbolicLink(System.String,System.String);Read-only layer
+M:System.IO.File.OpenWrite(System.String);Read-only layer
+M:System.IO.File.Open(System.String,System.IO.FileStreamOptions);Read-only layer: use File.OpenRead
+M:System.IO.File.Open(System.String,System.IO.FileMode);Read-only layer: use File.OpenRead
+M:System.IO.File.Open(System.String,System.IO.FileMode,System.IO.FileAccess);Read-only layer: use File.OpenRead
+M:System.IO.File.Open(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare);Read-only layer: use File.OpenRead
+M:System.IO.File.OpenHandle(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.IO.FileOptions,System.Int64);Read-only layer: use File.OpenRead
+M:System.IO.File.AppendText(System.String);Read-only layer
+M:System.IO.File.AppendAllBytes(System.String,System.Byte[]);Read-only layer
+M:System.IO.File.AppendAllBytes(System.String,System.ReadOnlySpan{System.Byte});Read-only layer
+M:System.IO.File.AppendAllBytesAsync(System.String,System.Byte[],System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.AppendAllBytesAsync(System.String,System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.AppendAllLines(System.String,System.Collections.Generic.IEnumerable{System.String});Read-only layer
+M:System.IO.File.AppendAllLines(System.String,System.Collections.Generic.IEnumerable{System.String},System.Text.Encoding);Read-only layer
+M:System.IO.File.AppendAllLinesAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.AppendAllLinesAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Text.Encoding,System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.AppendAllText(System.String,System.String);Read-only layer
+M:System.IO.File.AppendAllText(System.String,System.ReadOnlySpan{System.Char});Read-only layer
+M:System.IO.File.AppendAllText(System.String,System.String,System.Text.Encoding);Read-only layer
+M:System.IO.File.AppendAllText(System.String,System.ReadOnlySpan{System.Char},System.Text.Encoding);Read-only layer
+M:System.IO.File.AppendAllTextAsync(System.String,System.String,System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.AppendAllTextAsync(System.String,System.ReadOnlyMemory{System.Char},System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.AppendAllTextAsync(System.String,System.String,System.Text.Encoding,System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.AppendAllTextAsync(System.String,System.ReadOnlyMemory{System.Char},System.Text.Encoding,System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.WriteAllBytes(System.String,System.Byte[]);Read-only layer
+M:System.IO.File.WriteAllBytes(System.String,System.ReadOnlySpan{System.Byte});Read-only layer
+M:System.IO.File.WriteAllBytesAsync(System.String,System.Byte[],System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.WriteAllBytesAsync(System.String,System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.WriteAllLines(System.String,System.String[]);Read-only layer
+M:System.IO.File.WriteAllLines(System.String,System.Collections.Generic.IEnumerable{System.String});Read-only layer
+M:System.IO.File.WriteAllLines(System.String,System.String[],System.Text.Encoding);Read-only layer
+M:System.IO.File.WriteAllLines(System.String,System.Collections.Generic.IEnumerable{System.String},System.Text.Encoding);Read-only layer
+M:System.IO.File.WriteAllLinesAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.WriteAllLinesAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Text.Encoding,System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.WriteAllText(System.String,System.String);Read-only layer
+M:System.IO.File.WriteAllText(System.String,System.ReadOnlySpan{System.Char});Read-only layer
+M:System.IO.File.WriteAllText(System.String,System.String,System.Text.Encoding);Read-only layer
+M:System.IO.File.WriteAllText(System.String,System.ReadOnlySpan{System.Char},System.Text.Encoding);Read-only layer
+M:System.IO.File.WriteAllTextAsync(System.String,System.String,System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.WriteAllTextAsync(System.String,System.ReadOnlyMemory{System.Char},System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.WriteAllTextAsync(System.String,System.String,System.Text.Encoding,System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.WriteAllTextAsync(System.String,System.ReadOnlyMemory{System.Char},System.Text.Encoding,System.Threading.CancellationToken);Read-only layer
+M:System.IO.File.SetAttributes(System.String,System.IO.FileAttributes);Read-only layer
+M:System.IO.File.SetAttributes(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAttributes);Read-only layer
+M:System.IO.File.SetCreationTime(System.String,System.DateTime);Read-only layer
+M:System.IO.File.SetCreationTimeUtc(System.String,System.DateTime);Read-only layer
+M:System.IO.File.SetLastAccessTime(System.String,System.DateTime);Read-only layer
+M:System.IO.File.SetLastAccessTimeUtc(System.String,System.DateTime);Read-only layer
+M:System.IO.File.SetLastWriteTime(System.String,System.DateTime);Read-only layer
+M:System.IO.File.SetLastWriteTimeUtc(System.String,System.DateTime);Read-only layer
+M:System.IO.File.Encrypt(System.String);Read-only layer
+M:System.IO.File.Decrypt(System.String);Read-only layer
+M:System.IO.Directory.CreateDirectory(System.String);Read-only layer
+M:System.IO.Directory.CreateDirectory(System.String,System.IO.UnixFileMode);Read-only layer
+M:System.IO.Directory.CreateSymbolicLink(System.String,System.String);Read-only layer
+M:System.IO.Directory.CreateTempSubdirectory(System.String);Read-only layer
+M:System.IO.Directory.Delete(System.String);Read-only layer
+M:System.IO.Directory.Delete(System.String,System.Boolean);Read-only layer
+M:System.IO.Directory.Move(System.String,System.String);Read-only layer
+M:System.IO.FileInfo.AppendText;Read-only layer
+M:System.IO.FileInfo.CopyTo(System.String);Read-only layer
+M:System.IO.FileInfo.CopyTo(System.String,System.Boolean);Read-only layer
+M:System.IO.FileInfo.Create;Read-only layer
+M:System.IO.FileInfo.CreateText;Read-only layer
+M:System.IO.FileInfo.Delete;Read-only layer
+M:System.IO.FileInfo.MoveTo(System.String);Read-only layer
+M:System.IO.FileInfo.MoveTo(System.String,System.Boolean);Read-only layer
+M:System.IO.FileInfo.Open(System.IO.FileStreamOptions);Read-only layer: use OpenRead
+M:System.IO.FileInfo.Open(System.IO.FileMode);Read-only layer: use OpenRead
+M:System.IO.FileInfo.Open(System.IO.FileMode,System.IO.FileAccess);Read-only layer: use OpenRead
+M:System.IO.FileInfo.Open(System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare);Read-only layer: use OpenRead
+M:System.IO.FileInfo.OpenWrite;Read-only layer
+M:System.IO.FileInfo.Replace(System.String,System.String);Read-only layer
+M:System.IO.FileInfo.Replace(System.String,System.String,System.Boolean);Read-only layer
+M:System.IO.FileInfo.Encrypt;Read-only layer
+M:System.IO.FileInfo.Decrypt;Read-only layer
+M:System.IO.FileInfo.set_IsReadOnly(System.Boolean);Read-only layer
+M:System.IO.DirectoryInfo.Create;Read-only layer
+M:System.IO.DirectoryInfo.CreateSubdirectory(System.String);Read-only layer
+M:System.IO.DirectoryInfo.Delete;Read-only layer
+M:System.IO.DirectoryInfo.Delete(System.Boolean);Read-only layer
+M:System.IO.DirectoryInfo.MoveTo(System.String);Read-only layer
+M:System.IO.FileSystemInfo.Delete;Read-only layer
+M:System.IO.FileSystemInfo.CreateAsSymbolicLink(System.String);Read-only layer
+M:System.IO.FileSystemInfo.set_Attributes(System.IO.FileAttributes);Read-only layer
+M:System.IO.FileSystemInfo.set_CreationTime(System.DateTime);Read-only layer
+M:System.IO.FileSystemInfo.set_LastWriteTime(System.DateTime);Read-only layer
+M:System.IO.Path.GetTempFileName;Read-only layer (creates a file)
+M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode);Read-only layer: use File.OpenRead
+M:System.IO.FileStream.#ctor(System.String,System.IO.FileStreamOptions);Read-only layer: use File.OpenRead
+M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess);Read-only layer: use File.OpenRead
+M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare);Read-only layer: use File.OpenRead (or the allowlisted Platform shared-read helper)
+M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32);Read-only layer: use File.OpenRead
+M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.Boolean);Read-only layer: use File.OpenRead
+M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.IO.FileOptions);Read-only layer: use File.OpenRead
+M:System.IO.StreamWriter.#ctor(System.String);Read-only layer
+M:System.IO.StreamWriter.#ctor(System.String,System.Boolean);Read-only layer
+M:System.IO.StreamWriter.#ctor(System.String,System.IO.FileStreamOptions);Read-only layer
+M:System.IO.StreamWriter.#ctor(System.String,System.Boolean,System.Text.Encoding);Read-only layer
+M:System.IO.StreamWriter.#ctor(System.String,System.Text.Encoding,System.IO.FileStreamOptions);Read-only layer
+M:System.IO.StreamWriter.#ctor(System.String,System.Boolean,System.Text.Encoding,System.Int32);Read-only layer
+M:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String);Read-only layer: build archives on a Stream
+M:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,System.IO.Compression.CompressionLevel,System.Boolean);Read-only layer
+M:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,System.IO.Compression.CompressionLevel,System.Boolean,System.Text.Encoding);Read-only layer
+M:System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String);Read-only layer: read entries from a Stream
+M:System.IO.Compression.ZipFile.ExtractToDirectory(System.IO.Stream,System.String);Read-only layer
+M:System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String,System.Boolean);Read-only layer
+M:System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String,System.Text.Encoding);Read-only layer
+M:System.IO.Compression.ZipFile.ExtractToDirectory(System.IO.Stream,System.String,System.Boolean);Read-only layer
+M:System.IO.Compression.ZipFile.ExtractToDirectory(System.IO.Stream,System.String,System.Text.Encoding);Read-only layer
+M:System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String,System.Text.Encoding,System.Boolean);Read-only layer
+M:System.IO.Compression.ZipFile.ExtractToDirectory(System.IO.Stream,System.String,System.Text.Encoding,System.Boolean);Read-only layer
+M:System.IO.Compression.ZipFile.Open(System.String,System.IO.Compression.ZipArchiveMode);Read-only layer: open a ZipArchive over File.OpenRead
+M:System.IO.Compression.ZipFile.Open(System.String,System.IO.Compression.ZipArchiveMode,System.Text.Encoding);Read-only layer
+M:System.IO.Compression.ZipFileExtensions.ExtractToFile(System.IO.Compression.ZipArchiveEntry,System.String);Read-only layer
+M:System.IO.Compression.ZipFileExtensions.ExtractToFile(System.IO.Compression.ZipArchiveEntry,System.String,System.Boolean);Read-only layer
+M:System.IO.Compression.ZipFileExtensions.ExtractToDirectory(System.IO.Compression.ZipArchive,System.String);Read-only layer
+M:System.IO.Compression.ZipFileExtensions.ExtractToDirectory(System.IO.Compression.ZipArchive,System.String,System.Boolean);Read-only layer
+
+# ---- Processes ----
+M:System.Diagnostics.Process.Start;Read-only layer: no process creation (allowlisted ProcessRunner / PresentMon / engine launcher only)
+M:System.Diagnostics.Process.Start(System.String);Read-only layer
+M:System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo);Read-only layer
+M:System.Diagnostics.Process.Start(System.String,System.String);Read-only layer
+M:System.Diagnostics.Process.Start(System.String,System.Collections.Generic.IEnumerable{System.String});Read-only layer
+M:System.Diagnostics.Process.Start(System.String,System.String,System.Security.SecureString,System.String);Read-only layer
+M:System.Diagnostics.Process.Start(System.String,System.String,System.String,System.Security.SecureString,System.String);Read-only layer
+M:System.Diagnostics.Process.Kill;Read-only layer (and never kill: close gracefully via VTD.Fixes)
+M:System.Diagnostics.Process.Kill(System.Boolean);Read-only layer
+M:System.Diagnostics.Process.CloseMainWindow;Read-only layer
+
+# ---- Services ----
+M:System.ServiceProcess.ServiceController.Start;Read-only layer: service changes are VTD.Fixes primitives
+M:System.ServiceProcess.ServiceController.Start(System.String[]);Read-only layer
+M:System.ServiceProcess.ServiceController.Stop;Read-only layer
+M:System.ServiceProcess.ServiceController.Stop(System.Boolean);Read-only layer
+M:System.ServiceProcess.ServiceController.Pause;Read-only layer
+M:System.ServiceProcess.ServiceController.Continue;Read-only layer
+M:System.ServiceProcess.ServiceController.ExecuteCommand(System.Int32);Read-only layer
+
+# ---- Event log writes ----
+M:System.Diagnostics.EventLog.Clear;Read-only layer
+M:System.Diagnostics.EventLog.Delete(System.String);Read-only layer
+M:System.Diagnostics.EventLog.Delete(System.String,System.String);Read-only layer
+M:System.Diagnostics.EventLog.CreateEventSource(System.Diagnostics.EventSourceCreationData);Read-only layer
+M:System.Diagnostics.EventLog.CreateEventSource(System.String,System.String);Read-only layer
+M:System.Diagnostics.EventLog.CreateEventSource(System.String,System.String,System.String);Read-only layer
+M:System.Diagnostics.EventLog.DeleteEventSource(System.String);Read-only layer
+M:System.Diagnostics.EventLog.DeleteEventSource(System.String,System.String);Read-only layer
+M:System.Diagnostics.EventLog.ModifyOverflowPolicy(System.Diagnostics.OverflowAction,System.Int32);Read-only layer
+M:System.Diagnostics.EventLog.RegisterDisplayName(System.String,System.Int64);Read-only layer
+M:System.Diagnostics.EventLog.WriteEntry(System.String);Read-only layer
+M:System.Diagnostics.EventLog.WriteEntry(System.String,System.String);Read-only layer
+M:System.Diagnostics.EventLog.WriteEntry(System.String,System.Diagnostics.EventLogEntryType);Read-only layer
+M:System.Diagnostics.EventLog.WriteEntry(System.String,System.String,System.Diagnostics.EventLogEntryType);Read-only layer
+M:System.Diagnostics.EventLog.WriteEntry(System.String,System.Diagnostics.EventLogEntryType,System.Int32);Read-only layer
+M:System.Diagnostics.EventLog.WriteEntry(System.String,System.String,System.Diagnostics.EventLogEntryType,System.Int32);Read-only layer
+M:System.Diagnostics.EventLog.WriteEntry(System.String,System.Diagnostics.EventLogEntryType,System.Int32,System.Int16);Read-only layer
+M:System.Diagnostics.EventLog.WriteEntry(System.String,System.String,System.Diagnostics.EventLogEntryType,System.Int32,System.Int16);Read-only layer
+M:System.Diagnostics.EventLog.WriteEntry(System.String,System.Diagnostics.EventLogEntryType,System.Int32,System.Int16,System.Byte[]);Read-only layer
+M:System.Diagnostics.EventLog.WriteEntry(System.String,System.String,System.Diagnostics.EventLogEntryType,System.Int32,System.Int16,System.Byte[]);Read-only layer
+M:System.Diagnostics.EventLog.WriteEvent(System.Diagnostics.EventInstance,System.Object[]);Read-only layer
+M:System.Diagnostics.EventLog.WriteEvent(System.Diagnostics.EventInstance,System.Byte[],System.Object[]);Read-only layer
+M:System.Diagnostics.EventLog.WriteEvent(System.String,System.Diagnostics.EventInstance,System.Object[]);Read-only layer
+M:System.Diagnostics.EventLog.WriteEvent(System.String,System.Diagnostics.EventInstance,System.Byte[],System.Object[]);Read-only layer
+
+# ---- WMI writes / method calls ----
+M:System.Management.ManagementObject.Put;Read-only layer: WMI is queried, never modified
+M:System.Management.ManagementObject.Put(System.Management.PutOptions);Read-only layer
+M:System.Management.ManagementObject.Put(System.Management.ManagementOperationObserver);Read-only layer
+M:System.Management.ManagementObject.Put(System.Management.ManagementOperationObserver,System.Management.PutOptions);Read-only layer
+M:System.Management.ManagementObject.Delete;Read-only layer
+M:System.Management.ManagementObject.Delete(System.Management.DeleteOptions);Read-only layer
+M:System.Management.ManagementObject.Delete(System.Management.ManagementOperationObserver);Read-only layer
+M:System.Management.ManagementObject.Delete(System.Management.ManagementOperationObserver,System.Management.DeleteOptions);Read-only layer
+M:System.Management.ManagementObject.InvokeMethod(System.String,System.Object[]);Read-only layer
+M:System.Management.ManagementObject.InvokeMethod(System.Management.ManagementOperationObserver,System.String,System.Object[]);Read-only layer
+M:System.Management.ManagementObject.InvokeMethod(System.String,System.Management.ManagementBaseObject,System.Management.InvokeMethodOptions);Read-only layer
+M:System.Management.ManagementObject.InvokeMethod(System.Management.ManagementOperationObserver,System.String,System.Management.ManagementBaseObject,System.Management.InvokeMethodOptions);Read-only layer
+M:System.Management.ManagementObject.CopyTo(System.Management.ManagementPath);Read-only layer
+M:System.Management.ManagementObject.CopyTo(System.String);Read-only layer
+M:System.Management.ManagementObject.CopyTo(System.String,System.Management.PutOptions);Read-only layer
+M:System.Management.ManagementObject.CopyTo(System.Management.ManagementPath,System.Management.PutOptions);Read-only layer
+
+# ---- Environment ----
+M:System.Environment.SetEnvironmentVariable(System.String,System.String,System.EnvironmentVariableTarget);Read-only layer (machine/user env writes)

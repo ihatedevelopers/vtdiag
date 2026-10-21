@@ -1,0 +1,136 @@
+{
+  "id": "guide.storage.intel_vmd",
+  "titleKey": "guide.storage.intel_vmd.title",
+  "summaryKey": "guide.storage.intel_vmd.summary",
+  "bucket": "guidedManual",
+  "risk": "high",
+  "reboot": "required",
+  "appliesTo": [
+    "intel-vmd-status-vmd-9001"
+  ],
+  "preflight": [
+    {
+      "probe": "sec.bitlocker_on",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.storage.intel_vmd.pre.0"
+    },
+    {
+      "probe": "power.on_ac",
+      "must": "true",
+      "severity": "warn",
+      "failKey": "guide.storage.intel_vmd.pre.1"
+    }
+  ],
+  "branches": [
+    {
+      "id": "safe_first",
+      "when": [
+        {
+          "signal": "storage.intel_vmd",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.storage.intel_vmd.safe_first.text",
+      "steps": [
+        {
+          "textKey": "guide.storage.intel_vmd.safe_first.s1",
+          "action": "openSettings",
+          "target": "ms-settings:about"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.safe_first.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.safe_first.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.safe_first.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.safe_first.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "vmd_off_safemode",
+      "when": [
+        {
+          "signal": "storage.intel_vmd",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.storage.intel_vmd.vmd_off_safemode.text",
+      "steps": [
+        {
+          "textKey": "guide.storage.intel_vmd.vmd_off_safemode.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.vmd_off_safemode.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.vmd_off_safemode.s3",
+          "action": "copyText",
+          "target": "bcdedit /set {current} safeboot minimal"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.vmd_off_safemode.s4",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.vmd_off_safemode.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.vmd_off_safemode.s6",
+          "action": "copyText",
+          "target": "bcdedit /deletevalue {current} safeboot"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.vmd_off_safemode.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.vmd_off_safemode.s8",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "storage.intel_vmd",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "riot_support",
+      "when": [],
+      "textKey": "guide.storage.intel_vmd.riot_support.text",
+      "steps": [
+        {
+          "textKey": "guide.storage.intel_vmd.riot_support.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.riot_support.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.storage.intel_vmd.riot_support.s3",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "docsPath": "docs/guides/intel-vmd.md",
+  "outcomeAskKey": "guide.storage.intel_vmd.outcome"
+}

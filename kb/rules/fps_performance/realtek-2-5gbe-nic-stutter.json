@@ -1,0 +1,116 @@
+{
+  "id": "realtek-2-5gbe-nic-stutter",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.realtek-2-5gbe-nic-stutter.title",
+  "summaryKey": "rule.realtek-2-5gbe-nic-stutter.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "stutter",
+    "fps_low",
+    "high_ping",
+    "freeze_hard"
+  ],
+  "prior": {
+    "threads": 76
+  },
+  "requires": [
+    "net.realtek25.present"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "enabled",
+      "signal": "net.realtek25.enabled",
+      "true": 0.4,
+      "veto": "false",
+      "group": "nic"
+    },
+    {
+      "id": "unused",
+      "signal": "net.realtek25.unused",
+      "true": 1.6,
+      "group": "nic",
+      "textKey": "rule.realtek-2-5gbe-nic-stutter.ev.unused"
+    },
+    {
+      "id": "active",
+      "signal": "net.realtek25.active",
+      "true": 0.6,
+      "group": "nic",
+      "textKey": "rule.realtek-2-5gbe-nic-stutter.ev.active"
+    },
+    {
+      "id": "resets",
+      "signal": "events.realtek_nic_resets",
+      "true": 2.0,
+      "textKey": "rule.realtek-2-5gbe-nic-stutter.ev.resets"
+    },
+    {
+      "id": "vgm_crash",
+      "signal": "events.vgm_crash_0xc0000409",
+      "true": 0.8
+    },
+    {
+      "id": "multi_nic",
+      "signal": "net.multi_nic_up",
+      "true": 0.3,
+      "group": "nic"
+    },
+    {
+      "id": "periodic",
+      "signal": "ask.stutter_periodic",
+      "true": 1.0,
+      "false": -0.8,
+      "ask": "ask.stutter_periodic"
+    },
+    {
+      "id": "mon_periodic",
+      "signal": "mon.frametime.periodic_spikes",
+      "true": 1.5,
+      "false": -1.0
+    },
+    {
+      "id": "mon_nic",
+      "signal": "mon.spikes_correlate.nic_event",
+      "true": 2.5
+    },
+    {
+      "id": "only_valorant",
+      "signal": "ask.only_valorant_affected",
+      "true": 0.4,
+      "false": -0.6,
+      "ask": "ask.only_valorant_affected"
+    }
+  ],
+  "fixes": [
+    "fix.net.disable_unused_adapter",
+    "fix.net.realtek_power_saving_off"
+  ],
+  "guides": [
+    "guide.net.local_connection"
+  ],
+  "questions": [
+    "ask.stutter_periodic",
+    "ask.only_valorant_affected"
+  ],
+  "supersedes": [
+    "conflict-realtek_2_5gbe",
+    "conflict-realtek_gbe_family"
+  ],
+  "related": [],
+  "sources": {
+    "catalog": "realtek-2-5gbe-nic-stutter",
+    "threadCount": 76,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1oe4bzl",
+      "1ofliws",
+      "1ofzctx",
+      "1orgew9",
+      "1orvsye"
+    ],
+    "urls": []
+  }
+}

@@ -1,0 +1,18 @@
+<Application x:Class="VTD.App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             ShutdownMode="OnMainWindowClose">
+  <!-- The UI always runs unelevated (app.manifest asInvoker) and talks only to the engine over IEngineRpc. -->
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/VTDiag;component/Themes/Theme.xaml" />
+        <ResourceDictionary Source="/VTDiag;component/Views/StartViews.xaml" />
+        <ResourceDictionary Source="/VTDiag;component/Views/ResultViews.xaml" />
+        <ResourceDictionary Source="/VTDiag;component/Views/FixViews.xaml" />
+        <ResourceDictionary Source="/VTDiag;component/Views/SideViews.xaml" />
+        <ResourceDictionary Source="/VTDiag;component/Views/HelperViews.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

@@ -1,0 +1,291 @@
+[
+  {
+    "id": "ac_faceit",
+    "name": "FACEIT Anti-Cheat",
+    "kind": "anticheat",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [
+        "FACEITService"
+      ],
+      "driverNames": [
+        "FACEIT.sys"
+      ],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^FACEIT",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.ac_faceit.effect.0",
+      "conflict.ac_faceit.effect.1",
+      "conflict.ac_faceit.effect.2"
+    ],
+    "fix": {
+      "actionKey": "conflict.ac_faceit.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.vpn.remove"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 15,
+      "solvedMentions": 4,
+      "exampleThreadIds": [
+        "1q0q794",
+        "1r6kf92",
+        "1wdi8ec",
+        "1qx5g3s",
+        "1s7aq9u"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "ac_esea",
+    "name": "ESEA client anti-cheat",
+    "kind": "anticheat",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [
+        "ESEADriver2"
+      ],
+      "driverNames": [
+        "ESEADriver2.sys"
+      ],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^ESEA",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.ac_esea.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.ac_esea.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.vpn.remove"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 0,
+      "solvedMentions": 0,
+      "exampleThreadIds": [],
+      "webSources": []
+    }
+  },
+  {
+    "id": "ac_battleye",
+    "name": "BattlEye",
+    "kind": "anticheat",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [
+        "BEService"
+      ],
+      "driverNames": [
+        "BEDaisy.sys"
+      ],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.ac_battleye.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.ac_battleye.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.vpn.remove"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 1,
+      "solvedMentions": 0,
+      "exampleThreadIds": [
+        "1wkj9fb"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "ac_easyanticheat",
+    "name": "Easy Anti-Cheat",
+    "kind": "anticheat",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [
+        "EasyAntiCheat",
+        "EasyAntiCheat_EOS"
+      ],
+      "driverNames": [
+        "EasyAntiCheat.sys",
+        "EasyAntiCheat_EOS.sys"
+      ],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.ac_easyanticheat.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.ac_easyanticheat.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.vpn.remove"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 5,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1siytc7",
+        "1vegb5f",
+        "1piqc6i",
+        "1trv2zs",
+        "1uf81r6"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "ac_xigncode",
+    "name": "XIGNCODE3 (xhunter1.sys)",
+    "kind": "anticheat",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "xhunter1.sys"
+      ],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.ac_xigncode.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.ac_xigncode.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.vpn.remove"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 1,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1qybh9e"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "ac_mhyprot",
+    "name": "miHoYo anti-cheat driver (Genshin/HSR/ZZZ)",
+    "kind": "anticheat",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "mhyprot2.sys",
+        "mhyprot3.sys"
+      ],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.ac_mhyprot.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.ac_mhyprot.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.vpn.remove"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 12,
+      "solvedMentions": 3,
+      "exampleThreadIds": [
+        "1wlqajy",
+        "1pwojup",
+        "1wjjgr6",
+        "1r33yv5",
+        "1sz2ier"
+      ],
+      "webSources": []
+    }
+  }
+]

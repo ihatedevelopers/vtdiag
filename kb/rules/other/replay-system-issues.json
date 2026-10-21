@@ -1,0 +1,37 @@
+{
+  "id": "replay-system-issues",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "other",
+  "titleKey": "rule.replay-system-issues.title",
+  "summaryKey": "rule.replay-system-issues.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "display_issue",
+    "fps_low"
+  ],
+  "prior": {
+    "threads": 3
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [],
+  "fixes": [],
+  "guides": [
+    "guide.display.settings"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "replay-system-issues",
+    "threadCount": 3,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1oeh12j",
+      "1oh82na",
+      "1olj1x7"
+    ],
+    "urls": []
+  }
+}

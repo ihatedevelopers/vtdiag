@@ -1,0 +1,167 @@
+{
+  "id": "guide.bios.update",
+  "titleKey": "guide.bios.update.title",
+  "summaryKey": "guide.bios.update.summary",
+  "bucket": "guidedManual",
+  "risk": "high",
+  "reboot": "required",
+  "appliesTo": [
+    "outdated-bios-reboot-vgk-bsod",
+    "secure-boot-enable-boot-failure",
+    "iommu-restriction"
+  ],
+  "preflight": [
+    {
+      "probe": "sec.bitlocker_on",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.bios.update.pre.0"
+    },
+    {
+      "probe": "power.on_ac",
+      "must": "true",
+      "severity": "block",
+      "failKey": "guide.bios.update.pre.1"
+    }
+  ],
+  "branches": [
+    {
+      "id": "laptop_or_prebuilt",
+      "when": [
+        {
+          "signal": "hw.laptop",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.bios.update.laptop_or_prebuilt.text",
+      "steps": [
+        {
+          "textKey": "guide.bios.update.laptop_or_prebuilt.s1",
+          "action": "openSettings",
+          "target": "ms-settings:about"
+        },
+        {
+          "textKey": "guide.bios.update.laptop_or_prebuilt.s2",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.bios.update.laptop_or_prebuilt.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.laptop_or_prebuilt.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.laptop_or_prebuilt.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.laptop_or_prebuilt.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.laptop_or_prebuilt.s7",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.bios.update.laptop_or_prebuilt.s8",
+          "action": "runCheck",
+          "target": "hw.bios_old"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "hw.bios_old",
+          "is": "false"
+        }
+      ],
+      "nextOnFail": "flash_failed"
+    },
+    {
+      "id": "desktop",
+      "when": [],
+      "textKey": "guide.bios.update.desktop.text",
+      "steps": [
+        {
+          "textKey": "guide.bios.update.desktop.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.desktop.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.desktop.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.desktop.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.desktop.s5",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.bios.update.desktop.s6",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.bios.update.desktop.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.desktop.s8",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "hw.bios_old",
+          "is": "false"
+        },
+        {
+          "signal": "sec.secureboot.on",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "flash_failed"
+    },
+    {
+      "id": "flash_failed",
+      "when": [],
+      "textKey": "guide.bios.update.flash_failed.text",
+      "steps": [
+        {
+          "textKey": "guide.bios.update.flash_failed.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.flash_failed.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.flash_failed.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.flash_failed.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.bios.update.flash_failed.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "docsPath": "docs/guides/bios-update.md",
+  "outcomeAskKey": "guide.bios.update.outcome"
+}

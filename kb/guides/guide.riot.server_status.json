@@ -1,0 +1,97 @@
+{
+  "id": "guide.riot.server_status",
+  "titleKey": "guide.riot.server_status.title",
+  "summaryKey": "guide.riot.server_status.summary",
+  "bucket": "riotOrAccount",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "riot-server-side-incident",
+    "slow-download-riot-cdn"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "friends_too",
+      "when": [
+        {
+          "signal": "ask.friends_same_server",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.riot.server_status.friends_too.text",
+      "steps": [
+        {
+          "textKey": "guide.riot.server_status.friends_too.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.server_status.friends_too.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.server_status.friends_too.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.server_status.friends_too.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "status",
+      "when": [],
+      "textKey": "guide.riot.server_status.status.text",
+      "steps": [
+        {
+          "textKey": "guide.riot.server_status.status.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.server_status.status.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.server_status.status.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.server_status.status.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "slow_download",
+      "when": [],
+      "textKey": "guide.riot.server_status.slow_download.text",
+      "steps": [
+        {
+          "textKey": "guide.riot.server_status.slow_download.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.server_status.slow_download.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.server_status.slow_download.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.server_status.slow_download.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.server_status.slow_download.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.riot.server_status.outcome"
+}

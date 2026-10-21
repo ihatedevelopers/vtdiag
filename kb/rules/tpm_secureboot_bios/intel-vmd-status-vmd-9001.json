@@ -1,0 +1,50 @@
+{
+  "id": "intel-vmd-status-vmd-9001",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "tpm_secureboot_bios",
+  "titleKey": "rule.intel-vmd-status-vmd-9001.title",
+  "summaryKey": "rule.intel-vmd-status-vmd-9001.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "error_code",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 2
+  },
+  "requires": [
+    "storage.intel_vmd"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "vmd",
+      "signal": "storage.intel_vmd",
+      "true": 2.0,
+      "veto": "false",
+      "textKey": "rule.intel-vmd-status-vmd-9001.ev.vmd"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.storage.intel_vmd"
+  ],
+  "questions": [],
+  "supersedes": [
+    "conflict-intel_vmd_rst"
+  ],
+  "related": [],
+  "sources": {
+    "catalog": "intel-vmd-status-vmd-9001",
+    "threadCount": 2,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1u71s5f",
+      "1ufzky5"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/performance/error-van-status-vmd-9001"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "nvidia-vsync-fast-critical-error",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "gpu_driver",
+  "titleKey": "rule.nvidia-vsync-fast-critical-error.title",
+  "summaryKey": "rule.nvidia-vsync-fast-critical-error.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "crash_desktop",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 3
+  },
+  "requires": [
+    "gpu.nvidia_dgpu"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "nv",
+      "signal": "gpu.nvidia_dgpu",
+      "true": 0.5,
+      "veto": "false"
+    },
+    {
+      "id": "fatal",
+      "signal": "log.fatal_error",
+      "true": 0.8
+    },
+    {
+      "id": "profile",
+      "signal": "gpu.nv_profile_overrides",
+      "true": 2.0
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.display.settings"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "nvidia-vsync-fast-critical-error",
+    "threadCount": 3,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1wnnlal",
+      "1wo2xpz",
+      "1wozg4k"
+    ],
+    "urls": []
+  }
+}

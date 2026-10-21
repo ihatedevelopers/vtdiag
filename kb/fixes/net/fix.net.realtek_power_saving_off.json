@@ -1,0 +1,108 @@
+{
+  "id": "fix.net.realtek_power_saving_off",
+  "titleKey": "fix.net.realtek_power_saving_off.title",
+  "explainKey": "fix.net.realtek_power_saving_off.explain",
+  "undoExplainKey": "fix.net.realtek_power_saving_off.undo",
+  "noticeKey": "fix.net.realtek_power_saving_off.notice",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "none",
+  "scope": "persistent",
+  "estMinutes": 0.5,
+  "appliesTo": [
+    "realtek-2-5gbe-nic-stutter",
+    "local-network-packet-loss-jitter",
+    "conflict-realtek_2_5gbe",
+    "conflict-realtek_gbe_family"
+  ],
+  "bind": {
+    "adapter": {
+      "kind": "adapter",
+      "fromSignal": "net.nic_power_saving_on",
+      "pick": "one"
+    }
+  },
+  "guards": [
+    {
+      "probe": "connectivity.internet",
+      "args": {},
+      "must": "true",
+      "severity": "block",
+      "failKey": "guard.no_internet"
+    }
+  ],
+  "steps": [
+    {
+      "op": "netadapter.setAdvancedProperty",
+      "args": {
+        "instanceId": "$adapter.id",
+        "keyword": "*EEE",
+        "value": "0"
+      },
+      "onFail": "continue"
+    },
+    {
+      "op": "netadapter.setAdvancedProperty",
+      "args": {
+        "instanceId": "$adapter.id",
+        "keyword": "EnableGreenEthernet",
+        "value": "0"
+      },
+      "onFail": "continue"
+    },
+    {
+      "op": "netadapter.setAdvancedProperty",
+      "args": {
+        "instanceId": "$adapter.id",
+        "keyword": "AdvancedEEE",
+        "value": "0"
+      },
+      "onFail": "continue"
+    },
+    {
+      "op": "netadapter.setAdvancedProperty",
+      "args": {
+        "instanceId": "$adapter.id",
+        "keyword": "GigaLite",
+        "value": "0"
+      },
+      "onFail": "continue"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "netadapter.setAdvancedProperty",
+      "args": {
+        "instanceId": "$adapter.id",
+        "keyword": "*EEE"
+      },
+      "expect": {
+        "value": "0"
+      },
+      "when": "immediate"
+    }
+  ],
+  "deadman": {
+    "seconds": 60,
+    "check": "connectivity.internet"
+  },
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.stutter_gone"
+  },
+  "drift": {
+    "watch": true,
+    "reasonKey": "drift.setting_reverted"
+  },
+  "successPrior": {
+    "success": 4,
+    "trials": 113
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

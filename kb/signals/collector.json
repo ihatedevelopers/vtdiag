@@ -1,0 +1,221 @@
+[
+  {
+    "id": "conflict.dcontrol_defender_disabled.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.dcontrol_defender_disabled.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_dcontrol_defender_disabled_reg",
+      "minCount": 1,
+      "fieldEquals": {
+        "data": "1"
+      }
+    }
+  },
+  {
+    "id": "conflict.defender_cfa.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.defender_cfa.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_defender_cfa_reg",
+      "minCount": 1,
+      "fieldEquals": {
+        "data": "1"
+      }
+    }
+  },
+  {
+    "id": "conflict.defender_smart_app_control.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.defender_smart_app_control.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_defender_smart_app_control_reg",
+      "minCount": 1
+    }
+  },
+  {
+    "id": "conflict.exploit_protection_override.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.exploit_protection_override.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_exploit_protection_override_reg",
+      "minCount": 1
+    }
+  },
+  {
+    "id": "conflict.fso_compat_flags.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.fso_compat_flags.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_fso_compat_flags_reg",
+      "minCount": 1
+    }
+  },
+  {
+    "id": "conflict.gearup_booster.file_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.gearup_booster.file_present.title",
+    "entity": "file",
+    "fromCollector": {
+      "collector": "conflict_gearup_booster_file",
+      "minCount": 1,
+      "fieldEquals": {
+        "exists": "true"
+      }
+    }
+  },
+  {
+    "id": "conflict.hags.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.hags.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_hags_reg",
+      "minCount": 1,
+      "fieldEquals": {
+        "data": "2"
+      }
+    }
+  },
+  {
+    "id": "conflict.hvci_off_when_required.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.hvci_off_when_required.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_hvci_off_when_required_reg",
+      "minCount": 1,
+      "fieldEquals": {
+        "data": "0"
+      }
+    }
+  },
+  {
+    "id": "conflict.ipv6_binding.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.ipv6_binding.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_ipv6_binding_reg",
+      "minCount": 1
+    }
+  },
+  {
+    "id": "conflict.modified_windows.file_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.modified_windows.file_present.title",
+    "entity": "file",
+    "fromCollector": {
+      "collector": "conflict_modified_windows_file",
+      "minCount": 1,
+      "fieldEquals": {
+        "exists": "true"
+      }
+    }
+  },
+  {
+    "id": "conflict.modified_windows.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.modified_windows.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_modified_windows_reg",
+      "minCount": 1
+    }
+  },
+  {
+    "id": "conflict.mpo.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.mpo.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_mpo_reg",
+      "minCount": 1
+    }
+  },
+  {
+    "id": "conflict.required_services_disabled.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.required_services_disabled.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_required_services_disabled_reg",
+      "minCount": 1,
+      "fieldEquals": {
+        "data": "4"
+      }
+    }
+  },
+  {
+    "id": "conflict.system_proxy.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.system_proxy.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_system_proxy_reg",
+      "minCount": 1,
+      "fieldEquals": {
+        "data": "1"
+      }
+    }
+  },
+  {
+    "id": "conflict.tcp_tweakers.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.tcp_tweakers.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_tcp_tweakers_reg",
+      "minCount": 1
+    }
+  },
+  {
+    "id": "conflict.windows_insider.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.windows_insider.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_windows_insider_reg",
+      "minCount": 1
+    }
+  },
+  {
+    "id": "conflict.xbox_game_bar_dvr.registry_present",
+    "source": "collector",
+    "titleKey": "signal.conflict.xbox_game_bar_dvr.registry_present.title",
+    "entity": "registryValue",
+    "fromCollector": {
+      "collector": "conflict_xbox_game_bar_dvr_reg",
+      "minCount": 1,
+      "fieldEquals": {
+        "data": "1"
+      }
+    }
+  },
+  {
+    "id": "events.codeintegrity_blocked",
+    "source": "collector",
+    "titleKey": "signal.events.codeintegrity_blocked.title",
+    "fromCollector": {
+      "collector": "codeintegrity_blocks",
+      "minCount": 1,
+      "withinDays": 14,
+      "saturateAt": 5
+    }
+  },
+  {
+    "id": "events.service_crash_loop",
+    "source": "collector",
+    "titleKey": "signal.events.service_crash_loop.title",
+    "fromCollector": {
+      "collector": "scm_crash_loop",
+      "minCount": 3,
+      "withinDays": 7,
+      "saturateAt": 10
+    }
+  }
+]

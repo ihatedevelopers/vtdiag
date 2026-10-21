@@ -1,0 +1,62 @@
+{
+  "id": "tpm2-missing-or-unmet",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "tpm_secureboot_bios",
+  "titleKey": "rule.tpm2-missing-or-unmet.title",
+  "summaryKey": "rule.tpm2-missing-or-unmet.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "bios_requirement",
+    "error_code"
+  ],
+  "prior": {
+    "threads": 8
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "no_tpm2",
+      "signal": "sec.tpm2",
+      "false": 3.0,
+      "veto": "true",
+      "textKey": "rule.tpm2-missing-or-unmet.ev.no_tpm2"
+    },
+    {
+      "id": "not_ready",
+      "signal": "sec.tpm.not_ready",
+      "true": 1.2
+    },
+    {
+      "id": "tpm_events",
+      "signal": "events.tpm_errors",
+      "true": 0.5
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.tpm.enable"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "tpm2-missing-or-unmet",
+    "threadCount": 8,
+    "evidence": "guide",
+    "threadIds": [
+      "1oxw8m8",
+      "1pezfbh",
+      "1pp9fk3",
+      "1pt9nes",
+      "1woutmw"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/penalties/error-van-restriction",
+      "https://riotgames.com/en/news/vanguard-security-update-motherboard",
+      "https://support.riotgames.com/riot/support-tools/enabling-iommu",
+      "https://support.riotgames.com/riot/client/error-van-9001"
+    ]
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "id": "guide.vanguard.real_restart",
+  "titleKey": "guide.vanguard.real_restart.title",
+  "summaryKey": "guide.vanguard.real_restart.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "required",
+  "appliesTo": [
+    "vgk-not-loaded-needs-reboot",
+    "fast-startup-stale-dat-bsod"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "fast_startup",
+      "when": [
+        {
+          "signal": "os.fast_startup_on",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.vanguard.real_restart.fast_startup.text",
+      "steps": [
+        {
+          "textKey": "guide.vanguard.real_restart.fast_startup.s1",
+          "action": "runFix",
+          "target": "fix.os.fast_startup_off"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.fast_startup.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.fast_startup.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.fast_startup.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.fast_startup.s5",
+          "action": "runCheck",
+          "target": "vg.vgk_running"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "vg.vgk_running",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "boot_status"
+    },
+    {
+      "id": "boot_status",
+      "when": [
+        {
+          "signal": "vg.bootstatus_dat",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.vanguard.real_restart.boot_status.text",
+      "steps": [
+        {
+          "textKey": "guide.vanguard.real_restart.boot_status.s1",
+          "action": "runFix",
+          "target": "fix.vg.quarantine_bootstatus"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.boot_status.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.boot_status.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.boot_status.s4",
+          "action": "runCheck",
+          "target": "vg.vgk_running"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "vg.vgk_running",
+          "is": "true"
+        }
+      ]
+    },
+    {
+      "id": "stale_dat",
+      "when": [
+        {
+          "signal": "vg.stale_dat",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.vanguard.real_restart.stale_dat.text",
+      "steps": [
+        {
+          "textKey": "guide.vanguard.real_restart.stale_dat.s1",
+          "action": "runFix",
+          "target": "fix.vg.quarantine_stale_dat"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.stale_dat.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.stale_dat.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.stale_dat.s4",
+          "action": "runCheck",
+          "target": "vg.vgk_running"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "vg.vgk_running",
+          "is": "true"
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "when": [],
+      "textKey": "guide.vanguard.real_restart.general.text",
+      "steps": [
+        {
+          "textKey": "guide.vanguard.real_restart.general.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.general.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.general.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.general.s4",
+          "action": "runCheck",
+          "target": "vg.vgk_running"
+        },
+        {
+          "textKey": "guide.vanguard.real_restart.general.s5",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "vg.vgk_running",
+          "is": "true"
+        }
+      ]
+    }
+  ],
+  "outcomeAskKey": "guide.vanguard.real_restart.outcome"
+}

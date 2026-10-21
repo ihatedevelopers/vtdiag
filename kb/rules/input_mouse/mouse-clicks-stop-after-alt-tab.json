@@ -1,0 +1,50 @@
+{
+  "id": "mouse-clicks-stop-after-alt-tab",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "input_mouse",
+  "titleKey": "rule.mouse-clicks-stop-after-alt-tab.title",
+  "summaryKey": "rule.mouse-clicks-stop-after-alt-tab.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "mouse_input"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "icue",
+      "signal": "conflict.corsair_icue.installed",
+      "true": 0.6
+    },
+    {
+      "id": "ghub",
+      "signal": "conflict.logitech_ghub.installed",
+      "true": 0.4
+    },
+    {
+      "id": "synapse",
+      "signal": "conflict.razer_synapse.installed",
+      "true": 0.4
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.mouse.usb"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "mouse-clicks-stop-after-alt-tab",
+    "threadCount": 1,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1w8rhft"
+    ],
+    "urls": []
+  }
+}

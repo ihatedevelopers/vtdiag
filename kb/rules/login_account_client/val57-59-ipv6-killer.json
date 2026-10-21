@@ -1,0 +1,60 @@
+{
+  "id": "val57-59-ipv6-killer",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "login_account_client",
+  "titleKey": "rule.val57-59-ipv6-killer.title",
+  "summaryKey": "rule.val57-59-ipv6-killer.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "error_code",
+    "login_issue",
+    "disconnect"
+  ],
+  "prior": {
+    "threads": 2
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "killer",
+      "signal": "conflict.killer_suite.adapter_present",
+      "true": 1.2,
+      "textKey": "rule.val57-59-ipv6-killer.ev.killer"
+    },
+    {
+      "id": "killer_sw",
+      "signal": "conflict.killer_suite.installed",
+      "true": 0.6
+    },
+    {
+      "id": "ipv6",
+      "signal": "net.active_ipv6_bound",
+      "true": 0.4
+    }
+  ],
+  "fixes": [
+    "fix.net.unbind_ipv6_active"
+  ],
+  "guides": [
+    "guide.net.dns_ipv6"
+  ],
+  "questions": [],
+  "supersedes": [
+    "conflict-killer_suite"
+  ],
+  "related": [],
+  "sources": {
+    "catalog": "val57-59-ipv6-killer",
+    "threadCount": 2,
+    "evidence": "guide",
+    "threadIds": [
+      "1qj9oix",
+      "1rczb6g"
+    ],
+    "urls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ]
+  }
+}

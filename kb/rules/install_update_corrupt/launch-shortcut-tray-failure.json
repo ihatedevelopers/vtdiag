@@ -1,0 +1,57 @@
+{
+  "id": "launch-shortcut-tray-failure",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "install_update_corrupt",
+  "titleKey": "rule.launch-shortcut-tray-failure.title",
+  "summaryKey": "rule.launch-shortcut-tray-failure.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 8
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "client_running",
+      "signal": "riot.game_running",
+      "true": -0.5
+    },
+    {
+      "id": "vgc_auto",
+      "signal": "vg.vgc_automatic_needed",
+      "true": 0.6
+    },
+    {
+      "id": "av",
+      "signal": "sec.third_party_av",
+      "true": 0.4
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.riot.client_settings",
+    "guide.vanguard.reinstall"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "launch-shortcut-tray-failure",
+    "threadCount": 8,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1phz7w1",
+      "1pjb8c7",
+      "1pjmbnb",
+      "1pmgrvv",
+      "1ppm07w"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/performance/error-van-57"
+    ]
+  }
+}

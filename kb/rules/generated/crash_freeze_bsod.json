@@ -1,0 +1,165 @@
+[
+  {
+    "id": "conflict-nahimic",
+    "rev": 1,
+    "kind": "generated",
+    "category": "crash_freeze_bsod",
+    "titleKey": "rule.conflict-nahimic.title",
+    "summaryKey": "rule.conflict-nahimic.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "launch_black_screen"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.nahimic.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.nahimic.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.nahimic.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.nahimic.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.nahimic.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "crash_module",
+        "signal": "conflict.nahimic.crash_module",
+        "true": 3.5
+      }
+    ],
+    "wave": {
+      "from": "2026-09-01",
+      "to": "2026-12-31",
+      "boost": 0.7
+    },
+    "fixes": [
+      "fix.svc.disable_conflict_service"
+    ],
+    "guides": [
+      "guide.apps.uninstall_nahimic"
+    ],
+    "sources": {
+      "threadCount": 27,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1wciq6n",
+        "1wdcqnv",
+        "1wdq18p",
+        "1wdqy1s",
+        "1wefn02"
+      ],
+      "urls": [
+        "https://blog.gridinsoft.com/nahimicsvc64-exe/",
+        "https://repairit.wondershare.com/video-repair/fix-valorant-black-screen-at-launch.html"
+      ]
+    },
+    "related": [
+      "nahimic-audio-service-launch-hang"
+    ]
+  },
+  {
+    "id": "conflict-usb_selective_suspend",
+    "rev": 1,
+    "kind": "generated",
+    "category": "crash_freeze_bsod",
+    "titleKey": "rule.conflict-usb_selective_suspend.title",
+    "summaryKey": "rule.conflict-usb_selective_suspend.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "freeze_hard",
+      "mouse_input"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "power.usb_selective_suspend_on",
+        "true": 0.6
+      }
+    ],
+    "fixes": [
+      "fix.power.usb_selective_suspend_off"
+    ],
+    "guides": [
+      "guide.mouse.usb"
+    ],
+    "sources": {
+      "threadCount": 15,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1p40lyh",
+        "1p8gqu9",
+        "1poah2f",
+        "1pzp13r",
+        "1rpzz59"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-windows_insider",
+    "rev": 1,
+    "kind": "generated",
+    "category": "crash_freeze_bsod",
+    "titleKey": "rule.conflict-windows_insider.title",
+    "summaryKey": "rule.conflict-windows_insider.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "stutter",
+      "freeze_hard",
+      "crash_desktop",
+      "launch_black_screen"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "os.insider",
+        "true": 1.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.windows.update"
+    ],
+    "sources": {
+      "threadCount": 3,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1rah5lw",
+        "1sh04kq",
+        "1sjezkc",
+        "1q8oiai",
+        "1sg1j2f"
+      ],
+      "urls": []
+    },
+    "related": [
+      "insider-build-vgk-bsod"
+    ]
+  }
+]

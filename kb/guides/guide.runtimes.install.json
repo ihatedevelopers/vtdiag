@@ -1,0 +1,139 @@
+{
+  "id": "guide.runtimes.install",
+  "titleKey": "guide.runtimes.install.title",
+  "summaryKey": "guide.runtimes.install.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "recommended",
+  "appliesTo": [
+    "side-by-side-config-error",
+    "xinput-directx-runtime-error"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "n_edition",
+      "when": [
+        {
+          "signal": "os.windows_n",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.runtimes.install.n_edition.text",
+      "steps": [
+        {
+          "textKey": "guide.runtimes.install.n_edition.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.runtimes.install.n_edition.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.runtimes.install.n_edition.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.runtimes.install.n_edition.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "vcredist",
+      "when": [
+        {
+          "signal": "apps.vcredist_missing",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.runtimes.install.vcredist.text",
+      "steps": [
+        {
+          "textKey": "guide.runtimes.install.vcredist.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.runtimes.install.vcredist.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.runtimes.install.vcredist.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.runtimes.install.vcredist.s4",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "apps.vcredist_missing",
+          "is": "false"
+        }
+      ],
+      "nextOnFail": "system_files"
+    },
+    {
+      "id": "directx",
+      "when": [],
+      "textKey": "guide.runtimes.install.directx.text",
+      "steps": [
+        {
+          "textKey": "guide.runtimes.install.directx.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.runtimes.install.directx.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.runtimes.install.directx.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.runtimes.install.directx.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.runtimes.install.directx.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.runtimes.install.directx.s6",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "system_files"
+    },
+    {
+      "id": "system_files",
+      "when": [],
+      "textKey": "guide.runtimes.install.system_files.text",
+      "steps": [
+        {
+          "textKey": "guide.runtimes.install.system_files.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.runtimes.install.system_files.s2",
+          "action": "copyText",
+          "target": "DISM /Online /Cleanup-Image /RestoreHealth"
+        },
+        {
+          "textKey": "guide.runtimes.install.system_files.s3",
+          "action": "copyText",
+          "target": "sfc /scannow"
+        },
+        {
+          "textKey": "guide.runtimes.install.system_files.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.runtimes.install.outcome"
+}

@@ -1,0 +1,80 @@
+{
+  "id": "outdated-bios-reboot-vgk-bsod",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "crash_freeze_bsod",
+  "titleKey": "rule.outdated-bios-reboot-vgk-bsod.title",
+  "summaryKey": "rule.outdated-bios-reboot-vgk-bsod.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "freeze_hard",
+    "crash_desktop",
+    "error_code"
+  ],
+  "prior": {
+    "threads": 19
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "old",
+      "signal": "hw.bios_old",
+      "true": 0.8,
+      "group": "age",
+      "textKey": "rule.outdated-bios-reboot-vgk-bsod.ev.old"
+    },
+    {
+      "id": "very_old",
+      "signal": "hw.bios_very_old",
+      "true": 1.4,
+      "group": "age",
+      "textKey": "rule.outdated-bios-reboot-vgk-bsod.ev.very_old"
+    },
+    {
+      "id": "vgk_bsod",
+      "signal": "events.bugcheck_vgk",
+      "true": 1.5,
+      "textKey": "rule.outdated-bios-reboot-vgk-bsod.ev.vgk_bsod"
+    },
+    {
+      "id": "kp41",
+      "signal": "events.kernel_power_41",
+      "true": 0.8
+    },
+    {
+      "id": "whole",
+      "signal": "ask.whole_pc_freezes",
+      "true": 0.4,
+      "ask": "ask.whole_pc_freezes"
+    },
+    {
+      "id": "new_build",
+      "signal": "ask.pc_built_recently",
+      "true": 0.5,
+      "ask": "ask.pc_built_recently"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.bios.update"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "outdated-bios-reboot-vgk-bsod",
+    "threadCount": 19,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1ph83a0",
+      "1phz7w1",
+      "1pjgwh0",
+      "1pqxng6",
+      "1prtc4b"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/performance/error-van-57"
+    ]
+  }
+}

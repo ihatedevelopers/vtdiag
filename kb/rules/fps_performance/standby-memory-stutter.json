@@ -1,0 +1,54 @@
+{
+  "id": "standby-memory-stutter",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.standby-memory-stutter.title",
+  "summaryKey": "rule.standby-memory-stutter.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "stutter",
+    "fps_low"
+  ],
+  "prior": {
+    "threads": 2
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "standby",
+      "signal": "hw.standby_mem_high",
+      "true": 1.2,
+      "textKey": "rule.standby-memory-stutter.ev.standby"
+    },
+    {
+      "id": "ram_low",
+      "signal": "hw.ram_low",
+      "true": 0.8
+    },
+    {
+      "id": "over_time",
+      "signal": "ask.fps_drops_over_time",
+      "true": 0.5,
+      "ask": "ask.fps_drops_over_time"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.standby_memory"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "standby-memory-stutter",
+    "threadCount": 2,
+    "evidence": "guide",
+    "threadIds": [
+      "1ofzctx",
+      "1oi3opu"
+    ],
+    "urls": []
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "fix.display.hags_off",
+  "titleKey": "fix.display.hags_off.title",
+  "explainKey": "fix.display.hags_off.explain",
+  "undoExplainKey": "fix.display.hags_off.undo",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "required",
+  "scope": "persistent",
+  "estMinutes": 0.5,
+  "appliesTo": [
+    "mouse-acceleration-floaty-aim",
+    "frametime-latency-spikes",
+    "amd-adrenalin-driver-regression",
+    "whole-pc-freeze-kernel-power-41",
+    "conflict-hags"
+  ],
+  "bind": {},
+  "guards": [],
+  "steps": [
+    {
+      "op": "registry.setValue",
+      "args": {
+        "path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers",
+        "name": "HwSchMode",
+        "kind": "DWord",
+        "data": "1"
+      },
+      "onFail": "abort"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "registry.setValue",
+      "args": {
+        "path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers",
+        "name": "HwSchMode"
+      },
+      "expect": {
+        "data": "1"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.stutter_gone"
+  },
+  "drift": {
+    "watch": true,
+    "reasonKey": "drift.setting_reverted"
+  },
+  "successPrior": {
+    "success": 1,
+    "trials": 52
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

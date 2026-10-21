@@ -1,0 +1,177 @@
+{
+  "id": "guide.vanguard.reinstall",
+  "titleKey": "guide.vanguard.reinstall.title",
+  "summaryKey": "guide.vanguard.reinstall.summary",
+  "bucket": "guidedManual",
+  "risk": "medium",
+  "reboot": "required",
+  "appliesTo": [
+    "vanguard-install-loop",
+    "vanguard-corrupt-install"
+  ],
+  "preflight": [
+    {
+      "probe": "riot.game_running",
+      "must": "false",
+      "severity": "block",
+      "failKey": "guide.vanguard.reinstall.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "league_also_broken",
+      "when": [
+        {
+          "signal": "ask.league_also_broken",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.vanguard.reinstall.league_also_broken.text",
+      "steps": [
+        {
+          "textKey": "guide.vanguard.reinstall.league_also_broken.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.league_also_broken.s2",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.league_also_broken.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.league_also_broken.s4",
+          "action": "copyText",
+          "target": "sc delete vgc"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.league_also_broken.s5",
+          "action": "copyText",
+          "target": "sc delete vgk"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.league_also_broken.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.league_also_broken.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.league_also_broken.s8",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "vg.installed",
+          "is": "true"
+        }
+      ]
+    },
+    {
+      "id": "files_missing",
+      "when": [
+        {
+          "signal": "vg.files_missing",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.vanguard.reinstall.files_missing.text",
+      "steps": [
+        {
+          "textKey": "guide.vanguard.reinstall.files_missing.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.files_missing.s2",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.files_missing.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.files_missing.s4",
+          "action": "copyText",
+          "target": "sc delete vgc"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.files_missing.s5",
+          "action": "copyText",
+          "target": "sc delete vgk"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.files_missing.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.files_missing.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.files_missing.s8",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "vg.installed",
+          "is": "true"
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "when": [],
+      "textKey": "guide.vanguard.reinstall.general.text",
+      "steps": [
+        {
+          "textKey": "guide.vanguard.reinstall.general.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.general.s2",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.general.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.general.s4",
+          "action": "copyText",
+          "target": "sc delete vgc"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.general.s5",
+          "action": "copyText",
+          "target": "sc delete vgk"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.general.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.general.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.reinstall.general.s8",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "vg.installed",
+          "is": "true"
+        }
+      ]
+    }
+  ],
+  "outcomeAskKey": "guide.vanguard.reinstall.outcome"
+}

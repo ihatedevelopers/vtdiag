@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: A2 Knowledge & Analysis. xUnit v3 packages and analyzers come from Directory.Build.targets (Test layer). -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VTD.Kb.Tests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VTD.Knowledge\VTD.Knowledge.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Testing.Fakes\VTD.Testing.Fakes.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Contracts\VTD.Contracts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Already approved for tests (Directory.Packages.props): independent JSON Schema check of every KB file. -->
+    <PackageReference Include="JsonSchema.Net" />
+  </ItemGroup>
+</Project>

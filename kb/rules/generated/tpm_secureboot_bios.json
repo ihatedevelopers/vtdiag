@@ -1,0 +1,129 @@
+[
+  {
+    "id": "conflict-hvci_off_when_required",
+    "rev": 1,
+    "kind": "generated",
+    "category": "tpm_secureboot_bios",
+    "titleKey": "rule.conflict-hvci_off_when_required.title",
+    "summaryKey": "rule.conflict-hvci_off_when_required.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "wont_launch",
+      "error_code",
+      "bios_requirement"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [],
+    "evidence": [
+      {
+        "id": "e0",
+        "signal": "sec.hvci.running",
+        "true": -0.8
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.hvci.enable"
+    ],
+    "sources": {
+      "threadCount": 43,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1ol3ri5",
+        "1p7a46w",
+        "1p8ly4l",
+        "1pjgwh0",
+        "1pmgrvv"
+      ],
+      "urls": [
+        "https://www.tomshardware.com/video-games/pc-gaming/riot-vanguard-adds-an-on-demand-mode-that-stops-anti-cheat-loading-at-boot-on-secured-windows-11-pcs",
+        "https://www.thespike.gg/valorant/error-codes/fixing-the-iommu-valorant-error-how-it-impacts-security-and-performance"
+      ]
+    }
+  },
+  {
+    "id": "conflict-presonus_firestudio",
+    "rev": 1,
+    "kind": "generated",
+    "category": "tpm_secureboot_bios",
+    "titleKey": "rule.conflict-presonus_firestudio.title",
+    "summaryKey": "rule.conflict-presonus_firestudio.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "bios_requirement"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.presonus_firestudio.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.presonus_firestudio.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.hvci.enable"
+    ],
+    "sources": {
+      "threadCount": 0,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1wo1sls"
+      ],
+      "urls": []
+    }
+  },
+  {
+    "id": "conflict-intel_vmd_rst",
+    "rev": 1,
+    "kind": "generated",
+    "category": "tpm_secureboot_bios",
+    "titleKey": "rule.conflict-intel_vmd_rst.title",
+    "summaryKey": "rule.conflict-intel_vmd_rst.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "error_code"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.intel_vmd_rst.any"
+    ],
+    "evidence": [
+      {
+        "id": "driver_loaded",
+        "signal": "conflict.intel_vmd_rst.driver_loaded",
+        "true": 0.9
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.storage.intel_vmd"
+    ],
+    "sources": {
+      "threadCount": 2,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1ufzky5",
+        "1u71s5f",
+        "1u9qwwi",
+        "1w1ygp7",
+        "1v3otva"
+      ],
+      "urls": [
+        "https://support.riotgames.com/en-us/riot/performance/van-incompatible-oem-driver"
+      ]
+    },
+    "related": [
+      "intel-vmd-status-vmd-9001"
+    ]
+  }
+]

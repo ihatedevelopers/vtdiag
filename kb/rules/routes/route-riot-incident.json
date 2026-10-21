@@ -1,0 +1,24 @@
+{
+  "id": "route-riot-incident",
+  "rev": 1,
+  "kind": "route",
+  "category": "other",
+  "titleKey": "rule.route-riot-incident.title",
+  "summaryKey": "rule.route-riot-incident.summary",
+  "bucket": "riotOrAccount",
+  "route": "riotServerIncident",
+  "symptoms": [],
+  "prior": {
+    "threads": 0
+  },
+  "requires": [
+    "riot.status_incident"
+  ],
+  "excludes": [],
+  "evidence": [],
+  "fixes": [],
+  "guides": [],
+  "questions": [],
+  "supersedes": [],
+  "related": []
+}

@@ -1,0 +1,333 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:VTD.App.Controls"
+                    xmlns:l="clr-namespace:VTD.App.Localization"
+                    xmlns:vm="clr-namespace:VTD.App.ViewModels">
+
+  <DataTemplate x:Key="BulletTemplate">
+    <Grid Margin="0,0,0,5">
+      <Grid.ColumnDefinitions><ColumnDefinition Width="18" /><ColumnDefinition /></Grid.ColumnDefinitions>
+      <Rectangle Width="6" Height="6" Fill="{StaticResource TextMutedBrush}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1,7,0,0" RenderTransformOrigin="0.5,0.5">
+        <Rectangle.RenderTransform><RotateTransform Angle="45" /></Rectangle.RenderTransform>
+      </Rectangle>
+      <TextBlock Grid.Column="1" Style="{StaticResource Body}" Text="{Binding}" />
+    </Grid>
+  </DataTemplate>
+
+  <DataTemplate x:Key="NumberedTemplate">
+    <Grid Margin="0,0,0,8">
+      <Grid.ColumnDefinitions><ColumnDefinition Width="30" /><ColumnDefinition /></Grid.ColumnDefinitions>
+      <Path Data="M4,0 L8,4 L4,8 L0,4 Z" Fill="{StaticResource LineStrongBrush}" Width="8" Height="8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,6,0,0" />
+      <TextBlock Grid.Column="1" Style="{StaticResource Body}" Text="{Binding}" />
+    </Grid>
+  </DataTemplate>
+
+  <!-- 6 Fix detail + consent -->
+  <DataTemplate DataType="{x:Type vm:FixDetailViewModel}">
+    <StackPanel>
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource InfoBrush}" Visibility="{Binding HasProposer, Converter={StaticResource Visible}}" Margin="0,0,0,18">
+        <StackPanel>
+          <TextBlock Style="{StaticResource Body}" FontWeight="SemiBold" Text="{Binding ProposerText}" />
+          <TextBlock Style="{StaticResource Muted}" Text="{l:T Fix.AgentCaution}" Margin="0,4,0,0" Visibility="{Binding IsAgentProposal, Converter={StaticResource Visible}}" />
+          <TextBlock Style="{StaticResource Muted}" Text="{l:T Fix.OnlyYouApprove}" Margin="0,4,0,0" />
+        </StackPanel>
+      </c:ChamferBorder>
+
+      <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Fix.Label}" />
+      <TextBlock Style="{StaticResource H2}" Text="{Binding Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{Binding Explain}" Margin="0,10,0,8" Foreground="{StaticResource TextBrush}" />
+      <TextBlock Style="{StaticResource Small}" Text="{Binding Targets}" Visibility="{Binding Targets, Converter={StaticResource Visible}}" Margin="0,0,0,12" />
+      <ItemsControl ItemsSource="{Binding Badges}" ItemTemplate="{StaticResource BadgeTemplate}" Focusable="False" Margin="0,0,0,12">
+        <ItemsControl.ItemsPanel><ItemsPanelTemplate><WrapPanel /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
+      </ItemsControl>
+
+      <!-- Second, separate confirmation for one-way fixes -->
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource FailBrush}" Background="{StaticResource FailWashBrush}" Margin="0,4,0,18" Visibility="{Binding IsSecondConsent, Converter={StaticResource Visible}}">
+        <StackPanel>
+          <TextBlock Style="{StaticResource H3}" Text="{l:T Fix.Second.Title}" />
+          <TextBlock Style="{StaticResource Body}" Text="{l:T Fix.Second.Detail}" Margin="0,8,0,14" />
+          <CheckBox IsChecked="{Binding Understood, Mode=TwoWay}" Margin="0,0,0,16">
+            <TextBlock Style="{StaticResource Body}" Text="{l:T Fix.Second.Understand}" />
+          </CheckBox>
+          <StackPanel Orientation="Horizontal">
+            <Button Style="{StaticResource Secondary}" Content="{l:T Fix.Second.No}" Command="{Binding SkipCommand}" Margin="0,0,14,0" />
+            <c:ConsentButton Style="{StaticResource ConsentDanger}" Content="{l:T Fix.Second.Yes}" Command="{Binding SecondConsentCommand}" ArmDelay="0:0:1.5" />
+          </StackPanel>
+        </StackPanel>
+      </c:ChamferBorder>
+      <c:ChamferBorder Style="{StaticResource Card}">
+        <StackPanel>
+          <StackPanel Visibility="{Binding Notice, Converter={StaticResource Visible}}" Margin="0,0,0,14">
+            <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Fix.Notice}" />
+            <TextBlock Style="{StaticResource Body}" Text="{Binding Notice}" />
+          </StackPanel>
+          <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Fix.HowToUndo}" />
+          <TextBlock Style="{StaticResource Body}" Text="{Binding UndoText}" />
+          <ItemsControl ItemsSource="{Binding SideEffects}" ItemTemplate="{StaticResource BulletTemplate}" Focusable="False" Margin="0,10,0,0" />
+          <ItemsControl ItemsSource="{Binding Notes}" Focusable="False" Margin="0,10,0,0">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Grid Margin="0,0,0,6">
+                  <Grid.ColumnDefinitions><ColumnDefinition Width="28" /><ColumnDefinition /></Grid.ColumnDefinitions>
+                  <Ellipse Width="7" Height="7" Fill="{StaticResource InfoBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,6,0,0" />
+                  <TextBlock Grid.Column="1" Style="{StaticResource Body}" Text="{Binding}" />
+                </Grid>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </c:ChamferBorder>
+
+      <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Fix.WhatWeDo}" Margin="0,8,0,8" />
+      <ItemsControl ItemsSource="{Binding Steps}" ItemTemplate="{StaticResource NumberedTemplate}" Focusable="False" />
+
+      <ItemsControl ItemsSource="{Binding BlockReasons}" Focusable="False" Margin="0,8,0,0">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Grid Margin="0,0,0,6">
+              <Grid.ColumnDefinitions><ColumnDefinition Width="28" /><ColumnDefinition /></Grid.ColumnDefinitions>
+              <c:StatusGlyph Status="Warn" HorizontalAlignment="Left" VerticalAlignment="Top" />
+              <TextBlock Grid.Column="1" Style="{StaticResource Body}" Text="{Binding}" />
+            </Grid>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+
+      <!-- Normal consent -->
+      <StackPanel Orientation="Horizontal" Margin="0,18,0,0" Visibility="{Binding IsSecondConsent, Converter={StaticResource Visible}, ConverterParameter=invert}">
+        <c:ConsentButton Content="{l:T Fix.FixIt}" Command="{Binding ConsentCommand}" MinWidth="140" />
+        <Button Style="{StaticResource Ghost}" Content="{l:T Fix.Skip}" Command="{Binding SkipCommand}" Margin="12,0,0,0" />
+        <Button Style="{StaticResource Ghost}" Content="{l:T Fix.Diy}" Command="{Binding DiyCommand}" Visibility="{Binding DiyGuideId, Converter={StaticResource Visible}}" />
+      </StackPanel>
+
+
+      <Expander Style="{StaticResource Explainer}" Header="{l:T Common.WhatDoesThisMean}">
+        <ItemsControl ItemsSource="{Binding Technical}" Focusable="False">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate><TextBlock Style="{StaticResource Mono}" Text="{Binding}" Margin="0,0,0,3" /></DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </Expander>
+    </StackPanel>
+  </DataTemplate>
+
+  <!-- 7 Applying -->
+  <DataTemplate DataType="{x:Type vm:ApplyingViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Applying.Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{Binding Title}" Margin="0,8,0,20" />
+      <ItemsControl ItemsSource="{Binding Steps}" ItemTemplate="{StaticResource LineTemplate}" Focusable="False" />
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource WarnBrush}" Margin="0,14,0,0">
+        <TextBlock Style="{StaticResource Body}" Text="{l:T Applying.DontClose}" />
+      </c:ChamferBorder>
+    </StackPanel>
+  </DataTemplate>
+
+  <!-- 7b Deadman -->
+  <DataTemplate DataType="{x:Type vm:DeadmanViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Deadman.Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{l:T Deadman.Lead}" Margin="0,8,0,22" />
+      <TextBlock Text="{Binding SecondsLeft}" FontFamily="{StaticResource DisplayFont}" FontWeight="SemiBold" FontSize="56" Foreground="{StaticResource BoneBrush}" />
+      <ProgressBar Style="{StaticResource ProgressLine}" Value="{Binding Fraction, Mode=OneWay}" Maximum="1" Width="420" HorizontalAlignment="Left" Margin="0,4,0,8" />
+      <TextBlock Style="{StaticResource Small}" Text="{Binding CountdownText}" />
+      <StackPanel Orientation="Horizontal" Margin="0,24,0,0">
+        <c:ConsentButton Content="{l:T Deadman.Keep}" Command="{Binding KeepCommand}" MinWidth="150" />
+        <Button Style="{StaticResource Secondary}" Content="{l:T Deadman.Undo}" Command="{Binding UndoCommand}" Margin="12,0,0,0" />
+      </StackPanel>
+    </StackPanel>
+  </DataTemplate>
+
+  <!-- 8b Restart -->
+  <DataTemplate DataType="{x:Type vm:RestartViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Restart.Title}" Visibility="{Binding IsFirmware, Converter={StaticResource Visible}, ConverterParameter=invert}" />
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Restart.Bios.Title}" Visibility="{Binding IsFirmware, Converter={StaticResource Visible}}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{l:T Restart.Lead}" Margin="0,8,0,8" Visibility="{Binding IsFirmware, Converter={StaticResource Visible}, ConverterParameter=invert}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{l:T Restart.Bios.Lead}" Margin="0,8,0,8" Visibility="{Binding IsFirmware, Converter={StaticResource Visible}}" />
+      <TextBlock Style="{StaticResource Body}" Text="{Binding ResumeText}" Margin="0,8,0,16" />
+      <ItemsControl ItemsSource="{Binding Warnings}" Focusable="False">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Grid Margin="0,0,0,8">
+              <Grid.ColumnDefinitions><ColumnDefinition Width="28" /><ColumnDefinition /></Grid.ColumnDefinitions>
+              <c:StatusGlyph Status="Warn" HorizontalAlignment="Left" VerticalAlignment="Top" />
+              <TextBlock Grid.Column="1" Style="{StaticResource Body}" Text="{Binding}" />
+            </Grid>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+      <ItemsControl ItemsSource="{Binding BlockReasons}" Focusable="False">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Grid Margin="0,0,0,8">
+              <Grid.ColumnDefinitions><ColumnDefinition Width="28" /><ColumnDefinition /></Grid.ColumnDefinitions>
+              <c:StatusGlyph Status="Fail" HorizontalAlignment="Left" VerticalAlignment="Top" />
+              <TextBlock Grid.Column="1" Style="{StaticResource Body}" Text="{Binding}" />
+            </Grid>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource InfoBrush}" Visibility="{Binding ChoseLater, Converter={StaticResource Visible}}" Margin="0,8,0,0">
+        <TextBlock Style="{StaticResource Body}" Text="{l:T Restart.Later.Done}" />
+      </c:ChamferBorder>
+      <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
+        <c:ConsentButton Content="{l:T Restart.Now}" Command="{Binding RestartNowCommand}" MinWidth="150" Visibility="{Binding IsFirmware, Converter={StaticResource Visible}, ConverterParameter=invert}" />
+        <c:ConsentButton Content="{l:T Restart.Bios.Now}" Command="{Binding RestartNowCommand}" MinWidth="150" Visibility="{Binding IsFirmware, Converter={StaticResource Visible}}" />
+        <Button Style="{StaticResource Ghost}" Content="{l:T Restart.Later}" Command="{Binding LaterCommand}" Margin="12,0,0,0" />
+      </StackPanel>
+    </StackPanel>
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type vm:RestartingViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Restarting.Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{l:T Restarting.Lead}" Margin="0,8,0,20" />
+      <TextBlock Style="{StaticResource Body}" Text="{l:T Restarting.Bios}" Visibility="{Binding IsFirmware, Converter={StaticResource Visible}}" Margin="0,0,0,20" />
+      <Button Style="{StaticResource Secondary}" Content="{l:T Restarting.Simulate}" Command="{Binding SimulateResumeCommand}" Visibility="{Binding Shell.IsDemo, Converter={StaticResource Visible}}" />
+    </StackPanel>
+  </DataTemplate>
+
+  <!-- 9 Welcome back -->
+  <DataTemplate DataType="{x:Type vm:ResumeViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Resume.Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{l:T Resume.Lead}" Margin="0,8,0,20" />
+      <ItemsControl ItemsSource="{Binding Checks}" ItemTemplate="{StaticResource LineTemplate}" Focusable="False" />
+      <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
+        <Button Style="{StaticResource Primary}" Content="{l:T Common.Continue}" Command="{Binding ContinueCommand}" MinWidth="140" />
+        <c:ConsentButton Style="{StaticResource ConsentSecondary}" Content="{l:T Resume.UndoAll}" Command="{Binding UndoAllCommand}" Margin="12,0,0,0" />
+      </StackPanel>
+    </StackPanel>
+  </DataTemplate>
+
+  <!-- 8a + 10 Test / Did it help? -->
+  <DataTemplate DataType="{x:Type vm:OutcomeViewModel}">
+    <Grid>
+      <StackPanel Visibility="{Binding AskOutcome, Converter={StaticResource Visible}, ConverterParameter=invert}">
+        <TextBlock Style="{StaticResource H2}" Text="{l:T Outcome.Test.Title}" />
+        <TextBlock Style="{StaticResource Lead}" Text="{l:T Outcome.Test.Lead}" Margin="0,8,0,22" />
+        <StackPanel Orientation="Horizontal">
+          <Button Style="{StaticResource Primary}" Content="{l:T Outcome.Test.Start}" Command="{Binding StartTestCommand}" />
+          <Button Style="{StaticResource Ghost}" Content="{l:T Outcome.Test.Skip}" Command="{Binding SkipTestCommand}" Margin="12,0,0,0" />
+        </StackPanel>
+      </StackPanel>
+      <StackPanel Visibility="{Binding AskOutcome, Converter={StaticResource Visible}}">
+        <TextBlock Style="{StaticResource H2}" Text="{l:T Outcome.Title}" />
+        <TextBlock Style="{StaticResource Lead}" Text="{Binding FixTitle}" Margin="0,8,0,18" />
+        <c:ChamferBorder Style="{StaticResource Card}" Visibility="{Binding HasTestLines, Converter={StaticResource Visible}}">
+          <StackPanel>
+            <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Outcome.Seen}" />
+            <ItemsControl ItemsSource="{Binding TestLines}" ItemTemplate="{StaticResource BulletTemplate}" Focusable="False" />
+          </StackPanel>
+        </c:ChamferBorder>
+        <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+          <Button Style="{StaticResource Primary}" Content="{l:T Outcome.Yes}" Command="{Binding AnswerCommand}" CommandParameter="fixed" />
+          <Button Style="{StaticResource Secondary}" Content="{l:T Outcome.No}" Command="{Binding AnswerCommand}" CommandParameter="notfixed" Margin="12,0,0,0" />
+          <Button Style="{StaticResource Ghost}" Content="{l:T Outcome.NotSure}" Command="{Binding AnswerCommand}" CommandParameter="unsure" Margin="12,0,0,0" />
+        </StackPanel>
+        <TextBlock Style="{StaticResource Small}" Text="{l:T Outcome.NoMeans}" Margin="0,14,0,0" />
+      </StackPanel>
+    </Grid>
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type vm:MonitoringViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Monitor.Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{l:T Monitor.Lead}" Margin="0,8,0,20" />
+      <ItemsControl ItemsSource="{Binding Live}" ItemTemplate="{StaticResource LineTemplate}" Focusable="False" />
+    </StackPanel>
+  </DataTemplate>
+
+  <!-- 11 Guide -->
+  <DataTemplate DataType="{x:Type vm:GuideViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Guide.Label}" />
+      <TextBlock Style="{StaticResource H2}" Text="{Binding Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{Binding BucketText}" Margin="0,8,0,8" />
+      <TextBlock Style="{StaticResource Body}" Text="{Binding BranchText}" Visibility="{Binding BranchText, Converter={StaticResource Visible}}" Margin="0,0,0,8" />
+      <TextBlock Style="{StaticResource Small}" Text="{Binding VendorLine}" Visibility="{Binding VendorLine, Converter={StaticResource Visible}}" Margin="0,0,0,14" />
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource WarnBrush}" Visibility="{Binding HasPreflight, Converter={StaticResource Visible}}">
+        <StackPanel>
+          <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Guide.BeforeYouStart}" />
+          <ItemsControl ItemsSource="{Binding Preflight}" ItemTemplate="{StaticResource BulletTemplate}" Focusable="False" />
+        </StackPanel>
+      </c:ChamferBorder>
+      <ItemsControl ItemsSource="{Binding Steps}" Focusable="False" Margin="0,8,0,0">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <c:ChamferBorder Style="{StaticResource Card}" Padding="18,14" Chamfer="10">
+              <Grid>
+                <Grid.ColumnDefinitions><ColumnDefinition Width="40" /><ColumnDefinition /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Number}" FontFamily="{StaticResource DisplayFont}" FontSize="20" FontWeight="SemiBold" Foreground="{StaticResource TextMutedBrush}" Visibility="{Binding IsDone, Converter={StaticResource Visible}, ConverterParameter=invert}" />
+                <c:StatusGlyph Status="Ok" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,3,0,0" Visibility="{Binding IsDone, Converter={StaticResource Visible}}" />
+                <StackPanel Grid.Column="1">
+                  <TextBlock Style="{StaticResource Body}" Text="{Binding Text}" />
+                  <Button Style="{StaticResource Secondary}" Content="{Binding ActionText}" Command="{Binding ActionCommand}" Visibility="{Binding HasAction, Converter={StaticResource Visible}}" Margin="0,10,0,0" Padding="14,6" MinHeight="32" FontSize="13" />
+                </StackPanel>
+                <Button Grid.Column="2" Style="{StaticResource Ghost}" Content="{l:T Guide.MarkDone}" Command="{Binding DoneCommand}" VerticalAlignment="Top" Visibility="{Binding IsDone, Converter={StaticResource Visible}, ConverterParameter=invert}" />
+              </Grid>
+            </c:ChamferBorder>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+      <StackPanel Visibility="{Binding HasOtherBranches, Converter={StaticResource Visible}}" Margin="0,10,0,0">
+        <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Guide.OtherBranches}" />
+        <ItemsControl ItemsSource="{Binding OtherBranches}" Focusable="False">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <Button Style="{StaticResource Link}" Content="{Binding Text}" Command="{Binding Pick}" Margin="0,0,0,4" />
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </StackPanel>
+      <TextBlock Style="{StaticResource Small}" Text="{Binding DocsLine}" Visibility="{Binding DocsLine, Converter={StaticResource Visible}}" Margin="0,16,0,0" />
+      <Button Style="{StaticResource Ghost}" Content="{l:T Guide.Later}" Command="{Binding LaterCommand}" Margin="0,14,0,0" />
+    </StackPanel>
+  </DataTemplate>
+
+  <!-- 12 Completed -->
+  <DataTemplate DataType="{x:Type vm:CompletedViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{Binding Headline}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{Binding SubLine}" Margin="0,8,0,20" />
+      <ItemsControl ItemsSource="{Binding Attempts}" ItemTemplate="{StaticResource LineTemplate}" Focusable="False" />
+      <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
+        <Button Style="{StaticResource Primary}" Content="{l:T Completed.Report}" Command="{Binding ReportCommand}" />
+        <Button Style="{StaticResource Secondary}" Content="{l:T Completed.Undo}" Command="{Binding UndoCommand}" Margin="12,0,0,0" />
+        <Button Style="{StaticResource Ghost}" Content="{l:T Completed.Watch}" Command="{Binding WatchCommand}" Margin="12,0,0,0" />
+      </StackPanel>
+    </StackPanel>
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type vm:AttentionViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Attention.Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{Binding Reason}" Margin="0,8,0,20" />
+      <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Attention.Changed}" />
+      <ItemsControl ItemsSource="{Binding Changes}" ItemTemplate="{StaticResource LineTemplate}" Focusable="False" />
+      <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
+        <c:ConsentButton Content="{l:T Attention.UndoAll}" Command="{Binding UndoAllCommand}" />
+        <c:ConsentButton Style="{StaticResource ConsentSecondary}" Content="{l:T Attention.Keep}" Command="{Binding KeepCommand}" Margin="12,0,0,0" />
+      </StackPanel>
+    </StackPanel>
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type vm:UndoConsentViewModel}">
+    <StackPanel>
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource InfoBrush}" Margin="0,0,0,18">
+        <StackPanel>
+          <TextBlock Style="{StaticResource Body}" FontWeight="SemiBold" Text="{Binding ProposerText}" />
+          <TextBlock Style="{StaticResource Muted}" Text="{l:T Fix.OnlyYouApprove}" Margin="0,4,0,0" />
+        </StackPanel>
+      </c:ChamferBorder>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T UndoConsent.Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{Binding FixTitle}" Margin="0,8,0,20" />
+      <TextBlock Style="{StaticResource Body}" Foreground="{StaticResource WarnBrush}" Text="{l:T Undo.OneWay}" Margin="0,0,0,16" Visibility="{Binding CanUndo, Converter={StaticResource Visible}, ConverterParameter=invert}" />
+      <StackPanel Orientation="Horizontal">
+        <c:ConsentButton Content="{l:T UndoConsent.Yes}" Command="{Binding UndoCommand}" Visibility="{Binding CanUndo, Converter={StaticResource Visible}}" />
+        <Button Style="{StaticResource Secondary}" Content="{l:T UndoConsent.No}" Command="{Binding KeepCommand}" Margin="12,0,0,0" />
+      </StackPanel>
+    </StackPanel>
+  </DataTemplate>
+</ResourceDictionary>

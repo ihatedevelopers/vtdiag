@@ -1,0 +1,173 @@
+{
+  "id": "guide.secureboot.policy_wave",
+  "titleKey": "guide.secureboot.policy_wave.title",
+  "summaryKey": "guide.secureboot.policy_wave.summary",
+  "bucket": "guidedManual",
+  "risk": "high",
+  "reboot": "required",
+  "appliesTo": [
+    "secure-boot-policy-wave-2026",
+    "van9101-attestation"
+  ],
+  "preflight": [
+    {
+      "probe": "sec.bitlocker_on",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.secureboot.policy_wave.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "sb_off",
+      "when": [
+        {
+          "signal": "sec.secureboot.on",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.secureboot.policy_wave.sb_off.text",
+      "steps": [
+        {
+          "textKey": "guide.secureboot.policy_wave.sb_off.s1",
+          "action": "runCheck",
+          "target": "sec.secureboot.on"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.sb_off.s2",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "ca2023_missing",
+      "when": [
+        {
+          "signal": "sec.secureboot.db_missing_ca2023",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.secureboot.policy_wave.ca2023_missing.text",
+      "steps": [
+        {
+          "textKey": "guide.secureboot.policy_wave.ca2023_missing.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsupdate"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.ca2023_missing.s2",
+          "action": "openSettings",
+          "target": "ms-settings:windowsdefender"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.ca2023_missing.s3",
+          "action": "runCheck",
+          "target": "sec.secureboot.db_missing_ca2023"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.ca2023_missing.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.ca2023_missing.s5",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.ca2023_missing.s6",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.ca2023_missing.s7",
+          "action": "runCheck",
+          "target": "sec.secureboot.db_missing_ca2023"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.secureboot.db_missing_ca2023",
+          "is": "false"
+        }
+      ],
+      "nextOnFail": "sb_on"
+    },
+    {
+      "id": "sb_on",
+      "when": [
+        {
+          "signal": "sec.secureboot.on",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.secureboot.policy_wave.sb_on.text",
+      "steps": [
+        {
+          "textKey": "guide.secureboot.policy_wave.sb_on.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsupdate"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.sb_on.s2",
+          "action": "openSettings",
+          "target": "ms-settings:windowsdefender"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.sb_on.s3",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.sb_on.s4",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.sb_on.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.sb_on.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.sb_on.s7",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "attestation_9101",
+      "when": [],
+      "textKey": "guide.secureboot.policy_wave.attestation_9101.text",
+      "steps": [
+        {
+          "textKey": "guide.secureboot.policy_wave.attestation_9101.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.attestation_9101.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.attestation_9101.s3",
+          "action": "openSettings",
+          "target": "ms-settings:windowsupdate"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.attestation_9101.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.secureboot.policy_wave.attestation_9101.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "docsPath": "docs/guides/secure-boot.md",
+  "outcomeAskKey": "guide.secureboot.policy_wave.outcome"
+}

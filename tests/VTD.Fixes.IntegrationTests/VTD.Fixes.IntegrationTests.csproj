@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: A3 Fixes & Journal. Real Win32 ports. Every test that changes system state is skipped unless
+       VTD_ALLOW_SYSTEM_WRITES=1 (CI runner, VM or Windows Sandbox only; never on the owner's PC). xUnit v3 packages and
+       analyzers come from Directory.Build.targets (Test layer). -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VTD.Fixes.IntegrationTests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VTD.Fixes\VTD.Fixes.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Journal\VTD.Journal.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Testing.Fakes\VTD.Testing.Fakes.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Contracts\VTD.Contracts.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Knowledge\VTD.Knowledge.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\VTD.Fixes.Tests\Fakes\FakeSystem.cs" Link="Fakes\FakeSystem.cs" />
+  </ItemGroup>
+</Project>

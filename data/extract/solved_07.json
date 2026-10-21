@@ -1,0 +1,1024 @@
+[
+ {
+  "problem": "Black screen / stuck on launch caused by Nahimic audio service (esp. Lenovo laptops) after Vanguard/Valorant update",
+  "category": "crash_freeze_bsod",
+  "error_codes": [],
+  "symptoms": [
+   "VALORANT opens to a black screen and stays frozen, process uses only ~13-15 MB RAM",
+   "Riot client/game stuck after update, friends list missing",
+   "Alt+Enter does nothing"
+  ],
+  "root_causes": [
+   "Nahimic service/driver (an unsigned DLL from a recent Nahimic update on Lenovo laptops) conflicts with Vanguard"
+  ],
+  "fixes": [
+   {
+    "fix": "Disable/stop the Nahimic service: Win+R -> services.msc (or msconfig -> Services) -> Nahimic -> Stop and set Disabled / disable at startup; no need to uninstall; restart then launch",
+    "evidence": "op_confirmed",
+    "count": 5
+   },
+   {
+    "fix": "Run Riot Client (RiotClientServices.exe) as administrator; this also worked for several Lenovo users",
+    "evidence": "op_confirmed",
+    "count": 2
+   },
+   {
+    "fix": "Install FXSound as replacement audio enhancer after disabling Nahimic",
+    "evidence": "suggested",
+    "count": 1
+   },
+   {
+    "fix": "Community fix script: github samgeorg777/nahimic-game-crash-fix",
+    "evidence": "suggested",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "Nahimic service present/running (NahimicService, nahimic*.exe)",
+   "Unsigned/blocked Nahimic DLL loaded in VALORANT process",
+   "Lenovo laptop manufacturer",
+   "VALORANT process stuck at tiny memory footprint"
+  ],
+  "auto_fixable": "yes",
+  "thread_ids": [
+   "1wnbhxi",
+   "1wny8pn",
+   "1wo1tew",
+   "1wpmsy6",
+   "1wqutzd",
+   "1wub2t7",
+   "1wreu5w",
+   "1wnnlal"
+  ]
+ },
+ {
+  "problem": "Run Riot Client as administrator fixes freezes, stutter, FPS drops and black screen after updates",
+  "category": "fps_performance",
+  "error_codes": [],
+  "symptoms": [
+   "Freeze when pressing a keyboard key / in match",
+   "Mouse-move FPS drops and stutter after Oct 2026 update",
+   "FPS gradually going down (20 fps on homepage)",
+   "Black screen on launch"
+  ],
+  "root_causes": [
+   "Unclear; Vanguard apparently handles non-elevated Riot processes badly (possibly blocked hooks)"
+  ],
+  "fixes": [
+   {
+    "fix": "Right-click RiotClientServices.exe (Riot Client root folder, not VALORANT exe) -> Properties -> Compatibility -> Run as administrator; fully close Riot Client incl. tray and relaunch",
+    "evidence": "op_confirmed",
+    "count": 4
+   },
+   {
+    "fix": "Run only the Riot Client elevated, not VALORANT-Win64-Shipping.exe (setting shipping exe to admin does not launch)",
+    "evidence": "guide",
+    "count": 2
+   },
+   {
+    "fix": "Run VALORANT.exe as admin also worked for some",
+    "evidence": "suggested",
+    "count": 2
+   },
+   {
+    "fix": "Did not work for everyone (several reported no change)",
+    "evidence": "suggested",
+    "count": 2
+   }
+  ],
+  "diagnostic_signals": [
+   "Riot Client running non-elevated",
+   "Vanguard/VGC running",
+   "Third-party overlay software present"
+  ],
+  "auto_fixable": "yes",
+  "thread_ids": [
+   "1wojomv",
+   "1wo2xpz",
+   "1x2bvn7",
+   "1x8q742",
+   "1x1gvs3",
+   "1x5frhe",
+   "1x6rgrn",
+   "1wreu5w",
+   "1x44sj3",
+   "1wo1tew"
+  ]
+ },
+ {
+  "problem": "Stutter / FPS drops / freezes caused by Realtek 2.5GbE Family Controller (often when using Wi-Fi)",
+  "category": "fps_performance",
+  "error_codes": [],
+  "symptoms": [
+   "Periodic micro-freezes every few seconds to 1 minute with audio cuts",
+   "Stutter, frame-time spikes, CPU (game) time spikes, ping spikes",
+   "Mostly AMD/new high-end PCs (9800X3D, 9070 XT, 7900X, 14700KF)"
+  ],
+  "root_causes": [
+   "Realtek PCIe/Gaming 2.5GbE controller (rt25cx21 driver) repeatedly throws errors/resets, visible in Event Viewer, interfering with VALORANT"
+  ],
+  "fixes": [
+   {
+    "fix": "Device Manager -> Network adapters -> Realtek (Gaming) 2.5GbE Family Controller -> Disable device (only if using Wi-Fi/other NIC); recheck after Windows updates which may re-enable it",
+    "evidence": "op_confirmed",
+    "count": 5
+   },
+   {
+    "fix": "Update Realtek 2.5GbE driver from motherboard vendor / BIOS update",
+    "evidence": "suggested",
+    "count": 3
+   },
+   {
+    "fix": "Disable Hardware-accelerated GPU scheduling (Settings > System > Display > Graphics) together with the NIC disable",
+    "evidence": "guide",
+    "count": 1
+   },
+   {
+    "fix": "Disable energy-saving options in NIC device properties (power management/Green Ethernet)",
+    "evidence": "suggested",
+    "count": 1
+   },
+   {
+    "fix": "Use a non-Realtek NIC or PCIe Wi-Fi adapter if only Ethernet is available",
+    "evidence": "suggested",
+    "count": 1
+   },
+   {
+    "fix": "Did not help in some cases (Wi-Fi-only users still stuttering, disabling gave packet loss for Ethernet users)",
+    "evidence": "suggested",
+    "count": 3
+   }
+  ],
+  "diagnostic_signals": [
+   "Realtek 2.5GbE / rt25cx21 present in Get-NetAdapter",
+   "Event Viewer errors from rt25cx21 or NIC resets",
+   "Whether Ethernet adapter is unused (Wi-Fi connected)",
+   "HAGS enabled"
+  ],
+  "auto_fixable": "partial",
+  "thread_ids": [
+   "1wo7vz5",
+   "1wq0ril",
+   "1wr7w0o",
+   "1wt9nix",
+   "1x42kh7",
+   "1x0c7a6",
+   "1x1f6jt",
+   "1x5srpf",
+   "1x8a9gf",
+   "1wzitkn",
+   "1wwdbnj",
+   "1ww30hv"
+  ]
+ },
+ {
+  "problem": "Stutter/FPS drops/loading hangs after Oct 5 2026 patch caused by conflicting third-party software (RTSS/RivaTuner, Premier Opinion, ASUS ScreenXpert, Stardock Fences, GearUP Booster, Huawei PC Manager, MoniVisor)",
+  "category": "fps_performance",
+  "error_codes": [],
+  "symptoms": [
+   "FPS drops from 300+ to 10-80 especially when moving mouse, opening menu, placing smokes, buy phase",
+   "Stuck on loading screen",
+   "Low client FPS warning",
+   "Vanguard CPU use 60-90% at start",
+   "Strafe tearing/micro-stutter",
+   "Mouse freezes, menu glitches"
+  ],
+  "root_causes": [
+   "Vanguard now blocks/hostile to hooking monitoring software and unknown DLL injectors; faulting module visible in reliability monitor (perfmon /rel): pmls64.dll (Premier Opinion), RTSSHooks64.dll, AsusWallpaperSettingHook.dll (ASUS ScreenXpert), PerfWndMonModule.dll (Huawei PC Manager)"
+  ],
+  "fixes": [
+   {
+    "fix": "Close/uninstall RivaTuner Statistics Server (RTSS) before playing; MSI Afterburner can stay if all monitoring items are unchecked so RTSS does not autorestart, or add Riot client + VALORANT exes to RTSS exclusions",
+    "evidence": "op_confirmed",
+    "count": 8
+   },
+   {
+    "fix": "Uninstall Premier Opinion (pmls64.dll) via Installed apps",
+    "evidence": "op_confirmed",
+    "count": 3
+   },
+   {
+    "fix": "Disable ASUS ScreenXpert service in services.msc; also Asus Update/MultiAntenna/Dial/Cert services, AsusMouseAgent, AsusSmartDisplayControl",
+    "evidence": "op_confirmed",
+    "count": 2
+   },
+   {
+    "fix": "Uninstall Huawei PC Manager or MoniVisor (C:\\Program Files (x86)\\Windows Assistant App\\MV\\unins000.exe)",
+    "evidence": "guide",
+    "count": 2
+   },
+   {
+    "fix": "Riot staff list: Rivatuner/RTSS, Stardock, Premier Opinion, ASUS ScreenXpert, GearUP Booster must be disabled/uninstalled; update GPU drivers; add C:\\Riot Games and C:\\Program Files\\Riot Vanguard to antivirus exclusions",
+    "evidence": "guide",
+    "count": 1
+   },
+   {
+    "fix": "Clean boot (msconfig, hide Microsoft services, disable third-party services/startup items) then re-enable one by one; find culprit via perfmon /rel faulting module path",
+    "evidence": "op_confirmed",
+    "count": 2
+   },
+   {
+    "fix": "Turn off GPU overclock",
+    "evidence": "op_confirmed",
+    "count": 1
+   },
+   {
+    "fix": "Set vgc.exe CPU affinity to a single core each launch (Task Manager > Details)",
+    "evidence": "suggested",
+    "count": 3
+   }
+  ],
+  "diagnostic_signals": [
+   "Running processes: RTSS (RTSS.exe, RTSSHooks64.dll), MSI Afterburner, Premier Opinion, Stardock Fences, GearUP Booster, ASUS ScreenXpert/Armoury Crate services, Huawei PC Manager, MoniVisor, SteelSeries/Razer software",
+   "Reliability Monitor / Event Viewer crash entries for VALORANT-Win64-Shipping.exe with faulting module DLL",
+   "Vanguard CPU usage high"
+  ],
+  "auto_fixable": "partial",
+  "thread_ids": [
+   "1x1ct30",
+   "1x1de0z",
+   "1x1f6jt",
+   "1x1fk3e",
+   "1x1h2qy",
+   "1x1kch8",
+   "1x276uy",
+   "1x44sj3",
+   "1x4wevx",
+   "1x5frhe",
+   "1x6881x",
+   "1x7p5s5",
+   "1x92ccc",
+   "1x0c7a6",
+   "1x8a9gf",
+   "1x4j9jt",
+   "1x8tols",
+   "1x7ity3",
+   "1x5srpf",
+   "1x273bp",
+   "1x1z13h",
+   "1x1hstm",
+   "1x7dwtr",
+   "1x0ajiw",
+   "1wzitkn",
+   "1x1jmah",
+   "1wn07ui"
+  ]
+ },
+ {
+  "problem": "Shader compilation stutter on UE5/DX11 (no persistent shader cache)",
+  "category": "fps_performance",
+  "error_codes": [],
+  "symptoms": [
+   "Stutter for first minutes after launch, micro-stutter during fights, ability use or skin finishers while FPS counter looks normal"
+  ],
+  "root_causes": [
+   "Game engine recompiles shaders each launch (DX11 on UE5 cannot persist shader cache) - claimed by commenters"
+  ],
+  "fixes": [
+   {
+    "fix": "Use SCSKiller: Library tab -> add game by selecting VALORANT.exe (not Win64-Shipping), clear shader cache, then Compile; author reported smoother frames",
+    "evidence": "op_confirmed",
+    "count": 1
+   },
+   {
+    "fix": "Update ethernet and audio drivers",
+    "evidence": "suggested",
+    "count": 1
+   },
+   {
+    "fix": "Add RAM / dual-channel (8 GB single channel)",
+    "evidence": "suggested",
+    "count": 1
+   },
+   {
+    "fix": "Pre-compile shaders with SCSKiller",
+    "evidence": "suggested",
+    "count": 3
+   }
+  ],
+  "diagnostic_signals": [
+   "RAM size/channel configuration",
+   "Shader cache size in NVIDIA/AMD cache folders"
+  ],
+  "auto_fixable": "partial",
+  "thread_ids": [
+   "1x50ucb",
+   "1ww30hv",
+   "1x8a9gf",
+   "1x8tols"
+  ]
+ },
+ {
+  "problem": "Critical error 'A critical error has occurred and the process must be terminated' due to NVIDIA Vertical sync set to Fast",
+  "category": "gpu_driver",
+  "error_codes": [],
+  "symptoms": [
+   "Critical error crash in lobby/after match found, after Sept 2026 update",
+   "NVIDIA driver/render errors in logs"
+  ],
+  "root_causes": [
+   "NVIDIA Control Panel Vertical sync = Fast"
+  ],
+  "fixes": [
+   {
+    "fix": "NVIDIA Control Panel -> Manage 3D settings -> Vertical sync: change Fast to 'Use the 3D application setting', apply, relaunch",
+    "evidence": "guide",
+    "count": 1
+   },
+   {
+    "fix": "Same fix confirmed by ~8 commenters (also resetting 3D settings)",
+    "evidence": "op_confirmed",
+    "count": 1
+   },
+   {
+    "fix": "Clean reinstall of both dGPU and iGPU drivers (iGPU reinstall stopped crashes for one commenter)",
+    "evidence": "suggested",
+    "count": 1
+   },
+   {
+    "fix": "Roll back NVIDIA driver (to July version) plus run Riot Client as admin",
+    "evidence": "guide",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "NVIDIA Control Panel vsync mode Fast",
+   "GPU driver errors in Event Viewer"
+  ],
+  "auto_fixable": "partial",
+  "thread_ids": [
+   "1wozg4k",
+   "1wnnlal",
+   "1wo2xpz"
+  ]
+ },
+ {
+  "problem": "VAN 9001/9003 and Restriction errors: TPM 2.0 / Secure Boot requirement unmet",
+  "category": "tpm_secureboot_bios",
+  "error_codes": [
+   "VAN 9001",
+   "VAN 9003",
+   "VAN: Restriction 2"
+  ],
+  "symptoms": [
+   "Vanguard kicks player with TPM 2.0 / Secure Boot errors",
+   "Windows 10 on old hardware without TPM 2.0"
+  ],
+  "root_causes": [
+   "No TPM 2.0 on board (X99, H61, TPM 1.2 laptops) or Secure Boot disabled/misconfigured",
+   "Account flagged as suspicious so TPM requirement is enforced even on Windows 10"
+  ],
+  "fixes": [
+   {
+    "fix": "Add a TPM 2.0 module on motherboard header (e.g. JLPC1 on Huananzhi X99), enable Security Device Support, set CSM Disabled/UEFI, delete Secure Boot variables, enroll factory default keys, enable Secure Boot; verify tpm.msc ready and msinfo32 Secure Boot State On; full shutdown if TPM not detected",
+    "evidence": "guide",
+    "count": 1
+   },
+   {
+    "fix": "If hardware has only TPM 1.2/no TPM and account is flagged, only options are another account or new hardware; update BIOS first",
+    "evidence": "suggested",
+    "count": 3
+   },
+   {
+    "fix": "Update to latest BIOS",
+    "evidence": "suggested",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "Get-Tpm / tpm.msc: TPM present, version 2.0, ready",
+   "Confirm-SecureBootUEFI",
+   "msinfo32 BIOS mode UEFI, Secure Boot State",
+   "BIOS version age",
+   "Disk partition style GPT vs MBR"
+  ],
+  "auto_fixable": "partial",
+  "thread_ids": [
+   "1x17egj",
+   "1wrfkb6",
+   "1x9rqcc",
+   "1woutmw"
+  ]
+ },
+ {
+  "problem": "Secure Boot violation boot loop after enabling Secure Boot / default keys",
+  "category": "tpm_secureboot_bios",
+  "error_codes": [],
+  "symptoms": [
+   "Red 'Secure Boot Violation - unauthorized changes' panel at boot after installing default keys"
+  ],
+  "root_causes": [
+   "Corrupted EFI boot files / key enrollment mismatch on ASUS ROG Z270"
+  ],
+  "fixes": [
+   {
+    "fix": "In BIOS set OS type from Windows UEFI to 'Other OS', clear Secure Boot keys, save; then in Windows run admin cmd to rebuild EFI boot files; afterwards Secure Boot State shows On in msinfo32",
+    "evidence": "op_confirmed",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "Confirm-SecureBootUEFI",
+   "msinfo32 Secure Boot State",
+   "EFI boot files integrity"
+  ],
+  "auto_fixable": "no",
+  "thread_ids": [
+   "1x5njgc"
+  ]
+ },
+ {
+  "problem": "Memory integrity / IOMMU / UEFI toggle causes black screen or stuck at logo on boot",
+  "category": "tpm_secureboot_bios",
+  "error_codes": [],
+  "symptoms": [
+   "Black screen or stuck at ASUS logo after enabling memory integrity; BIOS save then black screen on boot (IOMMU/UEFI)"
+  ],
+  "root_causes": [
+   "Unknown; BIOS/UEFI mode or partition style conflict (suggested GPT vs MBR, hypervisor setting)"
+  ],
+  "fixes": [
+   {
+    "fix": "Reset the PC (Windows reset)",
+    "evidence": "op_confirmed",
+    "count": 1
+   },
+   {
+    "fix": "bcdedit /set hypervisorlaunchtype off and verify disk is GPT",
+    "evidence": "suggested",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "Memory integrity (HVCI) state",
+   "Disk partition style",
+   "BIOS mode"
+  ],
+  "auto_fixable": "no",
+  "thread_ids": [
+   "1wxj2w0",
+   "1x69uuh"
+  ]
+ },
+ {
+  "problem": "Valorant says Windows 10 version is too old",
+  "category": "install_update_corrupt",
+  "error_codes": [],
+  "symptoms": [
+   "Vanguard demands higher Windows 10 version; winver shows 1909"
+  ],
+  "root_causes": [
+   "Outdated Windows build and Windows Update unable to upgrade"
+  ],
+  "fixes": [
+   {
+    "fix": "Download the Windows ISO from Microsoft site, mount it and run setup to upgrade; check winver afterwards",
+    "evidence": "op_confirmed",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "winver build number (needs recent 22H2/19045.x)",
+   "Windows Update status"
+  ],
+  "auto_fixable": "partial",
+  "thread_ids": [
+   "1wvbufh"
+  ]
+ },
+ {
+  "problem": "High ping / packet loss from ISP routing to Riot servers (Florida/Georgia, Jakarta, Cape Town, Riyadh)",
+  "category": "network_ping",
+  "error_codes": [],
+  "symptoms": [
+   "Ping doubled (e.g. 21 to 53 ms) on usual region, packet loss to GA/VA/IL servers",
+   "Ping stuck near 90 despite fast internet"
+  ],
+  "root_causes": [
+   "ISP routing issues / regional outages (undersea cable cuts), not local hardware"
+  ],
+  "fixes": [
+   {
+    "fix": "Use Cloudflare WARP (1.1.1.1 client, no account) connected before launching game; took ping from 72 to 35 ms",
+    "evidence": "guide",
+    "count": 1
+   },
+   {
+    "fix": "Contact ISP; test on another connection (OP in Jakarta found their ISP was the cause)",
+    "evidence": "op_confirmed",
+    "count": 1
+   },
+   {
+    "fix": "Use LAN cable, avoid 2.4GHz Wi-Fi",
+    "evidence": "suggested",
+    "count": 1
+   },
+   {
+    "fix": "Open Riot support ticket and run ping tester",
+    "evidence": "suggested",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "Ping/packet loss/traceroute to Riot servers",
+   "Wired vs Wi-Fi connection",
+   "Cloudflare speed test stability"
+  ],
+  "auto_fixable": "no",
+  "thread_ids": [
+   "1wvf1o4",
+   "1wwza7k",
+   "1wwdgdv",
+   "1wubl27",
+   "1x40bm7"
+  ]
+ },
+ {
+  "problem": "In-game voice chat not working (X on icons, no team voice) fixed by changing DNS / using Cloudflare WARP",
+  "category": "audio_mic",
+  "error_codes": [],
+  "symptoms": [
+   "Voice chat icons marked with X; can hear self in loopback but not others in match; volume sliders missing"
+  ],
+  "root_causes": [
+   "ISP DNS / IPv6 routing preventing Riot voice server connection"
+  ],
+  "fixes": [
+   {
+    "fix": "Change to public DNS (Google 8.8.8.8 or Cloudflare 1.1.1.1); one reported it lasted only ~3 days because ISP reset it",
+    "evidence": "op_confirmed",
+    "count": 1
+   },
+   {
+    "fix": "Cloudflare WARP fixed voice chat (slightly higher ping)",
+    "evidence": "op_confirmed",
+    "count": 1
+   },
+   {
+    "fix": "Disable/re-enable ethernet adapter mid game",
+    "evidence": "suggested",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "DNS servers in use",
+   "IPv6 connectivity",
+   "Riot voice server reachability"
+  ],
+  "auto_fixable": "partial",
+  "thread_ids": [
+   "1wtc4h7",
+   "1x9msy4",
+   "1woe3o6"
+  ]
+ },
+ {
+  "problem": "Stuck on loading screen (no error) caused by VPN, antivirus or disabled Hyper-V platform features",
+  "category": "install_update_corrupt",
+  "error_codes": [],
+  "symptoms": [
+   "VALORANT stuck at loading screen forever with vgc running",
+   "stuck in Riot client after update"
+  ],
+  "root_causes": [
+   "VPN software interfering",
+   "Antivirus blocking",
+   "Windows optional features Virtual Machine Platform / Hypervisor Platform disabled"
+  ],
+  "fixes": [
+   {
+    "fix": "Win+R optionalfeatures -> enable 'Virtual Machine Platform' and 'Windows Hypervisor Platform', OK, restart",
+    "evidence": "guide",
+    "count": 1
+   },
+   {
+    "fix": "Disable/uninstall VPNs (found with AI-assisted diagnosis)",
+    "evidence": "op_confirmed",
+    "count": 1
+   },
+   {
+    "fix": "Temporarily disable Windows antivirus while playing",
+    "evidence": "guide",
+    "count": 1
+   },
+   {
+    "fix": "Add Riot/Vanguard folders to AV exclusions",
+    "evidence": "guide",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "VPN adapters/clients installed",
+   "VirtualMachinePlatform and HypervisorPlatform optional feature state",
+   "Antivirus active"
+  ],
+  "auto_fixable": "partial",
+  "thread_ids": [
+   "1x2yw07",
+   "1wz88k9",
+   "1x2b9sw",
+   "1x1h2qy",
+   "1x1y5dv"
+  ]
+ },
+ {
+  "problem": "VALORANT shows offline / greyed Play button due to incorrect Windows date and time",
+  "category": "login_account_client",
+  "error_codes": [],
+  "symptoms": [
+   "Riot Client shows VALORANT offline, Play button greyed out, repair does nothing",
+   "Logs: 'SSL certificate problem: certificate is not yet valid', 'Dependency DirectX failed to install'"
+  ],
+  "root_causes": [
+   "System clock wrong so SSL certificate validation fails to Riot CDN"
+  ],
+  "fixes": [
+   {
+    "fix": "Correct Windows date/time and sync time (ReviOS install had wrong clock)",
+    "evidence": "guide",
+    "count": 2
+   }
+  ],
+  "diagnostic_signals": [
+   "Windows clock vs NTP time",
+   "Riot Client logs SSL errors",
+   "w32time service"
+  ],
+  "auto_fixable": "yes",
+  "thread_ids": [
+   "1x61dcn",
+   "1x5owqn"
+  ]
+ },
+ {
+  "problem": "'VALORANT Failed To Launch - Something unusual happened' fixed by accepting Terms and Conditions popup",
+  "category": "login_account_client",
+  "error_codes": [],
+  "symptoms": [
+   "Failed to launch error even after reinstall/regedit tweaks; terms popup never shown"
+  ],
+  "root_causes": [
+   "Terms and Conditions not accepted in Riot Client"
+  ],
+  "fixes": [
+   {
+    "fix": "Log out and back into Riot Client to trigger the terms and conditions popup and accept",
+    "evidence": "op_confirmed",
+    "count": 2
+   }
+  ],
+  "diagnostic_signals": [
+   "Riot Client ToS acceptance"
+  ],
+  "auto_fixable": "no",
+  "thread_ids": [
+   "1wtdbne"
+  ]
+ },
+ {
+  "problem": "Game runs on integrated GPU / dedicated GPU not detected; or freezes at start until iGPU adapter enabled",
+  "category": "gpu_driver",
+  "error_codes": [],
+  "symptoms": [
+   "Freezes on loading, stuck in windowed mode, Multithreaded Rendering option missing",
+   "Error: D3D11-compatible GPU required when iGPU disabled",
+   "Game freezes on start/within a minute on new AMD build"
+  ],
+  "root_causes": [
+   "Game selected iGPU, dedicated GPU not seen; or AMD Radeon Graphics iGPU adapter disabled in Device Manager"
+  ],
+  "fixes": [
+   {
+    "fix": "Install older NVIDIA driver and adjust NVIDIA app settings (1100 fps afterwards)",
+    "evidence": "op_confirmed",
+    "count": 1
+   },
+   {
+    "fix": "Enable the 'AMD Radeon Graphics' (iGPU) display adapter in Device Manager",
+    "evidence": "op_confirmed",
+    "count": 1
+   },
+   {
+    "fix": "Set preferred GPU for VALORANT in Windows Graphics settings / NVIDIA control panel",
+    "evidence": "suggested",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "Display adapters in Device Manager and enabled state",
+   "GPU used by VALORANT (graphics settings)",
+   "Driver version"
+  ],
+  "auto_fixable": "partial",
+  "thread_ids": [
+   "1x83630",
+   "1woalwh"
+  ]
+ },
+ {
+  "problem": "Windows environment variables missing breaks Vanguard log export ('Failed to create zip archive')",
+  "category": "vanguard",
+  "error_codes": [],
+  "symptoms": [
+   "Vanguard tray panel 'Save logs' fails with Failed to create zip archive in any folder"
+  ],
+  "root_causes": [
+   "Basic Windows system environment variables missing"
+  ],
+  "fixes": [
+   {
+    "fix": "Restore missing system environment variables (System Properties > Environment Variables), reboot",
+    "evidence": "op_confirmed",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "Presence of standard env vars (TEMP, SystemRoot, etc.)"
+  ],
+  "auto_fixable": "partial",
+  "thread_ids": [
+   "1x2uhex"
+  ]
+ },
+ {
+  "problem": "TPM event 17/14 freezes and VAN 9001 hang in menu - VGC service not running",
+  "category": "vanguard",
+  "error_codes": [
+   "VAN 9001"
+  ],
+  "symptoms": [
+   "Game freezes 20 s into menu then critical error; TPM Event 17/14 in Event Viewer; PC hard freeze"
+  ],
+  "root_causes": [
+   "vgc service on Manual and not running; chipset driver outdated"
+  ],
+  "fixes": [
+   {
+    "fix": "services.msc -> vgc -> Startup type Automatic and Start the service, then launch VALORANT",
+    "evidence": "op_confirmed",
+    "count": 1
+   },
+   {
+    "fix": "Update chipset driver and set vgc to automatic",
+    "evidence": "suggested",
+    "count": 1
+   },
+   {
+    "fix": "Update BIOS, clear TPM (did not fix for OP)",
+    "evidence": "suggested",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "vgc service status and start type",
+   "Event Viewer TPM events 14/17",
+   "Chipset driver version"
+  ],
+  "auto_fixable": "yes",
+  "thread_ids": [
+   "1wp8boi"
+  ]
+ },
+ {
+  "problem": "VAN 185 returning after setting VALORANT/Discord priority to High",
+  "category": "vanguard",
+  "error_codes": [
+   "VAN 185"
+  ],
+  "symptoms": [
+   "Recurring VAN 185 despite DNS flush, Vanguard reinstall, VGC restart"
+  ],
+  "root_causes": [
+   "VALORANT and Discord process priority set to High/Realtime on low-end PC (Task Manager or Process Lasso)"
+  ],
+  "fixes": [
+   {
+    "fix": "Set VALORANT and Discord priority back to Above normal (avoid High/Realtime)",
+    "evidence": "guide",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "Process priority class of VALORANT and Discord",
+   "Process Lasso rules present"
+  ],
+  "auto_fixable": "yes",
+  "thread_ids": [
+   "1ws3ch8"
+  ]
+ },
+ {
+  "problem": "VAN 136 / Vanguard high CPU usage on very old hardware",
+  "category": "vanguard",
+  "error_codes": [
+   "VAN 136"
+  ],
+  "symptoms": [
+   "Vanguard uses more CPU/RAM than the game, queue dodges, FPS drops",
+   "Vanguard 30% CPU after motherboard swap"
+  ],
+  "root_causes": [
+   "Weak CPU (i5-5300U); unknown for motherboard swap case"
+  ],
+  "fixes": [
+   {
+    "fix": "Hardware upgrade (OP agreed); reinstalling Vanguard did not work",
+    "evidence": "suggested",
+    "count": 1
+   },
+   {
+    "fix": "Fresh Windows installs did not fix (B550M case)",
+    "evidence": "suggested",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "vgc.exe CPU usage",
+   "CPU generation/age"
+  ],
+  "auto_fixable": "no",
+  "thread_ids": [
+   "1wqriwf",
+   "1wup9ec"
+  ]
+ },
+ {
+  "problem": "Disable multi-plane overlay / overlays fixes fullscreen flicker on AMD",
+  "category": "display_resolution",
+  "error_codes": [],
+  "symptoms": [
+   "Flicker to black and crash in fullscreen/borderless on RX 9060 XT, driver error"
+  ],
+  "root_causes": [
+   "Multi-plane overlay / driver overlays"
+  ],
+  "fixes": [
+   {
+    "fix": "Disable MPO (ChrisTitusTool tweak) and tweak settings in AMD Adrenalin",
+    "evidence": "op_confirmed",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "MPO registry OverlayTestMode",
+   "GPU driver version"
+  ],
+  "auto_fixable": "partial",
+  "thread_ids": [
+   "1wy15l5"
+  ]
+ },
+ {
+  "problem": "PC hard freeze on AMD 9950X3D + 9070XT while playing",
+  "category": "hardware_other",
+  "error_codes": [],
+  "symptoms": [
+   "Entire PC freezes minutes after launching VALORANT, needs power button"
+  ],
+  "root_causes": [
+   "Unconfirmed: drivers, HAGS, AMD overlay"
+  ],
+  "fixes": [
+   {
+    "fix": "Update BIOS, Adrenalin and chipset driver; disable HAGS; turn off AMD in-game overlay; check temps",
+    "evidence": "suggested",
+    "count": 1
+   },
+   {
+    "fix": "Switching Windows version (11 to 10 worked for another user)",
+    "evidence": "suggested",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "HAGS state",
+   "Kernel-Power 41 events",
+   "Driver/BIOS versions"
+  ],
+  "auto_fixable": "partial",
+  "thread_ids": [
+   "1x1dupz",
+   "1wvw9k2"
+  ]
+ },
+ {
+  "problem": "Scroll wheel not working in-game fixed by deleting agent control profiles",
+  "category": "input_mouse",
+  "error_codes": [],
+  "symptoms": [
+   "Mouse scroll works outside game but not in VALORANT"
+  ],
+  "root_causes": [
+   "Corrupted per-agent control profile settings"
+  ],
+  "fixes": [
+   {
+    "fix": "Delete every agent profile in Settings > Controls",
+    "evidence": "guide",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [],
+  "auto_fixable": "no",
+  "thread_ids": [
+   "1wrl7w7"
+  ]
+ },
+ {
+  "problem": "MFA bug queue lock workaround",
+  "category": "login_account_client",
+  "error_codes": [],
+  "symptoms": [
+   "Cannot queue until restarting game"
+  ],
+  "root_causes": [
+   "Unknown client bug"
+  ],
+  "fixes": [
+   {
+    "fix": "Send 'request to join' to a friend to re-enable queueing without restarting",
+    "evidence": "guide",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [],
+  "auto_fixable": "no",
+  "thread_ids": [
+   "1x6jtf9"
+  ]
+ },
+ {
+  "problem": "PS5 VALORANT error 51/53/54",
+  "category": "login_account_client",
+  "error_codes": [],
+  "symptoms": [
+   "Error 51/53/54 on login on PS5"
+  ],
+  "root_causes": [
+   "Unknown"
+  ],
+  "fixes": [
+   {
+    "fix": "Uninstall and reinstall the game",
+    "evidence": "op_confirmed",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [],
+  "auto_fixable": "no",
+  "thread_ids": [
+   "1wxkan2"
+  ]
+ },
+ {
+  "problem": "Corrupted system files causing post-update stutter",
+  "category": "install_update_corrupt",
+  "error_codes": [],
+  "symptoms": [
+   "Micro stutter and FPS drops to 10 after update; Event Viewer VALORANT errors"
+  ],
+  "root_causes": [
+   "Corrupted Windows system files"
+  ],
+  "fixes": [
+   {
+    "fix": "Run sfc /scannow in admin Command Prompt and restart",
+    "evidence": "guide",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "sfc /verifyonly",
+   "Event Viewer errors"
+  ],
+  "auto_fixable": "yes",
+  "thread_ids": [
+   "1x6rgrn"
+  ]
+ },
+ {
+  "problem": "Black screen at match start due to Riot server-side issue",
+  "category": "login_account_client",
+  "error_codes": [],
+  "symptoms": [
+   "Screen black after match found; resolved by itself"
+  ],
+  "root_causes": [
+   "Riot incident"
+  ],
+  "fixes": [
+   {
+    "fix": "Wait; issue disappeared after alert cleared",
+    "evidence": "suggested",
+    "count": 1
+   }
+  ],
+  "diagnostic_signals": [
+   "Riot service status"
+  ],
+  "auto_fixable": "no",
+  "thread_ids": [
+   "1wn0sjx"
+  ]
+ }
+]

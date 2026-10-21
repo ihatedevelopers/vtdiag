@@ -1,0 +1,50 @@
+{
+  "id": "vanguard-blocks-chkdsk",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.vanguard-blocks-chkdsk.title",
+  "summaryKey": "rule.vanguard-blocks-chkdsk.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "freeze_hard",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [
+    "disk.dirty"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "dirty",
+      "signal": "disk.dirty",
+      "true": 2.5,
+      "veto": "false",
+      "textKey": "rule.vanguard-blocks-chkdsk.ev.dirty"
+    },
+    {
+      "id": "disk_err",
+      "signal": "events.disk_errors",
+      "true": 0.8
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.storage.chkdsk"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "vanguard-blocks-chkdsk",
+    "threadCount": 1,
+    "evidence": "guide",
+    "threadIds": [
+      "1uuc2ml"
+    ],
+    "urls": []
+  }
+}

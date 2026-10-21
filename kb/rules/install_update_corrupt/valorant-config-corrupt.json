@@ -1,0 +1,47 @@
+{
+  "id": "valorant-config-corrupt",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "install_update_corrupt",
+  "titleKey": "rule.valorant-config-corrupt.title",
+  "summaryKey": "rule.valorant-config-corrupt.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "crash_desktop",
+    "mouse_input",
+    "display_issue"
+  ],
+  "prior": {
+    "threads": 9
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "corrupt",
+      "signal": "riot.config_corrupt",
+      "true": 3.0,
+      "textKey": "rule.valorant-config-corrupt.ev.corrupt"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.valorant.config_reset"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "valorant-config-corrupt",
+    "threadCount": 9,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1qx5g3s",
+      "1r9096j",
+      "1r9htwx",
+      "1ra7c1z",
+      "1raohan"
+    ],
+    "urls": []
+  }
+}

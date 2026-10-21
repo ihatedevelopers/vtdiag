@@ -1,0 +1,72 @@
+{
+  "id": "vgk-not-loaded-needs-reboot",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.vgk-not-loaded-needs-reboot.title",
+  "summaryKey": "rule.vgk-not-loaded-needs-reboot.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "error_code",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 5
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "not_loaded",
+      "signal": "vg.vgk_not_loaded",
+      "true": 2.5,
+      "textKey": "rule.vgk-not-loaded-needs-reboot.ev.not_loaded"
+    },
+    {
+      "id": "pending",
+      "signal": "os.pending_reboot",
+      "true": 0.8
+    },
+    {
+      "id": "fast",
+      "signal": "os.fast_startup_on",
+      "true": 0.5
+    },
+    {
+      "id": "bootstatus",
+      "signal": "vg.bootstatus_dat",
+      "true": 0.8
+    },
+    {
+      "id": "vgk_running",
+      "signal": "vg.vgk_running",
+      "true": -2.0
+    }
+  ],
+  "fixes": [
+    "fix.vg.quarantine_bootstatus",
+    "fix.os.fast_startup_off"
+  ],
+  "guides": [
+    "guide.vanguard.real_restart"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "vgk-not-loaded-needs-reboot",
+    "threadCount": 5,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1u22y9d",
+      "1u381i3",
+      "1ubl4cz",
+      "1ubl59k",
+      "1ujvsuz"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/performance/error-van-57",
+      "https://support.riotgames.com/riot/performance/error-van-1067"
+    ]
+  }
+}

@@ -1,0 +1,631 @@
+[
+  {
+    "id": "asus_screenxpert",
+    "name": "ASUS ScreenXpert (AsusWallpaperSettingHook.dll)",
+    "kind": "rgb_vendor",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [
+        "AsusWallpaperSettingHook.dll"
+      ],
+      "uninstallDisplayNameRegex": "ScreenXpert",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.asus_screenxpert.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.asus_screenxpert.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "high",
+    "category": "fps_performance",
+    "symptoms": [
+      "stutter",
+      "launch_black_screen",
+      "crash_desktop"
+    ],
+    "wave": {
+      "from": "2026-10-05",
+      "to": "2026-12-31",
+      "boost": 0.6
+    },
+    "evidence": {
+      "redditMentions": 5,
+      "solvedMentions": 3,
+      "exampleThreadIds": [
+        "1x1f6jt",
+        "1x1h2qy",
+        "1x7p5s5",
+        "1x1mpcs",
+        "1x29zzv"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "omen_gaming_hub",
+    "name": "HP OMEN Gaming Hub (overlay / FPS boost)",
+    "kind": "rgb_vendor",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "OMEN Gaming Hub",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.omen_gaming_hub.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.omen_gaming_hub.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 7,
+      "solvedMentions": 0,
+      "exampleThreadIds": [
+        "1p26j80",
+        "1pcbc8q",
+        "1pcs5y9",
+        "1sys4ky",
+        "1p88ofa"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "ene_rgb_driver",
+    "name": "ENE RGB driver (ene.sys) from RGB/motherboard utilities",
+    "kind": "rgb_vendor",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "ene.sys"
+      ],
+      "moduleNames": [],
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.ene_rgb_driver.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.ene_rgb_driver.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict",
+        "guide.hvci.enable"
+      ]
+    },
+    "confidence": "high",
+    "category": "vanguard",
+    "symptoms": [
+      "error_code",
+      "bios_requirement"
+    ],
+    "wave": {
+      "from": "2026-01-01",
+      "to": "2026-02-28",
+      "boost": 0.5
+    },
+    "evidence": {
+      "redditMentions": 13,
+      "solvedMentions": 3,
+      "exampleThreadIds": [
+        "1qraeid",
+        "1qp3284",
+        "1qrafx2",
+        "1qq9m8g",
+        "1qrh71f"
+      ],
+      "webSources": [
+        "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error",
+        "https://www.esports.net/wiki/guides/valorant-incompatible-software-error-fix/"
+      ]
+    }
+  },
+  {
+    "id": "asus_armoury_crate",
+    "name": "ASUS Armoury Crate / Aura / AI Suite (AsIO drivers, LightingService)",
+    "kind": "rgb_vendor",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [
+        "ArmouryCrateService",
+        "LightingService"
+      ],
+      "driverNames": [
+        "AsIO.sys",
+        "AsIO2.sys",
+        "AsIO3.sys"
+      ],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(Armoury Crate|AURA|ASUS Aura|AI Suite)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.asus_armoury_crate.effect.0",
+      "conflict.asus_armoury_crate.effect.1",
+      "conflict.asus_armoury_crate.effect.2"
+    ],
+    "fix": {
+      "actionKey": "conflict.asus_armoury_crate.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [
+        "fix.svc.disable_conflict_service"
+      ],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 16,
+      "solvedMentions": 2,
+      "exampleThreadIds": [
+        "1rah5lw",
+        "1x1f6jt",
+        "1olhbot",
+        "1q7kf54",
+        "1s1tv64"
+      ],
+      "webSources": [
+        "https://www.thespike.gg/valorant/error-codes/fixing-the-valorant-incompatible-software-component-detected-error"
+      ]
+    }
+  },
+  {
+    "id": "corsair_icue",
+    "name": "Corsair iCUE",
+    "kind": "rgb_vendor",
+    "detect": {
+      "processNames": [
+        "iCUE.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [
+        "CorsairLLAccess64.sys"
+      ],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(Corsair iCUE|iCUE)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.corsair_icue.effect.0",
+      "conflict.corsair_icue.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.corsair_icue.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 8,
+      "solvedMentions": 3,
+      "exampleThreadIds": [
+        "1qw6tdz",
+        "1rah5lw",
+        "1w8rhft",
+        "1p2v1sf",
+        "1pnu8a5"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "razer_synapse",
+    "name": "Razer Synapse / Cortex",
+    "kind": "rgb_vendor",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [
+        "Razer Synapse Service",
+        "Razer Chroma SDK Service"
+      ],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^Razer (Synapse|Cortex)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.razer_synapse.effect.0",
+      "conflict.razer_synapse.effect.1",
+      "conflict.razer_synapse.effect.2"
+    ],
+    "fix": {
+      "actionKey": "conflict.razer_synapse.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.svc.disable_conflict_service"
+      ],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "medium",
+    "category": "vanguard",
+    "symptoms": [
+      "disconnect",
+      "error_code"
+    ],
+    "evidence": {
+      "redditMentions": 16,
+      "solvedMentions": 6,
+      "exampleThreadIds": [
+        "1or3q42",
+        "1qp3284",
+        "1selw1n",
+        "1viuppt",
+        "1wqriwf"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "logitech_ghub",
+    "name": "Logitech G HUB",
+    "kind": "rgb_vendor",
+    "detect": {
+      "processNames": [
+        "lghub.exe",
+        "lghub_agent.exe",
+        "lghub_updater.exe"
+      ],
+      "serviceNames": [
+        "LGHUBUpdaterService"
+      ],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(Logitech G HUB|Logitech Gaming Software)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.logitech_ghub.effect.0",
+      "conflict.logitech_ghub.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.logitech_ghub.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.svc.disable_conflict_service",
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 16,
+      "solvedMentions": 2,
+      "exampleThreadIds": [
+        "1rpzz59",
+        "1tolnhq",
+        "1oe0zyw",
+        "1oz6hx2",
+        "1qdlwwp"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "steelseries_gg",
+    "name": "SteelSeries GG / Engine / Sonar",
+    "kind": "rgb_vendor",
+    "detect": {
+      "processNames": [
+        "SteelSeriesGG.exe",
+        "SteelSeriesEngine.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^SteelSeries GG",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.steelseries_gg.effect.0",
+      "conflict.steelseries_gg.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.steelseries_gg.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 10,
+      "solvedMentions": 2,
+      "exampleThreadIds": [
+        "1t8madn",
+        "1pkhb9y",
+        "1rppkb9",
+        "1ovn34b",
+        "1phryto"
+      ],
+      "webSources": [
+        "https://www.neowin.net/news/windows-1110-is-flagging-winring0-on-your-pc-monitoring-fan-control-apps-heres-why/"
+      ]
+    }
+  },
+  {
+    "id": "msi_center",
+    "name": "MSI Center / Dragon Center / Mystic Light (NTIOLib)",
+    "kind": "rgb_vendor",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "NTIOLib_X64.sys"
+      ],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(MSI Center|Dragon Center|Mystic Light)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.msi_center.effect.0",
+      "conflict.msi_center.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.msi_center.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 3,
+      "solvedMentions": 2,
+      "exampleThreadIds": [
+        "1qp3284",
+        "1rah5lw",
+        "1p3trmy"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "gigabyte_gcc_rgbfusion",
+    "name": "GIGABYTE Control Center / RGB Fusion / APP Center (gdrv)",
+    "kind": "rgb_vendor",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [],
+      "driverNames": [
+        "gdrv.sys",
+        "gdrv3.sys"
+      ],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(GIGABYTE Control Center|RGB Fusion|APP Center)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.gigabyte_gcc_rgbfusion.effect.0",
+      "conflict.gigabyte_gcc_rgbfusion.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.gigabyte_gcc_rgbfusion.fix",
+      "reversible": true,
+      "risk": "medium",
+      "fixIds": [],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 11,
+      "solvedMentions": 2,
+      "exampleThreadIds": [
+        "1w1f9m2",
+        "1pnteup",
+        "1rxevce",
+        "1ueeg5h",
+        "1x7j3x5"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "nzxt_cam",
+    "name": "NZXT CAM",
+    "kind": "rgb_vendor",
+    "detect": {
+      "processNames": [
+        "NZXT CAM.exe"
+      ],
+      "serviceNames": [],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^NZXT CAM",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.nzxt_cam.effect.0"
+    ],
+    "fix": {
+      "actionKey": "conflict.nzxt_cam.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.generic.close_process"
+      ],
+      "guideIds": [
+        "guide.apps.uninstall_conflict"
+      ]
+    },
+    "confidence": "low",
+    "category": "vanguard",
+    "symptoms": [
+      "launch_black_screen",
+      "wont_launch",
+      "error_code",
+      "disconnect"
+    ],
+    "evidence": {
+      "redditMentions": 1,
+      "solvedMentions": 1,
+      "exampleThreadIds": [
+        "1qw6tdz"
+      ],
+      "webSources": []
+    }
+  },
+  {
+    "id": "lenovo_vantage",
+    "name": "Lenovo Vantage / Legion Zone (+ bundled Nahimic)",
+    "kind": "rgb_vendor",
+    "detect": {
+      "processNames": [],
+      "serviceNames": [
+        "ImControllerService"
+      ],
+      "driverNames": [],
+      "moduleNames": [],
+      "uninstallDisplayNameRegex": "^(Lenovo Vantage|Legion Zone)",
+      "registryKeys": [],
+      "filePaths": [],
+      "windowsFeatures": []
+    },
+    "effectKeys": [
+      "conflict.lenovo_vantage.effect.0",
+      "conflict.lenovo_vantage.effect.1"
+    ],
+    "fix": {
+      "actionKey": "conflict.lenovo_vantage.fix",
+      "reversible": true,
+      "risk": "low",
+      "fixIds": [
+        "fix.svc.disable_conflict_service"
+      ],
+      "guideIds": [
+        "guide.power.laptop_mode"
+      ]
+    },
+    "confidence": "low",
+    "category": "network_ping",
+    "symptoms": [
+      "disconnect",
+      "high_ping"
+    ],
+    "evidence": {
+      "redditMentions": 10,
+      "solvedMentions": 3,
+      "exampleThreadIds": [
+        "1wdcqnv",
+        "1qycvf3",
+        "1uvkqr6",
+        "1rnd17h",
+        "1slij5z"
+      ],
+      "webSources": []
+    }
+  }
+]

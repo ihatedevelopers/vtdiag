@@ -1,0 +1,117 @@
+{
+  "id": "guide.hybrid_cpu.priority",
+  "titleKey": "guide.hybrid_cpu.priority.title",
+  "summaryKey": "guide.hybrid_cpu.priority.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "recommended",
+  "appliesTo": [
+    "high-process-priority-van136-185",
+    "intel-hybrid-cpu-ecore-stutter"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "auto",
+      "when": [],
+      "textKey": "guide.hybrid_cpu.priority.auto.text",
+      "steps": [
+        {
+          "textKey": "guide.hybrid_cpu.priority.auto.s1",
+          "action": "runFix",
+          "target": "fix.sec.remove_riot_perfoptions"
+        },
+        {
+          "textKey": "guide.hybrid_cpu.priority.auto.s2",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "task_manager",
+      "when": [],
+      "textKey": "guide.hybrid_cpu.priority.task_manager.text",
+      "steps": [
+        {
+          "textKey": "guide.hybrid_cpu.priority.task_manager.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hybrid_cpu.priority.task_manager.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hybrid_cpu.priority.task_manager.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hybrid_cpu.priority.task_manager.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "process_lasso",
+      "when": [],
+      "textKey": "guide.hybrid_cpu.priority.process_lasso.text",
+      "steps": [
+        {
+          "textKey": "guide.hybrid_cpu.priority.process_lasso.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hybrid_cpu.priority.process_lasso.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hybrid_cpu.priority.process_lasso.s3",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.hybrid_cpu.priority.process_lasso.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "ecores",
+      "when": [
+        {
+          "signal": "hw.cpu_hybrid",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.hybrid_cpu.priority.ecores.text",
+      "steps": [
+        {
+          "textKey": "guide.hybrid_cpu.priority.ecores.s1",
+          "action": "openSettings",
+          "target": "ms-settings:powersleep"
+        },
+        {
+          "textKey": "guide.hybrid_cpu.priority.ecores.s2",
+          "action": "openSettings",
+          "target": "ms-settings:windowsupdate"
+        },
+        {
+          "textKey": "guide.hybrid_cpu.priority.ecores.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hybrid_cpu.priority.ecores.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hybrid_cpu.priority.ecores.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.hybrid_cpu.priority.outcome"
+}

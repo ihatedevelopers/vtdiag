@@ -1,0 +1,151 @@
+[
+  {
+    "id": "stutter",
+    "titleKey": "symptom.stutter",
+    "categories": [
+      "fps_performance",
+      "network_ping",
+      "crash_freeze_bsod"
+    ],
+    "order": 1
+  },
+  {
+    "id": "fps_low",
+    "titleKey": "symptom.fps_low",
+    "categories": [
+      "fps_performance",
+      "gpu_driver",
+      "display_resolution"
+    ],
+    "order": 2
+  },
+  {
+    "id": "freeze_hard",
+    "titleKey": "symptom.freeze_hard",
+    "categories": [
+      "crash_freeze_bsod",
+      "hardware_other",
+      "gpu_driver"
+    ],
+    "order": 3
+  },
+  {
+    "id": "crash_desktop",
+    "titleKey": "symptom.crash_desktop",
+    "categories": [
+      "crash_freeze_bsod",
+      "gpu_driver",
+      "install_update_corrupt"
+    ],
+    "order": 4
+  },
+  {
+    "id": "launch_black_screen",
+    "titleKey": "symptom.launch_black_screen",
+    "categories": [
+      "crash_freeze_bsod",
+      "vanguard",
+      "login_account_client"
+    ],
+    "order": 5
+  },
+  {
+    "id": "wont_launch",
+    "titleKey": "symptom.wont_launch",
+    "categories": [
+      "vanguard",
+      "install_update_corrupt",
+      "login_account_client",
+      "tpm_secureboot_bios"
+    ],
+    "order": 6
+  },
+  {
+    "id": "error_code",
+    "titleKey": "symptom.error_code",
+    "categories": [
+      "vanguard",
+      "tpm_secureboot_bios",
+      "login_account_client"
+    ],
+    "order": 7
+  },
+  {
+    "id": "disconnect",
+    "titleKey": "symptom.disconnect",
+    "categories": [
+      "vanguard",
+      "network_ping",
+      "login_account_client"
+    ],
+    "order": 8
+  },
+  {
+    "id": "high_ping",
+    "titleKey": "symptom.high_ping",
+    "categories": [
+      "network_ping"
+    ],
+    "order": 9
+  },
+  {
+    "id": "voice_chat",
+    "titleKey": "symptom.voice_chat",
+    "categories": [
+      "audio_mic",
+      "network_ping"
+    ],
+    "order": 10
+  },
+  {
+    "id": "no_audio",
+    "titleKey": "symptom.no_audio",
+    "categories": [
+      "audio_mic"
+    ],
+    "order": 11
+  },
+  {
+    "id": "install_update",
+    "titleKey": "symptom.install_update",
+    "categories": [
+      "install_update_corrupt",
+      "vanguard"
+    ],
+    "order": 12
+  },
+  {
+    "id": "display_issue",
+    "titleKey": "symptom.display_issue",
+    "categories": [
+      "display_resolution",
+      "gpu_driver"
+    ],
+    "order": 13
+  },
+  {
+    "id": "mouse_input",
+    "titleKey": "symptom.mouse_input",
+    "categories": [
+      "input_mouse"
+    ],
+    "order": 14
+  },
+  {
+    "id": "login_issue",
+    "titleKey": "symptom.login_issue",
+    "categories": [
+      "login_account_client"
+    ],
+    "order": 15
+  },
+  {
+    "id": "bios_requirement",
+    "titleKey": "symptom.bios_requirement",
+    "categories": [
+      "tpm_secureboot_bios",
+      "vanguard"
+    ],
+    "order": 16
+  }
+]

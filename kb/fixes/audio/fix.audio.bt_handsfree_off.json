@@ -1,0 +1,66 @@
+{
+  "id": "fix.audio.bt_handsfree_off",
+  "titleKey": "fix.audio.bt_handsfree_off.title",
+  "explainKey": "fix.audio.bt_handsfree_off.explain",
+  "undoExplainKey": "fix.audio.bt_handsfree_off.undo",
+  "noticeKey": "fix.audio.bt_handsfree_off.notice",
+  "sideEffectKeys": [
+    "fix.audio.bt_handsfree_off.side.0"
+  ],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "none",
+  "scope": "persistent",
+  "estMinutes": 0.3,
+  "appliesTo": [
+    "bluetooth-headset-hfp-voice-chat",
+    "conflict-bluetooth_handsfree"
+  ],
+  "bind": {
+    "dev": {
+      "kind": "device",
+      "fromSignal": "audio.bt_handsfree_present",
+      "pick": "all"
+    }
+  },
+  "guards": [],
+  "steps": [
+    {
+      "op": "device.disable",
+      "args": {
+        "instanceId": "$dev.id"
+      },
+      "onFail": "abort"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "device.disable",
+      "args": {
+        "instanceId": "$dev.id"
+      },
+      "expect": {
+        "enabled": "false"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.voice_ok"
+  },
+  "drift": {
+    "watch": true,
+    "reasonKey": "drift.setting_reverted"
+  },
+  "successPrior": {
+    "success": 16,
+    "trials": 31
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

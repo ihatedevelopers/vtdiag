@@ -1,0 +1,64 @@
+{
+  "id": "fix.display.disable_fso",
+  "titleKey": "fix.display.disable_fso.title",
+  "explainKey": "fix.display.disable_fso.explain",
+  "undoExplainKey": "fix.display.disable_fso.undo",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "none",
+  "scope": "persistent",
+  "estMinutes": 0.2,
+  "appliesTo": [
+    "fullscreen-optimizations-mpo",
+    "van185-vanguard-disconnects",
+    "fps-decay-over-time"
+  ],
+  "bind": {
+    "exe": {
+      "kind": "file",
+      "fromSignal": "riot.valorant_exe",
+      "pick": "one"
+    }
+  },
+  "guards": [],
+  "steps": [
+    {
+      "op": "appcompat.setLayers",
+      "args": {
+        "exePath": "$exe.id",
+        "hive": "HKCU",
+        "layers": "~ DISABLEDXMAXIMIZEDWINDOWEDMODE"
+      },
+      "onFail": "abort"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "appcompat.setLayers",
+      "args": {
+        "exePath": "$exe.id",
+        "hive": "HKCU",
+        "layers": "~ DISABLEDXMAXIMIZEDWINDOWEDMODE"
+      },
+      "expect": {
+        "exists": "true"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.stutter_gone"
+  },
+  "successPrior": {
+    "success": 6,
+    "trials": 46
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

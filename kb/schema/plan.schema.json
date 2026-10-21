@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:plan:1",
+  "title": "VTDiag helper plan (.vtdplan)",
+  "description": "A helper's (or a helper's AI's) plan: only KB fix, guide, question and monitor ids with entity bindings. No commands, paths, registry keys or URLs as actions. Every step still needs the player's consent.",
+  "type": "object",
+  "properties": {
+    "schema": {
+      "type": "integer",
+      "description": "Schema (CurrentSchema)."
+    },
+    "planId": {
+      "type": "string",
+      "description": "ULID."
+    },
+    "forSnapshotId": {
+      "type": "string",
+      "description": "The .vtdscan snapshot the plan was written for."
+    },
+    "forMachineKey": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "MachineKey of that snapshot (the same on every scan of one PC). When present and different from the fresh scan's, the plan is invalid (snapshot_mismatch)."
+    },
+    "kbMin": {
+      "type": "string",
+      "description": "Minimum KB version."
+    },
+    "createdUtc": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Created."
+    },
+    "expiresUtc": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Expires (at most 7 days after creation)."
+    },
+    "author": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name as given (plain text, for example u/ModName)."
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false,
+      "description": "Author."
+    },
+    "message": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Message to the player (plain text)."
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "anyOf": [
+          {
+            "properties": {
+              "kind": {
+                "const": "fix"
+              },
+              "fixId": {
+                "type": "string",
+                "description": "KB fix id."
+              },
+              "bind": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "description": "Binding name to entity ids exactly as they appear in the share-level snapshot the helper received (ShareEntityId); the player's app maps them back to live entities on a fresh scan."
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Note to the player (plain text; URLs shown as \"link from helper\", never auto-opened)."
+              }
+            },
+            "required": [
+              "fixId"
+            ],
+            "additionalProperties": false,
+            "description": "Apply a KB fix bound to entities."
+          },
+          {
+            "properties": {
+              "kind": {
+                "const": "guide"
+              },
+              "guideId": {
+                "type": "string",
+                "description": "KB guide id."
+              },
+              "branchId": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Branch."
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Note to the player (plain text; URLs shown as \"link from helper\", never auto-opened)."
+              }
+            },
+            "required": [
+              "guideId"
+            ],
+            "additionalProperties": false,
+            "description": "Show a KB guide."
+          },
+          {
+            "properties": {
+              "kind": {
+                "const": "question"
+              },
+              "questionId": {
+                "type": "string",
+                "description": "KB question id."
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Note to the player (plain text; URLs shown as \"link from helper\", never auto-opened)."
+              }
+            },
+            "required": [
+              "questionId"
+            ],
+            "additionalProperties": false,
+            "description": "Ask a KB question."
+          },
+          {
+            "properties": {
+              "kind": {
+                "const": "monitor"
+              },
+              "minutes": {
+                "type": "integer",
+                "description": "Minutes."
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Note to the player (plain text; URLs shown as \"link from helper\", never auto-opened)."
+              }
+            },
+            "required": [
+              "minutes"
+            ],
+            "additionalProperties": false,
+            "description": "Watch a match."
+          }
+        ],
+        "description": "A plan step. JSON discriminator: kind (fix, guide, question, monitor)."
+      },
+      "description": "Steps (at most 10)."
+    }
+  },
+  "required": [
+    "schema",
+    "planId",
+    "forSnapshotId",
+    "kbMin",
+    "createdUtc",
+    "expiresUtc",
+    "author",
+    "steps"
+  ],
+  "additionalProperties": false
+}

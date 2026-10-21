@@ -1,0 +1,62 @@
+{
+  "id": "fix.power.cpu_max_100",
+  "titleKey": "fix.power.cpu_max_100.title",
+  "explainKey": "fix.power.cpu_max_100.explain",
+  "undoExplainKey": "fix.power.cpu_max_100.undo",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "none",
+  "scope": "persistent",
+  "estMinutes": 0.2,
+  "appliesTo": [
+    "power-plan-throttling-low-fps",
+    "fps-lower-than-expected-caps"
+  ],
+  "bind": {},
+  "guards": [],
+  "steps": [
+    {
+      "op": "powercfg.setValue",
+      "args": {
+        "scheme": "active",
+        "subgroup": "54533251-82be-4824-96c1-47b60b740d00",
+        "setting": "bc5038f7-23e0-4960-96da-33abaf5935ec",
+        "ac": "100"
+      },
+      "onFail": "abort"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "powercfg.setValue",
+      "args": {
+        "scheme": "active",
+        "subgroup": "54533251-82be-4824-96c1-47b60b740d00",
+        "setting": "bc5038f7-23e0-4960-96da-33abaf5935ec"
+      },
+      "expect": {
+        "ac": "100"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.fps_better"
+  },
+  "drift": {
+    "watch": true,
+    "reasonKey": "drift.setting_reverted"
+  },
+  "successPrior": {
+    "success": 1,
+    "trials": 33
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

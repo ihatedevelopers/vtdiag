@@ -1,0 +1,139 @@
+{
+  "id": "guide.mouse.usb",
+  "titleKey": "guide.mouse.usb.title",
+  "summaryKey": "guide.mouse.usb.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "mouse-usb-port-polling-lag",
+    "mouse-acceleration-floaty-aim",
+    "mouse-clicks-stop-after-alt-tab"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "accel",
+      "when": [
+        {
+          "signal": "input.mouse_accel_on",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.mouse.usb.accel.text",
+      "steps": [
+        {
+          "textKey": "guide.mouse.usb.accel.s1",
+          "action": "runFix",
+          "target": "fix.input.mouse_accel_off"
+        },
+        {
+          "textKey": "guide.mouse.usb.accel.s2",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "input.mouse_accel_on",
+          "is": "false"
+        }
+      ]
+    },
+    {
+      "id": "port",
+      "when": [],
+      "textKey": "guide.mouse.usb.port.text",
+      "steps": [
+        {
+          "textKey": "guide.mouse.usb.port.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.mouse.usb.port.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.mouse.usb.port.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.mouse.usb.port.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.mouse.usb.port.s5",
+          "action": "runFix",
+          "target": "fix.power.usb_selective_suspend_off"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "polling",
+      "when": [],
+      "textKey": "guide.mouse.usb.polling.text",
+      "steps": [
+        {
+          "textKey": "guide.mouse.usb.polling.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.mouse.usb.polling.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.mouse.usb.polling.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.mouse.usb.polling.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "buttons",
+      "when": [],
+      "textKey": "guide.mouse.usb.buttons.text",
+      "steps": [
+        {
+          "textKey": "guide.mouse.usb.buttons.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.mouse.usb.buttons.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.mouse.usb.buttons.s3",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "feel",
+      "when": [],
+      "textKey": "guide.mouse.usb.feel.text",
+      "steps": [
+        {
+          "textKey": "guide.mouse.usb.feel.s1",
+          "action": "openSettings",
+          "target": "ms-settings:display-advancedgraphics"
+        },
+        {
+          "textKey": "guide.mouse.usb.feel.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.mouse.usb.feel.s3",
+          "action": "openSettings",
+          "target": "ms-settings:mousetouchpad"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.mouse.usb.outcome"
+}

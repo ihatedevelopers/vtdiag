@@ -1,0 +1,50 @@
+{
+  "id": "freeze-on-click-lobby-misc",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "crash_freeze_bsod",
+  "titleKey": "rule.freeze-on-click-lobby-misc.title",
+  "summaryKey": "rule.freeze-on-click-lobby-misc.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "freeze_hard",
+    "stutter"
+  ],
+  "prior": {
+    "threads": 4
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "hook_crash",
+      "signal": "events.riot_crash_unknown_module",
+      "true": 0.8
+    },
+    {
+      "id": "igpu",
+      "signal": "gpu.igpu_disabled",
+      "true": 0.4
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.apps.uninstall_conflict",
+    "guide.gpu.igpu"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "freeze-on-click-lobby-misc",
+    "threadCount": 4,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1qfbooy",
+      "1qmgslh",
+      "1qrm39z",
+      "1r86bu5"
+    ],
+    "urls": []
+  }
+}

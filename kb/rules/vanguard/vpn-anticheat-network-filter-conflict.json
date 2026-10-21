@@ -1,0 +1,77 @@
+{
+  "id": "vpn-anticheat-network-filter-conflict",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.vpn-anticheat-network-filter-conflict.title",
+  "summaryKey": "rule.vpn-anticheat-network-filter-conflict.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "error_code",
+    "disconnect",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 10
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "vpn_up",
+      "signal": "net.vpn_adapter_up",
+      "true": 1.5,
+      "textKey": "rule.vpn-anticheat-network-filter-conflict.ev.vpn_up"
+    },
+    {
+      "id": "virtual",
+      "signal": "net.virtual_adapter_present",
+      "true": 0.5
+    },
+    {
+      "id": "ac",
+      "signal": "apps.other_anticheat",
+      "true": 1.2,
+      "textKey": "rule.vpn-anticheat-network-filter-conflict.ev.ac"
+    },
+    {
+      "id": "faceit",
+      "signal": "conflict.ac_faceit.driver_loaded",
+      "true": 1.0,
+      "group": "ac"
+    },
+    {
+      "id": "lsp",
+      "signal": "net.lsp_third_party",
+      "true": 0.8
+    },
+    {
+      "id": "proxy",
+      "signal": "net.proxy_on",
+      "true": 0.5
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.vpn.remove"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "vpn-anticheat-network-filter-conflict",
+    "threadCount": 10,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1r6kf92",
+      "1uvpua5",
+      "1uxxnir",
+      "1vbzghy",
+      "1wdi8ec"
+    ],
+    "urls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant",
+      "https://support.riotgames.com/en-us/valorant/performance/your-firewall-vs-valorant"
+    ]
+  }
+}

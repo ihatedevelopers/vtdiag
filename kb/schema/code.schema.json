@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:code:1",
+  "title": "VTDiag KB error code",
+  "description": "kb/codes/*.json: VAN/VAL codes with per-cause strength (logged > typed) and route verdicts.",
+  "$defs": {
+    "item": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable id, for example van-9003, val-group-account."
+        },
+        "codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Canonical normalized codes this row covers (VAN 9003; groups like VAL 31, VAL 43...). Normalization (A2): upper-case invariant, \"VAN9003\", \"van-9003\", \"VAN: 9003\" all become VAN 9003."
+        },
+        "category": {
+          "type": "string",
+          "description": "Category from the research data (for example vanguard_requirement, ban, val_account)."
+        },
+        "meaningKey": {
+          "type": "string",
+          "description": "String key of the official meaning."
+        },
+        "route": {
+          "enum": [
+            "hwidBanAppeal",
+            "tryAnotherAccount",
+            "unsupportedPlatform",
+            "riotServerIncident",
+            "hardwareCannotComply",
+            "riotSupportTicket",
+            null
+          ],
+          "description": "Route verdict; when set, ranking short-circuits and no fix is offered."
+        },
+        "pointsTo": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "hypothesis": {
+                "type": "string",
+                "description": "Rule id."
+              },
+              "logged": {
+                "type": "number",
+                "description": "Log-odds when the code was found in logs or crash reports."
+              },
+              "typed": {
+                "type": "number",
+                "description": "Log-odds when the code was only typed by the player (must be at most Logged)."
+              }
+            },
+            "required": [
+              "hypothesis",
+              "logged",
+              "typed"
+            ],
+            "additionalProperties": false,
+            "description": "A cause an error code points at."
+          },
+          "description": "Causes this code points at, each with its own strength."
+        },
+        "officialUrls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Official Riot support URLs (shown, never auto-opened from plans)."
+        },
+        "askIfTyped": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Question to ask when the code was only typed (for example \"does another account work on this PC?\")."
+        },
+        "confidence": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "description": "Confidence of the mapping."
+        }
+      },
+      "required": [
+        "id",
+        "codes",
+        "category",
+        "meaningKey"
+      ],
+      "additionalProperties": false,
+      "description": "One row of the error-code table (from research/error_codes.json, 57 codes). Codes go through this table with a per-cause strength; codes found in logs weigh more than codes the player typed (typos, mis-copies); a route code short-circuits (VAN 152 to appeal, console/VM/Mac out of scope, VAL 43/57/59 \"try another account\"). File: kb/codes/*.json. Schema: kb/schema/code.schema.json."
+    }
+  },
+  "anyOf": [
+    {
+      "$ref": "#/$defs/item"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  ]
+}

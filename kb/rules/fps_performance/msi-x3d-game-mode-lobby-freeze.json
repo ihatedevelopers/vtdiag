@@ -1,0 +1,50 @@
+{
+  "id": "msi-x3d-game-mode-lobby-freeze",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.msi-x3d-game-mode-lobby-freeze.title",
+  "summaryKey": "rule.msi-x3d-game-mode-lobby-freeze.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "stutter",
+    "freeze_hard",
+    "fps_low"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [
+    "hw.cpu_x3d"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "x3d",
+      "signal": "hw.cpu_x3d",
+      "true": 1.0,
+      "veto": "false"
+    },
+    {
+      "id": "msi",
+      "signal": "conflict.msi_center.installed",
+      "true": 0.6
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.msi_x3d.game_mode"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "msi-x3d-game-mode-lobby-freeze",
+    "threadCount": 1,
+    "evidence": "guide",
+    "threadIds": [
+      "1w8czy7"
+    ],
+    "urls": []
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "fix.display.gpu_pref_high",
+  "titleKey": "fix.display.gpu_pref_high.title",
+  "explainKey": "fix.display.gpu_pref_high.explain",
+  "undoExplainKey": "fix.display.gpu_pref_high.undo",
+  "sideEffectKeys": [],
+  "risk": "low",
+  "reversibility": "exact",
+  "admin": true,
+  "reboot": "none",
+  "scope": "persistent",
+  "estMinutes": 0.2,
+  "appliesTo": [
+    "low-gpu-usage-after-ue5-patch",
+    "wrong-gpu-or-display-output"
+  ],
+  "bind": {
+    "exe": {
+      "kind": "file",
+      "fromSignal": "gpu.pref_not_high",
+      "pick": "one"
+    }
+  },
+  "guards": [],
+  "steps": [
+    {
+      "op": "registry.setValue",
+      "args": {
+        "path": "HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences",
+        "name": "$exe.id",
+        "kind": "String",
+        "data": "GpuPreference=2;"
+      },
+      "onFail": "abort"
+    }
+  ],
+  "verify": [
+    {
+      "probe": "registry.setValue",
+      "args": {
+        "path": "HKCU\\Software\\Microsoft\\DirectX\\UserGpuPreferences",
+        "name": "$exe.id"
+      },
+      "expect": {
+        "data": "GpuPreference=2;"
+      },
+      "when": "immediate"
+    }
+  ],
+  "outcome": {
+    "kind": "playtest",
+    "askKey": "outcome.fps_better"
+  },
+  "successPrior": {
+    "success": 3,
+    "trials": 19
+  },
+  "minApp": "0.2.0",
+  "tested": [
+    "win11-25H2",
+    "win10-22H2"
+  ]
+}

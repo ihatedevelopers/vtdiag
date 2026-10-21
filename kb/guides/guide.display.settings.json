@@ -1,0 +1,171 @@
+{
+  "id": "guide.display.settings",
+  "titleKey": "guide.display.settings.title",
+  "summaryKey": "guide.display.settings.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "display-misc-blur-wrong-res",
+    "vsync-gsync-tearing-fps-lock",
+    "nvidia-vsync-fast-critical-error",
+    "replay-system-issues"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "nvidia_vsync",
+      "when": [
+        {
+          "signal": "gpu.nvidia_dgpu",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.display.settings.nvidia_vsync.text",
+      "steps": [
+        {
+          "textKey": "guide.display.settings.nvidia_vsync.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.nvidia_vsync.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.nvidia_vsync.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.nvidia_vsync.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.nvidia_vsync.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "game",
+      "when": [],
+      "textKey": "guide.display.settings.game.text",
+      "steps": [
+        {
+          "textKey": "guide.display.settings.game.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.game.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.game.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.game.s4",
+          "action": "openSettings",
+          "target": "ms-settings:display"
+        },
+        {
+          "textKey": "guide.display.settings.game.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.game.s6",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "gsync",
+      "when": [
+        {
+          "signal": "gpu.nvidia_dgpu",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.display.settings.gsync.text",
+      "steps": [
+        {
+          "textKey": "guide.display.settings.gsync.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.gsync.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.gsync.s3",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "nvidia_app",
+      "when": [
+        {
+          "signal": "gpu.nvidia_dgpu",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.display.settings.nvidia_app.text",
+      "steps": [
+        {
+          "textKey": "guide.display.settings.nvidia_app.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.nvidia_app.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.nvidia_app.s3",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "monitor_off",
+      "when": [],
+      "textKey": "guide.display.settings.monitor_off.text",
+      "steps": [
+        {
+          "textKey": "guide.display.settings.monitor_off.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.monitor_off.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.monitor_off.s3",
+          "action": "openSettings",
+          "target": "ms-settings:display"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "replay",
+      "when": [],
+      "textKey": "guide.display.settings.replay.text",
+      "steps": [
+        {
+          "textKey": "guide.display.settings.replay.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.settings.replay.s2",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.display.settings.outcome"
+}

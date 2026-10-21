@@ -1,0 +1,62 @@
+{
+  "id": "third-party-antivirus-conflict",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.third-party-antivirus-conflict.title",
+  "summaryKey": "rule.third-party-antivirus-conflict.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "error_code",
+    "disconnect",
+    "wont_launch",
+    "install_update"
+  ],
+  "prior": {
+    "threads": 4
+  },
+  "requires": [
+    "sec.third_party_av"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "av",
+      "signal": "sec.third_party_av",
+      "true": 1.8,
+      "veto": "false",
+      "textKey": "rule.third-party-antivirus-conflict.ev.av"
+    },
+    {
+      "id": "cfa",
+      "signal": "sec.defender_cfa_on",
+      "true": 0.8
+    },
+    {
+      "id": "files",
+      "signal": "vg.files_missing",
+      "true": 0.8
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.av.exclusions"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "third-party-antivirus-conflict",
+    "threadCount": 4,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1qh6vdo",
+      "1qk4av0",
+      "1qz43n6",
+      "1r5zp2a"
+    ],
+    "urls": [
+      "https://support.riotgames.com/valorant/performance/error-codes-and-solutions-in-valorant"
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "id": "guide.virtualization.enable",
+  "titleKey": "guide.virtualization.enable.title",
+  "summaryKey": "guide.virtualization.enable.summary",
+  "bucket": "guidedManual",
+  "risk": "high",
+  "reboot": "required",
+  "appliesTo": [
+    "hvci-memory-integrity-required"
+  ],
+  "preflight": [
+    {
+      "probe": "sec.bitlocker_on",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.virtualization.enable.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "off",
+      "when": [
+        {
+          "signal": "sec.virtualization.enabled",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.virtualization.enable.off.text",
+      "steps": [
+        {
+          "textKey": "guide.virtualization.enable.off.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.virtualization.enable.off.s2",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.virtualization.enable.off.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.virtualization.enable.off.s4",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.virtualization.enable.off.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.virtualization.enable.off.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.virtualization.enable.off.s7",
+          "action": "runCheck",
+          "target": "sec.virtualization.enabled"
+        },
+        {
+          "textKey": "guide.virtualization.enable.off.s8",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.virtualization.enabled",
+          "is": "true"
+        }
+      ]
+    },
+    {
+      "id": "check_first",
+      "when": [],
+      "textKey": "guide.virtualization.enable.check_first.text",
+      "steps": [
+        {
+          "textKey": "guide.virtualization.enable.check_first.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.virtualization.enable.check_first.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.virtualization.enable.check_first.s3",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.virtualization.enable.check_first.s4",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.virtualization.enable.check_first.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.virtualization.enable.check_first.s6",
+          "action": "runCheck",
+          "target": "sec.virtualization.enabled"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.virtualization.enabled",
+          "is": "true"
+        }
+      ]
+    }
+  ],
+  "docsPath": "docs/guides/virtualization.md",
+  "outcomeAskKey": "guide.virtualization.enable.outcome"
+}

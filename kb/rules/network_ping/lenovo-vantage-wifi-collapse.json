@@ -1,0 +1,51 @@
+{
+  "id": "lenovo-vantage-wifi-collapse",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "network_ping",
+  "titleKey": "rule.lenovo-vantage-wifi-collapse.title",
+  "summaryKey": "rule.lenovo-vantage-wifi-collapse.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "disconnect",
+    "high_ping"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [
+    "conflict.lenovo_vantage.any"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "vantage",
+      "signal": "conflict.lenovo_vantage.installed",
+      "true": 1.2,
+      "veto": "false"
+    },
+    {
+      "id": "wifi",
+      "signal": "net.on_wifi",
+      "true": 0.6
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.power.laptop_mode"
+  ],
+  "questions": [],
+  "supersedes": [
+    "conflict-lenovo_vantage"
+  ],
+  "related": [],
+  "sources": {
+    "catalog": "lenovo-vantage-wifi-collapse",
+    "threadCount": 1,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1uvkqr6"
+    ],
+    "urls": []
+  }
+}

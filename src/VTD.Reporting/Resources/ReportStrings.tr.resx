@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from one table so en and tr keys stay in sync. Owner: A6. Risk wording must not soften in translation. -->
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="actions.none" xml:space="preserve"><value>Bu bilgisayarda hiçbir şey değiştirilmedi.</value></data>
+  <data name="attempt.oneway" xml:space="preserve"><value>tek tıkla geri alınamaz</value></data>
+  <data name="attempt.outcome.fixed" xml:space="preserve"><value>sorunu çözdü</value></data>
+  <data name="attempt.outcome.notFixed" xml:space="preserve"><value>sorunu çözmedi</value></data>
+  <data name="attempt.outcome.pending" xml:space="preserve"><value>sonuç henüz bildirilmedi</value></data>
+  <data name="attempt.outcome.unsure" xml:space="preserve"><value>işe yarayıp yaramadığı belli değil</value></data>
+  <data name="attempt.reboot" xml:space="preserve"><value>yeniden başlatmadan sonra etkili olur</value></data>
+  <data name="attempt.restore_point" xml:space="preserve"><value>{date} tarihli geri yükleme noktası</value></data>
+  <data name="attempt.status.applied" xml:space="preserve"><value>Uygulandı, kontrol ediliyor</value></data>
+  <data name="attempt.status.applying" xml:space="preserve"><value>Uygulanıyor</value></data>
+  <data name="attempt.status.awaitingReboot" xml:space="preserve"><value>Yeniden başlatma bekleniyor</value></data>
+  <data name="attempt.status.awaitingSecondConsent" xml:space="preserve"><value>İkinci onayın bekleniyor</value></data>
+  <data name="attempt.status.failed" xml:space="preserve"><value>Uygulanmadı</value></data>
+  <data name="attempt.status.inDoubt" xml:space="preserve"><value>Belirsiz, senin kararın gerekiyor</value></data>
+  <data name="attempt.status.rolledBack" xml:space="preserve"><value>Geri alındı (otomatik)</value></data>
+  <data name="attempt.status.undoConflict" xml:space="preserve"><value>Geri alma için senin kararın gerekiyor</value></data>
+  <data name="attempt.status.undone" xml:space="preserve"><value>Geri alındı</value></data>
+  <data name="attempt.status.verified" xml:space="preserve"><value>Uygulandı ve doğrulandı</value></data>
+  <data name="attempt.status.verifyFailed" xml:space="preserve"><value>Etkili olmadı (otomatik olarak geri alındı)</value></data>
+  <data name="attempt.undo.available" xml:space="preserve"><value>geri alınabilir</value></data>
+  <data name="attempt.undo.unavailable" xml:space="preserve"><value>geri alma yok</value></data>
+  <data name="band.likely" xml:space="preserve"><value>Olası</value></data>
+  <data name="band.longShot" xml:space="preserve"><value>Zayıf ihtimal</value></data>
+  <data name="band.possible" xml:space="preserve"><value>Mümkün</value></data>
+  <data name="band.veryLikely" xml:space="preserve"><value>Çok olası</value></data>
+  <data name="bucket.externalNetwork.name" xml:space="preserve"><value>İnternet sağlayıcısı ya da bu bilgisayarın dışındaki ağ</value></data>
+  <data name="bucket.externalNetwork.sentence" xml:space="preserve"><value>Sorun bu bilgisayarın dışında görünüyor (modemin, internet sağlayıcın ya da oyun sunucusuna giden yol). Bir bilgisayar aracı bunu düzeltemez; internet sağlayıcınla görüşürken bu rapor işine yarar.</value></data>
+  <data name="bucket.fixableHere.name" xml:space="preserve"><value>Burada düzeltilebilir</value></data>
+  <data name="bucket.fixableHere.sentence" xml:space="preserve"><value>VTDiag bu bilgisayarda düzeltebileceği olası bir neden buldu. Her değişiklik önce açıklanır, senin onayını ister ve geri alınabilir.</value></data>
+  <data name="bucket.guidedManual.name" xml:space="preserve"><value>Rehberli elle adım</value></data>
+  <data name="bucket.guidedManual.sentence" xml:space="preserve"><value>Çözüm, senin kendin değiştirmen gereken bir ayar (örneğin BIOS'ta ya da Secure Boot için). VTDiag bunu senin yerine değiştiremez; adım adım yol gösterir ve sonucu kontrol eder.</value></data>
+  <data name="bucket.likelyHardware.name" xml:space="preserve"><value>Büyük olasılıkla donanım</value></data>
+  <data name="bucket.likelyHardware.sentence" xml:space="preserve"><value>Bu bilgisayarın bir parçası arızalanıyor ya da bir gereksinimi karşılayamıyor olabilir. Yazılım bunu düzeltemez; rapor buna neyin işaret ettiğini gösterir.</value></data>
+  <data name="bucket.riotOrAccount.name" xml:space="preserve"><value>Riot ya da hesap tarafı</value></data>
+  <data name="bucket.riotOrAccount.sentence" xml:space="preserve"><value>Bunun için bu bilgisayarda bir değişiklik değil, Riot Destek ya da hesabın gerekiyor. VTDiag bunu düzeltemez ve bunun için bu bilgisayarda hiçbir şey değiştirilmemeli.</value></data>
+  <data name="bucket.unknown.name" xml:space="preserve"><value>Bilinmiyor</value></data>
+  <data name="bucket.unknown.sentence" xml:space="preserve"><value>Nedeni kesinleştiremedik. Bu bir çıkmaz değil: raporu bir yardımcıyla paylaş; neyin kontrol edildiğini tam olarak görebilir.</value></data>
+  <data name="couldnotcheck.affects" xml:space="preserve"><value>Bu yüzden şunlar belirsiz kalıyor: {list}</value></data>
+  <data name="couldnotcheck.failed" xml:space="preserve"><value>kontrol başarısız oldu</value></data>
+  <data name="couldnotcheck.item" xml:space="preserve"><value>{what}: {reason}</value></data>
+  <data name="couldnotcheck.needs_admin" xml:space="preserve"><value>yönetici izni gerekiyor</value></data>
+  <data name="couldnotcheck.none" xml:space="preserve"><value>Önemli olan her şey kontrol edildi.</value></data>
+  <data name="couldnotcheck.not_collected" xml:space="preserve"><value>bu taramaya dahil değildi</value></data>
+  <data name="couldnotcheck.timed_out" xml:space="preserve"><value>zamanında yanıt vermedi</value></data>
+  <data name="coverage.all_ok" xml:space="preserve"><value>Tüm toplayıcılar eksiksiz çalıştı.</value></data>
+  <data name="coverage.status.failed" xml:space="preserve"><value>başarısız oldu</value></data>
+  <data name="coverage.status.notApplicable" xml:space="preserve"><value>bu bilgisayar için geçerli değil</value></data>
+  <data name="coverage.status.notRequested" xml:space="preserve"><value>bu taramaya dahil değildi</value></data>
+  <data name="coverage.status.ok" xml:space="preserve"><value>eksiksiz çalıştı</value></data>
+  <data name="coverage.status.partial" xml:space="preserve"><value>kısmen okundu</value></data>
+  <data name="coverage.status.skippedNoAdmin" xml:space="preserve"><value>atlandı (yönetici izni gerekiyor)</value></data>
+  <data name="coverage.status.timedOut" xml:space="preserve"><value>süre sınırında durdu</value></data>
+  <data name="footer.hash" xml:space="preserve"><value>JSON raporunun SHA-256 özeti: {hash}</value></data>
+  <data name="footer.machine" xml:space="preserve"><value>Makine anahtarı: {key}</value></data>
+  <data name="footer.versions" xml:space="preserve"><value>VTDiag {app} · bilgi tabanı {kb}</value></data>
+  <data name="health.clock" xml:space="preserve"><value>Bilgisayar saati</value></data>
+  <data name="health.connectivity" xml:space="preserve"><value>İnternet bağlantısı</value></data>
+  <data name="health.device_errors" xml:space="preserve"><value>Hatasız aygıtlar</value></data>
+  <data name="health.free_space" xml:space="preserve"><value>Boş disk alanı</value></data>
+  <data name="health.good_news" xml:space="preserve"><value>İyi haber: {count} şey sağlıklı görünüyor.</value></data>
+  <data name="health.gpu_driver" xml:space="preserve"><value>Ekran kartı sürücüsü</value></data>
+  <data name="health.hvci" xml:space="preserve"><value>Bellek Bütünlüğü (HVCI)</value></data>
+  <data name="health.iommu" xml:space="preserve"><value>Çekirdek DMA koruması</value></data>
+  <data name="health.modified_windows" xml:space="preserve"><value>Değiştirilmemiş Windows</value></data>
+  <data name="health.none" xml:space="preserve"><value>Bu raporda sağlık kontrolü yok.</value></data>
+  <data name="health.pending_reboot" xml:space="preserve"><value>Bekleyen yeniden başlatma yok</value></data>
+  <data name="health.secure_boot" xml:space="preserve"><value>Secure Boot (Güvenli Önyükleme)</value></data>
+  <data name="health.secure_boot_keys" xml:space="preserve"><value>Secure Boot anahtarları</value></data>
+  <data name="health.status.fail" xml:space="preserve"><value>Sorun var</value></data>
+  <data name="health.status.notApplicable" xml:space="preserve"><value>Geçerli değil</value></data>
+  <data name="health.status.ok" xml:space="preserve"><value>Sorun yok</value></data>
+  <data name="health.status.unknown" xml:space="preserve"><value>Kontrol edilemedi: {reason}</value></data>
+  <data name="health.status.warn" xml:space="preserve"><value>Göz atmaya değer</value></data>
+  <data name="health.test_signing_off" xml:space="preserve"><value>Test imzalama kapalı</value></data>
+  <data name="health.tpm2" xml:space="preserve"><value>TPM 2.0</value></data>
+  <data name="health.uefi_gpt" xml:space="preserve"><value>UEFI önyükleme ve GPT disk</value></data>
+  <data name="health.vanguard_service" xml:space="preserve"><value>Vanguard hizmeti</value></data>
+  <data name="health.virtualization" xml:space="preserve"><value>Sanallaştırma</value></data>
+  <data name="health.windows_build" xml:space="preserve"><value>Windows sürümü</value></data>
+  <data name="helper.anomalies" xml:space="preserve"><value>Açıklanamayan bulgular</value></data>
+  <data name="helper.codes" xml:space="preserve"><value>Kodlar</value></data>
+  <data name="helper.contribution" xml:space="preserve"><value>{signal} → {state}, Δ {delta}{extra}</value></data>
+  <data name="helper.extra" xml:space="preserve"><value>Ek log-odds: kod {code}, dalga {wave}, başarısız düzeltmeler {failed}</value></data>
+  <data name="helper.hypothesis" xml:space="preserve"><value>{id} · sonsal {posterior}, log-odds {logodds} (önsel {prior})</value></data>
+  <data name="helper.intro" xml:space="preserve"><value>Yardımcılar için sayılar. Olasılıklar birbirinden bağımsızdır (toplamları %100 etmez) ve sabit bir bilinmeyen-neden tabanı içerir.</value></data>
+  <data name="helper.leading" xml:space="preserve"><value>, önde</value></data>
+  <data name="helper.not_counted" xml:space="preserve"><value> (sayılmadı: aynı grup)</value></data>
+  <data name="helper.proposal" xml:space="preserve"><value>Öneri {fix}: fayda {utility}, risk {risk}, {reversibility}, bağlama {bind}</value></data>
+  <data name="helper.ruled_out" xml:space="preserve"><value>Elenenler</value></data>
+  <data name="helper.unknown_cause" xml:space="preserve"><value>Bilinmeyen neden: {p} (taban {floor}){leading}</value></data>
+  <data name="md.full_report" xml:space="preserve"><value>Tam rapor: .html dosyasını ekle ({file}).</value></data>
+  <data name="md.more" xml:space="preserve"><value>…ve {count} tane daha</value></data>
+  <data name="md.pc" xml:space="preserve"><value>Bilgisayar</value></data>
+  <data name="md.tried" xml:space="preserve"><value>Şimdiye kadar denenenler</value></data>
+  <data name="monitor.after" xml:space="preserve"><value>Sonra</value></data>
+  <data name="monitor.approximate" xml:space="preserve"><value>ağ değerleri yaklaşıktır</value></data>
+  <data name="monitor.before" xml:space="preserve"><value>Önce</value></data>
+  <data name="monitor.chart_fps" xml:space="preserve"><value>ortalama FPS</value></data>
+  <data name="monitor.chart_low" xml:space="preserve"><value>%1 en düşük</value></data>
+  <data name="monitor.chart_title" xml:space="preserve"><value>Dakika başına FPS</value></data>
+  <data name="monitor.correlation" xml:space="preserve"><value>Takılmaların %{ratio} kadarı {source} ile aynı anda oldu</value></data>
+  <data name="monitor.duration" xml:space="preserve"><value>{minutes} dk izlendi</value></data>
+  <data name="monitor.fps" xml:space="preserve"><value>ortalama {fps} FPS</value></data>
+  <data name="monitor.insufficient" xml:space="preserve"><value>Sonuç için yeterli veri yok (kısa maç).</value></data>
+  <data name="monitor.jitter" xml:space="preserve"><value>jitter {jitter} ms</value></data>
+  <data name="monitor.loss" xml:space="preserve"><value>paket kaybı %{loss}</value></data>
+  <data name="monitor.loss_first_hop" xml:space="preserve"><value>kayıp modeminde başlıyor</value></data>
+  <data name="monitor.low" xml:space="preserve"><value>%1 en düşük {low} FPS</value></data>
+  <data name="monitor.none" xml:space="preserve"><value>Hiçbir maç izlenmedi.</value></data>
+  <data name="monitor.periodic" xml:space="preserve"><value>yaklaşık her {period} sn'de bir tekrarlıyor</value></data>
+  <data name="monitor.ping" xml:space="preserve"><value>ping {p50} ms (%95: {p95} ms)</value></data>
+  <data name="monitor.region" xml:space="preserve"><value>sunucu bölgesi {region}</value></data>
+  <data name="monitor.self" xml:space="preserve"><value>İzleyicinin kendi işlemci kullanımı: ortalama %{cpu}</value></data>
+  <data name="monitor.spikes" xml:space="preserve"><value>dakikada {spikes} takılma</value></data>
+  <data name="privacy.count" xml:space="preserve"><value>{count} değer gizlendi ({rules}).</value></data>
+  <data name="privacy.excluded" xml:space="preserve"><value>İsteğin üzerine çıkarılanlar: {sections}</value></data>
+  <data name="privacy.level" xml:space="preserve"><value>Paylaşım düzeyi: tanımlayıcı bilgiler (bilgisayar ve kullanıcı adları, seri numaraları, profil yolları, MAC ve IP adresleri, anahtarlar) bu rapor hazırlanmadan önce çıkarıldı ya da değiştirildi.</value></data>
+  <data name="privacy.never" xml:space="preserve"><value>Hiçbir zaman toplanmaz: parolalar, Riot anahtarları, komut satırları, Vanguard günlük içerikleri, tarayıcı verileri, belgeler.</value></data>
+  <data name="readiness.gpt" xml:space="preserve"><value>GPT disk</value></data>
+  <data name="readiness.hvci" xml:space="preserve"><value>Bellek Bütünlüğü</value></data>
+  <data name="readiness.secureboot" xml:space="preserve"><value>Secure Boot</value></data>
+  <data name="readiness.testsigning" xml:space="preserve"><value>Test imzalama</value></data>
+  <data name="readiness.tpm" xml:space="preserve"><value>TPM 2.0</value></data>
+  <data name="readiness.uefi" xml:space="preserve"><value>UEFI</value></data>
+  <data name="readiness.virtualization" xml:space="preserve"><value>Sanallaştırma</value></data>
+  <data name="reason.accessDenied" xml:space="preserve"><value>Windows erişime izin vermedi</value></data>
+  <data name="reason.failed" xml:space="preserve"><value>kontrol başarısız oldu</value></data>
+  <data name="reason.insufficientData" xml:space="preserve"><value>henüz yeterli veri yok</value></data>
+  <data name="reason.needsAdmin" xml:space="preserve"><value>yönetici izni gerekiyor (tarama bu izin olmadan yapıldı)</value></data>
+  <data name="reason.notCollected" xml:space="preserve"><value>bu taramaya dahil değildi</value></data>
+  <data name="reason.redacted" xml:space="preserve"><value>gizlilik için rapora eklenmedi</value></data>
+  <data name="reason.incomplete" xml:space="preserve"><value>listenin sadece bir kısmı okunabildi</value></data>
+  <data name="reason.timedOut" xml:space="preserve"><value>zamanında yanıt vermedi</value></data>
+  <data name="reason.unparseable" xml:space="preserve"><value>veri okunamadı</value></data>
+  <data name="reason.unsupported" xml:space="preserve"><value>bu bilgisayar ya da Windows sürümü bu bilgiyi sunmuyor</value></data>
+  <data name="report.created" xml:space="preserve"><value>Oluşturulma: {date}</value></data>
+  <data name="report.disclaimer" xml:space="preserve"><value>VTDiag ücretsiz bir topluluk aracıdır ve Riot Games ile bağlantılı değildir.</value></data>
+  <data name="report.id" xml:space="preserve"><value>Rapor kimliği</value></data>
+  <data name="report.title" xml:space="preserve"><value>VTDiag raporu</value></data>
+  <data name="section.about" xml:space="preserve"><value>Bu rapor hakkında</value></data>
+  <data name="section.actions" xml:space="preserve"><value>Denenenler</value></data>
+  <data name="section.couldnotcheck" xml:space="preserve"><value>Kontrol edemediklerimiz</value></data>
+  <data name="section.coverage" xml:space="preserve"><value>Tarama kapsamı</value></data>
+  <data name="section.health" xml:space="preserve"><value>Sağlık kontrol listesi</value></data>
+  <data name="section.helper" xml:space="preserve"><value>Yardımcılar için (teknik ayrıntılar)</value></data>
+  <data name="section.monitor" xml:space="preserve"><value>Maç izleme</value></data>
+  <data name="section.privacy" xml:space="preserve"><value>Gizlilik</value></data>
+  <data name="section.summary" xml:space="preserve"><value>Özet</value></data>
+  <data name="section.suspects" xml:space="preserve"><value>Olası nedenler</value></data>
+  <data name="section.system" xml:space="preserve"><value>Bu bilgisayar</value></data>
+  <data name="state.false" xml:space="preserve"><value>hayır</value></data>
+  <data name="state.notApplicable" xml:space="preserve"><value>geçerli değil</value></data>
+  <data name="state.true" xml:space="preserve"><value>evet</value></data>
+  <data name="state.unknown" xml:space="preserve"><value>bilinmiyor</value></data>
+  <data name="suspects.evidence_state" xml:space="preserve"><value>{signal}: {state}</value></data>
+  <data name="suspects.fix_available" xml:space="preserve"><value>VTDiag'de bunun için bir düzeltme var.</value></data>
+  <data name="suspects.guide_available" xml:space="preserve"><value>Adım adım bir rehber var.</value></data>
+  <data name="suspects.none" xml:space="preserve"><value>Belirgin bir neden öne çıkmadı.</value></data>
+  <data name="suspects.unknown_cause" xml:space="preserve"><value>Henüz bilmediğimiz bir şey ({band})</value></data>
+  <data name="suspects.why" xml:space="preserve"><value>Neden böyle düşünüyoruz</value></data>
+  <data name="system.bios" xml:space="preserve"><value>BIOS {version}</value></data>
+  <data name="system.driver" xml:space="preserve"><value>sürücü {version}</value></data>
+  <data name="system.limited" xml:space="preserve"><value>Tarama yönetici izni olmadan yapıldı, bu yüzden bazı kontroller atlandı.</value></data>
+  <data name="system.ram" xml:space="preserve"><value>{gb} GB RAM</value></data>
+  <data name="system.readiness" xml:space="preserve"><value>Vanguard hazırlığı</value></data>
+  <data name="system.specs" xml:space="preserve"><value>Donanım</value></data>
+  <data name="system.vm" xml:space="preserve"><value>Sanal makinede çalışıyor (VALORANT sanal makineleri desteklemez).</value></data>
+  <data name="value.legacy" xml:space="preserve"><value>eski BIOS (Legacy)</value></data>
+  <data name="value.mbr" xml:space="preserve"><value>MBR</value></data>
+  <data name="value.no" xml:space="preserve"><value>yok</value></data>
+  <data name="value.notApplicable" xml:space="preserve"><value>yok</value></data>
+  <data name="value.off" xml:space="preserve"><value>kapalı</value></data>
+  <data name="value.on" xml:space="preserve"><value>açık</value></data>
+  <data name="value.unknown" xml:space="preserve"><value>kontrol edilemedi</value></data>
+  <data name="value.yes" xml:space="preserve"><value>var</value></data>
+  <data name="verdict.label" xml:space="preserve"><value>Sonuç</value></data>
+  <data name="verdict.route" xml:space="preserve"><value>Yönlendirme: {text}</value></data>
+  <data name="verdict.top" xml:space="preserve"><value>En olası neden: {title} ({band}).</value></data>
+  <data name="verdict.unknown_leading" xml:space="preserve"><value>Henüz tek bir neden öne çıkmıyor; aşağıdaki listeyi kesin cevap değil, ipucu olarak gör.</value></data>
+</root>

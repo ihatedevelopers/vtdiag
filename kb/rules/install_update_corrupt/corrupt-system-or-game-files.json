@@ -1,0 +1,60 @@
+{
+  "id": "corrupt-system-or-game-files",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "install_update_corrupt",
+  "titleKey": "rule.corrupt-system-or-game-files.title",
+  "summaryKey": "rule.corrupt-system-or-game-files.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "crash_desktop",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 3
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "dirty",
+      "signal": "disk.dirty",
+      "true": 1.0
+    },
+    {
+      "id": "disk_err",
+      "signal": "events.disk_errors",
+      "true": 1.2,
+      "textKey": "rule.corrupt-system-or-game-files.ev.disk_err"
+    },
+    {
+      "id": "hdd",
+      "signal": "disk.system_hdd",
+      "true": 0.3
+    },
+    {
+      "id": "sysfiles",
+      "signal": "os.system_files_suspect",
+      "true": 1.0
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.storage.chkdsk",
+    "guide.riot.client_repair"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "corrupt-system-or-game-files",
+    "threadCount": 3,
+    "evidence": "guide",
+    "threadIds": [
+      "1v2kkdm",
+      "1v50i4o",
+      "1x6rgrn"
+    ],
+    "urls": []
+  }
+}

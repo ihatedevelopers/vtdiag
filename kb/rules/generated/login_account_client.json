@@ -1,0 +1,132 @@
+[
+  {
+    "id": "conflict-bonjour_mdns",
+    "rev": 1,
+    "kind": "generated",
+    "category": "login_account_client",
+    "titleKey": "rule.conflict-bonjour_mdns.title",
+    "summaryKey": "rule.conflict-bonjour_mdns.summary",
+    "bucket": "fixableHere",
+    "symptoms": [
+      "launch_black_screen",
+      "error_code"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.bonjour_mdns.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.bonjour_mdns.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "running",
+        "signal": "conflict.bonjour_mdns.running",
+        "true": 0.7
+      },
+      {
+        "id": "service_present",
+        "signal": "conflict.bonjour_mdns.service_present",
+        "true": 0.3,
+        "group": "presence"
+      },
+      {
+        "id": "service_running",
+        "signal": "conflict.bonjour_mdns.service_running",
+        "true": 0.5
+      },
+      {
+        "id": "crash_module",
+        "signal": "conflict.bonjour_mdns.crash_module",
+        "true": 3.5
+      }
+    ],
+    "wave": {
+      "from": "2025-10-01",
+      "to": "2025-11-30",
+      "boost": 0.5
+    },
+    "fixes": [
+      "fix.svc.disable_conflict_service"
+    ],
+    "guides": [
+      "guide.apps.uninstall_bonjour"
+    ],
+    "sources": {
+      "threadCount": 16,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1op09ot",
+        "1opaw96",
+        "1opjy44",
+        "1opmcp6",
+        "1opuu8t"
+      ],
+      "urls": [
+        "https://www.freefixer.com/library/file/mdnsNSP.dll-29474/",
+        "https://www.keengamer.com/articles/features/troubleshooting/7-ways-to-fix-the-valorant-stuck-on-loading-screen-bug/"
+      ]
+    },
+    "related": [
+      "mdns-bonjour-ni-val43-loading"
+    ]
+  },
+  {
+    "id": "conflict-ni_mdns",
+    "rev": 1,
+    "kind": "generated",
+    "category": "login_account_client",
+    "titleKey": "rule.conflict-ni_mdns.title",
+    "summaryKey": "rule.conflict-ni_mdns.summary",
+    "bucket": "guidedManual",
+    "symptoms": [
+      "launch_black_screen",
+      "error_code"
+    ],
+    "prior": {
+      "threads": 0
+    },
+    "requires": [
+      "conflict.ni_mdns.any"
+    ],
+    "evidence": [
+      {
+        "id": "installed",
+        "signal": "conflict.ni_mdns.installed",
+        "true": 0.8,
+        "group": "presence"
+      },
+      {
+        "id": "crash_module",
+        "signal": "conflict.ni_mdns.crash_module",
+        "true": 3.5
+      }
+    ],
+    "fixes": [],
+    "guides": [
+      "guide.apps.uninstall_bonjour"
+    ],
+    "sources": {
+      "threadCount": 6,
+      "evidence": "conflict_registry",
+      "threadIds": [
+        "1op09ot",
+        "1oplxlt",
+        "1ou1arc",
+        "1sgigjd",
+        "1vzi3dp"
+      ],
+      "urls": [
+        "https://www.keengamer.com/articles/features/troubleshooting/7-ways-to-fix-the-valorant-stuck-on-loading-screen-bug/"
+      ]
+    },
+    "related": [
+      "mdns-bonjour-ni-val43-loading"
+    ]
+  }
+]

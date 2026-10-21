@@ -1,0 +1,46 @@
+{
+  "id": "missing-environment-variables",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.missing-environment-variables.title",
+  "summaryKey": "rule.missing-environment-variables.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "wont_launch",
+    "error_code",
+    "install_update"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [
+    "os.env_vars_broken"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "env",
+      "signal": "os.env_vars_broken",
+      "true": 3.0,
+      "veto": "false",
+      "textKey": "rule.missing-environment-variables.ev.env"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.env_vars.restore"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "missing-environment-variables",
+    "threadCount": 1,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1x2uhex"
+    ],
+    "urls": []
+  }
+}

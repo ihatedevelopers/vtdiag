@@ -1,0 +1,73 @@
+{
+  "id": "fps-decay-over-time",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.fps-decay-over-time.title",
+  "summaryKey": "rule.fps-decay-over-time.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "fps_low",
+    "stutter"
+  ],
+  "prior": {
+    "threads": 7
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "over_time",
+      "signal": "ask.fps_drops_over_time",
+      "true": 2.0,
+      "false": -1.5,
+      "ask": "ask.fps_drops_over_time"
+    },
+    {
+      "id": "laptop",
+      "signal": "hw.laptop",
+      "true": 0.4
+    },
+    {
+      "id": "overlay",
+      "signal": "proc.overlay_running",
+      "true": 0.4
+    },
+    {
+      "id": "throttle",
+      "signal": "mon.cpu.throttling",
+      "true": 1.5
+    },
+    {
+      "id": "standby",
+      "signal": "hw.standby_mem_high",
+      "true": 0.4
+    }
+  ],
+  "fixes": [
+    "fix.proc.close_overlays",
+    "fix.display.disable_fso"
+  ],
+  "guides": [
+    "guide.hardware.thermal",
+    "guide.gpu.clean_driver"
+  ],
+  "questions": [
+    "ask.fps_drops_over_time"
+  ],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "fps-decay-over-time",
+    "threadCount": 7,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1vm1fnm",
+      "1vzymf2",
+      "1w11dt9",
+      "1w17o2q",
+      "1w1f9m2"
+    ],
+    "urls": []
+  }
+}

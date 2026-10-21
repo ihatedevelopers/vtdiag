@@ -1,0 +1,93 @@
+{
+  "id": "guide.shader_cache.warmup",
+  "titleKey": "guide.shader_cache.warmup.title",
+  "summaryKey": "guide.shader_cache.warmup.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "shader-cache-compilation-stutter",
+    "patch-13-01-fps-drop"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "warmup",
+      "when": [],
+      "textKey": "guide.shader_cache.warmup.warmup.text",
+      "steps": [
+        {
+          "textKey": "guide.shader_cache.warmup.warmup.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.shader_cache.warmup.warmup.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.shader_cache.warmup.warmup.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.shader_cache.warmup.warmup.s4",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "clear"
+    },
+    {
+      "id": "clear",
+      "when": [],
+      "textKey": "guide.shader_cache.warmup.clear.text",
+      "steps": [
+        {
+          "textKey": "guide.shader_cache.warmup.clear.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.shader_cache.warmup.clear.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.shader_cache.warmup.clear.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.shader_cache.warmup.clear.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.shader_cache.warmup.clear.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "drivers",
+      "when": [],
+      "textKey": "guide.shader_cache.warmup.drivers.text",
+      "steps": [
+        {
+          "textKey": "guide.shader_cache.warmup.drivers.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.shader_cache.warmup.drivers.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.shader_cache.warmup.drivers.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.shader_cache.warmup.drivers.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.shader_cache.warmup.outcome"
+}

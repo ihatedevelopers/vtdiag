@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:collector:1",
+  "title": "VTDiag KB pack-declared collector",
+  "description": "kb/collectors/*.json: read-only collectors (eventLog, uninstallRegex, loadedDriver, faultingModule, registryValue, fileExists) that let mods ship new detections as data.",
+  "$defs": {
+    "item": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "anyOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "eventLog"
+            },
+            "log": {
+              "type": "string",
+              "description": "Log name, for example System, Application, Microsoft-Windows-CodeIntegrity/Operational."
+            },
+            "providers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Provider names (any)."
+            },
+            "eventIds": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "description": "Event ids (any). Empty = all ids of the providers."
+            },
+            "levels": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "critical",
+                  "error",
+                  "warning",
+                  "information",
+                  "verbose"
+                ],
+                "description": "Event level filter for event-log collectors."
+              },
+              "description": "Levels (any). Empty = all."
+            },
+            "sinceDays": {
+              "type": "integer",
+              "description": "Look-back window (days, at most MaxSinceDays)."
+            },
+            "max": {
+              "type": "integer",
+              "description": "Max events read (at most MaxEvents)."
+            },
+            "project": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "EventData field names to keep."
+            },
+            "id": {
+              "type": "string",
+              "description": "Stable id (snake_case), referenced by Collector."
+            },
+            "descriptionKey": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "String key describing what it looks for."
+            }
+          },
+          "required": [
+            "log",
+            "id"
+          ],
+          "additionalProperties": false,
+          "description": "Event-log provider/id query. Items: one per event with utc, provider, eventId, level and the projected EventData fields. No rendered (localized) messages."
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "uninstallRegex"
+            },
+            "displayNameRegex": {
+              "type": "string",
+              "description": ".NET regex on DisplayName (case-insensitive, NonBacktracking, 50 ms timeout)."
+            },
+            "publisherRegex": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Optional regex on Publisher."
+            },
+            "id": {
+              "type": "string",
+              "description": "Stable id (snake_case), referenced by Collector."
+            },
+            "descriptionKey": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "String key describing what it looks for."
+            }
+          },
+          "required": [
+            "displayNameRegex",
+            "id"
+          ],
+          "additionalProperties": false,
+          "description": "Uninstall-key regex (HKLM, WOW6432Node, player HKCU). Items: displayName, publisher, version, hive."
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "loadedDriver"
+            },
+            "names": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Driver file names (ordinal, case-insensitive)."
+            },
+            "nameRegex": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Optional regex on the file name."
+            },
+            "id": {
+              "type": "string",
+              "description": "Stable id (snake_case), referenced by Collector."
+            },
+            "descriptionKey": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "String key describing what it looks for."
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "additionalProperties": false,
+          "description": "Loaded kernel driver by name. Items: name, version, signer."
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "faultingModule"
+            },
+            "modules": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Module file names (ordinal, case-insensitive)."
+            },
+            "exes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Crashing executables to consider; empty = All."
+            },
+            "sinceDays": {
+              "type": "integer",
+              "description": "Look-back window (days)."
+            },
+            "id": {
+              "type": "string",
+              "description": "Stable id (snake_case), referenced by Collector."
+            },
+            "descriptionKey": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "String key describing what it looks for."
+            }
+          },
+          "required": [
+            "modules",
+            "id"
+          ],
+          "additionalProperties": false,
+          "description": "Faulting-module match on Application Error events. Items: utc, exe, module, exceptionCode."
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "registryValue"
+            },
+            "hive": {
+              "enum": [
+                "hklm",
+                "hkcuPlayer"
+              ],
+              "description": "Hive."
+            },
+            "key": {
+              "type": "string",
+              "description": "Key path under the hive. Must start with one of AllowedRegistryRoots (after ControlSetNNN → CurrentControlSet normalization) and must not hit a denied prefix."
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Value names; empty = all values (at most MaxRegistryValues)."
+            },
+            "id": {
+              "type": "string",
+              "description": "Stable id (snake_case), referenced by Collector."
+            },
+            "descriptionKey": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "String key describing what it looks for."
+            }
+          },
+          "required": [
+            "hive",
+            "key",
+            "id"
+          ],
+          "additionalProperties": false,
+          "description": "Registry value read. Items: name, kind, data (invariant string) per value; an absent key yields Count 0."
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "fileExists"
+            },
+            "path": {
+              "type": "string",
+              "description": "Path template starting with one of AllowedPathTokens; no .. segments, no wildcards, no UNC or device paths."
+            },
+            "id": {
+              "type": "string",
+              "description": "Stable id (snake_case), referenced by Collector."
+            },
+            "descriptionKey": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "String key describing what it looks for."
+            }
+          },
+          "required": [
+            "path",
+            "id"
+          ],
+          "additionalProperties": false,
+          "description": "File existence/metadata (never content). Items: exists, size, mtimeUtc, version, signer."
+        }
+      ],
+      "description": "A pack-declared READ-ONLY collector (design_A.md section 6.5, DESIGN.md section 2): lets mods ship a new conflict wave as data with no release. Exactly six kinds; anything else needs a C# probe. File: kb/collectors/*.json. Limits are in PackCollectorLimits; A1's executor and A2's lint both enforce them."
+    }
+  },
+  "anyOf": [
+    {
+      "$ref": "#/$defs/item"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  ]
+}

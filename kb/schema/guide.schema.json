@@ -1,0 +1,290 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:guide:1",
+  "title": "VTDiag KB guide",
+  "description": "kb/guides/<id>.json: a guided manual flow (BIOS, Secure Boot, ISP, uninstall) with branches and verification.",
+  "$defs": {
+    "item": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable id guide.<area>.<name>."
+        },
+        "rev": {
+          "type": "integer",
+          "description": "Revision."
+        },
+        "titleKey": {
+          "type": "string",
+          "description": "Title key."
+        },
+        "summaryKey": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Summary key."
+        },
+        "bucket": {
+          "enum": [
+            "fixableHere",
+            "guidedManual",
+            "externalNetwork",
+            "riotOrAccount",
+            "likelyHardware",
+            "unknown"
+          ],
+          "description": "Honesty bucket (usually GuidedManual; ISP flows use ExternalNetwork)."
+        },
+        "risk": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "description": "Risk (firmware flows are high: guide only)."
+        },
+        "reboot": {
+          "enum": [
+            "none",
+            "recommended",
+            "required"
+          ],
+          "description": "Reboot need."
+        },
+        "appliesTo": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Hypotheses it addresses."
+        },
+        "preflight": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "probe": {
+                "type": "string",
+                "description": "A GuardIds id or a live-probeable signal id."
+              },
+              "args": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "description": "Arguments (may reference $bind.id)."
+              },
+              "must": {
+                "enum": [
+                  "unknown",
+                  "false",
+                  "true",
+                  "notApplicable"
+                ],
+                "description": "Required value. An Unknown probe result never passes a Block guard."
+              },
+              "severity": {
+                "enum": [
+                  "block",
+                  "warn"
+                ],
+                "description": "Block or warn."
+              },
+              "failKey": {
+                "type": "string",
+                "description": "String key shown when the guard fails (\"Close VALORANT first\")."
+              }
+            },
+            "required": [
+              "probe",
+              "failKey"
+            ],
+            "additionalProperties": false,
+            "description": "A guard or preflight check."
+          },
+          "description": "Pre-flight checks (for example BitLocker on means \"save your recovery key first\", S11)."
+        },
+        "branches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Id within the guide (for example mbr, csm, setup_mode, sb_on_still_failing)."
+              },
+              "when": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "signal": {
+                      "type": "string",
+                      "description": "Signal id."
+                    },
+                    "is": {
+                      "enum": [
+                        "unknown",
+                        "false",
+                        "true",
+                        "notApplicable"
+                      ],
+                      "description": "Required value. A condition on an Unknown signal is not satisfied; the UI then shows every branch."
+                    }
+                  },
+                  "required": [
+                    "signal",
+                    "is"
+                  ],
+                  "additionalProperties": false,
+                  "description": "A condition on a signal."
+                },
+                "description": "Conditions (all must hold). Empty = default branch."
+              },
+              "textKey": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Branch explanation key."
+              },
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "textKey": {
+                      "type": "string",
+                      "description": "Step text key (may use vendor-table placeholders)."
+                    },
+                    "action": {
+                      "enum": [
+                        "none",
+                        "restartToFirmware",
+                        "openSettings",
+                        "runCheck",
+                        "runFix",
+                        "copyText"
+                      ],
+                      "description": "Action."
+                    },
+                    "target": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Action target (settings URI, probe id or fix id)."
+                    },
+                    "vendorTable": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Vendor table id (TableDef) selected by board/system manufacturer."
+                    },
+                    "imageKey": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Image key (SVG with string slots; no text baked into images)."
+                    },
+                    "docsAnchor": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Anchor in DocsPath."
+                    }
+                  },
+                  "required": [
+                    "textKey"
+                  ],
+                  "additionalProperties": false,
+                  "description": "One guide step."
+                },
+                "description": "Steps."
+              },
+              "verify": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "signal": {
+                      "type": "string",
+                      "description": "Signal id."
+                    },
+                    "is": {
+                      "enum": [
+                        "unknown",
+                        "false",
+                        "true",
+                        "notApplicable"
+                      ],
+                      "description": "Required value. A condition on an Unknown signal is not satisfied; the UI then shows every branch."
+                    }
+                  },
+                  "required": [
+                    "signal",
+                    "is"
+                  ],
+                  "additionalProperties": false,
+                  "description": "A condition on a signal."
+                },
+                "description": "Verification after the steps (and after the firmware restart, on resume)."
+              },
+              "nextOnFail": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Branch to suggest when verification fails (\"not yet, here's the next thing to try\")."
+              }
+            },
+            "required": [
+              "id",
+              "steps"
+            ],
+            "additionalProperties": false,
+            "description": "One branch of a guide."
+          },
+          "description": "Branches; the first whose conditions all hold is shown first, the rest stay reachable."
+        },
+        "docsPath": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Page under docs/ for the QR code (the PC screen is in BIOS, the phone shows the steps)."
+        },
+        "outcomeAskKey": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "\"Did it help?\" question key."
+        }
+      },
+      "required": [
+        "id",
+        "titleKey",
+        "branches"
+      ],
+      "additionalProperties": false,
+      "description": "A guided manual flow (BIOS, Secure Boot, TPM, HVCI, ISP/WARP, uninstall, driver update) for what a PC tool cannot or must not automate. The only automated actions are a \"Restart into BIOS\" button (resume armed), opening an allowlisted Settings page, running a read-only check, or handing off to a normal consented fix. File: kb/guides/<id>.json. Schema: kb/schema/guide.schema.json."
+    }
+  },
+  "anyOf": [
+    {
+      "$ref": "#/$defs/item"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "dual-boot-secure-boot-van1",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.dual-boot-secure-boot-van1.title",
+  "summaryKey": "rule.dual-boot-secure-boot-van1.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "error_code",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 2
+  },
+  "requires": [
+    "fw.dualboot"
+  ],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "dualboot",
+      "signal": "fw.dualboot",
+      "true": 2.0,
+      "veto": "false",
+      "textKey": "rule.dual-boot-secure-boot-van1.ev.dualboot"
+    },
+    {
+      "id": "sb",
+      "signal": "sec.secureboot.on",
+      "false": 0.6
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.boot.dualboot"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "dual-boot-secure-boot-van1",
+    "threadCount": 2,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1oyn635",
+      "1p8ly4l"
+    ],
+    "urls": []
+  }
+}

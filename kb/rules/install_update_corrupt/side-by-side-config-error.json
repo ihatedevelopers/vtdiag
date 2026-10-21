@@ -1,0 +1,43 @@
+{
+  "id": "side-by-side-config-error",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "install_update_corrupt",
+  "titleKey": "rule.side-by-side-config-error.title",
+  "summaryKey": "rule.side-by-side-config-error.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "wont_launch",
+    "crash_desktop"
+  ],
+  "prior": {
+    "threads": 2
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "vcredist",
+      "signal": "apps.vcredist_missing",
+      "true": 2.0,
+      "textKey": "rule.side-by-side-config-error.ev.vcredist"
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.runtimes.install"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "side-by-side-config-error",
+    "threadCount": 2,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1tpea4f",
+      "1tz1ywd"
+    ],
+    "urls": []
+  }
+}

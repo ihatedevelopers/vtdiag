@@ -1,0 +1,61 @@
+{
+  "id": "vgc-high-cpu",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.vgc-high-cpu.title",
+  "summaryKey": "rule.vgc-high-cpu.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "fps_low",
+    "stutter"
+  ],
+  "prior": {
+    "threads": 7
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "cpu",
+      "signal": "vg.vgc_cpu_high",
+      "true": 2.0
+    },
+    {
+      "id": "mon_cpu",
+      "signal": "mon.vgc.cpu_high",
+      "true": 2.0
+    },
+    {
+      "id": "av",
+      "signal": "sec.third_party_av",
+      "true": 0.4
+    },
+    {
+      "id": "laptop",
+      "signal": "hw.laptop",
+      "true": 0.3
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.av.exclusions",
+    "guide.hardware.thermal"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "vgc-high-cpu",
+    "threadCount": 7,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1s6p8do",
+      "1tcp2op",
+      "1tdm93d",
+      "1tkcqk5",
+      "1tkqt7f"
+    ],
+    "urls": []
+  }
+}

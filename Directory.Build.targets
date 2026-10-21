@@ -1,0 +1,45 @@
+<Project>
+  <!--
+    Layer wiring for Microsoft.CodeAnalysis.BannedApiAnalyzers (DESIGN.md section 2, design_B.md section 13.2).
+    Owner: Lead. Evaluated after every project file, so the mapping below is final.
+
+      Write    : VTD.Fixes, VTD.Journal, VTD.Session, VTD.Engine  -> Common rules only (may write system state)
+      Ui       : VTD.App                                          -> Common + ReadOnly + Ui
+      Test     : any project under tests\                         -> Common rules only
+      ReadOnly : everything else (Contracts, Platform, Collectors, Knowledge, Analysis, Reporting,
+                 Monitor.Core, Monitor, Testing.Fakes, and any NEW project by default)
+
+    An audited exception to a banned symbol must be a `#pragma warning disable RS0030` in a file listed in
+    banned/rs0030-allowlist.txt; tests/VTD.Policy.Tests fails the build otherwise.
+  -->
+  <PropertyGroup>
+    <_VtdRelDir>$([MSBuild]::MakeRelative('$(VtdRepoRoot)', '$(MSBuildProjectDirectory)'))</_VtdRelDir>
+    <VtdLayer>ReadOnly</VtdLayer>
+    <VtdLayer Condition="'$(MSBuildProjectName)' == 'VTD.Fixes' or '$(MSBuildProjectName)' == 'VTD.Journal' or '$(MSBuildProjectName)' == 'VTD.Session' or '$(MSBuildProjectName)' == 'VTD.Engine'">Write</VtdLayer>
+    <VtdLayer Condition="'$(MSBuildProjectName)' == 'VTD.App'">Ui</VtdLayer>
+    <VtdLayer Condition="$(_VtdRelDir.StartsWith('tests'))">Test</VtdLayer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+    <AdditionalFiles Include="$(VtdRepoRoot)banned\BannedSymbols.Common.txt" Link="banned\BannedSymbols.Common.txt" />
+    <AdditionalFiles Include="$(VtdRepoRoot)banned\BannedSymbols.ReadOnly.txt" Link="banned\BannedSymbols.ReadOnly.txt" Condition="'$(VtdLayer)' == 'ReadOnly' or '$(VtdLayer)' == 'Ui'" />
+    <AdditionalFiles Include="$(VtdRepoRoot)banned\BannedSymbols.Ui.txt" Link="banned\BannedSymbols.Ui.txt" Condition="'$(VtdLayer)' == 'Ui'" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyMetadata Include="VtdLayer" Value="$(VtdLayer)" />
+  </ItemGroup>
+
+  <!-- Every project under tests\ is an xUnit v3 test project run through VSTest (`dotnet test`). -->
+  <PropertyGroup Condition="'$(VtdLayer)' == 'Test'">
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(VtdLayer)' == 'Test'">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+    <Using Include="Xunit" />
+  </ItemGroup>
+</Project>

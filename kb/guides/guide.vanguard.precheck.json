@@ -1,0 +1,110 @@
+{
+  "id": "guide.vanguard.precheck",
+  "titleKey": "guide.vanguard.precheck.title",
+  "summaryKey": "guide.vanguard.precheck.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "recommended",
+  "appliesTo": [
+    "vgc-service-not-running"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "precheck_on",
+      "when": [
+        {
+          "signal": "ask.vanguard_precheck_on",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.vanguard.precheck.precheck_on.text",
+      "steps": [
+        {
+          "textKey": "guide.vanguard.precheck.precheck_on.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.precheck.precheck_on.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.precheck.precheck_on.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.precheck.precheck_on.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.precheck.precheck_on.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "precheck_off",
+      "when": [
+        {
+          "signal": "ask.vanguard_precheck_on",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.vanguard.precheck.precheck_off.text",
+      "steps": [
+        {
+          "textKey": "guide.vanguard.precheck.precheck_off.s1",
+          "action": "runFix",
+          "target": "fix.vg.vgc_automatic"
+        },
+        {
+          "textKey": "guide.vanguard.precheck.precheck_off.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.precheck.precheck_off.s3",
+          "action": "runCheck",
+          "target": "vg.vgc_running"
+        },
+        {
+          "textKey": "guide.vanguard.precheck.precheck_off.s4",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "vg.vgc_running",
+          "is": "true"
+        }
+      ]
+    },
+    {
+      "id": "not_sure",
+      "when": [],
+      "textKey": "guide.vanguard.precheck.not_sure.text",
+      "steps": [
+        {
+          "textKey": "guide.vanguard.precheck.not_sure.s1",
+          "action": "openSettings",
+          "target": "ms-settings:about"
+        },
+        {
+          "textKey": "guide.vanguard.precheck.not_sure.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.precheck.not_sure.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.vanguard.precheck.not_sure.s4",
+          "action": "runFix",
+          "target": "fix.vg.vgc_automatic"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.vanguard.precheck.outcome"
+}

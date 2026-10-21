@@ -1,0 +1,168 @@
+{
+  "id": "guide.display.stretched_res",
+  "titleKey": "guide.display.stretched_res.title",
+  "summaryKey": "guide.display.stretched_res.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "stretched-resolution-issues"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "nvidia",
+      "when": [
+        {
+          "signal": "gpu.nvidia_dgpu",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.display.stretched_res.nvidia.text",
+      "steps": [
+        {
+          "textKey": "guide.display.stretched_res.nvidia.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.nvidia.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.nvidia.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.nvidia.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.nvidia.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.nvidia.s6",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "cru"
+    },
+    {
+      "id": "amd",
+      "when": [
+        {
+          "signal": "gpu.amd_dgpu",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.display.stretched_res.amd.text",
+      "steps": [
+        {
+          "textKey": "guide.display.stretched_res.amd.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.amd.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.amd.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.amd.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.amd.s5",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "cru"
+    },
+    {
+      "id": "intel_other",
+      "when": [],
+      "textKey": "guide.display.stretched_res.intel_other.text",
+      "steps": [
+        {
+          "textKey": "guide.display.stretched_res.intel_other.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.intel_other.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.intel_other.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.intel_other.s4",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "cru"
+    },
+    {
+      "id": "in_game",
+      "when": [],
+      "textKey": "guide.display.stretched_res.in_game.text",
+      "steps": [
+        {
+          "textKey": "guide.display.stretched_res.in_game.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.in_game.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.in_game.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.in_game.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.in_game.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "cru",
+      "when": [],
+      "textKey": "guide.display.stretched_res.cru.text",
+      "steps": [
+        {
+          "textKey": "guide.display.stretched_res.cru.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.cru.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.cru.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.cru.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.display.stretched_res.cru.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.display.stretched_res.outcome"
+}

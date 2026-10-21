@@ -1,0 +1,133 @@
+{
+  "id": "guide.audio.output_device",
+  "titleKey": "guide.audio.output_device.title",
+  "summaryKey": "guide.audio.output_device.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "audio-device-config-issues"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "devices",
+      "when": [],
+      "textKey": "guide.audio.output_device.devices.text",
+      "steps": [
+        {
+          "textKey": "guide.audio.output_device.devices.s1",
+          "action": "openSettings",
+          "target": "ms-settings:sound"
+        },
+        {
+          "textKey": "guide.audio.output_device.devices.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.output_device.devices.s3",
+          "action": "openSettings",
+          "target": "ms-settings:apps-volume"
+        },
+        {
+          "textKey": "guide.audio.output_device.devices.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.output_device.devices.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.output_device.devices.s6",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "exclusive"
+    },
+    {
+      "id": "exclusive",
+      "when": [],
+      "textKey": "guide.audio.output_device.exclusive.text",
+      "steps": [
+        {
+          "textKey": "guide.audio.output_device.exclusive.s1",
+          "action": "openSettings",
+          "target": "ms-settings:sound"
+        },
+        {
+          "textKey": "guide.audio.output_device.exclusive.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.output_device.exclusive.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.output_device.exclusive.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.output_device.exclusive.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "sound_apps",
+      "when": [],
+      "textKey": "guide.audio.output_device.sound_apps.text",
+      "steps": [
+        {
+          "textKey": "guide.audio.output_device.sound_apps.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.output_device.sound_apps.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.output_device.sound_apps.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.output_device.sound_apps.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "driver",
+      "when": [],
+      "textKey": "guide.audio.output_device.driver.text",
+      "steps": [
+        {
+          "textKey": "guide.audio.output_device.driver.s1",
+          "action": "openSettings",
+          "target": "ms-settings:about"
+        },
+        {
+          "textKey": "guide.audio.output_device.driver.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.output_device.driver.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.output_device.driver.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.audio.output_device.driver.s5",
+          "action": "runFix",
+          "target": "fix.power.usb_selective_suspend_off"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.audio.output_device.outcome"
+}

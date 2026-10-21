@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:question:1",
+  "title": "VTDiag KB question",
+  "description": "kb/questions/*.json: intake questions; each answer becomes an ask.* signal.",
+  "$defs": {
+    "item": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id, also the signal id: ask.<name> (for example ask.league_also_broken)."
+        },
+        "textKey": {
+          "type": "string",
+          "description": "Question text key."
+        },
+        "helpKey": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Help text key."
+        },
+        "kind": {
+          "enum": [
+            "yesNo",
+            "singleChoice"
+          ],
+          "description": "Kind."
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Option id (snake_case), for example yes, periodic."
+              },
+              "textKey": {
+                "type": "string",
+                "description": "Option text key."
+              },
+              "sets": {
+                "enum": [
+                  "unknown",
+                  "false",
+                  "true",
+                  "notApplicable"
+                ],
+                "description": "Value the question's signal takes when chosen."
+              }
+            },
+            "required": [
+              "id",
+              "textKey",
+              "sets"
+            ],
+            "additionalProperties": false,
+            "description": "One answer option."
+          },
+          "description": "Options (YesNo questions get yes/no/unsure by default when empty)."
+        },
+        "intake": {
+          "type": "boolean",
+          "description": "Asked up front on the \"What's wrong?\" screen (for example \"is League also broken?\")."
+        },
+        "symptoms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Only relevant for these symptom ids (empty = any)."
+        },
+        "askIf": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "signal": {
+                "type": "string",
+                "description": "Signal id."
+              },
+              "is": {
+                "enum": [
+                  "unknown",
+                  "false",
+                  "true",
+                  "notApplicable"
+                ],
+                "description": "Required value. A condition on an Unknown signal is not satisfied; the UI then shows every branch."
+              }
+            },
+            "required": [
+              "signal",
+              "is"
+            ],
+            "additionalProperties": false,
+            "description": "A condition on a signal."
+          },
+          "description": "Only ask when these conditions hold."
+        }
+      },
+      "required": [
+        "id",
+        "textKey"
+      ],
+      "additionalProperties": false,
+      "description": "An intake question. Answering sets signal ask.<name> (= Id) to the chosen option's Sets, and for choices also <id>.<optionId> True (others False). \"Not sure\" sets Unknown. At most MaxQuestions per session. File: kb/questions/*.json. Schema: kb/schema/question.schema.json."
+    }
+  },
+  "anyOf": [
+    {
+      "$ref": "#/$defs/item"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  ]
+}

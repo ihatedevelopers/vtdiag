@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: A5 Monitor. xUnit v3 packages and analyzers come from Directory.Build.targets (Test layer). -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VTD.Monitor.Tests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VTD.Monitor.Core\VTD.Monitor.Core.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Monitor\VTD.Monitor.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Testing.Fakes\VTD.Testing.Fakes.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Contracts\VTD.Contracts.csproj" />
+  </ItemGroup>
+</Project>

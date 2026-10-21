@@ -1,0 +1,63 @@
+{
+  "id": "ftpm-event-14-17-stutter",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "tpm_secureboot_bios",
+  "titleKey": "rule.ftpm-event-14-17-stutter.title",
+  "summaryKey": "rule.ftpm-event-14-17-stutter.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "stutter",
+    "freeze_hard"
+  ],
+  "prior": {
+    "threads": 4
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "events",
+      "signal": "events.tpm_errors",
+      "true": 2.0,
+      "textKey": "rule.ftpm-event-14-17-stutter.ev.events"
+    },
+    {
+      "id": "ftpm",
+      "signal": "sec.tpm.firmware",
+      "true": 0.6
+    },
+    {
+      "id": "bios_old",
+      "signal": "hw.bios_old",
+      "true": 0.6
+    },
+    {
+      "id": "periodic",
+      "signal": "ask.stutter_periodic",
+      "true": 0.5,
+      "ask": "ask.stutter_periodic"
+    }
+  ],
+  "fixes": [
+    "fix.power.usb_selective_suspend_off"
+  ],
+  "guides": [
+    "guide.bios.update"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "ftpm-event-14-17-stutter",
+    "threadCount": 4,
+    "evidence": "guide",
+    "threadIds": [
+      "1sj4f3c",
+      "1sz7m4j",
+      "1vonruw",
+      "1w52oy9"
+    ],
+    "urls": []
+  }
+}

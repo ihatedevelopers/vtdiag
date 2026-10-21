@@ -1,0 +1,810 @@
+[
+  {
+    "op": "service.setStartType",
+    "summary": "Set a service's start type (and delayed-auto flag).",
+    "args": [
+      {
+        "name": "name",
+        "type": "serviceName",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "startType",
+        "type": "enum",
+        "required": true,
+        "allowedValues": [
+          "Automatic",
+          "Manual",
+          "Disabled"
+        ]
+      },
+      {
+        "name": "delayed",
+        "type": "bool",
+        "required": false,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "exists",
+      "startType",
+      "delayed"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": true,
+    "milestone": "M2",
+    "policyNotes": "Protected services (vgc, vgk except the official Vanguard flows, WinDefend, BFE, mpssvc, EventLog, Winmgmt, TBS, Dnscache, wuauserv, Schedule...) are refused. vgc → Automatic only when the player confirmed Pre-Check is off AND vgc logs show a failure."
+  },
+  {
+    "op": "service.stop",
+    "summary": "Stop a service.",
+    "args": [
+      {
+        "name": "name",
+        "type": "serviceName",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "timeoutSec",
+        "type": "int",
+        "required": false,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "exists",
+      "state"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2",
+    "policyNotes": "Same protected list as service.setStartType."
+  },
+  {
+    "op": "service.start",
+    "summary": "Start a service.",
+    "args": [
+      {
+        "name": "name",
+        "type": "serviceName",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "timeoutSec",
+        "type": "int",
+        "required": false,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "exists",
+      "state"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "device.disable",
+    "summary": "Disable a PnP device persistently.",
+    "args": [
+      {
+        "name": "instanceId",
+        "type": "instanceId",
+        "required": true,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "present",
+      "enabled",
+      "problemCode"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": true,
+    "milestone": "M2",
+    "policyNotes": "Refused for the default-route NIC, the boot/system disk controller, display adapters and input HID."
+  },
+  {
+    "op": "device.enable",
+    "summary": "Enable a PnP device.",
+    "args": [
+      {
+        "name": "instanceId",
+        "type": "instanceId",
+        "required": true,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "present",
+      "enabled",
+      "problemCode"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "netadapter.setAdvancedProperty",
+    "summary": "Set an adapter advanced property by registry keyword, then restart the adapter.",
+    "args": [
+      {
+        "name": "instanceId",
+        "type": "instanceId",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "keyword",
+        "type": "string",
+        "required": true,
+        "allowedValues": [],
+        "pattern": "^\\*?[A-Za-z0-9]{1,64}$"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "allowedValues": [],
+        "pattern": "^[A-Za-z0-9._-]{0,64}$"
+      }
+    ],
+    "stateKeys": [
+      "exists",
+      "value"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": true,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "netadapter.setMetric",
+    "summary": "Set an adapter's IPv4 metric (or back to automatic).",
+    "args": [
+      {
+        "name": "instanceId",
+        "type": "instanceId",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "metric",
+        "type": "string",
+        "required": true,
+        "allowedValues": [],
+        "pattern": "^(automatic|[0-9]{1,4})$"
+      }
+    ],
+    "stateKeys": [
+      "metric",
+      "automaticMetric"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": true,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "netadapter.unbindIpv6",
+    "summary": "Unbind IPv6 (ms_tcpip6) from one adapter.",
+    "args": [
+      {
+        "name": "instanceId",
+        "type": "instanceId",
+        "required": true,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "ipv6Bound"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": true,
+    "templateAction": true,
+    "milestone": "M2"
+  },
+  {
+    "op": "registry.setValue",
+    "summary": "Set a registry value under a primitive allowlisted root. HKCU means the player's hive (HKU\\<player SID>).",
+    "args": [
+      {
+        "name": "path",
+        "type": "registryPath",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "kind",
+        "type": "enum",
+        "required": true,
+        "allowedValues": [
+          "String",
+          "ExpandString",
+          "DWord",
+          "QWord",
+          "MultiString"
+        ]
+      },
+      {
+        "name": "data",
+        "type": "string",
+        "required": true,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "exists",
+      "kind",
+      "data"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2",
+    "policyNotes": "Allowlisted roots live in A3's code, not in the KB. Never lowers security (S5): Secure Boot, TPM, HVCI, Defender, firewall, UAC values cannot be set to off."
+  },
+  {
+    "op": "registry.deleteValue",
+    "summary": "Delete a registry value under an allowlisted root.",
+    "args": [
+      {
+        "name": "path",
+        "type": "registryPath",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "exists",
+      "kind",
+      "data"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "powercfg.setValue",
+    "summary": "Set a power setting on AC and/or DC for a scheme.",
+    "args": [
+      {
+        "name": "scheme",
+        "type": "string",
+        "required": true,
+        "allowedValues": [],
+        "pattern": "^(active|[0-9a-fA-F-]{36})$"
+      },
+      {
+        "name": "subgroup",
+        "type": "guid",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "setting",
+        "type": "guid",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "ac",
+        "type": "int",
+        "required": false,
+        "allowedValues": []
+      },
+      {
+        "name": "dc",
+        "type": "int",
+        "required": false,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "ac",
+      "dc"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "powercfg.setActiveScheme",
+    "summary": "Set the active power scheme.",
+    "args": [
+      {
+        "name": "scheme",
+        "type": "guid",
+        "required": true,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "activeScheme"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "appcompat.setLayers",
+    "summary": "Add AppCompat layer tokens to an executable (for example RUNASADMIN on the Riot Client).",
+    "args": [
+      {
+        "name": "exePath",
+        "type": "filePath",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "hive",
+        "type": "enum",
+        "required": true,
+        "allowedValues": [
+          "HKLM",
+          "HKCU"
+        ]
+      },
+      {
+        "name": "layers",
+        "type": "string",
+        "required": true,
+        "allowedValues": [],
+        "pattern": "^[A-Z0-9_~ ]{1,256}$"
+      }
+    ],
+    "stateKeys": [
+      "exists",
+      "layers"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "appcompat.removeLayers",
+    "summary": "Remove AppCompat layer tokens from an executable.",
+    "args": [
+      {
+        "name": "exePath",
+        "type": "filePath",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "hive",
+        "type": "enum",
+        "required": true,
+        "allowedValues": [
+          "HKLM",
+          "HKCU"
+        ]
+      },
+      {
+        "name": "layers",
+        "type": "string",
+        "required": true,
+        "allowedValues": [],
+        "pattern": "^[A-Z0-9_~ ]{1,256}$"
+      }
+    ],
+    "stateKeys": [
+      "exists",
+      "layers"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": true,
+    "milestone": "M2"
+  },
+  {
+    "op": "ifeo.resetMitigations",
+    "summary": "Remove Exploit Protection overrides (MitigationOptions/AuditOptions) from an image (VAN 9002).",
+    "args": [
+      {
+        "name": "imageName",
+        "type": "imageName",
+        "required": true,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "mitigationOptions",
+      "mitigationAuditOptions"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "ifeo.removePerfOptions",
+    "summary": "Remove IFEO PerfOptions (CpuPriorityClass, IoPriority) from an image.",
+    "args": [
+      {
+        "name": "imageName",
+        "type": "imageName",
+        "required": true,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "cpuPriorityClass",
+      "ioPriority"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "file.quarantine",
+    "summary": "Move a file to %ProgramData%\\VTDiag\\quarantine\\<attempt> with a manifest (never delete; reparse-safe).",
+    "args": [
+      {
+        "name": "path",
+        "type": "filePath",
+        "required": true,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "exists",
+      "sha256",
+      "quarantinePath"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2",
+    "policyNotes": "Windows folders only for the allowlisted set (%WINDIR%\\392667600.dat; vgkbootstatus.dat in the Vanguard folder; ene.sys via guide only). Elevated moves open with FILE_FLAG_OPEN_REPARSE_POINT and refuse player-controlled path components."
+  },
+  {
+    "op": "firewall.addRule",
+    "summary": "Add an allow rule for a Riot executable in group VTDiag.",
+    "args": [
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "allowedValues": [],
+        "pattern": "^VTDiag [A-Za-z0-9 ._-]{1,64}$"
+      },
+      {
+        "name": "program",
+        "type": "filePath",
+        "required": true,
+        "allowedValues": []
+      },
+      {
+        "name": "direction",
+        "type": "enum",
+        "required": true,
+        "allowedValues": [
+          "In",
+          "Out"
+        ]
+      }
+    ],
+    "stateKeys": [
+      "exists",
+      "enabled"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2",
+    "policyNotes": "Allow rules only; program must be a Riot executable."
+  },
+  {
+    "op": "firewall.removeRule",
+    "summary": "Remove a rule VTDiag created (group VTDiag only).",
+    "args": [
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "allowedValues": [],
+        "pattern": "^VTDiag [A-Za-z0-9 ._-]{1,64}$"
+      }
+    ],
+    "stateKeys": [
+      "exists",
+      "enabled"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "defender.addExclusion",
+    "summary": "Add a Defender path exclusion for a Riot folder (off by default, warned, listed in the report's security changes).",
+    "args": [
+      {
+        "name": "path",
+        "type": "filePath",
+        "required": true,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "excluded"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "medium",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2",
+    "policyNotes": "Riot Games and Riot Vanguard folders only."
+  },
+  {
+    "op": "bcd.setValue",
+    "summary": "Set an allowlisted BCD element on {current} (backup via bcdedit /export).",
+    "args": [
+      {
+        "name": "element",
+        "type": "enum",
+        "required": true,
+        "allowedValues": [
+          "testsigning",
+          "nointegritychecks",
+          "nx",
+          "hypervisorlaunchtype"
+        ]
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "allowedValues": [],
+        "pattern": "^(on|off|OptIn|OptOut|AlwaysOn|Auto|Off)$"
+      }
+    ],
+    "stateKeys": [
+      "value"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "medium",
+    "requiresAdmin": true,
+    "reboot": "required",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2",
+    "policyNotes": "Only towards the secure state (testsigning off, nointegritychecks off, nx OptIn, hypervisorlaunchtype Auto). HVCI enable stays guide-only in MVP (critique A7)."
+  },
+  {
+    "op": "time.resync",
+    "summary": "Resync the Windows clock (w32time). Undo does not restore a wrong clock.",
+    "args": [],
+    "stateKeys": [
+      "skewSeconds"
+    ],
+    "reversibility": "bestEffort",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "dns.flush",
+    "summary": "Flush the DNS client cache (harmless, one-way).",
+    "args": [],
+    "stateKeys": [],
+    "reversibility": "oneWay",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "process.closeGraceful",
+    "summary": "Close a third-party process gracefully (WM_CLOSE to its windows / tray exit); never kill, never a handle.",
+    "args": [
+      {
+        "name": "imageName",
+        "type": "imageName",
+        "required": true,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "running"
+    ],
+    "reversibility": "sessionOnly",
+    "riskFloor": "low",
+    "requiresAdmin": false,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": true,
+    "milestone": "M2",
+    "policyNotes": "Refused for RiotProcessNames and Windows system processes."
+  },
+  {
+    "op": "startup.disable",
+    "summary": "Disable a startup entry via StartupApproved (the entry is kept).",
+    "args": [
+      {
+        "name": "location",
+        "type": "enum",
+        "required": true,
+        "allowedValues": [
+          "HklmRun",
+          "HkcuRun",
+          "HklmRunOnce",
+          "HkcuRunOnce",
+          "StartupFolderUser",
+          "StartupFolderCommon"
+        ]
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "allowedValues": []
+      }
+    ],
+    "stateKeys": [
+      "exists",
+      "enabled"
+    ],
+    "reversibility": "exact",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": true,
+    "milestone": "M2"
+  },
+  {
+    "op": "systemProtection.enable",
+    "summary": "Turn on System Protection for the system drive so a restore point can be made.",
+    "args": [
+      {
+        "name": "drive",
+        "type": "string",
+        "required": true,
+        "allowedValues": [],
+        "pattern": "^[A-Z]:$"
+      }
+    ],
+    "stateKeys": [
+      "enabled",
+      "maxSizePercent"
+    ],
+    "reversibility": "bestEffort",
+    "riskFloor": "low",
+    "requiresAdmin": true,
+    "reboot": "none",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "oneway.winsockReset",
+    "summary": "netsh winsock reset equivalent (one-way, needs reboot).",
+    "args": [],
+    "stateKeys": [],
+    "reversibility": "oneWay",
+    "riskFloor": "medium",
+    "requiresAdmin": true,
+    "reboot": "required",
+    "affectsNetwork": true,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "oneway.ipReset",
+    "summary": "TCP/IP stack reset (one-way, needs reboot).",
+    "args": [],
+    "stateKeys": [],
+    "reversibility": "oneWay",
+    "riskFloor": "medium",
+    "requiresAdmin": true,
+    "reboot": "required",
+    "affectsNetwork": true,
+    "templateAction": false,
+    "milestone": "M2"
+  },
+  {
+    "op": "oneway.sfcDism",
+    "summary": "SFC /scannow + DISM RestoreHealth, streamed (one-way, long; AC power or > 40% battery).",
+    "args": [],
+    "stateKeys": [],
+    "reversibility": "oneWay",
+    "riskFloor": "medium",
+    "requiresAdmin": true,
+    "reboot": "recommended",
+    "affectsNetwork": false,
+    "templateAction": false,
+    "milestone": "M4"
+  }
+]

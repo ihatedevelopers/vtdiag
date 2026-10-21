@@ -1,0 +1,209 @@
+{
+  "id": "guide.performance.basics",
+  "titleKey": "guide.performance.basics.title",
+  "summaryKey": "guide.performance.basics.summary",
+  "bucket": "guidedManual",
+  "risk": "medium",
+  "reboot": "recommended",
+  "appliesTo": [
+    "fps-lower-than-expected-caps",
+    "power-plan-throttling-low-fps",
+    "low-gpu-usage-after-ue5-patch"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "caps",
+      "when": [],
+      "textKey": "guide.performance.basics.caps.text",
+      "steps": [
+        {
+          "textKey": "guide.performance.basics.caps.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.caps.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.caps.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.caps.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.caps.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "background",
+      "when": [],
+      "textKey": "guide.performance.basics.background.text",
+      "steps": [
+        {
+          "textKey": "guide.performance.basics.background.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.background.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.background.s3",
+          "action": "runFix",
+          "target": "fix.power.high_performance"
+        },
+        {
+          "textKey": "guide.performance.basics.background.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.background.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "one_stick",
+      "when": [
+        {
+          "signal": "hw.ram_single_module",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.performance.basics.one_stick.text",
+      "steps": [
+        {
+          "textKey": "guide.performance.basics.one_stick.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.one_stick.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.one_stick.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.one_stick.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "low_ram",
+      "when": [
+        {
+          "signal": "hw.ram_low",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.performance.basics.low_ram.text",
+      "steps": [
+        {
+          "textKey": "guide.performance.basics.low_ram.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.low_ram.s2",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "xmp",
+      "when": [],
+      "textKey": "guide.performance.basics.xmp.text",
+      "steps": [
+        {
+          "textKey": "guide.performance.basics.xmp.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.xmp.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.xmp.s3",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.performance.basics.xmp.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.xmp.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.xmp.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.xmp.s7",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "ssd",
+      "when": [],
+      "textKey": "guide.performance.basics.ssd.text",
+      "steps": [
+        {
+          "textKey": "guide.performance.basics.ssd.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.ssd.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.ssd.s3",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "honest",
+      "when": [],
+      "textKey": "guide.performance.basics.honest.text",
+      "steps": [
+        {
+          "textKey": "guide.performance.basics.honest.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.honest.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.honest.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.honest.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.performance.basics.honest.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.performance.basics.outcome"
+}

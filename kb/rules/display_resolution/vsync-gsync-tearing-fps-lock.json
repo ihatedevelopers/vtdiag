@@ -1,0 +1,55 @@
+{
+  "id": "vsync-gsync-tearing-fps-lock",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "display_resolution",
+  "titleKey": "rule.vsync-gsync-tearing-fps-lock.title",
+  "summaryKey": "rule.vsync-gsync-tearing-fps-lock.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "display_issue",
+    "fps_low"
+  ],
+  "prior": {
+    "threads": 5
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "refresh60",
+      "signal": "display.refresh_60",
+      "true": 0.8
+    },
+    {
+      "id": "nv",
+      "signal": "gpu.nvidia_dgpu",
+      "true": 0.2
+    },
+    {
+      "id": "profile",
+      "signal": "gpu.nv_profile_overrides",
+      "true": 1.0
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.display.settings"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "vsync-gsync-tearing-fps-lock",
+    "threadCount": 5,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1qcowvt",
+      "1qh8p51",
+      "1qs6zzv",
+      "1rjxy20",
+      "1ultueu"
+    ],
+    "urls": []
+  }
+}

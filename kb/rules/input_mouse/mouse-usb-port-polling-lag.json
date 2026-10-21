@@ -1,0 +1,51 @@
+{
+  "id": "mouse-usb-port-polling-lag",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "input_mouse",
+  "titleKey": "rule.mouse-usb-port-polling-lag.title",
+  "summaryKey": "rule.mouse-usb-port-polling-lag.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "mouse_input"
+  ],
+  "prior": {
+    "threads": 7
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "usb_ss",
+      "signal": "power.usb_selective_suspend_on",
+      "true": 0.5
+    },
+    {
+      "id": "accel",
+      "signal": "input.mouse_accel_on",
+      "true": 0.3
+    }
+  ],
+  "fixes": [
+    "fix.power.usb_selective_suspend_off"
+  ],
+  "guides": [
+    "guide.mouse.usb"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "mouse-usb-port-polling-lag",
+    "threadCount": 7,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1q7uc7v",
+      "1qf4siu",
+      "1qfksjy",
+      "1qw6tdz",
+      "1qzwqzi"
+    ],
+    "urls": []
+  }
+}

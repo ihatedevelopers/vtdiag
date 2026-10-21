@@ -1,0 +1,85 @@
+{
+  "id": "guide.discord.stream_audio",
+  "titleKey": "guide.discord.stream_audio.title",
+  "summaryKey": "guide.discord.stream_audio.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "discord-stream-no-voice"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "discord",
+      "when": [],
+      "textKey": "guide.discord.stream_audio.discord.text",
+      "steps": [
+        {
+          "textKey": "guide.discord.stream_audio.discord.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.discord.stream_audio.discord.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.discord.stream_audio.discord.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.discord.stream_audio.discord.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.discord.stream_audio.discord.s5",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "whole_screen"
+    },
+    {
+      "id": "whole_screen",
+      "when": [],
+      "textKey": "guide.discord.stream_audio.whole_screen.text",
+      "steps": [
+        {
+          "textKey": "guide.discord.stream_audio.whole_screen.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.discord.stream_audio.whole_screen.s2",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "obs"
+    },
+    {
+      "id": "obs",
+      "when": [],
+      "textKey": "guide.discord.stream_audio.obs.text",
+      "steps": [
+        {
+          "textKey": "guide.discord.stream_audio.obs.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.discord.stream_audio.obs.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.discord.stream_audio.obs.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.discord.stream_audio.obs.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.discord.stream_audio.outcome"
+}

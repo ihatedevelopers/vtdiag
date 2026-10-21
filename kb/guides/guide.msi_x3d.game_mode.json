@@ -1,0 +1,77 @@
+{
+  "id": "guide.msi_x3d.game_mode",
+  "titleKey": "guide.msi_x3d.game_mode.title",
+  "summaryKey": "guide.msi_x3d.game_mode.summary",
+  "bucket": "guidedManual",
+  "risk": "high",
+  "reboot": "required",
+  "appliesTo": [
+    "msi-x3d-game-mode-lobby-freeze"
+  ],
+  "preflight": [
+    {
+      "probe": "sec.bitlocker_on",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.msi_x3d.game_mode.pre.0"
+    }
+  ],
+  "branches": [
+    {
+      "id": "x3d",
+      "when": [
+        {
+          "signal": "hw.cpu_x3d",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.msi_x3d.game_mode.x3d.text",
+      "steps": [
+        {
+          "textKey": "guide.msi_x3d.game_mode.x3d.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.msi_x3d.game_mode.x3d.s2",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.msi_x3d.game_mode.x3d.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.msi_x3d.game_mode.x3d.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.msi_x3d.game_mode.x3d.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.msi_x3d.game_mode.x3d.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.msi_x3d.game_mode.x3d.s7",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "not_x3d",
+      "when": [],
+      "textKey": "guide.msi_x3d.game_mode.not_x3d.text",
+      "steps": [
+        {
+          "textKey": "guide.msi_x3d.game_mode.not_x3d.s1",
+          "action": "openSettings",
+          "target": "ms-settings:about"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.msi_x3d.game_mode.outcome"
+}

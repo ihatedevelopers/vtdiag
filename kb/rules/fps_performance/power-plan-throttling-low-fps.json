@@ -1,0 +1,89 @@
+{
+  "id": "power-plan-throttling-low-fps",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.power-plan-throttling-low-fps.title",
+  "summaryKey": "rule.power-plan-throttling-low-fps.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "fps_low",
+    "stutter"
+  ],
+  "prior": {
+    "threads": 21
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "saver",
+      "signal": "power.saver_plan",
+      "true": 1.8,
+      "false": -0.4,
+      "textKey": "rule.power-plan-throttling-low-fps.ev.saver"
+    },
+    {
+      "id": "battery",
+      "signal": "power.on_battery",
+      "true": 1.8,
+      "textKey": "rule.power-plan-throttling-low-fps.ev.battery"
+    },
+    {
+      "id": "cpu_max",
+      "signal": "power.cpu_max_limited",
+      "true": 2.0,
+      "textKey": "rule.power-plan-throttling-low-fps.ev.cpu_max"
+    },
+    {
+      "id": "laptop",
+      "signal": "hw.laptop",
+      "true": 0.4
+    },
+    {
+      "id": "ram_low",
+      "signal": "hw.ram_low",
+      "true": 0.5
+    },
+    {
+      "id": "single",
+      "signal": "hw.ram_single_module",
+      "true": 0.4
+    },
+    {
+      "id": "hdd",
+      "signal": "disk.riot_on_hdd",
+      "true": 0.6
+    },
+    {
+      "id": "mon_throttle",
+      "signal": "mon.cpu.throttling",
+      "true": 1.5
+    }
+  ],
+  "fixes": [
+    "fix.power.high_performance",
+    "fix.power.cpu_max_100"
+  ],
+  "guides": [
+    "guide.power.laptop_mode",
+    "guide.hardware.thermal",
+    "guide.performance.basics"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "power-plan-throttling-low-fps",
+    "threadCount": 21,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1or8e21",
+      "1pnf9q1",
+      "1qdit7f",
+      "1qdj5pb",
+      "1qdu7uo"
+    ],
+    "urls": []
+  }
+}

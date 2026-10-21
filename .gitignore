@@ -1,0 +1,18 @@
+# ham Reddit verisi (yeniden üretilebilir: collect.py + prep.py)
+data/*.jsonl
+data/chunks/
+data/*.log
+# referans olarak klonlanan scraper
+reddit-universal-scraper/
+# derleme çıktıları
+bin/
+obj/
+*.user
+.vs/
+
+# test output
+TestResults/
+*.trx
+
+# ajan worktree'leri
+.claude/worktrees/

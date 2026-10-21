@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: A3 Fixes & Journal. xUnit v3 packages and analyzers come from Directory.Build.targets (Test layer).
+       Knowledge + Analysis are referenced for the dry-run of every kb/fixes/*.json on the real dev-PC snapshot. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VTD.Fixes.Tests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VTD.Fixes\VTD.Fixes.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Journal\VTD.Journal.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Knowledge\VTD.Knowledge.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Analysis\VTD.Analysis.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Testing.Fakes\VTD.Testing.Fakes.csproj" />
+    <ProjectReference Include="..\..\src\VTD.Contracts\VTD.Contracts.csproj" />
+  </ItemGroup>
+</Project>

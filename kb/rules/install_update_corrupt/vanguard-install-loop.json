@@ -1,0 +1,85 @@
+{
+  "id": "vanguard-install-loop",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "install_update_corrupt",
+  "titleKey": "rule.vanguard-install-loop.title",
+  "summaryKey": "rule.vanguard-install-loop.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "install_update",
+    "wont_launch",
+    "error_code"
+  ],
+  "prior": {
+    "threads": 18
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "files",
+      "signal": "vg.files_missing",
+      "true": 1.2
+    },
+    {
+      "id": "not_installed",
+      "signal": "vg.installed",
+      "false": 1.0
+    },
+    {
+      "id": "vgk_missing",
+      "signal": "vg.vgk_missing",
+      "true": 0.8
+    },
+    {
+      "id": "pending",
+      "signal": "os.pending_reboot",
+      "true": 0.6
+    },
+    {
+      "id": "av",
+      "signal": "sec.third_party_av",
+      "true": 0.6
+    },
+    {
+      "id": "bootstatus",
+      "signal": "vg.bootstatus_dat",
+      "true": 0.5
+    },
+    {
+      "id": "old_build",
+      "signal": "os.build_below_19045",
+      "true": 0.4
+    },
+    {
+      "id": "dirty",
+      "signal": "disk.dirty",
+      "true": 0.3
+    }
+  ],
+  "fixes": [
+    "fix.vg.quarantine_bootstatus",
+    "fix.os.fast_startup_off"
+  ],
+  "guides": [
+    "guide.vanguard.reinstall",
+    "guide.av.exclusions"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "vanguard-install-loop",
+    "threadCount": 18,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1rxbu9s",
+      "1rxyuon",
+      "1sb6s2o",
+      "1sbf364",
+      "1seo1q2"
+    ],
+    "urls": []
+  }
+}

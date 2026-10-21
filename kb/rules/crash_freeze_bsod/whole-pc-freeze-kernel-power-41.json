@@ -1,0 +1,92 @@
+{
+  "id": "whole-pc-freeze-kernel-power-41",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "crash_freeze_bsod",
+  "titleKey": "rule.whole-pc-freeze-kernel-power-41.title",
+  "summaryKey": "rule.whole-pc-freeze-kernel-power-41.summary",
+  "bucket": "likelyHardware",
+  "symptoms": [
+    "freeze_hard",
+    "crash_desktop"
+  ],
+  "prior": {
+    "threads": 21
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "kp41",
+      "signal": "events.kernel_power_41",
+      "true": 1.5,
+      "textKey": "rule.whole-pc-freeze-kernel-power-41.ev.kp41"
+    },
+    {
+      "id": "tdr",
+      "signal": "events.display_tdr",
+      "true": 0.8
+    },
+    {
+      "id": "whea",
+      "signal": "events.whea_errors",
+      "true": 1.2,
+      "textKey": "rule.whole-pc-freeze-kernel-power-41.ev.whea"
+    },
+    {
+      "id": "realtek",
+      "signal": "net.realtek25.unused",
+      "true": 0.6
+    },
+    {
+      "id": "usb_ss",
+      "signal": "power.usb_selective_suspend_on",
+      "true": 0.3
+    },
+    {
+      "id": "bios_old",
+      "signal": "hw.bios_old",
+      "true": 0.4
+    },
+    {
+      "id": "whole",
+      "signal": "ask.whole_pc_freezes",
+      "true": 1.2,
+      "false": -1.5,
+      "ask": "ask.whole_pc_freezes"
+    },
+    {
+      "id": "bsod",
+      "signal": "events.bugcheck_recent",
+      "true": 0.6
+    }
+  ],
+  "fixes": [
+    "fix.net.disable_unused_adapter",
+    "fix.power.usb_selective_suspend_off",
+    "fix.display.hags_off"
+  ],
+  "guides": [
+    "guide.hardware.freeze_checks",
+    "guide.bios.update",
+    "guide.gpu.clean_driver"
+  ],
+  "questions": [
+    "ask.whole_pc_freezes"
+  ],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "whole-pc-freeze-kernel-power-41",
+    "threadCount": 21,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1pgpukn",
+      "1pit39s",
+      "1pjp2s6",
+      "1poah2f",
+      "1psaqwv"
+    ],
+    "urls": []
+  }
+}

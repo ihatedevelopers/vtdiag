@@ -1,0 +1,252 @@
+{
+  "id": "guide.hvci.enable",
+  "titleKey": "guide.hvci.enable.title",
+  "summaryKey": "guide.hvci.enable.summary",
+  "bucket": "guidedManual",
+  "risk": "medium",
+  "reboot": "required",
+  "appliesTo": [
+    "hvci-memory-integrity-required",
+    "incompatible-driver-component"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "virt_off",
+      "when": [
+        {
+          "signal": "sec.virtualization.enabled",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.hvci.enable.virt_off.text",
+      "steps": [
+        {
+          "textKey": "guide.hvci.enable.virt_off.s1",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.hvci.enable.virt_off.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.virt_off.s3",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.hvci.enable.virt_off.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.virt_off.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.virt_off.s6",
+          "action": "openSettings",
+          "target": "ms-settings:windowsdefender"
+        },
+        {
+          "textKey": "guide.hvci.enable.virt_off.s7",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.virt_off.s8",
+          "action": "runCheck",
+          "target": "sec.hvci.running"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.hvci.running",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "incompatible_drivers"
+    },
+    {
+      "id": "incompatible_drivers",
+      "when": [
+        {
+          "signal": "sec.hvci.incompatible_drivers",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.hvci.enable.incompatible_drivers.text",
+      "steps": [
+        {
+          "textKey": "guide.hvci.enable.incompatible_drivers.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsdefender"
+        },
+        {
+          "textKey": "guide.hvci.enable.incompatible_drivers.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.incompatible_drivers.s3",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.hvci.enable.incompatible_drivers.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.incompatible_drivers.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.incompatible_drivers.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.incompatible_drivers.s7",
+          "action": "openSettings",
+          "target": "ms-settings:windowsdefender"
+        },
+        {
+          "textKey": "guide.hvci.enable.incompatible_drivers.s8",
+          "action": "runCheck",
+          "target": "sec.hvci.running"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.hvci.running",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "cannot_comply"
+    },
+    {
+      "id": "configured_not_running",
+      "when": [
+        {
+          "signal": "sec.hvci.configured_not_running",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.hvci.enable.configured_not_running.text",
+      "steps": [
+        {
+          "textKey": "guide.hvci.enable.configured_not_running.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.configured_not_running.s2",
+          "action": "runCheck",
+          "target": "sec.hvci.running"
+        },
+        {
+          "textKey": "guide.hvci.enable.configured_not_running.s3",
+          "action": "openSettings",
+          "target": "ms-settings:windowsdefender"
+        },
+        {
+          "textKey": "guide.hvci.enable.configured_not_running.s4",
+          "action": "restartToFirmware",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.hvci.enable.configured_not_running.s5",
+          "action": "none",
+          "vendorTable": "bios_keys"
+        },
+        {
+          "textKey": "guide.hvci.enable.configured_not_running.s6",
+          "action": "runCheck",
+          "target": "sec.hvci.running"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.hvci.running",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "virt_off"
+    },
+    {
+      "id": "off",
+      "when": [
+        {
+          "signal": "sec.hvci.running",
+          "is": "false"
+        },
+        {
+          "signal": "sec.hvci.configured_not_running",
+          "is": "false"
+        }
+      ],
+      "textKey": "guide.hvci.enable.off.text",
+      "steps": [
+        {
+          "textKey": "guide.hvci.enable.off.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsdefender"
+        },
+        {
+          "textKey": "guide.hvci.enable.off.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.off.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.off.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.off.s5",
+          "action": "runCheck",
+          "target": "sec.hvci.running"
+        },
+        {
+          "textKey": "guide.hvci.enable.off.s6",
+          "action": "none"
+        }
+      ],
+      "verify": [
+        {
+          "signal": "sec.hvci.running",
+          "is": "true"
+        }
+      ],
+      "nextOnFail": "configured_not_running"
+    },
+    {
+      "id": "cannot_comply",
+      "when": [],
+      "textKey": "guide.hvci.enable.cannot_comply.text",
+      "steps": [
+        {
+          "textKey": "guide.hvci.enable.cannot_comply.s1",
+          "action": "openSettings",
+          "target": "ms-settings:windowsupdate"
+        },
+        {
+          "textKey": "guide.hvci.enable.cannot_comply.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.cannot_comply.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.cannot_comply.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.hvci.enable.cannot_comply.s5",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.hvci.enable.outcome"
+}

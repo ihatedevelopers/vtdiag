@@ -1,0 +1,252 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:VTD.App.Controls"
+                    xmlns:l="clr-namespace:VTD.App.Localization"
+                    xmlns:vm="clr-namespace:VTD.App.ViewModels">
+
+  <!-- Undo center -->
+  <DataTemplate DataType="{x:Type vm:UndoCenterViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Undo.Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{l:T Undo.Lead}" Margin="0,8,0,20" />
+      <c:ChamferBorder Style="{StaticResource Card}" Visibility="{Binding IsEmpty, Converter={StaticResource Visible}}">
+        <TextBlock Style="{StaticResource Muted}" Text="{l:T Undo.Empty}" />
+      </c:ChamferBorder>
+      <ItemsControl ItemsSource="{Binding Rows}" Focusable="False">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <c:ChamferBorder Style="{StaticResource Card}">
+              <Grid>
+                <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                <StackPanel>
+                  <TextBlock Style="{StaticResource H3}" Text="{Binding Title}" />
+                  <TextBlock Style="{StaticResource Small}" Margin="0,4,0,0">
+                    <Run Text="{Binding Date, Mode=OneWay}" /><Run Text="   " /><Run Text="{Binding StatusText, Mode=OneWay}" />
+                  </TextBlock>
+                  <TextBlock Style="{StaticResource Small}" Foreground="{StaticResource WarnBrush}" Text="{Binding OneWayText}" Visibility="{Binding OneWayText, Converter={StaticResource Visible}}" Margin="0,6,0,0" />
+                  <TextBlock Style="{StaticResource Small}" Text="{Binding BlockedText}" Visibility="{Binding BlockedText, Converter={StaticResource Visible}}" Margin="0,6,0,0" />
+                  <StackPanel Visibility="{Binding IsConflict, Converter={StaticResource Visible}}" Margin="0,10,0,0">
+                    <TextBlock Style="{StaticResource Body}" Text="{l:T Undo.Conflict}" />
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                      <c:ConsentButton Style="{StaticResource ConsentSecondary}" Content="{l:T Undo.PutBack}" Command="{Binding ForceCommand}" Padding="14,6" MinHeight="32" />
+                    </StackPanel>
+                  </StackPanel>
+                </StackPanel>
+                <c:ConsentButton Grid.Column="1" Style="{StaticResource ConsentSecondary}" Content="{l:T Undo.Undo}" Command="{Binding UndoCommand}" VerticalAlignment="Top" Visibility="{Binding CanUndo, Converter={StaticResource Visible}}" Padding="14,6" MinHeight="32" />
+              </Grid>
+            </c:ChamferBorder>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+      <c:ConsentButton Style="{StaticResource ConsentDanger}" Content="{l:T Undo.All}" Command="{Binding UndoAllCommand}" Margin="0,10,0,0" Visibility="{Binding IsEmpty, Converter={StaticResource Visible}, ConverterParameter=invert}" />
+    </StackPanel>
+  </DataTemplate>
+
+  <!-- Report / share -->
+  <DataTemplate DataType="{x:Type vm:ReportViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Report.Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{l:T Report.Lead}" Margin="0,8,0,18" />
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource InfoBrush}" Visibility="{Binding HelperFocus, Converter={StaticResource Visible}}">
+        <StackPanel>
+          <TextBlock Style="{StaticResource H3}" Text="{l:T Report.Helper.Title}" />
+          <TextBlock Style="{StaticResource Muted}" Text="{l:T Report.Helper.Detail}" Margin="0,6,0,0" />
+        </StackPanel>
+      </c:ChamferBorder>
+      <c:ChamferBorder Style="{StaticResource Card}" Visibility="{Binding HasScan, Converter={StaticResource Visible}, ConverterParameter=invert}">
+        <TextBlock Style="{StaticResource Muted}" Text="{l:T Report.NoScan}" />
+      </c:ChamferBorder>
+
+      <WrapPanel Visibility="{Binding HasScan, Converter={StaticResource Visible}}">
+        <c:ChamferBorder Style="{StaticResource Card}" Padding="18,16" Margin="0,0,12,12" Width="320">
+          <StackPanel>
+            <TextBlock Style="{StaticResource H3}" Text="{l:T Report.Reddit}" />
+            <TextBlock Style="{StaticResource Small}" Text="{l:T Report.Reddit.Detail}" Margin="0,4,0,12" />
+            <Button Style="{StaticResource Primary}" Content="{l:T Report.Copy}" Command="{Binding CopyRedditCommand}" />
+          </StackPanel>
+        </c:ChamferBorder>
+        <c:ChamferBorder Style="{StaticResource Card}" Padding="18,16" Margin="0,0,12,12" Width="320">
+          <StackPanel>
+            <TextBlock Style="{StaticResource H3}" Text="{l:T Report.Ai}" />
+            <TextBlock Style="{StaticResource Small}" Text="{l:T Report.Ai.Detail}" Margin="0,4,0,12" />
+            <Button Style="{StaticResource Secondary}" Content="{l:T Report.Copy}" Command="{Binding CopyAiCommand}" />
+          </StackPanel>
+        </c:ChamferBorder>
+        <c:ChamferBorder Style="{StaticResource Card}" Padding="18,16" Margin="0,0,12,12" Width="320">
+          <StackPanel>
+            <TextBlock Style="{StaticResource H3}" Text="{l:T Report.Bundle}" />
+            <TextBlock Style="{StaticResource Small}" Text="{l:T Report.Bundle.Detail}" Margin="0,4,0,12" />
+            <Button Style="{StaticResource Secondary}" Content="{l:T Report.Save}" Command="{Binding SaveBundleCommand}" />
+          </StackPanel>
+        </c:ChamferBorder>
+        <c:ChamferBorder Style="{StaticResource Card}" Padding="18,16" Margin="0,0,12,12" Width="320">
+          <StackPanel>
+            <TextBlock Style="{StaticResource H3}" Text="{l:T Report.Html}" />
+            <TextBlock Style="{StaticResource Small}" Text="{l:T Report.Html.Detail}" Margin="0,4,0,12" />
+            <StackPanel Orientation="Horizontal">
+              <Button Style="{StaticResource Secondary}" Content="{l:T Report.Save}" Command="{Binding SaveHtmlCommand}" />
+              <Button Style="{StaticResource Ghost}" Content="{l:T Report.Json}" Command="{Binding SaveJsonCommand}" Margin="8,0,0,0" />
+            </StackPanel>
+          </StackPanel>
+        </c:ChamferBorder>
+      </WrapPanel>
+
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource FailBrush}" Background="{StaticResource FailWashBrush}" Visibility="{Binding StatusIsProblem, Converter={StaticResource Visible}}">
+        <StackPanel>
+          <TextBlock Style="{StaticResource Body}" Text="{Binding Status}" />
+          <Button Style="{StaticResource Secondary}" Content="{l:T Report.LeaveOut}" Command="{Binding LeaveOutCommand}" Visibility="{Binding IsBlocked, Converter={StaticResource Visible}}" Margin="0,10,0,0" Padding="14,6" MinHeight="32" />
+        </StackPanel>
+      </c:ChamferBorder>
+      <TextBlock Style="{StaticResource Body}" Foreground="{StaticResource GoodBrush}" Text="{Binding Status}" Margin="0,0,0,12">
+        <TextBlock.Visibility>
+          <MultiBinding Converter="{x:Static c:ConverterHelpers.OkStatus}">
+            <Binding Path="Status" />
+            <Binding Path="StatusIsProblem" />
+          </MultiBinding>
+        </TextBlock.Visibility>
+      </TextBlock>
+
+      <StackPanel Visibility="{Binding HasScan, Converter={StaticResource Visible}}" Margin="0,8,0,0">
+        <TextBlock Style="{StaticResource H3}" Text="{l:T Report.Inside}" />
+        <TextBlock Style="{StaticResource Small}" Text="{Binding RedactionSummary}" Margin="0,4,0,12" />
+        <ItemsControl ItemsSource="{Binding Sections}" Focusable="False">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate><UniformGrid Columns="3" /></ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <CheckBox IsChecked="{Binding IsIncluded, Mode=TwoWay}" Margin="0,0,12,10">
+                <TextBlock Text="{Binding Text}" Style="{StaticResource Body}" />
+              </CheckBox>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <CheckBox IsChecked="{Binding IncludeServerIp, Mode=TwoWay}" Margin="0,6,0,14">
+          <TextBlock Text="{l:T Report.ServerIp}" Style="{StaticResource Body}" />
+        </CheckBox>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+          <Button Style="{StaticResource Ghost}" Content="{l:T Report.UpdatePreview}" Command="{Binding PreviewCommand}" />
+          <TextBlock Style="{StaticResource Small}" Text="{Binding PreviewLength}" VerticalAlignment="Center" Margin="12,0,0,0" />
+        </StackPanel>
+        <TextBox Text="{Binding PreviewText, Mode=OneWay}" IsReadOnly="True" Height="260" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" FontFamily="Cascadia Mono, Consolas" FontSize="12" AutomationProperties.Name="{l:T Report.Preview}" />
+      </StackPanel>
+    </StackPanel>
+  </DataTemplate>
+
+  <!-- Settings -->
+  <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Settings.Title}" />
+      <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Settings.Language}" Margin="0,22,0,10" />
+      <RadioButton Content="English" IsChecked="{Binding IsEnglish, Mode=TwoWay}" GroupName="lang" />
+      <RadioButton Content="Türkçe" IsChecked="{Binding IsTurkish, Mode=TwoWay}" GroupName="lang" />
+      <RadioButton Content="{l:T Settings.Pseudo}" IsChecked="{Binding IsPseudo, Mode=TwoWay}" GroupName="lang" Visibility="{Binding ShowDeveloper, Converter={StaticResource Visible}}" />
+      <TextBlock Style="{StaticResource Small}" Text="{l:T Settings.ReportLanguage}" Margin="0,6,0,0" />
+      <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Debug.Title}" Margin="0,28,0,6" />
+      <TextBlock Style="{StaticResource Small}" Text="{l:T Debug.Detail}" TextWrapping="Wrap" Margin="0,0,0,10" />
+      <CheckBox IsChecked="{Binding DebugMode, Mode=TwoWay}" Margin="0,0,0,10">
+        <TextBlock Text="{l:T Debug.Toggle}" Style="{StaticResource Body}" />
+      </CheckBox>
+      <Button Style="{StaticResource Secondary}" Content="{l:T Debug.Create}" Command="{Binding CreateBundleCommand}" HorizontalAlignment="Left" />
+      <TextBlock Style="{StaticResource Body}" Text="{Binding BundleStatus}" TextWrapping="Wrap" Margin="0,8,0,0" />
+      <StackPanel Visibility="{Binding ShowDeveloper, Converter={StaticResource Visible}}" Margin="0,28,0,0">
+        <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Settings.Developer}" />
+        <TextBlock Style="{StaticResource Small}" Text="{l:T Settings.Developer.Detail}" Margin="0,0,0,10" />
+        <Button Style="{StaticResource Secondary}" Content="{l:T Settings.SimulateAgent}" Command="{Binding SimulateAgentCommand}" />
+      </StackPanel>
+    </StackPanel>
+  </DataTemplate>
+
+  <!-- About -->
+  <DataTemplate DataType="{x:Type vm:AboutViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T About.Title}" />
+      <TextBlock Style="{StaticResource Small}" Text="{Binding VersionLine}" Margin="0,6,0,18" />
+      <TextBlock Style="{StaticResource Body}" Text="{l:T About.What}" />
+      <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource WarnBrush}" Margin="0,16,0,16">
+        <TextBlock Style="{StaticResource Body}" Text="{l:T About.NotAffiliated}" />
+      </c:ChamferBorder>
+      <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T About.Privacy}" />
+      <TextBlock Style="{StaticResource Body}" Text="{l:T About.Privacy.Collected}" Margin="0,0,0,8" />
+      <TextBlock Style="{StaticResource Body}" Text="{l:T About.Privacy.Never}" Margin="0,0,0,8" />
+      <TextBlock Style="{StaticResource Body}" Text="{l:T About.Privacy.Share}" Margin="0,0,0,8" />
+      <TextBlock Style="{StaticResource Body}" Text="{l:T About.Privacy.NoTelemetry}" Margin="0,0,0,18" />
+      <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T About.Vanguard}" />
+      <TextBlock Style="{StaticResource Body}" Text="{l:T About.Vanguard.Detail}" Margin="0,0,0,18" />
+      <TextBlock Style="{StaticResource Small}" Text="{l:T About.OpenSource}" />
+    </StackPanel>
+  </DataTemplate>
+
+  <!-- Open a helper's plan -->
+  <DataTemplate DataType="{x:Type vm:PlanImportViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{l:T Plan.Title}" />
+      <TextBlock Style="{StaticResource Lead}" Text="{l:T Plan.Lead}" Margin="0,8,0,18" />
+      <c:ChamferBorder Style="{StaticResource Card}" Visibility="{Binding CanImport, Converter={StaticResource Visible}, ConverterParameter=invert}">
+        <TextBlock Style="{StaticResource Muted}" Text="{l:T Plan.ScanFirst}" />
+      </c:ChamferBorder>
+      <Button Style="{StaticResource Primary}" Content="{l:T Plan.Open}" Command="{Binding OpenCommand}" Margin="0,0,0,18" />
+      <StackPanel Visibility="{Binding IsLoaded, Converter={StaticResource Visible}}">
+        <c:ChamferBorder Style="{StaticResource Card}" Accent="{StaticResource WarnBrush}">
+          <TextBlock Style="{StaticResource Body}" FontWeight="SemiBold" Text="{Binding TrustText}" />
+        </c:ChamferBorder>
+        <c:ChamferBorder Style="{StaticResource Card}" Visibility="{Binding Message, Converter={StaticResource Visible}}">
+          <StackPanel>
+            <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Plan.Message}" />
+            <TextBlock Style="{StaticResource Body}" Text="{Binding Message}" />
+          </StackPanel>
+        </c:ChamferBorder>
+        <ItemsControl ItemsSource="{Binding Issues}" Focusable="False">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <Grid Margin="0,0,0,6">
+                <Grid.ColumnDefinitions><ColumnDefinition Width="28" /><ColumnDefinition /></Grid.ColumnDefinitions>
+                <c:StatusGlyph Status="Fail" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                <TextBlock Grid.Column="1" Style="{StaticResource Body}" Text="{Binding}" />
+              </Grid>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <TextBlock Style="{StaticResource SectionLabel}" Text="{l:T Plan.Steps}" Margin="0,10,0,8" />
+        <ItemsControl ItemsSource="{Binding Steps}" Focusable="False">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <c:ChamferBorder x:Name="Card" Style="{StaticResource Card}" Padding="18,14" Chamfer="10">
+                <Grid>
+                  <Grid.ColumnDefinitions><ColumnDefinition Width="36" /><ColumnDefinition /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                  <TextBlock Text="{Binding Number}" FontFamily="{StaticResource DisplayFont}" FontSize="20" FontWeight="SemiBold" Foreground="{StaticResource TextMutedBrush}" />
+                  <StackPanel Grid.Column="1">
+                    <TextBlock Style="{StaticResource Body}" FontWeight="SemiBold" Text="{Binding Title}" />
+                    <TextBlock Style="{StaticResource Muted}" Text="{Binding Note}" Visibility="{Binding HasNote, Converter={StaticResource Visible}}" Margin="0,4,0,0" />
+                    <TextBlock Style="{StaticResource Small}" Foreground="{StaticResource WarnBrush}" Text="{Binding Reason}" Visibility="{Binding Reason, Converter={StaticResource Visible}}" Margin="0,4,0,0" />
+                  </StackPanel>
+                  <Button Grid.Column="2" Style="{StaticResource Secondary}" Content="{l:T Plan.Start}" Command="{Binding StartCommand}" VerticalAlignment="Top" Padding="14,6" MinHeight="32" />
+                </Grid>
+              </c:ChamferBorder>
+              <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding IsGreyed}" Value="True">
+                  <Setter TargetName="Card" Property="Opacity" Value="0.5" />
+                </DataTrigger>
+              </DataTemplate.Triggers>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <TextBlock Style="{StaticResource Small}" Text="{Binding Status}" Margin="0,8,0,0" />
+      </StackPanel>
+    </StackPanel>
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type vm:PlanQuestionViewModel}">
+    <StackPanel>
+      <TextBlock Style="{StaticResource H2}" Text="{Binding Question.Text}" />
+      <ItemsControl ItemsSource="{Binding Question.Options}" Focusable="False" Margin="0,18,0,0">
+        <ItemsControl.ItemsPanel><ItemsPanelTemplate><WrapPanel /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Button Style="{StaticResource Secondary}" Content="{Binding Text}" Margin="0,0,10,0" Command="{Binding DataContext.AnswerCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding Id}" />
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </StackPanel>
+  </DataTemplate>
+</ResourceDictionary>

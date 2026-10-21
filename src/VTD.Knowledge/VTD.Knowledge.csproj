@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: A2 Knowledge & Analysis. Layer and analyzers come from Directory.Build.targets. -->
+  <PropertyGroup>
+    <RootNamespace>VTD.Knowledge</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VTD.Contracts\VTD.Contracts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- The bundled KB (always present; the fallback when a downloaded or dev pack fails verification). -->
+    <None Include="..\..\kb\**\*.json;..\..\kb\**\*.sig" Link="kb\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" Visible="false" />
+  </ItemGroup>
+</Project>

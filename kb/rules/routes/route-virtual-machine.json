@@ -1,0 +1,24 @@
+{
+  "id": "route-virtual-machine",
+  "rev": 1,
+  "kind": "route",
+  "category": "other",
+  "titleKey": "rule.route-virtual-machine.title",
+  "summaryKey": "rule.route-virtual-machine.summary",
+  "bucket": "riotOrAccount",
+  "route": "unsupportedPlatform",
+  "symptoms": [],
+  "prior": {
+    "threads": 0
+  },
+  "requires": [
+    "os.vm"
+  ],
+  "excludes": [],
+  "evidence": [],
+  "fixes": [],
+  "guides": [],
+  "questions": [],
+  "supersedes": [],
+  "related": []
+}

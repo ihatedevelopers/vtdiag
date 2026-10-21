@@ -1,0 +1,66 @@
+{
+  "id": "shader-cache-compilation-stutter",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "fps_performance",
+  "titleKey": "rule.shader-cache-compilation-stutter.title",
+  "summaryKey": "rule.shader-cache-compilation-stutter.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "stutter",
+    "fps_low"
+  ],
+  "prior": {
+    "threads": 16
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "driver_new",
+      "signal": "gpu.driver_recently_changed",
+      "true": 1.5,
+      "textKey": "rule.shader-cache-compilation-stutter.ev.driver_new"
+    },
+    {
+      "id": "first_matches",
+      "signal": "ask.only_first_matches",
+      "true": 1.8,
+      "false": -1.2,
+      "ask": "ask.only_first_matches"
+    },
+    {
+      "id": "after_update",
+      "signal": "ask.started_after_update",
+      "true": 0.6,
+      "ask": "ask.started_after_update"
+    },
+    {
+      "id": "overlay",
+      "signal": "proc.overlay_running",
+      "true": 0.2
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.shader_cache.warmup"
+  ],
+  "questions": [
+    "ask.only_first_matches"
+  ],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "shader-cache-compilation-stutter",
+    "threadCount": 16,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1ppxyxf",
+      "1q6tkz4",
+      "1rleoxr",
+      "1sbbeg5",
+      "1sk57b3"
+    ],
+    "urls": []
+  }
+}

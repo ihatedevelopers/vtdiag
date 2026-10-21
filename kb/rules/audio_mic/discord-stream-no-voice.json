@@ -1,0 +1,41 @@
+{
+  "id": "discord-stream-no-voice",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "audio_mic",
+  "titleKey": "rule.discord-stream-no-voice.title",
+  "summaryKey": "rule.discord-stream-no-voice.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "voice_chat",
+    "no_audio"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "discord",
+      "signal": "conflict.discord_overlay.running",
+      "true": 0.8
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.discord.stream_audio"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "discord-stream-no-voice",
+    "threadCount": 1,
+    "evidence": "suggested",
+    "threadIds": [
+      "1pdkrjh"
+    ],
+    "urls": []
+  }
+}

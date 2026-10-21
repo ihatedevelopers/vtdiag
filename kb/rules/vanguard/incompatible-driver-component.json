@@ -1,0 +1,89 @@
+{
+  "id": "incompatible-driver-component",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "vanguard",
+  "titleKey": "rule.incompatible-driver-component.title",
+  "summaryKey": "rule.incompatible-driver-component.summary",
+  "bucket": "guidedManual",
+  "symptoms": [
+    "error_code",
+    "wont_launch",
+    "bios_requirement"
+  ],
+  "prior": {
+    "threads": 5
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "hvci_drv",
+      "signal": "sec.hvci.incompatible_drivers",
+      "true": 1.2,
+      "textKey": "rule.incompatible-driver-component.ev.hvci_drv"
+    },
+    {
+      "id": "ene",
+      "signal": "conflict.ene_rgb_driver.driver_loaded",
+      "true": 2.0,
+      "group": "drv"
+    },
+    {
+      "id": "se64a",
+      "signal": "conflict.entech_se64a.driver_loaded",
+      "true": 2.0,
+      "group": "drv"
+    },
+    {
+      "id": "gdrv",
+      "signal": "conflict.gigabyte_gcc_rgbfusion.driver_loaded",
+      "true": 1.5,
+      "group": "drv"
+    },
+    {
+      "id": "xhunter",
+      "signal": "conflict.ac_xigncode.driver_loaded",
+      "true": 1.5,
+      "group": "drv"
+    },
+    {
+      "id": "misc",
+      "signal": "conflict.misc_flagged_drivers.driver_loaded",
+      "true": 1.5,
+      "group": "drv"
+    },
+    {
+      "id": "winring0",
+      "signal": "conflict.winring0_tools.driver_loaded",
+      "true": 1.2,
+      "group": "drv"
+    },
+    {
+      "id": "ci_block",
+      "signal": "events.codeintegrity_blocked",
+      "true": 1.0
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.apps.uninstall_conflict",
+    "guide.hvci.enable"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "incompatible-driver-component",
+    "threadCount": 5,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1qf6z3u",
+      "1qp3284",
+      "1qraeid",
+      "1qrafx2",
+      "1vbeday"
+    ],
+    "urls": []
+  }
+}

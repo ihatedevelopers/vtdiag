@@ -1,0 +1,47 @@
+{
+  "id": "van9101-attestation",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "tpm_secureboot_bios",
+  "titleKey": "rule.van9101-attestation.title",
+  "summaryKey": "rule.van9101-attestation.summary",
+  "bucket": "riotOrAccount",
+  "symptoms": [
+    "error_code"
+  ],
+  "prior": {
+    "threads": 1
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "tpm",
+      "signal": "sec.tpm2",
+      "false": 1.0
+    },
+    {
+      "id": "sb",
+      "signal": "sec.secureboot.on",
+      "false": 1.0
+    }
+  ],
+  "fixes": [],
+  "guides": [
+    "guide.secureboot.policy_wave",
+    "guide.riot.support_ticket"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "van9101-attestation",
+    "threadCount": 1,
+    "threadIds": [
+      "1rah5lw"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/client/error-van-9101"
+    ]
+  }
+}

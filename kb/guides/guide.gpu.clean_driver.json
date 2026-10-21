@@ -1,0 +1,181 @@
+{
+  "id": "guide.gpu.clean_driver",
+  "titleKey": "guide.gpu.clean_driver.title",
+  "summaryKey": "guide.gpu.clean_driver.summary",
+  "bucket": "guidedManual",
+  "risk": "medium",
+  "reboot": "required",
+  "appliesTo": [
+    "gpu-driver-corrupt-needs-clean-install",
+    "amd-adrenalin-driver-regression",
+    "low-gpu-usage-after-ue5-patch",
+    "nvidia-driver-packet-loss"
+  ],
+  "preflight": [
+    {
+      "probe": "riot.game_running",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.gpu.clean_driver.pre.0"
+    },
+    {
+      "probe": "sec.bitlocker_on",
+      "must": "false",
+      "severity": "warn",
+      "failKey": "guide.gpu.clean_driver.pre.1"
+    }
+  ],
+  "branches": [
+    {
+      "id": "nvidia",
+      "when": [
+        {
+          "signal": "gpu.nvidia_dgpu",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.gpu.clean_driver.nvidia.text",
+      "steps": [
+        {
+          "textKey": "guide.gpu.clean_driver.nvidia.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.nvidia.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.nvidia.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.nvidia.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.nvidia.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.nvidia.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.nvidia.s7",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "ddu"
+    },
+    {
+      "id": "amd",
+      "when": [
+        {
+          "signal": "gpu.amd_dgpu",
+          "is": "true"
+        }
+      ],
+      "textKey": "guide.gpu.clean_driver.amd.text",
+      "steps": [
+        {
+          "textKey": "guide.gpu.clean_driver.amd.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.amd.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.amd.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.amd.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.amd.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.amd.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.amd.s7",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "ddu"
+    },
+    {
+      "id": "intel_other",
+      "when": [],
+      "textKey": "guide.gpu.clean_driver.intel_other.text",
+      "steps": [
+        {
+          "textKey": "guide.gpu.clean_driver.intel_other.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.intel_other.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.intel_other.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.intel_other.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.intel_other.s5",
+          "action": "none"
+        }
+      ],
+      "verify": [],
+      "nextOnFail": "ddu"
+    },
+    {
+      "id": "ddu",
+      "when": [],
+      "textKey": "guide.gpu.clean_driver.ddu.text",
+      "steps": [
+        {
+          "textKey": "guide.gpu.clean_driver.ddu.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.ddu.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.ddu.s3",
+          "action": "openSettings",
+          "target": "ms-settings:recovery"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.ddu.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.ddu.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.ddu.s6",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.gpu.clean_driver.ddu.s7",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.gpu.clean_driver.outcome"
+}

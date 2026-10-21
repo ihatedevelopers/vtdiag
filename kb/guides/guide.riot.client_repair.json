@@ -1,0 +1,97 @@
+{
+  "id": "guide.riot.client_repair",
+  "titleKey": "guide.riot.client_repair.title",
+  "summaryKey": "guide.riot.client_repair.summary",
+  "bucket": "guidedManual",
+  "risk": "low",
+  "reboot": "none",
+  "appliesTo": [
+    "riot-client-update-stuck"
+  ],
+  "preflight": [],
+  "branches": [
+    {
+      "id": "repair",
+      "when": [],
+      "textKey": "guide.riot.client_repair.repair.text",
+      "steps": [
+        {
+          "textKey": "guide.riot.client_repair.repair.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_repair.repair.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_repair.repair.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_repair.repair.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "update_loop",
+      "when": [],
+      "textKey": "guide.riot.client_repair.update_loop.text",
+      "steps": [
+        {
+          "textKey": "guide.riot.client_repair.update_loop.s1",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_repair.update_loop.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_repair.update_loop.s3",
+          "action": "copyText",
+          "target": "%LOCALAPPDATA%\\Riot Games"
+        },
+        {
+          "textKey": "guide.riot.client_repair.update_loop.s4",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_repair.update_loop.s5",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_repair.update_loop.s6",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    },
+    {
+      "id": "reinstall",
+      "when": [],
+      "textKey": "guide.riot.client_repair.reinstall.text",
+      "steps": [
+        {
+          "textKey": "guide.riot.client_repair.reinstall.s1",
+          "action": "openSettings",
+          "target": "ms-settings:appsfeatures"
+        },
+        {
+          "textKey": "guide.riot.client_repair.reinstall.s2",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_repair.reinstall.s3",
+          "action": "none"
+        },
+        {
+          "textKey": "guide.riot.client_repair.reinstall.s4",
+          "action": "none"
+        }
+      ],
+      "verify": []
+    }
+  ],
+  "outcomeAskKey": "guide.riot.client_repair.outcome"
+}

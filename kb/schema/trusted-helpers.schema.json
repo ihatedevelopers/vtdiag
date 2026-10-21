@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtdiag:schema:trusted-helpers:1",
+  "title": "VTDiag trusted helper keys",
+  "description": "kb/trusted_helpers.json: keys whose plans show as Verified helper.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Display name, for example u/ModName."
+      },
+      "publicKey": {
+        "type": "string",
+        "description": "Public key, ed25519:<base64>."
+      },
+      "validUntil": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date",
+        "description": "Valid until."
+      }
+    },
+    "required": [
+      "name",
+      "publicKey"
+    ],
+    "additionalProperties": false,
+    "description": "A verified helper's public key (kb/trusted_helpers.json): plans signed by it show \"Verified helper\"."
+  }
+}

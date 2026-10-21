@@ -1,0 +1,55 @@
+{
+  "id": "dual-network-adapter-desync",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "network_ping",
+  "titleKey": "rule.dual-network-adapter-desync.title",
+  "summaryKey": "rule.dual-network-adapter-desync.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "disconnect",
+    "high_ping",
+    "error_code"
+  ],
+  "prior": {
+    "threads": 3
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "multi",
+      "signal": "net.multi_nic_up",
+      "true": 1.8,
+      "veto": "false",
+      "textKey": "rule.dual-network-adapter-desync.ev.multi"
+    },
+    {
+      "id": "second",
+      "signal": "net.secondary_adapter_up",
+      "true": 0.6
+    }
+  ],
+  "fixes": [
+    "fix.net.disable_second_adapter"
+  ],
+  "guides": [
+    "guide.net.local_connection"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "dual-network-adapter-desync",
+    "threadCount": 3,
+    "evidence": "op_confirmed",
+    "threadIds": [
+      "1ryw38w",
+      "1syjgvv",
+      "1v5zr9c"
+    ],
+    "urls": [
+      "https://support.riotgames.com/riot/performance/error-van-185"
+    ]
+  }
+}

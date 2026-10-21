@@ -1,0 +1,66 @@
+{
+  "id": "fast-startup-stale-dat-bsod",
+  "rev": 1,
+  "kind": "hypothesis",
+  "category": "crash_freeze_bsod",
+  "titleKey": "rule.fast-startup-stale-dat-bsod.title",
+  "summaryKey": "rule.fast-startup-stale-dat-bsod.summary",
+  "bucket": "fixableHere",
+  "symptoms": [
+    "freeze_hard",
+    "error_code",
+    "wont_launch"
+  ],
+  "prior": {
+    "threads": 6
+  },
+  "requires": [],
+  "excludes": [],
+  "evidence": [
+    {
+      "id": "stale",
+      "signal": "vg.stale_dat",
+      "true": 1.5,
+      "textKey": "rule.fast-startup-stale-dat-bsod.ev.stale",
+      "onlyIfSymptoms": [
+        "freeze_hard",
+        "error_code",
+        "wont_launch"
+      ]
+    },
+    {
+      "id": "fast",
+      "signal": "os.fast_startup_on",
+      "true": 0.8,
+      "textKey": "rule.fast-startup-stale-dat-bsod.ev.fast"
+    },
+    {
+      "id": "bsod",
+      "signal": "events.bugcheck_recent",
+      "true": 1.0
+    }
+  ],
+  "fixes": [
+    "fix.vg.quarantine_stale_dat",
+    "fix.os.fast_startup_off"
+  ],
+  "guides": [
+    "guide.vanguard.real_restart"
+  ],
+  "questions": [],
+  "supersedes": [],
+  "related": [],
+  "sources": {
+    "catalog": "fast-startup-stale-dat-bsod",
+    "threadCount": 6,
+    "evidence": "guide",
+    "threadIds": [
+      "1thudjt",
+      "1tidlcn",
+      "1to43vz",
+      "1tp5uyi",
+      "1tt4kdg"
+    ],
+    "urls": []
+  }
+}

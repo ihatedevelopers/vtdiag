@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Owner: A6 UI & Reporting. Layer and analyzers come from Directory.Build.targets. -->
+  <PropertyGroup>
+    <RootNamespace>VTD.App</RootNamespace>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <!-- Only for the tray icon (System.Windows.Forms.NotifyIcon); the WinForms/Drawing global usings are removed below. -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>VTDiag</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- Same version as the engine (the bundled KB requires minApp 0.1.0). -->
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VTD.Contracts\VTD.Contracts.csproj" />
+    <ProjectReference Include="..\VTD.Reporting\VTD.Reporting.csproj" />
+    <ProjectReference Include="..\VTD.Knowledge\VTD.Knowledge.csproj" />
+    <!--
+      Demo mode only (VTDiag.exe with the demo switch): the whole flow on FakeEngineRpc with fixture data. The real engine is the default.
+    -->
+    <ProjectReference Include="..\VTD.Testing.Fakes\VTD.Testing.Fakes.csproj" />
+    <!-- Build order only: the engine (VTDiag.Engine.exe) is copied next to VTDiag.exe below. No code reference. -->
+    <ProjectReference Include="..\VTD.Engine\VTD.Engine.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- IPC App <-> Engine (centrally pinned; already approved in Directory.Packages.props). -->
+    <PackageReference Include="StreamJsonRpc" />
+  </ItemGroup>
+  <!-- The engine must sit in the same folder as the UI: the engine only accepts a UI image next to itself. -->
+  <Target Name="CopyEngineNextToUi" AfterTargets="Build">
+    <ItemGroup>
+      <_EngineOutput Include="$(MSBuildThisFileDirectory)..\VTD.Engine\bin\$(Configuration)\$(TargetFramework)\**\*" Exclude="$(MSBuildThisFileDirectory)..\VTD.Engine\bin\$(Configuration)\$(TargetFramework)\**\*.pdb" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_EngineOutput)" DestinationFiles="@(_EngineOutput->'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+  <ItemGroup>
+    <InternalsVisibleTo Include="VTD.App.Tests" />
+  </ItemGroup>
+</Project>
