@@ -5,6 +5,12 @@
   "undoExplainKey": "fix.power.usb_selective_suspend_off.undo",
   "noticeKey": "fix.power.usb_selective_suspend_off.notice",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.power.usb_selective_suspend_off.manual.0",
+    "fix.power.usb_selective_suspend_off.manual.1",
+    "fix.power.usb_selective_suspend_off.manual.2",
+    "fix.power.usb_selective_suspend_off.manual.3"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

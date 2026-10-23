@@ -4,6 +4,12 @@
   "explainKey": "fix.display.hags_off.explain",
   "undoExplainKey": "fix.display.hags_off.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.display.hags_off.manual.0",
+    "fix.display.hags_off.manual.1",
+    "fix.display.hags_off.manual.2",
+    "fix.display.hags_off.manual.3"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

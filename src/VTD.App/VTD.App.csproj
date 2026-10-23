@@ -9,7 +9,7 @@
     <AssemblyName>VTDiag</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <!-- Same version as the engine (the bundled KB requires minApp 0.1.0). -->
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <Using Remove="System.Windows.Forms" />

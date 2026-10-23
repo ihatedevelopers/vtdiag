@@ -4,6 +4,12 @@
   "explainKey": "fix.generic.disable_startup_hkcu.explain",
   "undoExplainKey": "fix.generic.disable_startup_hkcu.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.generic.disable_startup_hkcu.manual.0",
+    "fix.generic.disable_startup_hkcu.manual.1",
+    "fix.generic.disable_startup_hkcu.manual.2",
+    "fix.generic.disable_startup_hkcu.manual.3"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": false,

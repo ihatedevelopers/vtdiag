@@ -233,7 +233,7 @@ public static class KbLinter
                 Key(f.ExplainKey, where);
                 Key(f.UndoExplainKey, where);
                 Key(f.NoticeKey, where);
-                foreach (var k in f.SideEffectKeys)
+                foreach (var k in f.SideEffectKeys.Concat(f.ManualStepKeys))
                 {
                     Key(k, where);
                 }

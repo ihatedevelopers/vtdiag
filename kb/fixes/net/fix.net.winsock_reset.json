@@ -7,6 +7,12 @@
   "sideEffectKeys": [
     "fix.net.winsock_reset.side.0"
   ],
+  "manualStepKeys": [
+    "fix.net.winsock_reset.manual.0",
+    "fix.net.winsock_reset.manual.1",
+    "fix.net.winsock_reset.manual.2",
+    "fix.net.winsock_reset.manual.3"
+  ],
   "risk": "medium",
   "reversibility": "oneWay",
   "admin": true,

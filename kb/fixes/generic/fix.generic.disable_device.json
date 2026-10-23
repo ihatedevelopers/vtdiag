@@ -4,6 +4,12 @@
   "explainKey": "fix.generic.disable_device.explain",
   "undoExplainKey": "fix.generic.disable_device.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.generic.disable_device.manual.0",
+    "fix.generic.disable_device.manual.1",
+    "fix.generic.disable_device.manual.2",
+    "fix.generic.disable_device.manual.3"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

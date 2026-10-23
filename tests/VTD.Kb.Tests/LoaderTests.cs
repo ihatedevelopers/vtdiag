@@ -93,7 +93,7 @@ public sealed class LoaderTests
         Assert.True(revokedKey.FellBackToBundled);
         Assert.Contains(revokedKey.Issues, i => i.Code == "signature.invalid"); // the manifest key is revoked
 
-        pack.WriteRevocations(6, versions: ["2026.10.21.1"]);
+        pack.WriteRevocations(6, versions: ["2026.10.23.1"]);
         var revokedVersion = await loader.LoadAsync(Repo.Options(Repo.Kb, downloaded: pack.Folder), CancellationToken.None);
         Assert.True(revokedVersion.FellBackToBundled);
         Assert.Contains(revokedVersion.Issues, i => i.Code == "version.revoked");
@@ -152,10 +152,10 @@ public sealed class LoaderTests
         // Persisted revoked versions apply the same way.
         using var clean = new DevPack();
         clean.SignManifest();
-        var byVersion = await new KnowledgeBaseLoader([clean.Key]).LoadAsync(Repo.Options(Repo.Kb, downloaded: clean.Folder) with { KnownRevokedVersions = ["2026.10.21.1"] }, CancellationToken.None);
+        var byVersion = await new KnowledgeBaseLoader([clean.Key]).LoadAsync(Repo.Options(Repo.Kb, downloaded: clean.Folder) with { KnownRevokedVersions = ["2026.10.23.1"] }, CancellationToken.None);
         Assert.True(byVersion.FellBackToBundled);
         Assert.Contains(byVersion.Issues, i => i.Code == "version.revoked");
-        Assert.Contains("2026.10.21.1", byVersion.RevokedVersions);
+        Assert.Contains("2026.10.23.1", byVersion.RevokedVersions);
     }
 
     [Fact]
@@ -164,7 +164,7 @@ public sealed class LoaderTests
         using var bundled = new DevPack();
         using var download = new DevPack();
         download.SignManifest();
-        bundled.WriteRevocations(3, versions: ["2026.10.21.1"]);
+        bundled.WriteRevocations(3, versions: ["2026.10.23.1"]);
         download.WriteRevocations(8);
         var loader = new KnowledgeBaseLoader([download.Key, bundled.Key]);
         var result = await loader.LoadAsync(Repo.Options(bundled.Folder, downloaded: download.Folder), CancellationToken.None);

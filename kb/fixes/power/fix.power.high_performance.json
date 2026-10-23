@@ -5,6 +5,12 @@
   "undoExplainKey": "fix.power.high_performance.undo",
   "noticeKey": "fix.power.high_performance.notice",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.power.high_performance.manual.0",
+    "fix.power.high_performance.manual.1",
+    "fix.power.high_performance.manual.2",
+    "fix.power.high_performance.manual.3"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

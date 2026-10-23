@@ -111,6 +111,7 @@ public sealed class SuspectViewModel : ObservableObject
         if (proposal is not null)
         {
             FixTitle = s.Text.Get(s.Kb.FindFix(proposal.FixId)?.TitleKey ?? proposal.FixId);
+            ManualSteps = [.. (s.Kb.FindFix(proposal.FixId)?.ManualStepKeys ?? []).Select((k, i) => string.Create(CultureInfo.InvariantCulture, $"{i + 1}. {s.Text.Get(k)}"))];
             Badges = [Words.Time(s.Kb.FindFix(proposal.FixId)?.EstMinutes ?? 0.2), Words.Reversible(proposal.Reversibility), Words.Reboot(proposal.Reboot), Words.Risk(proposal.Risk)];
             if (page.Shell.IsLimited && proposal.NeedsAdmin)
             {
@@ -181,6 +182,12 @@ public sealed class SuspectViewModel : ObservableObject
 
     /// <summary>Has a runnable fix.</summary>
     public bool CanTryFix => Proposal is not null && UnavailableText is null;
+
+    /// <summary>The fix done by hand, numbered.</summary>
+    public IReadOnlyList<string> ManualSteps { get; } = [];
+
+    /// <summary>Has manual steps.</summary>
+    public bool HasManualSteps => ManualSteps.Count > 0;
 
     /// <summary>Has a fix (runnable or not).</summary>
     public bool HasFix => Proposal is not null;

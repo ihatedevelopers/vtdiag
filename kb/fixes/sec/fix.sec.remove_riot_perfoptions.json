@@ -4,6 +4,13 @@
   "explainKey": "fix.sec.remove_riot_perfoptions.explain",
   "undoExplainKey": "fix.sec.remove_riot_perfoptions.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.sec.remove_riot_perfoptions.manual.0",
+    "fix.sec.remove_riot_perfoptions.manual.1",
+    "fix.sec.remove_riot_perfoptions.manual.2",
+    "fix.sec.remove_riot_perfoptions.manual.3",
+    "fix.sec.remove_riot_perfoptions.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

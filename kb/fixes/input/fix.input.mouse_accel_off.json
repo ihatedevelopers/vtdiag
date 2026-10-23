@@ -5,6 +5,12 @@
   "undoExplainKey": "fix.input.mouse_accel_off.undo",
   "noticeKey": "fix.input.mouse_accel_off.notice",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.input.mouse_accel_off.manual.0",
+    "fix.input.mouse_accel_off.manual.1",
+    "fix.input.mouse_accel_off.manual.2",
+    "fix.input.mouse_accel_off.manual.3"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": false,

@@ -7,6 +7,13 @@
   "sideEffectKeys": [
     "fix.audio.bt_handsfree_off.side.0"
   ],
+  "manualStepKeys": [
+    "fix.audio.bt_handsfree_off.manual.0",
+    "fix.audio.bt_handsfree_off.manual.1",
+    "fix.audio.bt_handsfree_off.manual.2",
+    "fix.audio.bt_handsfree_off.manual.3",
+    "fix.audio.bt_handsfree_off.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

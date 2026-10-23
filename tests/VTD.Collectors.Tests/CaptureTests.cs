@@ -59,7 +59,7 @@ public sealed class CaptureRedactorTests
     [Fact]
     public async Task A_redacted_synthetic_capture_still_replays()
     {
-        var live = await Pcs.Orchestrator(Pcs.Healthy()).ScanAsync(Pcs.Request(capture: true), null, TestContext.Current.CancellationToken);
+        var live = await Pcs.Orchestrator(Pcs.Healthy(), deterministicTimeouts: true).ScanAsync(Pcs.Request(capture: true), null, TestContext.Current.CancellationToken);
         var redacted = new CaptureRedactor(new CaptureIdentity { Sid = Pcs.Player.Sid, ProfilePath = @"C:\Users\<user>", UserName = "nobody-here", MachineName = "nomachine", Salt = ReplayHarness.Salt }).Redact(live.Capture);
         var (snapshot, misses) = await ReplayHarness.ReplayAsync(redacted, TestContext.Current.CancellationToken);
         Assert.Empty(misses);

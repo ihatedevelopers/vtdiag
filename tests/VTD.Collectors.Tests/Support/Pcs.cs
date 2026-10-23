@@ -196,10 +196,18 @@ internal static class Pcs
     public static ScanRequest Request(ScanMode mode = ScanMode.Full, IReadOnlyList<string>? collectors = null, bool capture = false)
         => new() { KbVersion = "2026.10.21", Player = Player, Mode = mode, Collectors = collectors ?? [], CaptureRaw = capture };
 
-    public static ScanOrchestrator Orchestrator(FakeSources f, PrivilegeMode privilege = PrivilegeMode.Elevated, IReadOnlyList<CollectorBase>? collectors = null)
+    /// <param name="deterministicTimeouts">Collector timeouts never fire (a frozen clock). Capture/replay tests use it so a slow,
+    /// starved CI runner cannot time a collector out mid-capture and leave reads the replay then misses.</param>
+    public static ScanOrchestrator Orchestrator(FakeSources f, PrivilegeMode privilege = PrivilegeMode.Elevated, IReadOnlyList<CollectorBase>? collectors = null, bool deterministicTimeouts = false)
     {
         var clock = new FakeClock(Start);
-        return new ScanOrchestrator(f.ToSources(), clock, new SequentialIdGenerator(clock), new ScanOrchestratorOptions { Privilege = privilege, MachineKeySalt = ReplayHarness.Salt, AppVersion = "0.0.1" }, collectors);
+        var options = new ScanOrchestratorOptions { Privilege = privilege, MachineKeySalt = ReplayHarness.Salt, AppVersion = "0.0.1" };
+        if (deterministicTimeouts)
+        {
+            options = options with { TimeoutClock = new FakeClock(Start) };
+        }
+
+        return new ScanOrchestrator(f.ToSources(), clock, new SequentialIdGenerator(clock), options, collectors);
     }
 
     private static Dictionary<string, string> Row(params (string Key, string Value)[] values)

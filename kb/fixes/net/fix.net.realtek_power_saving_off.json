@@ -5,6 +5,13 @@
   "undoExplainKey": "fix.net.realtek_power_saving_off.undo",
   "noticeKey": "fix.net.realtek_power_saving_off.notice",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.net.realtek_power_saving_off.manual.0",
+    "fix.net.realtek_power_saving_off.manual.1",
+    "fix.net.realtek_power_saving_off.manual.2",
+    "fix.net.realtek_power_saving_off.manual.3",
+    "fix.net.realtek_power_saving_off.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

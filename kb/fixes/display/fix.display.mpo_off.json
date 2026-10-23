@@ -4,6 +4,13 @@
   "explainKey": "fix.display.mpo_off.explain",
   "undoExplainKey": "fix.display.mpo_off.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.display.mpo_off.manual.0",
+    "fix.display.mpo_off.manual.1",
+    "fix.display.mpo_off.manual.2",
+    "fix.display.mpo_off.manual.3",
+    "fix.display.mpo_off.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

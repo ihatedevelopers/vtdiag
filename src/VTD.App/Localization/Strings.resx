@@ -453,6 +453,7 @@
   <data name="Suspects.ShowAll" xml:space="preserve"><value>Show all ({count} more)</value></data>
   <data name="Suspects.ShowFewer" xml:space="preserve"><value>Show fewer</value></data>
   <data name="Suspects.ShowSteps" xml:space="preserve"><value>Show me the steps</value></data>
+  <data name="Suspects.DoItYourself" xml:space="preserve"><value>Do it yourself</value></data>
   <data name="Suspects.Title" xml:space="preserve"><value>What we found</value></data>
   <data name="Suspects.TryFirstFix" xml:space="preserve"><value>Try the first fix</value></data>
   <data name="Suspects.Unknown.Detail" xml:space="preserve"><value>Nothing we checked explains it well enough. That's not your fault, and it doesn't mean nothing is wrong.</value></data>

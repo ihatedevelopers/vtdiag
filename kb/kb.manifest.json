@@ -1,8 +1,8 @@
 {
   "format": 1,
-  "version": "2026.10.21.1",
+  "version": "2026.10.23.1",
   "minApp": "0.1.0",
-  "createdUtc": "2026-10-21T00:00:00Z",
+  "createdUtc": "2026-10-23T00:00:00Z",
   "channel": "stable",
   "files": [
     {
@@ -77,163 +77,163 @@
     },
     {
       "path": "fixes/audio/fix.audio.bt_handsfree_off.json",
-      "sha256": "022a0732d05a6aa008332569a6d0b25b36d2c7472af41baf600c9e01e5b8dda4",
-      "size": 1324
+      "sha256": "aa677ca5d14cc4fe0430fb534126b306cde4669500490e43dc0a0050f35eebaa",
+      "size": 1565
     },
     {
       "path": "fixes/display/fix.display.disable_fso.json",
-      "sha256": "5d292dc1e15e7fafc9cc384b665500fe96d3a61ad5d703c13602954e3573663d",
-      "size": 1310
+      "sha256": "9ccb2edb64522cdebe0c25585db81bce52f856b8859413e895206c27ae9ec834",
+      "size": 1536
     },
     {
       "path": "fixes/display/fix.display.game_dvr_off.json",
-      "sha256": "629571e6cce7469fb5ec0a4a3c345d70d3e54c060f99c505a6af5b350e75543f",
-      "size": 1509
+      "sha256": "d9a4a6a9833c6107d26ba794609c162a1d0c43bc75e36671a377404f5bdb7ac0",
+      "size": 1781
     },
     {
       "path": "fixes/display/fix.display.gpu_pref_high.json",
-      "sha256": "6cd1e4a9e38520e35a8899a88d49c0485a4581de7eae537019023b9188fcc186",
-      "size": 1344
-    },
-    {
-      "path": "fixes/display/fix.display.hags_off.json",
-      "sha256": "a23c61857868c8d79eda138537fe9864b363d309a3df8633faa62e8fefcf5cac",
-      "size": 1379
-    },
-    {
-      "path": "fixes/display/fix.display.mpo_off.json",
-      "sha256": "e39511a587dd5bc1e965bda3e2aadb8cb010b9ca5e22776a0186dc382c376d8b",
-      "size": 1326
-    },
-    {
-      "path": "fixes/generic/fix.generic.close_process.json",
-      "sha256": "9129065adebc04a44a0662fd677630e7265c5455bfdcc39f7a4928b574a975b4",
-      "size": 1112
-    },
-    {
-      "path": "fixes/generic/fix.generic.disable_device.json",
-      "sha256": "58191aff881fc20e582ae3309be9d4649f79e2730066995de048f03618c34036",
-      "size": 1131
-    },
-    {
-      "path": "fixes/generic/fix.generic.disable_startup_hkcu.json",
-      "sha256": "c1548a6984220146963e05e88d65d287c43c33b2fdcf63e710debad09c9435da",
-      "size": 1140
-    },
-    {
-      "path": "fixes/generic/fix.generic.disable_startup_hklm.json",
-      "sha256": "ddfdc2badc17f12e5c99427416311739ced7c6534f25edc08f9f28f21f016b73",
-      "size": 1139
-    },
-    {
-      "path": "fixes/generic/fix.generic.remove_compat_layer.json",
-      "sha256": "099c12693cf566031107272ae9ea118db789bd4af182ca186e8452717c808222",
-      "size": 1255
-    },
-    {
-      "path": "fixes/generic/fix.generic.unbind_ipv6.json",
-      "sha256": "3ffe42fa85af1526971093e84a1aee3996944bb566372e5a3f07cc11ff0af165",
-      "size": 1296
-    },
-    {
-      "path": "fixes/input/fix.input.mouse_accel_off.json",
-      "sha256": "9f909bbd8d4a11b5a1156970cfaacd5a24a35a27f03e65464f5b2e4b84c4d54d",
-      "size": 1659
-    },
-    {
-      "path": "fixes/net/fix.net.disable_second_adapter.json",
-      "sha256": "5c7ea89b8f4c80e0e80a64d87763a6318e3f1f2b4650971ce1c29ed5f9304142",
-      "size": 1900
-    },
-    {
-      "path": "fixes/net/fix.net.disable_unused_adapter.json",
-      "sha256": "da3c1f32897d06ba84f81f04fc05b905287858ebef531a4dda1cf76236b71ddb",
-      "size": 2002
-    },
-    {
-      "path": "fixes/net/fix.net.dns_flush.json",
-      "sha256": "00ea73c3713fd1310a4bf7cd902df6cb3aadf307ee47be1bc7c99d72cbf55374",
-      "size": 848
-    },
-    {
-      "path": "fixes/net/fix.net.realtek_power_saving_off.json",
-      "sha256": "95317f6c4aa392652a0b4ecf63528d44999f3c331b17f7cd6b50b79aed824de2",
-      "size": 2343
-    },
-    {
-      "path": "fixes/net/fix.net.unbind_ipv6_active.json",
-      "sha256": "cc0d2fe808398b5271395899a595e6ce3f73f547df39534e76246e0ef31bb4cc",
-      "size": 1530
-    },
-    {
-      "path": "fixes/net/fix.net.winsock_reset.json",
-      "sha256": "a380dbf505c8e8cbe6e99ec539012f3cafe8ee4581ab51dd2ab2bb91fb2335b8",
-      "size": 1226
-    },
-    {
-      "path": "fixes/os/fix.os.fast_startup_off.json",
-      "sha256": "b1e4a181bdc6cfda1f205268e6b881245347cd75a87df4dcb102627772375e63",
-      "size": 1436
-    },
-    {
-      "path": "fixes/os/fix.os.time_resync.json",
-      "sha256": "4436d9743d8cace8f4c7cd4a7cf5a3421318b76d94ab4f6ddb0518406a7c8763",
-      "size": 883
-    },
-    {
-      "path": "fixes/power/fix.power.cpu_max_100.json",
-      "sha256": "d87d5b6fb9de368f0bd512f523655b3eb7c8156d21eae7b68be42f799ff49e4a",
-      "size": 1339
-    },
-    {
-      "path": "fixes/power/fix.power.high_performance.json",
-      "sha256": "e7c923ec66e2eb366bea2b4aff2caae1cc9d540f6317272d39963954548c9278",
-      "size": 1269
-    },
-    {
-      "path": "fixes/power/fix.power.usb_selective_suspend_off.json",
-      "sha256": "b8534e8b75b1e6ff77d03076a2e0444fcb5628ac85c73968e2d96dd70df7fc98",
+      "sha256": "656654de3881d70fe3da7c7d0853984a52d959dee8ede4cc910e03ddf3140962",
       "size": 1580
     },
     {
+      "path": "fixes/display/fix.display.hags_off.json",
+      "sha256": "bce33d0a7c7a5aed6f01d8fe872a3ae5591fdde0f665252adb596ed860de04a7",
+      "size": 1553
+    },
+    {
+      "path": "fixes/display/fix.display.mpo_off.json",
+      "sha256": "f05765f0a370aeb189f8358a75bb507707cfde906163602a7bd94f0c437ae861",
+      "size": 1532
+    },
+    {
+      "path": "fixes/generic/fix.generic.close_process.json",
+      "sha256": "8e587e64671a3ab8fdc739588e98613f7b86a18a5c4d236c68b27dcee9ef679b",
+      "size": 1306
+    },
+    {
+      "path": "fixes/generic/fix.generic.disable_device.json",
+      "sha256": "cffb190caab43fc4982544247f60b9af04195507b1d416a3632009cfb513152f",
+      "size": 1329
+    },
+    {
+      "path": "fixes/generic/fix.generic.disable_startup_hkcu.json",
+      "sha256": "40b2b9a56dd94b0f5be11ae32cac8796ed46c93d025a2c943724a04cc422022b",
+      "size": 1362
+    },
+    {
+      "path": "fixes/generic/fix.generic.disable_startup_hklm.json",
+      "sha256": "f9c61afca787ee969dc392e05c761c266b6eb7c3192f7910c2adea8afd7761cf",
+      "size": 1361
+    },
+    {
+      "path": "fixes/generic/fix.generic.remove_compat_layer.json",
+      "sha256": "078098238e55daa72773045862fee105939771992fa7cd5542688c8ae2286518",
+      "size": 1521
+    },
+    {
+      "path": "fixes/generic/fix.generic.unbind_ipv6.json",
+      "sha256": "11bf087c5b387af5ec2ccbe07b29f4500068183024b710350f509734a2531968",
+      "size": 1482
+    },
+    {
+      "path": "fixes/input/fix.input.mouse_accel_off.json",
+      "sha256": "f0665c663d95f2dadacf4857b31cd6cdefa0e7781082cbcddec91c9c8e2b5ddc",
+      "size": 1853
+    },
+    {
+      "path": "fixes/net/fix.net.disable_second_adapter.json",
+      "sha256": "6f0ce2795dd019ffac7f579c1e80760b813de5257a1d37db1581540087e6d426",
+      "size": 2114
+    },
+    {
+      "path": "fixes/net/fix.net.disable_unused_adapter.json",
+      "sha256": "80c4d62c8f1068f7fb9f7d6aecf8f57ca5e696bf7549ab01b1b23b3db7199c1e",
+      "size": 2216
+    },
+    {
+      "path": "fixes/net/fix.net.dns_flush.json",
+      "sha256": "1e95253730be408d1f4a49e66827f54be4be5aa38ad440b3da7c103f24bcfcbe",
+      "size": 976
+    },
+    {
+      "path": "fixes/net/fix.net.realtek_power_saving_off.json",
+      "sha256": "382588792eda742047b2ecc1154cdf957d46c798eb54d444212c7bf7090e7d73",
+      "size": 2614
+    },
+    {
+      "path": "fixes/net/fix.net.unbind_ipv6_active.json",
+      "sha256": "09da253254f392ee7f037c5566006b8e2aa00cd08f1dc0deed98dfdb4f16b838",
+      "size": 1728
+    },
+    {
+      "path": "fixes/net/fix.net.winsock_reset.json",
+      "sha256": "e63f6e27b695b50bdc01e49e43173a63a97b9f50a6ed00e208438a9590b279a1",
+      "size": 1404
+    },
+    {
+      "path": "fixes/os/fix.os.fast_startup_off.json",
+      "sha256": "8fc5449da06d6b2b17748a6086b70f2b4907689c80e3c82396ad2c98616bd191",
+      "size": 1662
+    },
+    {
+      "path": "fixes/os/fix.os.time_resync.json",
+      "sha256": "b3da53cb2ac9a393c7a96948f949d4ce34e7b77e643ea44e2fb4a6f2f6b60c2a",
+      "size": 1049
+    },
+    {
+      "path": "fixes/power/fix.power.cpu_max_100.json",
+      "sha256": "f6905c00eba169968e1418bb4736e9cfda6b12024b7aabe0d75c622cdafc57a4",
+      "size": 1517
+    },
+    {
+      "path": "fixes/power/fix.power.high_performance.json",
+      "sha256": "f07d951888f5a5faf444a760515a9d1ae0ede265d76cdca60cd297d8c83bb125",
+      "size": 1467
+    },
+    {
+      "path": "fixes/power/fix.power.usb_selective_suspend_off.json",
+      "sha256": "8cda8f6769fefa43bd3e47a1cc4ef73e9b0a9f09ac338448a4cb3c0778d60da1",
+      "size": 1814
+    },
+    {
       "path": "fixes/proc/fix.proc.close_overlays.json",
-      "sha256": "ffa9c7bc7189c9c09d5214db6f3536c62831a2c5981a6ecd296cad68ab9cbc2c",
-      "size": 1301
+      "sha256": "aa8450b35835d86c4ededbbfbdb3e2881b938ad179d68bff5b8168a60e6a34ab",
+      "size": 1487
     },
     {
       "path": "fixes/riot/fix.riot.client_runasadmin.json",
-      "sha256": "3c551433a17a531bace1aa520f4a9d5e492f1e6e5e7f70bd5be2ce182a31686b",
-      "size": 1282
+      "sha256": "f576bf6b01cc92262ec3dbcab1099e5e5fa864361b73b19166dc1d855c2df86b",
+      "size": 1523
     },
     {
       "path": "fixes/sec/fix.sec.remove_riot_perfoptions.json",
-      "sha256": "fc28101192329817e16affce4639a72f2e80c101dc21b777a50f6e5726c2b87e",
-      "size": 1222
+      "sha256": "4cf6d68081ad985e1299398a763e6fd922a823b49f224dc999cd36637d78a07a",
+      "size": 1488
     },
     {
       "path": "fixes/sec/fix.sec.reset_exploit_overrides.json",
-      "sha256": "c4d98e2edb0bfa03154006c91f22a2ff96edac3f19e193fcb97e260205fc9dc0",
-      "size": 1231
+      "sha256": "fcf23e0370e74f3e4f00c9e41e7f877c3552ce9c47e1732ec891ad053c396d85",
+      "size": 1449
     },
     {
       "path": "fixes/svc/fix.svc.disable_conflict_service.json",
-      "sha256": "29480181cfb95baa528b430ca79ff3341704727b01418faac9be5d71362dabba",
-      "size": 1608
+      "sha256": "23ba5f5bc10db873b3e61f077e18c2034d113eee05ae9e1a63739cc263daa950",
+      "size": 1879
     },
     {
       "path": "fixes/vg/fix.vg.quarantine_bootstatus.json",
-      "sha256": "d65ddd548662413b072420cc0ff0cd8ef9af13fbf37c9cd48eff9445b2308e17",
-      "size": 1216
+      "sha256": "6cc5a6e29d9863e4de2dceb8dd9344a92b179ae9145470daae44564c6a8f86dc",
+      "size": 1467
     },
     {
       "path": "fixes/vg/fix.vg.quarantine_stale_dat.json",
-      "sha256": "853b4d677484c22234d9c2f6571ba90d0de22aa29c6a0629928c113f3f8b9a69",
-      "size": 1177
+      "sha256": "d56452cf40d3b832bc3f6436e514ecc2e4e9516eee1f3c2c73a68f48fe61b0c2",
+      "size": 1423
     },
     {
       "path": "fixes/vg/fix.vg.vgc_automatic.json",
-      "sha256": "b111de9dd8591640420ba6efc8ccb835e21a6f57624adaa5466d0ef257585c1e",
-      "size": 1424
+      "sha256": "187ecf606a2cdded3625585bbe7fe6cbaae4267301a372b5d142bbbb48d12034",
+      "size": 1635
     },
     {
       "path": "guides/guide.account.other_account.json",
@@ -1052,13 +1052,13 @@
     },
     {
       "path": "strings/en.json",
-      "sha256": "8be3f9e84f378fd928333525d7b2da41eb33ed6931603db6889bed3f0d0d36cd",
-      "size": 406454
+      "sha256": "5d952bf89f07c06d3d68c988b2f0e81677feacdf5a182e3ff94bc9f47be9a4a6",
+      "size": 423064
     },
     {
       "path": "strings/tr.json",
-      "sha256": "5fabe2aa195665ced9323e7d7d73ee4b3b5a35a735f4bd36303f2264cb11e938",
-      "size": 439168
+      "sha256": "c844a8e29e38a6410ee1c6b85174205e7d6eb3e41dd34bdeee6df525f82e4f4c",
+      "size": 456932
     },
     {
       "path": "symptoms.json",

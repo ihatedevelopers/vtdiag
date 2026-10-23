@@ -107,6 +107,12 @@ public sealed class SandboxFileTests : IDisposable
     {
         var strict = new ReparseSafeFilePort(Folders(), Path.Combine(_dir, "data"), adminOnly: false, [SecureDirectory.SystemSid, SecureDirectory.AdministratorsSid, SecureDirectory.TrustedInstallerSid]);
         var src = Write(@"src\a.dat", "payload");
+        // An elevated process (the CI runner) creates files owned by Administrators, which is trusted; make the owner the
+        // current user explicitly so the untrusted owner exists whether or not the tests run elevated.
+        var file = new FileInfo(src);
+        var acl = file.GetAccessControl();
+        acl.SetOwner(new SecurityIdentifier(Me));
+        file.SetAccessControl(acl);
         var ex = Assert.Throws<PortRefusedException>(() => strict.SafeMove(src, Path.Combine(_dir, "data", "quarantine", "q", "a.dat"), strict.Sha256(src)));
         Assert.Equal("file.untrusted_owner", ex.Code);
         Assert.True(File.Exists(src));

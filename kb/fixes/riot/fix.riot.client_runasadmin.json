@@ -5,6 +5,13 @@
   "undoExplainKey": "fix.riot.client_runasadmin.undo",
   "noticeKey": "fix.riot.client_runasadmin.notice",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.riot.client_runasadmin.manual.0",
+    "fix.riot.client_runasadmin.manual.1",
+    "fix.riot.client_runasadmin.manual.2",
+    "fix.riot.client_runasadmin.manual.3",
+    "fix.riot.client_runasadmin.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

@@ -5,6 +5,12 @@
   "undoExplainKey": "fix.net.unbind_ipv6_active.undo",
   "noticeKey": "fix.net.unbind_ipv6_active.notice",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.net.unbind_ipv6_active.manual.0",
+    "fix.net.unbind_ipv6_active.manual.1",
+    "fix.net.unbind_ipv6_active.manual.2",
+    "fix.net.unbind_ipv6_active.manual.3"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

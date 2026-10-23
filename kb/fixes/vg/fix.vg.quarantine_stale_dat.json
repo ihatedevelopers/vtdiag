@@ -5,6 +5,13 @@
   "undoExplainKey": "fix.vg.quarantine_stale_dat.undo",
   "noticeKey": "fix.vg.quarantine_stale_dat.notice",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.vg.quarantine_stale_dat.manual.0",
+    "fix.vg.quarantine_stale_dat.manual.1",
+    "fix.vg.quarantine_stale_dat.manual.2",
+    "fix.vg.quarantine_stale_dat.manual.3",
+    "fix.vg.quarantine_stale_dat.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

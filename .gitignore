@@ -16,3 +16,4 @@ TestResults/
 
 # ajan worktree'leri
 .claude/worktrees/
+__pycache__/

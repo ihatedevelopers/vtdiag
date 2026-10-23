@@ -4,6 +4,12 @@
   "explainKey": "fix.generic.close_process.explain",
   "undoExplainKey": "fix.generic.close_process.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.generic.close_process.manual.0",
+    "fix.generic.close_process.manual.1",
+    "fix.generic.close_process.manual.2",
+    "fix.generic.close_process.manual.3"
+  ],
   "risk": "low",
   "reversibility": "sessionOnly",
   "admin": false,

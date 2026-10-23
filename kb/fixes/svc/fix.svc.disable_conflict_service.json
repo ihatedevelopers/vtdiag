@@ -5,6 +5,13 @@
   "undoExplainKey": "fix.svc.disable_conflict_service.undo",
   "noticeKey": "fix.svc.disable_conflict_service.notice",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.svc.disable_conflict_service.manual.0",
+    "fix.svc.disable_conflict_service.manual.1",
+    "fix.svc.disable_conflict_service.manual.2",
+    "fix.svc.disable_conflict_service.manual.3",
+    "fix.svc.disable_conflict_service.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

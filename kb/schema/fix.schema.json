@@ -41,6 +41,13 @@
           },
           "description": "Side effects (\"headset mic will stop working in Hands-Free mode\")."
         },
+        "manualStepKeys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The same change done by hand, one plain step per key (\"Open Device Manager\", ...); shown as \"Do it yourself\"."
+        },
         "risk": {
           "enum": [
             "low",

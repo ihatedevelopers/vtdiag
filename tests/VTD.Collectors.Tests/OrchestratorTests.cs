@@ -197,7 +197,7 @@ public sealed class OrchestratorTests
     [Fact]
     public async Task Capture_then_replay_reproduces_the_snapshot()
     {
-        var live = await Pcs.Orchestrator(Pcs.Healthy()).ScanAsync(Pcs.Request(capture: true), null, Ct);
+        var live = await Pcs.Orchestrator(Pcs.Healthy(), deterministicTimeouts: true).ScanAsync(Pcs.Request(capture: true), null, Ct);
         Assert.NotEmpty(live.Capture);
         Assert.Contains(live.Capture, e => e.Source == "meta:scan");
         var (replayed, misses) = await ReplayHarness.ReplayAsync(live.Capture, Ct);

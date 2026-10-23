@@ -4,6 +4,13 @@
   "explainKey": "fix.display.disable_fso.explain",
   "undoExplainKey": "fix.display.disable_fso.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.display.disable_fso.manual.0",
+    "fix.display.disable_fso.manual.1",
+    "fix.display.disable_fso.manual.2",
+    "fix.display.disable_fso.manual.3",
+    "fix.display.disable_fso.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

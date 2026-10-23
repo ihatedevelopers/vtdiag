@@ -4,6 +4,11 @@
   "explainKey": "fix.net.dns_flush.explain",
   "undoExplainKey": "fix.net.dns_flush.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.net.dns_flush.manual.0",
+    "fix.net.dns_flush.manual.1",
+    "fix.net.dns_flush.manual.2"
+  ],
   "risk": "low",
   "reversibility": "oneWay",
   "admin": true,

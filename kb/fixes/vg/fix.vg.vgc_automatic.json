@@ -5,6 +5,13 @@
   "undoExplainKey": "fix.vg.vgc_automatic.undo",
   "noticeKey": "fix.vg.vgc_automatic.notice",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.vg.vgc_automatic.manual.0",
+    "fix.vg.vgc_automatic.manual.1",
+    "fix.vg.vgc_automatic.manual.2",
+    "fix.vg.vgc_automatic.manual.3",
+    "fix.vg.vgc_automatic.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

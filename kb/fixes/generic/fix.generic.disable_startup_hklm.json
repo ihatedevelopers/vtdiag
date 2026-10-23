@@ -4,6 +4,12 @@
   "explainKey": "fix.generic.disable_startup_hklm.explain",
   "undoExplainKey": "fix.generic.disable_startup_hklm.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.generic.disable_startup_hklm.manual.0",
+    "fix.generic.disable_startup_hklm.manual.1",
+    "fix.generic.disable_startup_hklm.manual.2",
+    "fix.generic.disable_startup_hklm.manual.3"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

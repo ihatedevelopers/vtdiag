@@ -4,6 +4,12 @@
   "explainKey": "fix.os.time_resync.explain",
   "undoExplainKey": "fix.os.time_resync.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.os.time_resync.manual.0",
+    "fix.os.time_resync.manual.1",
+    "fix.os.time_resync.manual.2",
+    "fix.os.time_resync.manual.3"
+  ],
   "risk": "low",
   "reversibility": "bestEffort",
   "admin": true,

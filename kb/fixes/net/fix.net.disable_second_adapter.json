@@ -5,6 +5,12 @@
   "undoExplainKey": "fix.net.disable_second_adapter.undo",
   "noticeKey": "fix.net.disable_second_adapter.notice",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.net.disable_second_adapter.manual.0",
+    "fix.net.disable_second_adapter.manual.1",
+    "fix.net.disable_second_adapter.manual.2",
+    "fix.net.disable_second_adapter.manual.3"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

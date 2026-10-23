@@ -34,6 +34,9 @@ public sealed record FixDef
     /// <summary>Side effects ("headset mic will stop working in Hands-Free mode").</summary>
     public IReadOnlyList<string> SideEffectKeys { get; init; } = [];
 
+    /// <summary>The same change done by hand, one plain step per key ("Open Device Manager", ...); shown as "Do it yourself".</summary>
+    public IReadOnlyList<string> ManualStepKeys { get; init; } = [];
+
     /// <summary>Declared risk.</summary>
     public required RiskLevel Risk { get; init; }
 

@@ -129,6 +129,24 @@ public sealed class KbContentTests
     }
 
     [Fact]
+    public void Every_fix_can_be_done_by_hand_in_english_and_turkish()
+    {
+        var kb = Repo.Real;
+        foreach (var f in kb.Fixes)
+        {
+            Assert.True(f.ManualStepKeys.Count >= 2, f.Id);
+            foreach (var k in f.ManualStepKeys)
+            {
+                var en = kb.Text(k, Languages.English);
+                var tr = kb.Text(k, Languages.Turkish);
+                Assert.False(string.IsNullOrWhiteSpace(en) || en == k, k);
+                Assert.False(string.IsNullOrWhiteSpace(tr) || tr == k || tr == en, k);
+                Assert.DoesNotContain("http", en, StringComparison.OrdinalIgnoreCase);
+            }
+        }
+    }
+
+    [Fact]
     public void Guides_cover_every_firmware_requirement()
     {
         var kb = Repo.Real;

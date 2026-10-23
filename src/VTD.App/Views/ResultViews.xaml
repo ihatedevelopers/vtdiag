@@ -66,6 +66,13 @@
             </ItemsControl.ItemsPanel>
           </ItemsControl>
           <TextBlock Style="{StaticResource Small}" Foreground="{StaticResource WarnBrush}" Text="{Binding UnavailableText}" Visibility="{Binding UnavailableText, Converter={StaticResource Visible}}" Margin="0,2,0,0" />
+          <Expander Style="{StaticResource Explainer}" Header="{l:T Suspects.DoItYourself}" Visibility="{Binding HasManualSteps, Converter={StaticResource Visible}}" Margin="0,8,0,0">
+            <ItemsControl ItemsSource="{Binding ManualSteps}" Focusable="False">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate><TextBlock Style="{StaticResource Body}" Text="{Binding}" Margin="0,0,0,4" /></DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </Expander>
         </StackPanel>
         <TextBlock Style="{StaticResource Body}" Margin="0,12,0,0" Visibility="{Binding HasGuide, Converter={StaticResource Visible}}">
           <Run Text="{l:T Suspects.GuideLabel}" Foreground="{StaticResource TextMutedBrush}" /><Run Text=" " /><Run Text="{Binding GuideTitle, Mode=OneWay}" />

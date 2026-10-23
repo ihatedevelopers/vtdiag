@@ -4,6 +4,12 @@
   "explainKey": "fix.proc.close_overlays.explain",
   "undoExplainKey": "fix.proc.close_overlays.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.proc.close_overlays.manual.0",
+    "fix.proc.close_overlays.manual.1",
+    "fix.proc.close_overlays.manual.2",
+    "fix.proc.close_overlays.manual.3"
+  ],
   "risk": "low",
   "reversibility": "sessionOnly",
   "admin": false,

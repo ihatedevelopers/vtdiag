@@ -5,6 +5,13 @@
   "undoExplainKey": "fix.vg.quarantine_bootstatus.undo",
   "noticeKey": "fix.vg.quarantine_bootstatus.notice",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.vg.quarantine_bootstatus.manual.0",
+    "fix.vg.quarantine_bootstatus.manual.1",
+    "fix.vg.quarantine_bootstatus.manual.2",
+    "fix.vg.quarantine_bootstatus.manual.3",
+    "fix.vg.quarantine_bootstatus.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

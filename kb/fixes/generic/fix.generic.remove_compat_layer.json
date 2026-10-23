@@ -4,6 +4,13 @@
   "explainKey": "fix.generic.remove_compat_layer.explain",
   "undoExplainKey": "fix.generic.remove_compat_layer.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.generic.remove_compat_layer.manual.0",
+    "fix.generic.remove_compat_layer.manual.1",
+    "fix.generic.remove_compat_layer.manual.2",
+    "fix.generic.remove_compat_layer.manual.3",
+    "fix.generic.remove_compat_layer.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

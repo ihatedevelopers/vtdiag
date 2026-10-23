@@ -4,6 +4,13 @@
   "explainKey": "fix.display.gpu_pref_high.explain",
   "undoExplainKey": "fix.display.gpu_pref_high.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.display.gpu_pref_high.manual.0",
+    "fix.display.gpu_pref_high.manual.1",
+    "fix.display.gpu_pref_high.manual.2",
+    "fix.display.gpu_pref_high.manual.3",
+    "fix.display.gpu_pref_high.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

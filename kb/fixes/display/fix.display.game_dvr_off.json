@@ -4,6 +4,14 @@
   "explainKey": "fix.display.game_dvr_off.explain",
   "undoExplainKey": "fix.display.game_dvr_off.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.display.game_dvr_off.manual.0",
+    "fix.display.game_dvr_off.manual.1",
+    "fix.display.game_dvr_off.manual.2",
+    "fix.display.game_dvr_off.manual.3",
+    "fix.display.game_dvr_off.manual.4",
+    "fix.display.game_dvr_off.manual.5"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": false,

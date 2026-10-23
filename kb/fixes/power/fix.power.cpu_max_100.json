@@ -4,6 +4,12 @@
   "explainKey": "fix.power.cpu_max_100.explain",
   "undoExplainKey": "fix.power.cpu_max_100.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.power.cpu_max_100.manual.0",
+    "fix.power.cpu_max_100.manual.1",
+    "fix.power.cpu_max_100.manual.2",
+    "fix.power.cpu_max_100.manual.3"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

@@ -453,6 +453,7 @@
   <data name="Suspects.ShowAll" xml:space="preserve"><value>Hepsini göster ({count} tane daha)</value></data>
   <data name="Suspects.ShowFewer" xml:space="preserve"><value>Daha azını göster</value></data>
   <data name="Suspects.ShowSteps" xml:space="preserve"><value>Adımları göster</value></data>
+  <data name="Suspects.DoItYourself" xml:space="preserve"><value>Kendin yap</value></data>
   <data name="Suspects.Title" xml:space="preserve"><value>Ne bulduk</value></data>
   <data name="Suspects.TryFirstFix" xml:space="preserve"><value>İlk düzeltmeyi dene</value></data>
   <data name="Suspects.Unknown.Detail" xml:space="preserve"><value>Kontrol ettiğimiz hiçbir şey bunu yeterince açıklamıyor. Bu senin suçun değil ve hiçbir sorun olmadığı anlamına da gelmez.</value></data>

@@ -4,6 +4,12 @@
   "explainKey": "fix.generic.unbind_ipv6.explain",
   "undoExplainKey": "fix.generic.unbind_ipv6.undo",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.generic.unbind_ipv6.manual.0",
+    "fix.generic.unbind_ipv6.manual.1",
+    "fix.generic.unbind_ipv6.manual.2",
+    "fix.generic.unbind_ipv6.manual.3"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

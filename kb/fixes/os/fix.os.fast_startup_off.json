@@ -5,6 +5,13 @@
   "undoExplainKey": "fix.os.fast_startup_off.undo",
   "noticeKey": "fix.os.fast_startup_off.notice",
   "sideEffectKeys": [],
+  "manualStepKeys": [
+    "fix.os.fast_startup_off.manual.0",
+    "fix.os.fast_startup_off.manual.1",
+    "fix.os.fast_startup_off.manual.2",
+    "fix.os.fast_startup_off.manual.3",
+    "fix.os.fast_startup_off.manual.4"
+  ],
   "risk": "low",
   "reversibility": "exact",
   "admin": true,

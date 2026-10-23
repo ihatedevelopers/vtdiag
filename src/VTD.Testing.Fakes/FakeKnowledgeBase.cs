@@ -331,6 +331,7 @@ public sealed class FakeKnowledgeBase : IKnowledgeBase
                     ExplainKey = "fix.disable_adapter.explain",
                     UndoExplainKey = "fix.disable_adapter.undo",
                     NoticeKey = "fix.disable_adapter.notice",
+                    ManualStepKeys = ["fix.disable_adapter.manual.0", "fix.disable_adapter.manual.1", "fix.disable_adapter.manual.2"],
                     Risk = RiskLevel.Low,
                     Reversibility = Reversibility.Exact,
                     Reboot = RebootNeed.None,
@@ -494,6 +495,12 @@ public sealed class FakeKnowledgeBase : IKnowledgeBase
           .WithText(VTD.Contracts.Languages.Turkish, "fix.hags_off.title", "Donanım hızlandırmalı GPU zamanlamasını kapat")
           .WithText(VTD.Contracts.Languages.English, "fix.disable_adapter.explain", "We'll turn off the wired network port you're not using. You're on Wi-Fi, so your internet stays on. One click turns it back on.")
           .WithText(VTD.Contracts.Languages.Turkish, "fix.disable_adapter.explain", "Kullanmadığın kablolu ağ girişini kapatacağız. Wi-Fi'dasın, internetin kesilmez. Tek tıkla geri açabilirsin.")
+          .WithText(VTD.Contracts.Languages.English, "fix.disable_adapter.manual.0", "Right-click the Start button and open \"Device Manager\".")
+          .WithText(VTD.Contracts.Languages.Turkish, "fix.disable_adapter.manual.0", "Başlat düğmesine sağ tıkla ve \"Aygıt Yöneticisi\"ni aç.")
+          .WithText(VTD.Contracts.Languages.English, "fix.disable_adapter.manual.1", "Open \"Network adapters\" and find the Realtek adapter VTDiag named in your report.")
+          .WithText(VTD.Contracts.Languages.Turkish, "fix.disable_adapter.manual.1", "\"Ağ bağdaştırıcıları\"nı aç ve VTDiag raporunda adı geçen Realtek bağdaştırıcısını bul.")
+          .WithText(VTD.Contracts.Languages.English, "fix.disable_adapter.manual.2", "Right-click it, choose \"Disable device\" and click \"Yes\".")
+          .WithText(VTD.Contracts.Languages.Turkish, "fix.disable_adapter.manual.2", "Ona sağ tıkla, \"Cihazı devre dışı bırak\"ı seç ve \"Evet\"e bas.")
           .WithText(VTD.Contracts.Languages.English, "guide.secureboot.title", "Turn on Secure Boot in your BIOS")
           .WithText(VTD.Contracts.Languages.English, "report.disclaimer.not_affiliated", "VTDiag is not affiliated with Riot Games.");
         return kb;
