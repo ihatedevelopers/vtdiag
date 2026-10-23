@@ -1,3 +1,4 @@
+using System.IO;
 using System.Globalization;
 using System.Windows.Threading;
 using VTD.App.Mvvm;
@@ -838,5 +839,76 @@ public sealed class MonitoringViewModel(ShellViewModel shell) : PageViewModel(sh
                 new LineViewModel(L.Format("Monitor.Self", ("pct", t.SelfCpuPct.ToString("0.0", c))), HealthStatus.NotApplicable),
             ];
         base.Refresh();
+    }
+}
+
+/// <summary>
+/// First Fix press in an unpacked zip: explains the one UAC prompt, copies VTDiag to Program Files
+/// (<c>VTDiag.Engine.exe --install</c>) and reopens it from there, where the elevated engine can apply fixes.
+/// </summary>
+public sealed class InstallViewModel : PageViewModel
+{
+    /// <summary>Creates the page.</summary>
+    /// <param name="shell">Shell.</param>
+    public InstallViewModel(ShellViewModel shell)
+        : base(shell)
+    {
+        ContinueCommand = new AsyncCommand(InstallAsync, () => !IsBusy);
+        NotNowCommand = new RelayCommand(() => Shell.BackCommand.Execute(null), () => !IsBusy);
+    }
+
+    /// <inheritdoc />
+    public override FlowStep Step => FlowStep.Fix;
+
+    /// <summary>Copy and reopen.</summary>
+    public AsyncCommand ContinueCommand { get; }
+
+    /// <summary>Back to the results.</summary>
+    public RelayCommand NotNowCommand { get; }
+
+    /// <summary>Copying.</summary>
+    public bool IsBusy { get; private set; }
+
+    /// <summary>What went wrong (declined, files in use, copy failed); null when nothing did.</summary>
+    public string? ErrorText { get; private set; }
+
+    private async Task InstallAsync()
+    {
+        var installer = S.Installer;
+        if (installer is null)
+        {
+            return;
+        }
+
+        IsBusy = true;
+        ErrorText = null;
+        Refresh();
+        int? code;
+        try
+        {
+            code = await installer.InstallAsync(CancellationToken.None).ConfigureAwait(true);
+        }
+        catch (Exception ex) when (ex is InvalidOperationException or IOException)
+        {
+            S.Log.Error("install.start_failed", ex);
+            code = 5;
+        }
+
+        S.Log.Info("install.exit", code?.ToString(CultureInfo.InvariantCulture) ?? "declined");
+        if (code == 0 && installer.ReopenInstalled(L.Language))
+        {
+            return;
+        }
+
+        IsBusy = false;
+        ErrorText = code switch
+        {
+            null => L.Get("Install.Declined"),
+            4 => L.Get("Install.Busy"),
+            _ => L.Get("Install.Failed"),
+        };
+        Refresh();
+        ContinueCommand.Refresh();
+        NotNowCommand.Refresh();
     }
 }

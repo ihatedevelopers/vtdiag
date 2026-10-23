@@ -13,7 +13,8 @@ src/VTD.Platform/IO/SharedReadFile.cs
 src/VTD.Platform/Wmi/ReadOnlyWmiMethods.cs
 # A5 (M3): starts the bundled PresentMon child with a fixed argument template.
 src/VTD.Monitor.Core/Frames/PresentMonProcess.cs
-# A6: ShellExecute "runas" of %ProgramFiles%\VTDiag\VTDiag.Engine.exe (or unelevated --limited).
+# A6: ShellExecute "runas" of the engine next to the UI (--pipe, or --install from a portable copy), unelevated --limited,
+# and the installed %ProgramFiles%\VTDiag\VTDiag.exe reopened after --install. Fixed images and fixed arguments only.
 src/VTD.App/Services/EngineLauncher.cs
 # A6: opens an https URL from the KB allowlist in the default browser (never a helper-supplied link).
 src/VTD.App/Services/LinkOpener.cs

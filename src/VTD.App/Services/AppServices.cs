@@ -54,4 +54,7 @@ public sealed class AppServices
 
     /// <summary>Show developer switches (pseudo-localization, demo simulations).</summary>
     public bool DeveloperMode { get; init; }
+
+    /// <summary>Copies a portable copy to Program Files on the first Fix press; null keeps a portable copy read-only (tests).</summary>
+    public IPortableInstaller? Installer { get; init; }
 }

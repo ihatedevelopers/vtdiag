@@ -26,6 +26,9 @@ public sealed record EngineArguments
     /// <summary><c>--uninstall</c>: remove the resume tasks / RunOnce entry and the discovery file (the uninstaller).</summary>
     public bool Uninstall { get; init; }
 
+    /// <summary>Copy this portable folder to Program Files and exit (<see cref="SelfInstall"/>).</summary>
+    public bool Install { get; init; }
+
     /// <summary><c>--no-network</c>: no clock-skew or ping probes.</summary>
     public bool NoNetwork { get; init; }
 
@@ -78,6 +81,9 @@ public sealed record EngineArguments
                     break;
                 case "--uninstall":
                     result = result with { Uninstall = true };
+                    break;
+                case "--install":
+                    result = result with { Install = true };
                     break;
                 case "--no-network":
                     result = result with { NoNetwork = true };
@@ -167,6 +173,12 @@ public static class EngineHost
         ArgumentNullException.ThrowIfNull(args);
         ArgumentNullException.ThrowIfNull(log);
         var elevated = IsElevated();
+        if (args.Install)
+        {
+            // The one elevated job allowed outside Program Files: copy the folder there, nothing else.
+            return await SelfInstall.RunAsync(elevated, log).ConfigureAwait(false);
+        }
+
         if (elevated && !IsUnderProgramFiles(Environment.ProcessPath))
         {
             await log.WriteLineAsync("engine.not_in_program_files: VTDiag.Engine refuses to run elevated outside Program Files.").ConfigureAwait(false);
@@ -186,24 +198,14 @@ public static class EngineHost
             return 1;
         }
 
-        using var mutex = new Mutex(initiallyOwned: false, privilege == PrivilegeMode.Elevated ? @"Global\VTDiag.Engine" : @"Local\VTDiag.Engine.Limited");
-        bool owned;
-        try
-        {
-            owned = mutex.WaitOne(TimeSpan.Zero);
-        }
-        catch (AbandonedMutexException)
-        {
-            owned = true; // the previous engine died; recovery below handles it
-        }
-
-        if (!owned)
+        // An abandoned mutex (the previous engine died) counts as acquired; recovery below handles it.
+        using var instance = SingleInstance.TryAcquire(privilege == PrivilegeMode.Elevated ? @"Global\VTDiag.Engine" : @"Local\VTDiag.Engine.Limited");
+        if (instance is null)
         {
             await log.WriteLineAsync("engine.already_running").ConfigureAwait(false);
             return 0;
         }
 
-        try
         {
             using var stop = new CancellationTokenSource();
             Console.CancelKeyPress += (_, e) =>
@@ -265,10 +267,6 @@ public static class EngineHost
             }
 
             return 0;
-        }
-        finally
-        {
-            mutex.ReleaseMutex();
         }
     }
 

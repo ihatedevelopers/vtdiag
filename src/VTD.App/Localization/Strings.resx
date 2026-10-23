@@ -591,4 +591,14 @@
   <data name="Error.engine.start_failed" xml:space="preserve"><value>The VTDiag engine could not be started.</value></data>
   <data name="Error.engine.unverified" xml:space="preserve"><value>We could not confirm the engine is really VTDiag's, so we did not connect.</value></data>
   <data name="Error.engine.connection_lost" xml:space="preserve"><value>The connection to the VTDiag engine was lost. Restart VTDiag.</value></data>
+  <data name="Install.Title" xml:space="preserve"><value>One quick step before the first fix</value></data>
+  <data name="Install.Lead" xml:space="preserve"><value>To change settings, VTDiag has to run from Program Files. We copy it there (about 170 MB), then it reopens and scans again with permission.</value></data>
+  <data name="Install.Prompt" xml:space="preserve"><value>What happens</value></data>
+  <data name="Install.Why" xml:space="preserve"><value>Windows asks: "Do you want to allow this app to make changes to your device?" Click Yes. We only copy VTDiag's own files; nothing else on your PC changes. After it reopens, Windows asks once more so VTDiag can scan and fix. Every fix still asks you first and can be undone.</value></data>
+  <data name="Install.Continue" xml:space="preserve"><value>Copy and reopen</value></data>
+  <data name="Install.NotNow" xml:space="preserve"><value>Not now</value></data>
+  <data name="Install.Copying" xml:space="preserve"><value>Copying VTDiag. It reopens by itself in a moment.</value></data>
+  <data name="Install.Declined" xml:space="preserve"><value>You said no to the Windows prompt, so nothing changed.</value></data>
+  <data name="Install.Busy" xml:space="preserve"><value>Another VTDiag is running from Program Files. Close it and try again.</value></data>
+  <data name="Install.Failed" xml:space="preserve"><value>Copying failed and nothing changed. Close other VTDiag windows and try again.</value></data>
 </root>

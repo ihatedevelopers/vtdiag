@@ -49,6 +49,35 @@ jobs:
           git diff --exit-code -- kb/schema tests/fixtures
           if ($LASTEXITCODE -ne 0) { Write-Error "kb/schema or tests/fixtures changed during the build; regenerate locally with VTD_UPDATE_SCHEMAS=1 / VTD_UPDATE_FIXTURES=1 and commit." }
 
+      # The runner is elevated and thrown away after the job, so this is where every KB fix is really applied, verified
+      # and undone (tests/VTD.Fixes.IntegrationTests). Nowhere else opens the write gate.
+      - name: Apply, verify and undo every fix on this throwaway runner
+        env:
+          VTD_ALLOW_SYSTEM_WRITES: "1"
+        run: dotnet test tests/VTD.Fixes.IntegrationTests -c Release --no-build --logger "trx;LogFileName=fix-apply-undo.trx" --logger "console;verbosity=normal" --results-directory TestResults
+
+      # What a portable zip does on the first Fix press: "VTDiag.Engine.exe --install" copies itself to Program Files
+      # (twice, so the update/swap path runs too), then the installed engine scans elevated.
+      - name: Portable copy installs itself to Program Files
+        shell: pwsh
+        run: |
+          $out = Join-Path $env:RUNNER_TEMP "VTDiag-portable"
+          dotnet publish src/VTD.Engine -c Release -r win-x64 --self-contained -p:DebugType=none -o $out
+          dotnet publish src/VTD.App -c Release -r win-x64 --self-contained -p:DebugType=none -o $out
+          foreach ($round in 1, 2) {
+            $p = Start-Process -FilePath (Join-Path $out "VTDiag.Engine.exe") -ArgumentList "--install" -Wait -PassThru -NoNewWindow
+            if ($p.ExitCode -ne 0) { throw "install round $round exited $($p.ExitCode)" }
+          }
+          $installed = Join-Path $env:ProgramFiles "VTDiag"
+          foreach ($f in "VTDiag.exe", "VTDiag.Engine.exe", "kb\kb.manifest.json") {
+            if (-not (Test-Path (Join-Path $installed $f))) { throw "missing after install: $f" }
+          }
+          if (Test-Path "$installed.new") { throw "staging folder left behind" }
+          $scan = & (Join-Path $installed "VTDiag.Engine.exe") --cli scan --json | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { throw "installed engine scan exited $LASTEXITCODE" }
+          "installed engine scan: privilege=$($scan.meta.privilege) app=$($scan.meta.appVersion) kb=$($scan.meta.kbVersion)"
+          if ($scan.meta.appVersion -ne "0.2.0") { throw "unexpected app version $($scan.meta.appVersion)" }
+
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4

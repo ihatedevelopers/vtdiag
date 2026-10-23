@@ -9,7 +9,7 @@
     <AssemblyName>VTDiag</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <!-- Same version as the engine (the bundled KB requires minApp 0.1.0). -->
-    <Version>0.1.1</Version>
+    <Version>0.2.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <Using Remove="System.Windows.Forms" />
@@ -36,6 +36,16 @@
       <_EngineOutput Include="$(MSBuildThisFileDirectory)..\VTD.Engine\bin\$(Configuration)\$(TargetFramework)\**\*" Exclude="$(MSBuildThisFileDirectory)..\VTD.Engine\bin\$(Configuration)\$(TargetFramework)\**\*.pdb" />
     </ItemGroup>
     <Copy SourceFiles="@(_EngineOutput)" DestinationFiles="@(_EngineOutput->'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+  <!--
+    Publish (engine first, then this app, into the same folder) ends with install.manifest: the exact file list that
+    the engine install mode copies to Program Files. Without it a portable copy refuses to install itself.
+  -->
+  <Target Name="WriteInstallManifest" AfterTargets="Publish">
+    <ItemGroup>
+      <_ReleaseFile Include="$(PublishDir)**\*" Exclude="$(PublishDir)install.manifest" />
+    </ItemGroup>
+    <WriteLinesToFile File="$(PublishDir)install.manifest" Lines="@(_ReleaseFile->'%(RecursiveDir)%(Filename)%(Extension)')" Overwrite="true" />
   </Target>
   <ItemGroup>
     <InternalsVisibleTo Include="VTD.App.Tests" />

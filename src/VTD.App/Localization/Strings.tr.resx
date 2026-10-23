@@ -591,4 +591,14 @@
   <data name="Error.engine.start_failed" xml:space="preserve"><value>VTDiag motoru başlatılamadı.</value></data>
   <data name="Error.engine.unverified" xml:space="preserve"><value>Motorun gerçekten VTDiag'e ait olduğunu doğrulayamadık, bu yüzden bağlanmadık.</value></data>
   <data name="Error.engine.connection_lost" xml:space="preserve"><value>VTDiag motoruyla bağlantı koptu. VTDiag'i yeniden başlat.</value></data>
+  <data name="Install.Title" xml:space="preserve"><value>İlk düzeltmeden önce kısa bir adım</value></data>
+  <data name="Install.Lead" xml:space="preserve"><value>Ayarları değiştirebilmek için VTDiag'ın Program Files içinden çalışması gerekiyor. Onu oraya kopyalıyoruz (yaklaşık 170 MB), sonra kendiliğinden yeniden açılır ve izinle tekrar tarar.</value></data>
+  <data name="Install.Prompt" xml:space="preserve"><value>Ne olacak</value></data>
+  <data name="Install.Why" xml:space="preserve"><value>Windows soracak: "Bu uygulamanın cihazınızda değişiklik yapmasına izin vermek istiyor musunuz?" Evet'e bas. Sadece VTDiag'ın kendi dosyalarını kopyalıyoruz; PC'nde başka hiçbir şey değişmez. Yeniden açıldıktan sonra Windows, tarama ve düzeltme için bir kez daha sorar. Her düzeltme yine önce sana sorar ve geri alınabilir.</value></data>
+  <data name="Install.Continue" xml:space="preserve"><value>Kopyala ve yeniden aç</value></data>
+  <data name="Install.NotNow" xml:space="preserve"><value>Şimdi değil</value></data>
+  <data name="Install.Copying" xml:space="preserve"><value>VTDiag kopyalanıyor. Birazdan kendiliğinden yeniden açılacak.</value></data>
+  <data name="Install.Declined" xml:space="preserve"><value>Windows izin penceresinde hayır dedin, hiçbir şey değişmedi.</value></data>
+  <data name="Install.Busy" xml:space="preserve"><value>Program Files'tan çalışan başka bir VTDiag açık. Onu kapatıp tekrar dene.</value></data>
+  <data name="Install.Failed" xml:space="preserve"><value>Kopyalama başarısız oldu, hiçbir şey değişmedi. Diğer VTDiag pencerelerini kapatıp tekrar dene.</value></data>
 </root>

@@ -92,3 +92,86 @@ public static class EngineLauncher
         }
     }
 }
+
+/// <summary>Copies a portable VTDiag to Program Files and reopens it from there (the first Fix press of an unpacked zip).</summary>
+public interface IPortableInstaller
+{
+    /// <summary>Runs <c>VTDiag.Engine.exe --install</c> with one UAC prompt; its exit code, or null when the prompt was declined.</summary>
+    /// <param name="cancellationToken">Cancellation.</param>
+    Task<int?> InstallAsync(CancellationToken cancellationToken);
+
+    /// <summary>Starts the installed UI (not elevated) and closes this one; false when it could not be started.</summary>
+    /// <param name="language">UI language for the reopened app.</param>
+    bool ReopenInstalled(string language);
+}
+
+/// <summary>
+/// The real <see cref="IPortableInstaller"/> (same audited RS0030 exception as <see cref="EngineLauncher"/>): fixed
+/// images (the engine next to this UI, then <c>%ProgramFiles%\VTDiag\VTDiag.exe</c>) and fixed arguments.
+/// </summary>
+public sealed class PortableInstaller : IPortableInstaller
+{
+    /// <summary>The installed UI.</summary>
+    public static string InstalledAppPath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "VTDiag", "VTDiag.exe");
+
+    /// <inheritdoc />
+    public async Task<int?> InstallAsync(CancellationToken cancellationToken)
+    {
+        if (!EngineLauncher.EngineExists)
+        {
+            return null;
+        }
+
+        var info = new ProcessStartInfo { FileName = EngineLauncher.EnginePath, WorkingDirectory = AppContext.BaseDirectory, UseShellExecute = true, Verb = "runas" };
+        info.ArgumentList.Add("--install");
+        Process? process;
+        try
+        {
+#pragma warning disable RS0030 // Audited: fixed engine image, fixed argument (allowlisted file).
+            process = Process.Start(info);
+#pragma warning restore RS0030
+        }
+        catch (Win32Exception)
+        {
+            return null; // UAC declined (1223)
+        }
+
+        if (process is null)
+        {
+            return null;
+        }
+
+        using (process)
+        {
+            await process.WaitForExitAsync(cancellationToken).ConfigureAwait(true);
+            return process.ExitCode;
+        }
+    }
+
+    /// <inheritdoc />
+    public bool ReopenInstalled(string language)
+    {
+        var path = InstalledAppPath;
+        if (!File.Exists(path))
+        {
+            return false;
+        }
+
+        var info = new ProcessStartInfo { FileName = path, WorkingDirectory = Path.GetDirectoryName(path)!, UseShellExecute = false };
+        info.ArgumentList.Add("--lang");
+        info.ArgumentList.Add(language);
+        try
+        {
+#pragma warning disable RS0030 // Audited: fixed installed image, fixed arguments (allowlisted file).
+            using var process = Process.Start(info);
+#pragma warning restore RS0030
+        }
+        catch (Win32Exception)
+        {
+            return false;
+        }
+
+        System.Windows.Application.Current?.Shutdown();
+        return true;
+    }
+}

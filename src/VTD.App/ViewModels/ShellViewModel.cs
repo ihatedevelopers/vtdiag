@@ -191,6 +191,9 @@ public sealed class ShellViewModel : ObservableObject
     /// <summary>Demo mode (fixture data; nothing on this PC is read or changed).</summary>
     public bool IsDemo => Services.Connector.IsDemo;
 
+    /// <summary>An unpacked zip: Fix first copies VTDiag to Program Files (the elevated engine runs only from there).</summary>
+    public bool NeedsInstallToFix => !IsDemo && Services.Installer is not null && !EngineLauncher.IsInstalled;
+
     /// <summary>Limited mode (no permission): some things couldn't be checked and no fixes run.</summary>
     public bool IsLimited => Hello?.Privilege == PrivilegeMode.Limited;
 

@@ -93,7 +93,7 @@ public sealed class OrchestratorTests
         var hang = new HangingCollector(f.ToSources(), release);
         var collectors = ScanOrchestrator.CreateDefaultCollectors(f.ToSources()).Where(c => c.Id != "power").Append(hang).ToList();
         var sw = System.Diagnostics.Stopwatch.StartNew();
-        var s = (await Pcs.Orchestrator(f, collectors: collectors).ScanAsync(Pcs.Request(), null, Ct)).Snapshot;
+        var s = (await Pcs.Orchestrator(f, collectors: collectors, deterministicTimeouts: false).ScanAsync(Pcs.Request(), null, Ct)).Snapshot;
         sw.Stop();
         release.Set();
 
@@ -197,7 +197,7 @@ public sealed class OrchestratorTests
     [Fact]
     public async Task Capture_then_replay_reproduces_the_snapshot()
     {
-        var live = await Pcs.Orchestrator(Pcs.Healthy(), deterministicTimeouts: true).ScanAsync(Pcs.Request(capture: true), null, Ct);
+        var live = await Pcs.Orchestrator(Pcs.Healthy()).ScanAsync(Pcs.Request(capture: true), null, Ct);
         Assert.NotEmpty(live.Capture);
         Assert.Contains(live.Capture, e => e.Source == "meta:scan");
         var (replayed, misses) = await ReplayHarness.ReplayAsync(live.Capture, Ct);

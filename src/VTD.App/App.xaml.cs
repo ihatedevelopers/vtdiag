@@ -40,6 +40,7 @@ public partial class App : Application
         var services = new AppServices(demo ? FakeKnowledgeBase.Sample() : LoadKb(clock), demo ? new DemoEngineConnector(fixture, pacing) : new RealEngineConnector(log), io, clock, new UlidGenerator(clock), Loc.Instance)
         {
             DeveloperMode = args.Contains("--dev", StringComparer.Ordinal),
+            Installer = demo ? null : new PortableInstaller(),
             Log = log,
         };
         log.Info("app.start", (demo ? "demo " : "real ") + services.AppVersion + " lang=" + lang + " windows=" + Environment.OSVersion.Version);

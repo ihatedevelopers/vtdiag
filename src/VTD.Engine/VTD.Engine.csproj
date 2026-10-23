@@ -6,7 +6,7 @@
     <AssemblyName>VTDiag.Engine</AssemblyName>
     <!-- The bundled KB requires minApp 0.1.0 (M1 = v0.1); Directory.Build.props still says 0.0.1. Lead: bump the shared
          <Version> to 0.1.0 and delete this line. -->
-    <Version>0.1.1</Version>
+    <Version>0.2.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <!-- IPC App <-> Engine (centrally pinned; already approved in Directory.Packages.props). -->

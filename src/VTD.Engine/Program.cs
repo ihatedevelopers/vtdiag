@@ -21,7 +21,9 @@ public static class Program
         await using var stdout = new StreamWriter(Console.OpenStandardOutput(), utf8) { AutoFlush = true };
         await using var stderr = new StreamWriter(Console.OpenStandardError(), utf8) { AutoFlush = true };
 
-        if (EngineHost.IsElevated() && !EngineHost.IsUnderProgramFiles(Environment.ProcessPath))
+        // "--install" is the one elevated job allowed outside Program Files (it only copies this folder there).
+        var install = args.Length == 1 && string.Equals(args[0], "--install", StringComparison.Ordinal);
+        if (!install && EngineHost.IsElevated() && !EngineHost.IsUnderProgramFiles(Environment.ProcessPath))
         {
             await stderr.WriteLineAsync("engine.not_in_program_files: VTDiag.Engine refuses to run elevated outside Program Files.").ConfigureAwait(false);
             return EngineHost.ExitRefused;

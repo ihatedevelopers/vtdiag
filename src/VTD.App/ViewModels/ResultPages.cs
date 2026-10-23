@@ -113,7 +113,12 @@ public sealed class SuspectViewModel : ObservableObject
             FixTitle = s.Text.Get(s.Kb.FindFix(proposal.FixId)?.TitleKey ?? proposal.FixId);
             ManualSteps = [.. (s.Kb.FindFix(proposal.FixId)?.ManualStepKeys ?? []).Select((k, i) => string.Create(CultureInfo.InvariantCulture, $"{i + 1}. {s.Text.Get(k)}"))];
             Badges = [Words.Time(s.Kb.FindFix(proposal.FixId)?.EstMinutes ?? 0.2), Words.Reversible(proposal.Reversibility), Words.Reboot(proposal.Reboot), Words.Risk(proposal.Risk)];
-            if (page.Shell.IsLimited && proposal.NeedsAdmin)
+            var needsAdminOnly = page.Shell.IsLimited && proposal.NeedsAdmin;
+            if (needsAdminOnly && page.Shell.NeedsInstallToFix)
+            {
+                // Portable copy: Fix installs and reopens first; the elevated scan there decides the rest.
+            }
+            else if (needsAdminOnly)
             {
                 UnavailableText = l.Get("Suspects.NeedsPermission");
             }
@@ -320,6 +325,12 @@ public sealed class SuspectsViewModel : PageViewModel
     public async Task OpenFixAsync(FixProposal proposal)
     {
         ArgumentNullException.ThrowIfNull(proposal);
+        if (Shell.NeedsInstallToFix)
+        {
+            Shell.OpenSide(new InstallViewModel(Shell));
+            return;
+        }
+
         Shell.SelectedFixId = proposal.FixId;
         Shell.SelectedBinding = proposal.Binding;
         Shell.PlanHelperName = null;
